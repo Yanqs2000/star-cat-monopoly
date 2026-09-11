@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+coverage
+*.local
+.DS_Store
+.vite
+*.log
+
+public/ruffle/
+playwright-report/
+test-results/
+__pycache__/
+*.pyc

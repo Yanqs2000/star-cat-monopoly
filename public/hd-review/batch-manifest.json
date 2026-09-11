@@ -1,0 +1,404 @@
+{
+  "generation": "built-in image_gen; underlying model not selectable",
+  "status": "Representative HD artwork, black background; not animation-ready or integrated into game",
+  "totalWithPriorSamples": 23,
+  "priorSamples": [
+    "juanmao",
+    "building"
+  ],
+  "dimensions": [
+    {
+      "file": "afei-hd-candidate.png",
+      "width": 1013,
+      "height": 1552,
+      "hasAlpha": false
+    },
+    {
+      "file": "ajie-hd-candidate.png",
+      "width": 1089,
+      "height": 1445,
+      "hasAlpha": false
+    },
+    {
+      "file": "aniu-hd-candidate.png",
+      "width": 1052,
+      "height": 1495,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-181-hd-candidate.png",
+      "width": 1272,
+      "height": 1236,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-187-hd-candidate.png",
+      "width": 1207,
+      "height": 1303,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-190-hd-candidate.png",
+      "width": 1287,
+      "height": 1222,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-193-hd-candidate.png",
+      "width": 1486,
+      "height": 1059,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-196-hd-candidate.png",
+      "width": 1343,
+      "height": 1171,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-199-hd-candidate.png",
+      "width": 1401,
+      "height": 1123,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-202-hd-candidate.png",
+      "width": 1286,
+      "height": 1223,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-205-hd-candidate.png",
+      "width": 1231,
+      "height": 1277,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-208-hd-candidate.png",
+      "width": 1348,
+      "height": 1167,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-211-hd-candidate.png",
+      "width": 1342,
+      "height": 1172,
+      "hasAlpha": false
+    },
+    {
+      "file": "building-hd-candidate.png",
+      "width": 1227,
+      "height": 1282,
+      "hasAlpha": false
+    },
+    {
+      "file": "dapai-hd-candidate.png",
+      "width": 1172,
+      "height": 1342,
+      "hasAlpha": false
+    },
+    {
+      "file": "dawei-hd-candidate.png",
+      "width": 1303,
+      "height": 1207,
+      "hasAlpha": false
+    },
+    {
+      "file": "guaika-hd-candidate.png",
+      "width": 1039,
+      "height": 1513,
+      "hasAlpha": false
+    },
+    {
+      "file": "jiajia-hd-candidate.png",
+      "width": 1363,
+      "height": 1154,
+      "hasAlpha": false
+    },
+    {
+      "file": "jijimimi-hd-candidate.png",
+      "width": 1414,
+      "height": 1113,
+      "hasAlpha": false
+    },
+    {
+      "file": "juanmao-hd-candidate.png",
+      "width": 1099,
+      "height": 1431,
+      "hasAlpha": false
+    },
+    {
+      "file": "nini-hd-candidate.png",
+      "width": 968,
+      "height": 1625,
+      "hasAlpha": false
+    },
+    {
+      "file": "shuaige-hd-candidate.png",
+      "width": 1006,
+      "height": 1564,
+      "hasAlpha": false
+    },
+    {
+      "file": "weiwei-hd-candidate.png",
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false
+    }
+  ],
+  "assets": [
+    {
+      "key": "aniu",
+      "name": "阿牛",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star2-1.jpg",
+      "swf": "star2.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Asset: high-resolution restoration of the original StarQ game character 阿牛. Image 1 is the exact low-resolution edit target. Image 2 is ONLY the user-approved rendering-style reference: borrow its soft polished pre-rendered 3D toy shading, never its character design or clothing. Restore Image 1 to a crisp high-resolution image at least 1080 pixels tall, preserving original aspect ratio and relative framing. Keep the yellow bull identity, brown horns, large dark muzzle, blue clothing, original eyes, seated/standing pose and hoof shapes. Preserve source identity, pose, expression, silhouette, proportions, viewing angle, colors, clothing and every existing accessory. Remove blocky pixels and JPEG noise. Do not invent details, extra limbs, props, text, a new expression or bold ink outlines. Keep the entire subject visible and at the same relative position. Uniform pure black (#000000) background exactly like Image 1; no checkerboard and no attempted transparency. No new scenery, no watermark. Faithful restoration takes priority over creative redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-50135001-198e-46d3-8a05-ac8919be69a4.png",
+      "originalFile": "aniu-original.jpg",
+      "hdFile": "aniu-hd-candidate.png"
+    },
+    {
+      "key": "jijimimi",
+      "name": "吉吉米米",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star3-1.jpg",
+      "swf": "star3.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Asset: high-resolution restoration of the original StarQ game character 吉吉米米. Image 1 is the exact low-resolution edit target. Image 2 is ONLY the user-approved rendering-style reference: borrow its soft polished pre-rendered 3D toy shading, never its character design or clothing. Restore Image 1 to a crisp high-resolution image at least 1080 pixels tall, preserving original aspect ratio and relative framing. There are TWO children in this single sprite. Preserve both full bodies and their exact relative positions: the left child has a golden forehead curl, the right child has purple headwear. Never merge them or add another character. Preserve source identity, pose, expression, silhouette, proportions, viewing angle, colors, clothing and every existing accessory. Remove blocky pixels and JPEG noise. Do not invent details, extra limbs, props, text, a new expression or bold ink outlines. Keep the entire subject visible and at the same relative position. Uniform pure black (#000000) background exactly like Image 1; no checkerboard and no attempted transparency. No new scenery, no watermark. Faithful restoration takes priority over creative redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-4e303314-b83a-4ec3-b742-00ac41df06c2.png",
+      "originalFile": "jijimimi-original.jpg",
+      "hdFile": "jijimimi-hd-candidate.png"
+    },
+    {
+      "key": "jiajia",
+      "name": "佳佳",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star4-1.jpg",
+      "swf": "star4.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Asset: high-resolution restoration of the original StarQ game character 佳佳. Image 1 is the exact low-resolution edit target. Image 2 is ONLY the user-approved rendering-style reference: borrow its soft polished pre-rendered 3D toy shading, never its character design or clothing. Restore Image 1 to a crisp high-resolution image at least 1080 pixels tall, preserving original aspect ratio and relative framing. Keep the teal crab identity, long eye stalks, pale rounded belly/body, large turquoise pincers, short feet and the exact spread of all limbs. Preserve source identity, pose, expression, silhouette, proportions, viewing angle, colors, clothing and every existing accessory. Remove blocky pixels and JPEG noise. Do not invent details, extra limbs, props, text, a new expression or bold ink outlines. Keep the entire subject visible and at the same relative position. Uniform pure black (#000000) background exactly like Image 1; no checkerboard and no attempted transparency. No new scenery, no watermark. Faithful restoration takes priority over creative redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-743a8459-bae0-4d5f-93f7-1f4c9008110c.png",
+      "originalFile": "jiajia-original.jpg",
+      "hdFile": "jiajia-hd-candidate.png"
+    },
+    {
+      "key": "weiwei",
+      "name": "薇薇",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star6-1.jpg",
+      "swf": "star6.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Image 1 is the exact original StarQ sprite of 薇薇 to restore. Image 2 is ONLY a reference for the user-approved soft polished pre-rendered 3D toy shading; NEVER copy its character identity or accessories. Produce a crisp high-resolution restoration of Image 1, at least 1080 pixels tall, with original aspect ratio, composition, pose, scale and proportions. Preserve the very large smooth pale blond bob haircut and heavy fringe, downward face, tiny white dress and visible limbs, and existing oval ground shadow. Do not change the hairstyle or invent facial details hidden by the fringe. Preserve facial identity, gaze, expression, clothing, colors and silhouette. Remove coarse pixels and JPEG artifacts conservatively. No invented accessories, new expression, extra limbs, text or bold ink outlines. Keep the full subject uncropped. Exactly uniform pure black background (#000000), no checkerboard, no attempted transparency, no additional scenery or watermark. Match the approved character set's shading while keeping this character distinct.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-a2fb3380-660c-4334-a7b0-acaaa6b992ab.png",
+      "originalFile": "weiwei-original.jpg",
+      "hdFile": "weiwei-hd-candidate.png"
+    },
+    {
+      "key": "dapai",
+      "name": "大牌",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star5-1.jpg",
+      "swf": "star5.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Image 1 is the exact original StarQ sprite of 大牌 to restore. Image 2 is ONLY a reference for the user-approved soft polished pre-rendered 3D toy shading; NEVER copy its character identity or accessories. Produce a crisp high-resolution restoration of Image 1, at least 1080 pixels tall, with original aspect ratio, composition, pose, scale and proportions. Preserve the bright red spiky lion mane, golden crown-like forehead ornament, pale face, original big eyes, small pale limbs and crouched pose. Do not replace this lion character with a sheep. Preserve facial identity, gaze, expression, clothing, colors and silhouette. Remove coarse pixels and JPEG artifacts conservatively. No invented accessories, new expression, extra limbs, text or bold ink outlines. Keep the full subject uncropped. Exactly uniform pure black background (#000000), no checkerboard, no attempted transparency, no additional scenery or watermark. Match the approved character set's shading while keeping this character distinct.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-170edf8b-ef59-44c7-8119-76914a40ffc7.png",
+      "originalFile": "dapai-original.jpg",
+      "hdFile": "dapai-hd-candidate.png"
+    },
+    {
+      "key": "dawei",
+      "name": "大尾",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star8-1.jpg",
+      "swf": "star8.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Image 1 is the exact original StarQ sprite of 大尾; restore this asset to high resolution with a height of at least 1080 pixels, preserving the original aspect ratio. Image 2 is ONLY the approved soft polished 3D toy rendering style, never a design template. Keep the small dark blue-violet character, oversized brown rounded hat, dark sunglasses, small side antenna/feather detail, short limbs and low crouched pose. Preserve the large shadowed face without inventing human eyes. Keep the original full-body pose, camera angle, head/body proportions, facial identity, expression, silhouette, palette, clothing and all existing accessories. Improve edges, shading smoothness and JPEG artifacts without redesigning. Exactly the original number of arms, hands and legs; no invented accessories, extra limbs or new facial expression. Complete subject, no cropping. Pure uniform black (#000000) background, no checkerboard or transparency attempt. No text, labels, new scenery, bold outlines or watermark.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-622ab4b5-3ead-4b26-9f8f-e665fe98114f.png",
+      "originalFile": "dawei-original.jpg",
+      "hdFile": "dawei-hd-candidate.png"
+    },
+    {
+      "key": "ajie",
+      "name": "阿杰",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star10-1.jpg",
+      "swf": "star10.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Image 1 is the exact original StarQ sprite of 阿杰; restore this asset to high resolution with a height of at least 1080 pixels, preserving the original aspect ratio. Image 2 is ONLY the approved soft polished 3D toy rendering style, never a design template. Keep the pale yellow goat-like head, small brown horns, curled forelock, CLOSED smiling eyes, small smile, white outfit, tucked arms and short legs, in exactly the original pose. Keep the original full-body pose, camera angle, head/body proportions, facial identity, expression, silhouette, palette, clothing and all existing accessories. Improve edges, shading smoothness and JPEG artifacts without redesigning. Exactly the original number of arms, hands and legs; no invented accessories, extra limbs or new facial expression. Complete subject, no cropping. Pure uniform black (#000000) background, no checkerboard or transparency attempt. No text, labels, new scenery, bold outlines or watermark.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-0d295814-78cd-4269-b545-f92a357de4ec.png",
+      "originalFile": "ajie-original.jpg",
+      "hdFile": "ajie-hd-candidate.png"
+    },
+    {
+      "key": "afei",
+      "name": "阿飞",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star9-1.jpg",
+      "swf": "star9.swf",
+      "tag": 1,
+      "prompt": "Use case: identity-preserve. Image 1 is the exact original StarQ sprite of 阿飞; restore this asset to high resolution with a height of at least 1080 pixels, preserving the original aspect ratio. Image 2 is ONLY the approved soft polished 3D toy rendering style, never a design template. Keep the boy-like character with tall bright red crest of hair, prominent rounded ears, cheerful CLOSED eyes and smile, red outfit, tiny feet and the original angled pose. Do not open his eyes or change the smile. Keep the original full-body pose, camera angle, head/body proportions, facial identity, expression, silhouette, palette, clothing and all existing accessories. Improve edges, shading smoothness and JPEG artifacts without redesigning. Exactly the original number of arms, hands and legs; no invented accessories, extra limbs or new facial expression. Complete subject, no cropping. Pure uniform black (#000000) background, no checkerboard or transparency attempt. No text, labels, new scenery, bold outlines or watermark.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-c204e27c-5fd3-4993-a357-dc792457d16d.png",
+      "originalFile": "afei-original.jpg",
+      "hdFile": "afei-hd-candidate.png"
+    },
+    {
+      "key": "nini",
+      "name": "妮妮",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star12-1.jpg",
+      "swf": "star12.swf",
+      "tag": 1,
+      "prompt": "Faithful HD restoration of the low-resolution original game character in image 1. Image 2 is rendering style reference only, do not copy its anatomy or accessories. Preserve image 1 exact character identity, pose, face expression, silhouette, colors, number of limbs and all accessories. Blue face, pink cap with cream fish resting on top, red side pieces and white/pink outfit. Soft polished prerendered 3D toy aesthetic with clean detailed edges. Preserve source framing and aspect ratio, full body, image height at least 1080 pixels. Solid pure black background, no checkerboard, no transparency, no text or new props.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-eb96abfc-236c-456c-940d-3d3de3628a16.png",
+      "originalFile": "nini-original.jpg",
+      "hdFile": "nini-hd-candidate.png"
+    },
+    {
+      "key": "guaika",
+      "name": "怪卡",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star11-1.jpg",
+      "swf": "star11.swf",
+      "tag": 1,
+      "prompt": "Faithful HD restoration of the low-resolution original game character in image 1. Image 2 is rendering style reference only, do not copy its anatomy or accessories. Preserve image 1 exact character identity, pose, face expression, silhouette, colors, number of limbs and all accessories. Blue domed robot head with glass helmet/antenna, big eyes, red bow and black torso. Soft polished prerendered 3D toy aesthetic with clean detailed edges. Preserve source framing and aspect ratio, full body, image height at least 1080 pixels. Solid pure black background, no checkerboard, no transparency, no text or new props.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-f55e0311-250a-4f7c-9014-3874286d4d49.png",
+      "originalFile": "guaika-original.jpg",
+      "hdFile": "guaika-hd-candidate.png"
+    },
+    {
+      "key": "shuaige",
+      "name": "帅戈",
+      "type": "character",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/star7-1.jpg",
+      "swf": "star7.swf",
+      "tag": 1,
+      "prompt": "Edit image 1 narrowly to correct anatomy. Remove the extra WHITE hand at the left edge above the yellow glove. There must be exactly TWO arms with exactly TWO yellow mitten hands total, one on each side, attached to the purple sleeves. Use image 2 original as anatomy reference. Preserve everything else: white flame hair, face, long nose, purple outfit, feet, pose, lighting, black background and high resolution. Do not add anything.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-3133b9a7-19d1-4de2-8bbe-fdab86a6b871.png",
+      "previousGenerated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-6df34de1-e7b4-495d-a466-80f72b5608ec.png",
+      "originalFile": "shuaige-original.jpg",
+      "hdFile": "shuaige-hd-candidate.png"
+    },
+    {
+      "key": "building-181",
+      "name": "建筑 181",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-181.jpg",
+      "swf": "play.swf",
+      "tag": 181,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-b93c0f64-bcbb-4623-b5f2-38c7bbdbd5dc.png",
+      "originalFile": "building-181-original.jpg",
+      "hdFile": "building-181-hd-candidate.png"
+    },
+    {
+      "key": "building-190",
+      "name": "建筑 190",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-190.jpg",
+      "swf": "play.swf",
+      "tag": 190,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-9c6b1a47-8665-4027-9b98-23adf7f04268.png",
+      "originalFile": "building-190-original.jpg",
+      "hdFile": "building-190-hd-candidate.png"
+    },
+    {
+      "key": "building-187",
+      "name": "建筑 187",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-187.jpg",
+      "swf": "play.swf",
+      "tag": 187,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-cbfb8d27-43b2-4e19-8e30-e0fd31241624.png",
+      "originalFile": "building-187-original.jpg",
+      "hdFile": "building-187-hd-candidate.png"
+    },
+    {
+      "key": "building-196",
+      "name": "建筑 196",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-196.jpg",
+      "swf": "play.swf",
+      "tag": 196,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-9c21b3d6-cb33-4705-951f-d651c009fd80.png",
+      "originalFile": "building-196-original.jpg",
+      "hdFile": "building-196-hd-candidate.png"
+    },
+    {
+      "key": "building-199",
+      "name": "建筑 199",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-199.jpg",
+      "swf": "play.swf",
+      "tag": 199,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-a8eb3dc9-7a18-4844-ba72-f51c675790e3.png",
+      "originalFile": "building-199-original.jpg",
+      "hdFile": "building-199-hd-candidate.png"
+    },
+    {
+      "key": "building-193",
+      "name": "建筑 193",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-193.jpg",
+      "swf": "play.swf",
+      "tag": 193,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-b6767871-1bec-4473-bf43-163bccd10867.png",
+      "originalFile": "building-193-original.jpg",
+      "hdFile": "building-193-hd-candidate.png"
+    },
+    {
+      "key": "building-205",
+      "name": "建筑 205",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-205.jpg",
+      "swf": "play.swf",
+      "tag": 205,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-731285dd-f38a-4e12-b011-282e2853f688.png",
+      "originalFile": "building-205-original.jpg",
+      "hdFile": "building-205-hd-candidate.png"
+    },
+    {
+      "key": "building-202",
+      "name": "建筑 202",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-202.jpg",
+      "swf": "play.swf",
+      "tag": 202,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-93fa10f7-9dfa-487b-81fe-a1e78614fa89.png",
+      "originalFile": "building-202-original.jpg",
+      "hdFile": "building-202-hd-candidate.png"
+    },
+    {
+      "key": "building-208",
+      "name": "建筑 208",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-208.jpg",
+      "swf": "play.swf",
+      "tag": 208,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-9f8d4893-3340-4c96-8865-e6fa078240c0.png",
+      "originalFile": "building-208-original.jpg",
+      "hdFile": "building-208-hd-candidate.png"
+    },
+    {
+      "key": "building-211",
+      "name": "建筑 211",
+      "type": "building",
+      "source": "/tmp/starcat-hd-inputs.U8Sv1h/play-211.jpg",
+      "swf": "play.swf",
+      "tag": 211,
+      "prompt": "Faithful high-resolution restoration of the original isometric game building in image 1. Image 2 provides only the approved polished prerendered 3D toy rendering style. Preserve image 1 building geometry, silhouette, all structures and ornaments, colors, camera angle, footprint and relative framing exactly. Retain every visible sign shape and decorative component without inventing lettering, doors or additional structures. Clean smooth edges and detailed soft lighting, retain original playful colors, no heavy outlines. Whole asset visible with margin, original aspect ratio, height at least 1080 pixels, pure solid BLACK background, no checkerboard or transparency. Do not redesign.",
+      "generated": "/Users/yanqs/.codex/generated_images/01a08614-1d0f-71d0-adda-d3f623ff0197/exec-ce36bfc1-ca72-40a5-9a0c-45075ebc484a.png",
+      "originalFile": "building-211-original.jpg",
+      "hdFile": "building-211-hd-candidate.png"
+    }
+  ]
+}
