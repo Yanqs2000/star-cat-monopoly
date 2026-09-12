@@ -13,11 +13,17 @@
     "test:watch": "vitest",
     "predev": "node scripts/prepare-runtime.mjs",
     "prebuild": "node scripts/prepare-runtime.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "dev:modern": "vite --mode modern --host 127.0.0.1",
+    "build:modern": "vue-tsc --noEmit && vite build --mode modern",
+    "preview:modern": "vite preview --mode modern --host 127.0.0.1 --port 4184",
+    "data:modern": "node scripts/build-modern-map.mjs",
+    "test:e2e:modern": "playwright test --config playwright.modern.config.ts"
   },
   "dependencies": {
     "@ruffle-rs/ruffle": "0.6.0",
     "pinia": "^4.0.3",
+    "pixi.js": "8.20.1",
     "three": "^0.186.0",
     "vue": "^3.5.42"
   },

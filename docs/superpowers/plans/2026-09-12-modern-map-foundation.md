@@ -1,6 +1,6 @@
 # 现代版原素材场景 Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. 本计划在当前会话逐任务执行，不要求另开任务或自动派发子代理。
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking. 本计划在当前会话逐任务执行，不要求另开任务或自动派发子代理。
 
 **Goal:** 交付不依赖SWF/Ruffle的现代二维场景，证明原地图、地块坐标与四向人物动画可用。
 
@@ -80,8 +80,8 @@ export interface MapSceneHandle {
 
 **Interfaces:** 消费 `docs/modernization/evidence/original-tables.json`；产出 `MapData`、`gridToScene(GridPoint): ScenePoint`、`sceneToGrid(ScenePoint): GridPoint`。
 
-- [ ] 从原表读取 `mapdate1.value` 与 `builddate1.value`，生成前检查源SWF哈希；只使用JSON解析，不eval反编译脚本。
-- [ ] 写行为测试并先运行确认失败。至少包括：
+- [x] 从原表读取 `mapdate1.value` 与 `builddate1.value`，生成前检查源SWF哈希；只使用JSON解析，不eval反编译脚本。
+- [x] 写行为测试并先运行确认失败。至少包括：
 
 ```ts
 expect(map.rows).toBe(43)
@@ -99,7 +99,7 @@ expect(gridToScene({ column: 6, row: 32 })).toEqual({ x: 336, y: 1280 })
 expect(sceneToGrid({ x: 336, y: 1280 })).toEqual({ column: 6, row: 32 })
 ```
 
-- [ ] 实现最小坐标转换，并将地图与像素保持分离：
+- [x] 实现最小坐标转换，并将地图与像素保持分离：
 
 ```ts
 export function gridToScene(p: GridPoint): ScenePoint {
@@ -110,8 +110,8 @@ export function sceneToGrid(p: ScenePoint): GridPoint {
 }
 ```
 
-- [ ] 住宅由 `type===16 && streetPosition%2===1` 的记录生成，配对 `id+1` 建筑格；验证56对的坐标都与原网格记录一致，失败时输出具体ID，不跳过。
-- [ ] `npm test -- tests/modern/map-data.spec.ts tests/modern/coordinates.spec.ts` 通过后记录数据摘要并提交本任务。不要为原表中的建筑区域占位坐标(0,0)自动推断位置。
+- [x] 住宅由 `type===16 && streetPosition%2===1` 的记录生成，配对 `id+1` 建筑格；验证56对的坐标都与原网格记录一致，失败时输出具体ID，不跳过。
+- [x] `npm test -- tests/modern/map-data.spec.ts tests/modern/coordinates.spec.ts` 通过后记录数据摘要并提交本任务。不要为原表中的建筑区域占位坐标(0,0)自动推断位置。
 
 ## Task 2：原素材提取与动画锚点
 
@@ -119,32 +119,32 @@ export function sceneToGrid(p: ScenePoint): GridPoint {
 
 **Interfaces:** 消费原版位图20和卷毛行走精灵130/308/488/664；产出地图纹理与 `WalkClip[]`。`offsetX/offsetY` 必须来自原精灵包围盒及放置变换，不能用每张图片中心代替。
 
-- [ ] 使用已校验的JPEXS 26.2.1导出地图及96张行走PNG，完整命令参考第一阶段证据说明。源SWF只读。
-- [ ] 增加可执行资源检查：PNG可解码、含透明通道、每方向24帧、帧顺序1…24、metadata可追溯到原ID，原文件哈希一致；先用缺失或乱序帧fixture确认检查会失败。
-- [ ] 从SWF的DefineSprite放置矩阵/形状边界导出帧偏移。RGBA解码与锚点示例验证必须覆盖脚底/影子，而不只验证宽高。
-- [ ] 用下列时间约定生成manifest，避免固定每次浏览器刷新切一帧：
+- [x] 使用已校验的JPEXS 26.2.1导出地图及96张行走PNG，完整命令参考第一阶段证据说明。源SWF只读。
+- [x] 增加可执行资源检查：PNG可解码、含透明通道、每方向24帧、帧顺序1…24、metadata可追溯到原ID，原文件哈希一致；先用缺失或乱序帧fixture确认检查会失败。
+- [x] 从SWF的DefineSprite放置矩阵/形状边界导出帧偏移。RGBA解码与锚点示例验证必须覆盖脚底/影子，而不只验证宽高。
+- [x] 用下列时间约定生成manifest，避免固定每次浏览器刷新切一帧：
 
 ```ts
 const sourceFrameDurationMs = 1000 / 30
 const frameIndex = Math.floor(elapsedMs / sourceFrameDurationMs) % clip.frames.length
 ```
 
-- [ ] 检查地图导出图的透明边缘与原播放器，若出现彩色细边/黑晕，定位JPEG/alpha预乘转换原因；不得用全图颜色阈值修复原素材。
-- [ ] 不打包未使用的5,309张位图，不生成新美术，不把提取工具放入发布目录。本批资源验证通过后提交。
+- [x] 检查地图导出图的透明边缘与原播放器，若出现彩色细边/黑晕，定位JPEG/alpha预乘转换原因；不得用全图颜色阈值修复原素材。
+- [x] 不打包未使用的5,309张位图，不生成新美术，不把提取工具放入发布目录。本批资源验证通过后提交。
 
 ## Task 3：独立现代场景
 
 **Files:** 创建 `MapScene.ts`、`WalkPreview.ts`、`ModernApp.vue`、`main.ts`、`modern.html`；修改 `vite.config.ts`、`package.json`。
 
-**Interfaces:** `createMapScene(host: HTMLElement, map: MapData, clips: WalkClip[]): Promise<MapSceneHandle>`；Vue挂载后创建，在卸载时调用destroy。
+**Interfaces:** `createMapScene(host: HTMLElement, map: MapData, manifest: AssetManifest, options: { signal: AbortSignal; onFrame: (frame: number) => void }): Promise<MapSceneHandle>`；Vue挂载后创建，在卸载时调用destroy。
 
-- [ ] 验证当前PixiJS 8发行信息及兼容性，然后用精确版本锁定依赖；保持现有Vue/Vite版本，除非有可复现的不兼容。
-- [ ] 增加modern构建模式：开发入口 `/modern.html`，生产输出 `dist-modern/`，modern模式的 `publicDir` 仅指向 `public/modern/`；原模式保留当前入口和构建行为。
-- [ ] 创建Pixi应用、单一world容器、地图sprite、住宅标记层和人物层。坐标全部由Task1函数提供；通过相机容器平移观察地图，不能改写地块坐标。
-- [ ] Vue容器固定800×600逻辑比例，根据可用窗口缩放；样本控制只包含标记开关、四方向动画、镜头定位和全屏，明确显示“场景验收，尚未接入完整对局”。
-- [ ] 用原map资源放置矩阵对齐底图和住宅坐标；用脚底锚点呈现人物。对照地块1、三个远端路口和一处魔法门，逐一保存截图证据。
-- [ ] 资源加载失败时显示具体文件与重试入口；卸载销毁ticker/纹理引用/事件，重新进入不重复创建画布。禁止在MapScene中加入金钱、骰子、产权或回合逻辑。
-- [ ] 完成相关检查后提交本任务，保留现代入口与原版入口供下一任务并排比较。
+- [x] 验证当前PixiJS 8发行信息及兼容性，然后用精确版本锁定依赖；保持现有Vue/Vite版本，除非有可复现的不兼容。
+- [x] 增加modern构建模式：开发入口 `/modern.html`，生产输出 `dist-modern/`，modern模式的 `publicDir` 仅指向 `public/modern/`；原模式保留当前入口和构建行为。
+- [x] 创建Pixi应用、单一world容器、地图sprite、住宅标记层和人物层。坐标全部由Task1函数提供；通过相机容器平移观察地图，不能改写地块坐标。
+- [x] Vue容器固定800×600逻辑比例，根据可用窗口缩放；样本控制只包含标记开关、四方向动画、镜头定位和全屏，明确显示“场景验收，尚未接入完整对局”。
+- [x] 用原map资源放置矩阵对齐底图和住宅坐标；用脚底锚点呈现人物。对照地块1、三个远端路口和一处魔法门，逐一保存截图证据。
+- [x] 资源加载失败时显示具体文件与重试入口；卸载销毁ticker/纹理引用/事件，重新进入不重复创建画布。禁止在MapScene中加入金钱、骰子、产权或回合逻辑。
+- [x] 完成相关检查后提交本任务，保留现代入口与原版入口供下一任务并排比较。
 
 ## Task 4：2A验收与交付
 
@@ -152,7 +152,7 @@ const frameIndex = Math.floor(elapsedMs / sourceFrameDurationMs) % clip.frames.l
 
 **Interfaces:** 消费Task3入口与manifest；产出可复核的测试和截图结果，不增加业务接口。
 
-- [ ] 浏览器检查现代入口无SWF/Ruffle请求、无错误日志、只存在一个canvas。可用以下网络断言，测试脚本走项目已有E2E运行方式，交互式检查优先当前Browser工具：
+- [x] 浏览器检查现代入口无SWF/Ruffle请求、无错误日志、只存在一个canvas。可用以下网络断言，测试脚本走项目已有E2E运行方式，交互式检查优先当前Browser工具：
 
 ```ts
 const requests: string[] = []
@@ -162,17 +162,17 @@ await expect(page.locator('canvas')).toHaveCount(1)
 expect(requests.some(url => /ruffle|\.swf(?:\?|$)/i.test(url))).toBe(false)
 ```
 
-- [ ] 检查四方向切换、相机定位、标记开关、全屏与反复进出；记录人物脚底和地块位置。没有相邻帧连续播放证据不能声明动画稳定。
-- [ ] 分别在普通桌面窗口和1920×1080全屏检查4∶3区域，显示缩放不能改变地图逻辑坐标。浏览器缩放/设备像素比不应裁掉地图控制。
-- [ ] 执行modern相关测试、类型检查、modern构建；检查 `dist-modern/` 没有SWF/WASM/Ruffle文件，原版入口的完整性测试仍通过。
-- [ ] 写2A验收记录：已完成/未完成、截图路径、测试结果、已知差异、提交SHA；提醒此批只完成现代场景。
-- [ ] 提交本批结果，交付本地链接并等待用户验收。未通过则仅修2A；通过后为2B的规则与回合写独立实施计划，不直接跳到全功能重写。
+- [x] 检查四方向切换、相机定位、标记开关、全屏与反复进出；记录人物脚底和地块位置。没有相邻帧连续播放证据不能声明动画稳定。
+- [x] 分别在普通桌面窗口和1920×1080全屏检查4∶3区域，显示缩放不能改变地图逻辑坐标。浏览器缩放/设备像素比不应裁掉地图控制。
+- [x] 执行modern相关测试、类型检查、modern构建；检查 `dist-modern/` 没有SWF/WASM/Ruffle文件，原版入口的完整性测试仍通过。
+- [x] 写2A验收记录：已完成/未完成、截图路径、测试结果、已知差异、提交SHA；提醒此批只完成现代场景。
+- [ ] 用户验收2A（本地结果和链接已交付，等待用户确认）。未通过则仅修2A；通过后为2B的规则与回合写独立实施计划，不直接跳到全功能重写。
 
 ## 自审清单
 
-- [ ] source-id、函数、类型、目录与测试引用一致。
-- [ ] 场景数据没有误把112住宅记录当成112块地。
-- [ ] 原图/动画转换与原播放器对齐，未生成替代造型。
-- [ ] 无业务逻辑混入Vue/Pixi回调，无旧引擎导入。
-- [ ] 新版发布依赖不包含Ruffle和SWF。
-- [ ] 2A退出条件与全项目目标之间的剩余工作已明确标记。
+- [x] source-id、函数、类型、目录与测试引用一致。
+- [x] 场景数据没有误把112住宅记录当成112块地。
+- [x] 原图/动画转换与原播放器对齐，未生成替代造型。
+- [x] 无业务逻辑混入Vue/Pixi回调，无旧引擎导入。
+- [x] 新版发布依赖不包含Ruffle和SWF。
+- [x] 2A退出条件与全项目目标之间的剩余工作已明确标记。

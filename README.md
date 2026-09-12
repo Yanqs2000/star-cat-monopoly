@@ -1,5 +1,27 @@
 # 星猫大富翁 · 原版兼容运行
 
+## 现代版 2A 场景验收
+
+独立现代入口已经使用 **Vue + TypeScript + PixiJS 8.20.1** 绘制原地图与卷毛四方向行走动画，不加载 SWF 或 Ruffle。当前只交付场景，尚无掷骰、买地、回合和服务器存档。
+
+```bash
+npm ci
+npm run dev:modern
+```
+
+打开 http://127.0.0.1:5184/modern.html 。可以切换定位和人物方向、暂停动画、拖拽地图、查看全图或全屏；全屏可用 Esc 或右上角按钮退出。
+
+```bash
+npm run build:modern
+npm run preview:modern
+npm test -- tests/modern
+npm run test:e2e:modern
+```
+
+生产预览为 http://127.0.0.1:4184/modern.html ，产物仅在 `dist-modern/`，不含原版运行库。原素材转换只在离线工具中读取SWF，发布产物为PNG/JSON。
+
+见 [2A 验收记录](docs/modernization/acceptance-2a.md)。以下原版对照入口与命令继续保留。
+
 现在的默认入口运行 **4399《星猫大富翁》的原始游戏文件**。人物、人物动画、地图、建筑、界面、音效和游戏逻辑由原程序提供，不再使用此前自绘的猫、方形棋盘或自编规则。
 
 工程仍然是 **Vite + Vue 3 + TypeScript**，通过本地 Ruffle WebAssembly 运行库兼容 Flash。它是原版运行工程，不是把原程序全部改写成 TypeScript，也不是用 Three.js 猜画原版。

@@ -2,6 +2,7 @@ import { defineConfig } from '@playwright/test'
 const externalURL = process.env.PLAYWRIGHT_BASE_URL
 export default defineConfig({
   testDir: './tests/e2e',
+  testIgnore: '**/modern-*.spec.ts',
   timeout: 90_000,
   expect: { timeout: 30_000 },
   workers: 1,
