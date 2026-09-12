@@ -29,7 +29,7 @@
 - Modify: src/modern/features/characters/assets.ts, tests/modern/assets.spec.ts
 - Create: public/modern/assets/characters/{2..12}/manifest.json and walking PNGs
 - Create: public/modern/assets/characters/index.json
-- Test: tests/modern-character-assets.test.ts (follow existing tests directory if named differently)
+- Test: tests/modern/character-assets.spec.ts
 
 **Interfaces:**
 - Existing `AssetManifest` schema is unchanged: version 1, map metadata and four clips, each `WalkClip` with original timed frames and offsetX/Y. Actual inspected source: star6 has20 frames/direction, star7 has16, all others24; preserve these counts and30fps periods. Parser accepts nonempty ordered frames and rejects empty/misordered frames; tests cover20/16-frame wrap behavior.
@@ -61,7 +61,7 @@ for (const item of index.characters) {
 **Files:**
 - Create: scripts/build-modern-rules.mjs, src/modern/data/rules.json
 - Create: src/modern/features/game/types.ts, random.ts, setup.ts, turns.ts
-- Test: tests/modern-turns.test.ts (use existing test directory convention)
+- Test: tests/modern/turns.spec.ts (additional focused .spec.ts tests may live in the same directory)
 
 **Interfaces:**
 - `Direction = 1 | 2 | 3 | 4`; position uses existing `GridPoint`.
@@ -97,16 +97,20 @@ expect(landed.phase).toBe('landed')
 - Modify: src/modern/ModernApp.vue, src/modern/features/map/MapScene.ts
 - Create: src/modern/features/game/GamePanel.vue, controller.ts
 - Modify if needed: src/modern/features/characters/WalkPreview.ts (small lifecycle/pose methods only)
-- Test: tests/modern-game-controller.test.ts, e2e/modern-turns.spec.ts; retain existing 2A E2E coverage.
+- Test: tests/modern/game-controller.spec.ts, tests/e2e/modern-turns.spec.ts; retain existing 2A E2E coverage.
 - Docs: docs/modernization/acceptance-2b.md, README.md, completed plan checkboxes.
 
 **Interfaces:**
 - Consume Task2 state/functions and Task1 manifest index.
 - Keep `createMapScene` existing 2A contract valid; extend handle to render a set of player poses and movement interpolation, camera follow/focus independent of authoritative position. Additional resource loading supports abort and destroys private textures; no shared global asset cache.
+- Draw order follows player position (source depth order prioritizes row then column); only moving player walks, others hold a pose. Scene inspection is separate and may loop continuously. Do not recreate Pixi/texture objects every animation frame.
+- Preserve walking animation across same-facing pose updates; do not call a reset-to-frame1 method on every render tick. Per-character frame counts remain20/16/24, not universally24.
 - `controller.ts` owns sequential timer scheduling: one roll/step/next-turn at a time; injectable scheduler and step duration permit headless fast/slow tests. Disposing/restarting aborts pending actions. Browser uses ordinary seeded game setup and random dice; tests can drive the pure controller with fixed commands without adding test globals to production.
 - Initial screen offers12 original character previews/names and clear selected order, 1..4 human players; AI supplement explanation; Start. Fifth selection rolls oldest out as original. Loading errors permit retry. Restart goes through visible return-to-selection action and cancels timers.
+- Start creates one pending game/seed. A failed texture load and retry keep that same lineup and state; only explicit new game recreates setup. Start controller timers only after the scene finishes loading. Selection previews use the exporter convention relative to each manifest (`walk/down-right/1.png`), avoiding fetching all12 full manifests; load only the four chosen characters' manifests when starting the game.
 - In game, current player/controller, last die, remaining steps, round and readable position/turn history; human roll button (Up arrow also supported when no input control focused), AI auto-roll and automatic next turn after landing presentation. Speed control. No human roll duringAI/motion. Pause freezes both pending progression and animation; camera all-map/fullscreen controls remain available. Active player is visually identified, all four characters visible in their actual positions when in view; no wrong-character placeholders.
 - Preserve2A scene inspection behind explicit scene-inspection mode/tab so old direction/location controls cannot move game state. Fullscreen game controls stay accessible inside fullscreen container. Clear notice: 2B movement trial, no purchase or special effects yet.
+- Game overview/manual camera drag must remain usable while turns run; don't reset overview zoom on every state update. Provide explicit focus/follow-current-player action to return to the active player.
 
 - [ ] Write failing controller tests: two commands cannot double-consume; sequence human→3AI→human; switching speed during movement produces same final game/rng state; cancel/restart leaves no old callbacks mutating new game. Use fake timers at scheduler boundary, assert actual resulting game states.
 - [ ] Write failing browser tests for selected humans and AI counts, primary roll action, movement/turn trace, restart and missing selected character asset retry. Existing 2A tests can navigate scene-inspection mode explicitly; do not weaken their pause/fullscreen/retry assertions.
