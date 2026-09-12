@@ -1,6 +1,6 @@
 # 2B 开局与回合：实施前证据
 
-2026-09-12：用户回复“嗯，可以，验收通过”，2A（5997b7e）已通过，开始2B。当前处于规则核对阶段，尚未编写2B实现或测试。
+2026-09-12：用户回复“嗯，可以，验收通过”，2A（5997b7e）已通过，开始2B。22:47按用户指定时间恢复，实施计划见 ../superpowers/plans/2026-09-12-modern-turns.md。
 
 ## 本批范围
 
@@ -18,7 +18,15 @@
 - `frame_4/DoAction.as` 的 `goload_pg`：慢速一格16次位移，快速8次；运动耗时应与规则状态分离。
 - 同文件 `selfveer_pg`：使用 `builddate[格ID][6]` 的方向数组，排除当前方向的反向（映射3、4、1、2），在剩余方向中随机选择。人类与AI都适用，不是人工选路。
 - `frame_5/DoAction.as:1807–1884`：先到下一格，按该格路口规则改向，再扣一步。因此最后一步落在路口时同样更新朝向。银行/商店等特殊经过事件在2B明确未接入。
-- `frame_6/DoAction.as:67–68`：初始玩家/资金表已提取，是否在开局其他流程被覆写仍需在实现前定向核对。
+- `frame_6/DoAction.as:67–68`：初始四位玩家现金100000、存款100000；选人菜单只改名字/AI/角色ID/出生区；`frame_4` 的 `checkMoney` 仅将非数字资产恢复为 money_1st 初值。2B不执行其他资金事件。
+
+## 轮转与路网补充核验
+
+- `goback` 在 `tenor_id == 4` 中递增pid，大于znum时置1；找到未破产玩家即break。本批固定四名未破产玩家，按1→2→3→4→1轮转；破产/日历属于3D。
+- B-02不能按反编译语法判断为“回合永远不推进”：原pcode条件是 `Greater; Not; Not; If exit`。未定义znmu导致数值比较异常时，其实际行为不同于直接翻译的JS `<=`。独立126字节SWF探针保留相同条件指令，运行本机Ruffle0.6.0，trace得到 `B02: entered loop body`。探针原始hex与结果见 [b02-runtime-probe.json](evidence/b02-runtime-probe.json)。这是条件指令级验证，不是已验证所有破产分支；不宣称已修复原版B-02。
+- 原理交叉参考：[Ruffle AVM1执行器](https://github.com/ruffle-rs/ruffle/blob/master/core/src/avm1/activation.rs) 的 action_greater/action_not，以及 [traceObserver API](https://ruffle.rs/js-docs/master/interfaces/Player.PlayerV1.html)。探针第一次在load前设置observer未收到输出；调整为load后设置observer，再运行才获得上述结果。原版SWF未修改。
+- 从四出生区的八种姿态出发，用原表的方向顺序穷举合法分支：308个可达位置/朝向状态，146个道路格，零条路径进入无对应记录的景物格。2B生成器/测试应覆盖这一路网闭包，避免只验证住宅地块。
+- 原版实际试玩补证（本机Chrome、4173原版入口，未改SWF）：选择卷毛/阿牛/吉吉&米米/佳佳四人，开局显示现金100000、存款100000；按上箭头掷骰，卷毛落到魔法门，按右箭头放弃后，当前角色实际切换为阿牛。截图 `/tmp/starcat-original-turn-start.png`、`/tmp/starcat-original-turn-land.png`、`/tmp/starcat-original-turn-next.png` 已人工检查。证明正常回合确实推进，不将B-02误报为无条件卡死；本次只验证第一位→第二位，未覆盖淘汰分支。
 
 ## 下一步
 

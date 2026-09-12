@@ -26,15 +26,16 @@
 
 **Files:**
 - Modify: scripts/OriginalSpriteBounds.java, scripts/export-modern-assets.py
+- Modify: src/modern/features/characters/assets.ts, tests/modern/assets.spec.ts
 - Create: public/modern/assets/characters/{2..12}/manifest.json and walking PNGs
 - Create: public/modern/assets/characters/index.json
 - Test: tests/modern-character-assets.test.ts (follow existing tests directory if named differently)
 
 **Interfaces:**
-- Existing `AssetManifest` is unchanged: version 1, map metadata and four clips, each `WalkClip` with 24 timed frames and offsetX/Y.
+- Existing `AssetManifest` schema is unchanged: version 1, map metadata and four clips, each `WalkClip` with original timed frames and offsetX/Y. Actual inspected source: star6 has20 frames/direction, star7 has16, all others24; preserve these counts and30fps periods. Parser accepts nonempty ordered frames and rejects empty/misordered frames; tests cover20/16-frame wrap behavior.
 - Existing assets/manifest.json remains star1/2A compatible.
 - Index JSON: `{version:1,characters:[{id:1,name:"卷毛",manifestUrl:"assets/manifest.json"},...,{id:12,name:"妮妮",manifestUrl:"assets/characters/12/manifest.json"}]}`. IDs match starN.swf, names from phase-2b-evidence source (吉吉&米米, 帅戈, 怪卡).
-- Character manifests retain map metadata and source hashes for existing parser compatibility, with character PNG URLs unique to their id. UI fetches only the four selected manifests. No parser modifications in this task.
+- Character manifests retain map metadata and source hashes, with character PNG URLs unique to their id. UI fetches only the four selected manifests. Parser validation is generalized in this task without changing the schema; star1 stays24 frames and old2A timings remain.
 
 - [ ] Write a data integration test that loads the index, parses every manifest using production `parseAssetManifest`, reads every referenced PNG, checks source PNG header dimensions positive, unique id coverage and all original file hashes. Tests must catch missing/repeated character paths rather than test constant text only. Record RED before generating resources.
 
@@ -71,6 +72,7 @@ for (const item of index.characters) {
 - `nextTurn(state: GameState): GameState` only accepts landed, increments active index modulo4 and round after fourth. No monetary or calendar side effects.
 - `rules.json`: source hash, junction entries keyed by id with ordered direction arrays, road cell entries with coordinate/id/kind/name, spawn regions and initial funds derived from evidence tables. Preserve original direction order. No copying whole financial/card dataset into browser.
 - `random.ts`: deterministic stateful PRNG over uint32, seeded once; functions return value and nextState. Seed0 must be valid. Render code never draws from this RNG. Reproducibility is a modern contract, not a claim of reproducing Flash PRNG internals.
+- Preserve random draws at every junction, including a corner with only one allowed exit (`random(1)` in original), and at last unassigned hometown selection. Initial cash/deposit are each100000. Controller has verified original loop condition bytecode enters body even with undefined `znmu`; four nonbankrupt players advance in order, no undefined-variable logic copied.
 
 - [ ] Before implementation inspect source evidence for initial funds and round transition; record B-02 resolution/provisional boundary in evidence doc via controller. Branch implementation must not reproduce an undefined-variable hang.
 - [ ] Write failing tests with independent literal paths. Example manual fixture from born region1 direction1 at(34,8): arrives(35,9) id221; allowed [1,2,3] excluding3 gives[1,2]; selecting first reaches(36,10) on next step. Also region3 variant direction3 at(6,34): one step reaches(5,33) id225; exclude1 leaves[3,4]. Test final-step direction update, six steps not five/seven, illegal double-roll, step after landed, invalid fixedDie and duplicate/empty selections, four turn wrap, state immutability, equal command streams with equal seed.

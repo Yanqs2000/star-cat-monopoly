@@ -1,0 +1,20 @@
+{
+  "runtime": "local Ruffle 0.6.0",
+  "trace": [
+    "B02: entered loop body"
+  ],
+  "metadata": {
+    "width": 800,
+    "height": 600,
+    "frameRate": 30,
+    "numFrames": 1,
+    "swfVersion": 8,
+    "isActionScript3": false,
+    "uncompressedLength": 126
+  },
+  "condition": "Push 1, znmu; GetVariable; Push 1; Subtract; Greater; Not; Not; If exit",
+  "source": "frame_5/DoAction.pcode:5705-5712",
+  "probeSha256": "eb1e449c3d97702ae403ed3e08406ea84cf47d6a153dabaee368cacad029635c",
+  "probeSwfHex": "465753087e000000780007d00000177000001e01003f035f000000960b000701000000007a6e6d75001c96050007010000000b6712129d02002100961800004230323a20656e7465726564206c6f6f7020626f647900269902001c00961800004230323a20736b6970706564206c6f6f7020626f64790026070040000000",
+  "interpretation": "With undefined znmu, this actual opcode sequence enters the loop body. Decompiling to JavaScript-like <= would falsely skip it. This probe does not validate bankruptcy or all-eliminated behavior."
+}
