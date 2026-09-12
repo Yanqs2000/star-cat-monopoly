@@ -1,0 +1,12 @@
+[
+  {
+    "source": ".analysis-cache/pcode/scripts/frame_3/DoAction.pcode",
+    "line": 1792,
+    "excerpt": "1789: InitArray\n1790: Push -10000, \"倒卖文物被查封，损失10000元\", 1, 3\n1791: InitArray\n1792: Push 1000, \"在慈善活动中献爱心，捐款1000元\", 1, 3\n1793: InitArray\n1794: Push -3000, \"存折被人冒领，损失3000元\", 1, 3\n1795: InitArray\n1796: Push 100, \"书中自有黄金屋，读明日便利书，获100奖券\", 2, 3\n1797: InitArray\n1798: Push 100, \"参加明日便利书知识问答，获100奖券奖励\", 2, 3\n1799: InitArray"
+  },
+  {
+    "source": ".analysis-cache/pcode/scripts/frame_5/DoAction.pcode",
+    "line": 5705,
+    "excerpt": "5702: Push 1\n5703: StoreRegister 2\n5704: Pop\n5705: loc5cec:Push register2, \"znmu\"\n5706: GetVariable\n5707: Push 1\n5708: Subtract\n5709: Greater\n5710: Not\n5711: Not\n5712: If loc5d75"
+  }
+]
