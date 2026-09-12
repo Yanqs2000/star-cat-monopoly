@@ -29,7 +29,7 @@ export function parseAssetManifest(value: unknown): AssetManifest {
   const clips = raw.clips.map((value, index) => {
     const clip = record(value)
     const facing = FACINGS[index]!
-    if (clip.facing !== facing || !finite(clip.sourceSpriteId) || !Array.isArray(clip.frames) || clip.frames.length !== 24) throw new Error(`${facing} 动作帧数量错误`)
+    if (clip.facing !== facing || !finite(clip.sourceSpriteId) || !Array.isArray(clip.frames) || clip.frames.length === 0) throw new Error(`${facing} 动作帧数量错误`)
     const frames = clip.frames.map((value, frameIndex): FrameAsset => {
       const f = record(value)
       if (f.sourceFrame !== frameIndex + 1 || !assetPath(f.url) || !finite(f.durationMs) || f.durationMs <= 0 || !finite(f.offsetX) || !finite(f.offsetY)) throw new Error(`${facing} 第${frameIndex + 1}帧的顺序或定义错误`)

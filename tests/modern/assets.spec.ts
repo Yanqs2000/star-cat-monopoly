@@ -1,6 +1,15 @@
 import { describe, it, expect } from 'vitest'
 import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { frameAtElapsed, parseAssetManifest } from '../../src/modern/features/characters/assets'
+
+const readManifest = () => JSON.parse(readFileSync('public/modern/assets/manifest.json', 'utf8'))
+
+function manifestWithFrames(count: number) {
+  const manifest = readManifest()
+  for (const clip of manifest.clips) clip.frames = clip.frames.slice(0, count)
+  return manifest
+}
 
 describe('原素材转换产物', () => {
   it('发布的场景资源具备原图偏移和四方向24帧，而非仅一张人物图', () => {
@@ -20,5 +29,28 @@ describe('原素材转换产物', () => {
         expect(Number.isFinite(frame.offsetX) && Number.isFinite(frame.offsetY)).toBe(true)
       }
     }
+  })
+
+  it.each([20, 16])('解析原版实际的 %i 帧动作并按其周期循环', (frameCount) => {
+    const clip = parseAssetManifest(manifestWithFrames(frameCount)).clips[0]!
+    const periodMs = frameCount * (1000 / 30)
+
+    expect(clip.frames).toHaveLength(frameCount)
+    expect(frameAtElapsed(clip, periodMs - 1).sourceFrame).toBe(frameCount)
+    expect(frameAtElapsed(clip, periodMs + 1).sourceFrame).toBe(1)
+  })
+
+  it('拒绝缺少方向、空动作和不连续的原始帧序号', () => {
+    const missingClip = manifestWithFrames(20)
+    missingClip.clips.pop()
+    expect(() => parseAssetManifest(missingClip)).toThrow('缺少四方向动作')
+
+    const emptyClip = manifestWithFrames(20)
+    emptyClip.clips[0].frames = []
+    expect(() => parseAssetManifest(emptyClip)).toThrow('down-right')
+
+    const wrongOrder = manifestWithFrames(20)
+    wrongOrder.clips[0].frames[1].sourceFrame = 3
+    expect(() => parseAssetManifest(wrongOrder)).toThrow('down-right 第2帧')
   })
 })

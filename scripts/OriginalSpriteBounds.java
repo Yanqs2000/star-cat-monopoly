@@ -9,21 +9,23 @@ class OriginalSpriteBounds {
     public static void main(String[] args) throws Exception {
         try (var input = new FileInputStream(args[0])) {
             var swf = new SWF(input, true);
-            int[] ids = {130, 308, 488, 664};
             int[] rootFrames = {5, 35, 65, 95};
             System.out.print("[");
-            for (int i = 0; i < ids.length; i++) {
-                var sprite = (DefineSpriteTag) swf.getCharacter(ids[i]);
-                RECT bounds = sprite.getRectWithStrokes();
+            for (int i = 0; i < rootFrames.length; i++) {
                 DepthState state = swf.getTimeline().getDepthState(rootFrames[i], 1);
-                if (state.characterId != ids[i]) throw new IllegalStateException("Unexpected root frame mapping");
+                if (state == null) throw new IllegalStateException("Missing root placement at frame " + rootFrames[i]);
+                int id = state.characterId;
+                var character = swf.getCharacter(id);
+                if (!(character instanceof DefineSpriteTag))
+                    throw new IllegalStateException("Root placement is not a sprite at frame " + rootFrames[i]);
+                var sprite = (DefineSpriteTag) character;
+                RECT bounds = sprite.getRectWithStrokes();
                 var m = state.matrix;
-                if (Math.abs(m.getScaleXFloat() - 1) > 0.0001 || Math.abs(m.getScaleYFloat() - 1) > 0.0001 || m.hasRotate)
-                    throw new IllegalStateException("Preview expects translation-only root placement");
                 if (i > 0) System.out.print(",");
                 System.out.printf(java.util.Locale.ROOT,
-                    "{\"id\":%d,\"frames\":%d,\"boundsTwips\":[%d,%d,%d,%d],\"translateTwips\":[%d,%d]}",
-                    ids[i], sprite.frameCount, bounds.Xmin, bounds.Xmax, bounds.Ymin, bounds.Ymax, m.translateX, m.translateY);
+                    "{\"rootFrame\":%d,\"id\":%d,\"frames\":%d,\"frameRate\":%.8f,\"boundsTwips\":[%d,%d,%d,%d],\"translateTwips\":[%d,%d],\"scale\":[%.8f,%.8f],\"hasRotate\":%s}",
+                    rootFrames[i], id, sprite.frameCount, swf.frameRate, bounds.Xmin, bounds.Xmax, bounds.Ymin, bounds.Ymax,
+                    m.translateX, m.translateY, m.getScaleXFloat(), m.getScaleYFloat(), Boolean.toString(m.hasRotate));
             }
             System.out.println("]");
         }
