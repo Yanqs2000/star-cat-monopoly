@@ -24,10 +24,9 @@
 
 浏览器规格先因旧2A页面缺少“选择参赛角色”而失败；最终生产预览的2A+2B E2E为8项全部通过，覆盖选人/AI数量、第五选择、掷骰/AI/第二轮、失败重试同一阵容、↑、对局画布与步数暂停、全屏拒绝错误，以及2A暂停/全屏/Escape/重试。
 
-2026-09-13复核修复后的精确结果：控制器8项通过；`vue-tsc --noEmit`通过；modern构建736个模块成功；`http://127.0.0.1:4184`生产预览E2E 8项通过。
+2026-09-13复核修复后的精确结果：`npm test`为13个文件、97项全部通过；其中控制器8项通过。`vue-tsc --noEmit`通过；`npm run build:modern`构建736个模块成功；`PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporter=line`生产预览E2E 8项通过。
 
-最终全量命令与生产预览结果见任务报告：
-`.superpowers/sdd/2026-09-12-modern-turns/task-3-report.md`。
+原版`npm run build`在界面完成时通过（17个模块）；此后修复只涉及现代控制器、现代界面和测试，原版入口/资源未改。最终`dist-modern`文件检查没有SWF、WASM或Ruffle文件。
 
 ## 实机截图
 
@@ -36,4 +35,8 @@
 - `/tmp/starcat-2b-gameplay-fullscreen-1920x1080.png`：1920×1080全屏对局，画布与完整控制栏可见。
 - `/tmp/starcat-2b-four-humans-selection.png` 和 `/tmp/starcat-2b-four-humans-round2.png`：另一次四名人类实机回放，含20帧薇薇、16帧帅戈及第二轮结果；`/tmp/starcat-2b-four-humans-result.json` 留有步骤、请求和错误记录。
 
-这些截图已逐张实际查看。两次页面检查都只请求四名已入局角色的完整manifest，没有SWF/Ruffle请求；具体console/network结果和已知浏览器警告记录在任务报告。
+这些截图已逐张实际查看。两次页面检查都只请求四名已入局角色的完整manifest，没有SWF/Ruffle请求、失败资源响应或页面脚本错误。Chrome SwiftShader在截图读取像素时输出性能提示，未发现应用错误。
+
+## 保留的原始动作差异
+
+薇薇每方向20帧、帅戈16帧，其他角色24帧，均保留原30fps节奏，没有强行补成统一时长。这个选择以实际SWF时间轴为依据；若以后更换源资源，需要重新核对并导出对应动作。
