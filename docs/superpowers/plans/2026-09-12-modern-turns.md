@@ -119,4 +119,4 @@ expect(landed.phase).toBe('landed')
 - [x] Run `npm test`, `npm run build:modern`, `npm run build` and `PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporter=line` after serving current dist-modern. Capture final evidence without repeatedly rerunning unchanged checks.
 - [x] Commit owned files and write acceptance evidence; implementation commit b605a7a,96 unit tests and7 production E2E passed.
 - [x] Complete broad2B review and scoped fixes: final code614601b, no open review findings. Handoff records saved; automatic continuation pauses for user acceptance.
-- [ ] User2B acceptance. Keep the branch local; do not enter2C before approval.
+- [x] User2B acceptance: “没什么问题，进入下一阶段”。2C独立计划为2026-09-13-modern-property.md，继续保留本地分支。
