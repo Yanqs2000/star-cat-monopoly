@@ -92,3 +92,32 @@ $ PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporte
 ## 范围与关注项
 
 本批没有财务、买地、租金、特殊事件、日期、破产或存档。四名角色在地图不同区域时，相机视口只会显示当前区域；玩家面板保留四人的实际坐标，使用全图或依次跟随检查。当前行走素材不是原版完整待机时间轴，静止首帧限制已在验收文档明确。
+
+## 提交后范围复核修复
+
+`/root/review_game_integration`指出三个限定问题，均在当前代码上先重现再修复：
+
+1. 自定义调度器可合法返回句柄`0`，原`if (!pending?.handle)`错误地把它当作没有句柄。新增ZeroHandleScheduler规格同时执行切速和暂停，RED时`clearCount`实际0、预期1；改为`pending?.handle === undefined`后GREEN，切速和暂停分别清除句柄0。
+2. 对局已载入时拒绝`requestFullscreen()`只写入不可见的载入错误。Playwright注入拒绝Promise后，RED为找不到`role=alert`；新增独立`fullscreenError`及场景内可见提示后GREEN。
+3. 将耐久验收记录的控制器数量从旧的6更新为最终8，并把当前验证数字直接写入`acceptance-2b.md`。
+
+复核修复后的命令：
+
+```text
+$ npm test -- --run tests/modern/game-controller.spec.ts
+Test Files 1 passed (1)
+Tests 8 passed (8)
+
+$ npm run typecheck
+vue-tsc --noEmit
+exit 0
+
+$ npm run build:modern
+736 modules transformed
+built successfully
+
+$ PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporter=line
+8 passed (19.3s)
+```
+
+原版入口和资源未改，此轮按复核范围没有重复运行原版构建。

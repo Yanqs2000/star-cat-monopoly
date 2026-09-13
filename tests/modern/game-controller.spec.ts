@@ -31,6 +31,31 @@ class FakeScheduler implements GameScheduler {
   pendingCount(): number { return this.jobs.size }
 }
 
+class ZeroHandleScheduler implements GameScheduler {
+  private time = 0
+  private job: { at: number; callback: () => void } | undefined
+  clearCount = 0
+
+  now = () => this.time
+  setTimeout = (callback: () => void, delayMs: number) => {
+    this.job = { at: this.time + delayMs, callback }
+    return 0
+  }
+  clearTimeout = (id: unknown) => {
+    expect(id).toBe(0)
+    this.clearCount += 1
+    this.job = undefined
+  }
+  advance(ms: number): void {
+    this.time += ms
+    if (this.job && this.job.at <= this.time) {
+      const callback = this.job.callback
+      this.job = undefined
+      callback()
+    }
+  }
+}
+
 function driveToHumanTurn(controller: ReturnType<typeof createGameController>, scheduler: FakeScheduler): void {
   for (let guard = 0; guard < 100 && controller.state.activePlayerIndex !== 0; guard += 1) scheduler.advance(1_000)
 }
@@ -130,6 +155,21 @@ describe('现代对局控制器', () => {
     expect(controller.state.remainingSteps).toBe(1)
     scheduler.advance(1)
     expect(controller.state).toMatchObject({ phase: 'landed', remainingSteps: 0 })
+  })
+
+  it('调度器返回句柄0时切速和暂停仍取消已安排的步骤', () => {
+    const scheduler = new ZeroHandleScheduler()
+    const controller = createGameController(createGame([1, 2, 3, 4], 7), {
+      scheduler,
+      stepDurationMs: 100,
+    })
+    controller.roll(1)
+    controller.setSpeed(2)
+    expect(scheduler.clearCount).toBe(1)
+    controller.setPaused(true)
+    expect(scheduler.clearCount).toBe(2)
+    scheduler.advance(1_000)
+    expect(controller.state).toMatchObject({ phase: 'moving', remainingSteps: 1 })
   })
 
   it('重开和销毁使旧回调无法修改新对局', () => {

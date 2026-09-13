@@ -84,7 +84,7 @@ export function createGameController(initialState: GameState, options: GameContr
     armPending()
   }
   const preserveRemaining = () => {
-    if (!pending?.handle) return
+    if (pending?.handle === undefined) return
     scheduler.clearTimeout(pending.handle)
     pending.handle = undefined
     pending.remainingBaseMs = Math.max(0, pending.remainingBaseMs - (scheduler.now() - pending.startedAt) * pending.speed)

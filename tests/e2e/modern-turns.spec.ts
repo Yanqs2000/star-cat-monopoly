@@ -102,3 +102,15 @@ test('上方向键触发人类掷骰，暂停时冻结回合进度', async ({ pa
   await page.waitForTimeout(180)
   expect((await page.locator('canvas').screenshot()).equals(pausedCanvas)).toBe(false)
 })
+
+test('浏览器拒绝全屏时在已载入对局中显示错误', async ({ page }) => {
+  await page.addInitScript(() => {
+    HTMLElement.prototype.requestFullscreen = () => Promise.reject(new Error('fullscreen denied'))
+  })
+  await page.goto('/modern.html')
+  await choose(page, [1, 2, 3, 4])
+  await page.getByRole('button', { name: '开始对局' }).click()
+  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await page.getByRole('button', { name: '全屏', exact: true }).click()
+  await expect(page.getByRole('alert')).toHaveText('当前浏览器未能进入全屏。')
+})
