@@ -6,6 +6,7 @@ test('现代场景独立加载原素材，方向和地点控制可用', async ({
   page.on('request', request => requests.push(request.url()))
   page.on('pageerror', error => errors.push(error.message))
   await page.goto('/modern.html')
+  await page.getByRole('button', { name: '场景检查' }).click()
   await expect(page.getByRole('heading', { name: '星猫大富翁 · 现代场景' })).toBeVisible({ timeout: 2000 })
   await expect(page.getByRole('status')).toContainText('场景已载入')
   await expect(page.locator('canvas')).toHaveCount(1)
@@ -30,6 +31,7 @@ test('现代场景独立加载原素材，方向和地点控制可用', async ({
 test('纹理缺失会说明文件，恢复后重试只保留一个画布', async ({ page }) => {
   await page.route('**/assets/map.png', route => route.fulfill({ status: 404, body: '' }))
   await page.goto('/modern.html')
+  await page.getByRole('button', { name: '场景检查' }).click()
   await expect(page.getByRole('alert')).toContainText('assets/map.png')
   await page.unroute('**/assets/map.png')
   await page.getByRole('button', { name: '重试' }).click()
@@ -43,6 +45,7 @@ test('纹理缺失会说明文件，恢复后重试只保留一个画布', async
 test('1920×1080窗口保持4比3画面和完整控制栏', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 })
   await page.goto('/modern.html')
+  await page.getByRole('button', { name: '场景检查' }).click()
   await expect(page.getByRole('status')).toContainText('场景已载入')
   const box = (await page.locator('canvas').boundingBox())!
   expect(box.width / box.height).toBeCloseTo(4 / 3, 2)
