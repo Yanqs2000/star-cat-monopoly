@@ -35,6 +35,9 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
   await expect(page.locator('canvas')).toHaveCount(1)
   await expect(page.getByTestId('player-list').getByRole('listitem')).toHaveCount(4)
   await expect(page.getByTestId('current-player')).toContainText('卷毛')
+  await expect(page.getByTestId('last-roll')).toHaveText('骰子 —')
+  await expect(page.locator('.path strong')).toHaveText('本回合路径')
+  await expect(page.locator('.path span')).toHaveText('尚未掷骰')
 
   await page.getByLabel('速度').selectOption('2')
   await page.getByRole('button', { name: '掷骰' }).click()
@@ -43,6 +46,9 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
   await expect(page.getByTestId('turn-history')).toContainText('AI', { timeout: 12_000 })
   await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 20_000 })
   await expect(page.getByRole('button', { name: '掷骰' })).toBeEnabled()
+  await expect(page.getByTestId('last-roll')).toHaveText(/骰子 [1-6]（上一回合）/)
+  await expect(page.locator('.path strong')).toHaveText('上一回合路径')
+  await expect(page.locator('.path span')).not.toHaveText('尚未掷骰')
   await page.getByRole('button', { name: '掷骰' }).hover()
   expect(await page.getByRole('button', { name: '掷骰' }).evaluate(element => {
     const style = getComputedStyle(element)

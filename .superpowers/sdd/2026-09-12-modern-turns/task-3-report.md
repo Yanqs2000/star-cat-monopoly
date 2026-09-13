@@ -121,3 +121,29 @@ $ PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporte
 ```
 
 原版入口和资源未改，此轮按复核范围没有重复运行原版构建。
+
+## 最终宽审查小修
+
+宽审查发现`nextTurn`按规则契约保留上一回合的`lastRoll`和`turnPath`，但面板在新玩家等待掷骰时仍把它们标作本回合数据。浏览器规格先确认新局显示“骰子 — / 本回合路径 / 尚未掷骰”，再等待第2轮人类；RED为期望`骰子 [1-6]（上一回合）`、实际`骰子 3`。GamePanel只按`phase === 'awaiting-roll' && lastRoll !== null`切换显示标签，没有清空或改动核心状态。
+
+GREEN：
+
+```text
+$ npm run test:e2e:modern -- tests/e2e/modern-turns.spec.ts -g '开始后掷骰' --reporter=line
+1 passed (11.6s)
+```
+
+最终覆盖检查：
+
+```text
+$ npm run test:e2e:modern -- tests/e2e/modern-turns.spec.ts --reporter=line
+5 passed (17.5s)
+
+$ npm run typecheck
+vue-tsc --noEmit
+exit 0
+
+$ npm run build:modern
+736 modules transformed
+built successfully
+```

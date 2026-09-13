@@ -19,6 +19,7 @@ const emit = defineEmits<{
 }>()
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
+const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' && props.game.lastRoll !== null)
 const phaseText = computed(() => ({
   'awaiting-roll': active.value.controller === 'human' ? '等待人类掷骰' : 'AI 正在思考',
   moving: '逐格移动中',
@@ -34,7 +35,7 @@ const phaseText = computed(() => ({
     </div>
     <div class="turn-card">
       <strong data-testid="current-player">{{ active.name }} · {{ active.controller === 'human' ? '人类' : 'AI' }}</strong>
-      <span data-testid="last-roll">骰子 {{ game.lastRoll ?? '—' }}</span>
+      <span data-testid="last-roll">骰子 {{ game.lastRoll ?? '—' }}{{ showingPreviousTurn ? '（上一回合）' : '' }}</span>
       <span data-testid="remaining-steps">剩余 {{ game.remainingSteps }} 步</span>
       <span>位置 {{ active.position.column }}, {{ active.position.row }}</span>
     </div>
@@ -59,7 +60,7 @@ const phaseText = computed(() => ({
         <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : 'AI' }} · {{ player.position.column }},{{ player.position.row }}</small></span>
       </li>
     </ol>
-    <div class="path"><strong>本回合路径</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
+    <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>回合记录</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>
     <p class="scope">当前仅验证开局、骰子、普通路口和移动；尚无买地、资金变动或特殊事件。</p>
   </aside>
