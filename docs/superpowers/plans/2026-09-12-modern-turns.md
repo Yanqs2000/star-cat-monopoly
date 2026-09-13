@@ -37,7 +37,7 @@
 - Index JSON: `{version:1,characters:[{id:1,name:"卷毛",manifestUrl:"assets/manifest.json"},...,{id:12,name:"妮妮",manifestUrl:"assets/characters/12/manifest.json"}]}`. IDs match starN.swf, names from phase-2b-evidence source (吉吉&米米, 帅戈, 怪卡).
 - Character manifests retain map metadata and source hashes, with character PNG URLs unique to their id. UI fetches only the four selected manifests. Parser validation is generalized in this task without changing the schema; star1 stays24 frames and old2A timings remain.
 
-- [ ] Write a data integration test that loads the index, parses every manifest using production `parseAssetManifest`, reads every referenced PNG, checks source PNG header dimensions positive, unique id coverage and all original file hashes. Tests must catch missing/repeated character paths rather than test constant text only. Record RED before generating resources.
+- [x] Write a data integration test that loads the index, parses every manifest using production `parseAssetManifest`, reads every referenced PNG, checks source PNG header dimensions positive, unique id coverage and all original file hashes. Tests must catch missing/repeated character paths rather than test constant text only. Record RED before generating resources.
 
 ```ts
 const index = JSON.parse(readFileSync('public/modern/assets/characters/index.json','utf8'))
@@ -51,10 +51,10 @@ for (const item of index.characters) {
 }
 ```
 
-- [ ] Generalize offline metadata extraction to inspect each SWF's actual root frames 5,35,65,95 (zero-based) rather than assuming star1 sprite IDs. Verify translations/scales and frame durations against actual data; if any differ, report evidence before forcing them into star1 layout. Preserve the existing star1 IDs/output.
-- [ ] Export all remaining characters with original transparency and per-character registration offsets. Validate RGBA bounds and alpha using Pillow. Run with `FFDEC_JAR=/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar` and `FFDEC_JAVA=/opt/homebrew/opt/openjdk/bin/java`, Python `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`.
-- [ ] Run focused test then full unit suite once; inspect representative contact sheet of all12 and four directions to catch gross missing/wrong sprite output. Store screenshots in /tmp. Record commands, RED/GREEN and source evidence in task report.
-- [ ] Commit only owned files with `feat: export all original character walking clips`.
+- [x] Generalize offline metadata extraction to inspect each SWF's actual root frames 5,35,65,95 (zero-based) rather than assuming star1 sprite IDs. Verify translations/scales and frame durations against actual data; if any differ, report evidence before forcing them into star1 layout. Preserve the existing star1 IDs/output.
+- [x] Export all remaining characters with original transparency and per-character registration offsets. Validate RGBA bounds and alpha using Pillow. Run with `FFDEC_JAR=/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar` and `FFDEC_JAVA=/opt/homebrew/opt/openjdk/bin/java`, Python `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`.
+- [x] Run focused test then full unit suite once; inspect representative contact sheet of all12 and four directions to catch gross missing/wrong sprite output. Store screenshots in /tmp. Record commands, RED/GREEN and source evidence in task report.
+- [x] Commit only owned files with `feat: export all original character walking clips`.
 
 ### Task 2: 独立开局与移动规则
 
@@ -74,8 +74,8 @@ for (const item of index.characters) {
 - `random.ts`: deterministic stateful PRNG over uint32, seeded once; functions return value and nextState. Seed0 must be valid. Render code never draws from this RNG. Reproducibility is a modern contract, not a claim of reproducing Flash PRNG internals.
 - Preserve random draws at every junction, including a corner with only one allowed exit (`random(1)` in original), and at last unassigned hometown selection. Initial cash/deposit are each100000. Controller has verified original loop condition bytecode enters body even with undefined `znmu`; four nonbankrupt players advance in order, no undefined-variable logic copied.
 
-- [ ] Before implementation inspect source evidence for initial funds and round transition; record B-02 resolution/provisional boundary in evidence doc via controller. Branch implementation must not reproduce an undefined-variable hang.
-- [ ] Write failing tests with independent literal paths. Example manual fixture from born region1 direction1 at(34,8): arrives(35,9) id221; allowed [1,2,3] excluding3 gives[1,2]; selecting first reaches(36,10) on next step. Also region3 variant direction3 at(6,34): one step reaches(5,33) id225; exclude1 leaves[3,4]. Test final-step direction update, six steps not five/seven, illegal double-roll, step after landed, invalid fixedDie and duplicate/empty selections, four turn wrap, state immutability, equal command streams with equal seed.
+- [x] Before implementation inspect source evidence for initial funds and round transition; record B-02 resolution/provisional boundary in evidence doc via controller. Branch implementation must not reproduce an undefined-variable hang.
+- [x] Write failing tests with independent literal paths. Example manual fixture from born region1 direction1 at(34,8): arrives(35,9) id221; allowed [1,2,3] excluding3 gives[1,2]; selecting first reaches(36,10) on next step. Also region3 variant direction3 at(6,34): one step reaches(5,33) id225; exclude1 leaves[3,4]. Test final-step direction update, six steps not five/seven, illegal double-roll, step after landed, invalid fixedDie and duplicate/empty selections, four turn wrap, state immutability, equal command streams with equal seed.
 
 ```ts
 const s = createGame([1,2,3,4], 1)
@@ -87,9 +87,9 @@ expect(landed.remainingSteps).toBe(0)
 expect(landed.phase).toBe('landed')
 ```
 
-- [ ] Implement minimal generator and pure transitions; errors leave original state untouched. Keep game types DOM/Pixi-free. If supporting deterministic branching test needs a small exported RNG function, test literal seeded outputs plus behavior; no browser debug globals.
-- [ ] Run focused tests. Exercise every reachable road heading starting from all8 spawn variants to detect missing topology/dead paths, using ordered allowed transitions, not random soak testing. Fixtures must assert no walking into scenery cells.
-- [ ] Run unit suite once and commit owned files `feat: implement deterministic setup and movement turns`.
+- [x] Implement minimal generator and pure transitions; errors leave original state untouched. Keep game types DOM/Pixi-free. If supporting deterministic branching test needs a small exported RNG function, test literal seeded outputs plus behavior; no browser debug globals.
+- [x] Run focused tests. Exercise every reachable road heading starting from all8 spawn variants to detect missing topology/dead paths, using ordered allowed transitions, not random soak testing. Fixtures must assert no walking into scenery cells.
+- [x] Run unit suite once and commit owned files `feat: implement deterministic setup and movement turns`.
 
 ### Task 3: 可操作开局、回合与真实场景验证
 
@@ -117,4 +117,6 @@ expect(landed.phase).toBe('landed')
 - [x] Implement minimal components/controller/renderer extensions. Use transition events to interpolate one grid step, then commit arrival before scheduling next. Sprite animation delta has no authority over rules.
 - [x] Run focused controller and browser tests against actual dev server. Inspect desktop1440x1000 and fullscreen1920x1080 screenshots; include12-character selection and a visible movement/AI state. Verify console/network has no app errors or SWF/Ruffle requests. Fix reproduced UI bugs with a failing regression test before patch.
 - [x] Run `npm test`, `npm run build:modern`, `npm run build` and `PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporter=line` after serving current dist-modern. Capture final evidence without repeatedly rerunning unchanged checks.
-- [x] Commit owned files, write acceptance evidence, broad2B review and scoped fixes, leave branch local and await user2B acceptance. Update parent resume-state and pause heartbeat upon delivery.
+- [x] Commit owned files and write acceptance evidence; implementation commit b605a7a,96 unit tests and7 production E2E passed.
+- [ ] Complete broad2B review and scoped fixes, then update parent resume-state and pause heartbeat upon delivery.
+- [ ] User2B acceptance. Keep the branch local; do not enter2C before approval.
