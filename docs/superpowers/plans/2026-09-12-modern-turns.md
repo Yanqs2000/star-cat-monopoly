@@ -118,5 +118,5 @@ expect(landed.phase).toBe('landed')
 - [x] Run focused controller and browser tests against actual dev server. Inspect desktop1440x1000 and fullscreen1920x1080 screenshots; include12-character selection and a visible movement/AI state. Verify console/network has no app errors or SWF/Ruffle requests. Fix reproduced UI bugs with a failing regression test before patch.
 - [x] Run `npm test`, `npm run build:modern`, `npm run build` and `PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184 npm run test:e2e:modern -- --reporter=line` after serving current dist-modern. Capture final evidence without repeatedly rerunning unchanged checks.
 - [x] Commit owned files and write acceptance evidence; implementation commit b605a7a,96 unit tests and7 production E2E passed.
-- [ ] Complete broad2B review and scoped fixes, then update parent resume-state and pause heartbeat upon delivery.
+- [x] Complete broad2B review and scoped fixes: final code614601b, no open review findings. Handoff records saved; automatic continuation pauses for user acceptance.
 - [ ] User2B acceptance. Keep the branch local; do not enter2C before approval.
