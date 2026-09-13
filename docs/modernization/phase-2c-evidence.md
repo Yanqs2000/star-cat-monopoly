@@ -15,6 +15,8 @@
 - `DefineSprite_1556_yesno_AI/frame_40/DoAction.as`直接设`yesno_id=1`，即普通买地/升级默认确认，再受同一现金检查约束。不要沿用旧src/core的猜测性AI阈值。
 - `frame_5/DoAction.as` 开局地块牌使用symbol`brand`（839），放在住宅配对建筑格，朝向frame1..4。
 - `end_pg16`：symbol`house`（3401）放在建筑格，显示帧`(facing-1)*10+level+1`；子实例`land`停在玩家席位pid的帧。2C等级0..5、席位1..4。导出时必须固定子时间轴的地主颜色，不能任其随建筑帧变化。
+- 实际JPEXS26.2.1时间轴探针：brand839为4帧，boundsTwips `[-8,1152,-515,745]`；house3401为40帧，boundsTwips `[-360,1440,-1373,1107]`。house各相关帧的depth2是名为land的3147，平移`[337,557]`twips。3147为10帧，前四帧分别显示3140/3142/3144/3146，后六帧空白；它是地主标记，不能假定是整块底板颜色。原始直接导出仅用作参考，目录`/tmp/starcat-property-reference`。
+- 原始直接导出房屋frame1..6的对照图已实际查看：标记从灰→黄→红→粉变化，后两级消失，说明直接按父时间轴导出不能代表同一地主。联系图`/tmp/starcat-property-reference-contact.png`。Task2须冻结正确子帧后重新导出，不能把此参考图直接用于游戏。
 
 ## 资产显示边界
 
