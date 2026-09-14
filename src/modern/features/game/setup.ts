@@ -1,5 +1,6 @@
 import rules from '../../data/rules.json'
 import { randomInt } from './random'
+import { createPropertyLedger } from './property'
 import type { Direction, GameState, Hometown, PlayerController } from './types'
 
 const CHARACTER_NAMES = [
@@ -65,5 +66,8 @@ export function createGame(humanCharacterIds: number[], seed: number): GameState
     lastRoll: null,
     rngState,
     turnPath: [],
+    properties: createPropertyLedger(),
+    propertyOffer: null,
+    lastPropertyEvent: null,
   }
 }

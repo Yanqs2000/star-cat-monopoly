@@ -43,6 +43,16 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
   await page.getByRole('button', { name: '掷骰' }).click()
   await expect(page.getByTestId('last-roll')).not.toHaveText('骰子 —')
   await expect(page.getByTestId('turn-history')).toContainText('卷毛 掷出')
+  await expect.poll(async () => {
+    if (await page.getByTestId('property-panel').isVisible()) return 'property'
+    if ((await page.getByTestId('turn-history').textContent())?.includes('AI')) return 'ai'
+    return 'moving'
+  }, { timeout: 15_000 }).not.toBe('moving')
+  if (await page.getByTestId('property-panel').isVisible()) {
+    await page.getByTestId('property-accept').click()
+    await expect(page.getByTestId('property-result')).toBeVisible()
+    await page.getByTestId('property-acknowledge').click()
+  }
   await expect(page.getByTestId('turn-history')).toContainText('AI', { timeout: 12_000 })
   await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 20_000 })
   await expect(page.getByRole('button', { name: '掷骰' })).toBeEnabled()

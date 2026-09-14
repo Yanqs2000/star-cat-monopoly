@@ -1,5 +1,7 @@
 # 2C 买地收租 Implementation Plan
 
+实施状态（2026-09-14）：三个任务的本地实现及技术验证已完成，详见 `docs/modernization/acceptance-2c.md`；独立 scoped/broad review 待主任务执行，之后等待用户验收，不进入 3A。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development or superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** 原住宅地的购买、升级、同街道租金与资产显示接入已验收回合场景。
@@ -37,7 +39,7 @@
 - `applyPropertyOffer(snapshot:EconomySnapshot,playerId:number,parcelId:number,choice:'accept'|'decline'):{players:PlayerState[];properties:PropertyLedger;event:PropertyEvent;insolvent:boolean}`. Recompute offer internally, not caller-suppliedprice. Purchasepreservesexistinggrade; upgrade+1; declineonlybuy/upgrade; rentcan'tdecline. Rent transfer may makenegativedeposit; flag cash+deposit<=0. No mutation of inputs.
 - `getPropertySummary(properties:PropertyLedger,playerId:number):{landCount:number;buildingCount:number}`; buildings countgrades>0, no inventednetworth.
 
-- [ ] Write focused failing specs with literal mapfixtures1/3same street,9differentstreet; derive prices from evidence before fixing literals.
+- [x] Write focused failing specs with literal mapfixtures1/3same street,9differentstreet; derive prices from evidence before fixing literals.
 
 ```ts
 const properties=createPropertyLedger()
@@ -45,9 +47,9 @@ properties[1]={ownerId:1,level:0};properties[3]={ownerId:1,level:1}
 expect(calculateStreetRent(properties,1,1)).toBe(1800)
 ```
 
-- [ ] CaptureRED before implementation. Cover1500buy (100000→98500cash,depositunchanged), decline, cash1499/deposit100000reject, upgrade0→1cost100 and4→5cost500, grade5nocharge, differentowner/street exclusion, cash100+deposit2000 pays1800→cash0/deposit300 and landlorddeposit+1800, exhaustedfundsnegativebalance+conservation, inputimmutability, ownedparceloffersupgradeinstead ofpurchase, sourcepositionlookup. Testbusinessresults, not constants alone. Genericapply executes currentoffer; duplicate UI commands are phase-gated inTask3, not by addingtransactionhistory tothismodule.
-- [ ] Implement the pure module using src/modern/data/map.json as parcel catalog; no general economy framework or speculative fields.
-- [ ] Run focused GREEN, then unit suite/typecheck once. Commit owned files and report exact interfaces/RED/GREEN at this plan's SDD task report.
+- [x] CaptureRED before implementation. Cover1500buy (100000→98500cash,depositunchanged), decline, cash1499/deposit100000reject, upgrade0→1cost100 and4→5cost500, grade5nocharge, differentowner/street exclusion, cash100+deposit2000 pays1800→cash0/deposit300 and landlorddeposit+1800, exhaustedfundsnegativebalance+conservation, inputimmutability, ownedparceloffersupgradeinstead ofpurchase, sourcepositionlookup. Testbusinessresults, not constants alone. Genericapply executes currentoffer; duplicate UI commands are phase-gated inTask3, not by addingtransactionhistory tothismodule.
+- [x] Implement the pure module using src/modern/data/map.json as parcel catalog; no general economy framework or speculative fields.
+- [x] Run focused GREEN, then unit suite/typecheck once. Commit owned files and report exact interfaces/RED/GREEN at this plan's SDD task report.
 
 ### Task 2: 原版地块牌与房屋等级素材
 
@@ -55,11 +57,11 @@ expect(calculateStreetRent(properties,1,1)).toBe(1800)
 
 **Interfaces:** `PropertyAssetManifest {version:1;sourceSha256:string;sellSigns:Array<{facing:1|2|3|4;url:string;offsetX:number;offsetY:number}>;houses:Array<{ownerId:1|2|3|4;facing:1|2|3|4;level:0|1|2|3|4|5;url:string;offsetX:number;offsetY:number}>}`; runtime `parsePropertyAssets(unknown):PropertyAssetManifest` validates full4sign/96house unique coverage, source hash/stringpaths and finiteoffsets. Runtime uses PNG/JSON only.
 
-- [ ] Write failing real-file/parser specs for 4signs+96owner/direction/grade variants, existingplay.swf hash, RGBA PNGs and duplicate/missingvariants. CaptureRED.
-- [ ] Inspect actualsymbol839 brand and3401 house, including namedchildland (inventory lists3147). Source selectedhouseframe is `(facing-1)*10+level+1`, ownerlandframe1..4. Use JPEXS API on an in-memory/offlinecopy to freeze land at the correctownerframe before rendering eachhouse variant; do not let childplayhead cyclewithgrade. Inspect actualtimeline layers/transforms instead of guessing ownershipcolors. Java API may be inspected viajavap; originalSWFneverrewritten.
-- [ ] Export originalnativeRGBA, with offsetsfromsymbolboundsmin/20 at attachMovie origin (no star-character roottranslation). Keep exporter/tool/hash metadata. Export signs4directions and housesallgrades/owners. Verifyownercolor ongrade0 andgeometry/alphaforallframes. No AI-image edits.
-- [ ] Use existingverifiedjar `/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar`, Java `/opt/homebrew/opt/openjdk/bin/java`, Python/Pillow `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`. Keep scratchfiles underignored.analysis-cache, notpublic.
-- [ ] Run GREEN and a contact-sheet visualcheck showing4owners and6grades withdirectioncoverage; report exactsourceframes/bounds. Commitownedfiles. Don't claim constructioneffect/idle/fullartimplemented.
+- [x] Write failing real-file/parser specs for 4signs+96owner/direction/grade variants, existingplay.swf hash, RGBA PNGs and duplicate/missingvariants. CaptureRED.
+- [x] Inspect actualsymbol839 brand and3401 house, including namedchildland (inventory lists3147). Source selectedhouseframe is `(facing-1)*10+level+1`, ownerlandframe1..4. Use JPEXS API on an in-memory/offlinecopy to freeze land at the correctownerframe before rendering eachhouse variant; do not let childplayhead cyclewithgrade. Inspect actualtimeline layers/transforms instead of guessing ownershipcolors. Java API may be inspected viajavap; originalSWFneverrewritten.
+- [x] Export originalnativeRGBA, with offsetsfromsymbolboundsmin/20 at attachMovie origin (no star-character roottranslation). Keep exporter/tool/hash metadata. Export signs4directions and housesallgrades/owners. Verifyownercolor ongrade0 andgeometry/alphaforallframes. No AI-image edits.
+- [x] Use existingverifiedjar `/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar`, Java `/opt/homebrew/opt/openjdk/bin/java`, Python/Pillow `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`. Keep scratchfiles underignored.analysis-cache, notpublic.
+- [x] Run GREEN and a contact-sheet visualcheck showing4owners and6grades withdirectioncoverage; report exactsourceframes/bounds. Commitownedfiles. Don't claim constructioneffect/idle/fullartimplemented.
 
 ### Task 3: 交易阶段、AI与可操作地产界面
 
@@ -74,8 +76,8 @@ expect(calculateStreetRent(properties,1,1)).toBe(1800)
 - GamePanel showscash/deposit andland/buildingcounts, propertylistwithlevels; distinguishcurrentvspriortransaction. No misleadingnetassetestimate.
 - MapScene loadspropertymanifest+PNGs privately, placesunownedbrandorownedhouseatParcel.buildingCell plusnativeoffset. Sharedentitydepth sortspropertyspritesandactors bysource row/columnorder; showownerandgrade clearly. Updateonstatechange, notnewtexturesperframe; noGLrules. Staticgradechangeonly, constructionFXnotin2C.
 
-- [ ] Write RED controller tests withliteralvalidfixtures: landingbuywaitsbeforeturnadvance; purchase/decline/insufficient; rentcash/depositbothsides; upgrade/max; AIpurchaseandupgrade; repeatedclickonlyonecharge; pause/restartolddecisioncannotmutatenewgame; exhaustedfundsstop. Existingtimer tests mayuse nonpropertylandingfixtures to retaintheiroriginalpurpose.
-- [ ] Write actualVuecomponent tests ifneeded fordecision/resultaffordances, usingrealcomponentandcorestates. No mockedpropertypanel orproductiondebug globals. BrowserflowmustactuallybuyonehumanparcelandobserveAItransactioninround; showcurrentfunds/ownership/buildingchange. Separateunitfixtureproof fromactualbrowserproof inreport.
-- [ ] Implement minimalcontroller/renderer/UI and preserveexisting2Bscene-inspection access onlyfromselection. CaptureGREEN afterRED.
-- [ ] VerifyinrealChrome1440×1000 and1920×1080fullscreen: select→roll→buy/decline→result→AI→human, money/landcounts/PNGchanges, pause/errorretry. Usefixedcrypto seed atPlaywrightboundary ifneededforreproducibility; nofixed-die playUI orhiddenstatecomparison. Verifyresource404retrypropertyassetsandnoSWF/Ruffle requests.
-- [ ] Runfocusedtests, fullunitonce, modernbuild/typecheck, originalbuildifaffected, productionmodernE2Eagainst4184. Recordcommands/exactcounts/screenshots and sourcecomparisonlimits. Commitownedchanges, complete scoped/broadreviews withfocusedfixes, preserveworktree foruser2Cacceptance; no3A.
+- [x] Write RED controller tests withliteralvalidfixtures: landingbuywaitsbeforeturnadvance; purchase/decline/insufficient; rentcash/depositbothsides; upgrade/max; AIpurchaseandupgrade; repeatedclickonlyonecharge; pause/restartolddecisioncannotmutatenewgame; exhaustedfundsstop. Existingtimer tests mayuse nonpropertylandingfixtures to retaintheiroriginalpurpose.
+- [x] Write actualVuecomponent tests ifneeded fordecision/resultaffordances, usingrealcomponentandcorestates. No mockedpropertypanel orproductiondebug globals. BrowserflowmustactuallybuyonehumanparcelandobserveAItransactioninround; showcurrentfunds/ownership/buildingchange. Separateunitfixtureproof fromactualbrowserproof inreport.
+- [x] Implement minimalcontroller/renderer/UI and preserveexisting2Bscene-inspection access onlyfromselection. CaptureGREEN afterRED.
+- [x] VerifyinrealChrome1440×1000 and1920×1080fullscreen: select→roll→buy/decline→result→AI→human, money/landcounts/PNGchanges, pause/errorretry. Usefixedcrypto seed atPlaywrightboundary ifneededforreproducibility; nofixed-die playUI orhiddenstatecomparison. Verifyresource404retrypropertyassetsandnoSWF/Ruffle requests.
+- [ ] Runfocusedtests, fullunitonce, modernbuild/typecheck, originalbuildifaffected, productionmodernE2Eagainst4184. Recordcommands/exactcounts/screenshots and sourcecomparisonlimits. Commitownedchanges, complete scoped/broadreviews withfocusedfixes, preserveworktree foruser2Cacceptance; no3A. (Implementation and verification complete; scoped/broad review pending with main task.)

@@ -3,7 +3,9 @@ import { WalkPreview } from '../characters/WalkPreview'
 import type { AssetManifest, Facing } from '../characters/assets'
 import type { PlayerTransition } from '../game/controller'
 import type { Direction, PlayerState } from '../game/types'
+import type { PropertyLedger } from '../game/property'
 import { gridToScene } from './coordinates'
+import { parsePropertyAssets } from './property-assets'
 import type { GridPoint, MapData } from './types'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
@@ -18,6 +20,7 @@ export interface MapSceneHandle {
   setFacing(facing: Facing): void
   setPlaying(playing: boolean): void
   setPlayers(players: PlayerPose[]): void
+  setProperties(properties: PropertyLedger): void
   transitionPlayer(transition: PlayerTransition | null): void
   setPaused(paused: boolean): void
   setSpeed(speed: number): void
@@ -61,7 +64,14 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     await app.init({ width: 800, height: 600, resolution: Math.min(devicePixelRatio || 1, 2), autoDensity: true, antialias: true, background: '#66ccff', preference: 'webgl', autoStart: false, sharedTicker: false })
     initialized = true
     const manifests = options.playerManifests?.map(item => item.manifest) ?? [manifest]
-    const urls = [...new Set([manifest.map.url, ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url)))])]
+    const propertyManifest = options.playerManifests ? await (async () => {
+      const url = 'assets/properties/manifest.json'
+      const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
+      if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
+      return parsePropertyAssets(await response.json())
+    })() : undefined
+    const urls = [...new Set([manifest.map.url, ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+      ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? [])])]
     const results = await Promise.allSettled(urls.map(async url => {
       try {
         const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
@@ -81,11 +91,11 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const viewport = new Container()
     const world = new Container()
     const markers = new Container()
-    const playersLayer = new Container()
-    playersLayer.sortableChildren = true
+    const entities = new Container()
+    entities.sortableChildren = true
     const background = new Sprite(textures.get(manifest.map.url)!)
     background.position.set(manifest.map.offsetX, manifest.map.offsetY)
-    world.addChild(background, markers, playersLayer)
+    world.addChild(background, markers, entities)
     for (const parcel of map.parcels) {
       const road = gridToScene(parcel.roadCell)
       const building = gridToScene(parcel.buildingCell)
@@ -97,13 +107,25 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     }
 
     const inspectionWalker = options.playerManifests ? undefined : new WalkPreview(manifest.clips, textures)
-    if (inspectionWalker) playersLayer.addChild(inspectionWalker.view)
+    if (inspectionWalker) entities.addChild(inspectionWalker.view)
+    const properties = propertyManifest ? map.parcels.map(parcel => {
+      const view = new Container()
+      const position = gridToScene(parcel.buildingCell)
+      view.position.set(position.x, position.y)
+      view.zIndex = parcel.buildingCell.row * 100 + parcel.buildingCell.column
+      const image = new Sprite()
+      const badge = new Text({ text: '', style: { fontSize: 12, fontFamily: 'system-ui', fontWeight: 'bold', fill: '#fff', stroke: { color: '#12303b', width: 3 } } })
+      badge.position.set(8, -17)
+      view.addChild(image, badge)
+      entities.addChild(view)
+      return { parcel, image, badge }
+    }) : []
     const actors = (options.playerManifests ?? []).map(({ manifest: playerManifest }) => {
       const view = new Container()
       const active = new Graphics().circle(0, -4, 18).fill({ color: '#ffe18a', alpha: 0.28 }).stroke({ color: '#ffe18a', width: 2 })
       const walker = new WalkPreview(playerManifest.clips, textures)
       view.addChild(active, walker.view)
-      playersLayer.addChild(view)
+      entities.addChild(view)
       return { view, active, walker }
     })
     viewport.addChild(world)
@@ -145,6 +167,18 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         actor.active.visible = pose.active
         actor.walker.setPose(FACING_BY_DIRECTION[pose.direction], pose.moving)
       })
+    }
+    const setProperties = (ledger: PropertyLedger) => {
+      if (!propertyManifest) return
+      for (const { parcel, image, badge } of properties) {
+        const state = ledger[parcel.id]!
+        const asset = state.ownerId === null
+          ? propertyManifest.sellSigns.find(item => item.facing === parcel.facing)!
+          : propertyManifest.houses.find(item => item.ownerId === state.ownerId && item.facing === parcel.facing && item.level === state.level)!
+        image.texture = textures.get(asset.url)!
+        image.position.set(asset.offsetX, asset.offsetY)
+        badge.text = state.ownerId === null ? '' : `P${state.ownerId} · ${state.level}级`
+      }
     }
     let previousFrame = -1
     const tick = (ticker: Ticker) => {
@@ -199,7 +233,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, setPlayers,
+      focus, follow, resize, setPlayers, setProperties,
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },
       setSpeed: value => { speed = value },

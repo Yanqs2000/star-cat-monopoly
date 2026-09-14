@@ -1,4 +1,5 @@
 import { nextTurn, roll as rollState, step } from './turns'
+import { applyPropertyOffer, findParcelAt, getPropertyOffer } from './property'
 import type { Direction, GameState } from './types'
 import type { GridPoint } from '../map/types'
 
@@ -30,6 +31,8 @@ export interface GameController {
   readonly paused: boolean
   readonly speed: number
   roll(fixedDie?: number): boolean
+  decideProperty(choice: 'accept' | 'decline'): boolean
+  acknowledgeProperty(): boolean
   setPaused(paused: boolean): void
   setSpeed(speed: number): void
   restart(state: GameState): void
@@ -106,13 +109,49 @@ export function createGameController(initialState: GameState, options: GameContr
       options.onTransition?.(null)
       notify()
       if (current.phase === 'moving') startStep()
-      else schedule(finishTurn, landingDurationMs)
+      else handleLanding()
     }, stepDurationMs)
   }
   const performRoll = (fixedDie?: number) => {
-    current = rollState(current, fixedDie)
+    current = { ...rollState(current, fixedDie), lastPropertyEvent: null, propertyOffer: null }
     notify()
     startStep()
+  }
+  const handleLanding = () => {
+    const player = current.players[current.activePlayerIndex]!
+    const parcel = findParcelAt(player.position)
+    if (!parcel) {
+      schedule(finishTurn, landingDurationMs)
+      return
+    }
+    const offer = getPropertyOffer(current, player.id, parcel.id)
+    current = { ...current, phase: 'property-decision', propertyOffer: offer }
+    notify()
+    if (offer.kind === 'max-level') {
+      settleProperty('accept')
+    } else if (player.controller === 'ai') {
+      schedule(() => settleProperty('accept'), aiThinkDurationMs)
+    }
+  }
+  const settleProperty = (choice: 'accept' | 'decline') => {
+    const player = current.players[current.activePlayerIndex]!
+    const offer = current.propertyOffer!
+    const result = applyPropertyOffer(current, player.id, offer.parcelId, choice)
+    current = { ...current, players: result.players, properties: result.properties,
+      lastPropertyEvent: result.event, phase: 'property-result' }
+    notify()
+    if (player.controller === 'ai') schedule(acknowledgeResult, aiThinkDurationMs)
+  }
+  const acknowledgeResult = () => {
+    const player = current.players[current.activePlayerIndex]!
+    if (current.lastPropertyEvent?.kind === 'rent-paid' && player.cash + player.deposit <= 0) {
+      current = { ...current, phase: 'insolvent', propertyOffer: null }
+      notify()
+      return
+    }
+    current = { ...current, phase: 'landed', propertyOffer: null }
+    notify()
+    schedule(finishTurn, landingDurationMs)
   }
   const ensureProgress = () => {
     const active = current.players[current.activePlayerIndex]!
@@ -131,6 +170,20 @@ export function createGameController(initialState: GameState, options: GameContr
     roll(fixedDie) {
       if (disposed || paused || pending || current.phase !== 'awaiting-roll' || current.players[current.activePlayerIndex]!.controller !== 'human') return false
       performRoll(fixedDie)
+      return true
+    },
+    decideProperty(choice) {
+      if (disposed || paused || pending || current.phase !== 'property-decision' ||
+          current.players[current.activePlayerIndex]!.controller !== 'human' ||
+          (choice !== 'accept' && choice !== 'decline') ||
+          (choice === 'decline' && current.propertyOffer?.kind === 'rent')) return false
+      settleProperty(choice)
+      return true
+    },
+    acknowledgeProperty() {
+      if (disposed || paused || pending || current.phase !== 'property-result' ||
+          current.players[current.activePlayerIndex]!.controller !== 'human') return false
+      acknowledgeResult()
       return true
     },
     setPaused(value) {

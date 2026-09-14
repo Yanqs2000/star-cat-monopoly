@@ -4,6 +4,7 @@ import mapJson from './data/map.json'
 import { parseAssetManifest, type AssetManifest } from './features/characters/assets'
 import { createGameController, type GameController } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
+import PropertyPanel from './features/game/PropertyPanel.vue'
 import { createGame } from './features/game/setup'
 import type { GameState } from './features/game/types'
 import { createMapScene, type MapSceneHandle, type PlayerPose } from './features/map/MapScene'
@@ -123,6 +124,7 @@ async function loadPendingGame() {
     const initial = pending.value.state
     game.value = initial
     scene.setPlayers(poses(initial))
+    scene.setProperties(initial.properties)
     scene.showMarkers(true)
     scene.setSpeed(speed.value)
     scene.follow(initial.players[initial.activePlayerIndex]!.position)
@@ -138,10 +140,19 @@ async function loadPendingGame() {
           const player = state.players[state.activePlayerIndex]!
           history.value.push(`${player.name} 到达 ${player.position.column},${player.position.row}`)
         }
+        if (previous.lastPropertyEvent !== state.lastPropertyEvent && state.lastPropertyEvent) {
+          const event = state.lastPropertyEvent
+          const parcel = map.parcels.find(item => item.id === event.parcelId)!
+          const actor = state.players.find(item => item.id === event.playerId)!
+          const action = ({ purchased: '购买', upgraded: '升级', 'rent-paid': '支付租金', declined: '放弃', 'insufficient-cash': '现金不足', 'max-level': '已满级' })[event.kind]
+          history.value.push(`${actor.name} ${action} ${parcel.streetName} #${parcel.id} · ${event.amount} · 现金 ${actor.cash} / 存款 ${actor.deposit}`)
+        }
         const activeChanged = previous.activePlayerIndex !== state.activePlayerIndex
+        const propertiesChanged = previous.properties !== state.properties
         previous = state
         game.value = state
         scene?.setPlayers(poses(state))
+        if (propertiesChanged) scene?.setProperties(state.properties)
         if (following.value && activeChanged) scene?.follow(state.players[state.activePlayerIndex]!.position)
       },
     })
@@ -166,6 +177,8 @@ async function startGame() {
   await loadPendingGame()
 }
 function roll() { gameController?.roll() }
+function decideProperty(choice: 'accept' | 'decline') { gameController?.decideProperty(choice) }
+function acknowledgeProperty() { gameController?.acknowledgeProperty() }
 function togglePause() {
   if (!gameController || !scene) return
   paused.value = !paused.value
@@ -201,10 +214,12 @@ function returnToSelection() {
 }
 function fullscreenChanged() { fullscreen.value = document.fullscreenElement === stage.value }
 function keydown(event: KeyboardEvent) {
-  if (mode.value !== 'game' || event.key !== 'ArrowUp' || event.defaultPrevented) return
+  if (mode.value !== 'game' || event.defaultPrevented) return
   const target = event.target as HTMLElement | null
   if (target?.matches('input, select, textarea, button, [contenteditable=true]')) return
-  if (gameController?.roll()) event.preventDefault()
+  if (event.key === 'ArrowUp' && gameController?.roll()) event.preventDefault()
+  if (event.key === 'ArrowLeft' && gameController?.decideProperty('accept')) event.preventDefault()
+  if (event.key === 'ArrowRight' && gameController?.decideProperty('decline')) event.preventDefault()
 }
 onMounted(() => {
   document.addEventListener('fullscreenchange', fullscreenChanged)
@@ -237,13 +252,15 @@ onBeforeUnmount(() => {
         <button class="start" :disabled="selected.length === 0 || indexState !== 'ready'" @click="startGame">开始对局</button>
       </div>
     </section>
-    <p class="scope">2B 移动试验：验证开局、骰子、普通路口和回合轮转，暂不包含买地、资金结算和特殊事件。</p>
+    <p class="scope">2C 住宅地交易：购买、升级与同街道租金；特殊地和完整破产流程留待后续批次。</p>
   </main>
   <main v-else class="game-shell">
-    <header><div><span class="eyebrow">原素材 · 2B移动试验</span><h1>星猫大富翁 · 回合演示</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入四名角色…' }}</span></header>
+    <header><div><span class="eyebrow">原素材 · 2C住宅交易</span><h1>星猫大富翁 · 回合演示</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入四名角色与地产素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="host" class="canvas-host" />
       <GamePanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" />
+      <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
+      <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理尚未接入 2C，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">
@@ -258,6 +275,7 @@ onBeforeUnmount(() => {
 button,select{font:inherit;background:#294b58;color:#edf6f3;border:1px solid #55717a;border-radius:8px;padding:8px 12px;cursor:pointer}button:hover,select:hover{background:#376271}button:disabled{opacity:.42;cursor:default}button:focus-visible,select:focus-visible{outline:2px solid #ffe18a;outline-offset:3px}.eyebrow{font-size:11px;color:#a9c3c8;letter-spacing:.13em}
 .selection-shell,.game-shell{min-height:100dvh;background:radial-gradient(circle at 50% 0,#28505f,#132a35 55%);color:#ebf4f2;font:14px/1.5 system-ui,"PingFang SC",sans-serif;padding:20px 28px}.selection-shell header,.game-shell header{width:min(1260px,100%);margin:0 auto 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}h1{margin:2px 0;font-size:24px}.selection-card{width:min(1120px,100%);margin:5vh auto 0;background:#183542e8;border:1px solid #466775;border-radius:18px;padding:24px;box-shadow:0 24px 70px #07151d88}.selection-title{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.selection-title h2{margin:0;font-size:25px}.selection-title p{margin:5px 0 18px;color:#abc1c5}.selection-title strong{white-space:nowrap;color:#ffe18a}.characters{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.characters button{padding:10px;display:flex;flex-direction:column;gap:6px;align-items:center;background:#20424f}.characters button[aria-pressed=true]{background:#40594f;border-color:#ffe18a;box-shadow:0 0 0 1px #ffe18a}.portrait{position:relative;width:72px;height:82px;display:grid;place-items:center;background:#68cef4;border-radius:11px;overflow:hidden}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:auto}.portrait b{position:absolute;top:5px;right:5px;z-index:1;width:22px;height:22px;display:grid;place-items:center;background:#ffe18a;color:#273733;border-radius:50%}.selection-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px}.selection-footer small{color:#9cb4b9}.selection-footer p{margin:2px 0;font-size:16px}.start{background:#ffe18a;color:#263d3b;border-color:#ffe18a;font-weight:800;padding:11px 24px}.selection-state{min-height:380px;display:grid;place-items:center;text-align:center}.scope{text-align:center;color:#91aab0;font-size:12px;margin:18px auto 0}
 .game-shell{display:flex;flex-direction:column}.game-stage{position:relative;width:min(1400px,100%);height:calc(100dvh - 104px);min-height:570px;margin:0 auto;display:flex;overflow:hidden;background:#66ccff;border:1px solid #486a75;border-radius:12px;box-shadow:0 12px 45px #0006}.canvas-host{flex:1;min-width:0;height:100%;cursor:grab}.canvas-host:active{cursor:grabbing}.canvas-host :deep(canvas){display:block;width:100%;height:100%}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#17323df2;text-align:center;padding:28px}.overlay p{max-width:720px;overflow-wrap:anywhere}.error-actions{display:flex;justify-content:center;gap:10px}.exit-fullscreen{position:absolute;right:334px;top:14px;z-index:4}.fullscreen-error{position:absolute;z-index:4;left:16px;top:16px;margin:0;padding:9px 12px;border:1px solid #ffb19a;border-radius:8px;background:#5b2925;color:#fff}.game-stage:fullscreen{width:100vw;height:100vh;max-width:none;border:0;border-radius:0}.game-stage:fullscreen .canvas-host{height:100vh}
+.insolvent{position:absolute;z-index:3;left:18px;bottom:18px;width:min(470px,calc(100% - 370px));padding:18px;border:1px solid #ffb19a;border-radius:12px;background:#572d2be8;color:#fff}.insolvent h2{margin:0 0 8px}.insolvent p{margin:0 0 12px}
 @media(max-width:900px){.characters{grid-template-columns:repeat(4,1fr)}.game-stage{height:calc(100dvh - 90px);flex-direction:column}.canvas-host{min-height:58vh}.exit-fullscreen{right:14px}.game-shell{padding:12px}.game-shell header{margin-bottom:8px}}
 @media(max-width:600px){.selection-shell{padding:14px}.selection-card{padding:15px;margin-top:2vh}.characters{grid-template-columns:repeat(3,1fr);gap:7px}.portrait{width:60px;height:66px}.selection-title,.selection-footer{align-items:stretch;flex-direction:column}}
 </style>
