@@ -80,6 +80,28 @@ describe('原版地块牌与房屋等级素材', () => {
     expect(() => parsePropertyAssets(manifest)).toThrow('地块牌方向重复')
   })
 
+  it('拒绝两个房屋变体复用同一安全 URL', () => {
+    const manifest = completeManifest()
+    manifest.houses[1] = { ...manifest.houses[1]!, url: manifest.houses[0]!.url }
+    expect(() => parsePropertyAssets(manifest)).toThrow('房屋路径与变体不一致')
+  })
+
+  it('拒绝两名地主房屋 URL 对调', () => {
+    const manifest = completeManifest()
+    const first = manifest.houses[0]!.url
+    manifest.houses[0]!.url = manifest.houses[24]!.url
+    manifest.houses[24]!.url = first
+    expect(() => parsePropertyAssets(manifest)).toThrow('房屋路径与变体不一致')
+  })
+
+  it('拒绝地块牌方向与安全 URL 不一致', () => {
+    const manifest = completeManifest()
+    const first = manifest.sellSigns[0]!.url
+    manifest.sellSigns[0]!.url = manifest.sellSigns[1]!.url
+    manifest.sellSigns[1]!.url = first
+    expect(() => parsePropertyAssets(manifest)).toThrow('地块牌路径与方向不一致')
+  })
+
   it('拒绝无效哈希、路径和偏移', () => {
     const manifest = completeManifest()
     expect(() => parsePropertyAssets({ ...manifest, sourceSha256: 'short' })).toThrow('来源哈希')

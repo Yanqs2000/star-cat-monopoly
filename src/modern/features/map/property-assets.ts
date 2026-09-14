@@ -65,6 +65,9 @@ export function parsePropertyAssets(value: unknown): PropertyAssetManifest {
   if (new Set(sellSigns.map(({ facing }) => facing)).size !== 4) {
     throw new Error('地块牌方向重复')
   }
+  if (sellSigns.some(item => item.url !== `assets/properties/sell-sign/facing-${item.facing}.png`)) {
+    throw new Error('地块牌路径与方向不一致')
+  }
 
   const houses = raw.houses.map((value) => {
     const item = record(value)
@@ -83,6 +86,9 @@ export function parsePropertyAssets(value: unknown): PropertyAssetManifest {
   })
   const houseKeys = houses.map(({ ownerId, facing, level }) => `${ownerId}:${facing}:${level}`)
   if (new Set(houseKeys).size !== 96) throw new Error('房屋变体重复')
+  if (houses.some(item => item.url !== `assets/properties/houses/owner-${item.ownerId}/facing-${item.facing}/level-${item.level}.png`)) {
+    throw new Error('房屋路径与变体不一致')
+  }
 
   return { version: 1, sourceSha256: raw.sourceSha256, sellSigns, houses }
 }

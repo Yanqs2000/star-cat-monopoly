@@ -1,6 +1,6 @@
 # 2C 买地收租 Implementation Plan
 
-实施状态（2026-09-14）：三个任务的本地实现及技术验证已完成，详见 `docs/modernization/acceptance-2c.md`；独立 scoped/broad review 待主任务执行，之后等待用户验收，不进入 3A。
+实施状态（2026-09-15）：三个任务的本地实现及技术验证已完成，首次全阶段审查未发现 Critical/Important，提出的两项 Minor 已做局部修复并记录于 `docs/modernization/acceptance-2c.md`；待主任务复审和用户验收，不进入 3A。
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development or superpowers:executing-plans to implement this plan task-by-task.
 
@@ -80,4 +80,4 @@ expect(calculateStreetRent(properties,1,1)).toBe(1800)
 - [x] Write actualVuecomponent tests ifneeded fordecision/resultaffordances, usingrealcomponentandcorestates. No mockedpropertypanel orproductiondebug globals. BrowserflowmustactuallybuyonehumanparcelandobserveAItransactioninround; showcurrentfunds/ownership/buildingchange. Separateunitfixtureproof fromactualbrowserproof inreport.
 - [x] Implement minimalcontroller/renderer/UI and preserveexisting2Bscene-inspection access onlyfromselection. CaptureGREEN afterRED.
 - [x] VerifyinrealChrome1440×1000 and1920×1080fullscreen: select→roll→buy/decline→result→AI→human, money/landcounts/PNGchanges, pause/errorretry. Usefixedcrypto seed atPlaywrightboundary ifneededforreproducibility; nofixed-die playUI orhiddenstatecomparison. Verifyresource404retrypropertyassetsandnoSWF/Ruffle requests.
-- [ ] Runfocusedtests, fullunitonce, modernbuild/typecheck, originalbuildifaffected, productionmodernE2Eagainst4184. Recordcommands/exactcounts/screenshots and sourcecomparisonlimits. Commitownedchanges, complete scoped/broadreviews withfocusedfixes, preserveworktree foruser2Cacceptance; no3A. (Implementation and verification complete; scoped/broad review pending with main task.)
+- [ ] Runfocusedtests, fullunitonce, modernbuild/typecheck, originalbuildifaffected, productionmodernE2Eagainst4184. Recordcommands/exactcounts/screenshots and sourcecomparisonlimits. Commitownedchanges, complete scoped/broadreviews withfocusedfixes, preserveworktree foruser2Cacceptance; no3A. (Implementation and verification complete; two Minor fixes focused-verified; final rereview and user acceptance pending with main task.)
