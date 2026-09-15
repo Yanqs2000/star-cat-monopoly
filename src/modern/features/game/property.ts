@@ -8,10 +8,12 @@ export interface PropertyState {
 }
 
 export type PropertyLedger = Record<number, PropertyState>
+export type PropertyPrices = Record<number, number>
 
 export interface EconomySnapshot {
   players: PlayerState[]
   properties: PropertyLedger
+  prices?: PropertyPrices
 }
 
 export interface PropertyOffer {
@@ -56,13 +58,23 @@ function assertSnapshot(snapshot: EconomySnapshot): Map<number, PlayerState> {
   const players = new Map<number, PlayerState>()
   for (const player of snapshot.players) {
     if (!Number.isInteger(player.id) || player.id <= 0 || players.has(player.id) ||
-        !Number.isFinite(player.cash) || player.cash < 0 || !Number.isFinite(player.deposit)) {
+        !Number.isFinite(player.cash) || !Number.isFinite(player.deposit)) {
       throw new Error('无效玩家状态')
     }
     players.set(player.id, player)
   }
   assertLedger(snapshot.properties, new Set(players.keys()))
+  if (snapshot.prices !== undefined) assertPrices(snapshot.prices)
   return players
+}
+
+function assertPrices(prices: PropertyPrices): void {
+  if (prices === null || typeof prices !== 'object') throw new Error('无效地产价格表')
+  const ids = Object.keys(prices).map(Number)
+  if (ids.length !== parcels.length || ids.some(id => !parcelIds.has(id))) throw new Error('地产价格表与地图不一致')
+  for (const parcel of parcels) {
+    if (!Number.isFinite(prices[parcel.id]) || prices[parcel.id]! < 0) throw new Error(`地块${parcel.id}价格无效`)
+  }
 }
 
 function clonePlayers(players: PlayerState[]): PlayerState[] {
@@ -77,17 +89,27 @@ export function createPropertyLedger(): PropertyLedger {
   return Object.fromEntries(parcels.map(parcel => [parcel.id, { ownerId: null, level: 0 }]))
 }
 
+export function createPropertyPrices(): PropertyPrices {
+  return Object.fromEntries(parcels.map(parcel => [parcel.id, parcel.basePrice]))
+}
+
 export function findParcelAt(point: GridPoint): Parcel | undefined {
   return parcels.find(parcel => parcel.roadCell.column === point.column && parcel.roadCell.row === point.row)
 }
 
-export function calculateStreetRent(properties: PropertyLedger, ownerId: number, streetId: number): number {
+export function calculateStreetRent(
+  properties: PropertyLedger,
+  ownerId: number,
+  streetId: number,
+  prices: PropertyPrices = createPropertyPrices(),
+): number {
   assertLedger(properties)
+  assertPrices(prices)
   if (!Number.isInteger(ownerId) || ownerId <= 0 || !streetIds.has(streetId)) throw new Error('无效地主或街道')
   return parcels.reduce((total, parcel) => {
     const state = properties[parcel.id]!
     if (parcel.streetId !== streetId || state.ownerId !== ownerId) return total
-    return total + parcel.basePrice * rentTenths[state.level] / 10
+    return total + prices[parcel.id]! * rentTenths[state.level] / 10
   }, 0)
 }
 
@@ -97,12 +119,13 @@ export function getPropertyOffer(snapshot: EconomySnapshot, playerId: number, pa
   const parcel = parcelById.get(parcelId)
   if (parcel === undefined) throw new Error('住宅地块不存在')
   const state = snapshot.properties[parcelId]!
-  if (state.ownerId === null) return { kind: 'purchase', parcelId, amount: parcel.basePrice, ownerId: null }
+  const price = snapshot.prices?.[parcelId] ?? parcel.basePrice
+  if (state.ownerId === null) return { kind: 'purchase', parcelId, amount: price, ownerId: null }
   if (state.ownerId !== playerId) {
     return {
       kind: 'rent',
       parcelId,
-      amount: calculateStreetRent(snapshot.properties, state.ownerId, parcel.streetId),
+      amount: calculateStreetRent(snapshot.properties, state.ownerId, parcel.streetId, snapshot.prices),
       ownerId: state.ownerId,
     }
   }

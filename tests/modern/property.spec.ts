@@ -4,6 +4,7 @@ import {
   applyPropertyOffer,
   calculateStreetRent,
   createPropertyLedger,
+  createPropertyPrices,
   findParcelAt,
   getPropertyOffer,
   getPropertySummary,
@@ -49,6 +50,15 @@ describe('住宅地账本与落点查询', () => {
 })
 
 describe('当前地块报价', () => {
+  it('使用当前价格表报价并保留未传价格表时的原价行为', () => {
+    const prices = createPropertyPrices()
+    prices[1] = 1860
+    expect(getPropertyOffer({ ...snapshot(), prices }, 1, 1)).toEqual({
+      kind: 'purchase', parcelId: 1, amount: 1860, ownerId: null,
+    })
+    expect(getPropertyOffer(snapshot(), 1, 1).amount).toBe(1500)
+  })
+
   it('无人地按地图地价报价，购买已有等级时仍保留该等级', () => {
     const properties = createPropertyLedger()
     properties[1] = { ownerId: null, level: 3 }
@@ -105,6 +115,17 @@ describe('当前地块报价', () => {
 })
 
 describe('街道租金', () => {
+  it('用当前价格计算租金并保留三参数调用的原价结果', () => {
+    const properties = createPropertyLedger()
+    properties[1] = { ownerId: 1, level: 0 }
+    properties[3] = { ownerId: 1, level: 1 }
+    const prices = createPropertyPrices()
+    prices[1] = 1860
+    prices[3] = 1860
+    expect(calculateStreetRent(properties, 1, 1, prices)).toBe(2232)
+    expect(calculateStreetRent(properties, 1, 1)).toBe(1800)
+  })
+
   it('使用原版整数十分比率，并只汇总同地主同街道地块', () => {
     const properties = createPropertyLedger()
     properties[1] = { ownerId: 1, level: 0 }
@@ -116,6 +137,14 @@ describe('街道租金', () => {
 })
 
 describe('纯财产结算', () => {
+  it('接受事件留下的负现金并在租金结算时把现金债务一并转入存款', () => {
+    const properties = createPropertyLedger()
+    properties[1] = { ownerId: 1, level: 0 }
+    const result = applyPropertyOffer(snapshot([player(1), player(2, -100, 2000)], properties), 2, 1, 'accept')
+    expect(result.players.find(value => value.id === 2)).toMatchObject({ cash: 0, deposit: 1300 })
+    expect(result.players.find(value => value.id === 1)?.deposit).toBe(100_600)
+  })
+
   it('购买只扣现金，取消或现金不足不改变资金和产权', () => {
     const bought = applyPropertyOffer(snapshot([player(1)]), 1, 1, 'accept')
     expect(bought.players[0]).toMatchObject({ cash: 98_500, deposit: 100_000 })
