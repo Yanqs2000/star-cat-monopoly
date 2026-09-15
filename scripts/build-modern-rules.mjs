@@ -44,6 +44,27 @@ const spawnRegions = [1, 2, 3, 4].map(id => {
   return { id, variants }
 })
 
+function readReentryOrigin(tableName, expectedKind) {
+  const tuple = tables[tableName]?.value
+  if (!Array.isArray(tuple) || tuple.length !== 3) throw new Error(`${tableName} 结构错误`)
+  const [direction, column, row] = tuple
+  if (![1, 2, 3, 4].includes(direction) || !Number.isInteger(column) || !Number.isInteger(row)) {
+    throw new Error(`${tableName} 坐标错误`)
+  }
+  const id = map[row]?.[column]
+  const record = buildings[id]
+  if (!Number.isInteger(id) || !Array.isArray(record) || record[1] !== expectedKind ||
+      record[6] !== direction || record[13] !== column || record[14] !== row) {
+    throw new Error(`${tableName} 与地图道路格不一致`)
+  }
+  return { direction, position: { column, row } }
+}
+
+const reentryOrigins = {
+  hospital: readReentryOrigin('hospitaldate', 31),
+  jail: readReentryOrigin('jaildate', 32),
+}
+
 const junctions = {}
 for (let id = 1; id < buildings.length; id += 1) {
   const record = buildings[id]
@@ -60,36 +81,45 @@ if (initialMoney[1] !== 100000 || initialMoney[2] !== 100000) throw new Error('�
 
 const movement = { 1: [1, 1], 2: [-1, 1], 3: [-1, -1], 4: [1, -1] }
 const reverse = { 1: 3, 2: 4, 3: 1, 4: 2 }
-const queue = spawnRegions.flatMap(region =>
-  region.variants.map(variant => ({ ...variant.position, direction: variant.direction })))
-const reachableStates = new Set()
-const reachableCells = new Map()
-while (queue.length > 0) {
-  const current = queue.shift()
-  const stateKey = `${current.column},${current.row},${current.direction}`
-  if (reachableStates.has(stateKey)) continue
-  reachableStates.add(stateKey)
-  const currentId = map[current.row]?.[current.column]
-  if (!Number.isInteger(currentId) || currentId <= 0 || currentId === 233 || !buildings[currentId]) {
-    throw new Error(`道路闭包进入无效格 ${current.column},${current.row}`)
+function traceRoadClosure(origins) {
+  const queue = origins.map(origin => ({ ...origin.position, direction: origin.direction }))
+  const states = new Set()
+  const cells = new Map()
+  while (queue.length > 0) {
+    const current = queue.shift()
+    const stateKey = `${current.column},${current.row},${current.direction}`
+    if (states.has(stateKey)) continue
+    states.add(stateKey)
+    const currentId = map[current.row]?.[current.column]
+    if (!Number.isInteger(currentId) || currentId <= 0 || currentId === 233 || !buildings[currentId]) {
+      throw new Error(`道路闭包进入无效格 ${current.column},${current.row}`)
+    }
+    cells.set(`${current.column},${current.row}`, { id: currentId, coordinate: { column: current.column, row: current.row } })
+    const [dc, dr] = movement[current.direction]
+    const column = current.column + dc
+    const row = current.row + dr
+    const nextId = map[row]?.[column]
+    if (!Number.isInteger(nextId) || nextId <= 0 || nextId === 233 || !buildings[nextId]) {
+      throw new Error(`道路闭包进入无效格 ${column},${row}`)
+    }
+    const exits = junctions[nextId]
+    const directions = exits ? exits.filter(direction => direction !== reverse[current.direction]) : [current.direction]
+    if (directions.length === 0) throw new Error(`路口 ${nextId} 没有合法出口`)
+    for (const direction of directions) queue.push({ column, row, direction })
   }
-  reachableCells.set(`${current.column},${current.row}`, { id: currentId, coordinate: { column: current.column, row: current.row } })
-  const [dc, dr] = movement[current.direction]
-  const column = current.column + dc
-  const row = current.row + dr
-  const nextId = map[row]?.[column]
-  if (!Number.isInteger(nextId) || nextId <= 0 || nextId === 233 || !buildings[nextId]) {
-    throw new Error(`道路闭包进入无效格 ${column},${row}`)
-  }
-  const exits = junctions[nextId]
-  const directions = exits ? exits.filter(direction => direction !== reverse[current.direction]) : [current.direction]
-  if (directions.length === 0) throw new Error(`路口 ${nextId} 没有合法出口`)
-  for (const direction of directions) queue.push({ column, row, direction })
+  return { states, cells }
 }
-if (reachableStates.size !== 308 || reachableCells.size !== 146) {
-  throw new Error(`道路闭包应为308个状态/146格，实际为${reachableStates.size}/${reachableCells.size}`)
+
+const spawnOrigins = spawnRegions.flatMap(region => region.variants)
+const normalClosure = traceRoadClosure(spawnOrigins)
+if (normalClosure.states.size !== 308 || normalClosure.cells.size !== 146) {
+  throw new Error(`普通道路闭包应为308个状态/146格，实际为${normalClosure.states.size}/${normalClosure.cells.size}`)
 }
-const roadCells = [...reachableCells.values()]
+const expandedClosure = traceRoadClosure([...spawnOrigins, ...Object.values(reentryOrigins)])
+if (expandedClosure.states.size !== 322 || expandedClosure.cells.size !== 160) {
+  throw new Error(`扩展道路闭包应为322个状态/160格，实际为${expandedClosure.states.size}/${expandedClosure.cells.size}`)
+}
+const roadCells = [...expandedClosure.cells.values()]
   .sort((a, b) => a.coordinate.row - b.coordinate.row || a.coordinate.column - b.coordinate.column)
   .map(cell => {
     const record = buildings[cell.id]
@@ -101,6 +131,7 @@ const result = {
   sourceSha256,
   initialFunds: { cash: initialMoney[1], deposit: initialMoney[2] },
   spawnRegions,
+  reentryOrigins,
   junctions,
   roadCells,
 }

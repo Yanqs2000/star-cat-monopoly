@@ -82,6 +82,22 @@
       ]
     }
   ],
+  "reentryOrigins": {
+    "hospital": {
+      "direction": 2,
+      "position": {
+        "column": 19,
+        "row": 1
+      }
+    },
+    "jail": {
+      "direction": 4,
+      "position": {
+        "column": 21,
+        "row": 41
+      }
+    }
+  },
   "junctions": {
     "205": [
       1,
@@ -214,6 +230,60 @@
   },
   "roadCells": [
     {
+      "id": 161,
+      "coordinate": {
+        "column": 19,
+        "row": 1
+      },
+      "kind": 31,
+      "name": "回归门"
+    },
+    {
+      "id": 165,
+      "coordinate": {
+        "column": 18,
+        "row": 2
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 188,
+      "coordinate": {
+        "column": 17,
+        "row": 3
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 178,
+      "coordinate": {
+        "column": 16,
+        "row": 4
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 195,
+      "coordinate": {
+        "column": 15,
+        "row": 5
+      },
+      "kind": 26,
+      "name": "奖券50点"
+    },
+    {
+      "id": 177,
+      "coordinate": {
+        "column": 14,
+        "row": 6
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
       "id": 218,
       "coordinate": {
         "column": 32,
@@ -221,6 +291,15 @@
       },
       "kind": 29,
       "name": "街道转角"
+    },
+    {
+      "id": 171,
+      "coordinate": {
+        "column": 13,
+        "row": 7
+      },
+      "kind": 25,
+      "name": "运气事件"
     },
     {
       "id": 134,
@@ -1519,6 +1598,15 @@
       "name": "魔法门"
     },
     {
+      "id": 170,
+      "coordinate": {
+        "column": 27,
+        "row": 35
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
       "id": 210,
       "coordinate": {
         "column": 8,
@@ -1526,6 +1614,60 @@
       },
       "kind": 29,
       "name": "街道转角"
+    },
+    {
+      "id": 180,
+      "coordinate": {
+        "column": 26,
+        "row": 36
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 196,
+      "coordinate": {
+        "column": 25,
+        "row": 37
+      },
+      "kind": 26,
+      "name": "奖券50点"
+    },
+    {
+      "id": 189,
+      "coordinate": {
+        "column": 24,
+        "row": 38
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 179,
+      "coordinate": {
+        "column": 23,
+        "row": 39
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 175,
+      "coordinate": {
+        "column": 22,
+        "row": 40
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 163,
+      "coordinate": {
+        "column": 21,
+        "row": 41
+      },
+      "kind": 32,
+      "name": "重生门"
     }
   ]
 }

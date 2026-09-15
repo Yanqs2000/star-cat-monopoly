@@ -17,10 +17,10 @@ const tables = JSON.parse(readFileSync('docs/modernization/evidence/original-tab
 const sourceRows = tables.luckdate.value.slice(1) as Array<[1 | 2, string, number]>
 const reachableSpecialIds = [
   149, 150, 151, 152,
-  166, 167, 168, 169,
-  172, 173, 174, 176,
-  181, 182, 183, 184, 185, 186, 187,
-  190, 191, 192, 193, 194, 197, 198,
+  165, 166, 167, 168, 169, 170,
+  171, 172, 173, 174, 175, 176,
+  177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187,
+  188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198,
 ]
 
 describe('现代事件数据生成', () => {
@@ -58,11 +58,19 @@ describe('现代事件数据生成', () => {
 
   it('只生成道路闭包中坐标与原网格一致的特殊格', () => {
     expect(catalog.landings.map(landing => landing.id).sort((a, b) => a - b)).toEqual(reachableSpecialIds)
+    expect(catalog.landings.reduce<Record<string, number>>((counts, landing) => {
+      counts[landing.kind] = (counts[landing.kind] ?? 0) + 1
+      return counts
+    }, {})).toEqual({ shop: 4, card: 6, luck: 6, tickets: 22 })
     for (const landing of catalog.landings) {
       const source = tables.builddate1.value[landing.id]
       expect(source[1]).toBe([20, 24, 25, 26][['shop', 'card', 'luck', 'tickets'].indexOf(landing.kind)])
       expect(landing.position).toEqual({ column: source[13], row: source[14] })
       expect(tables.mapdate1.value[source[14]][source[13]]).toBe(landing.id)
+      if (landing.kind === 'tickets') {
+        expect([10, 30, 50]).toContain(source[8])
+        expect(landing.ticketAmount).toBe(source[8])
+      }
     }
   })
 
@@ -166,9 +174,12 @@ describe('真实特殊格与奖券结算', () => {
     expect(findSpecialLanding({ column: 34, row: 18 })).toMatchObject({ id: 198, kind: 'tickets', ticketAmount: 50 })
   })
 
-  it('排除道路闭包外的原表特殊格和占位坐标', () => {
-    expect(findSpecialLanding({ column: 14, row: 6 })).toBeUndefined()
-    expect(findSpecialLanding({ column: 18, row: 2 })).toBeUndefined()
+  it('纳入医院监狱出口链的特殊格，并排除占位和非道路坐标', () => {
+    expect(findSpecialLanding({ column: 18, row: 2 })).toEqual({ id: 165, position: { column: 18, row: 2 }, kind: 'card' })
+    expect(findSpecialLanding({ column: 22, row: 40 })).toEqual({ id: 175, position: { column: 22, row: 40 }, kind: 'luck' })
+    expect(findSpecialLanding({ column: 14, row: 6 })).toEqual({
+      id: 177, position: { column: 14, row: 6 }, kind: 'tickets', ticketAmount: 10,
+    })
     expect(findSpecialLanding({ column: 0, row: 0 })).toBeUndefined()
     expect(findSpecialLanding({ column: 5, row: 5 })).toBeUndefined()
   })
@@ -183,8 +194,8 @@ describe('真实特殊格与奖券结算', () => {
     expect(wallet).toEqual({ cash: -50, deposit: 20, tickets: 5 })
   })
 
-  it('拒绝非奖券格和不可达奖券记录', () => {
+  it('拒绝非奖券格和非道路坐标', () => {
     expect(() => applyTicketLanding({ cash: 1, deposit: 2, tickets: 3 }, { column: 22, row: 14 })).toThrow()
-    expect(() => applyTicketLanding({ cash: 1, deposit: 2, tickets: 3 }, { column: 14, row: 6 })).toThrow()
+    expect(() => applyTicketLanding({ cash: 1, deposit: 2, tickets: 3 }, { column: 5, row: 5 })).toThrow()
   })
 })

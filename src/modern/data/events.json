@@ -324,6 +324,14 @@
       "kind": "shop"
     },
     {
+      "id": 165,
+      "position": {
+        "column": 18,
+        "row": 2
+      },
+      "kind": "card"
+    },
+    {
       "id": 166,
       "position": {
         "column": 19,
@@ -356,6 +364,22 @@
       "kind": "card"
     },
     {
+      "id": 170,
+      "position": {
+        "column": 27,
+        "row": 35
+      },
+      "kind": "card"
+    },
+    {
+      "id": 171,
+      "position": {
+        "column": 13,
+        "row": 7
+      },
+      "kind": "luck"
+    },
+    {
       "id": 172,
       "position": {
         "column": 22,
@@ -380,12 +404,56 @@
       "kind": "luck"
     },
     {
+      "id": 175,
+      "position": {
+        "column": 22,
+        "row": 40
+      },
+      "kind": "luck"
+    },
+    {
       "id": 176,
       "position": {
         "column": 18,
         "row": 28
       },
       "kind": "luck"
+    },
+    {
+      "id": 177,
+      "position": {
+        "column": 14,
+        "row": 6
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 178,
+      "position": {
+        "column": 16,
+        "row": 4
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 179,
+      "position": {
+        "column": 23,
+        "row": 39
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 180,
+      "position": {
+        "column": 26,
+        "row": 36
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
     },
     {
       "id": 181,
@@ -451,6 +519,24 @@
       "ticketAmount": 10
     },
     {
+      "id": 188,
+      "position": {
+        "column": 17,
+        "row": 3
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 189,
+      "position": {
+        "column": 24,
+        "row": 38
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
       "id": 190,
       "position": {
         "column": 37,
@@ -494,6 +580,24 @@
       },
       "kind": "tickets",
       "ticketAmount": 30
+    },
+    {
+      "id": 195,
+      "position": {
+        "column": 15,
+        "row": 5
+      },
+      "kind": "tickets",
+      "ticketAmount": 50
+    },
+    {
+      "id": 196,
+      "position": {
+        "column": 25,
+        "row": 37
+      },
+      "kind": "tickets",
+      "ticketAmount": 50
     },
     {
       "id": 197,

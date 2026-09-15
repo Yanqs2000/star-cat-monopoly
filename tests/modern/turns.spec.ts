@@ -42,11 +42,15 @@ describe('现代规则数据生成', () => {
         { id: 4, variants: [{ direction: 2, position: { column: 10, row: 10 } }, { direction: 4, position: { column: 11, row: 9 } }] },
       ])
       expect(generated.junctions['227']).toEqual([1, 4, 3])
-      expect(generated.roadCells).toHaveLength(146)
+      expect(generated.reentryOrigins).toEqual({
+        hospital: { direction: 2, position: { column: 19, row: 1 } },
+        jail: { direction: 4, position: { column: 21, row: 41 } },
+      })
+      expect(generated.roadCells).toHaveLength(160)
       expect(generated.roadCells.find((cell: { id: number }) => cell.id === 221)).toEqual({
         id: 221, coordinate: { column: 35, row: 9 }, kind: 29, name: '三岔路口',
       })
-      expect(Object.keys(generated)).toEqual(['sourceSha256', 'initialFunds', 'spawnRegions', 'junctions', 'roadCells'])
+      expect(Object.keys(generated)).toEqual(['sourceSha256', 'initialFunds', 'spawnRegions', 'reentryOrigins', 'junctions', 'roadCells'])
     } finally {
       rmSync(dir, { recursive: true, force: true })
     }
@@ -105,6 +109,22 @@ describe('纯开局规则', () => {
 })
 
 describe('纯移动与轮转规则', () => {
+  it.each([
+    ['医院', 19, 1, 2, 18, 2],
+    ['监狱', 21, 41, 4, 22, 40],
+  ] as const)('从%s释放点按原方向走入第一格道路', (_name, column, row, direction, nextColumn, nextRow) => {
+    const source = withFirstPlayer(createGame([1, 2, 3, 4], 1), column, row, direction)
+    const landed = step(roll(source, 1))
+    expect(landed.players[0]).toMatchObject({
+      position: { column: nextColumn, row: nextRow },
+      direction,
+    })
+    expect(landed.turnPath).toEqual([
+      { column, row },
+      { column: nextColumn, row: nextRow },
+    ])
+  })
+
   it('最后一步抵达221三岔路仍先按原方向顺序转向再落地', () => {
     const source = withFirstPlayer(createGame([1, 2, 3, 4], 1), 34, 8, 1)
     const moving = roll(source, 1)
@@ -214,5 +234,34 @@ describe('原版道路拓扑闭包', () => {
     }
     expect(visited.size).toBe(308)
     expect(positions.size).toBe(146)
+  })
+
+  it('从8个出生姿态及医院监狱释放点穷举322个位置朝向状态和160格道路', () => {
+    const cells = new Map(rules.roadCells.map(cell => [`${cell.coordinate.column},${cell.coordinate.row}`, cell]))
+    const reentryOrigins = Object.values(rules.reentryOrigins)
+    const queue = [
+      ...rules.spawnRegions.flatMap(region => region.variants.map(variant => ({ ...variant.position, direction: variant.direction as Direction }))),
+      ...reentryOrigins.map(origin => ({ ...origin.position, direction: origin.direction as Direction })),
+    ]
+    const visited = new Set<string>()
+    const positions = new Set<string>()
+    while (queue.length > 0) {
+      const current = queue.shift()!
+      const stateKey = `${current.column},${current.row},${current.direction}`
+      if (visited.has(stateKey)) continue
+      visited.add(stateKey)
+      positions.add(`${current.column},${current.row}`)
+      const delta = move[current.direction]
+      const column = current.column + delta.column
+      const row = current.row + delta.row
+      const cell = cells.get(`${column},${row}`)
+      expect(cell, `missing road at ${column},${row}`).toBeDefined()
+      const exits = rules.junctions[String(cell!.id) as keyof typeof rules.junctions] as Direction[] | undefined
+      const directions = exits ? exits.filter(direction => direction !== reverse[current.direction]) : [current.direction]
+      expect(directions.length, `dead path at road ${cell!.id}`).toBeGreaterThan(0)
+      for (const direction of directions) queue.push({ column, row, direction })
+    }
+    expect(visited.size).toBe(322)
+    expect(positions.size).toBe(160)
   })
 })
