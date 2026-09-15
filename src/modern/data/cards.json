@@ -1,0 +1,326 @@
+{
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "definitions": [
+    {
+      "id": 0,
+      "name": "星象卡",
+      "price": 100,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 1,
+      "name": "信用卡",
+      "price": 100,
+      "useType": 1,
+      "handlerFrame": 4,
+      "description": "持有者可凭此卡提取在信用额度范围内的现金"
+    },
+    {
+      "id": 2,
+      "name": "机　票",
+      "price": 100,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 3,
+      "name": "筋斗云",
+      "price": 100,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 4,
+      "name": "飙车卡",
+      "price": 50,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 5,
+      "name": "控骰卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 5,
+      "description": "选择一个想要的点数，你会心想事成的"
+    },
+    {
+      "id": 6,
+      "name": "障碍卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 6,
+      "description": "在空旷的道路上放置障碍，能让经过的人停下来，包括自己哦"
+    },
+    {
+      "id": 7,
+      "name": "地雷卡",
+      "price": 25,
+      "useType": 1,
+      "handlerFrame": 6,
+      "description": "在空旷的道路上放置地雷，然后，嘿嘿，看哪个倒霉鬼经过哦"
+    },
+    {
+      "id": 8,
+      "name": "附身雷",
+      "price": 25,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 9,
+      "name": "飞弹卡",
+      "price": 100,
+      "useType": 1,
+      "handlerFrame": 9,
+      "description": "基本上，想炸谁就炸谁，想炸哪就炸哪……只不过……"
+    },
+    {
+      "id": 10,
+      "name": "清道卡",
+      "price": 15,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 11,
+      "name": "购地卡",
+      "price": 35,
+      "useType": 1,
+      "handlerFrame": 11,
+      "description": "以成本价购买属于别人的土地"
+    },
+    {
+      "id": 12,
+      "name": "售地卡",
+      "price": 30,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 13,
+      "name": "换地卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 14,
+      "name": "炒地卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 14,
+      "description": "能把整条街的地价抬升，过路费也会跟着提升哦"
+    },
+    {
+      "id": 15,
+      "name": "拆屋卡",
+      "price": 15,
+      "useType": 1,
+      "handlerFrame": 15,
+      "description": "把别人的屋子拆掉一层"
+    },
+    {
+      "id": 16,
+      "name": "换屋卡",
+      "price": 20,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 17,
+      "name": "改建卡",
+      "price": 20,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 18,
+      "name": "天使卡",
+      "price": 100,
+      "useType": 1,
+      "handlerFrame": 18,
+      "description": "使整条街的房子都升一级"
+    },
+    {
+      "id": 19,
+      "name": "恶魔卡",
+      "price": 100,
+      "useType": 1,
+      "handlerFrame": 19,
+      "description": "使整条街的房子都降一级"
+    },
+    {
+      "id": 20,
+      "name": "怪兽卡",
+      "price": 50,
+      "useType": 1,
+      "handlerFrame": 20,
+      "description": "将一幢房子彻底摧毁"
+    },
+    {
+      "id": 21,
+      "name": "招神卡",
+      "price": 15,
+      "useType": 1,
+      "handlerFrame": 21,
+      "description": "招来自己附近的神灵，注意哦，神灵的效力会打一定折扣"
+    },
+    {
+      "id": 22,
+      "name": "送神卡",
+      "price": 15,
+      "useType": 1,
+      "handlerFrame": 22,
+      "description": "送走身上依附的神灵"
+    },
+    {
+      "id": 23,
+      "name": "红　卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 24,
+      "name": "黑　卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 25,
+      "name": "均富卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 25,
+      "description": "让自己变得和别人一样富有"
+    },
+    {
+      "id": 26,
+      "name": "均贫卡",
+      "price": 30,
+      "useType": 1,
+      "handlerFrame": 26,
+      "description": "让别人变得和自己一样贫穷"
+    },
+    {
+      "id": 27,
+      "name": "停留卡",
+      "price": 25,
+      "useType": 1,
+      "handlerFrame": 27,
+      "description": "停留在原地一回合"
+    },
+    {
+      "id": 28,
+      "name": "免费卡",
+      "price": 25,
+      "useType": 2,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 29,
+      "name": "免罪卡",
+      "price": 25,
+      "useType": 2,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 30,
+      "name": "陷害卡",
+      "price": 20,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 31,
+      "name": "嫁祸卡",
+      "price": 20,
+      "useType": 2,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 32,
+      "name": "复仇卡",
+      "price": 20,
+      "useType": 2,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 33,
+      "name": "查税卡",
+      "price": 35,
+      "useType": 1,
+      "handlerFrame": 33,
+      "description": "夺取别人身上10%的现金"
+    },
+    {
+      "id": 34,
+      "name": "抢夺卡",
+      "price": 35,
+      "useType": 1,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 35,
+      "name": "梦游卡",
+      "price": 25,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    },
+    {
+      "id": 36,
+      "name": "冬眠卡",
+      "price": 100,
+      "useType": 0,
+      "handlerFrame": 0,
+      "description": ""
+    }
+  ],
+  "ordinaryPool": [
+    5,
+    6,
+    7,
+    9,
+    11,
+    14,
+    15,
+    18,
+    19,
+    20,
+    21,
+    22,
+    25,
+    26,
+    27,
+    33
+  ],
+  "initialInventory": [
+    9,
+    6,
+    7,
+    27,
+    5
+  ]
+}
