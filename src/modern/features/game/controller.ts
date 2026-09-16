@@ -405,7 +405,7 @@ export function createGameController(initialState: GameState, options: GameContr
   const performRoll = (requestedDie?: number) => {
     const player = activePlayer()
     const forced = Object.values(current.forcedDice).find((value): value is number => value !== null)
-    const die = requestedDie ?? forced
+    const die = forced ?? requestedDie
     const rolled = rollState(current, die)
     current = {
       ...rolled,
@@ -510,7 +510,7 @@ export function createGameController(initialState: GameState, options: GameContr
       const event: InteractionEvent = {
         kind: 'card', playerId: interaction.playerId, cardId: interaction.cardId,
         consumed: result.consumed, status: result.status, reason: result.reason, amount: result.amount,
-        affectedPlayerIds: [...result.affectedPlayerIds], cardIds: [],
+        affectedPlayerIds: [...result.affectedPlayerIds], affectedCellIds: [...result.affectedParcelIds], cardIds: [],
       }
       showNotice({
         kind: 'card', message: 'applied', cardId: interaction.cardId, amount: result.amount,

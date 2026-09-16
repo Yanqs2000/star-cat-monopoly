@@ -170,6 +170,37 @@ describe('卡牌有限交互', () => {
     expect(Object.values(controller.state.forcedDice).every(value => value === null)).toBe(true)
   })
 
+  it('待消费控骰优先于显式回放骰并只消费一次', () => {
+    const game = gameWithCards([])
+    game.forcedDice = { 1: null, 2: 6, 3: null, 4: null }
+    const rngState = game.rngState
+    const controller = createGameController(game, timings(new FakeScheduler()))
+    expect(controller.roll(2)).toBe(true)
+    expect(controller.state).toMatchObject({ lastRoll: 6, remainingSteps: 6, rngState })
+    expect(Object.values(controller.state.forcedDice).every(value => value === null)).toBe(true)
+  })
+
+  it.each([
+    [11, [1]],
+    [14, [1, 3, 5, 7]],
+    [15, [1]],
+    [18, [1, 3, 5, 7]],
+    [19, [1, 3, 5, 7]],
+  ] as const)('地产卡%d在notice和callback中暴露相同受影响地块', (cardId, affectedCellIds) => {
+    const events: InteractionEvent[] = []
+    const game = gameWithCards([cardId])
+    game.players[0] = { ...game.players[0]!, position: { column: 6, row: 32 } }
+    if (cardId === 15 || cardId === 19) {
+      for (const parcelId of affectedCellIds) game.properties[parcelId] = { ...game.properties[parcelId]!, level: 1 }
+    }
+    const controller = createGameController(game, timings(new FakeScheduler(), events))
+    controller.beginCard(0); controller.confirmCard()
+    if (cardId === 15) controller.chooseCard({ kind: 'cell', position: { column: 5, row: 31 } })
+    expect(controller.state.interaction).toMatchObject({ kind: 'notice', notice: { affectedCellIds } })
+    expect(events).toHaveLength(1)
+    expect(events[0]!.affectedCellIds).toEqual(affectedCellIds)
+  })
+
   it('控骰后飞弹自伤提前结束，下一名AI消费控骰且不抽骰子随机', () => {
     const scheduler = new FakeScheduler()
     const game = gameWithCards([5, 9], [1])
