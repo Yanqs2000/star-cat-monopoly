@@ -30,6 +30,7 @@ const phaseText = computed(() => ({
   landed: '已落地，准备换人',
   'property-decision': '等待地产决定',
   'property-result': '交易结果待确认',
+  interaction: '等待交互处理',
   insolvent: '资金耗尽，回合已停止',
 }[props.game.phase]))
 </script>

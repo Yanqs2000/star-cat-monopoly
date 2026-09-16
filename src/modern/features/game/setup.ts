@@ -1,7 +1,10 @@
 import rules from '../../data/rules.json'
+import worldRules from '../../data/world-rules.json'
+import { createCardInventory } from './card-economy'
 import { randomInt } from './random'
-import { createPropertyLedger } from './property'
+import { createPropertyLedger, createPropertyPrices } from './property'
 import type { Direction, GameState, Hometown, PlayerController } from './types'
+import { createWorldState } from './world-cards'
 
 const CHARACTER_NAMES = [
   '卷毛', '阿牛', '吉吉&米米', '佳佳', '大牌', '薇薇',
@@ -14,7 +17,8 @@ function takeRandom<T>(values: T[], rngState: number): { value: T; rngState: num
   return { value: value!, rngState: draw.nextState }
 }
 
-export function createGame(humanCharacterIds: number[], seed: number): GameState {
+/** Pure/headless callers default to Monday (1); the UI injects local getDay() once. */
+export function createGame(humanCharacterIds: number[], seed: number, initialWeekday = 1): GameState {
   if (humanCharacterIds.length < 1 || humanCharacterIds.length > 4 ||
       humanCharacterIds.some(id => !Number.isInteger(id) || id < 1 || id > 12) ||
       new Set(humanCharacterIds).size !== humanCharacterIds.length) {
@@ -57,8 +61,22 @@ export function createGame(humanCharacterIds: number[], seed: number): GameState
     }
   })
 
+  const worldState = createWorldState(players, rngState, initialWeekday)
+  rngState = worldState.rngState
+  const playerEntries = players.map(player => player.id)
+
   return {
     players,
+    properties: createPropertyLedger(),
+    prices: createPropertyPrices(),
+    inventories: Object.fromEntries(playerEntries.map(id => [id, createCardInventory()])),
+    credit: Object.fromEntries(playerEntries.map(id => [id, { ...worldRules.initialCredit }])),
+    forcedDice: Object.fromEntries(playerEntries.map(id => [id, null])),
+    stayPlayerIds: [],
+    unownedOwnerDeposit: 100_000,
+    world: worldState.world,
+    tickets: Object.fromEntries(playerEntries.map(id => [id, worldRules.initialTickets])),
+    lostAndFoundFunds: [0, 0],
     activePlayerIndex: 0,
     round: 1,
     phase: 'awaiting-roll',
@@ -66,8 +84,9 @@ export function createGame(humanCharacterIds: number[], seed: number): GameState
     lastRoll: null,
     rngState,
     turnPath: [],
-    properties: createPropertyLedger(),
     propertyOffer: null,
     lastPropertyEvent: null,
+    interaction: null,
+    skipLandingMarker: false,
   }
 }

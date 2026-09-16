@@ -80,7 +80,7 @@ describe('现代对局控制器', () => {
       [5, 4, 4, 11, 9],
       [11, 1, 3, 33, 7],
     ])
-    expect(game.rngState).toBe(3421909937)
+    expect(game.rngState).toBe(1719328701)
 
     const controller = createGameController(game, { scheduler, stepDurationMs: 100 })
     expect(controller.roll(2)).toBe(true)
