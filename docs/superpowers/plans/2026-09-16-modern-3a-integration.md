@@ -41,7 +41,7 @@ Controller publiccommands: beginCard(index), confirmCard(), chooseCard(DirectCar
 
 ### Task 2: 原素材界面、地图目标与真实3A验收
 
-**Prerequisites:** Task1approved; world-assetsTask1 and reaction-assetsTask2 approved. Read actualAPIreports before wiring.
+**Prerequisites:** Task1approved and world-assetsTask1approved. Independent Vue panels, command wiring and component tests may start while reaction-assetsTask2 is running, using its declared interface; defer reaction loader/MapScene wiring and production acceptance until reaction-assetsTask2 is approved. Read actualAPIreports before wiring each dependency.
 
 **Ownership/files:** Modify ModernApp.vue, GamePanel.vue, MapScene.ts; create InteractionPanel.vue/HandPanel.vue and focused viewhelpers asneeded; useexisting reaction/asset parsers. Tests actualVue components and tests/e2e/modern-*.spec.ts, including new modern-interactions.spec.ts; mayadd tests-only browserfixture entry excludedfromproduction. Docs acceptance-3a.md/README/coverage and completedplan.
 
