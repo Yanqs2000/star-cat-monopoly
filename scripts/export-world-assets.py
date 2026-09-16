@@ -10,6 +10,7 @@ import math
 import os
 import shutil
 import subprocess
+import sys
 import time
 
 from PIL import Image, ImageChops, ImageDraw
@@ -149,51 +150,7 @@ def image_hash(image: Image.Image) -> str:
     return hashlib.sha256(image.tobytes()).hexdigest()
 
 
-def compare_probe(staging: Path, metadata: dict[str, object]) -> dict[str, int]:
-    probe_root = CACHE / "probe-output"
-    mappings = {
-        "npc-3": probe_root / "npc3",
-        "barrier-2": probe_root / "barrier2",
-        "explosion": probe_root / "explosion",
-        "rocket": probe_root / "rocket-controlled",
-    }
-    clip_metadata = {item["id"]: item for item in metadata["clips"]}
-    results: dict[str, int] = {}
-    for clip_id, probe_group in mappings.items():
-        clip = next(item for item in CLIPS if item.id == clip_id)
-        candidates = [path for path in sorted(probe_group.iterdir()) if path.is_dir()]
-        matching_frames = 0
-        for candidate in candidates:
-            if len(list(candidate.glob("*.png"))) != clip.frames:
-                continue
-            with Image.open(candidate / "1.png") as first_probe:
-                if first_probe.size != canvas_size(clip_metadata[clip_id]["renderBoundsTwips"]):
-                    continue
-            candidate_matches = 0
-            for frame in range(1, clip.frames + 1):
-                probe = decoded_rgba(
-                    candidate / f"{frame}.png",
-                    canvas_size(clip_metadata[clip_id]["renderBoundsTwips"]),
-                )
-                normalized = Image.new("RGBA", clip.size, (0, 0, 0, 0))
-                bounds = clip_metadata[clip_id]["renderBoundsTwips"]
-                shift = ((bounds[0] - clip.bounds[0]) // 20,
-                         (bounds[2] - clip.bounds[2]) // 20)
-                normalized.alpha_composite(probe, shift)
-                production = decoded_rgba(staging / clip_id / f"{frame}.png", clip.size)
-                if ImageChops.difference(normalized, production).getbbox() is None:
-                    candidate_matches += 1
-            matching_frames = max(matching_frames, candidate_matches)
-        if matching_frames != clip.frames:
-            raise SystemExit(
-                f"Production {clip_id} diverged from successful probe: "
-                f"{matching_frames}/{clip.frames} matching frames"
-            )
-        results[clip_id] = matching_frames
-    return results
-
-
-def validate(staging: Path, metadata: dict[str, object]) -> dict[str, object]:
+def validate(staging: Path) -> dict[str, object]:
     expected_paths = {
         staging / clip.id / f"{frame}.png"
         for clip in CLIPS
@@ -253,12 +210,10 @@ def validate(staging: Path, metadata: dict[str, object]) -> dict[str, object]:
                         f"Neutral house reused owner {owner} color: facing {facing}, level {level}"
                     )
 
-    probe_matches = compare_probe(staging, metadata)
     return {
         "decodedPngCounts": {"clipFrames": 790, "neutralHouses": 20, "total": 810},
         "uniqueFrameHashes": unique_frames,
         "visibleFrameCounts": visible_frames,
-        "successfulProbeFrameMatches": probe_matches,
     }
 
 
@@ -362,16 +317,14 @@ def build_contact_sheets(staging: Path) -> list[Path]:
     return [npc_sheet, effects_sheet, houses_sheet]
 
 
-def report(source_hash: str, java_pid: int, command: list[str],
-           metadata: dict[str, object], validation: dict[str, object],
-           contact_sheets: list[Path]) -> str:
+def report(source_hash: str, java_pid: int, driver_command: list[str],
+           command: list[str], contact_sheets: list[Path]) -> str:
     clip_lines = [
         f"- `{clip.id}`: source {clip.source_symbol}, {clip.frames} frames, "
         f"{clip.size[0]} x {clip.size[1]} px, offset {clip.offset}, "
         f"{'loop' if clip.loop else 'play once'}"
         for clip in CLIPS
     ]
-    probes = validation["successfulProbeFrameMatches"]
     return "\n".join([
         "# Task 1 world asset export report",
         "",
@@ -381,7 +334,10 @@ def report(source_hash: str, java_pid: int, command: list[str],
         "",
         f"- Java exporter PID for this run: `{java_pid}` (finished).",
         f"- Java source: `{JAVA_SOURCE.relative_to(ROOT)}`.",
-        f"- Reproduction: `{' '.join(command)}`.",
+        f"- End-to-end reproduction: `{' '.join(driver_command)}`.",
+        f"- Java subprocess: `{' '.join(command)}`.",
+        "- Prerequisites: JPEXS 26.2.1 `ffdec.jar`, Java, Python with Pillow, the committed original SWF/manifest, and committed owner-house assets used by neutral-color validation.",
+        "- Override the defaults with `FFDEC_JAR` and `FFDEC_JAVA`; no `.analysis-cache` probe output is required.",
         "- The source SWF was opened read-only and its hash was checked before and after export.",
         "",
         "## Source and output",
@@ -397,10 +353,8 @@ def report(source_hash: str, java_pid: int, command: list[str],
         "",
         "## Nested-timeline evidence",
         "",
-        f"- Production NPC 3 matched the successful probe in {probes['npc-3']}/12 frames.",
-        f"- Production barrier facing 2 matched the successful probe in {probes['barrier-2']}/10 frames.",
-        f"- Production explosion matched the successful probe in {probes['explosion']}/60 frames.",
-        f"- Production controlled rocket matched the successful probe in {probes['rocket']}/80 frames.",
+        "- The Java exporter validates each nested child ID/frame count and renders the controlled timelines directly from the source SWF.",
+        "- One-time comparisons against the exploratory probe are review evidence only and are deliberately outside the reproducible export path.",
         "- Rocket body uses 1079 frames 1-80. Tail 1048 advances until body frame 40, stays on empty tail frame 11 through body frame 69, and restarts from tail frame 1 at body frame 70.",
         "",
         "## Contact sheets",
@@ -459,6 +413,7 @@ def main() -> None:
         str(raw),
         str(java_scratch),
     ]
+    driver_command = [sys.executable, str(JAVA_SOURCE.with_name("export-world-assets.py"))]
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     run_state = {
         "status": "running",
@@ -489,7 +444,7 @@ def main() -> None:
     })
     try:
         normalize_exports(raw, staging, java_metadata)
-        validation = validate(staging, java_metadata)
+        validation = validate(staging)
         write_json(staging / "manifest.json", manifest(source_hash))
         contact_sheets = build_contact_sheets(staging)
         ending_hash = hashlib.sha256(source.read_bytes()).hexdigest()
@@ -501,13 +456,14 @@ def main() -> None:
             **validation,
             "sourceSha256Before": source_hash,
             "sourceSha256After": ending_hash,
+            "driverCommand": driver_command,
             "command": command,
             "javaPid": process.pid,
             "contactSheets": [str(path.relative_to(ROOT)) for path in contact_sheets],
         }
         write_json(CACHE / "export-metadata.json", export_metadata)
         (CACHE / "task-1-report.md").write_text(
-            report(source_hash, process.pid, command, java_metadata, validation, contact_sheets)
+            report(source_hash, process.pid, driver_command, command, contact_sheets)
         )
 
         destination = ROOT / "public/modern/assets/world"
