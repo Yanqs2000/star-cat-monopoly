@@ -473,7 +473,9 @@ export function createGameController(initialState: GameState, options: GameContr
       notify()
       return
     }
-    current = { ...current, phase: resume === 'await-roll' ? 'awaiting-roll' : 'landed', interaction: null }
+    const phase = resume === 'await-roll' ? 'awaiting-roll' :
+      resume === 'after-bank' && current.remainingSteps > 0 ? 'moving' : 'landed'
+    current = { ...current, phase, interaction: null }
     notify()
     if (resume === 'after-bank') processAfterBank()
     else if (resume === 'after-marker') {

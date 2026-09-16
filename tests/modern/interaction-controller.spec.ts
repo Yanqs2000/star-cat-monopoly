@@ -355,6 +355,26 @@ describe('移动、世界结果和特殊落点串行化', () => {
     expect(controller.state.players[1]!.cash).toBe(100_000)
   })
 
+  it('AI在移动中途处理银行结果后以moving阶段继续精确余步', () => {
+    const scheduler = new FakeScheduler()
+    const game = before({ column: 18, row: 14 }, 1)
+    game.activePlayerIndex = 1
+    game.players[1] = { ...game.players[1]!, controller: 'ai', position: { column: 18, row: 14 }, direction: 1 }
+    game.forcedDice = { 1: null, 2: 3, 3: null, 4: null }
+    game.inventories[2] = [5]
+    const controller = createGameController(game, timings(scheduler))
+    scheduler.advance(20)
+    expect(controller.state).toMatchObject({
+      phase: 'interaction', remainingSteps: 2,
+      interaction: { kind: 'notice', resume: 'after-bank', notice: { eventKind: 'credit-granted' } },
+    })
+    expect(() => scheduler.advance(10)).not.toThrow()
+    expect(controller.state).toMatchObject({ phase: 'moving', remainingSteps: 2, interaction: null })
+    scheduler.advance(10)
+    expect(controller.state.players[1]!.position).toEqual({ column: 20, row: 16 })
+    expect(controller.state.remainingSteps).toBe(1)
+  })
+
   it('卡片格、运气、奖券各只结算一次并等待确认', () => {
     const cases = [
       [{ column: 19, row: 1 }, 2, 'card', 1],
