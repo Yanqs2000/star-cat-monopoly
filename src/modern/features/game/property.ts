@@ -14,6 +14,7 @@ export interface EconomySnapshot {
   players: PlayerState[]
   properties: PropertyLedger
   prices?: PropertyPrices
+  godIds?: Record<number, number | null>
 }
 
 export interface PropertyOffer {
@@ -24,7 +25,7 @@ export interface PropertyOffer {
 }
 
 export interface PropertyEvent {
-  kind: 'purchased' | 'upgraded' | 'rent-paid' | 'declined' | 'insufficient-cash' | 'max-level'
+  kind: 'purchased' | 'upgraded' | 'upgrade-failed' | 'rent-paid' | 'declined' | 'insufficient-cash' | 'max-level'
   playerId: number
   parcelId: number
   amount: number
@@ -65,6 +66,14 @@ function assertSnapshot(snapshot: EconomySnapshot): Map<number, PlayerState> {
   }
   assertLedger(snapshot.properties, new Set(players.keys()))
   if (snapshot.prices !== undefined) assertPrices(snapshot.prices)
+  if (snapshot.godIds !== undefined) {
+    for (const player of snapshot.players) {
+      const godId = snapshot.godIds[player.id]
+      if (godId !== null && godId !== undefined && ![2, 3, 4, 5, 10, 11].includes(godId)) {
+        throw new Error(`玩家${player.id}神明状态无效`)
+      }
+    }
+  }
   return players
 }
 
@@ -122,10 +131,12 @@ export function getPropertyOffer(snapshot: EconomySnapshot, playerId: number, pa
   const price = snapshot.prices?.[parcelId] ?? parcel.basePrice
   if (state.ownerId === null) return { kind: 'purchase', parcelId, amount: price, ownerId: null }
   if (state.ownerId !== playerId) {
+    const godId = snapshot.godIds?.[playerId]
+    const multiplier = godId === 2 ? 0 : godId === 3 ? 2 : 1
     return {
       kind: 'rent',
       parcelId,
-      amount: calculateStreetRent(snapshot.properties, state.ownerId, parcel.streetId, snapshot.prices),
+      amount: calculateStreetRent(snapshot.properties, state.ownerId, parcel.streetId, snapshot.prices) * multiplier,
       ownerId: state.ownerId,
     }
   }
@@ -167,7 +178,14 @@ export function applyPropertyOffer(
         kind: 'purchased', playerId, parcelId, amount: offer.amount, level: properties[parcelId]!.level,
       })
     }
-    const level = (properties[parcelId]!.level + 1) as PropertyState['level']
+    const godId = snapshot.godIds?.[playerId]
+    if (godId === 5) {
+      return result({
+        kind: 'upgrade-failed', playerId, parcelId, amount: offer.amount, level: properties[parcelId]!.level,
+      })
+    }
+    const increment = godId === 4 ? 2 : 1
+    const level = Math.min(5, properties[parcelId]!.level + increment) as PropertyState['level']
     properties[parcelId]!.level = level
     return result({ kind: 'upgraded', playerId, parcelId, amount: offer.amount, level })
   }

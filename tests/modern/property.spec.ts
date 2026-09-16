@@ -30,8 +30,9 @@ function player(id: number, cash = 100_000, deposit = 100_000): PlayerState {
 function snapshot(
   players: PlayerState[] = [player(1), player(2)],
   properties: PropertyLedger = createPropertyLedger(),
+  godIds?: Record<number, number | null>,
 ): EconomySnapshot {
-  return { players, properties }
+  return { players, properties, godIds }
 }
 
 describe('住宅地账本与落点查询', () => {
@@ -137,6 +138,39 @@ describe('街道租金', () => {
 })
 
 describe('纯财产结算', () => {
+  it('财神免租、穷神双倍租金，普通快照保持原租金', () => {
+    const properties = createPropertyLedger()
+    properties[1] = { ownerId: 1, level: 0 }
+    const wealthy = snapshot([player(1), player(2)], properties, { 1: null, 2: 2 })
+    const poor = snapshot([player(1), player(2)], properties, { 1: null, 2: 3 })
+    expect(getPropertyOffer(wealthy, 2, 1).amount).toBe(0)
+    expect(getPropertyOffer(poor, 2, 1).amount).toBe(1200)
+    expect(getPropertyOffer(snapshot([player(1), player(2)], properties), 2, 1).amount).toBe(600)
+  })
+
+  it('福神付一次标准款升两级并封顶5，衰神付费但不升级', () => {
+    const properties = createPropertyLedger()
+    properties[1] = { ownerId: 1, level: 3 }
+    properties[3] = { ownerId: 1, level: 2 }
+    const fortunate = applyPropertyOffer(snapshot([player(1)], properties, { 1: 4 }), 1, 1, 'accept')
+    expect(fortunate.players[0]!.cash).toBe(99_600)
+    expect(fortunate.properties[1]!.level).toBe(5)
+    expect(fortunate.event).toEqual({ kind: 'upgraded', playerId: 1, parcelId: 1, amount: 400, level: 5 })
+
+    const unfortunate = applyPropertyOffer(snapshot([player(1)], properties, { 1: 5 }), 1, 3, 'accept')
+    expect(unfortunate.players[0]!.cash).toBe(99_700)
+    expect(unfortunate.properties[3]!.level).toBe(2)
+    expect(unfortunate.event).toEqual({ kind: 'upgrade-failed', playerId: 1, parcelId: 3, amount: 300, level: 2 })
+  })
+
+  it('神力不改变无主地购买报价和购买结果', () => {
+    for (const godId of [2, 3, 4, 5, 10, 11]) {
+      const source = snapshot([player(1)], createPropertyLedger(), { 1: godId })
+      expect(getPropertyOffer(source, 1, 1)).toEqual({ kind: 'purchase', parcelId: 1, amount: 1500, ownerId: null })
+      expect(applyPropertyOffer(source, 1, 1, 'accept').properties[1]).toEqual({ ownerId: 1, level: 0 })
+    }
+  })
+
   it('接受事件留下的负现金并在租金结算时把现金债务一并转入存款', () => {
     const properties = createPropertyLedger()
     properties[1] = { ownerId: 1, level: 0 }

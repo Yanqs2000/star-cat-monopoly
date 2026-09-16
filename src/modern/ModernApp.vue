@@ -144,7 +144,7 @@ async function loadPendingGame() {
           const event = state.lastPropertyEvent
           const parcel = map.parcels.find(item => item.id === event.parcelId)!
           const actor = state.players.find(item => item.id === event.playerId)!
-          const action = ({ purchased: '购买', upgraded: '升级', 'rent-paid': '支付租金', declined: '放弃', 'insufficient-cash': '现金不足', 'max-level': '已满级' })[event.kind]
+          const action = ({ purchased: '购买', upgraded: '升级', 'upgrade-failed': '升级失败', 'rent-paid': '支付租金', declined: '放弃', 'insufficient-cash': '现金不足', 'max-level': '已满级' })[event.kind]
           history.value.push(`${actor.name} ${action} ${parcel.streetName} #${parcel.id} · ${event.amount} · 现金 ${actor.cash} / 存款 ${actor.deposit}`)
         }
         const activeChanged = previous.activePlayerIndex !== state.activePlayerIndex

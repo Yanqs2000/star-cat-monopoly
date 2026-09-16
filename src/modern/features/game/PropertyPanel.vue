@@ -19,6 +19,7 @@ const result = computed(() => {
   return ({
     purchased: `购买成功，现金支付 ${current.amount}`,
     upgraded: `升级至 ${current.level} 级，现金支付 ${current.amount}`,
+    'upgrade-failed': `升级失败，现金支付 ${current.amount}，建筑仍为 ${current.level} 级`,
     'rent-paid': `已支付租金 ${current.amount}，地主存款增加 ${current.amount}`,
     declined: '已放弃本次交易，资金与产权不变',
     'insufficient-cash': `现金不足，需现金 ${current.amount}；存款不可用于购买或升级`,
