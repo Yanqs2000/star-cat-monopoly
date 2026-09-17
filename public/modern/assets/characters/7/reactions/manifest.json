@@ -1,0 +1,5633 @@
+{
+  "version": 1,
+  "characterId": 7,
+  "sourceSha256": "d701b1506ea29b701b93f61ba4ede3b34dcde022fba43d898fb9bb9f110409ef",
+  "clips": [
+    {
+      "name": "neutral",
+      "facing": "down-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 1,
+      "sourceSymbol": 2,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/neutral/down-right/1.png",
+          "width": 61,
+          "height": 95,
+          "offsetX": -3.0,
+          "offsetY": -64.15
+        }
+      ]
+    },
+    {
+      "name": "ready",
+      "facing": "down-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 7,
+      "sourceSymbol": 126,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/ready/down-right/1.png",
+          "width": 58,
+          "height": 105,
+          "offsetX": -1.65,
+          "offsetY": -64.5
+        }
+      ]
+    },
+    {
+      "name": "happy",
+      "facing": "down-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 3,
+      "sourceSymbol": 63,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/1.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/2.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/3.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/4.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/5.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/6.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/7.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/8.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/9.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/10.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/11.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/12.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/13.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/14.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/15.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/16.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/17.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/18.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/19.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/20.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/21.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/22.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/23.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/24.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/25.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/26.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/27.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/28.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/29.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/30.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/31.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/32.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/33.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/34.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/35.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/36.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/37.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/38.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/39.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/40.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/41.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/42.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/43.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/44.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/45.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/46.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/47.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/48.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/49.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/50.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/51.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/52.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/53.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/54.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/55.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/56.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-right/57.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.0,
+          "offsetY": -69.0
+        }
+      ]
+    },
+    {
+      "name": "sad",
+      "facing": "down-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 5,
+      "sourceSymbol": 107,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/1.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/2.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/3.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/4.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/5.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/6.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/7.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/8.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/9.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/10.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/11.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/12.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/13.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/14.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/15.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/16.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/17.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/18.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/19.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/20.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/21.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/22.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/23.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/24.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/25.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/26.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/27.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/28.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/29.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/30.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/31.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/32.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/33.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/34.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/35.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/36.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/37.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/38.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/39.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/40.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/41.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/42.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/43.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/44.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/45.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/46.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/47.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/48.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/49.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/50.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/51.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/52.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/53.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/54.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/55.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/56.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/57.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/58.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/59.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/60.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/61.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/62.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/63.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/64.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/65.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/66.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/67.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/68.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/69.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/70.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/71.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/72.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-right/73.png",
+          "width": 65,
+          "height": 100,
+          "offsetX": -3.15,
+          "offsetY": -69.15
+        }
+      ]
+    },
+    {
+      "name": "hurt",
+      "facing": "down-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 10,
+      "sourceSymbol": 187,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/1.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/2.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/3.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/4.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/5.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/6.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/7.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/8.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/9.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/10.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/11.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/12.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/13.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/14.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/15.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/16.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/17.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/18.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/19.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/20.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/21.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/22.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/23.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/24.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/25.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/26.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/27.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/28.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/29.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/30.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/31.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/32.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/33.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/34.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/35.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/36.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/37.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/38.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/39.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/40.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/41.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/42.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/43.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/44.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/45.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/46.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/47.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/48.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/49.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/50.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/51.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/52.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/53.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/54.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/55.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/56.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/57.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/58.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/59.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-right/60.png",
+          "width": 74,
+          "height": 107,
+          "offsetX": -9.15,
+          "offsetY": -74.15
+        }
+      ]
+    },
+    {
+      "name": "neutral",
+      "facing": "down-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 31,
+      "sourceSymbol": 189,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/neutral/down-left/1.png",
+          "width": 90,
+          "height": 107,
+          "offsetX": -5.0,
+          "offsetY": -69.15
+        }
+      ]
+    },
+    {
+      "name": "ready",
+      "facing": "down-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 37,
+      "sourceSymbol": 298,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/ready/down-left/1.png",
+          "width": 96,
+          "height": 107,
+          "offsetX": -4.0,
+          "offsetY": -68.0
+        }
+      ]
+    },
+    {
+      "name": "happy",
+      "facing": "down-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 33,
+      "sourceSymbol": 235,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/1.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/2.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/3.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/4.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/5.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/6.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/7.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/8.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/9.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/10.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/11.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/12.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/13.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/14.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/15.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/16.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/17.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/18.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/19.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/20.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/21.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/22.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/23.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/24.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/25.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/26.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/27.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/28.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/29.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/30.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/31.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/32.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/33.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/34.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/35.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/36.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/37.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/38.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/39.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/40.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/41.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/42.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/43.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/44.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/45.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/46.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/47.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/48.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/49.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/50.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/51.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/52.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/53.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/54.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/55.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/56.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/down-left/57.png",
+          "width": 91,
+          "height": 109,
+          "offsetX": -6.15,
+          "offsetY": -71.15
+        }
+      ]
+    },
+    {
+      "name": "sad",
+      "facing": "down-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 35,
+      "sourceSymbol": 279,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/1.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/2.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/3.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/4.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/5.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/6.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/7.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/8.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/9.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/10.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/11.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/12.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/13.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/14.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/15.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/16.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/17.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/18.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/19.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/20.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/21.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/22.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/23.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/24.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/25.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/26.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/27.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/28.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/29.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/30.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/31.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/32.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/33.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/34.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/35.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/36.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/37.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/38.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/39.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/40.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/41.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/42.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/43.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/44.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/45.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/46.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/47.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/48.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/49.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/50.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/51.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/52.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/53.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/54.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/55.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/56.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/57.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/58.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/59.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/60.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/61.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/62.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/63.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/64.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/65.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/66.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/67.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/68.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/69.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/70.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/71.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/72.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/down-left/73.png",
+          "width": 91,
+          "height": 110,
+          "offsetX": -6.0,
+          "offsetY": -71.15
+        }
+      ]
+    },
+    {
+      "name": "hurt",
+      "facing": "down-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 40,
+      "sourceSymbol": 359,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/1.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/2.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/3.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/4.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/5.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/6.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/7.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/8.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/9.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/10.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/11.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/12.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/13.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/14.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/15.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/16.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/17.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/18.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/19.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/20.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/21.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/22.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/23.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/24.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/25.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/26.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/27.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/28.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/29.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/30.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/31.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/32.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/33.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/34.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/35.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/36.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/37.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/38.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/39.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/40.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/41.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/42.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/43.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/44.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/45.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/46.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/47.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/48.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/49.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/50.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/51.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/52.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/53.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/54.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/55.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/56.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/57.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/58.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/59.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/down-left/60.png",
+          "width": 99,
+          "height": 113,
+          "offsetX": -13.0,
+          "offsetY": -72.65
+        }
+      ]
+    },
+    {
+      "name": "neutral",
+      "facing": "up-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 61,
+      "sourceSymbol": 361,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/neutral/up-left/1.png",
+          "width": 68,
+          "height": 133,
+          "offsetX": -1.65,
+          "offsetY": -74.15
+        }
+      ]
+    },
+    {
+      "name": "ready",
+      "facing": "up-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 67,
+      "sourceSymbol": 470,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/ready/up-left/1.png",
+          "width": 62,
+          "height": 133,
+          "offsetX": 5.35,
+          "offsetY": -71.15
+        }
+      ]
+    },
+    {
+      "name": "happy",
+      "facing": "up-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 63,
+      "sourceSymbol": 407,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/1.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/2.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/3.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/4.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/5.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/6.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/7.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/8.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/9.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/10.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/11.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/12.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/13.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/14.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/15.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/16.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/17.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/18.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/19.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/20.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/21.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/22.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/23.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/24.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/25.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/26.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/27.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/28.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/29.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/30.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/31.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/32.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/33.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/34.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/35.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/36.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/37.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/38.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/39.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/40.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/41.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/42.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/43.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/44.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/45.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/46.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/47.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/48.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/49.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/50.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/51.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/52.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/53.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/54.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/55.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/56.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-left/57.png",
+          "width": 70,
+          "height": 137,
+          "offsetX": -3.45,
+          "offsetY": -71.65
+        }
+      ]
+    },
+    {
+      "name": "sad",
+      "facing": "up-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 65,
+      "sourceSymbol": 451,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/1.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/2.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/3.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/4.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/5.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/6.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/7.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/8.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/9.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/10.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/11.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/12.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/13.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/14.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/15.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/16.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/17.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/18.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/19.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/20.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/21.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/22.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/23.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/24.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/25.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/26.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/27.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/28.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/29.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/30.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/31.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/32.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/33.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/34.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/35.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/36.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/37.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/38.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/39.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/40.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/41.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/42.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/43.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/44.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/45.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/46.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/47.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/48.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/49.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/50.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/51.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/52.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/53.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/54.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/55.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/56.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/57.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/58.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/59.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/60.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/61.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/62.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/63.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/64.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/65.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/66.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/67.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/68.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/69.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/70.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/71.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/72.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-left/73.png",
+          "width": 69,
+          "height": 137,
+          "offsetX": -2.0,
+          "offsetY": -71.15
+        }
+      ]
+    },
+    {
+      "name": "hurt",
+      "facing": "up-left",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 70,
+      "sourceSymbol": 531,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/1.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/2.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/3.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/4.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/5.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/6.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/7.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/8.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/9.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/10.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/11.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/12.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/13.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/14.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/15.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/16.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/17.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/18.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/19.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/20.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/21.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/22.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/23.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/24.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/25.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/26.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/27.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/28.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/29.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/30.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/31.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/32.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/33.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/34.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/35.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/36.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/37.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/38.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/39.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/40.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/41.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/42.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/43.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/44.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/45.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/46.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/47.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/48.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/49.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/50.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/51.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/52.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/53.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/54.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/55.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/56.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/57.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/58.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/59.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-left/60.png",
+          "width": 79,
+          "height": 149,
+          "offsetX": -5.65,
+          "offsetY": -81.15
+        }
+      ]
+    },
+    {
+      "name": "neutral",
+      "facing": "up-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 91,
+      "sourceSymbol": 533,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/neutral/up-right/1.png",
+          "width": 99,
+          "height": 108,
+          "offsetX": -34.45,
+          "offsetY": -65.0
+        }
+      ]
+    },
+    {
+      "name": "ready",
+      "facing": "up-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 97,
+      "sourceSymbol": 642,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/ready/up-right/1.png",
+          "width": 99,
+          "height": 109,
+          "offsetX": -33.5,
+          "offsetY": -67.15
+        }
+      ]
+    },
+    {
+      "name": "happy",
+      "facing": "up-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 93,
+      "sourceSymbol": 579,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/1.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/2.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/3.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/4.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/5.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/6.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/7.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/8.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/9.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/10.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/11.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/12.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/13.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/14.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/15.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/16.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/17.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/18.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/19.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/20.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/21.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/22.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/23.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/24.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/25.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/26.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/27.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/28.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/29.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/30.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/31.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/32.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/33.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/34.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/35.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/36.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/37.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/38.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/39.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/40.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/41.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/42.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/43.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/44.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/45.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/46.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/47.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/48.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/49.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/50.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/51.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/52.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/53.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/54.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/55.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/56.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        },
+        {
+          "url": "assets/characters/7/reactions/happy/up-right/57.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -37.65,
+          "offsetY": -67.0
+        }
+      ]
+    },
+    {
+      "name": "sad",
+      "facing": "up-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 95,
+      "sourceSymbol": 623,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/1.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/2.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/3.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/4.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/5.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/6.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/7.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/8.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/9.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/10.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/11.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/12.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/13.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/14.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/15.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/16.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/17.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/18.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/19.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/20.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/21.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/22.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/23.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/24.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/25.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/26.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/27.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/28.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/29.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/30.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/31.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/32.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/33.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/34.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/35.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/36.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/37.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/38.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/39.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/40.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/41.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/42.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/43.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/44.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/45.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/46.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/47.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/48.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/49.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/50.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/51.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/52.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/53.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/54.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/55.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/56.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/57.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/58.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/59.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/60.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/61.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/62.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/63.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/64.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/65.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/66.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/67.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/68.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/69.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/70.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/71.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/72.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        },
+        {
+          "url": "assets/characters/7/reactions/sad/up-right/73.png",
+          "width": 104,
+          "height": 109,
+          "offsetX": -36.0,
+          "offsetY": -65.15
+        }
+      ]
+    },
+    {
+      "name": "hurt",
+      "facing": "up-right",
+      "fps": 30,
+      "loop": false,
+      "sourceRootFrame": 100,
+      "sourceSymbol": 703,
+      "frames": [
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/1.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/2.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/3.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/4.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/5.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/6.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/7.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/8.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/9.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/10.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/11.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/12.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/13.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/14.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/15.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/16.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/17.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/18.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/19.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/20.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/21.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/22.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/23.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/24.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/25.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/26.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/27.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/28.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/29.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/30.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/31.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/32.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/33.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/34.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/35.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/36.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/37.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/38.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/39.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/40.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/41.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/42.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/43.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/44.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/45.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/46.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/47.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/48.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/49.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/50.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/51.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/52.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/53.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/54.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/55.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/56.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/57.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/58.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/59.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        },
+        {
+          "url": "assets/characters/7/reactions/hurt/up-right/60.png",
+          "width": 113,
+          "height": 121,
+          "offsetX": -40.5,
+          "offsetY": -78.0
+        }
+      ]
+    }
+  ],
+  "godOverlays": [
+    {
+      "godId": 2,
+      "url": "assets/characters/7/reactions/gods/2.png",
+      "width": 49,
+      "height": 57,
+      "offsetX": 1.8,
+      "offsetY": -94.0
+    },
+    {
+      "godId": 3,
+      "url": "assets/characters/7/reactions/gods/3.png",
+      "width": 45,
+      "height": 57,
+      "offsetX": 5.45,
+      "offsetY": -98.0
+    },
+    {
+      "godId": 4,
+      "url": "assets/characters/7/reactions/gods/4.png",
+      "width": 46,
+      "height": 48,
+      "offsetX": 7.3,
+      "offsetY": -85.5
+    },
+    {
+      "godId": 5,
+      "url": "assets/characters/7/reactions/gods/5.png",
+      "width": 45,
+      "height": 57,
+      "offsetX": 5.45,
+      "offsetY": -98.0
+    },
+    {
+      "godId": 10,
+      "url": "assets/characters/7/reactions/gods/10.png",
+      "width": 45,
+      "height": 57,
+      "offsetX": 5.45,
+      "offsetY": -98.0
+    },
+    {
+      "godId": 11,
+      "url": "assets/characters/7/reactions/gods/11.png",
+      "width": 45,
+      "height": 57,
+      "offsetX": 5.45,
+      "offsetY": -98.0
+    }
+  ]
+}
