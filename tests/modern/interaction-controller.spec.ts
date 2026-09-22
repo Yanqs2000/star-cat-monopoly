@@ -70,6 +70,160 @@ describe('完整3A开局状态', () => {
   })
 })
 
+describe('对局快照重建', () => {
+  it('保留已结算的卡片提示，确认后才回到待掷骰', () => {
+    const sourceScheduler = new FakeScheduler()
+    const snapshots: GameState[] = []
+    const source = createGameController(gameWithCards([5]), {
+      ...timings(sourceScheduler),
+      onState: state => snapshots.push(structuredClone(state)),
+    })
+    source.beginCard(0)
+    source.confirmCard()
+    source.chooseCard({ kind: 'dice', value: 4 })
+    const settled = snapshots.at(-1)!
+    source.dispose()
+
+    expect(settled).toMatchObject({
+      phase: 'interaction',
+      interaction: { kind: 'notice', notice: { kind: 'card', cardId: 5 }, resume: 'await-roll' },
+      inventories: { 1: [] },
+      forcedDice: { 1: 4, 2: null, 3: null, 4: null },
+    })
+
+    const restored = createGameController(structuredClone(settled), timings(new FakeScheduler()))
+    expect(restored.state).toEqual(settled)
+    expect(restored.acknowledgeInteraction()).toBe(true)
+    expect(restored.state).toMatchObject({
+      phase: 'awaiting-roll', interaction: null,
+      inventories: { 1: [] }, forcedDice: { 1: 4, 2: null, 3: null, 4: null },
+    })
+  })
+
+  it('重启到已结算提示时不重新准备回合', () => {
+    const settledGame = gameWithCards([])
+    settledGame.forcedDice = { 1: 3, 2: null, 3: null, 4: null }
+    settledGame.phase = 'interaction'
+    settledGame.interaction = {
+      kind: 'notice', playerId: 1, resume: 'await-roll',
+      notice: { kind: 'card', message: 'applied', cardId: 5 },
+    }
+    const controller = createGameController(createGame([1, 2, 3, 4], 1), timings(new FakeScheduler()))
+
+    controller.restart(structuredClone(settledGame))
+
+    expect(controller.state).toEqual(settledGame)
+    expect(controller.acknowledgeInteraction()).toBe(true)
+    expect(controller.state.forcedDice).toEqual({ 1: 3, 2: null, 3: null, 4: null })
+  })
+
+  it('从已到银行的moving快照重建时先处理当前格再继续余步', () => {
+    const sourceScheduler = new FakeScheduler()
+    const snapshots: GameState[] = []
+    const source = createGameController(before({ column: 18, row: 14 }, 1, 2), {
+      ...timings(sourceScheduler),
+      onState: state => snapshots.push(structuredClone(state)),
+    })
+    source.roll()
+    sourceScheduler.advance(10)
+    const arrived = snapshots.find(state => state.phase === 'moving' && state.turnPath.length === 2)!
+    source.dispose()
+
+    expect(arrived).toMatchObject({
+      phase: 'moving', remainingSteps: 1,
+    })
+    expect(arrived.players[0]!.position).toEqual({ column: 19, row: 15 })
+
+    const scheduler = new FakeScheduler()
+    const restored = createGameController(structuredClone(arrived), timings(scheduler))
+    expect(restored.state).toMatchObject({
+      phase: 'interaction', remainingSteps: 1,
+      interaction: { kind: 'bank', resume: 'after-bank' },
+    })
+    expect(restored.state.players[0]!.position).toEqual({ column: 19, row: 15 })
+    expect(restored.leaveBank()).toBe(true)
+    scheduler.advance(10)
+    expect(restored.state.players[0]!.position).toEqual({ column: 20, row: 16 })
+    expect(restored.state.remainingSteps).toBe(0)
+  })
+
+  it('从最终到达的landed快照重建时只结算一次落点', () => {
+    const sourceScheduler = new FakeScheduler()
+    const snapshots: GameState[] = []
+    const game = before({ column: 19, row: 1 }, 2)
+    const inventoryLength = game.inventories[1]!.length
+    const source = createGameController(game, {
+      ...timings(sourceScheduler),
+      onState: state => snapshots.push(structuredClone(state)),
+    })
+    source.roll()
+    sourceScheduler.advance(10)
+    const arrived = snapshots.find(state => state.phase === 'landed' && state.interaction === null)!
+    source.dispose()
+
+    const restored = createGameController(structuredClone(arrived), timings(new FakeScheduler()))
+    expect(restored.state.interaction).toMatchObject({ kind: 'notice', notice: { kind: 'card' }, resume: 'end-turn' })
+    expect(restored.state.inventories[1]).toHaveLength(inventoryLength + 1)
+    expect(restored.acknowledgeInteraction()).toBe(true)
+    expect(restored.acknowledgeInteraction()).toBe(false)
+  })
+
+  it('保留人类地产决策，且恢复AI地产决策的自动结算', () => {
+    const humanScheduler = new FakeScheduler()
+    const humanStates: GameState[] = []
+    const humanSource = createGameController(before({ column: 7, row: 31 }, 2), {
+      ...timings(humanScheduler),
+      onState: state => humanStates.push(structuredClone(state)),
+    })
+    humanSource.roll()
+    humanScheduler.advance(10)
+    const humanDecision = humanStates.find(state => state.phase === 'property-decision')!
+    humanSource.dispose()
+    const human = createGameController(structuredClone(humanDecision), timings(new FakeScheduler()))
+    expect(human.state).toEqual(humanDecision)
+    expect(human.decideProperty('accept')).toBe(true)
+    expect(human.state.phase).toBe('property-result')
+
+    const aiScheduler = new FakeScheduler()
+    const aiStates: GameState[] = []
+    const aiGame = before({ column: 7, row: 31 }, 2)
+    aiGame.players[0] = { ...aiGame.players[0]!, controller: 'ai' }
+    const aiSource = createGameController(aiGame, {
+      ...timings(aiScheduler),
+      onState: state => aiStates.push(structuredClone(state)),
+    })
+    aiScheduler.advance(20)
+    const aiDecision = aiStates.find(state => state.phase === 'property-decision')!
+    aiSource.dispose()
+    const resumeScheduler = new FakeScheduler()
+    const ai = createGameController(structuredClone(aiDecision), timings(resumeScheduler))
+    expect(ai.state).toEqual(aiDecision)
+    resumeScheduler.advance(10)
+    expect(ai.state.phase).toBe('property-result')
+  })
+
+  it('保留AI结果提示并恢复原自动确认', () => {
+    const sourceScheduler = new FakeScheduler()
+    const snapshots: GameState[] = []
+    const game = before({ column: 19, row: 1 }, 2)
+    game.players[0] = { ...game.players[0]!, controller: 'ai' }
+    const source = createGameController(game, {
+      ...timings(sourceScheduler),
+      onState: state => snapshots.push(structuredClone(state)),
+    })
+    sourceScheduler.advance(20)
+    const notice = snapshots.find(state => state.interaction?.kind === 'notice')!
+    source.dispose()
+
+    const scheduler = new FakeScheduler()
+    const restored = createGameController(structuredClone(notice), timings(scheduler))
+    expect(restored.state).toEqual(notice)
+    scheduler.advance(10)
+    expect(restored.state.activePlayerIndex).toBe(1)
+    expect(restored.state.interaction).toBeNull()
+  })
+})
+
 describe('卡牌有限交互', () => {
   it('普通待掷骰阶段可打开确认并取消，手牌和随机状态不变', () => {
     const game = gameWithCards([5])

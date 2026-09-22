@@ -489,6 +489,30 @@ export function createGameController(initialState: GameState, options: GameContr
     else if (resume === 'await-roll' && !isHuman()) schedule(() => performRoll(), aiThinkDurationMs)
   }
 
+  const resumeCurrentState = () => {
+    if (disposed) return
+    if (current.phase === 'awaiting-roll') {
+      beginTurn()
+      return
+    }
+    if (current.phase === 'moving') {
+      if (current.turnPath.length <= 1) startStep()
+      else processArrivedStep()
+      return
+    }
+    if (current.phase === 'landed') {
+      if (current.lastPropertyEvent !== null) schedule(finishTurn, landingDurationMs)
+      else handleLanding()
+      return
+    }
+    if (isHuman()) return
+    if (current.phase === 'property-decision') schedule(() => settleProperty('accept'), aiThinkDurationMs)
+    else if (current.phase === 'property-result') schedule(acknowledgePropertyResult, aiThinkDurationMs)
+    else if (current.phase === 'interaction' && current.interaction?.kind === 'notice') {
+      schedule(acknowledgeNotice, aiThinkDurationMs)
+    }
+  }
+
   const applyChosenCard = (interaction: Extract<GameInteraction, { cardId: number }>, choice: DirectCardChoice) => {
     const snapshot = projectWorld(current)
     if (directCardIds.has(interaction.cardId)) {
@@ -701,7 +725,7 @@ export function createGameController(initialState: GameState, options: GameContr
       current = state
       paused = false
       notify()
-      beginTurn()
+      resumeCurrentState()
     },
     dispose() {
       disposed = true
@@ -711,6 +735,6 @@ export function createGameController(initialState: GameState, options: GameContr
     },
   }
   notify()
-  beginTurn()
+  resumeCurrentState()
   return controller
 }
