@@ -220,6 +220,14 @@ describe('一次性反馈动作游标', () => {
     expect(player.finished).toBe(true)
   })
 
+  it('连续按精确帧间隔前进时不跳过后续帧', () => {
+    const player = new ReactionPlayer(clip)
+    for (let expectedFrame = 1; expectedFrame <= 12; expectedFrame++) {
+      player.advance(1000 / 30)
+      expect(player.frameIndex, `advance ${expectedFrame}`).toBe(expectedFrame)
+    }
+  })
+
   it('暂停时不前进，速度只缩放视觉时间', () => {
     const player = new ReactionPlayer(clip)
     player.setPaused(true)

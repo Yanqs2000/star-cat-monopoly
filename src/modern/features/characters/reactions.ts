@@ -190,7 +190,7 @@ export function parseReactionManifest(value: unknown): ReactionManifest {
 
 export class ReactionPlayer {
   #clip: ReactionClip
-  #elapsedMs = 0
+  #elapsedFrames = 0
   #paused = false
   #speed = 1
 
@@ -201,7 +201,7 @@ export class ReactionPlayer {
   get clip(): ReactionClip { return this.#clip }
   get frameIndex(): number {
     return Math.min(
-      Math.floor(this.#elapsedMs * this.#clip.fps / 1000 + Number.EPSILON),
+      Math.floor(this.#elapsedFrames),
       this.#clip.frames.length - 1,
     )
   }
@@ -210,7 +210,9 @@ export class ReactionPlayer {
 
   advance(deltaMs: number): WorldFrame {
     if (!finite(deltaMs) || deltaMs < 0) throw new Error('反馈动作时间必须为非负数')
-    if (!this.#paused && !this.finished) this.#elapsedMs += deltaMs * this.#speed
+    if (!this.#paused && !this.finished) {
+      this.#elapsedFrames += deltaMs * this.#speed * this.#clip.fps / 1000
+    }
     return this.currentFrame
   }
 
@@ -223,6 +225,6 @@ export class ReactionPlayer {
 
   reset(clip: ReactionClip = this.#clip): void {
     this.#clip = clip
-    this.#elapsedMs = 0
+    this.#elapsedFrames = 0
   }
 }
