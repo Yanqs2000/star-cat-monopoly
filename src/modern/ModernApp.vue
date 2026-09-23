@@ -2,12 +2,17 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import mapJson from './data/map.json'
 import { parseAssetManifest, type AssetManifest } from './features/characters/assets'
+import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
 import { createGameController, type GameController } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
+import InteractionPanel from './features/game/InteractionPanel.vue'
+import { parseInteractionAssets, type InteractionAssetsManifest } from './features/game/interaction-assets'
 import PropertyPanel from './features/game/PropertyPanel.vue'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl } from './features/game/game-visuals'
+import { getCardRecord } from './features/game/direct-cards'
 import { createGame } from './features/game/setup'
 import type { GameState } from './features/game/types'
-import { createMapScene, type MapSceneHandle, type PlayerPose } from './features/map/MapScene'
+import { createMapScene, type MapSceneHandle } from './features/map/MapScene'
 import SceneInspector from './features/map/SceneInspector.vue'
 import type { MapData } from './features/map/types'
 
@@ -22,6 +27,7 @@ const indexError = ref('')
 const selected = ref<number[]>([])
 const pending = ref<PendingGame>()
 const game = ref<GameState>()
+const interactionAssets = ref<InteractionAssetsManifest>()
 const loadState = ref<'idle' | 'loading' | 'ready' | 'error'>('idle')
 const loadError = ref('')
 const history = ref<string[]>([])
@@ -78,15 +84,6 @@ function seed(): number {
   crypto.getRandomValues(value)
   return value[0]!
 }
-function poses(state: GameState): PlayerPose[] {
-  return state.players.map((player, index) => ({
-    characterId: player.characterId,
-    position: player.position,
-    direction: player.direction,
-    active: index === state.activePlayerIndex,
-    moving: state.phase === 'moving' && index === state.activePlayerIndex,
-  }))
-}
 function cleanupGame() {
   generation += 1
   abort?.abort(); abort = undefined
@@ -94,10 +91,29 @@ function cleanupGame() {
   gameController?.dispose(); gameController = undefined
   scene?.destroy(); scene = undefined
 }
+async function fetchInteractionManifest(signal: AbortSignal): Promise<InteractionAssetsManifest> {
+  const url = 'assets/interactions/manifest.json'
+  const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal })
+  if (!response.ok) throw new Error(`交互素材清单加载失败：${url}（HTTP ${response.status}）`)
+  return parseInteractionAssets(await response.json())
+}
 async function fetchManifest(item: CharacterIndexItem, signal: AbortSignal): Promise<AssetManifest> {
   const response = await fetch(`${import.meta.env.BASE_URL}${item.manifestUrl}`, { signal })
   if (!response.ok) throw new Error(`角色素材清单加载失败：${item.manifestUrl}（HTTP ${response.status}）`)
   return parseAssetManifest(await response.json())
+}
+async function fetchReactionManifest(item: CharacterIndexItem, signal: AbortSignal): Promise<ReactionManifest> {
+  const url = reactionManifestUrl(item.id)
+  const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal })
+  if (!response.ok) throw new Error(`角色反馈素材清单加载失败：${url}（HTTP ${response.status}）`)
+  return parseReactionManifest(await response.json())
+}
+function failRuntimeAsset(error: Error) {
+  const state = gameController?.state ?? game.value
+  if (state) pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
+  loadError.value = error.message
+  loadState.value = 'error'
+  cleanupGame()
 }
 async function loadPendingGame() {
   if (!pending.value) return
@@ -108,23 +124,29 @@ async function loadPendingGame() {
   const signal = abort.signal
   loadState.value = 'loading'; loadError.value = ''; paused.value = false; following.value = true
   try {
-    const entries = await Promise.all(pending.value.state.players.map(async player => {
+    const [entries, loadedInteractionAssets] = await Promise.all([Promise.all(pending.value.state.players.map(async player => {
       const item = characters.value.find(character => character.id === player.characterId)!
-      return { characterId: player.characterId, manifest: await fetchManifest(item, signal) }
-    }))
+      const [manifest, reactions] = await Promise.all([fetchManifest(item, signal), fetchReactionManifest(item, signal)])
+      return { playerId: player.id, characterId: player.characterId, manifest, reactions }
+    })), fetchInteractionManifest(signal)])
     if (current !== generation || !host.value) return
     const loaded = await createMapScene(host.value, map, entries[0]!.manifest, {
       signal,
       playerManifests: entries,
       onFrame: () => {},
       onManualCamera: () => { following.value = false },
+      onTargetCell: position => gameController?.chooseCard({ kind: 'cell', position }),
+      onAssetError: failRuntimeAsset,
     })
     if (current !== generation) { loaded.destroy(); return }
     scene = loaded
+    interactionAssets.value = loadedInteractionAssets
     const initial = pending.value.state
     game.value = initial
-    scene.setPlayers(poses(initial))
+    scene.setPlayers(buildPlayerPoses(initial))
     scene.setProperties(initial.properties)
+    scene.setWorld(initial.world)
+    scene.setTargeting(initial.interaction?.kind === 'target-choice')
     scene.showMarkers(true)
     scene.setSpeed(speed.value)
     scene.follow(initial.players[initial.activePlayerIndex]!.position)
@@ -149,11 +171,29 @@ async function loadPendingGame() {
         }
         const activeChanged = previous.activePlayerIndex !== state.activePlayerIndex
         const propertiesChanged = previous.properties !== state.properties
+        const worldChanged = previous.world !== state.world
         previous = state
         game.value = state
-        scene?.setPlayers(poses(state))
+        scene?.setPlayers(buildPlayerPoses(state))
         if (propertiesChanged) scene?.setProperties(state.properties)
+        if (worldChanged) scene?.setWorld(state.world)
+        scene?.setTargeting(!paused.value && state.interaction?.kind === 'target-choice')
         if (following.value && activeChanged) scene?.follow(state.players[state.activePlayerIndex]!.position)
+      },
+      onInteractionEvent: event => {
+        const state = gameController?.state ?? game.value
+        const actor = state?.players.find(player => player.id === event.playerId)
+        const detail = event.reason ?? event.worldEvent?.kind ?? event.shopAction ?? event.luckEvent?.description ?? event.kind
+        history.value.push(`${actor?.name ?? `玩家${event.playerId}`} · ${detail}${event.amount === undefined ? '' : ` · ${event.amount}`}`)
+        if (!state) return
+        const visual = interactionVisualPlan(event)
+        for (const reaction of visual.reactions) scene?.playReaction(reaction.playerId, reaction.name)
+        for (const effect of visual.effects) {
+          const position = effect.cellId === undefined
+            ? state.players.find(player => player.id === effect.playerId)?.position
+            : getCardRecord(effect.cellId)?.position
+          if (position) scene?.playEffect(effect.clipId, position)
+        }
       },
     })
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })
@@ -168,7 +208,7 @@ async function loadPendingGame() {
 async function startGame() {
   if (selected.value.length === 0) return
   cleanupGame()
-  const state = createGame([...selected.value], seed())
+  const state = createGame([...selected.value], seed(), new Date().getDay())
   pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
   history.value = []
   speed.value = 1
@@ -179,11 +219,22 @@ async function startGame() {
 function roll() { gameController?.roll() }
 function decideProperty(choice: 'accept' | 'decline') { gameController?.decideProperty(choice) }
 function acknowledgeProperty() { gameController?.acknowledgeProperty() }
+function beginCard(index: number) { gameController?.beginCard(index) }
+function confirmInteraction() { gameController?.confirmCard() }
+function cancelInteraction() { gameController?.cancelInteraction() }
+function chooseInteraction(choice: import('./features/game/direct-cards').DirectCardChoice) { gameController?.chooseCard(choice) }
+function acknowledgeInteraction() { gameController?.acknowledgeInteraction() }
+function buyCard(slot: number) { gameController?.buyCard(slot) }
+function sellCard(index: number) { gameController?.sellCard(index) }
+function leaveShop() { gameController?.leaveShop() }
+function requestCredit() { gameController?.requestCredit() }
+function leaveBank() { gameController?.leaveBank() }
 function togglePause() {
   if (!gameController || !scene) return
   paused.value = !paused.value
   gameController.setPaused(paused.value)
   scene.setPaused(paused.value)
+  scene.setTargeting(!paused.value && game.value?.interaction?.kind === 'target-choice')
 }
 function changeSpeed(value: number) {
   speed.value = value
@@ -209,6 +260,7 @@ function returnToSelection() {
   cleanupGame()
   pending.value = undefined
   game.value = undefined
+  interactionAssets.value = undefined
   loadState.value = 'idle'
   mode.value = 'selection'
 }
@@ -218,8 +270,8 @@ function keydown(event: KeyboardEvent) {
   const target = event.target as HTMLElement | null
   if (target?.matches('input, select, textarea, button, [contenteditable=true]')) return
   if (event.key === 'ArrowUp' && gameController?.roll()) event.preventDefault()
-  if (event.key === 'ArrowLeft' && gameController?.decideProperty('accept')) event.preventDefault()
-  if (event.key === 'ArrowRight' && gameController?.decideProperty('decline')) event.preventDefault()
+  if (event.key === 'ArrowLeft' && (gameController?.decideProperty('accept') || gameController?.confirmCard() || gameController?.acknowledgeInteraction() || gameController?.acknowledgeProperty())) event.preventDefault()
+  if (event.key === 'ArrowRight' && (gameController?.decideProperty('decline') || gameController?.cancelInteraction())) event.preventDefault()
 }
 onMounted(() => {
   document.addEventListener('fullscreenchange', fullscreenChanged)
@@ -252,19 +304,20 @@ onBeforeUnmount(() => {
         <button class="start" :disabled="selected.length === 0 || indexState !== 'ready'" @click="startGame">开始对局</button>
       </div>
     </section>
-    <p class="scope">2C 住宅地交易：购买、升级与同街道租金；特殊地和完整破产流程留待后续批次。</p>
+    <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
   <main v-else class="game-shell">
-    <header><div><span class="eyebrow">原素材 · 2C住宅交易</span><h1>星猫大富翁 · 回合演示</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入四名角色与地产素材…' }}</span></header>
+    <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="host" class="canvas-host" />
-      <GamePanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" />
+      <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
+      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @leave-bank="leaveBank" />
       <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理尚未接入 2C，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">
-        <div v-if="loadState === 'loading'"><p>正在载入地图与四名角色动作…</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p></div>
+        <div v-if="loadState === 'loading'"><p>正在载入地图、本局角色动作与完整交互素材…</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p></div>
         <div v-else role="alert"><p>{{ loadError }}</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p><div class="error-actions"><button @click="loadPendingGame">重试载入</button><button @click="returnToSelection">返回选人</button></div></div>
       </div>
     </section>

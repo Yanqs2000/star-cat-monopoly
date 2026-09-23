@@ -1,16 +1,24 @@
-import { Application, Container, Graphics, ImageSource, Sprite, Text, Texture, type Ticker } from 'pixi.js'
+import { Application, Container, Graphics, ImageSource, Point, Sprite, Text, Texture, type Ticker } from 'pixi.js'
 import { WalkPreview } from '../characters/WalkPreview'
 import type { AssetManifest, Facing } from '../characters/assets'
+import { ReactionPlayer, type GodId, type ReactionManifest, type ReactionName } from '../characters/reactions'
 import type { PlayerTransition } from '../game/controller'
+import { getCardRecord } from '../game/direct-cards'
 import type { Direction, PlayerState } from '../game/types'
+import type { WorldState } from '../game/world-cards'
 import type { PropertyLedger } from '../game/property'
 import { gridToScene } from './coordinates'
 import { parsePropertyAssets } from './property-assets'
+import { pickTargetAfterPointer } from './target-selection'
 import type { GridPoint, MapData } from './types'
+import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
+  playerId: number
   moving: boolean
   active: boolean
+  visible: boolean
+  godId: number | null
 }
 
 export interface MapSceneHandle {
@@ -21,6 +29,10 @@ export interface MapSceneHandle {
   setPlaying(playing: boolean): void
   setPlayers(players: PlayerPose[]): void
   setProperties(properties: PropertyLedger): void
+  setWorld(world: WorldState): void
+  setTargeting(targeting: boolean): void
+  playReaction(playerId: number, reaction: ReactionName): void
+  playEffect(clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint): void
   transitionPlayer(transition: PlayerTransition | null): void
   setPaused(paused: boolean): void
   setSpeed(speed: number): void
@@ -32,12 +44,32 @@ export interface MapSceneHandle {
 export interface MapSceneOptions {
   signal: AbortSignal
   onFrame: (frame: number) => void
-  playerManifests?: { characterId: number; manifest: AssetManifest }[]
+  playerManifests?: { playerId: number; characterId: number; manifest: AssetManifest; reactions: ReactionManifest }[]
   onManualCamera?: () => void
+  onTargetCell?: (position: GridPoint) => void
+  onAssetError?: (error: Error) => void
 }
 
 const FACING_BY_DIRECTION: Record<Direction, Facing> = {
   1: 'down-right', 2: 'down-left', 3: 'up-left', 4: 'up-right',
+}
+
+interface WorldAnimation {
+  view: Container
+  sprite: Sprite
+  clip: WorldClip
+  elapsedMs: number
+}
+
+interface EffectAnimation extends WorldAnimation {
+  holdMs: number
+}
+
+function worldFrameAt(clip: WorldClip, elapsedMs: number) {
+  const frameDuration = 1000 / clip.fps
+  const raw = Math.floor(Math.max(0, elapsedMs) / frameDuration)
+  const index = clip.loop ? raw % clip.frames.length : Math.min(raw, clip.frames.length - 1)
+  return clip.frames[index]!
 }
 
 export async function createMapScene(host: HTMLElement, map: MapData, manifest: AssetManifest,
@@ -45,6 +77,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   const app = new Application()
   const textures = new Map<string, Texture>()
   const bitmaps: ImageBitmap[] = []
+  const inflightTextures = new Map<string, Promise<void>>()
   const controller = new AbortController()
   let initialized = false
   let destroyed = false
@@ -60,6 +93,27 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     for (const texture of textures.values()) texture.destroy(true)
     for (const bitmap of bitmaps) bitmap.close()
   }
+  const loadTexture = (url: string): Promise<void> => {
+    if (textures.has(url)) return Promise.resolve()
+    const existing = inflightTextures.get(url)
+    if (existing) return existing
+    const loading = (async () => {
+      try {
+        const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        const bitmap = await createImageBitmap(await response.blob(), { premultiplyAlpha: 'premultiply' })
+        bitmaps.push(bitmap)
+        controller.signal.throwIfAborted()
+        textures.set(url, new Texture({ source: new ImageSource({ resource: bitmap, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) }))
+      } catch (error) {
+        throw new Error(`素材加载失败：${url}（${error instanceof Error ? error.message : String(error)}）`)
+      } finally {
+        inflightTextures.delete(url)
+      }
+    })()
+    inflightTextures.set(url, loading)
+    return loading
+  }
   try {
     await app.init({ width: 800, height: 600, resolution: Math.min(devicePixelRatio || 1, 2), autoDensity: true, antialias: true, background: '#66ccff', preference: 'webgl', autoStart: false, sharedTicker: false })
     initialized = true
@@ -70,20 +124,17 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parsePropertyAssets(await response.json())
     })() : undefined
+    const worldManifest = options.playerManifests ? await (async (): Promise<WorldAssetsManifest> => {
+      const url = 'assets/world/manifest.json'
+      const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
+      if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
+      return parseWorldAssets(await response.json())
+    })() : undefined
     const urls = [...new Set([manifest.map.url, ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
-      ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? [])])]
-    const results = await Promise.allSettled(urls.map(async url => {
-      try {
-        const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
-        if (!response.ok) throw new Error(`HTTP ${response.status}`)
-        const bitmap = await createImageBitmap(await response.blob(), { premultiplyAlpha: 'premultiply' })
-        bitmaps.push(bitmap)
-        controller.signal.throwIfAborted()
-        textures.set(url, new Texture({ source: new ImageSource({ resource: bitmap, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) }))
-      } catch (error) {
-        throw new Error(`素材加载失败：${url}（${error instanceof Error ? error.message : String(error)}）`)
-      }
-    }))
+      ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
+      ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
+      ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? [])])]
+    const results = await Promise.allSettled(urls.map(loadTexture))
     const failure = results.find(result => result.status === 'rejected')
     if (failure?.status === 'rejected') throw failure.reason
     controller.signal.throwIfAborted()
@@ -120,14 +171,22 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       entities.addChild(view)
       return { parcel, image, badge }
     }) : []
-    const actors = (options.playerManifests ?? []).map(({ manifest: playerManifest }) => {
+    const actors = (options.playerManifests ?? []).map(({ playerId, manifest: playerManifest, reactions }) => {
       const view = new Container()
       const active = new Graphics().circle(0, -4, 18).fill({ color: '#ffe18a', alpha: 0.28 }).stroke({ color: '#ffe18a', width: 2 })
       const walker = new WalkPreview(playerManifest.clips, textures)
-      view.addChild(active, walker.view)
+      const initialReaction = reactions.clips.find(clip => clip.facing === 'down-right' && clip.name === 'neutral')!
+      const reaction = new ReactionPlayer(initialReaction)
+      const reactionSprite = new Sprite()
+      const godSprite = new Sprite()
+      reactionSprite.visible = false
+      godSprite.visible = false
+      view.addChild(active, walker.view, reactionSprite, godSprite)
       entities.addChild(view)
-      return { view, active, walker }
+      return { playerId, view, active, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, reactionToken: 0, godId: null as number | null }
     })
+    const worldAnimations = new Map<number, WorldAnimation>()
+    const effects = new Set<EffectAnimation>()
     viewport.addChild(world)
     app.stage.addChild(viewport)
 
@@ -158,14 +217,32 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       placeCamera(gridToScene(point))
     }
     const setPlayers = (poses: PlayerPose[]) => {
-      poses.forEach((pose, index) => {
-        const actor = actors[index]
+      poses.forEach((pose) => {
+        const actor = actors.find(item => item.playerId === pose.playerId)
         if (!actor) return
         const target = gridToScene(pose.position)
         actor.view.position.set(target.x, target.y)
         actor.view.zIndex = pose.position.row * 100 + pose.position.column
         actor.active.visible = pose.active
-        actor.walker.setPose(FACING_BY_DIRECTION[pose.direction], pose.moving)
+        actor.view.visible = pose.visible
+        actor.facing = FACING_BY_DIRECTION[pose.direction]
+        actor.walker.setPose(actor.facing, pose.moving)
+        if (pose.moving) {
+          actor.reacting = false
+          actor.reactionSprite.visible = false
+        }
+        actor.walker.view.visible = !actor.reacting
+        const god = actor.reactions.godOverlays.find(item => item.godId === pose.godId as GodId)
+        actor.godId = pose.godId
+        actor.godSprite.visible = god !== undefined && textures.has(god.url)
+        if (god) {
+          void loadTexture(god.url).then(() => {
+            if (destroyed || actor.godId !== god.godId) return
+            actor.godSprite.texture = textures.get(god.url)!
+            actor.godSprite.position.set(god.offsetX, god.offsetY)
+            actor.godSprite.visible = true
+          }).catch(error => { if (!destroyed) options.onAssetError?.(error as Error) })
+        }
       })
     }
     const setProperties = (ledger: PropertyLedger) => {
@@ -173,12 +250,85 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       for (const { parcel, image, badge } of properties) {
         const state = ledger[parcel.id]!
         const asset = state.ownerId === null
-          ? propertyManifest.sellSigns.find(item => item.facing === parcel.facing)!
+          ? state.level === 0
+            ? propertyManifest.sellSigns.find(item => item.facing === parcel.facing)!
+            : worldManifest!.neutralHouses.find(item => item.facing === parcel.facing && item.level === state.level)!
           : propertyManifest.houses.find(item => item.ownerId === state.ownerId && item.facing === parcel.facing && item.level === state.level)!
         image.texture = textures.get(asset.url)!
         image.position.set(asset.offsetX, asset.offsetY)
-        badge.text = state.ownerId === null ? '' : `P${state.ownerId} · ${state.level}级`
+        badge.text = state.ownerId === null ? (state.level === 0 ? '' : `中立 · ${state.level}级`) : `P${state.ownerId} · ${state.level}级`
       }
+    }
+    const setWorld = (state: WorldState) => {
+      if (!worldManifest) return
+      const desired = new Set(Object.keys(state.markers).map(Number))
+      for (const [cellId, animation] of worldAnimations) {
+        if (desired.has(cellId)) continue
+        entities.removeChild(animation.view)
+        animation.view.destroy({ children: true })
+        worldAnimations.delete(cellId)
+      }
+      for (const [cellIdText, npcId] of Object.entries(state.markers)) {
+        const cellId = Number(cellIdText)
+        const record = getCardRecord(cellId)
+        if (!record) continue
+        const facing = typeof record.facing === 'number' && record.facing >= 1 && record.facing <= 4 ? record.facing : 1
+        const clipId = npcId === 6 ? `barrier-${facing}` : npcId === 7 ? 'mine' : `npc-${npcId}`
+        const clip = worldManifest.clips.find(item => item.id === clipId)
+        if (!clip) continue
+        const existing = worldAnimations.get(cellId)
+        if (existing?.clip.id === clipId) continue
+        if (existing) {
+          entities.removeChild(existing.view)
+          existing.view.destroy({ children: true })
+          worldAnimations.delete(cellId)
+        }
+        const view = new Container()
+        const sprite = new Sprite()
+        const position = gridToScene(record.position)
+        view.position.set(position.x, position.y)
+        view.zIndex = record.position.row * 100 + record.position.column
+        view.addChild(sprite)
+        entities.addChild(view)
+        const animation = { view, sprite, clip, elapsedMs: 0 }
+        worldAnimations.set(cellId, animation)
+        const frame = worldFrameAt(clip, 0)
+        sprite.texture = textures.get(frame.url)!
+        sprite.position.set(frame.offsetX, frame.offsetY)
+      }
+    }
+    const playReaction = (playerId: number, name: ReactionName) => {
+      const actor = actors.find(item => item.playerId === playerId)
+      if (!actor) return
+      const clip = actor.reactions.clips.find(item => item.facing === actor.facing && item.name === name)
+      if (!clip) return
+      const token = ++actor.reactionToken
+      void Promise.all(clip.frames.map(frame => loadTexture(frame.url))).then(() => {
+        if (destroyed || token !== actor.reactionToken) return
+        actor.reaction.reset(clip)
+        actor.reacting = true
+        actor.walker.view.visible = false
+        actor.reactionSprite.visible = true
+        const frame = actor.reaction.currentFrame
+        actor.reactionSprite.texture = textures.get(frame.url)!
+        actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
+      }).catch(error => { if (!destroyed) options.onAssetError?.(error as Error) })
+    }
+    const playEffect = (clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint) => {
+      const clip = worldManifest?.clips.find(item => item.id === clipId)
+      if (!clip) return
+      const view = new Container()
+      const sprite = new Sprite()
+      const point = gridToScene(position)
+      view.position.set(point.x, point.y)
+      view.zIndex = position.row * 100 + position.column + 1
+      view.addChild(sprite)
+      entities.addChild(view)
+      const animation: EffectAnimation = { view, sprite, clip, elapsedMs: 0, holdMs: 250 }
+      const frame = worldFrameAt(clip, 0)
+      sprite.texture = textures.get(frame.url)!
+      sprite.position.set(frame.offsetX, frame.offsetY)
+      effects.add(animation)
     }
     let previousFrame = -1
     const tick = (ticker: Ticker) => {
@@ -188,6 +338,30 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         if (frame !== previousFrame) { previousFrame = frame; options.onFrame(frame) }
       }
       for (const actor of actors) actor.walker.update(deltaMs)
+      for (const actor of actors) {
+        if (!actor.reacting) continue
+        const frame = actor.reaction.advance(deltaMs)
+        actor.reactionSprite.texture = textures.get(frame.url)!
+        actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
+      }
+      for (const animation of worldAnimations.values()) {
+        animation.elapsedMs += deltaMs
+        const frame = worldFrameAt(animation.clip, animation.elapsedMs)
+        animation.sprite.texture = textures.get(frame.url)!
+        animation.sprite.position.set(frame.offsetX, frame.offsetY)
+      }
+      for (const animation of effects) {
+        animation.elapsedMs += deltaMs
+        const frame = worldFrameAt(animation.clip, animation.elapsedMs)
+        animation.sprite.texture = textures.get(frame.url)!
+        animation.sprite.position.set(frame.offsetX, frame.offsetY)
+        const durationMs = animation.clip.frames.length * 1000 / animation.clip.fps
+        if (animation.elapsedMs >= durationMs + animation.holdMs) {
+          entities.removeChild(animation.view)
+          animation.view.destroy({ children: true })
+          effects.delete(animation)
+        }
+      }
       if (!movement || paused) return
       movement.elapsedMs = Math.min(movement.durationMs, movement.elapsedMs + deltaMs)
       const progress = movement.durationMs === 0 ? 1 : movement.elapsedMs / movement.durationMs
@@ -208,32 +382,52 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const canvas = app.canvas
     canvas.setAttribute('aria-label', '现代地图场景')
     canvas.style.touchAction = 'none'
-    let drag: { x: number; y: number; id: number } | undefined
+    let targeting = false
+    let drag: { x: number; y: number; startX: number; startY: number; id: number; cameraMoved: boolean } | undefined
     const down = (event: PointerEvent) => {
       if (event.button !== 0) return
-      following = false
-      options.onManualCamera?.()
-      drag = { x: event.clientX, y: event.clientY, id: event.pointerId }
+      drag = { x: event.clientX, y: event.clientY, startX: event.clientX, startY: event.clientY, id: event.pointerId, cameraMoved: false }
       canvas.setPointerCapture(event.pointerId)
     }
     const move = (event: PointerEvent) => {
       if (!drag || drag.id !== event.pointerId) return
+      if (!drag.cameraMoved && Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) > 6) {
+        drag.cameraMoved = true
+        following = false
+        options.onManualCamera?.()
+      }
+      if (!drag.cameraMoved) return
       world.x += (event.clientX - drag.x) / viewportScale
       world.y += (event.clientY - drag.y) / viewportScale
       drag.x = event.clientX; drag.y = event.clientY
     }
-    const up = () => { drag = undefined }
+    const up = (event: PointerEvent) => {
+      if (!drag || drag.id !== event.pointerId) return
+      const start = { x: drag.startX, y: drag.startY }
+      drag = undefined
+      if (!targeting) return
+      const bounds = canvas.getBoundingClientRect()
+      const screen = new Point(
+        (event.clientX - bounds.left) * app.screen.width / bounds.width,
+        (event.clientY - bounds.top) * app.screen.height / bounds.height,
+      )
+      const local = world.toLocal(screen)
+      const target = pickTargetAfterPointer(start, { x: event.clientX, y: event.clientY }, local)
+      if (target) options.onTargetCell?.(target)
+    }
+    const cancelPointer = () => { drag = undefined }
     canvas.addEventListener('pointerdown', down)
     canvas.addEventListener('pointermove', move)
     canvas.addEventListener('pointerup', up)
-    canvas.addEventListener('pointercancel', up)
+    canvas.addEventListener('pointercancel', cancelPointer)
     host.replaceChildren(canvas)
     resize(host.clientWidth, host.clientHeight)
     focus(map.parcels[0]!.roadCell)
     app.start()
 
     return {
-      focus, follow, resize, setPlayers, setProperties,
+      focus, follow, resize, setPlayers, setProperties, setWorld, playReaction, playEffect,
+      setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },
       setSpeed: value => { speed = value },
@@ -251,7 +445,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         canvas.removeEventListener('pointerdown', down)
         canvas.removeEventListener('pointermove', move)
         canvas.removeEventListener('pointerup', up)
-        canvas.removeEventListener('pointercancel', up)
+        canvas.removeEventListener('pointercancel', cancelPointer)
         app.ticker.remove(tick)
         release()
       },

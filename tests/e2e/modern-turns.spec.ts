@@ -45,6 +45,7 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
   await expect(page.getByTestId('turn-history')).toContainText('卷毛 掷出')
   await expect.poll(async () => {
     if (await page.getByTestId('property-panel').isVisible()) return 'property'
+    if (await page.getByTestId('interaction-panel').isVisible()) return 'interaction'
     if ((await page.getByTestId('turn-history').textContent())?.includes('AI')) return 'ai'
     return 'moving'
   }, { timeout: 15_000 }).not.toBe('moving')
@@ -52,6 +53,16 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
     await page.getByTestId('property-accept').click()
     await expect(page.getByTestId('property-result')).toBeVisible()
     await page.getByTestId('property-acknowledge').click()
+  }
+  if (await page.getByTestId('interaction-panel').isVisible()) {
+    const interaction = page.getByTestId('interaction-panel')
+    if (await interaction.getByTestId('interaction-acknowledge').isVisible()) {
+      await interaction.getByTestId('interaction-acknowledge').click()
+    } else if (await interaction.getByRole('button', { name: '离开卡片屋' }).isVisible()) {
+      await interaction.getByRole('button', { name: '离开卡片屋' }).click()
+    } else if (await interaction.getByRole('button', { name: '离开银行' }).isVisible()) {
+      await interaction.getByRole('button', { name: '离开银行' }).click()
+    }
   }
   await expect(page.getByTestId('turn-history')).toContainText('AI', { timeout: 12_000 })
   await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 20_000 })
