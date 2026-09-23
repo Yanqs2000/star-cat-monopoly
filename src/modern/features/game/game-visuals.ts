@@ -83,6 +83,19 @@ export function buildPlayerPoses(state: GameState): PlayerPose[] {
   })
 }
 
+export function visualForHandAssetFailure(
+  state: GameState,
+  cardId: number,
+  currentVisual: InteractionVisualPlan | undefined,
+): InteractionVisualPlan | undefined {
+  if (currentVisual === undefined || state.interaction?.kind !== 'notice') return undefined
+  const notice = state.interaction.notice
+  if (notice.cardId !== cardId) return undefined
+  if (notice.kind === 'card' && notice.message === 'received') return currentVisual
+  if (notice.kind === 'shop' && notice.message === 'bought') return currentVisual
+  return undefined
+}
+
 export function interactionVisualPlan(event: InteractionEvent): InteractionVisualPlan {
   const reactions: InteractionVisualPlan['reactions'] = []
   const effects: InteractionVisualPlan['effects'] = []

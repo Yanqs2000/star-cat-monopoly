@@ -23,7 +23,7 @@ const emit = defineEmits<{
   fullscreen: []
   restart: []
   'begin-card': [index: number]
-  'asset-error': [error: Error]
+  'asset-error': [error: Error, cardId: number]
 }>()
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
@@ -84,7 +84,7 @@ function restriction(playerId: number): string {
     <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>已发生的回合与交易</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>
     <p class="funds">失物招领 {{ game.lostAndFoundFunds[0] }} / {{ game.lostAndFoundFunds[1] }} · 星期 {{ game.world.weekday }} · 已过 {{ game.world.elapsedDays }}天</p>
-    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" @begin-card="emit('begin-card', $event)" @asset-error="emit('asset-error', $event)" />
+    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
     <p class="scope">已接入卡片、特殊格、商店、信用和世界状态；其他银行业务与普通 NPC 遭遇将在后续版本开放。</p>
   </aside>
 </template>

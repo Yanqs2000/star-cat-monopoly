@@ -9,7 +9,7 @@ const props = defineProps<{
   paused: boolean
   cardAssets: InteractionAsset[]
 }>()
-const emit = defineEmits<{ 'begin-card': [index: number]; 'asset-error': [error: Error] }>()
+const emit = defineEmits<{ 'begin-card': [index: number]; 'asset-error': [error: Error, cardId: number] }>()
 const page = ref(0)
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const inventory = computed(() => props.game.inventories[active.value.id] ?? [])
@@ -21,10 +21,10 @@ const assetUrl = (id: number) => {
   const url = props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`
   return `${import.meta.env.BASE_URL}${url}`
 }
-const reportImageError = (event: Event) => {
+const reportImageError = (event: Event, cardId: number) => {
   const image = event.currentTarget as HTMLImageElement
   const source = image.currentSrc || image.getAttribute('src') || 'unknown'
-  emit('asset-error', new Error(`界面素材加载失败：${source}`))
+  emit('asset-error', new Error(`界面素材加载失败：${source}`), cardId)
 }
 watch([inventory, pages], () => { if (page.value >= pages.value) page.value = pages.value - 1 })
 </script>
@@ -43,7 +43,7 @@ watch([inventory, pages], () => { if (page.value >= pages.value) page.value = pa
       <button v-for="card in visibleCards" :key="card.index" data-testid="hand-card"
         :data-card-id="card.id" :data-card-index="card.index"
         :disabled="!canUse" @click="emit('begin-card', card.index)">
-        <img :src="assetUrl(card.id)" :alt="card.definition.name" draggable="false" @error="reportImageError">
+        <img :src="assetUrl(card.id)" :alt="card.definition.name" draggable="false" @error="reportImageError($event, card.id)">
         <span>{{ card.definition.name }}</span>
         <small>{{ card.definition.price }}券</small>
       </button>

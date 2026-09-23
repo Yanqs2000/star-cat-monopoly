@@ -197,6 +197,52 @@ test('生产入口卡面404经同一完整状态边界恢复', async ({ page }) 
   await expect(page.locator('canvas')).toHaveCount(1)
 })
 
+test('卡片格新获卡面404重试关联原获得视觉且不重复卡片或RNG', async ({ page }) => {
+  test.setTimeout(180_000)
+  let failed = true
+  let cardRequests = 0
+  let happyRequests = 0
+  await page.route('**/assets/interactions/cards/18.png', route => {
+    cardRequests += 1
+    if (failed) void route.fulfill({ status: 404, body: '' })
+    else void route.continue()
+  })
+  await page.route('**/assets/characters/1/reactions/happy/*/1.png', async route => {
+    happyRequests += 1
+    if (happyRequests === 1) await page.waitForTimeout(700)
+    await route.continue().catch(() => {})
+  })
+  await seedMondayGame(page, 42)
+
+  await page.getByRole('button', { name: '掷骰' }).click()
+  const property = page.getByTestId('property-panel')
+  await expect(property).toBeVisible({ timeout: 30_000 })
+  await property.getByTestId('property-decline').click()
+  await property.getByTestId('property-acknowledge').click()
+  await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 60_000 })
+  await page.getByRole('button', { name: '掷骰' }).click()
+  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 60_000 })
+  const beforeDraw = await page.locator('canvas').screenshot()
+  await page.getByRole('button', { name: '掷骰' }).click()
+  await expect(page.getByRole('alert')).toContainText('cards/18.png')
+
+  failed = false
+  await page.getByRole('button', { name: '重试载入' }).click()
+  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect.poll(() => cardRequests).toBeGreaterThanOrEqual(2)
+  await expect.poll(() => happyRequests).toBeGreaterThanOrEqual(2)
+  const hand = page.getByTestId('hand-panel')
+  await expect(hand.getByTestId('hand-card')).toHaveCount(6)
+  await expect(hand.locator('[data-card-id="18"]')).toHaveCount(1)
+  await expect(page.getByTestId('interaction-panel')).toContainText('获得天使卡')
+  await page.waitForTimeout(500)
+  expect((await page.locator('canvas').screenshot()).equals(beforeDraw)).toBe(false)
+  await page.getByTestId('interaction-acknowledge').click()
+  await expect(page.getByTestId('round')).toContainText('第 4 轮', { timeout: 60_000 })
+  await page.getByRole('button', { name: '掷骰' }).click()
+  await expect(page.getByTestId('last-roll')).toContainText('骰子 4')
+})
+
 test('生产入口运气图404保留已扣款notice并恢复原图', async ({ page }) => {
   test.setTimeout(180_000)
   let failed = true

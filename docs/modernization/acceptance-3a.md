@@ -40,7 +40,7 @@ Monday、1 名人类。合法操作链：第 1 轮卡片屋离店；第 2/3 轮�
 
 另一条生产回放先合法结算控骰卡，再令原 happy 反馈首帧返回 404。错误层保存结算后的完整序列化状态和待重放视觉；重试后二次请求同一原帧、画布实际重绘，仍为 4 张手牌和待确认的控骰结果，确认后下一次骰子正好为 2并进入预期卡片屋，只有一个 canvas，卡片没有重复消费。该回放同时复现并推动修复了控制器 hydration 时无条件 `beginTurn` 的缺陷。
 
-手牌卡面与运气图也使用同一恢复边界：生产回放分别令初始卡 9 图片和已结算运气 8 图片返回 404，恢复请求成功后保留原手牌或已扣款 notice，未重新抽样或重复扣款。
+手牌卡面与运气图也使用同一恢复边界：生产回放分别令初始卡 9 图片和已结算运气 8 图片返回 404，恢复请求成功后保留原手牌或已扣款 notice，未重新抽样或重复扣款。另一个合法 seed 42 回放在第 3 轮卡片格抽到新卡 18 时令它首次出现的手牌图 404；重试后二次请求同一卡图和原 happy 反馈帧、重绘获得视觉，手牌仍恰为 6 张且卡 18 只有一张，第 4 轮骰子仍为确定的 4，证明没有重复抽卡或推进 RNG。
 
 ## 画面与资源
 
@@ -55,7 +55,7 @@ Monday、1 名人类。合法操作链：第 1 轮卡片屋离店；第 2/3 轮�
 ## 验证命令
 
 ```text
-final integrated unit suite: 29 files, 324 tests passed; npm run typecheck passed
+final integrated unit suite: 29 files, 325 tests passed; npm run typecheck passed
 review-fix focused UI/visual/bitmap: 3 files, 33 tests passed
 test-only browser fixtures: 6 passed
 modern-scene.spec.ts + modern-turns.spec.ts: 8 passed

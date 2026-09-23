@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, ReactionVisibility, VisualRecoveryTracker } from '../../src/modern/features/game/game-visuals'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, ReactionVisibility, VisualRecoveryTracker, visualForHandAssetFailure } from '../../src/modern/features/game/game-visuals'
 import { createGame } from '../../src/modern/features/game/setup'
 import { ReactionPlayer, type ReactionClip } from '../../src/modern/features/characters/reactions'
 
@@ -138,5 +138,23 @@ describe('3A 对局视觉投影', () => {
     expect(visibility.advanceHiddenHurtFinished(frameDuration, frameDuration)).toBe(true)
     expect(observed).toEqual([0, 1, 2, 2])
     expect(visibility.visible).toBe(false)
+  })
+
+  it('只有当前抽卡或购买notice中新加入的同ID手牌图才关联其获得视觉', () => {
+    const visual = interactionVisualPlan({ kind: 'card-draw', playerId: 1, cardId: 26, cardIds: [26] })
+    const game = createGame([1, 2, 3, 4], 0, 1)
+    game.phase = 'interaction'
+    game.interaction = { kind: 'notice', playerId: 1, resume: 'end-turn', notice: {
+      kind: 'card', message: 'received', cardId: 26, cardIds: [26],
+    } }
+    expect(visualForHandAssetFailure(game, 26, visual)).toBe(visual)
+    expect(visualForHandAssetFailure(game, 25, visual)).toBeUndefined()
+
+    game.interaction = { kind: 'notice', playerId: 1, resume: 'await-roll', notice: {
+      kind: 'card', message: 'applied', cardId: 26,
+    } }
+    expect(visualForHandAssetFailure(game, 26, visual)).toBeUndefined()
+    game.phase = 'awaiting-roll'; game.interaction = null
+    expect(visualForHandAssetFailure(game, 26, visual)).toBeUndefined()
   })
 })

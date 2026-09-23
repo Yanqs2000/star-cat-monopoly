@@ -207,6 +207,7 @@ describe('3A 真实控制器交互面板', () => {
     const hand = mount(HandPanel, { props: { game, paused: false, cardAssets: assets } })
     await hand.get('[data-testid="hand-card"] img').trigger('error')
     expect(hand.emitted('asset-error')?.[0]?.[0]).toBeInstanceOf(Error)
+    expect(hand.emitted('asset-error')?.[0]?.[1]).toBe(5)
 
     game.phase = 'interaction'
     game.interaction = { kind: 'notice', playerId: 1, resume: 'end-turn', notice: {

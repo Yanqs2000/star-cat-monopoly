@@ -8,7 +8,7 @@ import GamePanel from './features/game/GamePanel.vue'
 import InteractionPanel from './features/game/InteractionPanel.vue'
 import { parseInteractionAssets, type InteractionAssetsManifest } from './features/game/interaction-assets'
 import PropertyPanel from './features/game/PropertyPanel.vue'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, type InteractionVisualPlan } from './features/game/game-visuals'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, visualForHandAssetFailure, type InteractionVisualPlan } from './features/game/game-visuals'
 import { restoreControllerAfterVisual } from './features/game/visual-recovery'
 import { getCardRecord } from './features/game/direct-cards'
 import { createGame } from './features/game/setup'
@@ -142,6 +142,10 @@ async function playVisual(state: GameState, visual: InteractionVisualPlan): Prom
   }
 }
 function failInteractionAsset(error: Error) { failRuntimeAsset(error, latestNoticeVisual) }
+function failHandAsset(error: Error, cardId: number) {
+  const state = gameController?.state ?? game.value
+  failRuntimeAsset(error, state === undefined ? undefined : visualForHandAssetFailure(state, cardId, latestNoticeVisual))
+}
 async function loadPendingGame() {
   if (!pending.value) return
   const current = ++generation
@@ -343,7 +347,7 @@ onBeforeUnmount(() => {
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="host" class="canvas-host" />
-      <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failRuntimeAsset" />
+      <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @leave-bank="leaveBank" @asset-error="failInteractionAsset" />
       <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理将在后续版本开放，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
