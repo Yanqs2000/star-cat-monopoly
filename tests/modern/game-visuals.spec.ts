@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, ReactionVisibility } from '../../src/modern/features/game/game-visuals'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, ReactionVisibility, VisualRecoveryTracker } from '../../src/modern/features/game/game-visuals'
 import { createGame } from '../../src/modern/features/game/setup'
+import { ReactionPlayer, type ReactionClip } from '../../src/modern/features/characters/reactions'
 
 describe('3A 对局视觉投影', () => {
   it('角色1的兼容行走清单路径不会污染反馈素材路径', () => {
@@ -91,11 +92,51 @@ describe('3A 对局视觉投影', () => {
     expect(visibility.visible).toBe(true)
     visibility.loaded()
     expect(visibility.visible).toBe(true)
-    visibility.finishHiddenHurt()
+    expect(visibility.advanceHiddenHurtFinished(1000 / 30, 1000 / 30)).toBe(false)
+    expect(visibility.visible).toBe(true)
+    expect(visibility.advanceHiddenHurtFinished(1000 / 30, 1000 / 30)).toBe(true)
     expect(visibility.visible).toBe(false)
     expect(visibility.reaction).toBeNull()
     visibility.setDesired(true)
     expect(visibility.visible).toBe(true)
     expect(visibility.showReaction).toBe(false)
+  })
+
+  it('重叠视觉失败按各自token取回原计划而不被新事件覆盖', () => {
+    const tracker = new VisualRecoveryTracker()
+    const first = interactionVisualPlan({ kind: 'card', playerId: 1, cardId: 5, status: 'applied' })
+    const second = interactionVisualPlan({ kind: 'luck', playerId: 2, amount: -1000 })
+    const firstToken = tracker.begin(first)
+    const secondToken = tracker.begin(second)
+    expect(tracker.fail(firstToken)).toEqual(first)
+    expect(tracker.fail(secondToken)).toEqual(second)
+  })
+
+  it('同一角色新反馈使旧加载token过期，旧失败不得清除新反馈', () => {
+    const visibility = new ReactionVisibility(true)
+    const oldToken = visibility.begin('happy')
+    const currentToken = visibility.begin('sad')
+    expect(visibility.isCurrent(oldToken)).toBe(false)
+    expect(visibility.isCurrent(currentToken)).toBe(true)
+    expect(visibility.reaction).toBe('sad')
+  })
+
+  it('真实30fps游标的hurt末帧完整显示一帧时长后才隐藏', () => {
+    const frames = [1, 2, 3].map(index => ({ url: `assets/characters/1/reactions/hurt/down-right/${index}.png`, width: 1, height: 1, offsetX: 0, offsetY: 0 }))
+    const clip = { name: 'hurt', facing: 'down-right', fps: 30, loop: false, sourceRootFrame: 10, sourceSymbol: 1, frames } as ReactionClip
+    const player = new ReactionPlayer(clip)
+    const visibility = new ReactionVisibility(false)
+    visibility.begin('hurt'); visibility.loaded()
+    const frameDuration = 1000 / 30
+    const observed = [player.frameIndex]
+    observed.push((player.advance(frameDuration), player.frameIndex))
+    observed.push((player.advance(frameDuration), player.frameIndex))
+    expect(player.finished).toBe(true)
+    expect(visibility.advanceHiddenHurtFinished(frameDuration, frameDuration)).toBe(false)
+    expect(visibility.visible).toBe(true)
+    observed.push((player.advance(frameDuration), player.frameIndex))
+    expect(visibility.advanceHiddenHurtFinished(frameDuration, frameDuration)).toBe(true)
+    expect(observed).toEqual([0, 1, 2, 2])
+    expect(visibility.visible).toBe(false)
   })
 })

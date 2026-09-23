@@ -3,12 +3,13 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import mapJson from './data/map.json'
 import { parseAssetManifest, type AssetManifest } from './features/characters/assets'
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
-import { createGameController, type GameController } from './features/game/controller'
+import type { GameController, GameControllerOptions } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
 import InteractionPanel from './features/game/InteractionPanel.vue'
 import { parseInteractionAssets, type InteractionAssetsManifest } from './features/game/interaction-assets'
 import PropertyPanel from './features/game/PropertyPanel.vue'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, type InteractionVisualPlan } from './features/game/game-visuals'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, type InteractionVisualPlan } from './features/game/game-visuals'
+import { restoreControllerAfterVisual } from './features/game/visual-recovery'
 import { getCardRecord } from './features/game/direct-cards'
 import { createGame } from './features/game/setup'
 import type { GameState } from './features/game/types'
@@ -43,7 +44,8 @@ let gameController: GameController | undefined
 let abort: AbortController | undefined
 let observer: ResizeObserver | undefined
 let generation = 0
-let activeVisual: InteractionVisualPlan | undefined
+const visualRecovery = new VisualRecoveryTracker()
+let latestNoticeVisual: InteractionVisualPlan | undefined
 
 const selectedCharacters = computed(() => selected.value.map(id => characters.value.find(item => item.id === id)!).filter(Boolean))
 const humanSummary = computed(() => `人类 ${selected.value.length} · AI ${4 - selected.value.length}`)
@@ -109,20 +111,20 @@ async function fetchReactionManifest(item: CharacterIndexItem, signal: AbortSign
   if (!response.ok) throw new Error(`角色反馈素材清单加载失败：${url}（HTTP ${response.status}）`)
   return parseReactionManifest(await response.json())
 }
-function failRuntimeAsset(error: Error) {
+function failRuntimeAsset(error: Error, visual?: InteractionVisualPlan) {
   if (loadState.value === 'error') return
   const state = gameController?.state ?? game.value
   if (state) pending.value = {
     state,
     lineup: state.players.map(player => player.name).join(' · '),
-    ...(activeVisual === undefined ? {} : { visual: activeVisual }),
+    ...(visual === undefined ? {} : { visual }),
   }
   loadError.value = error.message
   loadState.value = 'error'
   cleanupGame()
 }
 async function playVisual(state: GameState, visual: InteractionVisualPlan): Promise<void> {
-  activeVisual = visual
+  const token = visualRecovery.begin(visual)
   for (const effect of visual.effects) {
     const position = effect.cellId === undefined
       ? state.players.find(player => player.id === effect.playerId)?.position
@@ -131,12 +133,15 @@ async function playVisual(state: GameState, visual: InteractionVisualPlan): Prom
   }
   try {
     await Promise.all(visual.reactions.map(reaction => scene?.playReaction(reaction.playerId, reaction.name)))
-    if (activeVisual === visual) activeVisual = undefined
+    visualRecovery.complete(token)
     if (pending.value?.visual === visual) pending.value = { state: pending.value.state, lineup: pending.value.lineup }
-  } catch {
-    // MapScene reports the exact asset failure through failRuntimeAsset.
+  } catch (error) {
+    const failedVisual = visualRecovery.fail(token)
+    if (failedVisual) failRuntimeAsset(error instanceof Error ? error : new Error(String(error)), failedVisual)
+    throw error
   }
 }
+function failInteractionAsset(error: Error) { failRuntimeAsset(error, latestNoticeVisual) }
 async function loadPendingGame() {
   if (!pending.value) return
   const current = ++generation
@@ -173,7 +178,7 @@ async function loadPendingGame() {
     scene.setSpeed(speed.value)
     scene.follow(initial.players[initial.activePlayerIndex]!.position)
     let previous = initial
-    gameController = createGameController(initial, {
+    const controllerOptions: GameControllerOptions = {
       onTransition: transition => scene?.transitionPlayer(transition),
       onState: state => {
         if (previous.phase === 'awaiting-roll' && state.phase === 'moving') {
@@ -194,6 +199,7 @@ async function loadPendingGame() {
         const activeChanged = previous.activePlayerIndex !== state.activePlayerIndex
         const propertiesChanged = previous.properties !== state.properties
         const worldChanged = previous.world !== state.world
+        if (previous.interaction?.kind === 'notice' && state.interaction?.kind !== 'notice') latestNoticeVisual = undefined
         previous = state
         game.value = state
         scene?.setPlayers(buildPlayerPoses(state))
@@ -209,10 +215,17 @@ async function loadPendingGame() {
         history.value.push(`${actor?.name ?? `玩家${event.playerId}`} · ${detail}${event.amount === undefined ? '' : ` · ${event.amount}`}`)
         if (!state) return
         const visual = interactionVisualPlan(event)
-        void playVisual(state, visual)
+        latestNoticeVisual = visual
+        void playVisual(state, visual).catch(() => {})
       },
-    })
-    if (pending.value.visual) await playVisual(initial, pending.value.visual)
+    }
+    const replay = pending.value.visual
+    if (replay) latestNoticeVisual = replay
+    gameController = await restoreControllerAfterVisual(
+      initial,
+      controllerOptions,
+      replay === undefined ? undefined : () => playVisual(initial, replay),
+    )
     if (current !== generation) return
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })
     observer.observe(host.value)
@@ -228,7 +241,7 @@ async function startGame() {
   cleanupGame()
   const state = createGame([...selected.value], seed(), new Date().getDay())
   pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
-  activeVisual = undefined
+  latestNoticeVisual = undefined
   history.value = []
   speed.value = 1
   mode.value = 'game'
@@ -278,7 +291,7 @@ function returnToSelection() {
   fullscreenError.value = ''
   cleanupGame()
   pending.value = undefined
-  activeVisual = undefined
+  latestNoticeVisual = undefined
   game.value = undefined
   interactionAssets.value = undefined
   loadState.value = 'idle'
@@ -332,7 +345,7 @@ onBeforeUnmount(() => {
       <div ref="host" class="canvas-host" />
       <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failRuntimeAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
-      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @leave-bank="leaveBank" @asset-error="failRuntimeAsset" />
+      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @leave-bank="leaveBank" @asset-error="failInteractionAsset" />
       <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理将在后续版本开放，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>

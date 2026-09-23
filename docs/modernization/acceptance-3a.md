@@ -55,13 +55,13 @@ Monday、1 名人类。合法操作链：第 1 轮卡片屋离店；第 2/3 轮�
 ## 验证命令
 
 ```text
-final integrated unit suite: 28 files, 319 tests passed; npm run typecheck passed
+final integrated unit suite: 29 files, 324 tests passed; npm run typecheck passed
 review-fix focused UI/visual/bitmap: 3 files, 33 tests passed
 test-only browser fixtures: 6 passed
 modern-scene.spec.ts + modern-turns.spec.ts: 8 passed
 modern-property.spec.ts: 3 passed
 modern-interactions.spec.ts production flows plus focused recovery: 5 passed
-npm run build:modern: 761 modules transformed
+npm run build:modern: 762 modules transformed
 ```
 
 生产回放收集所有响应状态和 `pageerror`，未发现未解释的失败资源、页面错误或 SWF/Ruffle/WASM 请求。默认原版入口、原 SWF 与 Ruffle 对照运行路径没有改动；现代构建仍只输出 `dist-modern/`。

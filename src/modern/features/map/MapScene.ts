@@ -184,7 +184,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       godSprite.visible = false
       view.addChild(active, walker.view, reactionSprite, godSprite)
       entities.addChild(view)
-      return { playerId, view, active, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, reactionToken: 0, godId: null as number | null, visibility: new ReactionVisibility(true) }
+      return { playerId, view, active, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
     })
     const worldAnimations = new Map<number, WorldAnimation>()
     const effects = new Set<EffectAnimation>()
@@ -311,11 +311,10 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!actor) return Promise.resolve()
       const clip = actor.reactions.clips.find(item => item.facing === actor.facing && item.name === name)
       if (!clip) return Promise.resolve()
-      const token = ++actor.reactionToken
-      actor.visibility.begin(name)
+      const token = actor.visibility.begin(name)
       actor.view.visible = actor.visibility.visible
       return Promise.all(clip.frames.map(frame => loadTexture(frame.url))).then(() => {
-        if (destroyed || token !== actor.reactionToken) return
+        if (destroyed || !actor.visibility.isCurrent(token)) return
         actor.reaction.reset(clip)
         actor.visibility.loaded()
         actor.reacting = true
@@ -326,12 +325,12 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         actor.reactionSprite.texture = textures.get(frame.url)!
         actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
       }).catch(error => {
+        if (destroyed || !actor.visibility.isCurrent(token)) return
         actor.visibility.clear()
         actor.reacting = false
         actor.reactionSprite.visible = false
         actor.walker.view.visible = true
         actor.view.visible = actor.visibility.visible
-        if (!destroyed) options.onAssetError?.(error as Error)
         throw error
       })
     }
@@ -364,8 +363,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const frame = actor.reaction.advance(deltaMs)
         actor.reactionSprite.texture = textures.get(frame.url)!
         actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
-        if (actor.reaction.finished && actor.visibility.reaction === 'hurt' && !actor.visibility.desiredVisible) {
-          actor.visibility.finishHiddenHurt()
+        if (actor.reaction.finished && actor.visibility.advanceHiddenHurtFinished(deltaMs, 1000 / actor.reaction.clip.fps)) {
           actor.reacting = false
           actor.reactionSprite.visible = false
           actor.walker.view.visible = true

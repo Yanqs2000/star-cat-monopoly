@@ -14,6 +14,9 @@ export class ReactionVisibility {
   #desired: boolean
   #reaction: ReactionName | null = null
   #loaded = false
+  #generation = 0
+  #finalFrameSeen = false
+  #finalFrameElapsedMs = 0
 
   constructor(desiredVisible: boolean) { this.#desired = desiredVisible }
   get reaction(): ReactionName | null { return this.#reaction }
@@ -21,10 +24,43 @@ export class ReactionVisibility {
   get desiredVisible(): boolean { return this.#desired }
   get visible(): boolean { return this.#desired || (this.#reaction === 'hurt' && !this.#desired) }
   setDesired(visible: boolean): void { this.#desired = visible }
-  begin(reaction: ReactionName): void { this.#reaction = reaction; this.#loaded = false }
+  begin(reaction: ReactionName): number {
+    this.#reaction = reaction
+    this.#loaded = false
+    this.#finalFrameSeen = false
+    this.#finalFrameElapsedMs = 0
+    return ++this.#generation
+  }
+  isCurrent(generation: number): boolean { return generation === this.#generation }
   loaded(): void { if (this.#reaction !== null) this.#loaded = true }
-  clear(): void { this.#reaction = null; this.#loaded = false }
-  finishHiddenHurt(): void { if (this.#reaction === 'hurt' && !this.#desired) this.clear() }
+  clear(): void { this.#reaction = null; this.#loaded = false; this.#finalFrameSeen = false; this.#finalFrameElapsedMs = 0; this.#generation += 1 }
+  advanceHiddenHurtFinished(deltaMs: number, frameDurationMs: number): boolean {
+    if (this.#reaction !== 'hurt' || this.#desired) return false
+    if (!this.#finalFrameSeen) {
+      this.#finalFrameSeen = true
+      return false
+    }
+    this.#finalFrameElapsedMs += deltaMs
+    if (this.#finalFrameElapsedMs + Number.EPSILON < frameDurationMs) return false
+    this.clear()
+    return true
+  }
+}
+
+export class VisualRecoveryTracker {
+  #next = 1
+  #plans = new Map<number, InteractionVisualPlan>()
+  begin(plan: InteractionVisualPlan): number {
+    const token = this.#next++
+    this.#plans.set(token, plan)
+    return token
+  }
+  complete(token: number): void { this.#plans.delete(token) }
+  fail(token: number): InteractionVisualPlan | undefined {
+    const plan = this.#plans.get(token)
+    this.#plans.delete(token)
+    return plan
+  }
 }
 
 export function reactionManifestUrl(characterId: number): string {
