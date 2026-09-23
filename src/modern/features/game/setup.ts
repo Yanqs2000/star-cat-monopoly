@@ -88,5 +88,6 @@ export function createGame(humanCharacterIds: number[], seed: number, initialWee
     lastPropertyEvent: null,
     interaction: null,
     skipLandingMarker: false,
+    continuation: null,
   }
 }

@@ -57,7 +57,7 @@ describe('完整3A开局状态', () => {
   it('一次创建完整可序列化世界快照并允许注入星期', () => {
     const game = createGame([1], 0, 6)
     expect(game).toMatchObject({
-      phase: 'awaiting-roll', interaction: null, skipLandingMarker: false,
+      phase: 'awaiting-roll', interaction: null, skipLandingMarker: false, continuation: null,
       prices: expect.any(Object), unownedOwnerDeposit: 100_000,
       tickets: { 1: 200, 2: 200, 3: 200, 4: 200 },
       forcedDice: { 1: null, 2: null, 3: null, 4: null },
@@ -147,6 +147,36 @@ describe('对局快照重建', () => {
     expect(restored.state.remainingSteps).toBe(0)
   })
 
+  it('从已离开银行的moving快照重建时不重复进入银行', () => {
+    const sourceScheduler = new FakeScheduler()
+    const snapshots: GameState[] = []
+    const source = createGameController(before({ column: 18, row: 14 }, 1, 2), {
+      ...timings(sourceScheduler),
+      onState: state => snapshots.push(structuredClone(state)),
+    })
+    source.roll()
+    sourceScheduler.advance(10)
+    expect(source.state.interaction?.kind).toBe('bank')
+    expect(source.leaveBank()).toBe(true)
+    const leftBank = snapshots.at(-1)!
+    source.dispose()
+
+    expect(leftBank).toMatchObject({
+      phase: 'moving', interaction: null, remainingSteps: 1, continuation: 'after-bank',
+    })
+    expect(leftBank.players[0]!.position).toEqual({ column: 19, row: 15 })
+
+    const scheduler = new FakeScheduler()
+    const restored = createGameController(structuredClone(leftBank), timings(scheduler))
+    expect(restored.state).toMatchObject({
+      phase: 'moving', interaction: null, remainingSteps: 1, continuation: 'start-step',
+    })
+    expect(restored.requestCredit()).toBe(false)
+    scheduler.advance(10)
+    expect(restored.state.players[0]!.position).toEqual({ column: 20, row: 16 })
+    expect(restored.state.remainingSteps).toBe(0)
+  })
+
   it('从最终到达的landed快照重建时只结算一次落点', () => {
     const sourceScheduler = new FakeScheduler()
     const snapshots: GameState[] = []
@@ -166,6 +196,34 @@ describe('对局快照重建', () => {
     expect(restored.state.inventories[1]).toHaveLength(inventoryLength + 1)
     expect(restored.acknowledgeInteraction()).toBe(true)
     expect(restored.acknowledgeInteraction()).toBe(false)
+  })
+
+  it('从已离开商店的landed快照重建时只结束回合且不重抽库存', () => {
+    const sourceScheduler = new FakeScheduler()
+    const snapshots: GameState[] = []
+    const source = createGameController(before({ column: 7, row: 11 }, 1), {
+      ...timings(sourceScheduler),
+      onState: state => snapshots.push(structuredClone(state)),
+    })
+    source.roll()
+    sourceScheduler.advance(10)
+    expect(source.state.interaction?.kind).toBe('shop')
+    expect(source.leaveShop()).toBe(true)
+    const leftShop = snapshots.at(-1)!
+    source.dispose()
+
+    expect(leftShop).toMatchObject({
+      phase: 'landed', interaction: null, rngState: 1_140_036_074, continuation: 'finish-turn',
+    })
+
+    const scheduler = new FakeScheduler()
+    const restored = createGameController(structuredClone(leftShop), timings(scheduler))
+    expect(restored.state).toMatchObject({
+      phase: 'landed', interaction: null, rngState: 1_140_036_074, continuation: 'finish-turn',
+    })
+    scheduler.advance(10)
+    expect(restored.state.activePlayerIndex).toBe(1)
+    expect(restored.state.rngState).toBe(1_140_036_074)
   })
 
   it('保留人类地产决策，且恢复AI地产决策的自动结算', () => {

@@ -4,7 +4,7 @@ import { applyLuckEvent, applyTicketLanding, drawLuckEvent, findSpecialLanding }
 import type { GameInteraction, InteractionEvent, InteractionNotice, InteractionResume } from './interaction-types'
 import { applyPropertyOffer, findParcelAt, getPropertyOffer } from './property'
 import { nextTurn, roll as rollState, step } from './turns'
-import type { Direction, GameState } from './types'
+import type { Direction, GameContinuation, GameState } from './types'
 import {
   advanceWorldDay,
   applyBankCredit,
@@ -213,6 +213,7 @@ export function createGameController(initialState: GameState, options: GameContr
       ...current,
       phase: 'interaction',
       interaction: { kind: 'notice', playerId, notice, resume, ...(shop === undefined ? {} : { shop: shop.shop }) },
+      continuation: null,
     }
     options.onInteractionEvent?.(event)
     notify()
@@ -246,16 +247,17 @@ export function createGameController(initialState: GameState, options: GameContr
       properties: result.properties,
       lastPropertyEvent: result.event,
       phase: 'property-result',
+      continuation: null,
     }
     notify()
     if (!isHuman()) schedule(acknowledgePropertyResult, aiThinkDurationMs)
   }
 
   acknowledgePropertyResult = () => {
-    current = { ...current, phase: 'landed', propertyOffer: null }
+    current = { ...current, phase: 'landed', propertyOffer: null, continuation: 'finish-turn' }
     notify()
     if (activePlayer().cash + activePlayer().deposit <= 0) {
-      current = { ...current, phase: 'insolvent' }
+      current = { ...current, phase: 'insolvent', continuation: null }
       notify()
       return
     }
@@ -267,7 +269,7 @@ export function createGameController(initialState: GameState, options: GameContr
     const parcel = findParcelAt(player.position)
     if (parcel) {
       const offer = getPropertyOffer(toPropertyEconomy(projectWorld(current)), player.id, parcel.id)
-      current = { ...current, phase: 'property-decision', propertyOffer: offer }
+      current = { ...current, phase: 'property-decision', propertyOffer: offer, continuation: null }
       notify()
       if (offer.kind === 'max-level') settleProperty('accept')
       else if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
@@ -277,6 +279,7 @@ export function createGameController(initialState: GameState, options: GameContr
     const special = findSpecialLanding(player.position)
     if (special?.kind === 'shop') {
       if (!isHuman()) {
+        current = { ...current, continuation: 'finish-turn' }
         schedule(finishTurn, landingDurationMs)
         return
       }
@@ -286,6 +289,7 @@ export function createGameController(initialState: GameState, options: GameContr
         rngState: created.rngState,
         phase: 'interaction',
         interaction: { kind: 'shop', playerId: player.id, shop: created.shop, resume: 'shop' },
+        continuation: null,
       }
       notify()
       return
@@ -328,6 +332,7 @@ export function createGameController(initialState: GameState, options: GameContr
       }, 'end-turn')
       return
     }
+    current = { ...current, continuation: 'finish-turn' }
     schedule(finishTurn, landingDurationMs)
   }
 
@@ -338,7 +343,7 @@ export function createGameController(initialState: GameState, options: GameContr
       showWorldResult(god, 'after-god')
       return
     }
-    current = mergeWorld(current, god.snapshot)
+    current = { ...mergeWorld(current, god.snapshot), continuation: 'continue-terrain' }
     continueTerrain()
   }
 
@@ -352,6 +357,7 @@ export function createGameController(initialState: GameState, options: GameContr
       }
       current = mergeWorld(current, marker.snapshot)
     }
+    current = { ...current, continuation: 'process-god' }
     processGodThenTerrain()
   }
 
@@ -364,15 +370,25 @@ export function createGameController(initialState: GameState, options: GameContr
       showWorldResult(marker, 'after-marker')
       return
     }
-    if (current.remainingSteps > 0) startStep()
-    else handleLanding()
+    if (current.remainingSteps > 0) {
+      current = { ...current, continuation: 'start-step' }
+      startStep()
+    } else {
+      current = { ...current, continuation: 'handle-landing' }
+      handleLanding()
+    }
   }
 
   const processArrivedStep = () => {
     const player = activePlayer()
     if (getCardCell(player.position)?.type === 18) {
       if (isHuman() && current.world.weekday !== 0) {
-        current = { ...current, phase: 'interaction', interaction: { kind: 'bank', playerId: player.id, resume: 'after-bank' } }
+        current = {
+          ...current,
+          phase: 'interaction',
+          interaction: { kind: 'bank', playerId: player.id, resume: 'after-bank' },
+          continuation: null,
+        }
         notify()
         return
       }
@@ -380,12 +396,13 @@ export function createGameController(initialState: GameState, options: GameContr
       if (showWorldResult(bank, 'after-bank')) return
       current = mergeWorld(current, bank.snapshot)
     }
+    current = { ...current, continuation: 'after-bank' }
     processAfterBank()
   }
 
   startStep = () => {
     const player = activePlayer()
-    const arrived = step(current)
+    const arrived = { ...step(current), continuation: 'process-arrival' as const }
     const nextPlayer = arrived.players[current.activePlayerIndex]!
     options.onTransition?.({
       playerIndex: current.activePlayerIndex,
@@ -414,6 +431,7 @@ export function createGameController(initialState: GameState, options: GameContr
       propertyOffer: null,
       interaction: null,
       skipLandingMarker: false,
+      continuation: 'start-step',
     }
     if (player.controller === 'human' && current.stayPlayerIds.length > 0) {
       current = {
@@ -423,6 +441,7 @@ export function createGameController(initialState: GameState, options: GameContr
         stayPlayerIds: [],
         skipLandingMarker: true,
         turnPath: [{ ...player.position }],
+        continuation: 'handle-landing',
       }
       notify()
       handleLanding()
@@ -434,13 +453,20 @@ export function createGameController(initialState: GameState, options: GameContr
 
   finishTurn = () => {
     if (activePlayer().cash + activePlayer().deposit <= 0) {
-      current = { ...current, phase: 'insolvent', interaction: null, propertyOffer: null }
+      current = { ...current, phase: 'insolvent', interaction: null, propertyOffer: null, continuation: null }
       notify()
       return
     }
     const endingIndex = current.activePlayerIndex
-    const landed = { ...current, phase: 'landed' as const, interaction: null, propertyOffer: null, skipLandingMarker: false }
-    current = nextTurn(landed)
+    const landed = {
+      ...current,
+      phase: 'landed' as const,
+      interaction: null,
+      propertyOffer: null,
+      skipLandingMarker: false,
+      continuation: 'finish-turn' as const,
+    }
+    current = { ...nextTurn(landed), continuation: null }
     if (endingIndex === landed.players.length - 1) current = { ...current, world: advanceWorldDay(current.world) }
     notify()
     beginTurn()
@@ -454,7 +480,7 @@ export function createGameController(initialState: GameState, options: GameContr
       showWorldResult(prepared, prepared.skipTurn ? 'end-turn' : 'await-roll')
       return
     }
-    current = { ...current, phase: 'awaiting-roll', interaction: null }
+    current = { ...current, phase: 'awaiting-roll', interaction: null, continuation: null }
     if (!isHuman()) schedule(() => performRoll(), aiThinkDurationMs)
   }
 
@@ -464,18 +490,32 @@ export function createGameController(initialState: GameState, options: GameContr
     const resume = interaction.resume
     const eventKind = interaction.notice.eventKind
     if (resume === 'shop' && interaction.shop) {
-      current = { ...current, phase: 'interaction', interaction: { kind: 'shop', playerId: interaction.playerId, shop: interaction.shop, resume: 'shop' } }
+      current = {
+        ...current,
+        phase: 'interaction',
+        interaction: { kind: 'shop', playerId: interaction.playerId, shop: interaction.shop, resume: 'shop' },
+        continuation: null,
+      }
       notify()
       return
     }
     if (resume === 'bank') {
-      current = { ...current, phase: 'interaction', interaction: { kind: 'bank', playerId: interaction.playerId, resume: 'after-bank' } }
+      current = {
+        ...current,
+        phase: 'interaction',
+        interaction: { kind: 'bank', playerId: interaction.playerId, resume: 'after-bank' },
+        continuation: null,
+      }
       notify()
       return
     }
     const phase = resume === 'await-roll' ? 'awaiting-roll' :
       resume === 'after-bank' && current.remainingSteps > 0 ? 'moving' : 'landed'
-    current = { ...current, phase, interaction: null }
+    const continuation: GameContinuation | null = resume === 'after-bank' ? 'after-bank' :
+      resume === 'after-marker' ? (current.remainingSteps > 0 ? 'start-step' : 'handle-landing') :
+      resume === 'after-god' ? (eventKind === 'god-property-adjusted' ? 'continue-terrain' : 'process-god') :
+      resume === 'end-turn' ? 'finish-turn' : null
+    current = { ...current, phase, interaction: null, continuation }
     notify()
     if (resume === 'after-bank') processAfterBank()
     else if (resume === 'after-marker') {
@@ -491,18 +531,36 @@ export function createGameController(initialState: GameState, options: GameContr
 
   const resumeCurrentState = () => {
     if (disposed) return
+    if (current.continuation === 'start-step') {
+      startStep()
+      return
+    }
+    if (current.continuation === 'process-arrival') {
+      processArrivedStep()
+      return
+    }
+    if (current.continuation === 'after-bank') {
+      processAfterBank()
+      return
+    }
+    if (current.continuation === 'handle-landing') {
+      handleLanding()
+      return
+    }
+    if (current.continuation === 'process-god') {
+      processGodThenTerrain()
+      return
+    }
+    if (current.continuation === 'continue-terrain') {
+      continueTerrain()
+      return
+    }
+    if (current.continuation === 'finish-turn') {
+      schedule(finishTurn, landingDurationMs)
+      return
+    }
     if (current.phase === 'awaiting-roll') {
       beginTurn()
-      return
-    }
-    if (current.phase === 'moving') {
-      if (current.turnPath.length <= 1) startStep()
-      else processArrivedStep()
-      return
-    }
-    if (current.phase === 'landed') {
-      if (current.lastPropertyEvent !== null) schedule(finishTurn, landingDurationMs)
-      else handleLanding()
       return
     }
     if (isHuman()) return
@@ -589,7 +647,12 @@ export function createGameController(initialState: GameState, options: GameContr
       const player = activePlayer()
       const cardId = current.inventories[player.id]?.[index]
       if (cardId === undefined || (!directCardIds.has(cardId) && !worldCardIds.has(cardId))) return false
-      current = { ...current, phase: 'interaction', interaction: { kind: 'card-confirm', playerId: player.id, cardId, cardIndex: index, resume: 'await-roll', choiceError: null } }
+      current = {
+        ...current,
+        phase: 'interaction',
+        interaction: { kind: 'card-confirm', playerId: player.id, cardId, cardIndex: index, resume: 'await-roll', choiceError: null },
+        continuation: null,
+      }
       notify()
       return true
     },
@@ -618,7 +681,7 @@ export function createGameController(initialState: GameState, options: GameContr
     cancelInteraction() {
       if (!canCommand() || current.phase !== 'interaction' || current.interaction === null ||
           !['card-confirm', 'dice-choice', 'target-choice', 'credit-choice'].includes(current.interaction.kind)) return false
-      current = { ...current, phase: 'awaiting-roll', interaction: null }
+      current = { ...current, phase: 'awaiting-roll', interaction: null, continuation: null }
       notify()
       return true
     },
@@ -669,7 +732,7 @@ export function createGameController(initialState: GameState, options: GameContr
     },
     leaveShop() {
       if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'shop') return false
-      current = { ...current, phase: 'landed', interaction: null }
+      current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
       notify()
       schedule(finishTurn, landingDurationMs)
       return true
@@ -689,7 +752,12 @@ export function createGameController(initialState: GameState, options: GameContr
     },
     leaveBank() {
       if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'bank') return false
-      current = { ...current, phase: current.remainingSteps > 0 ? 'moving' : 'landed', interaction: null }
+      current = {
+        ...current,
+        phase: current.remainingSteps > 0 ? 'moving' : 'landed',
+        interaction: null,
+        continuation: 'after-bank',
+      }
       notify()
       processAfterBank()
       return true

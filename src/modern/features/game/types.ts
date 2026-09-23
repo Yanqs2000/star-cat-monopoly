@@ -7,6 +7,14 @@ export type Direction = 1 | 2 | 3 | 4
 export type Hometown = 1 | 2 | 3 | 4
 export type PlayerController = 'human' | 'ai'
 export type GamePhase = 'awaiting-roll' | 'moving' | 'landed' | 'property-decision' | 'property-result' | 'interaction' | 'insolvent'
+export type GameContinuation =
+  | 'start-step'
+  | 'process-arrival'
+  | 'after-bank'
+  | 'handle-landing'
+  | 'process-god'
+  | 'continue-terrain'
+  | 'finish-turn'
 
 export interface PlayerState {
   id: number
@@ -31,4 +39,5 @@ export interface GameState extends WorldSnapshot {
   lastPropertyEvent: PropertyEvent | null
   interaction: GameInteraction | null
   skipLandingMarker: boolean
+  continuation: GameContinuation | null
 }
