@@ -8,7 +8,7 @@ import GamePanel from './features/game/GamePanel.vue'
 import InteractionPanel from './features/game/InteractionPanel.vue'
 import { parseInteractionAssets, type InteractionAssetsManifest } from './features/game/interaction-assets'
 import PropertyPanel from './features/game/PropertyPanel.vue'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl } from './features/game/game-visuals'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, type InteractionVisualPlan } from './features/game/game-visuals'
 import { getCardRecord } from './features/game/direct-cards'
 import { createGame } from './features/game/setup'
 import type { GameState } from './features/game/types'
@@ -17,7 +17,7 @@ import SceneInspector from './features/map/SceneInspector.vue'
 import type { MapData } from './features/map/types'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
-interface PendingGame { state: GameState; lineup: string }
+interface PendingGame { state: GameState; lineup: string; visual?: InteractionVisualPlan }
 
 const map = mapJson as MapData
 const mode = ref<'selection' | 'game' | 'inspection'>('selection')
@@ -43,6 +43,7 @@ let gameController: GameController | undefined
 let abort: AbortController | undefined
 let observer: ResizeObserver | undefined
 let generation = 0
+let activeVisual: InteractionVisualPlan | undefined
 
 const selectedCharacters = computed(() => selected.value.map(id => characters.value.find(item => item.id === id)!).filter(Boolean))
 const humanSummary = computed(() => `人类 ${selected.value.length} · AI ${4 - selected.value.length}`)
@@ -109,11 +110,32 @@ async function fetchReactionManifest(item: CharacterIndexItem, signal: AbortSign
   return parseReactionManifest(await response.json())
 }
 function failRuntimeAsset(error: Error) {
+  if (loadState.value === 'error') return
   const state = gameController?.state ?? game.value
-  if (state) pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
+  if (state) pending.value = {
+    state,
+    lineup: state.players.map(player => player.name).join(' · '),
+    ...(activeVisual === undefined ? {} : { visual: activeVisual }),
+  }
   loadError.value = error.message
   loadState.value = 'error'
   cleanupGame()
+}
+async function playVisual(state: GameState, visual: InteractionVisualPlan): Promise<void> {
+  activeVisual = visual
+  for (const effect of visual.effects) {
+    const position = effect.cellId === undefined
+      ? state.players.find(player => player.id === effect.playerId)?.position
+      : getCardRecord(effect.cellId)?.position
+    if (position) scene?.playEffect(effect.clipId, position)
+  }
+  try {
+    await Promise.all(visual.reactions.map(reaction => scene?.playReaction(reaction.playerId, reaction.name)))
+    if (activeVisual === visual) activeVisual = undefined
+    if (pending.value?.visual === visual) pending.value = { state: pending.value.state, lineup: pending.value.lineup }
+  } catch {
+    // MapScene reports the exact asset failure through failRuntimeAsset.
+  }
 }
 async function loadPendingGame() {
   if (!pending.value) return
@@ -187,15 +209,11 @@ async function loadPendingGame() {
         history.value.push(`${actor?.name ?? `玩家${event.playerId}`} · ${detail}${event.amount === undefined ? '' : ` · ${event.amount}`}`)
         if (!state) return
         const visual = interactionVisualPlan(event)
-        for (const reaction of visual.reactions) scene?.playReaction(reaction.playerId, reaction.name)
-        for (const effect of visual.effects) {
-          const position = effect.cellId === undefined
-            ? state.players.find(player => player.id === effect.playerId)?.position
-            : getCardRecord(effect.cellId)?.position
-          if (position) scene?.playEffect(effect.clipId, position)
-        }
+        void playVisual(state, visual)
       },
     })
+    if (pending.value.visual) await playVisual(initial, pending.value.visual)
+    if (current !== generation) return
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })
     observer.observe(host.value)
     loadState.value = 'ready'
@@ -210,6 +228,7 @@ async function startGame() {
   cleanupGame()
   const state = createGame([...selected.value], seed(), new Date().getDay())
   pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
+  activeVisual = undefined
   history.value = []
   speed.value = 1
   mode.value = 'game'
@@ -259,6 +278,7 @@ function returnToSelection() {
   fullscreenError.value = ''
   cleanupGame()
   pending.value = undefined
+  activeVisual = undefined
   game.value = undefined
   interactionAssets.value = undefined
   loadState.value = 'idle'
@@ -310,10 +330,10 @@ onBeforeUnmount(() => {
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="host" class="canvas-host" />
-      <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" />
+      <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failRuntimeAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
-      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @leave-bank="leaveBank" />
-      <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理尚未接入 2C，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
+      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @leave-bank="leaveBank" @asset-error="failRuntimeAsset" />
+      <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理将在后续版本开放，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">

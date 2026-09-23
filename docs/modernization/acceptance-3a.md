@@ -19,16 +19,16 @@
 | 规则/控制器 | 17 卡分派与消费、目标限制、控骰/停留跨玩家、障碍/地雷/飞弹、神灵、银行中途恢复、商店、抽卡、奖券、41 事件、倒计时、重复输入与重启取消 | 确定性单元证据，不冒充自然浏览器遇到全部随机结果 |
 | 真实 Vue 组件 | 24 张/8 张分页、17 张原卡面打开与取消、点数/信用/玩家目标、12 槽库存、买卖余额、银行、状态天数、B-01 图文、暂停禁用 | jsdom 中挂载真实组件和真实控制器，不冒充 Chrome 画面 |
 | 测试专用 Chrome 夹具 | 17 卡逐张成功、15 类失败/保留/取消、重复提交、B-01、陷阱、神灵、到期/重返、银行/商店恢复 | 使用真实组件/控制器；入口不进入 `dist-modern`，明确不冒充自然开局 |
-| 生产 Chrome | 选人、原始手牌、地图点击障碍、玩家目标飞弹、商店买卖、地产购买/强制租金/升级、银行信用、运气 8、暂停/键盘/重试/全屏 | 固定随机种子和星期只在浏览器边界；没有任意发牌、状态注入或产品调试全局 |
+| 生产 Chrome | 选人、原始手牌、地图点击障碍、玩家目标飞弹、商店买卖、地产购买/强制租金/升级、银行授信与信用卡金额使用、运气 8、暂停/键盘/重试/全屏 | 固定随机种子和星期只在浏览器边界；没有任意发牌、状态注入或产品调试全局 |
 | 原版探针 | B-01 原字节码受控复现和原 SWF 哈希 | 用于记录原版差异，不作为新版自然回放 |
 
 ## 生产浏览器回放
 
 浏览器插件在本会话不可用，因此按前端测试交接使用仓库 Playwright 和 macOS Google Chrome，启动参数为 `--enable-unsafe-swiftshader --use-angle=swiftshader`。先执行 `npm run build:modern`，再在 4184 端口运行 `npm run preview:modern -- --strictPort`；所有下列生产回放都显式设置 `PLAYWRIGHT_BASE_URL=http://127.0.0.1:4184`，没有混用 5184 开发服务器。
 
-### Seed 153：商店、信用和运气
+### Seed 153：商店、信用、运气和实际用卡
 
-Monday、1 名人类。合法操作链：第 1 轮掷 2 到卡片屋，验证 12 槽，买卡 5 花 30 奖券，卖卡 9 得 100 奖券并离店；第 2/3 轮购买地块 83/77；第 4 轮途经银行申请 100000 信用额度、获得信用卡、离开银行并落到运气事件 8，现金扣 12000。最终可见值为现金 83700、存款 100000、奖券 270、手牌 6 张、地产 2 块。
+Monday、1 名人类。合法操作链：第 1 轮掷 2 到卡片屋，验证 12 槽，买卡 5 花 30 奖券，卖卡 9 得 100 奖券并离店；第 2/3 轮购买地块 83/77；第 4 轮途经银行申请 100000 信用额度、获得信用卡、离开银行并落到运气事件 8，现金扣 12000；确认后等待 AI 完成并进入第 5 轮，实际从可见手牌打开信用卡，经金额表单提取 5000。最终可见值为现金 88700、存款 100000、奖券 270、可用信用 95000、已用信用 5000；信用卡按源行为仍保留在 6 张手牌中。
 
 ### Seed 235：地产回归
 
@@ -38,7 +38,9 @@ Monday、1 名人类。合法操作链：第 1 轮卡片屋离店；第 2/3 轮�
 
 自然初始手牌在生产入口用障碍卡进入地图目标模式，实际 canvas 点击经 getpoint 网格/象限转换到格 85并显示原障碍；随后飞弹卡以玩家 4 的真实位置为中心，将其送入可见的三天住院状态。
 
-另一条生产回放先合法结算控骰卡，再令原 happy 反馈首帧返回 404。错误层保存结算后的完整序列化状态；重试后仍为 4 张手牌和待确认的控骰结果，确认后下一次骰子正好为 2并进入预期卡片屋，只有一个 canvas，卡片没有重复消费。该回放同时复现并推动修复了控制器 hydration 时无条件 `beginTurn` 的缺陷。
+另一条生产回放先合法结算控骰卡，再令原 happy 反馈首帧返回 404。错误层保存结算后的完整序列化状态和待重放视觉；重试后二次请求同一原帧、画布实际重绘，仍为 4 张手牌和待确认的控骰结果，确认后下一次骰子正好为 2并进入预期卡片屋，只有一个 canvas，卡片没有重复消费。该回放同时复现并推动修复了控制器 hydration 时无条件 `beginTurn` 的缺陷。
+
+手牌卡面与运气图也使用同一恢复边界：生产回放分别令初始卡 9 图片和已结算运气 8 图片返回 404，恢复请求成功后保留原手牌或已扣款 notice，未重新抽样或重复扣款。
 
 ## 画面与资源
 
@@ -46,20 +48,20 @@ Monday、1 名人类。合法操作链：第 1 轮卡片屋离店；第 2/3 轮�
 - 1920×1080 真全屏：[seed153-bank-luck-fullscreen-1920x1080.png](../../.analysis-cache/acceptance-3a/seed153-bank-luck-fullscreen-1920x1080.png)
 - Seed 235 地产升级：[seed235-property-upgrade-1440x1000.png](../../.analysis-cache/acceptance-3a/seed235-property-upgrade-1440x1000.png)
 
-第一次全屏截图发生在 WebGL resize 过渡帧，地图区为黑色，因此被拒绝且没有计为证据。正式用例等待 1.5 秒稳定重绘后覆盖该文件；人工检查确认地图、角色、NPC、房屋、运气图和侧栏均可见，最终 ImageMagick 检查为 661707 色、均值 0.488517。禁用手牌仍不可点击，但名称改为可读浅色。
+第一次全屏截图发生在 WebGL resize 过渡帧，地图区为黑色，因此被拒绝且没有计为证据。正式用例等待 1.5 秒稳定重绘后覆盖该文件；人工检查确认地图、角色、NPC、房屋、运气图和侧栏均可见，最终 ImageMagick 检查为 653579 色、均值 0.488174。禁用手牌仍不可点击，但名称改为可读浅色。
 
 角色反馈不再在开局解码四名角色的所有帧。实际探针显示全量预解码超过 120 秒；现在开局约 7.119 秒、250 个资源条目，按需且可取消地载入本次播放的原帧序列或神灵覆盖层。四名本局角色以外的反馈不会加载。地图、角色、反馈、世界特效和地产素材均由私有纹理/bitmap/fetch/listener 生命周期释放。
 
 ## 验证命令
 
 ```text
-controller continuation worker full suite: 313 tests passed; npm run typecheck passed
-focused UI/reaction/map: 4 files, 36 tests passed
+final integrated unit suite: 28 files, 319 tests passed; npm run typecheck passed
+review-fix focused UI/visual/bitmap: 3 files, 33 tests passed
 test-only browser fixtures: 6 passed
 modern-scene.spec.ts + modern-turns.spec.ts: 8 passed
 modern-property.spec.ts: 3 passed
-modern-interactions.spec.ts production flows: 3 passed
-npm run build:modern: 760 modules transformed
+modern-interactions.spec.ts production flows plus focused recovery: 5 passed
+npm run build:modern: 761 modules transformed
 ```
 
 生产回放收集所有响应状态和 `pageerror`，未发现未解释的失败资源、页面错误或 SWF/Ruffle/WASM 请求。默认原版入口、原 SWF 与 Ruffle 对照运行路径没有改动；现代构建仍只输出 `dist-modern/`。

@@ -22,6 +22,7 @@ const emit = defineEmits<{
   'leave-shop': []
   'request-credit': []
   'leave-bank': []
+  'asset-error': [error: Error]
 }>()
 const creditAmount = ref(0)
 const interaction = computed(() => props.game.interaction)
@@ -39,6 +40,11 @@ const luckAssetUrl = (id: number) => {
   const url = props.luckAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/luck/${id}.png`
   return `${import.meta.env.BASE_URL}${url}`
 }
+const reportImageError = (event: Event) => {
+  const image = event.currentTarget as HTMLImageElement
+  const source = image.currentSrc || image.getAttribute('src') || 'unknown'
+  emit('asset-error', new Error(`界面素材加载失败：${source}`))
+}
 const targetPlayers = computed(() => props.game.players.filter(item => item.id !== player.value.id))
 const statusText = computed(() => {
   const status = props.game.world.statuses[player.value.id]
@@ -51,6 +57,9 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   if (notice.kind === 'luck') return notice.message
   if (notice.kind === 'tickets') return `获得 ${notice.amount ?? 0} 张奖券`
   if (notice.kind === 'card-draw') return notice.message === 'full' ? '手牌已满，未抽取新卡' : `获得${notice.cardId ? getCardDefinition(notice.cardId).name : '卡片'}`
+  if (notice.kind === 'card' && (notice.message === 'received' || notice.message === 'full')) {
+    return notice.message === 'full' ? '手牌已满，未抽取新卡' : `获得${notice.cardId ? getCardDefinition(notice.cardId).name : '卡片'}`
+  }
   if (notice.kind === 'shop') return ({ bought: '购买成功', sold: '出售成功', 'sold-out': '这个货架已经售罄', 'insufficient-tickets': '奖券不足', 'inventory-full': '手牌已满' } as Record<string, string>)[notice.message] ?? notice.message
   const labels: Record<string, string> = {
     'credit-granted': '信用申请通过，信用卡已加入手牌', 'credit-declined': '信用申请未通过', 'bank-closed': '银行周日休息',
@@ -74,7 +83,7 @@ watch(() => interaction.value?.kind, kind => {
   <section v-if="interaction" class="interaction" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
     <template v-if="cardInteraction && card">
       <div class="card-head">
-        <img :src="cardAssetUrl(card.id)" :alt="card.name">
+        <img :src="cardAssetUrl(card.id)" :alt="card.name" @error="reportImageError">
         <div><span class="eyebrow">使用卡片</span><h2>{{ card.name }}</h2><p>{{ card.description }}</p></div>
       </div>
       <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
@@ -107,7 +116,7 @@ watch(() => interaction.value?.kind, kind => {
       <p class="balance">{{ player.name }} · 奖券 {{ game.tickets[player.id] }} · 手牌 {{ inventory.length }}/24</p>
       <div class="shop-grid">
         <button v-for="(cardId, slot) in interaction.shop.stock" :key="slot" data-testid="shop-slot" :disabled="!canAct || cardId === null" @click="emit('buy', slot)">
-          <template v-if="cardId !== null"><img :src="cardAssetUrl(cardId)" :alt="getCardDefinition(cardId).name"><span>{{ getCardDefinition(cardId).name }}</span><small>售价 {{ getCardDefinition(cardId).price }}</small></template><span v-else>售罄</span>
+          <template v-if="cardId !== null"><img :src="cardAssetUrl(cardId)" :alt="getCardDefinition(cardId).name" @error="reportImageError"><span>{{ getCardDefinition(cardId).name }}</span><small>售价 {{ getCardDefinition(cardId).price }}</small></template><span v-else>售罄</span>
         </button>
       </div>
       <strong>出售手牌</strong>
@@ -125,7 +134,7 @@ watch(() => interaction.value?.kind, kind => {
 
     <template v-else-if="interaction.kind === 'notice'">
       <span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2>
-      <img v-if="interaction.notice.luckEvent" data-testid="luck-image" class="luck" :src="luckAssetUrl(interaction.notice.luckEvent.id)" :alt="`运气事件 ${interaction.notice.luckEvent.id}`">
+      <img v-if="interaction.notice.luckEvent" data-testid="luck-image" class="luck" :src="luckAssetUrl(interaction.notice.luckEvent.id)" :alt="`运气事件 ${interaction.notice.luckEvent.id}`" @error="reportImageError">
       <p v-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' ? '现金' : interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
       <p>{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
       <p>状态：{{ statusText }}</p>

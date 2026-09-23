@@ -25,13 +25,16 @@ async function seedMondayGame(page: Page, seed: number): Promise<void> {
 test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不重复消费', async ({ page }) => {
   test.setTimeout(120_000)
   let failed = true
+  let frameRequests = 0
   await page.route('**/assets/characters/1/reactions/happy/*/1.png', route => {
+    frameRequests += 1
     if (failed) void route.fulfill({ status: 404, body: '' })
     else void route.continue()
   })
   await seedMondayGame(page, 153)
 
   const hand = page.getByTestId('hand-panel')
+  const beforeReaction = await page.locator('canvas').screenshot()
   const lineup = (await page.getByTestId('player-list').locator('li strong').allTextContents()).join(' · ')
   await expect(hand.getByTestId('hand-card')).toHaveCount(5)
   await hand.locator('[data-card-id="5"]').click()
@@ -43,8 +46,11 @@ test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不�
   failed = false
   await page.getByRole('button', { name: '重试载入' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect.poll(() => frameRequests).toBeGreaterThanOrEqual(2)
   await expect(page.getByTestId('interaction-panel')).toContainText('控骰卡')
   await expect(page.getByTestId('hand-panel').getByTestId('hand-card')).toHaveCount(4)
+  await page.waitForTimeout(500)
+  expect((await page.locator('canvas').screenshot()).equals(beforeReaction)).toBe(false)
   await page.getByTestId('interaction-acknowledge').click()
   await page.getByRole('button', { name: '掷骰' }).click()
   await expect(page.getByTestId('last-roll')).toContainText('骰子 2')
@@ -89,7 +95,7 @@ async function buyProperty(page: Page, parcelId: number, amount: number): Promis
   await panel.getByTestId('property-acknowledge').click()
 }
 
-test('seed153 生产入口合法完成商店买卖、地产、银行信用与运气8', async ({ page }) => {
+test('seed153 生产入口合法完成商店买卖、地产、银行信用、运气8与信用卡使用', async ({ page }) => {
   test.setTimeout(240_000)
   await mkdir(evidenceDir, { recursive: true })
   await page.setViewportSize({ width: 1440, height: 1000 })
@@ -142,6 +148,85 @@ test('seed153 生产入口合法完成商店买卖、地产、银行信用与运
   await expect(page.locator('.game-stage')).toHaveJSProperty('clientWidth', 1920)
   await page.waitForTimeout(1500)
   await page.screenshot({ path: `${evidenceDir}/seed153-bank-luck-fullscreen-1920x1080.png` })
+
+  await interaction.getByTestId('interaction-acknowledge').click()
+  await expect(page.getByTestId('round')).toContainText('第 5 轮', { timeout: 60_000 })
+  const hand = page.getByTestId('hand-panel')
+  await hand.locator('[data-card-id="1"]').click()
+  await interaction.getByTestId('interaction-confirm').click()
+  await expect(interaction).toContainText('可用额度 100000')
+  await interaction.getByTestId('credit-amount').fill('5000')
+  await interaction.getByTestId('credit-submit').click()
+  await expect(interaction).toContainText('信用卡已生效')
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 88700')
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('信用 95000 / 已用 5000')
+  await expect(hand.locator('[data-card-id="1"]')).toHaveCount(1)
+  await interaction.getByTestId('interaction-acknowledge').click()
+  await expect(page.getByRole('button', { name: '掷骰' })).toBeEnabled()
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 88700')
   expect(requests.some(path => /\.swf$|ruffle|\.wasm$/.test(path))).toBe(false)
   expect(failures).toEqual([])
+})
+
+test('生产入口卡面404经同一完整状态边界恢复', async ({ page }) => {
+  test.setTimeout(90_000)
+  let failed = true
+  let requests = 0
+  await page.route('**/assets/interactions/cards/9.png', route => {
+    requests += 1
+    if (failed) void route.fulfill({ status: 404, body: '' })
+    else void route.continue()
+  })
+  await page.addInitScript(() => {
+    const original = crypto.getRandomValues.bind(crypto)
+    crypto.getRandomValues = array => {
+      if (array instanceof Uint32Array && array.length === 1) { array[0] = 153; return array }
+      return original(array)
+    }
+    Date.prototype.getDay = () => 1
+  })
+  await page.goto('/modern.html')
+  await page.getByTestId('character-1').click()
+  await page.getByRole('button', { name: '开始对局' }).click()
+  await expect(page.getByRole('alert')).toContainText('cards/9.png')
+  failed = false
+  await page.getByRole('button', { name: '重试载入' }).click()
+  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect.poll(() => requests).toBeGreaterThanOrEqual(2)
+  await expect(page.getByTestId('hand-panel').getByTestId('hand-card')).toHaveCount(5)
+  await expect(page.locator('canvas')).toHaveCount(1)
+})
+
+test('生产入口运气图404保留已扣款notice并恢复原图', async ({ page }) => {
+  test.setTimeout(180_000)
+  let failed = true
+  let requests = 0
+  await page.route('**/assets/interactions/luck/8.png', route => {
+    requests += 1
+    if (failed) void route.fulfill({ status: 404, body: '' })
+    else void route.continue()
+  })
+  await seedMondayGame(page, 153)
+  const interaction = page.getByTestId('interaction-panel')
+  await page.getByRole('button', { name: '掷骰' }).click()
+  await expect(interaction).toContainText('12 格真实库存', { timeout: 30_000 })
+  await interaction.getByRole('button', { name: '离开卡片屋' }).click()
+  await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 60_000 })
+  await page.getByRole('button', { name: '掷骰' }).click(); await buyProperty(page, 83, 1800)
+  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 60_000 })
+  await page.getByRole('button', { name: '掷骰' }).click(); await buyProperty(page, 77, 2500)
+  await expect(page.getByTestId('round')).toContainText('第 4 轮', { timeout: 60_000 })
+  await page.getByRole('button', { name: '掷骰' }).click()
+  await expect(interaction).toContainText('申请信用卡', { timeout: 30_000 })
+  await interaction.getByRole('button', { name: '申请信用' }).click()
+  await interaction.getByTestId('interaction-acknowledge').click()
+  await interaction.getByRole('button', { name: '离开银行' }).click()
+  await expect(page.getByRole('alert')).toContainText('luck/8.png')
+  failed = false
+  await page.getByRole('button', { name: '重试载入' }).click()
+  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect.poll(() => requests).toBeGreaterThanOrEqual(2)
+  await expect(interaction.getByTestId('luck-image')).toHaveAttribute('alt', '运气事件 8')
+  await expect(interaction).toContainText('现金 -12000')
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 83700')
 })

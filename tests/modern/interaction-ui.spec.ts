@@ -181,4 +181,40 @@ describe('3A 真实控制器交互面板', () => {
     expect(shop.text()).toContain('现金 -1000')
     expect(shop.get('[data-testid="luck-image"]').attributes('src')).toContain('/luck/28.png')
   })
+
+  it('卡片格按真实 card notice 显示获得或满24张且不泄露内部消息', async () => {
+    const received = gameWithCards([5])
+    received.phase = 'interaction'
+    received.interaction = { kind: 'notice', playerId: 1, resume: 'end-turn', notice: {
+      kind: 'card', message: 'received', cardId: 6, cardIds: [6],
+    } }
+    const wrapper = mount(InteractionPanel, { props: { game: received, paused: false, cardAssets: assets } })
+    expect(wrapper.text()).toContain('获得障碍卡')
+    expect(wrapper.text()).not.toContain('received')
+
+    const full = structuredClone(received)
+    full.inventories[1] = Array(24).fill(5)
+    full.interaction = { kind: 'notice', playerId: 1, resume: 'end-turn', notice: {
+      kind: 'card', message: 'full', cardIds: [],
+    } }
+    await wrapper.setProps({ game: full })
+    expect(wrapper.text()).toContain('手牌已满，未抽取新卡')
+    expect(wrapper.text()).not.toContain('full')
+  })
+
+  it('手牌与运气图加载失败向上报告可恢复素材错误', async () => {
+    const game = gameWithCards([5])
+    const hand = mount(HandPanel, { props: { game, paused: false, cardAssets: assets } })
+    await hand.get('[data-testid="hand-card"] img').trigger('error')
+    expect(hand.emitted('asset-error')?.[0]?.[0]).toBeInstanceOf(Error)
+
+    game.phase = 'interaction'
+    game.interaction = { kind: 'notice', playerId: 1, resume: 'end-turn', notice: {
+      kind: 'luck', message: '捐款', amount: -1000,
+      luckEvent: { id: 28, kind: 'cash', description: '捐款', sourceAmount: 1000, amount: -1000, correction: 'B-01' },
+    } }
+    const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: assets } })
+    await panel.get('[data-testid="luck-image"]').trigger('error')
+    expect(panel.emitted('asset-error')?.[0]?.[0]).toBeInstanceOf(Error)
+  })
 })

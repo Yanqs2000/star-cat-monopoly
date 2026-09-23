@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl } from '../../src/modern/features/game/game-visuals'
+import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, ReactionVisibility } from '../../src/modern/features/game/game-visuals'
 import { createGame } from '../../src/modern/features/game/setup'
 
 describe('3A 对局视觉投影', () => {
@@ -55,5 +55,47 @@ describe('3A 对局视觉投影', () => {
     expect(interactionVisualPlan({ kind: 'card', playerId: 1, status: 'invalid-target' })).toEqual({
       reactions: [{ playerId: 1, name: 'sad' }], effects: [],
     })
+  })
+
+  it('卡片格只有真实获得卡片时播放获得反馈，满背包不播放', () => {
+    expect(interactionVisualPlan({ kind: 'card-draw', playerId: 1, cardId: 5, cardIds: [5] })).toEqual({
+      reactions: [{ playerId: 1, name: 'happy' }],
+      effects: [{ clipId: 'card-gain', playerId: 1 }],
+    })
+    expect(interactionVisualPlan({ kind: 'card-draw', playerId: 1, cardIds: [] })).toEqual({ reactions: [], effects: [] })
+  })
+
+  it('飞弹自伤优先hurt，其他玩家受伤时施放者happy，并覆盖ready和neutral状态', () => {
+    expect(interactionVisualPlan({
+      kind: 'card', playerId: 1, cardId: 9,
+      worldEvent: { kind: 'missile-fired', playerId: 1, affectedCellIds: [1], affectedPlayerIds: [1], cardIds: [] },
+    }).reactions).toEqual([{ playerId: 1, name: 'hurt' }])
+    expect(interactionVisualPlan({
+      kind: 'card', playerId: 1, cardId: 9,
+      worldEvent: { kind: 'missile-fired', playerId: 1, affectedCellIds: [1], affectedPlayerIds: [2], cardIds: [] },
+    }).reactions).toEqual([{ playerId: 1, name: 'happy' }, { playerId: 2, name: 'hurt' }])
+    expect(interactionVisualPlan({
+      kind: 'card', playerId: 1, cardId: 6,
+      worldEvent: { kind: 'barrier-placed', playerId: 1, affectedCellIds: [1], affectedPlayerIds: [], cardIds: [] },
+    }).reactions).toEqual([{ playerId: 1, name: 'ready' }])
+    expect(interactionVisualPlan({
+      kind: 'restriction', playerId: 1,
+      worldEvent: { kind: 'restriction-released', playerId: 1, affectedCellIds: [], affectedPlayerIds: [1], cardIds: [] },
+    }).reactions).toEqual([{ playerId: 1, name: 'neutral' }])
+  })
+
+  it('住院hurt在加载和播放时暂时可见，播放结束隐藏，释放后不复现旧帧', () => {
+    const visibility = new ReactionVisibility(true)
+    visibility.begin('hurt')
+    visibility.setDesired(false)
+    expect(visibility.visible).toBe(true)
+    visibility.loaded()
+    expect(visibility.visible).toBe(true)
+    visibility.finishHiddenHurt()
+    expect(visibility.visible).toBe(false)
+    expect(visibility.reaction).toBeNull()
+    visibility.setDesired(true)
+    expect(visibility.visible).toBe(true)
+    expect(visibility.showReaction).toBe(false)
   })
 })

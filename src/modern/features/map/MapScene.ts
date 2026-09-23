@@ -12,6 +12,8 @@ import { parsePropertyAssets } from './property-assets'
 import { pickTargetAfterPointer } from './target-selection'
 import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
+import { decodeBitmap } from './bitmap-loader'
+import { ReactionVisibility } from '../game/game-visuals'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
   playerId: number
@@ -31,7 +33,7 @@ export interface MapSceneHandle {
   setProperties(properties: PropertyLedger): void
   setWorld(world: WorldState): void
   setTargeting(targeting: boolean): void
-  playReaction(playerId: number, reaction: ReactionName): void
+  playReaction(playerId: number, reaction: ReactionName): Promise<void>
   playEffect(clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint): void
   transitionPlayer(transition: PlayerTransition | null): void
   setPaused(paused: boolean): void
@@ -101,9 +103,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       try {
         const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
-        const bitmap = await createImageBitmap(await response.blob(), { premultiplyAlpha: 'premultiply' })
+        const bitmap = await decodeBitmap(await response.blob(), controller.signal)
         bitmaps.push(bitmap)
-        controller.signal.throwIfAborted()
         textures.set(url, new Texture({ source: new ImageSource({ resource: bitmap, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) }))
       } catch (error) {
         throw new Error(`素材加载失败：${url}（${error instanceof Error ? error.message : String(error)}）`)
@@ -183,7 +184,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       godSprite.visible = false
       view.addChild(active, walker.view, reactionSprite, godSprite)
       entities.addChild(view)
-      return { playerId, view, active, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, reactionToken: 0, godId: null as number | null }
+      return { playerId, view, active, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, reactionToken: 0, godId: null as number | null, visibility: new ReactionVisibility(true) }
     })
     const worldAnimations = new Map<number, WorldAnimation>()
     const effects = new Set<EffectAnimation>()
@@ -224,14 +225,22 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         actor.view.position.set(target.x, target.y)
         actor.view.zIndex = pose.position.row * 100 + pose.position.column
         actor.active.visible = pose.active
-        actor.view.visible = pose.visible
+        const wasDesired = actor.visibility.desiredVisible
+        actor.visibility.setDesired(pose.visible)
+        if (pose.visible && !wasDesired && actor.visibility.reaction === 'hurt') {
+          actor.visibility.clear()
+          actor.reacting = false
+          actor.reactionSprite.visible = false
+        }
         actor.facing = FACING_BY_DIRECTION[pose.direction]
         actor.walker.setPose(actor.facing, pose.moving)
         if (pose.moving) {
+          actor.visibility.clear()
           actor.reacting = false
           actor.reactionSprite.visible = false
         }
         actor.walker.view.visible = !actor.reacting
+        actor.view.visible = actor.visibility.visible
         const god = actor.reactions.godOverlays.find(item => item.godId === pose.godId as GodId)
         actor.godId = pose.godId
         actor.godSprite.visible = god !== undefined && textures.has(god.url)
@@ -297,22 +306,34 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         sprite.position.set(frame.offsetX, frame.offsetY)
       }
     }
-    const playReaction = (playerId: number, name: ReactionName) => {
+    const playReaction = (playerId: number, name: ReactionName): Promise<void> => {
       const actor = actors.find(item => item.playerId === playerId)
-      if (!actor) return
+      if (!actor) return Promise.resolve()
       const clip = actor.reactions.clips.find(item => item.facing === actor.facing && item.name === name)
-      if (!clip) return
+      if (!clip) return Promise.resolve()
       const token = ++actor.reactionToken
-      void Promise.all(clip.frames.map(frame => loadTexture(frame.url))).then(() => {
+      actor.visibility.begin(name)
+      actor.view.visible = actor.visibility.visible
+      return Promise.all(clip.frames.map(frame => loadTexture(frame.url))).then(() => {
         if (destroyed || token !== actor.reactionToken) return
         actor.reaction.reset(clip)
+        actor.visibility.loaded()
         actor.reacting = true
         actor.walker.view.visible = false
         actor.reactionSprite.visible = true
+        actor.view.visible = actor.visibility.visible
         const frame = actor.reaction.currentFrame
         actor.reactionSprite.texture = textures.get(frame.url)!
         actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
-      }).catch(error => { if (!destroyed) options.onAssetError?.(error as Error) })
+      }).catch(error => {
+        actor.visibility.clear()
+        actor.reacting = false
+        actor.reactionSprite.visible = false
+        actor.walker.view.visible = true
+        actor.view.visible = actor.visibility.visible
+        if (!destroyed) options.onAssetError?.(error as Error)
+        throw error
+      })
     }
     const playEffect = (clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint) => {
       const clip = worldManifest?.clips.find(item => item.id === clipId)
@@ -343,6 +364,13 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const frame = actor.reaction.advance(deltaMs)
         actor.reactionSprite.texture = textures.get(frame.url)!
         actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
+        if (actor.reaction.finished && actor.visibility.reaction === 'hurt' && !actor.visibility.desiredVisible) {
+          actor.visibility.finishHiddenHurt()
+          actor.reacting = false
+          actor.reactionSprite.visible = false
+          actor.walker.view.visible = true
+          actor.view.visible = actor.visibility.visible
+        }
       }
       for (const animation of worldAnimations.values()) {
         animation.elapsedMs += deltaMs
