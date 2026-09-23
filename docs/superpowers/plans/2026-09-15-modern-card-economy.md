@@ -32,8 +32,8 @@
 - `sellInventoryCard(inventory:readonly number[],tickets:number,index:number):{inventory:number[];tickets:number;cardId:number;amount:number}` preservesorder; rejectsinvalidindex; supports duplicatecardIDs as separate slots.
 - GeneratedJSON holds sourceSha256, definitions37, ordinaryPool16, initialInventory. Generator verifies sourcehash and derives fromactualsourcefields/countencodedpcarddate; supports --output to temp; do not rewriteoriginaltables or duplicate rules module.
 
-- [ ] Read exact original table/pcarddate/outcard/shopz evidence; writeRED beforeimplementation. Ordinarypoolliteral assertion independentfromgenerator, initialfive exactorder,37definitionsmetadata notopeningcards.
-- [ ] Test deterministicfixedRNG fixture, fullhand24 noRNGadvance/nooverwrite,24capacity,invalidIDs/indexes; source prices(literal控骰30/地雷25/飞弹100), sameprice resale, inputimmutability.
-- [ ] Test12slotshape andfixedfirst6, generatedrandomduplicatesallowed, buy deducttickets andnullslot, repeatedsoldslotunchanged, cashirrelevant(no cashargument), insufficientincludingnegative tickets, fullinventory, independentcopies, no priceparameter, sellfirst/middle/duplicateindex order.
-- [ ] Implementminimalmodule; run focusedGREEN and typecheck. Record exactRED/GREEN. Don't run fullproject yet; integration owns eventualsuite.
-- [ ] Commitownedfiles using /opt/homebrew/bin/git; private report in this plan's SDD directory; main performsreview andcontinues full3A.
+- [x] Read exact original table/pcarddate/outcard/shopz evidence; writeRED beforeimplementation. Ordinarypoolliteral assertion independentfromgenerator, initialfive exactorder,37definitionsmetadata notopeningcards.
+- [x] Test deterministicfixedRNG fixture, fullhand24 noRNGadvance/nooverwrite,24capacity,invalidIDs/indexes; source prices(literal控骰30/地雷25/飞弹100), sameprice resale, inputimmutability.
+- [x] Test12slotshape andfixedfirst6, generatedrandomduplicatesallowed, buy deducttickets andnullslot, repeatedsoldslotunchanged, cashirrelevant(no cashargument), insufficientincludingnegative tickets, fullinventory, independentcopies, no priceparameter, sellfirst/middle/duplicateindex order.
+- [x] Implementminimalmodule; run focusedGREEN and typecheck. Record exactRED/GREEN. Don't run fullproject yet; integration owns eventualsuite.
+- [x] Commitownedfiles using /opt/homebrew/bin/git; private report in this plan's SDD directory; main performsreview andcontinues full3A.

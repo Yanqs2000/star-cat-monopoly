@@ -23,8 +23,8 @@
 
 **Interfaces:** rules.json adds `reentryOrigins:{hospital:{direction:number;position:{column:number;row:number}};jail:{direction:number;position:{column:number;row:number}}}`; existingfields preserved. `roadCells` union160 sortedasbefore. Original normalclosuretestkeeps308/146, new10originclosuretest322/160. Existingstep automaticallyconsumesexpandedlist; only change runtimecodeifverifiednecessity andreportbeforebroadening.
 
-- [ ] RED test actualstepfromhospital19,1/dir2→18,2(card165), jail21,41/dir4→22,40(luck175); completechainsuntiljoiningnormalroutes, no scenery/out-of-range. Newmetadata38specialexpected failingbeforegeneration.
-- [ ] Extendgenerator sourceorigins, validatesourcevector/mapcells andbothnormal/expandedclosures. Rebuildrules thenevents. Keep initialFunds/spawnselection/junctions unchanged so2Bseed/normalmovementregressions remainmeaningful.
-- [ ] Updateold“unreachable”eventassertions for newlyreachableIDs ratherthanretainingfalse exclusions. Keep actualplaceholder153/0,0/out-of-map rejection. Verifyall22ticketcells derivedprices10/30/50.
-- [ ] Focusedturns/events suitesandtypecheck; recordRED/GREEN/counters plusregeneratorcommands. Don'trepeatfullsuiteuntilintegration.
-- [ ] Commitownedfiles via/opt/homebrew/bin/git; private report inthisplanSDDfolder, noforceadd. Mainreview andfull3Acontinue.
+- [x] RED test actualstepfromhospital19,1/dir2→18,2(card165), jail21,41/dir4→22,40(luck175); completechainsuntiljoiningnormalroutes, no scenery/out-of-range. Newmetadata38specialexpected failingbeforegeneration.
+- [x] Extendgenerator sourceorigins, validatesourcevector/mapcells andbothnormal/expandedclosures. Rebuildrules thenevents. Keep initialFunds/spawnselection/junctions unchanged so2Bseed/normalmovementregressions remainmeaningful.
+- [x] Updateold“unreachable”eventassertions for newlyreachableIDs ratherthanretainingfalse exclusions. Keep actualplaceholder153/0,0/out-of-map rejection. Verifyall22ticketcells derivedprices10/30/50.
+- [x] Focusedturns/events suitesandtypecheck; recordRED/GREEN/counters plusregeneratorcommands. Don'trepeatfullsuiteuntilintegration.
+- [x] Commitownedfiles via/opt/homebrew/bin/git; private report inthisplanSDDfolder, noforceadd. Mainreview andfull3Acontinue.

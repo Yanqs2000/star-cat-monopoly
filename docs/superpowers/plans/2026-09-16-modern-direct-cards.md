@@ -40,7 +40,7 @@
 - 25/26: targetcellordinalodd, otherplayerexactposition, actorcash<targetcash. Setactorcashtotargetcash / targetcashtoactorcash respectively; notaveragingortransferring, depositsunchanged; consume.
 - 33: sameotherplayer/ordinaltarget, nowealthcomparison; amount=Math.trunc(targetcash/10), transferfromtargettoactor, even0ornegative sourceamount; consume.
 
-- [ ] WritefocusedRED beforeimplementation, literalfixturesforALL12effects+invalidtargets, selectedduplicatecardsremoval, credit0/repeatedremainingcreditnonconsumption,controlleddieinvalid,stayreuse, pricesafterinflationreflectedinpurchase/rent, negativecashcompatibility. Originalframe4/nativeB01sourcealreadyverified, don'trepeat.
-- [ ] Sourcecheck ambiguousbranches withexactusecard files; specificallyangel0→1, unownedpayment100000account, negativecashtax, oddordinalnotid. Recordany unresolvedsourceconflictbeforeguessing.
-- [ ] Implement minimalpurefunctions and generator. Testsuse realoriginalfixtures andindependentamounts, no mockcardengine. Verifyallinputsnotmutated,prices/ledger/economychangescoherent, insuffcreditandinvalidtargetnocharge, exhaustingfundsflag.
-- [ ] Focuseddirect/propertytests andtypecheck. No fullsuiteyet (integrationlater). Commitownedfiles via/opt/homebrew/bin/git, reportignoredinthisplanSDDfolder withRED/GREEN/contractdetails. Rootscopedreview andfull3Acontinues.
+- [x] WritefocusedRED beforeimplementation, literalfixturesforALL12effects+invalidtargets, selectedduplicatecardsremoval, credit0/repeatedremainingcreditnonconsumption,controlleddieinvalid,stayreuse, pricesafterinflationreflectedinpurchase/rent, negativecashcompatibility. Originalframe4/nativeB01sourcealreadyverified, don'trepeat.
+- [x] Sourcecheck ambiguousbranches withexactusecard files; specificallyangel0→1, unownedpayment100000account, negativecashtax, oddordinalnotid. Recordany unresolvedsourceconflictbeforeguessing.
+- [x] Implement minimalpurefunctions and generator. Testsuse realoriginalfixtures andindependentamounts, no mockcardengine. Verifyallinputsnotmutated,prices/ledger/economychangescoherent, insuffcreditandinvalidtargetnocharge, exhaustingfundsflag.
+- [x] Focuseddirect/propertytests andtypecheck. No fullsuiteyet (integrationlater). Commitownedfiles via/opt/homebrew/bin/git, reportignoredinthisplanSDDfolder withRED/GREEN/contractdetails. Rootscopedreview andfull3Acontinues.

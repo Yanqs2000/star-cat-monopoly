@@ -24,8 +24,8 @@
 
 **Interfaces:** `InteractionAsset {id:number;sourceFrame:number;url:string;width:number;height:number;offsetX:number;offsetY:number}`; `InteractionAssetsManifest {version:1;sourceSha256:string;cards:InteractionAsset[];luck:InteractionAsset[]}`; `parseInteractionAssets(unknown):InteractionAssetsManifest`. Paths canonical `assets/interactions/cards/<id>.png` or `assets/interactions/luck/<id>.png`, completeunique17/41, frameid+1/id respectively, finiteoffsets/dimensions andcorrectsourcehashshape; returnvalidated data.
 
-- [ ] Read actualJPEXS API fromexistingpropertyexporter and sourceartfacts; writefailingrealmanifest/parser testsbeforeimplementation (missingmanifest RED isappropriate).
-- [ ] Export58PNGs viaverifiedJAR /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar, /opt/homebrew/opt/openjdk/bin/java, bundledPython /Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3. Scratchunder.analysis-cache. Do not changeglobaltools/license.
-- [ ] Verify sourceframe/dimensions, fullcoverage, safe/canonicalURLrejectduplicates/mismatches, actualRGBA/nonemptydecodedpixels, originalhashunchanged. Contactsheetshowall17cards and41events labeledids; inspectimages notjustfileexistence.
-- [ ] FocusedtestGREEN+typecheck once. No fullsuiteorre-exportoldproperty/walk. Recordcommands/counts/sourcegeometry/contactsheets/private report.
-- [ ] Commitonlyownedfiles via/opt/homebrew/bin/git; reportignoredinplanSDDfolder. Mainreviews andlaterintegrates UI; full3Agoalactive.
+- [x] Read actualJPEXS API fromexistingpropertyexporter and sourceartfacts; writefailingrealmanifest/parser testsbeforeimplementation (missingmanifest RED isappropriate).
+- [x] Export58PNGs viaverifiedJAR /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar, /opt/homebrew/opt/openjdk/bin/java, bundledPython /Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3. Scratchunder.analysis-cache. Do not changeglobaltools/license.
+- [x] Verify sourceframe/dimensions, fullcoverage, safe/canonicalURLrejectduplicates/mismatches, actualRGBA/nonemptydecodedpixels, originalhashunchanged. Contactsheetshowall17cards and41events labeledids; inspectimages notjustfileexistence.
+- [x] FocusedtestGREEN+typecheck once. No fullsuiteorre-exportoldproperty/walk. Recordcommands/counts/sourcegeometry/contactsheets/private report.
+- [x] Commitonlyownedfiles via/opt/homebrew/bin/git; reportignoredinplanSDDfolder. Mainreviews andlaterintegrates UI; full3Agoalactive.
