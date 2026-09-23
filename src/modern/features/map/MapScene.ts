@@ -430,8 +430,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const up = (event: PointerEvent) => {
       if (!drag || drag.id !== event.pointerId) return
       const start = { x: drag.startX, y: drag.startY }
+      const cameraMoved = drag.cameraMoved
       drag = undefined
-      if (!targeting) return
+      if (!targeting || cameraMoved) return
       const bounds = canvas.getBoundingClientRect()
       const screen = new Point(
         (event.clientX - bounds.left) * app.screen.width / bounds.width,

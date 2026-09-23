@@ -2,8 +2,42 @@ import { describe, expect, it } from 'vitest'
 import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, ReactionVisibility, VisualRecoveryTracker, visualForHandAssetFailure } from '../../src/modern/features/game/game-visuals'
 import { createGame } from '../../src/modern/features/game/setup'
 import { ReactionPlayer, type ReactionClip } from '../../src/modern/features/characters/reactions'
+import { createGameController } from '../../src/modern/features/game/controller'
+import { applyWorldCard } from '../../src/modern/features/game/world-cards'
 
 describe('3A 对局视觉投影', () => {
+  it('真实控制器玩家中弹但无房产受损时仍在所选中心播放飞弹和爆炸', () => {
+    const game = createGame([1], 153, 1)
+    const events: Parameters<typeof interactionVisualPlan>[0][] = []
+    const controller = createGameController(game, { onInteractionEvent: event => events.push(event) })
+    const index = controller.state.inventories[1]!.indexOf(9)
+    expect(index).toBeGreaterThanOrEqual(0)
+    expect(controller.beginCard(index)).toBe(true)
+    expect(controller.confirmCard()).toBe(true)
+    const impactPosition = { ...controller.state.players[3]!.position }
+    expect(controller.chooseCard({ kind: 'cell', position: impactPosition })).toBe(true)
+    const hit = events.at(-1)!
+    expect(hit.worldEvent).toMatchObject({ kind: 'missile-fired', affectedPlayerIds: [4], affectedCellIds: [], impactPosition })
+    expect(interactionVisualPlan(hit).effects).toEqual([
+      { clipId: 'rocket', position: impactPosition },
+      { clipId: 'explosion', position: impactPosition },
+    ])
+    controller.dispose()
+  })
+
+  it('非中心房产受损时飞弹视觉仍位于所选中心', () => {
+    const game = createGame([1], 153, 1)
+    game.inventories[1] = [9]
+    game.properties[103]!.level = 3
+    const impactPosition = { column: 30, row: 8 }
+    const result = applyWorldCard(game, 1, 0, { kind: 'cell', position: impactPosition })
+    expect(result.event?.affectedCellIds).toEqual([104])
+    expect(result.event).toMatchObject({ impactPosition })
+    expect(interactionVisualPlan({ kind: 'card', playerId: 1, worldEvent: result.event }).effects).toEqual([
+      { clipId: 'rocket', position: impactPosition },
+      { clipId: 'explosion', position: impactPosition },
+    ])
+  })
   it('角色1的兼容行走清单路径不会污染反馈素材路径', () => {
     expect(reactionManifestUrl(1)).toBe('assets/characters/1/reactions/manifest.json')
     expect(reactionManifestUrl(12)).toBe('assets/characters/12/reactions/manifest.json')

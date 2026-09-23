@@ -134,7 +134,8 @@ function worldNotice(result: WorldResult): InteractionNotice {
       event.kind.startsWith('restriction-') || event.kind === 'god-expired' ? 'restriction' : 'world',
     message: event.kind,
     eventKind: event.kind,
-    amount: event.amount,
+    amount: event.cashDelta ?? event.amount,
+    npcId: event.npcId,
     affectedPlayerIds: [...event.affectedPlayerIds],
     affectedCellIds: [...event.affectedCellIds],
     cardIds: [...event.cardIds],
@@ -228,7 +229,7 @@ export function createGameController(initialState: GameState, options: GameContr
     showNotice(notice, {
       kind: notice.kind,
       playerId: activePlayer().id,
-      amount: result.event.amount,
+      amount: result.event.cashDelta ?? result.event.amount,
       affectedPlayerIds: [...result.event.affectedPlayerIds],
       affectedCellIds: [...result.event.affectedCellIds],
       cardIds: [...result.event.cardIds],
@@ -704,9 +705,10 @@ export function createGameController(initialState: GameState, options: GameContr
         inventories: { ...current.inventories, [interaction.playerId]: result.inventory },
         tickets: { ...current.tickets, [interaction.playerId]: result.tickets },
       }
-      showNotice({ kind: 'shop', message: result.kind, cardId: result.cardId ?? undefined, amount: result.amount }, {
+      const ticketDelta = result.kind === 'bought' ? -result.amount : result.amount
+      showNotice({ kind: 'shop', message: result.kind, cardId: result.cardId ?? undefined, amount: ticketDelta }, {
         kind: 'shop', playerId: interaction.playerId, cardId: result.cardId ?? undefined,
-        amount: result.amount, shopAction: result.kind,
+        amount: ticketDelta, shopAction: result.kind,
       }, 'shop', { ...interaction, shop: result.shop })
       return true
     },

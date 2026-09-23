@@ -2,12 +2,13 @@ import type { ReactionName } from '../characters/reactions'
 import type { PlayerPose } from '../map/MapScene'
 import type { InteractionEvent } from './interaction-types'
 import type { GameState } from './types'
+import type { GridPoint } from '../map/types'
 
 export type EffectClipId = 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain'
 
 export interface InteractionVisualPlan {
   reactions: Array<{ playerId: number; name: ReactionName }>
-  effects: Array<{ clipId: EffectClipId; cellId?: number; playerId?: number }>
+  effects: Array<{ clipId: EffectClipId; cellId?: number; playerId?: number; position?: GridPoint }>
 }
 
 export class ReactionVisibility {
@@ -110,12 +111,18 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
     if (affectedPlayers.includes(event.playerId)) react(event.playerId, 'hurt')
     else react(event.playerId, 'happy')
     for (const playerId of affectedPlayers) if (playerId !== event.playerId) react(playerId, 'hurt')
-    const cellId = affectedCells[0]
-    if (cellId !== undefined) effects.push({ clipId: 'rocket', cellId }, { clipId: 'explosion', cellId })
+    const position = event.worldEvent?.impactPosition
+    if (position) effects.push({ clipId: 'rocket', position }, { clipId: 'explosion', position })
+    else {
+      const cellId = affectedCells[0]
+      if (cellId !== undefined) effects.push({ clipId: 'rocket', cellId }, { clipId: 'explosion', cellId })
+    }
   } else if (worldKind === 'mine-triggered') {
     react(event.playerId, 'hurt')
     const cellId = affectedCells[0]
     if (cellId !== undefined) effects.push({ clipId: 'explosion', cellId })
+  } else if (worldKind === 'god-encountered' && event.worldEvent?.npcId === 3 && (event.worldEvent.cashDelta ?? 0) < 0) {
+    react(event.playerId, 'sad')
   } else if (worldKind === 'restriction-released' || worldKind === 'god-expired') {
     react(event.playerId, 'neutral')
   } else if (worldKind === 'barrier-placed' || worldKind === 'mine-placed') {

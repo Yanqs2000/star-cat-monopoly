@@ -46,11 +46,51 @@ test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不�
   failed = false
   await page.getByRole('button', { name: '重试载入' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect(page.getByLabel('速度')).toHaveValue('2')
   await expect.poll(() => frameRequests).toBeGreaterThanOrEqual(2)
   await expect(page.getByTestId('interaction-panel')).toContainText('控骰卡')
   await expect(page.getByTestId('hand-panel').getByTestId('hand-card')).toHaveCount(4)
   await page.waitForTimeout(500)
   expect((await page.locator('canvas').screenshot()).equals(beforeReaction)).toBe(false)
+  await page.getByTestId('interaction-acknowledge').click()
+  const pixiTimingAvailable = await page.evaluate(async () => {
+    const url = performance.getEntriesByType('resource').map(entry => entry.name).find(name => name.includes('/pixi__js.js'))
+    if (!url) return false
+    const pixi = await (new Function('url', 'return import(url)')(url) as Promise<typeof import('pixi.js')>)
+    const originalAdd = pixi.Container.prototype.addChild
+    const originalRemove = pixi.Container.prototype.removeChild
+    const probe = window as Window & { __effectTimes?: Array<{ start: number; end?: number }> }
+    const tracked = new Map<object, { start: number; end?: number }>()
+    probe.__effectTimes = []
+    pixi.Container.prototype.addChild = function (...children) {
+      for (const child of children) {
+        if (child instanceof pixi.Container && child.children.length === 1 && child.children[0] instanceof pixi.Sprite && child.position.x === 560 && child.position.y === 400) {
+          const record = { start: performance.now() }
+          tracked.set(child, record)
+          probe.__effectTimes!.push(record)
+        }
+      }
+      return originalAdd.apply(this, children)
+    }
+    pixi.Container.prototype.removeChild = function (...children) {
+      for (const child of children) {
+        const record = tracked.get(child)
+        if (record) record.end = performance.now()
+      }
+      return originalRemove.apply(this, children)
+    }
+    return true
+  })
+  await page.getByTestId('hand-panel').locator('[data-card-id="9"]').click()
+  await page.getByTestId('interaction-confirm').click()
+  await page.getByTestId('target-player-4').click()
+  await expect(page.getByTestId('interaction-panel')).toContainText('飞弹已经发射')
+  if (pixiTimingAvailable) {
+    await expect.poll(() => page.evaluate(() => (window as Window & { __effectTimes?: Array<{ end?: number }> }).__effectTimes?.filter(item => item.end !== undefined).length ?? 0)).toBe(2)
+    const durations = await page.evaluate(() => (window as Window & { __effectTimes?: Array<{ start: number; end?: number }> }).__effectTimes!.map(item => item.end! - item.start))
+    expect(durations).toHaveLength(2)
+    for (const duration of durations) expect(duration).toBeLessThan(2100)
+  }
   await page.getByTestId('interaction-acknowledge').click()
   await page.getByRole('button', { name: '掷骰' }).click()
   await expect(page.getByTestId('last-roll')).toContainText('骰子 2')
@@ -60,6 +100,7 @@ test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不�
 
 test('生产入口用地图点击放置障碍并用真实玩家位置发射飞弹', async ({ page }) => {
   test.setTimeout(90_000)
+  await mkdir(evidenceDir, { recursive: true })
   await seedMondayGame(page, 153)
   const hand = page.getByTestId('hand-panel')
 
@@ -78,11 +119,74 @@ test('生产入口用地图点击放置障碍并用真实玩家位置发射飞�
   await expect(hand.getByTestId('hand-card')).toHaveCount(4)
   await page.getByTestId('interaction-acknowledge').click()
 
+  await page.getByRole('button', { name: '全图' }).click()
   await hand.locator('[data-card-id="9"]').click()
   await page.getByTestId('interaction-confirm').click()
   await page.getByTestId('target-player-4').click()
   await expect(page.getByTestId('interaction-panel')).toContainText('飞弹已经发射')
+  await page.screenshot({ path: `${evidenceDir}/fix-seed153-missile-impact-production.png` })
   await expect(hand.getByTestId('hand-card')).toHaveCount(3)
+  await expect(page.getByTestId('player-list').getByRole('listitem').nth(3)).toContainText('住院 3天')
+})
+
+test('地图选目标时拖出又返回原点不消耗卡，普通点击仍可提交', async ({ page }) => {
+  test.setTimeout(90_000)
+  await seedMondayGame(page, 153)
+  const hand = page.getByTestId('hand-panel')
+  await hand.locator('[data-card-id="6"]').click()
+  await page.getByTestId('interaction-confirm').click()
+  const canvas = page.locator('canvas')
+  const target = await canvas.evaluate(element => {
+    const scale = Math.min(element.clientWidth / 800, element.clientHeight / 600)
+    return {
+      x: (element.clientWidth - 800 * scale) / 2 + 456 * scale,
+      y: (element.clientHeight - 600 * scale) / 2 + 120 * scale,
+    }
+  })
+  const bounds = (await canvas.boundingBox())!
+  const x = bounds.x + target.x
+  const y = bounds.y + target.y
+  await page.mouse.move(x, y)
+  await page.mouse.down()
+  await page.mouse.move(x + 100, y, { steps: 4 })
+  await page.mouse.move(x, y, { steps: 4 })
+  await page.mouse.up()
+  await expect(page.getByTestId('interaction-panel')).toContainText('在地图上点击目标格')
+  await expect(hand.getByTestId('hand-card')).toHaveCount(5)
+  await canvas.click({ position: target })
+  await expect(page.getByTestId('interaction-panel')).toContainText('障碍已放置')
+  await expect(hand.getByTestId('hand-card')).toHaveCount(4)
+})
+
+test('seed153 玩家-only飞弹在所选中心实际派发两种原版特效', async ({ page }) => {
+  test.setTimeout(90_000)
+  await mkdir(evidenceDir, { recursive: true })
+  await seedMondayGame(page, 153)
+  await page.getByRole('button', { name: '全图' }).click()
+  await page.evaluate(async () => {
+    const url = performance.getEntriesByType('resource').map(entry => entry.name).find(name => name.includes('/pixi__js.js'))
+    if (!url) throw new Error('Pixi module not found in production page')
+    const pixi = await (new Function('url', 'return import(url)')(url) as Promise<typeof import('pixi.js')>)
+    const original = pixi.Container.prototype.addChild
+    const probe = window as Window & { __missileEffectPositions?: Array<{ x: number; y: number }> }
+    probe.__missileEffectPositions = []
+    pixi.Container.prototype.addChild = function (...children) {
+      for (const child of children) {
+        if (child instanceof pixi.Container && child.children.length === 1 && child.children[0] instanceof pixi.Sprite) {
+          probe.__missileEffectPositions!.push({ x: child.position.x, y: child.position.y })
+        }
+      }
+      return original.apply(this, children)
+    }
+  })
+  const hand = page.getByTestId('hand-panel')
+  await hand.locator('[data-card-id="9"]').click()
+  await page.getByTestId('interaction-confirm').click()
+  await page.getByTestId('target-player-4').click()
+  await expect(page.getByTestId('interaction-panel')).toContainText('飞弹已经发射')
+  const effectPositions = await page.evaluate(() => (window as Window & { __missileEffectPositions?: Array<{ x: number; y: number }> }).__missileEffectPositions ?? [])
+  expect(effectPositions).toEqual([{ x: 560, y: 400 }, { x: 560, y: 400 }])
+  await page.screenshot({ path: `${evidenceDir}/fix-seed153-missile-impact.png` })
   await expect(page.getByTestId('player-list').getByRole('listitem').nth(3)).toContainText('住院 3天')
 })
 

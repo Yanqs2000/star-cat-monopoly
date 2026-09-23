@@ -126,9 +126,9 @@ function failRuntimeAsset(error: Error, visual?: InteractionVisualPlan) {
 async function playVisual(state: GameState, visual: InteractionVisualPlan): Promise<void> {
   const token = visualRecovery.begin(visual)
   for (const effect of visual.effects) {
-    const position = effect.cellId === undefined
+    const position = effect.position ?? (effect.cellId === undefined
       ? state.players.find(player => player.id === effect.playerId)?.position
-      : getCardRecord(effect.cellId)?.position
+      : getCardRecord(effect.cellId)?.position)
     if (position) scene?.playEffect(effect.clipId, position)
   }
   try {
@@ -229,6 +229,7 @@ async function loadPendingGame() {
       initial,
       controllerOptions,
       replay === undefined ? undefined : () => playVisual(initial, replay),
+      speed.value,
     )
     if (current !== generation) return
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })

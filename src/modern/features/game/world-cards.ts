@@ -58,6 +58,8 @@ export interface WorldEvent {
   cardId?: number
   npcId?: number
   amount?: number
+  cashDelta?: number
+  impactPosition?: GridPoint
   affectedCellIds: number[]
   affectedPlayerIds: number[]
   cardIds: number[]
@@ -295,6 +297,7 @@ function applyMissile(
   consume(snapshot, playerId, inventoryIndex)
   return result(snapshot, event('missile-fired', playerId, {
     cardId: 9,
+    impactPosition: { ...choice.position },
     affectedCellIds,
     affectedPlayerIds,
   }), { consumed: true, endTurn: casterHit || publicDamage })
@@ -419,10 +422,12 @@ function encounterGod(source: WorldSnapshot, playerId: number, cellId: number, g
       snapshot.rngState = draw.nextState
       amount += draw.value * 10 ** place
     }
+    const cashBefore = player.cash
     player.cash = Math.max(0, player.cash - amount)
     snapshot.lostAndFoundFunds[0] += amount
     snapshot.lostAndFoundFunds[1] += amount
     worldEvent.amount = amount
+    worldEvent.cashDelta = player.cash - cashBefore
   } else if (godId === 4) {
     const count = snapshot.inventories[playerId]!.length
     const draws = count < 23 ? 2 : count === 23 ? 1 : 0

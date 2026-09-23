@@ -20,6 +20,7 @@ export interface InteractionNotice {
   cardId?: number
   eventKind?: string
   amount?: number
+  npcId?: number
   affectedPlayerIds?: number[]
   affectedCellIds?: number[]
   cardIds?: number[]

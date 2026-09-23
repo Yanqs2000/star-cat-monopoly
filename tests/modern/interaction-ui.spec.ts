@@ -9,6 +9,9 @@ import type { DirectCardChoice } from '../../src/modern/features/game/direct-car
 import { createGame } from '../../src/modern/features/game/setup'
 import type { GameState } from '../../src/modern/features/game/types'
 import type { InteractionAsset } from '../../src/modern/features/game/interaction-assets'
+import { getCardCell } from '../../src/modern/features/game/direct-cards'
+import { resolveWorldCell } from '../../src/modern/features/game/world-cards'
+import { interactionVisualPlan } from '../../src/modern/features/game/game-visuals'
 
 const CARD_IDS = [1, 5, 6, 7, 9, 11, 14, 15, 18, 19, 20, 21, 22, 25, 26, 27, 33]
 const assets: InteractionAsset[] = CARD_IDS.map(id => ({
@@ -46,6 +49,62 @@ function mountInteraction(controller: GameController): VueWrapper {
 }
 
 describe('3A 手牌面板', () => {
+  it('真实商店买卖结果分别显示奖券支出和收入及结算后余额', async () => {
+    const game = gameWithCards([1])
+    game.phase = 'interaction'
+    game.interaction = { kind: 'shop', playerId: 1, resume: 'shop', shop: { stock: [5, 6, 7, 5, 9, 6, null, null, null, null, null, null] } }
+    const controller = createGameController(game)
+    const wrapper = mountInteraction(controller)
+    expect(controller.state.tickets[1]).toBe(200)
+    await wrapper.get('[data-testid="shop-slot"]').trigger('click')
+    expect(controller.state.tickets[1]).toBe(170)
+    expect(wrapper.text()).toContain('购买成功')
+    expect(wrapper.text()).toContain('奖券 -30')
+    await wrapper.get('[data-testid="interaction-acknowledge"]').trigger('click')
+    await wrapper.findAll('.sell-list button')[0]!.trigger('click')
+    expect(controller.state.tickets[1]).toBe(270)
+    expect(wrapper.text()).toContain('出售成功')
+    expect(wrapper.text()).toContain('奖券 +100')
+    controller.dispose()
+  })
+
+  it('穷神真实事件以实际现金损失和悲伤反馈呈现，低余额按归零额显示', () => {
+    const game = createGame([1], 153, 1)
+    const position = game.players[0]!.position
+    const cell = getCardCell(position)!
+    game.world.markers = { [cell.id]: 3 }
+    game.players[0]!.cash = 100
+    const result = resolveWorldCell(game, 1, position, 'landing')
+    const event = result.event!
+    expect(event).toMatchObject({ kind: 'god-encountered', npcId: 3 })
+    expect(event.amount).toBeGreaterThan(100)
+    expect(result.snapshot.players[0]!.cash).toBe(0)
+    expect(interactionVisualPlan({ kind: 'world', playerId: 1, worldEvent: event }).reactions).toEqual([{ playerId: 1, name: 'sad' }])
+    game.phase = 'landed'
+    game.continuation = 'handle-landing'
+    const controller = createGameController(game)
+    expect(controller.state.interaction).toMatchObject({ kind: 'notice', notice: { eventKind: 'god-encountered', npcId: 3, amount: -100 } })
+    const wrapper = mount(InteractionPanel, { props: { game: controller.state, paused: false, cardAssets: assets } })
+    expect(wrapper.text()).toContain('穷神')
+    expect(wrapper.text()).toContain('现金 -100')
+    expect(wrapper.text()).toContain('现金 0')
+    controller.dispose()
+  })
+
+  it('现金已经为零时穷神提示不声称又损失了现金', () => {
+    const game = createGame([1], 153, 1)
+    const position = game.players[0]!.position
+    game.world.markers = { [getCardCell(position)!.id]: 3 }
+    game.players[0]!.cash = 0
+    game.phase = 'landed'
+    game.continuation = 'handle-landing'
+    const controller = createGameController(game)
+    const wrapper = mount(InteractionPanel, { props: { game: controller.state, paused: false, cardAssets: assets } })
+    expect(wrapper.text()).toContain('遇见穷神')
+    expect(wrapper.text()).not.toContain('现金减少')
+    expect(wrapper.text()).not.toContain('现金 -')
+    controller.dispose()
+  })
   it('24 张手牌按每页 8 张分页，并用名称区分同图的均富卡和均贫卡', async () => {
     const game = gameWithCards([
       5, 6, 7, 9, 11, 14, 15, 18,

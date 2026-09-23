@@ -18,6 +18,36 @@ class ManualScheduler implements GameScheduler {
 }
 
 describe('恢复视觉与AI控制器顺序', () => {
+  it('2倍速恢复AI通知时控制器定时器从载入前就是2倍速', async () => {
+    const game = createGame([1], 153, 1)
+    game.activePlayerIndex = 1
+    game.phase = 'interaction'
+    game.interaction = { kind: 'notice', playerId: 2, resume: 'await-roll', notice: { kind: 'restriction', message: 'restriction-released' } }
+    const scheduler = new ManualScheduler()
+    const controller = await restoreControllerAfterVisual(game, { scheduler, aiThinkDurationMs: 650 }, undefined, 2)
+    expect(controller.speed).toBe(2)
+    expect(scheduler.jobs).toHaveLength(1)
+    expect(scheduler.jobs[0]!.at).toBe(325)
+    scheduler.advance(324)
+    expect(controller.state.interaction?.kind).toBe('notice')
+    scheduler.advance(1)
+    expect(controller.state.interaction).toBeNull()
+    controller.dispose()
+  })
+
+  it('2倍速恢复移动中状态时首个步进定时器按2倍速排程', async () => {
+    const game = createGame([1], 153, 1)
+    game.activePlayerIndex = 1
+    game.phase = 'moving'
+    game.remainingSteps = 2
+    game.continuation = 'start-step'
+    const scheduler = new ManualScheduler()
+    const controller = await restoreControllerAfterVisual(game, { scheduler, stepDurationMs: 100 }, undefined, 2)
+    expect(controller.speed).toBe(2)
+    expect(scheduler.jobs).toHaveLength(1)
+    expect(scheduler.jobs[0]!.at).toBe(50)
+    controller.dispose()
+  })
   it('AI notice恢复必须等待失败视觉重放完成才创建会自动确认的控制器', async () => {
     let finishReplay!: () => void
     const replay = vi.fn(() => new Promise<void>(resolve => { finishReplay = resolve }))

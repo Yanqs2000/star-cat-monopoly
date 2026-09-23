@@ -13,6 +13,11 @@ export function restoreControllerAfterVisual(
   initial: GameState,
   options: GameControllerOptions,
   replay?: () => Promise<void>,
+  speed = 1,
 ): Promise<GameController> {
-  return replayBeforeHydration(replay, () => createGameController(initial, options))
+  return replayBeforeHydration(replay, () => {
+    const controller = createGameController(initial, options)
+    controller.setSpeed(speed)
+    return controller
+  })
 }
