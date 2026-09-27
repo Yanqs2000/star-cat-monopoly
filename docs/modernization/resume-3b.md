@@ -19,11 +19,12 @@ base: `629db6e`（3A 本地完成、验收记录仍待用户明确通过）
 - 当前 3A 核心：`src/modern/features/game/{setup,types,controller,world-cards}.ts`，前端 `src/modern/ModernApp.vue`，现代构建仍在同一工作区。源脚本已跟踪于 `docs/modernization/evidence/source/play.swf/scripts/`，完整 JPEXS 输出在父仓库 `.analysis-cache/ffdec/play.swf/scripts/`。
 - 系统 `/usr/bin/git`、`python3` 会触发 Xcode 许可；使用 `/opt/homebrew/bin/git` 和 `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`。不要替用户接受许可，不使用额度重置点。
 
-## 已完成 / 下一步（2026-09-27 09:14 Asia/Shanghai）
+## 已完成 / 下一步（2026-09-27 16:59 Asia/Shanghai）
 
-- 最近提交：`fd22db0`（银行业务、月结控制器和面板）、`bb4290d`（交易所/公司纯规则）；此前 `ae24af2`、`240cab4`、`2d20cde`、`07de84a`。本段 Task 5 自然股市/公司控制器 WIP 正在提交，以实际 `git log` 为准。银行和股票取证工作者均已完成，无须重派。三份源证据位于 `docs/modernization/phase-3b-{bank,stock,calendar-company}-evidence.md`，探针见 `evidence/stock-negative-random-runtime.json`。
-- 已有规格和逐项计划：`docs/superpowers/specs/2026-09-27-modern-3b-finance-design.md` 与 `docs/superpowers/plans/2026-09-27-modern-3b-finance.md`。计划 Task 1…5 的规则/控制器 RED→GREEN 已完成；Task 6…7 未完成。目标是**整个 3B**，不能把控制器 API 当作最终可玩验收。
-- 最新 RED/GREEN：Task 5 `finance-controller` 6 项 GREEN，连同既有 `interaction-controller` 共 63 项 GREEN，`vue-tsc --noEmit` 通过。股市自然途中入口、周日关闭、AI 跳过、公司自然落地/AI 最大认购/费用恢复均在这些测试内；停留卡起点误触发公司已由既有回归捕获并修正。整套单元、现代构建和生产浏览器尚未为 3B 运行。
-- 原版预览 HTTP `http://127.0.0.1:4173/` 已验证 200，原 exec session 94102；如果要重跑原版探针，先检查该端口/句柄。现代预览 4184 状态未重新核对。未运行部署、推送、合并。
-- **下一条工作：**读计划 Task 6、`InteractionPanel.vue`、`GamePanel.vue`、`ModernApp.vue` 和 `MapScene.ts`。先加 `tests/modern/finance-ui.spec.ts` 的股票/公司命令、成交额符号、CEO/贷款/日期显示 RED；实现股票/公司真实 Vue 入口和权威账本显示。随后从原 SWF 导出 12 个 `gufen` 建筑素材并保留原坐标/锚点，接入 Pixi，最后进入 Task 7 的现代生产构建真实浏览器回放与整批审查。
+- 最近提交：`37f4818`（自然股市/公司控制器）、`fd22db0`（银行与月结）、`bb4290d`（交易/公司规则）；此前 `ae24af2`、`240cab4`、`2d20cde`、`07de84a`。本段 Task 6 Vue/原版公司图片 WIP 正在提交，以实际 `git log` 为准。银行和股票取证工作者均已完成，无须重派。三份源证据位于 `docs/modernization/phase-3b-{bank,stock,calendar-company}-evidence.md`，探针见 `evidence/stock-negative-random-runtime.json`。
+- 已有规格和逐项计划：`docs/superpowers/specs/2026-09-27-modern-3b-finance-design.md` 与 `docs/superpowers/plans/2026-09-27-modern-3b-finance.md`。计划 Task 1…6 均已定向 RED→GREEN；Task 7 的生产浏览器完整金融回放、全量检查、审查与验收记录未完成。目标是**整个 3B**，不能把局部截图当作最终验收。
+- 最新验证：Task 6 `finance-ui/company-assets/stock-trading/finance-controller` 18 项 GREEN；`npm run build:modern` 通过，771 模块；生产预览 4184 的 `modern-turns.spec.ts` 5 项通过。seed1 的四人自然开局全图 `.analysis-cache/acceptance-3b/start-companies-1440x1000.png` 已检查四处公司建筑，页面无错误。整套 Vitest 和其他旧 Playwright 尚未运行。
+- 已运行旧 3A `seed153` 长路线回放并**失败**于第 2 轮地块83预期：实际第 3 轮玩家位置32,28，旧脚本按固定旧 RNG 路线等不到地产格。新增的 AI 银行与每日股票 RNG 改变后续掷骰序列；不能把旧固定 seed 的旧路线当 3B 故障，也不能把这项失败藏掉。需要重建/替换该用例，保留卡片/地产/银行回归语义。
+- 原版预览 HTTP `http://127.0.0.1:4173/` 此前验证 200，原 exec session 94102；现代生产预览 `http://127.0.0.1:4184/modern.html` exec session **29812** 已用于上述 Playwright。恢复时先检查进程/HTTP，勿仅因工具超时重启。未运行部署、推送、合并。
+- **下一条工作：**先读 `tests/e2e/modern-interactions.spec.ts:202-275` 的 seed153 旧固定路线、失败上下文 `/tmp/starcat-modern-e2e/modern-interactions-seed153-生产入口合法完成商店买卖、地产、银行信用、运气8与信用卡使用/error-context.md`；用新的原版金融 RNG 路线建立 3B 生产浏览器 `modern-finance.spec.ts`，覆盖银行存取借还、股票买卖、公司认购/董事、月结，并将旧 3A 路线测试改成仍有实际回归价值的稳定测试。然后整套 Vitest、typecheck/build、Playwright、审查修复/复审，写 `acceptance-3b.md`。
 - 静态/动态差异：负/零 AVM1 `random` 已在 Ruffle 原语探针确认返回 0；自然价格流尚未逐项回放。固定二月 28 天与 `znmu` 反编译疑点均如证据所述；不能因静态拼写擅自改轮转。

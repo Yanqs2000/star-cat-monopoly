@@ -5,6 +5,7 @@ import type { Parcel } from '../map/types'
 import HandPanel from './HandPanel.vue'
 import type { InteractionAsset } from './interaction-assets'
 import { getPropertySummary } from './property'
+import { stockMarketValue } from './stock-trading'
 import type { GameState } from './types'
 
 const props = withDefaults(defineProps<{
@@ -77,15 +78,15 @@ function restriction(playerId: number): string {
     <ol class="players" data-testid="player-list">
       <li v-for="(player, index) in game.players" :key="player.id" :class="{ active: index === game.activePlayerIndex }">
         <span class="token">{{ index + 1 }}</span>
-        <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : 'AI' }} · {{ player.position.column }},{{ player.position.row }}</small><small>现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</small><small>信用 {{ game.credit[player.id]?.available }} / 已用 {{ game.credit[player.id]?.used }}</small><small>{{ restriction(player.id) }}</small><small>地 {{ getPropertySummary(game.properties, player.id).landCount }} · 建筑 {{ getPropertySummary(game.properties, player.id).buildingCount }}</small></span>
+        <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : 'AI' }} · {{ player.position.column }},{{ player.position.row }}</small><small>现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</small><small>信用 {{ game.credit[player.id]?.available }} / 已用 {{ game.credit[player.id]?.used }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</small><small>股票市值 {{ stockMarketValue(game.finance, player.id) }}</small><small>{{ restriction(player.id) }}</small><small>地 {{ getPropertySummary(game.properties, player.id).landCount }} · 建筑 {{ getPropertySummary(game.properties, player.id).buildingCount }}</small></span>
       </li>
     </ol>
     <div class="property-list" data-testid="property-list"><strong>{{ active.name }}的地产</strong><span v-if="!owned.length">暂无地产</span><ol v-else><li v-for="parcel in owned" :key="parcel.id">{{ parcel.streetName }} #{{ parcel.id }} · {{ game.properties[parcel.id]?.level }} 级</li></ol></div>
     <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>已发生的回合与交易</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>
-    <p class="funds">失物招领 {{ game.lostAndFoundFunds[0] }} / {{ game.lostAndFoundFunds[1] }} · 星期 {{ game.world.weekday }} · 已过 {{ game.world.elapsedDays }}天</p>
+    <p class="funds">失物招领 {{ game.lostAndFoundFunds[0] }} / {{ game.lostAndFoundFunds[1] }} · {{ game.world.year }}年{{ game.world.month }}月{{ game.world.day }}日 · 星期 {{ game.world.weekday }} · 已过 {{ game.world.elapsedDays }}天</p>
     <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
-    <p class="scope">已接入卡片、特殊格、商店、信用和世界状态；其他银行业务与普通 NPC 遭遇将在后续版本开放。</p>
+    <p class="scope">银行、股市和公司已开放；普通 NPC 遭遇将在后续版本开放。</p>
   </aside>
 </template>
 

@@ -1,10 +1,15 @@
-import type { FinanceEntry, StockCompany } from './finance-types'
+import type { FinanceEntry, FinanceState, StockCompany } from './finance-types'
 import type { GameState } from './types'
 
 export interface FinanceActionResult {
   state: GameState
   entry: FinanceEntry | null
   error: string | null
+}
+
+export function stockMarketValue(finance: FinanceState, playerId: number): number {
+  return Math.trunc(finance.stocks.slice(1, 16).reduce((total, stock) =>
+    total + (stock.holdings[playerId]?.shares ?? 0) * stock.price, 0))
 }
 
 export function rejectFinance(source: GameState, error: string): FinanceActionResult {

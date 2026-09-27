@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { createGame } from '../../src/modern/features/game/setup'
-import { buyStock, sellStock } from '../../src/modern/features/game/stock-trading'
+import { buyStock, sellStock, stockMarketValue } from '../../src/modern/features/game/stock-trading'
 
 describe('原版交易所现金与持股', () => {
   it('以现价买入按整数扣现金、两位均价，并分别减少日限额和池值', () => {
@@ -54,5 +54,14 @@ describe('原版交易所现金与持股', () => {
     expect(tied.state.finance.stocks[1]?.ceoId).toBe(1)
     const leading = buyStock(tied.state, 2, 1, 1)
     expect(leading.state.finance.stocks[1]?.ceoId).toBe(2)
+  })
+
+  it('金融持股市值计入公共事业 13..15，但不计占位 0', () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    game.finance.stocks[1]!.holdings[1] = { shares: 3, averageCost: 10 }
+    game.finance.stocks[1]!.price = 21.37
+    game.finance.stocks[13]!.holdings[1] = { shares: 10, averageCost: 5 }
+    game.finance.stocks[0]!.holdings[1] = { shares: 100, averageCost: 80 }
+    expect(stockMarketValue(game.finance, 1)).toBe(84)
   })
 })

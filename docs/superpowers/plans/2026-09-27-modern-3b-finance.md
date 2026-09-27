@@ -81,9 +81,9 @@
 
 **Files:** Modify `InteractionPanel.vue`, `GamePanel.vue`, `ModernApp.vue`, `MapScene.ts` 和必要素材 manifest；Create 导出脚本/公司素材；Test `tests/modern/finance-ui.spec.ts`, `tests/modern/company-assets.spec.ts`。
 
-- [ ] 先写按钮禁用、成交额和资金符号、日期/月结展示及 12 张建筑透明边界测试 RED。
-- [ ] 确认 RED；导出原版符号，使用源坐标和锚点；实现面板并由 UI 只发命令。
-- [ ] 定向 GREEN、构建，提交。
+- [x] 先写按钮禁用、成交额和资金符号、日期/月结展示及 12 张建筑透明边界测试 RED。
+- [x] 确认 RED；导出原版符号，使用源坐标和锚点；实现面板并由 UI 只发命令。
+- [x] 定向 GREEN、现代生产构建与全图检查，提交。
 
 ### Task 7: 真实回放、审查与验收
 

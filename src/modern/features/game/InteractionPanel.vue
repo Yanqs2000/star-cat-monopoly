@@ -3,6 +3,8 @@ import { computed, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
 import type { BankOperation } from './bank-operations'
 import type { FinanceEntry } from './finance-types'
+import { maxCompanySubscription } from './company'
+import { maxStockBuy } from './stock-trading'
 import type { DirectCardChoice } from './direct-cards'
 import type { InteractionAsset } from './interaction-assets'
 import type { GameInteraction } from './interaction-types'
@@ -26,11 +28,18 @@ const emit = defineEmits<{
   'bank-operation': [operation: BankOperation, amount: number]
   'leave-bank': []
   'acknowledge-monthly': []
+  'trade-stock': [side: 'buy' | 'sell', companyId: number, shares: number]
+  'leave-stock': []
+  'subscribe-company': [shares: number]
+  'leave-company': []
   'asset-error': [error: Error]
 }>()
 const creditAmount = ref(0)
 const bankAmount = ref(0)
 const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
+const stockId = ref(1)
+const stockShares = ref(1)
+const companyShares = ref(1)
 const interaction = computed(() => props.game.interaction)
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const player = computed(() => props.game.players.find(item => item.id === interaction.value?.playerId) ?? active.value)
@@ -49,11 +58,21 @@ const bankMax = computed(() => {
     case 'repay-credit': return Math.max(0, Math.min(player.value.cash, account?.used ?? 0))
   }
 })
+const chosenStock = computed(() => props.game.finance.stocks[stockId.value]!)
+const stockBuyMaximum = computed(() => maxStockBuy(props.game, player.value.id, stockId.value))
+const stockSellMaximum = computed(() => chosenStock.value.holdings[player.value.id]?.shares ?? 0)
+const stockGross = computed(() => chosenStock.value.price * stockShares.value)
+const landedCompany = computed(() => interaction.value?.kind === 'company'
+  ? props.game.finance.stocks[interaction.value.companyId] : null)
+const companyMaximum = computed(() => interaction.value?.kind === 'company'
+  ? maxCompanySubscription(props.game, player.value.id, interaction.value.companyId) : 0)
 const financeLabels: Record<string, string> = {
   'bank-withdraw': '取款完成', 'bank-deposit': '存款完成', 'bank-borrow': '贷款完成',
   'bank-repay-loan': '还贷完成', 'bank-repay-credit': '刷卡额已缴纳',
   'company-distribution': '公司分配', 'credit-monthly-payment': '信用卡月还',
   'loan-monthly-payment': '贷款月还', 'deposit-interest': '存款利息',
+  'stock-buy': '股票买入', 'stock-sell': '股票卖出',
+  'company-subscribe': '公司认购', 'company-fee': '公司经营费',
 }
 const actualChanges = (entry: FinanceEntry) => [
   ['现金', entry.cashDelta], ['存款', entry.depositDelta], ['贷款', entry.loanDelta], ['持股', entry.sharesDelta],
@@ -106,8 +125,11 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
 watch(() => interaction.value?.kind, kind => {
   if (kind === 'credit-choice') creditAmount.value = props.game.credit[player.value.id]?.available ?? 0
   if (kind === 'bank') bankAmount.value = 0
+  if (kind === 'stock') { stockId.value = 1; stockShares.value = 1 }
+  if (kind === 'company') companyShares.value = 1
 })
 watch(bankAction, () => { bankAmount.value = 0 })
+watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
@@ -184,6 +206,40 @@ watch(bankAction, () => { bankAmount.value = 0 })
       </li></ol>
       <p v-if="interaction.entries.length === 0">本月没有资金变化</p>
       <button data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
+    </template>
+
+    <template v-else-if="interaction.kind === 'stock'">
+      <span class="eyebrow">股市</span><h2>股票交易</h2>
+      <p class="balance">{{ player.name }} · 现金 {{ player.cash }}</p>
+      <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
+      <div class="choice">
+        <label>公司
+          <select v-model.number="stockId" data-testid="stock-company" :disabled="!canAct">
+            <option v-for="stock in game.finance.stocks.slice(1, 13)" :key="stock.id" :value="stock.id">{{ stock.name }}</option>
+          </select>
+        </label>
+        <p>{{ chosenStock.name }} · 现价 {{ chosenStock.price }} · 涨跌 {{ chosenStock.change }} · 当日可买 {{ chosenStock.dailyBuyLimit }} · 已持 {{ chosenStock.holdings[player.id]?.shares ?? 0 }}</p>
+        <label>股数
+          <input v-model.number="stockShares" data-testid="stock-shares" type="number" min="1" step="1" :max="Math.max(stockBuyMaximum, stockSellMaximum)" :disabled="!canAct">
+        </label>
+        <p>成交额 {{ Number.isFinite(stockGross) ? stockGross.toFixed(2) : '—' }} · 买入现金 -{{ Number.isFinite(stockGross) ? Math.trunc(stockGross) : '—' }} · 卖出现金 +{{ Number.isFinite(stockGross) ? Math.trunc(stockGross) : '—' }}</p>
+        <small>最多可买 {{ stockBuyMaximum }} 股 · 最多可卖 {{ stockSellMaximum }} 股</small>
+        <div class="actions"><button data-testid="stock-buy" :disabled="!canAct || !Number.isInteger(stockShares) || stockShares < 1 || stockShares > stockBuyMaximum" @click="emit('trade-stock', 'buy', stockId, stockShares)">买入</button><button data-testid="stock-sell" :disabled="!canAct || !Number.isInteger(stockShares) || stockShares < 1 || stockShares > stockSellMaximum" @click="emit('trade-stock', 'sell', stockId, stockShares)">卖出</button><button :disabled="!canAct" @click="emit('leave-stock')">离开股市</button></div>
+      </div>
+    </template>
+
+    <template v-else-if="interaction.kind === 'company' && landedCompany">
+      <span class="eyebrow">公司</span><h2>{{ landedCompany.name }}</h2>
+      <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }}</p>
+      <p>承销价 {{ landedCompany.basePrice }} · 待认购 {{ landedCompany.offerShares }} 股 · 已持 {{ landedCompany.holdings[player.id]?.shares ?? 0 }} 股</p>
+      <p>董事：{{ game.players.find(value => value.id === landedCompany?.ceoId)?.name ?? '暂无' }} · 累计经营费 {{ landedCompany.profit }}</p>
+      <p v-if="interaction.chargeEntry" class="amount">本次经营费 {{ actualChanges(interaction.chargeEntry) }}</p>
+      <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
+      <div class="choice"><label>认购股数
+        <input v-model.number="companyShares" data-testid="company-shares" type="number" min="1" step="1" :max="companyMaximum" :disabled="!canAct">
+      </label><p>成交额 {{ landedCompany.basePrice * companyShares }} · 现金 -{{ landedCompany.basePrice * companyShares }}</p>
+      <small>本次最多认购 {{ companyMaximum }} 股</small>
+      <div class="actions"><button data-testid="company-subscribe" :disabled="!canAct || !Number.isInteger(companyShares) || companyShares < 1 || companyShares > companyMaximum" @click="emit('subscribe-company', companyShares)">认购</button><button :disabled="!canAct" @click="emit('leave-company')">离开公司</button></div></div>
     </template>
 
     <template v-else-if="interaction.kind === 'notice'">

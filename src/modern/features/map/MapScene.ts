@@ -9,6 +9,7 @@ import type { WorldState } from '../game/world-cards'
 import type { PropertyLedger } from '../game/property'
 import { gridToScene } from './coordinates'
 import { parsePropertyAssets } from './property-assets'
+import { companyPlacement, parseCompanyAssets, type CompanyAssetsManifest } from './company-assets'
 import { pickTargetAfterPointer } from './target-selection'
 import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
@@ -30,6 +31,7 @@ export interface MapSceneHandle {
   setFacing(facing: Facing): void
   setPlaying(playing: boolean): void
   setPlayers(players: PlayerPose[]): void
+  setCompanies(players: PlayerState[]): void
   setProperties(properties: PropertyLedger): void
   setWorld(world: WorldState): void
   setTargeting(targeting: boolean): void
@@ -131,10 +133,17 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parseWorldAssets(await response.json())
     })() : undefined
+    const companyManifest = options.playerManifests ? await (async (): Promise<CompanyAssetsManifest> => {
+      const url = 'assets/companies/manifest.json'
+      const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
+      if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
+      return parseCompanyAssets(await response.json())
+    })() : undefined
     const urls = [...new Set([manifest.map.url, ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
-      ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? [])])]
+      ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
+      ...(companyManifest?.companies.map(item => item.url) ?? [])])]
     const results = await Promise.allSettled(urls.map(loadTexture))
     const failure = results.find(result => result.status === 'rejected')
     if (failure?.status === 'rejected') throw failure.reason
@@ -171,6 +180,13 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       view.addChild(image, badge)
       entities.addChild(view)
       return { parcel, image, badge }
+    }) : []
+    const companyViews = companyManifest ? Array.from({ length: 4 }, () => {
+      const view = new Container()
+      const image = new Sprite()
+      view.addChild(image)
+      entities.addChild(view)
+      return { view, image }
     }) : []
     const actors = (options.playerManifests ?? []).map(({ playerId, manifest: playerManifest, reactions }) => {
       const view = new Container()
@@ -253,6 +269,18 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
           }).catch(error => { if (!destroyed) options.onAssetError?.(error as Error) })
         }
       })
+    }
+    const setCompanies = (players: PlayerState[]) => {
+      if (!companyManifest) return
+      for (const [index, player] of players.entries()) {
+        const target = companyViews[index]
+        if (!target) continue
+        const placement = companyPlacement(companyManifest, player.characterId, player.hometown)
+        target.view.position.set(placement.x, placement.y)
+        target.view.zIndex = placement.y / 40 * 100 + placement.x / 56
+        target.image.texture = textures.get(placement.url)!
+        target.image.position.set(placement.offsetX, placement.offsetY)
+      }
     }
     const setProperties = (ledger: PropertyLedger) => {
       if (!propertyManifest) return
@@ -453,7 +481,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, setPlayers, setProperties, setWorld, playReaction, playEffect,
+      focus, follow, resize, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect,
       setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },
