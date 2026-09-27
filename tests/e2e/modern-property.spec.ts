@@ -36,7 +36,7 @@ async function buyAndAcknowledge(page: Page, parcelId: number, cost: number, scr
   await panel.getByTestId('property-acknowledge').click()
 }
 
-test('seed2 自然开局购买住宅地并在金融随机流中继续', async ({ page }) => {
+test('seed2 自然开局连续两轮购买住宅地并在金融随机流中继续', async ({ page }) => {
   test.setTimeout(90_000)
   await page.setViewportSize({ width: 1440, height: 1000 })
   const requests: string[] = []
@@ -51,6 +51,11 @@ test('seed2 自然开局购买住宅地并在金融随机流中继续', async ({
   await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 98800 · 存款 100000')
   await expect(page.getByTestId('property-list')).toContainText('木星路 #9 · 0 级')
   await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 45_000 })
+  await humanRoll(page, 2)
+  await buyAndAcknowledge(page, 13, 1200)
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 97600 · 存款 100000')
+  await expect(page.getByTestId('property-list')).toContainText('木星路 #13 · 0 级')
+  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 45_000 })
   expect(requests.some(path => path.includes('/assets/properties/sell-sign/'))).toBe(true)
   expect(requests.some(path => /\.swf$|ruffle|\.wasm$/.test(path))).toBe(false)
   expect(failures).toEqual([])

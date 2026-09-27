@@ -4,6 +4,7 @@ import { createGame } from '../../src/modern/features/game/setup'
 import { ReactionPlayer, type ReactionClip } from '../../src/modern/features/characters/reactions'
 import { createGameController } from '../../src/modern/features/game/controller'
 import { applyWorldCard } from '../../src/modern/features/game/world-cards'
+import { gridToScene } from '../../src/modern/features/map/coordinates'
 
 describe('3A 对局视觉投影', () => {
   it('真实控制器玩家中弹但无房产受损时仍在所选中心播放飞弹和爆炸', () => {
@@ -22,6 +23,8 @@ describe('3A 对局视觉投影', () => {
       { clipId: 'rocket', position: impactPosition },
       { clipId: 'explosion', position: impactPosition },
     ])
+    expect(interactionVisualPlan(hit).effects.map(effect => gridToScene(effect.position!)))
+      .toEqual([{ x: 560, y: 400 }, { x: 560, y: 400 }])
     controller.dispose()
   })
 

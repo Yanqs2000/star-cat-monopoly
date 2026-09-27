@@ -31,7 +31,7 @@ async function wallet(page: Page) {
   return { cash: Number(money[1]), deposit: Number(money[2]), loan: Number(loan[1]) }
 }
 
-test('自然开局 seed8 在第2轮银行完成存取、借还与授信', async ({ page }) => {
+test('自然开局 seed8 在第2轮银行完成存取、借还、授信与信用卡实际取现', async ({ page }) => {
   test.setTimeout(150_000)
   await mkdir(evidenceDir, { recursive: true })
   await start(page, 8)
@@ -60,6 +60,25 @@ test('自然开局 seed8 在第2轮银行完成存取、借还与授信', async 
   await page.getByTestId('interaction-acknowledge').click()
   await page.getByRole('button', { name: '离开银行' }).click()
   await expect(page.getByTestId('player-list').locator('li').first()).toContainText('贷款 11000')
+  await playUntil(page, async () =>
+    (await page.getByTestId('round').textContent())?.includes('第 3 轮') === true &&
+    await page.getByRole('button', { name: '掷骰' }).isEnabled().catch(() => false))
+  const beforeCard = await wallet(page)
+  const hand = page.getByTestId('hand-panel')
+  await hand.locator('[data-card-id="1"]').click()
+  await page.getByTestId('interaction-confirm').click()
+  await expect(page.getByTestId('interaction-panel')).toContainText('可用额度 100000')
+  await page.getByTestId('credit-amount').fill('5000')
+  await page.getByTestId('credit-submit').click()
+  await expect(page.getByTestId('interaction-panel')).toContainText('信用卡已生效')
+  await expect.poll(() => wallet(page)).toEqual({ ...beforeCard, cash: beforeCard.cash + 5000 })
+  await expect(page.getByTestId('player-list').locator('li').first()).toContainText('信用 95000 / 已用 5000')
+  await expect(hand.locator('[data-card-id="1"]')).toHaveCount(1)
+  await page.getByTestId('interaction-acknowledge').click()
+  await page.setViewportSize({ width: 1920, height: 1080 })
+  await page.getByRole('button', { name: '全屏', exact: true }).click()
+  await expect.poll(() => page.evaluate(() => document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
+  await expect.poll(async () => (await page.locator('canvas').boundingBox())?.height).toBe(1080)
 })
 
 test('授信已入账后反馈素材404，重试不重复发卡或增加额度', async ({ page }) => {
