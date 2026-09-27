@@ -54,6 +54,9 @@ function snapshot(
       statuses: Object.fromEntries(players.map(value => [value.id, { state: 0, days: 0, godId: null, godDays: 0 }])),
       weekday: 1,
       elapsedDays: 0,
+      year: 2026,
+      month: 1,
+      day: 5,
     },
     tickets: Object.fromEntries(players.map(value => [value.id, 200])),
     lostAndFoundFunds: [0, 0],
@@ -317,7 +320,7 @@ describe('日期、限制释放、神到期与信用申请', () => {
     source.world.statuses[1] = { state: 3, days: 3, godId: 2, godDays: 7 }
     source.world.statuses[2] = { state: 2, days: 0, godId: 3, godDays: 0 }
     expect(advanceWorldDay(source.world)).toEqual({
-      markers: {}, weekday: 0, elapsedDays: 1,
+      markers: {}, weekday: 0, elapsedDays: 1, year: 2026, month: 1, day: 6,
       statuses: {
         1: { state: 3, days: 2, godId: 2, godDays: 6 },
         2: { state: 2, days: 0, godId: 3, godDays: 0 },

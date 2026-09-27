@@ -1,6 +1,7 @@
 import type { GridPoint } from '../map/types'
 import type { GameInteraction } from './interaction-types'
 import type { PropertyEvent, PropertyOffer } from './property'
+import type { FinanceState } from './finance-types'
 import type { WorldSnapshot } from './world-cards'
 
 export type Direction = 1 | 2 | 3 | 4
@@ -29,6 +30,7 @@ export interface PlayerState {
 }
 
 export interface GameState extends WorldSnapshot {
+  finance: FinanceState
   activePlayerIndex: number
   round: number
   phase: GamePhase

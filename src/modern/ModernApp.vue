@@ -244,7 +244,10 @@ async function loadPendingGame() {
 async function startGame() {
   if (selected.value.length === 0) return
   cleanupGame()
-  const state = createGame([...selected.value], seed(), new Date().getDay())
+  const now = new Date()
+  const state = createGame([...selected.value], seed(), now.getDay(), {
+    year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate(),
+  })
   pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
   latestNoticeVisual = undefined
   history.value = []

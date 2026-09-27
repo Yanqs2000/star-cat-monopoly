@@ -2,6 +2,8 @@ import rules from '../../data/rules.json'
 import worldRules from '../../data/world-rules.json'
 import { createCardInventory } from './card-economy'
 import { randomInt } from './random'
+import { createFinanceState } from './finance-setup'
+import type { CalendarDate } from './finance-types'
 import { createPropertyLedger, createPropertyPrices } from './property'
 import type { Direction, GameState, Hometown, PlayerController } from './types'
 import { createWorldState } from './world-cards'
@@ -18,7 +20,10 @@ function takeRandom<T>(values: T[], rngState: number): { value: T; rngState: num
 }
 
 /** Pure/headless callers default to Monday (1); the UI injects local getDay() once. */
-export function createGame(humanCharacterIds: number[], seed: number, initialWeekday = 1): GameState {
+export function createGame(
+  humanCharacterIds: number[], seed: number, initialWeekday = 1,
+  initialDate: CalendarDate = { year: 2026, month: 1, day: 5 },
+): GameState {
   if (humanCharacterIds.length < 1 || humanCharacterIds.length > 4 ||
       humanCharacterIds.some(id => !Number.isInteger(id) || id < 1 || id > 12) ||
       new Set(humanCharacterIds).size !== humanCharacterIds.length) {
@@ -61,12 +66,13 @@ export function createGame(humanCharacterIds: number[], seed: number, initialWee
     }
   })
 
-  const worldState = createWorldState(players, rngState, initialWeekday)
+  const worldState = createWorldState(players, rngState, initialWeekday, initialDate)
   rngState = worldState.rngState
   const playerEntries = players.map(player => player.id)
 
   return {
     players,
+    finance: createFinanceState(players),
     properties: createPropertyLedger(),
     prices: createPropertyPrices(),
     inventories: Object.fromEntries(playerEntries.map(id => [id, createCardInventory()])),

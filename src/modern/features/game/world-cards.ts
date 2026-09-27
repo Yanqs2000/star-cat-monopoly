@@ -1,4 +1,6 @@
 import worldRules from '../../data/world-rules.json'
+import { advanceCalendar, assertCalendarDate } from './calendar'
+import type { CalendarDate } from './finance-types'
 import type { GridPoint } from '../map/types'
 import { drawCard } from './card-economy'
 import {
@@ -25,6 +27,9 @@ export interface WorldState {
   statuses: Record<number, WorldPlayerStatus>
   weekday: number
   elapsedDays: number
+  year: number
+  month: number
+  day: number
 }
 
 export interface WorldSnapshot extends DirectCardSnapshot {
@@ -96,6 +101,9 @@ function cloneSnapshot(source: WorldSnapshot): WorldSnapshot {
       statuses: Object.fromEntries(Object.entries(source.world.statuses).map(([id, value]) => [id, { ...value }])),
       weekday: source.world.weekday,
       elapsedDays: source.world.elapsedDays,
+      year: source.world.year,
+      month: source.world.month,
+      day: source.world.day,
     },
     tickets: { ...source.tickets },
     lostAndFoundFunds: [...source.lostAndFoundFunds],
@@ -194,8 +202,10 @@ export function createWorldState(
   players: PlayerState[],
   rngState: number,
   weekday: number,
+  date: CalendarDate = { year: 2026, month: 1, day: 5 },
 ): { world: WorldState; rngState: number } {
   if (!Number.isInteger(weekday) || weekday < 0 || weekday > 6) throw new Error('星期必须为0至6')
+  assertCalendarDate(date)
   const ids = new Set<number>()
   for (const player of players) {
     if (!Number.isInteger(player.id) || player.id <= 0 || ids.has(player.id)) throw new Error('玩家ID无效')
@@ -209,6 +219,7 @@ export function createWorldState(
       statuses: Object.fromEntries(players.map(player => [player.id, { state: 0, days: 0, godId: null, godDays: 0 }])),
       weekday,
       elapsedDays: 0,
+      ...date,
     },
   } as Pick<WorldSnapshot, 'players' | 'rngState' | 'world'> as WorldSnapshot
   for (const npcId of worldRules.initialNpcIds) spawnNpc(working, npcId)
@@ -218,6 +229,7 @@ export function createWorldState(
       statuses: Object.fromEntries(Object.entries(working.world.statuses).map(([id, value]) => [id, { ...value }])),
       weekday,
       elapsedDays: 0,
+      ...date,
     },
     rngState: working.rngState,
   }
@@ -517,16 +529,7 @@ export function applyLandingGod(source: WorldSnapshot, playerId: number, positio
 }
 
 export function advanceWorldDay(source: WorldState): WorldState {
-  return {
-    markers: { ...source.markers },
-    statuses: Object.fromEntries(Object.entries(source.statuses).map(([id, status]) => [id, {
-      ...status,
-      days: status.days > 0 ? status.days - 1 : 0,
-      godDays: status.godDays > 0 ? status.godDays - 1 : 0,
-    }])),
-    weekday: (source.weekday + 1) % 7,
-    elapsedDays: source.elapsedDays + 1,
-  }
+  return advanceCalendar(source).world
 }
 
 export function prepareWorldTurn(source: WorldSnapshot, playerId: number): WorldResult & { skipTurn: boolean } {
