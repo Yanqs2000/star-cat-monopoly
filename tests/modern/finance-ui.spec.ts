@@ -87,4 +87,18 @@ describe('3B 银行和月结面板', () => {
     expect(panel.text()).toContain('贷款 12000')
     expect(panel.text()).toContain('股票市值')
   })
+
+  it('授信结果显示中文业务和可用额度实际增加，不称资金到账', () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    game.phase = 'interaction'
+    game.credit[1]!.available = 100000
+    game.interaction = { kind: 'notice', playerId: 1, resume: 'bank',
+      notice: { kind: 'bank', message: 'credit-granted', eventKind: 'credit-granted', amount: 100000,
+        financeEntry: { kind: 'credit-granted', playerId: 1, sourceAmount: 100000,
+          creditAvailableDelta: 100000 } } }
+    const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
+    expect(panel.text()).toContain('信用申请通过')
+    expect(panel.text()).toContain('可用信用 +100000')
+    expect(panel.text()).not.toContain('账户无变化')
+  })
 })

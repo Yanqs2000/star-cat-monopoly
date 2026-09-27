@@ -44,6 +44,8 @@ describe('原版银行业务', () => {
     expect(granted.state.inventories[1]).toHaveLength(24)
     expect(granted.state.inventories[1]?.[0]).toBe(1)
     expect(granted.state.credit[1]?.available).toBe(100000)
+    expect(granted.entry).toMatchObject({ kind: 'credit-granted', sourceAmount: 100000,
+      creditAvailableDelta: 100000 })
     expect(applyBankOperation(granted.state, 1, 'apply-credit', 0).error).not.toBeNull()
     const debt = createGame([1, 2, 3, 4], 1)
     debt.players[0]!.cash = 3000
@@ -51,6 +53,7 @@ describe('原版银行业务', () => {
     const paid = applyBankOperation(debt, 1, 'repay-credit', 3000)
     expect(paid.state.players[0]?.cash).toBe(0)
     expect(paid.state.credit[1]).toMatchObject({ used: 2000, available: 98000 })
+    expect(paid.entry).toMatchObject({ creditUsedDelta: -3000, creditAvailableDelta: 3000 })
   })
 
   it('人类周日关闭，AI 仍按等级先借款、领卡、再资金重分配且只抽一次', () => {

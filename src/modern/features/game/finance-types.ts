@@ -38,6 +38,8 @@ export interface FinanceEntry {
   cashDelta?: number
   depositDelta?: number
   loanDelta?: number
+  creditUsedDelta?: number
+  creditAvailableDelta?: number
   sharesDelta?: number
   priceBefore?: number
   priceAfter?: number

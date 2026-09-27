@@ -71,11 +71,13 @@ const financeLabels: Record<string, string> = {
   'bank-repay-loan': '还贷完成', 'bank-repay-credit': '刷卡额已缴纳',
   'company-distribution': '公司分配', 'credit-monthly-payment': '信用卡月还',
   'loan-monthly-payment': '贷款月还', 'deposit-interest': '存款利息',
+  'credit-granted': '信用申请通过，信用卡已加入手牌',
   'stock-buy': '股票买入', 'stock-sell': '股票卖出',
   'company-subscribe': '公司认购', 'company-fee': '公司经营费',
 }
 const actualChanges = (entry: FinanceEntry) => [
-  ['现金', entry.cashDelta], ['存款', entry.depositDelta], ['贷款', entry.loanDelta], ['持股', entry.sharesDelta],
+  ['现金', entry.cashDelta], ['存款', entry.depositDelta], ['贷款', entry.loanDelta],
+  ['已用信用', entry.creditUsedDelta], ['可用信用', entry.creditAvailableDelta], ['持股', entry.sharesDelta],
 ].filter((item): item is [string, number] => typeof item[1] === 'number' && item[1] !== 0)
   .map(([label, amount]) => `${label} ${amount > 0 ? '+' : ''}${amount}`).join(' · ')
 const cardAssetUrl = (id: number) => {

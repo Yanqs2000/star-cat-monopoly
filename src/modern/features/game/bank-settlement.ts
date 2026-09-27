@@ -44,9 +44,11 @@ export function settleMonth(source: GameState): { state: GameState; settled: boo
     const account = credit[player.id]!
     if (account.used <= 0) continue
     const amount = account.used <= 10000 ? account.used : Math.trunc(account.used / 2)
+    const availableBefore = account.available
     account.used -= amount
     account.available = account.used === 0 ? 100000 : account.available + amount
     entries.push({ kind: 'credit-monthly-payment', playerId: player.id, sourceAmount: amount,
+      creditUsedDelta: -amount, creditAvailableDelta: account.available - availableBefore,
       ...pay(player, amount) })
   }
   for (const player of players) {

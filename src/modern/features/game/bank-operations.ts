@@ -20,7 +20,8 @@ export function applyBankOperation(source: GameState, playerId: number, operatio
     }
     const credit = { ...source.credit, [playerId]: { ...account, available: 100000 } }
     const inventories = { ...source.inventories, [playerId]: [1, ...source.inventories[playerId]!] }
-    const entry = { kind: 'credit-granted', playerId, sourceAmount: 100000 }
+    const entry = { kind: 'credit-granted', playerId, sourceAmount: 100000,
+      creditAvailableDelta: 100000 }
     const finance = { ...source.finance, entries: [...source.finance.entries, entry] }
     return { state: { ...source, credit, inventories, finance }, entry, error: null }
   }
@@ -47,7 +48,8 @@ export function applyBankOperation(source: GameState, playerId: number, operatio
   const loans = loanDelta === 0 ? source.finance.loans : { ...source.finance.loans, [playerId]: loan + loanDelta }
   const entry: FinanceEntry = { kind: ({ withdraw: 'bank-withdraw', deposit: 'bank-deposit',
     borrow: 'bank-borrow', 'repay-loan': 'bank-repay-loan', 'repay-credit': 'bank-repay-credit' } as Record<string, string>)[operation]!,
-    playerId, sourceAmount: amount, cashDelta, depositDelta, loanDelta }
+    playerId, sourceAmount: amount, cashDelta, depositDelta, loanDelta,
+    ...(operation === 'repay-credit' ? { creditUsedDelta: -amount, creditAvailableDelta: amount } : {}) }
   const finance = { ...source.finance, loans, entries: [...source.finance.entries, entry] }
   return { state: { ...source, players, credit, finance }, entry, error: null }
 }
@@ -78,8 +80,9 @@ export function applyAiBankVisit(
   }
   if (level > 1 && inventory[0] !== 1 && inventory.length < 24) {
     inventory.unshift(1)
+    const creditAvailableDelta = 100000 - account.available
     account.available = 100000
-    entries.push({ kind: 'credit-granted', playerId, sourceAmount: 100000 })
+    entries.push({ kind: 'credit-granted', playerId, sourceAmount: 100000, creditAvailableDelta })
   }
   if (level > 0) {
     const total = player.cash + player.deposit
