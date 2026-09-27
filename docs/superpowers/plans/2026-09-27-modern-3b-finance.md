@@ -53,9 +53,9 @@
 
 **Interfaces:** `buyStock/sellStock/subscribeCompany/chargeCompany/recalculateCeo` 接收明确玩家、公司、股数并返回新账本/资金及流水。
 
-- [ ] 先写 S1…S5、资金/持股边界、公共事业禁止交易所卖出、CEO 并列和公司费 RED。
-- [ ] 确认 RED；最小实现，不引入交易手续费或存款补买。
-- [ ] 定向 GREEN、类型检查，提交。
+- [x] 先写 S1…S5、资金/持股边界、公共事业禁止交易所卖出、CEO 并列和公司费 RED。
+- [x] 确认 RED；最小实现，不引入交易手续费或存款补买。
+- [x] 定向 GREEN、类型检查，提交。
 
 ### Task 4: 银行命令与 AI
 
