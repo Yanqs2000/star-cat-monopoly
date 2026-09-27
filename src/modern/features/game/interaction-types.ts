@@ -2,6 +2,7 @@ import type { ShopState } from './card-economy'
 import type { DirectCardChoice } from './direct-cards'
 import type { LuckEvent } from './events'
 import type { WorldEvent } from './world-cards'
+import type { FinanceEntry } from './finance-types'
 
 export type InteractionResume =
   | 'await-roll'
@@ -25,6 +26,7 @@ export interface InteractionNotice {
   affectedCellIds?: number[]
   cardIds?: number[]
   luckEvent?: LuckEvent
+  financeEntry?: FinanceEntry
 }
 
 interface CardInteractionBase {
@@ -40,7 +42,8 @@ export type GameInteraction =
   | (CardInteractionBase & { kind: 'target-choice'; choiceError: string | null })
   | (CardInteractionBase & { kind: 'credit-choice'; choiceError: string | null })
   | { kind: 'shop'; playerId: number; shop: ShopState; resume: 'shop' }
-  | { kind: 'bank'; playerId: number; resume: 'after-bank' }
+  | { kind: 'bank'; playerId: number; resume: 'after-bank'; error?: string | null }
+  | { kind: 'monthly-settlement'; playerId: number; entries: FinanceEntry[] }
   | {
       kind: 'notice'
       playerId: number
@@ -63,6 +66,7 @@ export interface InteractionEvent {
   worldEvent?: WorldEvent | null
   luckEvent?: LuckEvent
   shopAction?: 'bought' | 'sold' | 'sold-out' | 'insufficient-tickets' | 'inventory-full'
+  financeEntry?: FinanceEntry
 }
 
 export type CardChoice = DirectCardChoice

@@ -1,4 +1,9 @@
 import { buyShopCard, createCardShop, drawCard, sellInventoryCard } from './card-economy'
+import worldRules from '../../data/world-rules.json'
+import { advanceCalendar } from './calendar'
+import { applyAiBankVisit, applyBankOperation, type BankOperation } from './bank-operations'
+import { settleMonth } from './bank-settlement'
+import { advanceStockPrices } from './stock-prices'
 import { applyDirectCard, getCardCell, type DirectCardChoice } from './direct-cards'
 import { applyLuckEvent, applyTicketLanding, drawLuckEvent, findSpecialLanding } from './events'
 import type { GameInteraction, InteractionEvent, InteractionNotice, InteractionResume } from './interaction-types'
@@ -6,7 +11,6 @@ import { applyPropertyOffer, findParcelAt, getPropertyOffer } from './property'
 import { nextTurn, roll as rollState, step } from './turns'
 import type { Direction, GameContinuation, GameState } from './types'
 import {
-  advanceWorldDay,
   applyBankCredit,
   applyLandingGod,
   applyWorldCard,
@@ -58,7 +62,9 @@ export interface GameController {
   sellCard(index: number): boolean
   leaveShop(): boolean
   requestCredit(): boolean
+  bankOperation(operation: BankOperation, amount: number): boolean
   leaveBank(): boolean
+  acknowledgeMonthly(): boolean
   decideProperty(choice: 'accept' | 'decline'): boolean
   acknowledgeProperty(): boolean
   setPaused(paused: boolean): void
@@ -199,6 +205,7 @@ export function createGameController(initialState: GameState, options: GameContr
   let processGodThenTerrain: () => void
   let continueTerrain: () => void
   let finishTurn: () => void
+  let acknowledgeMonthlyResult: () => void
   let beginTurn: () => void
   let acknowledgeNotice: () => void
   let acknowledgePropertyResult: () => void
@@ -393,9 +400,22 @@ export function createGameController(initialState: GameState, options: GameContr
         notify()
         return
       }
-      const bank = applyBankCredit(projectWorld(current), player.id)
-      if (showWorldResult(bank, 'after-bank')) return
-      current = mergeWorld(current, bank.snapshot)
+      if (player.controller === 'ai') {
+        const visit = applyAiBankVisit(current, player.id, worldRules.aiLevels[player.id - 1] ?? 0)
+        current = visit.state
+        const creditEntry = visit.entries.find(entry => entry.kind === 'credit-granted')
+        if (creditEntry) {
+          showNotice({ kind: 'bank', message: 'credit-granted', eventKind: 'credit-granted',
+            amount: creditEntry.sourceAmount, financeEntry: creditEntry },
+          { kind: 'bank', playerId: player.id, amount: creditEntry.sourceAmount,
+            financeEntry: creditEntry }, 'after-bank')
+          return
+        }
+      } else {
+        const bank = applyBankCredit(projectWorld(current), player.id)
+        if (showWorldResult(bank, 'after-bank')) return
+        current = mergeWorld(current, bank.snapshot)
+      }
     }
     current = { ...current, continuation: 'after-bank' }
     processAfterBank()
@@ -459,6 +479,17 @@ export function createGameController(initialState: GameState, options: GameContr
       return
     }
     const endingIndex = current.activePlayerIndex
+    if (endingIndex === current.players.length - 1 && current.world.day === 1) {
+      const settlement = settleMonth(current)
+      if (settlement.settled) {
+        current = { ...settlement.state, phase: 'interaction',
+          interaction: { kind: 'monthly-settlement', playerId: activePlayer().id, entries: settlement.entries },
+          continuation: null }
+        notify()
+        if (!isHuman()) schedule(acknowledgeMonthlyResult, aiThinkDurationMs)
+        return
+      }
+    }
     const landed = {
       ...current,
       phase: 'landed' as const,
@@ -468,7 +499,11 @@ export function createGameController(initialState: GameState, options: GameContr
       continuation: 'finish-turn' as const,
     }
     current = { ...nextTurn(landed), continuation: null }
-    if (endingIndex === landed.players.length - 1) current = { ...current, world: advanceWorldDay(current.world) }
+    if (endingIndex === landed.players.length - 1) {
+      const calendar = advanceCalendar(current.world)
+      const stocks = advanceStockPrices(current.finance, calendar, current.rngState)
+      current = { ...current, world: calendar.world, finance: stocks.finance, rngState: stocks.rngState }
+    }
     notify()
     beginTurn()
   }
@@ -483,6 +518,13 @@ export function createGameController(initialState: GameState, options: GameContr
     }
     current = { ...current, phase: 'awaiting-roll', interaction: null, continuation: null }
     if (!isHuman()) schedule(() => performRoll(), aiThinkDurationMs)
+  }
+
+  acknowledgeMonthlyResult = () => {
+    if (current.interaction?.kind !== 'monthly-settlement') return
+    current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
+    notify()
+    schedule(finishTurn, landingDurationMs)
   }
 
   acknowledgeNotice = () => {
@@ -569,6 +611,9 @@ export function createGameController(initialState: GameState, options: GameContr
     else if (current.phase === 'property-result') schedule(acknowledgePropertyResult, aiThinkDurationMs)
     else if (current.phase === 'interaction' && current.interaction?.kind === 'notice') {
       schedule(acknowledgeNotice, aiThinkDurationMs)
+    }
+    else if (current.phase === 'interaction' && current.interaction?.kind === 'monthly-settlement') {
+      schedule(acknowledgeMonthlyResult, aiThinkDurationMs)
     }
   }
 
@@ -740,16 +785,23 @@ export function createGameController(initialState: GameState, options: GameContr
       return true
     },
     requestCredit() {
+      return controller.bankOperation('apply-credit', 0)
+    },
+    bankOperation(operation, amount) {
       if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'bank') return false
       const playerId = current.interaction.playerId
-      const result = applyBankCredit(projectWorld(current), playerId)
-      current = mergeWorld(current, result.snapshot)
-      const notice = worldNotice(result)
-      showNotice(notice, {
-        kind: 'bank', playerId, amount: result.event?.amount,
-        affectedPlayerIds: [...(result.event?.affectedPlayerIds ?? [])],
-        cardIds: [...(result.event?.cardIds ?? [])], worldEvent: result.event,
-      }, 'bank')
+      const result = applyBankOperation(current, playerId, operation, amount)
+      if (result.error !== null) {
+        current = { ...current, interaction: { ...current.interaction, error: result.error } }
+        notify()
+        return false
+      }
+      current = result.state
+      const entry = result.entry
+      const eventKind = entry?.kind ?? `bank-${operation}`
+      showNotice({ kind: 'bank', message: eventKind, eventKind, amount: entry?.sourceAmount,
+        financeEntry: entry ?? undefined },
+      { kind: 'bank', playerId, amount: entry?.sourceAmount, financeEntry: entry ?? undefined }, 'bank')
       return true
     },
     leaveBank() {
@@ -762,6 +814,11 @@ export function createGameController(initialState: GameState, options: GameContr
       }
       notify()
       processAfterBank()
+      return true
+    },
+    acknowledgeMonthly() {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'monthly-settlement') return false
+      acknowledgeMonthlyResult()
       return true
     },
     decideProperty(choice) {

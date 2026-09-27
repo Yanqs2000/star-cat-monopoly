@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
+import type { BankOperation } from './bank-operations'
+import type { FinanceEntry } from './finance-types'
 import type { DirectCardChoice } from './direct-cards'
 import type { InteractionAsset } from './interaction-assets'
 import type { GameInteraction } from './interaction-types'
@@ -21,10 +23,14 @@ const emit = defineEmits<{
   sell: [index: number]
   'leave-shop': []
   'request-credit': []
+  'bank-operation': [operation: BankOperation, amount: number]
   'leave-bank': []
+  'acknowledge-monthly': []
   'asset-error': [error: Error]
 }>()
 const creditAmount = ref(0)
+const bankAmount = ref(0)
+const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
 const interaction = computed(() => props.game.interaction)
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const player = computed(() => props.game.players.find(item => item.id === interaction.value?.playerId) ?? active.value)
@@ -32,6 +38,27 @@ const inventory = computed(() => props.game.inventories[player.value.id] ?? [])
 const cardInteraction = computed(() => interaction.value && 'cardId' in interaction.value ? interaction.value : null)
 const card = computed(() => cardInteraction.value ? getCardDefinition(cardInteraction.value.cardId) : null)
 const canAct = computed(() => !props.paused && player.value.controller === 'human')
+const bankMax = computed(() => {
+  const account = props.game.credit[player.value.id]
+  const loan = props.game.finance.loans[player.value.id] ?? 0
+  switch (bankAction.value) {
+    case 'withdraw': return Math.max(0, player.value.deposit)
+    case 'deposit': return Math.max(0, player.value.cash)
+    case 'borrow': return loan === 0 && (account?.score ?? 0) > 0 ? account!.score * 1000 : 0
+    case 'repay-loan': return Math.max(0, Math.min(player.value.cash, loan))
+    case 'repay-credit': return Math.max(0, Math.min(player.value.cash, account?.used ?? 0))
+  }
+})
+const financeLabels: Record<string, string> = {
+  'bank-withdraw': '取款完成', 'bank-deposit': '存款完成', 'bank-borrow': '贷款完成',
+  'bank-repay-loan': '还贷完成', 'bank-repay-credit': '刷卡额已缴纳',
+  'company-distribution': '公司分配', 'credit-monthly-payment': '信用卡月还',
+  'loan-monthly-payment': '贷款月还', 'deposit-interest': '存款利息',
+}
+const actualChanges = (entry: FinanceEntry) => [
+  ['现金', entry.cashDelta], ['存款', entry.depositDelta], ['贷款', entry.loanDelta], ['持股', entry.sharesDelta],
+].filter((item): item is [string, number] => typeof item[1] === 'number' && item[1] !== 0)
+  .map(([label, amount]) => `${label} ${amount > 0 ? '+' : ''}${amount}`).join(' · ')
 const cardAssetUrl = (id: number) => {
   const url = props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`
   return `${import.meta.env.BASE_URL}${url}`
@@ -61,6 +88,7 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
     return notice.message === 'full' ? '手牌已满，未抽取新卡' : `获得${notice.cardId ? getCardDefinition(notice.cardId).name : '卡片'}`
   }
   if (notice.kind === 'shop') return ({ bought: '购买成功', sold: '出售成功', 'sold-out': '这个货架已经售罄', 'insufficient-tickets': '奖券不足', 'inventory-full': '手牌已满' } as Record<string, string>)[notice.message] ?? notice.message
+  if (notice.financeEntry) return financeLabels[notice.financeEntry.kind] ?? notice.financeEntry.kind
   if (notice.eventKind === 'god-encountered' && notice.npcId === 3) return (notice.amount ?? 0) < 0 ? '遇见穷神，现金减少' : '遇见穷神'
   const labels: Record<string, string> = {
     'credit-granted': '信用申请通过，信用卡已加入手牌', 'credit-declined': '信用申请未通过', 'bank-closed': '银行周日休息',
@@ -77,7 +105,9 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
 }
 watch(() => interaction.value?.kind, kind => {
   if (kind === 'credit-choice') creditAmount.value = props.game.credit[player.value.id]?.available ?? 0
+  if (kind === 'bank') bankAmount.value = 0
 })
+watch(bankAction, () => { bankAmount.value = 0 })
 </script>
 
 <template>
@@ -126,17 +156,41 @@ watch(() => interaction.value?.kind, kind => {
     </template>
 
     <template v-else-if="interaction.kind === 'bank'">
-      <span class="eyebrow">银行</span><h2>申请信用卡</h2>
-      <p>{{ player.name }} · 信用评分 {{ game.credit[player.id]?.score }}</p>
-      <p>已用 {{ game.credit[player.id]?.used }} · 可用 {{ game.credit[player.id]?.available }}</p>
-      <p>银行只办理本阶段所需的信用卡申请。</p>
-      <div class="actions"><button :disabled="!canAct" @click="emit('request-credit')">申请信用</button><button :disabled="!canAct" @click="emit('leave-bank')">离开银行</button></div>
+      <span class="eyebrow">银行</span><h2>银行业务</h2>
+      <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</p>
+      <p>信用评分 {{ game.credit[player.id]?.score }} · 已用 {{ game.credit[player.id]?.used }} · 可用 {{ game.credit[player.id]?.available }}</p>
+      <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
+      <form class="choice" data-testid="bank-form" @submit.prevent="emit('bank-operation', bankAction, bankAmount)">
+        <label>办理业务
+          <select v-model="bankAction" data-testid="bank-operation" :disabled="!canAct">
+            <option value="withdraw">取款</option><option value="deposit">存款</option>
+            <option value="borrow">贷款</option><option value="repay-loan">还贷</option>
+            <option value="repay-credit">缴纳刷卡额</option>
+          </select>
+        </label>
+        <label>金额
+          <input v-model.number="bankAmount" data-testid="bank-amount" type="number" min="0" step="1" :max="bankMax" :disabled="!canAct">
+        </label>
+        <small>本次上限 {{ bankMax }}</small>
+        <div class="actions"><button type="submit" :disabled="!canAct">确认办理</button><button type="button" :disabled="!canAct" @click="emit('request-credit')">申请信用卡</button><button type="button" :disabled="!canAct" @click="emit('leave-bank')">离开银行</button></div>
+      </form>
+    </template>
+
+    <template v-else-if="interaction.kind === 'monthly-settlement'">
+      <span class="eyebrow">银行月结</span><h2>{{ game.world.year }}年{{ game.world.month }}月结算</h2>
+      <ol class="finance-lines"><li v-for="(entry, index) in interaction.entries" :key="index">
+        {{ game.players.find(value => value.id === entry.playerId)?.name ?? '全局' }} · {{ financeLabels[entry.kind] ?? entry.kind }}<span v-if="entry.companyId"> · {{ game.finance.stocks[entry.companyId]?.name }}</span>
+        <small>{{ actualChanges(entry) }}</small>
+      </li></ol>
+      <p v-if="interaction.entries.length === 0">本月没有资金变化</p>
+      <button data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
     </template>
 
     <template v-else-if="interaction.kind === 'notice'">
       <span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2>
       <img v-if="interaction.notice.luckEvent" data-testid="luck-image" class="luck" :src="luckAssetUrl(interaction.notice.luckEvent.id)" :alt="`运气事件 ${interaction.notice.luckEvent.id}`" @error="reportImageError">
-      <p v-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && interaction.notice.npcId === 3 ? '现金' : interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
+      <p v-if="interaction.notice.financeEntry" class="amount">{{ actualChanges(interaction.notice.financeEntry) || '账户无变化' }}</p>
+      <p v-else-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && interaction.notice.npcId === 3 ? '现金' : interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
       <p>{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
       <p>状态：{{ statusText }}</p>
       <button data-testid="interaction-acknowledge" :disabled="!canAct" @click="emit('acknowledge')">知道了，继续</button>
@@ -145,5 +199,5 @@ watch(() => interaction.value?.kind, kind => {
 </template>
 
 <style scoped>
-.interaction{position:absolute;z-index:5;left:18px;bottom:18px;width:min(510px,calc(100% - 370px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{left:12px;right:12px;bottom:42vh;width:auto;max-height:55vh}.shop-grid{grid-template-columns:repeat(4,1fr)}}
+.interaction{position:absolute;z-index:5;left:18px;bottom:18px;width:min(510px,calc(100% - 370px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input,.choice select{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.finance-lines{max-height:260px;overflow:auto;padding-left:20px}.finance-lines li{margin:6px 0}.finance-lines small{display:block;color:#bfd0d3}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{left:12px;right:12px;bottom:42vh;width:auto;max-height:55vh}.shop-grid{grid-template-columns:repeat(4,1fr)}}
 </style>

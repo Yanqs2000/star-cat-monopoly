@@ -552,7 +552,7 @@ describe('移动、世界结果和特殊落点串行化', () => {
     expect(controller.state.interaction?.kind).toBe('bank')
   })
 
-  it('符合席位等级的AI经过银行只自动申请信用卡', () => {
+  it('等级2 AI经过银行申请信用卡并按总现金资产重分配', () => {
     const scheduler = new FakeScheduler()
     const game = before({ column: 18, row: 14 }, 1)
     game.activePlayerIndex = 1
@@ -564,7 +564,9 @@ describe('移动、世界结果和特殊落点串行化', () => {
     expect(controller.state.interaction).toMatchObject({ kind: 'notice', notice: { eventKind: 'credit-granted' } })
     expect(controller.state.inventories[2]).toEqual([1, 5])
     expect(controller.state.credit[2]).toMatchObject({ available: 100000, used: 0 })
-    expect(controller.state.players[1]!.cash).toBe(100_000)
+    expect(controller.state.players[1]!.cash).toBeGreaterThanOrEqual(50_000)
+    expect(controller.state.players[1]!.cash).toBeLessThan(70_000)
+    expect(controller.state.players[1]!.cash + controller.state.players[1]!.deposit).toBe(200_000)
   })
 
   it('AI在移动中途处理银行结果后以moving阶段继续精确余步', () => {

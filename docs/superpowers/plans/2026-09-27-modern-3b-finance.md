@@ -63,9 +63,9 @@
 
 **Interfaces:** `applyBankOperation(game, playerId, operation, amount)` 返回新账本/流水或错误；`applyAiBankVisit(game, playerId)` 返回原版等级顺序结果；控制器公开 `bankOperation`。
 
-- [ ] 先写取/存/借/还/信用还款边界、AI 档位和周日分流 RED。
-- [ ] 确认 RED；实现银行纯规则、控制器单次提交与月结续办。
-- [ ] 定向 GREEN、控制器恢复/暂停测试与类型检查，提交。
+- [x] 先写取/存/借/还/信用还款边界、AI 档位和周日分流 RED。
+- [x] 确认 RED；实现银行纯规则、控制器单次提交与月结续办。
+- [x] 定向 GREEN、控制器恢复/暂停测试与类型检查，提交。
 
 ### Task 5: 股市和公司途中交互
 

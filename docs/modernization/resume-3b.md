@@ -19,9 +19,11 @@ base: `629db6e`（3A 本地完成、验收记录仍待用户明确通过）
 - 当前 3A 核心：`src/modern/features/game/{setup,types,controller,world-cards}.ts`，前端 `src/modern/ModernApp.vue`，现代构建仍在同一工作区。源脚本已跟踪于 `docs/modernization/evidence/source/play.swf/scripts/`，完整 JPEXS 输出在父仓库 `.analysis-cache/ffdec/play.swf/scripts/`。
 - 系统 `/usr/bin/git`、`python3` 会触发 Xcode 许可；使用 `/opt/homebrew/bin/git` 和 `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`。不要替用户接受许可，不使用额度重置点。
 
-## 已完成 / 下一步
+## 已完成 / 下一步（2026-09-27 09:10 Asia/Shanghai）
 
-- 当前只完成了 3B 源码定位。银行取证工作者 `/root/audit_3b_bank` 独占 `phase-3b-bank-evidence.md`；股票取证工作者 `/root/audit_3b_stock` 独占 `phase-3b-stock-evidence.md`。两者此前因额度报错而未落文件，已在额度可用时发续跑消息；先核对实际状态与文件，再决定是否补派。
-- 主控负责日期与公司关系，已定位源脚本：`frame_6/DoAction.as:59-64` 初始本地日期；`frame_5/DoAction.as:1445-1665` 换人、月/周/日推进；`frame_4/DoAction.as:2999-3087` 股票日/周/月更新；`frame_5:662-691` 出生公司；`frame_4:1778-2114` 公司地点、购股与董事权。尚未写下正式证据文件。
-- 下一步：完成三份互不覆盖的源证据，核对银行/月结与股票/公司/日期的接口及不确定项；再写可执行的 3B 规格和分任务实施计划。随后按 RED→最小规则→控制器/界面→实际浏览器→审查推进，直到整批 3B 可验收。
-- 原版 `frame_5` 的 `znmu` 轮转和固定二月 28 天属于已记录疑点；不能凭反编译拼写擅自改变已有回合或将系统日期的闰年处理偷偷当成原版行为。3B 金融需要的月界必须明确、可序列化、可验证。
+- 最近完成提交：`bb4290d`（交易所和公司认购/收费）；此前 `ae24af2`（股票价格与月结纯规则）、`240cab4`（金融初态与日历）、`2d20cde`（银行证据）、`07de84a`（负随机探针）。本段 Task 4 的银行/控制器/UI WIP 正在单独提交，以实际 `git log` 为准。银行和股票取证工作者均已完成，无须重派。三份源证据位于 `docs/modernization/phase-3b-{bank,stock,calendar-company}-evidence.md`，探针见 `evidence/stock-negative-random-runtime.json`。
+- 已有规格和逐项计划：`docs/superpowers/specs/2026-09-27-modern-3b-finance-design.md` 与 `docs/superpowers/plans/2026-09-27-modern-3b-finance.md`。计划 Task 1…4 的规则/控制器 RED→GREEN 已完成；Task 5…7 未完成。目标是**整个 3B**，不能把规则层和银行面板测试当作最终验收。
+- 最新 RED/GREEN：Task 3 `stock-trading/company` 7 项 GREEN；Task 4 `bank-operations` 4 项 GREEN，`finance-controller + interaction-controller + bank-operations` 63 项 GREEN，`finance-ui + interaction-ui + finance-controller` 32 项 GREEN，`vue-tsc --noEmit` 通过。既有 AI 银行单测的旧期望已更新为原版资金重分配语义。整套单元、现代构建和生产浏览器尚未为 3B 运行。
+- 原版预览 HTTP `http://127.0.0.1:4173/` 已验证 200，原 exec session 94102；如果要重跑原版探针，先检查该端口/句柄。现代预览 4184 状态未重新核对。未运行部署、推送、合并。
+- **下一条工作：**读计划 Task 5 和 `src/modern/features/game/controller.ts:processArrivedStep`、`handleLanding`；先写自然地图 19 型股市与公司格的 `tests/modern/finance-controller.spec.ts` RED，运行 `./node_modules/.bin/vitest run tests/modern/finance-controller.spec.ts`；随后接 `stock`/`company` interaction 与可序列化 `after-stock`/`after-company` 续办，确保途中和落地不重复。Task 6 再完善股票/公司 UI、原版公司建筑和玩家面板；Task 7 完整回放、审查与验收。
+- 静态/动态差异：负/零 AVM1 `random` 已在 Ruffle 原语探针确认返回 0；自然价格流尚未逐项回放。固定二月 28 天与 `znmu` 反编译疑点均如证据所述；不能因静态拼写擅自改轮转。
