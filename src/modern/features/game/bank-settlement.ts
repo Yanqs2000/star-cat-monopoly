@@ -1,7 +1,11 @@
 import type { FinanceEntry } from './finance-types'
 import type { GameState } from './types'
+import { randomInt, type RandomResult } from './random'
 
-export function settleMonth(source: GameState): { state: GameState; settled: boolean; entries: FinanceEntry[] } {
+export function settleMonth(
+  source: GameState,
+  draw: (state: number, bound: number) => RandomResult = randomInt,
+): { state: GameState; settled: boolean; entries: FinanceEntry[] } {
   const key = `${source.world.year}-${source.world.month}`
   if (source.world.day !== 1 || source.finance.lastSettledMonth === key) {
     return { state: source, settled: false, entries: [] }
@@ -27,9 +31,14 @@ export function settleMonth(source: GameState): { state: GameState; settled: boo
     if (stock.profit <= 0) continue
     const profit = stock.profit
     const totalShares = players.reduce((sum, player) => sum + (stock.holdings[player.id]?.shares ?? 0), 0)
+    if (totalShares === 0) {
+      entries.push({ kind: 'company-undistributed-profit', companyId: id, sourceAmount: profit })
+      stock.profit = 0
+      continue
+    }
     for (const player of players) {
       const shares = stock.holdings[player.id]?.shares ?? 0
-      const dividend = totalShares > 0 ? Math.trunc(profit * shares / totalShares) : 0
+      const dividend = Math.trunc(profit * shares / totalShares)
       const amount = shares + Math.max(0, dividend)
       if (amount > 0) {
         player.deposit += amount
@@ -67,5 +76,7 @@ export function settleMonth(source: GameState): { state: GameState; settled: boo
       depositDelta: amount })
   }
   finance.entries = [...source.finance.entries, ...entries]
-  return { state: { ...source, players, credit, finance }, settled: true, entries }
+  const quote = draw(source.rngState, 15)
+  finance.monthlyQuoteIndex = quote.value
+  return { state: { ...source, players, credit, finance, rngState: quote.nextState }, settled: true, entries }
 }

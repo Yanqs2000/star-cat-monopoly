@@ -5,9 +5,8 @@ import { applyAiBankVisit, applyBankOperation, type BankOperation } from './bank
 import { settleMonth } from './bank-settlement'
 import { advanceStockPrices } from './stock-prices'
 import { buyStock, sellStock } from './stock-trading'
-import { chargeCompany, companyAtPosition, maxCompanySubscription, subscribeCompany as applyCompanySubscription } from './company'
+import { chargeCompany, companyAtPosition, maxCompanySubscription, rollCompanyFeeDice, subscribeCompany as applyCompanySubscription } from './company'
 import { getPropertySummary } from './property'
-import { randomInt } from './random'
 import { applyDirectCard, getCardCell, type DirectCardChoice } from './direct-cards'
 import { applyLuckEvent, applyTicketLanding, drawLuckEvent, findSpecialLanding } from './events'
 import type { GameInteraction, InteractionEvent, InteractionNotice, InteractionResume } from './interaction-types'
@@ -298,13 +297,15 @@ export function createGameController(initialState: GameState, options: GameContr
       const company = current.finance.stocks[companyId]!
       if (company.ceoId !== null && company.ceoId !== player.id) {
         let multiplier: number
+        let diceFaces: [number, number] | undefined
         if (companyId >= 13) multiplier = getPropertySummary(current.properties, player.id).buildingCount
         else {
-          const drawn = randomInt(current.rngState, 6)
-          current = { ...current, rngState: drawn.nextState }
-          multiplier = drawn.value + 1
+          const rolled = rollCompanyFeeDice(current.rngState)
+          current = { ...current, rngState: rolled.rngState }
+          multiplier = rolled.multiplier
+          diceFaces = rolled.faces
         }
-        const charged = chargeCompany(current, player.id, companyId, multiplier)
+        const charged = chargeCompany(current, player.id, companyId, multiplier, diceFaces)
         current = charged.state
         chargeEntry = charged.entry
       }

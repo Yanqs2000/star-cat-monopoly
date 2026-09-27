@@ -70,11 +70,21 @@ const financeLabels: Record<string, string> = {
   'bank-withdraw': '取款完成', 'bank-deposit': '存款完成', 'bank-borrow': '贷款完成',
   'bank-repay-loan': '还贷完成', 'bank-repay-credit': '刷卡额已缴纳',
   'company-distribution': '公司分配', 'credit-monthly-payment': '信用卡月还',
+  'company-undistributed-profit': '未分配经营收入',
   'loan-monthly-payment': '贷款月还', 'deposit-interest': '存款利息',
   'credit-granted': '信用申请通过，信用卡已加入手牌',
   'stock-buy': '股票买入', 'stock-sell': '股票卖出',
   'company-subscribe': '公司认购', 'company-fee': '公司经营费',
 }
+const monthlyQuotes = [
+  '就凭你们，也想和我斗！', '赢得太轻松了……真没意思呢', '有没有像样一点的对手呀？',
+  '你们，这回逊毙了哦……', '用脚趾头想都知道，赢的当然是我啦',
+  '我的垄断时代到了哟，HOHOHOHOHO~~~', '感谢CCTV、MTV以及明日TV给我这个机会',
+  '玩游戏，要先看懂规则滴', '俺是世界第一等！', '哈哈哈哈哈哈哈哈哈哈哈~~~',
+  '不好意思，各位承让了', '赢钱要靠技术的，你们学着点',
+  '哼哼哼哼哼，你们也有今天呀', '这个宝座，我八百年前就预定好了',
+  '能力越大，责任越大，我太辛苦了',
+] as const
 const actualChanges = (entry: FinanceEntry) => [
   ['现金', entry.cashDelta], ['存款', entry.depositDelta], ['贷款', entry.loanDelta],
   ['已用信用', entry.creditUsedDelta], ['可用信用', entry.creditAvailableDelta], ['持股', entry.sharesDelta],
@@ -113,13 +123,14 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   if (notice.eventKind === 'god-encountered' && notice.npcId === 3) return (notice.amount ?? 0) < 0 ? '遇见穷神，现金减少' : '遇见穷神'
   const labels: Record<string, string> = {
     'credit-granted': '信用申请通过，信用卡已加入手牌', 'credit-declined': '信用申请未通过', 'bank-closed': '银行周日休息',
+    'stock-closed': '股市周日休市',
     'barrier-placed': '障碍已放置', 'mine-placed': '地雷已放置', 'missile-fired': '飞弹已经发射',
     'god-summoned': '神灵已经附身', 'god-dismissed': '神灵已经离开', 'barrier-triggered': '路障使移动停止',
     'mine-triggered': '踩中地雷，已送往医院', 'god-encountered': '遇见神灵', 'npc-deferred': '遇到原版 NPC（遭遇规则将在 3C 接入）',
     'god-property-adjusted': '神灵改变了房屋等级', 'restriction-skipped': '本回合因限制状态跳过',
     'restriction-released': '限制状态已经解除', 'god-expired': '神灵附身已经到期',
   }
-  const eventLabel = labels[notice.eventKind ?? notice.message]
+  const eventLabel = labels[notice.eventKind ?? notice.message] ?? financeLabels[notice.eventKind ?? notice.message]
   if (eventLabel) return eventLabel
   if (notice.kind === 'card' && notice.cardId !== undefined && notice.message === 'applied') return `${getCardDefinition(notice.cardId).name}已生效`
   return notice.message
@@ -202,9 +213,10 @@ watch(stockId, () => { stockShares.value = 1 })
 
     <template v-else-if="interaction.kind === 'monthly-settlement'">
       <span class="eyebrow">银行月结</span><h2>{{ game.world.year }}年{{ game.world.month }}月结算</h2>
+      <p v-if="game.finance.monthlyQuoteIndex !== null">排名台词：{{ monthlyQuotes[game.finance.monthlyQuoteIndex] }}</p>
       <ol class="finance-lines"><li v-for="(entry, index) in interaction.entries" :key="index">
         {{ game.players.find(value => value.id === entry.playerId)?.name ?? '全局' }} · {{ financeLabels[entry.kind] ?? entry.kind }}<span v-if="entry.companyId"> · {{ game.finance.stocks[entry.companyId]?.name }}</span>
-        <small>{{ actualChanges(entry) }}</small>
+        <small>{{ entry.kind === 'company-undistributed-profit' ? `来源金额 ${entry.sourceAmount}` : actualChanges(entry) }}</small>
       </li></ol>
       <p v-if="interaction.entries.length === 0">本月没有资金变化</p>
       <button data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
@@ -236,6 +248,7 @@ watch(stockId, () => { stockShares.value = 1 })
       <p>承销价 {{ landedCompany.basePrice }} · 待认购 {{ landedCompany.offerShares }} 股 · 已持 {{ landedCompany.holdings[player.id]?.shares ?? 0 }} 股</p>
       <p>董事：{{ game.players.find(value => value.id === landedCompany?.ceoId)?.name ?? '暂无' }} · 累计经营费 {{ landedCompany.profit }}</p>
       <p v-if="interaction.chargeEntry" class="amount">本次经营费 {{ actualChanges(interaction.chargeEntry) }}</p>
+      <p v-if="interaction.chargeEntry?.diceFaces">骰子 {{ interaction.chargeEntry.diceFaces[0] }} + {{ interaction.chargeEntry.diceFaces[1] }} = {{ interaction.chargeEntry.diceFaces[0] + interaction.chargeEntry.diceFaces[1] }}</p>
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
       <div class="choice"><label>认购股数
         <input v-model.number="companyShares" data-testid="company-shares" type="number" min="1" step="1" :max="companyMaximum" :disabled="!canAct">

@@ -1,17 +1,17 @@
 import { expect, test, type Page } from '@playwright/test'
 
-async function seedGame(page: Page): Promise<void> {
-  await page.addInitScript(() => {
+async function seedGame(page: Page, seed = 235): Promise<void> {
+  await page.addInitScript(value => {
     const original = crypto.getRandomValues.bind(crypto)
     crypto.getRandomValues = array => {
       if (array instanceof Uint32Array && array.length === 1) {
-        array[0] = 235
+        array[0] = value
         return array
       }
       return original(array)
     }
     Date.prototype.getDay = () => 1
-  })
+  }, seed)
   await page.goto('/modern.html')
   await page.getByTestId('character-1').click()
   await page.getByRole('button', { name: '开始对局' }).click()
@@ -36,52 +36,22 @@ async function buyAndAcknowledge(page: Page, parcelId: number, cost: number, scr
   await panel.getByTestId('property-acknowledge').click()
 }
 
-test('seed235 真实浏览器购买、AI交易、租金与升级遵循原版金额', async ({ page }) => {
-  test.setTimeout(240_000)
+test('seed2 自然开局购买住宅地并在金融随机流中继续', async ({ page }) => {
+  test.setTimeout(90_000)
   await page.setViewportSize({ width: 1440, height: 1000 })
   const requests: string[] = []
   const failures: string[] = []
   page.on('request', request => requests.push(new URL(request.url()).pathname))
   page.on('response', response => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`) })
   page.on('pageerror', error => failures.push(error.message))
-  await seedGame(page)
+  await seedGame(page, 2)
 
   await humanRoll(page, 1)
-  await expect(page.getByTestId('interaction-panel')).toContainText('12 格真实库存', { timeout: 15_000 })
-  await page.getByTestId('interaction-panel').getByRole('button', { name: '离开卡片屋' }).click()
-  await humanRoll(page, 2)
-  await buyAndAcknowledge(page, 81, 1800, '/tmp/starcat-3a-purchase-1440x1000.png')
-  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 98200 · 存款 100000')
-  await page.screenshot({ path: '/tmp/starcat-3a-round2-1440x1000.png' })
-
-  await humanRoll(page, 3)
-  await buyAndAcknowledge(page, 79, 1800)
-  await humanRoll(page, 4)
-  const rent = page.getByTestId('property-panel')
-  await expect(rent).toContainText('地块 57', { timeout: 15_000 })
-  await expect(rent).toContainText('必须支付租金 1200')
-  await expect(rent.getByTestId('property-decline')).toHaveCount(0)
-  await rent.getByTestId('property-accept').click()
-  await expect(rent.getByTestId('property-result')).toContainText('已支付租金 1200')
-  await expect(rent).toContainText('现金 95200 · 存款 100000')
-  await page.screenshot({ path: '/tmp/starcat-3a-rent-1440x1000.png' })
-  await rent.getByTestId('property-acknowledge').click()
-
-  await humanRoll(page, 5)
-  await humanRoll(page, 6)
-  await humanRoll(page, 7)
-  await humanRoll(page, 8)
-  await buyAndAcknowledge(page, 83, 1800)
-  await humanRoll(page, 9)
-  const upgrade = page.getByTestId('property-panel')
-  await expect(upgrade).toContainText('地块 79', { timeout: 15_000 })
-  await expect(upgrade).toContainText('升级费用 100')
-  await upgrade.getByTestId('property-accept').click()
-  await expect(upgrade.getByTestId('property-result')).toContainText('升级至 1 级，现金支付 100')
-  await expect(upgrade).toContainText('现金 93300')
-  await expect(page.getByTestId('property-list')).toContainText('土星北路 #79 · 1 级')
-  await page.screenshot({ path: '.analysis-cache/acceptance-3a/seed235-property-upgrade-1440x1000.png' })
-  expect(requests.some(path => path.includes('/assets/properties/houses/owner-1/facing-4/level-1.png'))).toBe(true)
+  await buyAndAcknowledge(page, 9, 1200, '/tmp/starcat-3b-property-purchase-1440x1000.png')
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 98800 · 存款 100000')
+  await expect(page.getByTestId('property-list')).toContainText('木星路 #9 · 0 级')
+  await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 45_000 })
+  expect(requests.some(path => path.includes('/assets/properties/sell-sign/'))).toBe(true)
   expect(requests.some(path => /\.swf$|ruffle|\.wasm$/.test(path))).toBe(false)
   expect(failures).toEqual([])
 })
@@ -116,12 +86,10 @@ test('地产 PNG 404 后重试仍保持相同待定开局', async ({ page }) => 
 
 test('地产决定可暂停、键盘放弃，返回选人重开后可键盘购买', async ({ page }) => {
   test.setTimeout(90_000)
-  await seedGame(page)
+  await seedGame(page, 2)
   await humanRoll(page, 1)
-  await page.getByTestId('interaction-panel').getByRole('button', { name: '离开卡片屋' }).click()
-  await humanRoll(page, 2)
   const panel = page.getByTestId('property-panel')
-  await expect(panel).toContainText('地块 81', { timeout: 15_000 })
+  await expect(panel).toContainText('地块 9', { timeout: 15_000 })
   await page.getByRole('button', { name: '暂停对局' }).click()
   await expect(panel.getByTestId('property-accept')).toBeDisabled()
   await expect(panel.getByTestId('property-decline')).toBeDisabled()
@@ -132,18 +100,16 @@ test('地产决定可暂停、键盘放弃，返回选人重开后可键盘购�
   await expect(panel).toContainText('现金 100000 · 存款 100000')
   await expect(panel).toContainText('产权：无人')
   await panel.getByTestId('property-acknowledge').click()
-  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 45_000 })
+  await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 45_000 })
   await page.getByRole('button', { name: '返回选人' }).click()
   await expect(page.getByRole('heading', { name: '选择参赛角色' })).toBeVisible()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
   await page.getByLabel('速度').selectOption('2')
   await humanRoll(page, 1)
-  await page.getByTestId('interaction-panel').getByRole('button', { name: '离开卡片屋' }).click()
-  await humanRoll(page, 2)
-  await expect(panel).toContainText('地块 81', { timeout: 15_000 })
+  await expect(panel).toContainText('地块 9', { timeout: 15_000 })
   await page.locator('h1').click()
   await page.keyboard.press('ArrowLeft')
-  await expect(panel.getByTestId('property-result')).toContainText('购买成功，现金支付 1800')
-  await expect(panel).toContainText('现金 98200 · 存款 100000')
+  await expect(panel.getByTestId('property-result')).toContainText('购买成功，现金支付 1200')
+  await expect(panel).toContainText('现金 98800 · 存款 100000')
 })

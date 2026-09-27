@@ -106,15 +106,18 @@ describe('原网格卡牌目标元数据', () => {
 })
 
 describe('直接卡牌结算', () => {
-  it('信用卡接受0和剩余额度内有限金额，重复使用且从不消耗手牌', () => {
+  it('信用卡金额控件只接受0和额度内整数，重复使用且从不消耗手牌', () => {
     const source = snapshot([1, 5])
     const zero = applyDirectCard(source, 1, 0, { kind: 'credit', amount: 0 })
     expect(zero).toMatchObject({ cardId: 1, consumed: false, status: 'applied', amount: 0 })
     expect(zero.snapshot.inventories[1]).toEqual([1, 5])
     expect(zero.snapshot.credit[1]).toEqual({ used: 1000, available: 5000, score: 100 })
-    const borrowed = applyDirectCard(zero.snapshot, 1, 0, { kind: 'credit', amount: 1250.5 })
-    expect(actor(borrowed).cash).toBe(11_250.5)
-    expect(borrowed.snapshot.credit[1]).toEqual({ used: 2250.5, available: 3749.5, score: 100 })
+    const fractional = applyDirectCard(zero.snapshot, 1, 0, { kind: 'credit', amount: 1250.5 })
+    expect(fractional).toMatchObject({ consumed: false, status: 'invalid-target' })
+    expect(fractional.snapshot).toEqual(zero.snapshot)
+    const borrowed = applyDirectCard(zero.snapshot, 1, 0, { kind: 'credit', amount: 1250 })
+    expect(actor(borrowed).cash).toBe(11_250)
+    expect(borrowed.snapshot.credit[1]).toEqual({ used: 2250, available: 3750, score: 100 })
     expect(borrowed.snapshot.inventories[1]).toEqual([1, 5])
 
     const invalid = applyDirectCard(source, 1, 0, { kind: 'credit', amount: 5001 })

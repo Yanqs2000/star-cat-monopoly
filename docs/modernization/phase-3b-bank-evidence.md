@@ -133,7 +133,7 @@ frame 10 清理音乐、设 `_root.system_id=0`、`_root.tenor_id=3`、`_root.go
 
 ## 5. 与当前 3A/现有实现的契约差异
 
-当前 `applyBankCredit` 只实现“申请信用卡”，人类资格与原版大体一致，但 AI 只实现等级 `>1` 的领卡，缺少等级 `>2` 借款与等级 `>0` 资金重分配；入口只暴露 `requestCredit/leaveBank`：`src/modern/features/game/world-cards.ts:564-583`；`src/modern/features/game/controller.ts:742-764`。当前直接信用卡允许有限非整数和 0 金额，更新 `cash/used/available` 且不消耗卡：`src/modern/features/game/direct-cards.ts:218-226`。原版信用卡取现也不消耗卡、允许 0，但复用整数金额控件，输入上限是 `available`：`docs/modernization/evidence/source/play.swf/scripts/DefineSprite_3693_usecard/frame_4/DoAction.as:6-29`。因此 3B 需要收紧非整数金额，而不改变 3A 已确认的“不消耗卡”契约。
+3A 基线的 `applyBankCredit` 只实现“申请信用卡”，AI 当时只实现等级 `>1` 的领卡；3B 已按本文接入等级 `>2` 借款及等级 `>0` 资金重分配。3A 直接信用卡曾允许有限非整数和 0 金额，更新 `cash/used/available` 且不消耗卡：`src/modern/features/game/direct-cards.ts:218-226`。原版信用卡取现也不消耗卡、允许 0，但复用整数金额控件，输入上限是 `available`：`docs/modernization/evidence/source/play.swf/scripts/DefineSprite_3693_usecard/frame_4/DoAction.as:6-29`。3B 已将直接取现收紧为非负整数，保留不消耗卡的原行为。
 
 当前通用 `src/core/rules/bank.ts:5-55` 是“按日单利、操作时惰性结息”的自创规则，与原版月初 10% 存款利息冲突，3B 不能复用其计息语义。
 

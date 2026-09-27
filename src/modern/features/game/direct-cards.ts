@@ -217,7 +217,7 @@ export function applyDirectCard(
 
   if (cardId === 1) {
     const credit = source.credit[playerId]
-    if (choice.kind !== 'credit' || credit === undefined || !Number.isFinite(choice.amount) ||
+    if (choice.kind !== 'credit' || credit === undefined || !Number.isInteger(choice.amount) ||
         choice.amount < 0 || choice.amount > credit.available) return invalid(source, cardId, '无效信用额度')
     const snapshot = cloneSnapshot(source)
     snapshot.players.find(player => player.id === playerId)!.cash += choice.amount

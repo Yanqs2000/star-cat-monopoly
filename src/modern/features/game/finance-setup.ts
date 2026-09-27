@@ -49,6 +49,7 @@ export function createFinanceState(players: PlayerState[]): FinanceState {
     stocks,
     loans: Object.fromEntries(players.map(player => [player.id, 0])),
     lastSettledMonth: null,
+    monthlyQuoteIndex: null,
     entries: [],
   }
 }

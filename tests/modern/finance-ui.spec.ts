@@ -28,15 +28,27 @@ describe('3B 银行和月结面板', () => {
     game.phase = 'interaction'
     game.interaction = { kind: 'monthly-settlement', playerId: 1, entries: [
       { kind: 'company-distribution', playerId: 1, companyId: 1, sourceAmount: 10, depositDelta: 9 },
+      { kind: 'company-undistributed-profit', companyId: 13, sourceAmount: 10 },
       { kind: 'credit-monthly-payment', playerId: 1, sourceAmount: 6000, cashDelta: -3000, depositDelta: -3000 },
     ] }
     const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
     expect(panel.text()).toContain('公司分配')
+    expect(panel.text()).toContain('未分配经营收入')
+    expect(panel.text()).toContain('来源金额 10')
     expect(panel.text()).toContain('存款 +9')
     expect(panel.text()).toContain('现金 -3000')
     expect(panel.text()).toContain('存款 -3000')
     await panel.get('[data-testid="monthly-acknowledge"]').trigger('click')
     expect(panel.emitted('acknowledge-monthly')).toEqual([[]])
+  })
+
+  it('月结排名显示原版选中的台词而不额外抽随机数', () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    game.phase = 'interaction'
+    game.finance.monthlyQuoteIndex = 7
+    game.interaction = { kind: 'monthly-settlement', playerId: 1, entries: [] }
+    const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
+    expect(panel.text()).toContain('玩游戏，要先看懂规则滴')
   })
 
   it('股市显示价格、日限额、持股和成交现金变化，只提交公司/数量/方向', async () => {
@@ -78,6 +90,17 @@ describe('3B 银行和月结面板', () => {
     expect(panel.emitted('subscribe-company')).toEqual([[10]])
   })
 
+  it('普通公司收费显示最终两枚骰子与费用倍数', () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    game.phase = 'interaction'
+    game.interaction = { kind: 'company', playerId: 2, companyId: 1, resume: 'company',
+      chargeEntry: { kind: 'company-fee', playerId: 2, companyId: 1, sourceAmount: 3000,
+        cashDelta: -3000, depositDelta: 0, diceFaces: [3, 3] } }
+    const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
+    expect(panel.text()).toContain('骰子 3 + 3 = 6')
+    expect(panel.text()).toContain('现金 -3000')
+  })
+
   it('玩家面板显示完整日期、贷款与包含公共事业的持股市值', () => {
     const game = createGame([1, 2, 3, 4], 1, 2, { year: 2026, month: 9, day: 27 })
     game.finance.loans[1] = 12000
@@ -100,5 +123,18 @@ describe('3B 银行和月结面板', () => {
     expect(panel.text()).toContain('信用申请通过')
     expect(panel.text()).toContain('可用信用 +100000')
     expect(panel.text()).not.toContain('账户无变化')
+  })
+
+  it('周日股市关闭和银行零金额完成提示均使用可读文案', async () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    game.phase = 'interaction'
+    game.interaction = { kind: 'notice', playerId: 1, resume: 'after-stock',
+      notice: { kind: 'stock', message: 'stock-closed', eventKind: 'stock-closed' } }
+    const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
+    expect(panel.text()).toContain('股市周日休市')
+    await panel.setProps({ game: { ...game,
+      interaction: { kind: 'notice', playerId: 1, resume: 'bank',
+        notice: { kind: 'bank', message: 'bank-deposit', eventKind: 'bank-deposit' } } } })
+    expect(panel.text()).toContain('存款完成')
   })
 })

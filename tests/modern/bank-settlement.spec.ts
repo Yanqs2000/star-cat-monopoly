@@ -22,6 +22,18 @@ describe('原版月初结算', () => {
     expect(game.players[0]?.deposit).toBe(100000)
   })
 
+  it('正利润但无人持股时清空利润并记录未分配来源，不凭空派息', () => {
+    const game = createGame([1, 2, 3, 4], 1, 1, { year: 2026, month: 9, day: 1 })
+    const stock = game.finance.stocks[13]!
+    stock.profit = 10
+    for (const holding of Object.values(stock.holdings)) holding.shares = 0
+    const result = settleMonth(game)
+    expect(result.state.finance.stocks[13]?.profit).toBe(0)
+    expect(result.entries).toContainEqual({ kind: 'company-undistributed-profit', companyId: 13, sourceAmount: 10 })
+    expect(result.entries.some(entry => entry.kind === 'company-distribution' && entry.companyId === 13)).toBe(false)
+    expect(result.state.players[0]?.deposit).toBe(110000)
+  })
+
   it('信用、贷款依次存款优先扣款且允许现金为负；重复恢复不再结算', () => {
     const game = createGame([1, 2, 3, 4], 1, 1, { year: 2026, month: 9, day: 1 })
     game.players[0]!.cash = 5000
@@ -38,5 +50,21 @@ describe('原版月初结算', () => {
     expect(second.settled).toBe(false)
     expect(second.state).toEqual(first.state)
     expect(second.entries).toEqual([])
+  })
+
+  it('月结排名台词只抽一次 random(15)，恢复不再消耗随机状态', () => {
+    const game = createGame([1, 2, 3, 4], 1, 1, { year: 2026, month: 10, day: 1 })
+    const bounds: number[] = []
+    const draw = (state: number, bound: number) => {
+      bounds.push(bound)
+      return { value: 7, nextState: state + 1 }
+    }
+    const first = settleMonth(game, draw)
+    expect(bounds).toEqual([15])
+    expect(first.state.rngState).toBe(game.rngState + 1)
+    expect(first.state.finance.monthlyQuoteIndex).toBe(7)
+    const second = settleMonth(first.state, draw)
+    expect(bounds).toEqual([15])
+    expect(second.state.rngState).toBe(first.state.rngState)
   })
 })

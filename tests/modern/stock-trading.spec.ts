@@ -56,6 +56,16 @@ describe('原版交易所现金与持股', () => {
     expect(leading.state.finance.stocks[1]?.ceoId).toBe(2)
   })
 
+  it('董事卖光后，其他玩家并列最高时按原版扫描顺序交给首位', () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    const stock = game.finance.stocks[1]!
+    stock.ceoId = 1
+    stock.holdings[1] = { shares: 1, averageCost: 10 }
+    stock.holdings[2] = { shares: 100, averageCost: 10 }
+    stock.holdings[3] = { shares: 100, averageCost: 10 }
+    expect(sellStock(game, 1, 1, 1).state.finance.stocks[1]?.ceoId).toBe(2)
+  })
+
   it('金融持股市值计入公共事业 13..15，但不计占位 0', () => {
     const game = createGame([1, 2, 3, 4], 1)
     game.finance.stocks[1]!.holdings[1] = { shares: 3, averageCost: 10 }

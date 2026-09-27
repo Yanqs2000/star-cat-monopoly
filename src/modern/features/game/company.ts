@@ -3,6 +3,22 @@ import type { GameState } from './types'
 import type { FinanceState } from './finance-types'
 import type { GridPoint } from '../map/types'
 import { getCardCell } from './direct-cards'
+import { randomInt, type RandomResult } from './random'
+
+export function rollCompanyFeeDice(
+  state: number,
+  draw: (state: number, bound: number) => RandomResult = randomInt,
+): { faces: [number, number]; multiplier: number; rngState: number } {
+  let rngState = state
+  let faces: [number, number] = [1, 1]
+  for (let frame = 0; frame < 3; frame++) {
+    const first = draw(rngState, 6)
+    const second = draw(first.nextState, 6)
+    rngState = second.nextState
+    faces = [first.value + 1, second.value + 1]
+  }
+  return { faces, multiplier: faces[0] + faces[1], rngState }
+}
 
 export function companyAtPosition(finance: FinanceState, position: GridPoint): number | null {
   const recordId = getCardCell(position)?.id
@@ -37,7 +53,10 @@ export function subscribeCompany(source: GameState, playerId: number, companyId:
   return submitFinance(source, playerId, updated, -amount, entry)
 }
 
-export function chargeCompany(source: GameState, playerId: number, companyId: number, multiplier: number): FinanceActionResult {
+export function chargeCompany(
+  source: GameState, playerId: number, companyId: number, multiplier: number,
+  diceFaces?: [number, number],
+): FinanceActionResult {
   const player = source.players.find(value => value.id === playerId)
   const company = source.finance.stocks[companyId]
   if (!player || !company || companyId < 1 || companyId > 15) return rejectFinance(source, '公司不存在')
@@ -54,7 +73,8 @@ export function chargeCompany(source: GameState, playerId: number, companyId: nu
     ? { ...value, cash: value.cash + cashDelta, deposit: value.deposit + depositDelta } : value)
   const stocks = source.finance.stocks.slice()
   stocks[companyId] = { ...company, profit: company.profit + amount }
-  const entry = { kind: 'company-fee', playerId, companyId, sourceAmount: amount, cashDelta, depositDelta }
+  const entry = { kind: 'company-fee', playerId, companyId, sourceAmount: amount,
+    cashDelta, depositDelta, ...(diceFaces ? { diceFaces } : {}) }
   const finance = { ...source.finance, stocks, entries: [...source.finance.entries, entry] }
   return { state: { ...source, players, finance }, entry, error: null }
 }

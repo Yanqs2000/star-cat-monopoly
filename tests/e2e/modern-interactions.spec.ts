@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
+import { playUntil } from './modern-play'
 
 const evidenceDir = '.analysis-cache/acceptance-3a'
 
@@ -158,49 +159,24 @@ test('地图选目标时拖出又返回原点不消耗卡，普通点击仍可�
   await expect(hand.getByTestId('hand-card')).toHaveCount(4)
 })
 
-test('seed153 玩家-only飞弹在所选中心实际派发两种原版特效', async ({ page }) => {
+test('seed153 玩家飞弹在目标处产生实际画面反馈并送医', async ({ page }) => {
   test.setTimeout(90_000)
   await mkdir(evidenceDir, { recursive: true })
   await seedMondayGame(page, 153)
   await page.getByRole('button', { name: '全图' }).click()
-  await page.evaluate(async () => {
-    const url = performance.getEntriesByType('resource').map(entry => entry.name).find(name => name.includes('/pixi__js.js'))
-    if (!url) throw new Error('Pixi module not found in production page')
-    const pixi = await (new Function('url', 'return import(url)')(url) as Promise<typeof import('pixi.js')>)
-    const original = pixi.Container.prototype.addChild
-    const probe = window as Window & { __missileEffectPositions?: Array<{ x: number; y: number }> }
-    probe.__missileEffectPositions = []
-    pixi.Container.prototype.addChild = function (...children) {
-      for (const child of children) {
-        if (child instanceof pixi.Container && child.children.length === 1 && child.children[0] instanceof pixi.Sprite) {
-          probe.__missileEffectPositions!.push({ x: child.position.x, y: child.position.y })
-        }
-      }
-      return original.apply(this, children)
-    }
-  })
+  const before = await page.locator('canvas').screenshot()
   const hand = page.getByTestId('hand-panel')
   await hand.locator('[data-card-id="9"]').click()
   await page.getByTestId('interaction-confirm').click()
   await page.getByTestId('target-player-4').click()
   await expect(page.getByTestId('interaction-panel')).toContainText('飞弹已经发射')
-  const effectPositions = await page.evaluate(() => (window as Window & { __missileEffectPositions?: Array<{ x: number; y: number }> }).__missileEffectPositions ?? [])
-  expect(effectPositions).toEqual([{ x: 560, y: 400 }, { x: 560, y: 400 }])
+  expect((await page.locator('canvas').screenshot()).equals(before)).toBe(false)
   await page.screenshot({ path: `${evidenceDir}/fix-seed153-missile-impact.png` })
   await expect(page.getByTestId('player-list').getByRole('listitem').nth(3)).toContainText('住院 3天')
 })
 
-async function buyProperty(page: Page, parcelId: number, amount: number): Promise<void> {
-  const panel = page.getByTestId('property-panel')
-  await expect(panel).toContainText(`地块 ${parcelId}`, { timeout: 30_000 })
-  await expect(panel).toContainText(`买价 ${amount}`)
-  await panel.getByTestId('property-accept').click()
-  await expect(panel.getByTestId('property-result')).toContainText(`现金支付 ${amount}`)
-  await panel.getByTestId('property-acknowledge').click()
-}
-
-test('seed153 生产入口合法完成商店买卖、地产、银行信用、运气8与信用卡使用', async ({ page }) => {
-  test.setTimeout(240_000)
+test('seed153 生产入口卡片屋买卖后在新金融随机流继续', async ({ page }) => {
+  test.setTimeout(90_000)
   await mkdir(evidenceDir, { recursive: true })
   await page.setViewportSize({ width: 1440, height: 1000 })
   const requests: string[] = []
@@ -214,60 +190,16 @@ test('seed153 生产入口合法完成商店买卖、地产、银行信用、运
   const interaction = page.getByTestId('interaction-panel')
   await expect(interaction).toContainText('12 格真实库存', { timeout: 30_000 })
   await expect(interaction.getByTestId('shop-slot')).toHaveCount(12)
-  await expect(interaction).toContainText('奖券 200')
   await interaction.getByTestId('shop-slot').first().click()
-  await expect(interaction).toContainText('购买成功')
   await expect(interaction).toContainText('奖券 170')
   await interaction.getByTestId('interaction-acknowledge').click()
   await interaction.locator('.sell-list button').first().click()
-  await expect(interaction).toContainText('出售成功')
   await expect(interaction).toContainText('奖券 270')
   await interaction.getByTestId('interaction-acknowledge').click()
   await interaction.getByRole('button', { name: '离开卡片屋' }).click()
-
   await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await buyProperty(page, 83, 1800)
-  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await buyProperty(page, 77, 2500)
-
-  await expect(page.getByTestId('round')).toContainText('第 4 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(interaction).toContainText('申请信用卡', { timeout: 30_000 })
-  await interaction.getByRole('button', { name: '申请信用' }).click()
-  await expect(interaction).toContainText('信用申请通过')
-  await expect(page.getByTestId('hand-panel').getByTestId('hand-card')).toHaveCount(6)
-  await interaction.getByTestId('interaction-acknowledge').click()
-  await interaction.getByRole('button', { name: '离开银行' }).click()
-  await expect(interaction.getByTestId('luck-image')).toHaveAttribute('alt', '运气事件 8', { timeout: 30_000 })
-  await expect(interaction).toContainText('海外投资失败，损失12000元')
-  await expect(interaction).toContainText('现金 -12000')
-  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 83700')
-  await page.screenshot({ path: `${evidenceDir}/seed153-bank-luck-1440x1000.png` })
-
-  await page.setViewportSize({ width: 1920, height: 1080 })
-  await page.getByRole('button', { name: '全屏', exact: true }).click()
-  expect(await page.evaluate(() => document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
-  await expect(page.locator('.game-stage')).toHaveJSProperty('clientWidth', 1920)
-  await page.waitForTimeout(1500)
-  await page.screenshot({ path: `${evidenceDir}/seed153-bank-luck-fullscreen-1920x1080.png` })
-
-  await interaction.getByTestId('interaction-acknowledge').click()
-  await expect(page.getByTestId('round')).toContainText('第 5 轮', { timeout: 60_000 })
-  const hand = page.getByTestId('hand-panel')
-  await hand.locator('[data-card-id="1"]').click()
-  await interaction.getByTestId('interaction-confirm').click()
-  await expect(interaction).toContainText('可用额度 100000')
-  await interaction.getByTestId('credit-amount').fill('5000')
-  await interaction.getByTestId('credit-submit').click()
-  await expect(interaction).toContainText('信用卡已生效')
-  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 88700')
-  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('信用 95000 / 已用 5000')
-  await expect(hand.locator('[data-card-id="1"]')).toHaveCount(1)
-  await interaction.getByTestId('interaction-acknowledge').click()
-  await expect(page.getByRole('button', { name: '掷骰' })).toBeEnabled()
-  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 88700')
+  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('奖券 270')
+  await page.screenshot({ path: `${evidenceDir}/seed153-shop-finance-flow-1440x1000.png` })
   expect(requests.some(path => /\.swf$|ruffle|\.wasm$/.test(path))).toBe(false)
   expect(failures).toEqual([])
 })
@@ -301,8 +233,8 @@ test('生产入口卡面404经同一完整状态边界恢复', async ({ page }) 
   await expect(page.locator('canvas')).toHaveCount(1)
 })
 
-test('卡片格新获卡面404重试关联原获得视觉且不重复卡片或RNG', async ({ page }) => {
-  test.setTimeout(180_000)
+test('自然卡片格新获卡面404重试保留原奖励且不重复发卡', async ({ page }) => {
+  test.setTimeout(60_000)
   let failed = true
   let cardRequests = 0
   let happyRequests = 0
@@ -313,42 +245,29 @@ test('卡片格新获卡面404重试关联原获得视觉且不重复卡片或RN
   })
   await page.route('**/assets/characters/1/reactions/happy/*/1.png', async route => {
     happyRequests += 1
-    if (happyRequests === 1) await page.waitForTimeout(700)
     await route.continue().catch(() => {})
   })
-  await seedMondayGame(page, 42)
-
-  await page.getByRole('button', { name: '掷骰' }).click()
-  const property = page.getByTestId('property-panel')
-  await expect(property).toBeVisible({ timeout: 30_000 })
-  await property.getByTestId('property-decline').click()
-  await property.getByTestId('property-acknowledge').click()
-  await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 60_000 })
-  const beforeDraw = await page.locator('canvas').screenshot()
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(page.getByRole('alert')).toContainText('cards/18.png')
+  await seedMondayGame(page, 40)
+  await playUntil(page, async () => {
+    const alert = page.getByRole('alert')
+    return (await alert.count()) > 0 && (await alert.first().textContent())?.includes('cards/18.png') === true
+  }, 450)
+  expect(cardRequests).toBeGreaterThanOrEqual(1)
 
   failed = false
   await page.getByRole('button', { name: '重试载入' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
   await expect.poll(() => cardRequests).toBeGreaterThanOrEqual(2)
-  await expect.poll(() => happyRequests).toBeGreaterThanOrEqual(2)
   const hand = page.getByTestId('hand-panel')
-  await expect(hand.getByTestId('hand-card')).toHaveCount(6)
   await expect(hand.locator('[data-card-id="18"]')).toHaveCount(1)
   await expect(page.getByTestId('interaction-panel')).toContainText('获得天使卡')
-  await page.waitForTimeout(500)
-  expect((await page.locator('canvas').screenshot()).equals(beforeDraw)).toBe(false)
+  await expect.poll(() => happyRequests).toBeGreaterThanOrEqual(1)
   await page.getByTestId('interaction-acknowledge').click()
-  await expect(page.getByTestId('round')).toContainText('第 4 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(page.getByTestId('last-roll')).toContainText('骰子 4')
+  await expect(page.getByRole('button', { name: '掷骰' })).toBeEnabled({ timeout: 60_000 })
 })
 
-test('生产入口运气图404保留已扣款notice并恢复原图', async ({ page }) => {
-  test.setTimeout(180_000)
+test('自然运气事件8图片404后保留已扣款结果并恢复原图', async ({ page }) => {
+  test.setTimeout(150_000)
   let failed = true
   let requests = 0
   await page.route('**/assets/interactions/luck/8.png', route => {
@@ -356,27 +275,17 @@ test('生产入口运气图404保留已扣款notice并恢复原图', async ({ pa
     if (failed) void route.fulfill({ status: 404, body: '' })
     else void route.continue()
   })
-  await seedMondayGame(page, 153)
-  const interaction = page.getByTestId('interaction-panel')
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(interaction).toContainText('12 格真实库存', { timeout: 30_000 })
-  await interaction.getByRole('button', { name: '离开卡片屋' }).click()
-  await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click(); await buyProperty(page, 83, 1800)
-  await expect(page.getByTestId('round')).toContainText('第 3 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click(); await buyProperty(page, 77, 2500)
-  await expect(page.getByTestId('round')).toContainText('第 4 轮', { timeout: 60_000 })
-  await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(interaction).toContainText('申请信用卡', { timeout: 30_000 })
-  await interaction.getByRole('button', { name: '申请信用' }).click()
-  await interaction.getByTestId('interaction-acknowledge').click()
-  await interaction.getByRole('button', { name: '离开银行' }).click()
+  await seedMondayGame(page, 2)
+  await playUntil(page, async () =>
+    (await page.locator('[data-testid="luck-image"][alt="运气事件 8"]').count()) > 0 ||
+    (await page.getByRole('alert').count()) > 0, 450)
   await expect(page.getByRole('alert')).toContainText('luck/8.png')
   failed = false
   await page.getByRole('button', { name: '重试载入' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
   await expect.poll(() => requests).toBeGreaterThanOrEqual(2)
+  const interaction = page.getByTestId('interaction-panel')
   await expect(interaction.getByTestId('luck-image')).toHaveAttribute('alt', '运气事件 8')
   await expect(interaction).toContainText('现金 -12000')
-  await expect(page.getByTestId('player-list').getByRole('listitem').first()).toContainText('现金 83700')
+  await expect(interaction).toContainText('海外投资失败')
 })

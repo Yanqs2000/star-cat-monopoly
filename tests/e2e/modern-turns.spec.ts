@@ -62,6 +62,12 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
       await interaction.getByRole('button', { name: '离开卡片屋' }).click()
     } else if (await interaction.getByRole('button', { name: '离开银行' }).isVisible()) {
       await interaction.getByRole('button', { name: '离开银行' }).click()
+    } else if (await interaction.getByRole('button', { name: '离开股市' }).isVisible()) {
+      await interaction.getByRole('button', { name: '离开股市' }).click()
+    } else if (await interaction.getByRole('button', { name: '离开公司' }).isVisible()) {
+      await interaction.getByRole('button', { name: '离开公司' }).click()
+    } else if (await interaction.getByTestId('monthly-acknowledge').isVisible()) {
+      await interaction.getByTestId('monthly-acknowledge').click()
     }
   }
   await expect(page.getByTestId('turn-history')).toContainText('AI', { timeout: 12_000 })

@@ -43,11 +43,13 @@ export interface FinanceEntry {
   sharesDelta?: number
   priceBefore?: number
   priceAfter?: number
+  diceFaces?: [number, number]
 }
 
 export interface FinanceState {
   stocks: StockCompany[]
   loans: Record<number, number>
   lastSettledMonth: string | null
+  monthlyQuoteIndex: number | null
   entries: FinanceEntry[]
 }

@@ -1,8 +1,17 @@
 import { describe, expect, it } from 'vitest'
 import { createGame } from '../../src/modern/features/game/setup'
-import { chargeCompany, subscribeCompany } from '../../src/modern/features/game/company'
+import { chargeCompany, rollCompanyFeeDice, subscribeCompany } from '../../src/modern/features/game/company'
 
 describe('原版公司格', () => {
+  it('费用骰动画分三次各抽两枚，最终只使用第三组两骰之和', () => {
+    const bounds: number[] = []
+    const rolled = rollCompanyFeeDice(0, (state, bound) => {
+      bounds.push(bound)
+      return { value: bounds.length - 1, nextState: state + 1 }
+    })
+    expect(bounds).toEqual([6, 6, 6, 6, 6, 6])
+    expect(rolled).toEqual({ faces: [5, 6], multiplier: 11, rngState: 6 })
+  })
   it('认购使用承销价和现金，AI 最大认购不超过1000股或公司余量', () => {
     const game = createGame([1, 2, 4, 5], 1)
     game.players[0]!.cash = 1000
