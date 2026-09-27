@@ -1,5 +1,15 @@
 import { buyCeo, rejectFinance, submitFinance, type FinanceActionResult } from './stock-trading'
 import type { GameState } from './types'
+import type { FinanceState } from './finance-types'
+import type { GridPoint } from '../map/types'
+import { getCardCell } from './direct-cards'
+
+export function companyAtPosition(finance: FinanceState, position: GridPoint): number | null {
+  const recordId = getCardCell(position)?.id
+  if (recordId === undefined || recordId < 113 || recordId > 133 || (recordId - 113) % 3 === 2) return null
+  const mainRecordId = 115 + 3 * Math.floor((recordId - 113) / 3)
+  return finance.stocks.find(stock => stock.mainRecordId === mainRecordId)?.id ?? null
+}
 
 export function maxCompanySubscription(source: GameState, playerId: number, companyId: number): number {
   const player = source.players.find(value => value.id === playerId)

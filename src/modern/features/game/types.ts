@@ -12,6 +12,7 @@ export type GameContinuation =
   | 'start-step'
   | 'process-arrival'
   | 'after-bank'
+  | 'after-stock'
   | 'handle-landing'
   | 'process-god'
   | 'continue-terrain'

@@ -4,6 +4,10 @@ import { advanceCalendar } from './calendar'
 import { applyAiBankVisit, applyBankOperation, type BankOperation } from './bank-operations'
 import { settleMonth } from './bank-settlement'
 import { advanceStockPrices } from './stock-prices'
+import { buyStock, sellStock } from './stock-trading'
+import { chargeCompany, companyAtPosition, maxCompanySubscription, subscribeCompany as applyCompanySubscription } from './company'
+import { getPropertySummary } from './property'
+import { randomInt } from './random'
 import { applyDirectCard, getCardCell, type DirectCardChoice } from './direct-cards'
 import { applyLuckEvent, applyTicketLanding, drawLuckEvent, findSpecialLanding } from './events'
 import type { GameInteraction, InteractionEvent, InteractionNotice, InteractionResume } from './interaction-types'
@@ -65,6 +69,10 @@ export interface GameController {
   bankOperation(operation: BankOperation, amount: number): boolean
   leaveBank(): boolean
   acknowledgeMonthly(): boolean
+  tradeStock(side: 'buy' | 'sell', companyId: number, shares: number): boolean
+  leaveStock(): boolean
+  subscribeCompany(shares: number): boolean
+  leaveCompany(): boolean
   decideProperty(choice: 'accept' | 'decline'): boolean
   acknowledgeProperty(): boolean
   setPaused(paused: boolean): void
@@ -200,7 +208,7 @@ export function createGameController(initialState: GameState, options: GameContr
   }
 
   let startStep: () => void
-  let processAfterBank: () => void
+  let processAfterFacility: () => void
   let handleLanding: () => void
   let processGodThenTerrain: () => void
   let continueTerrain: () => void
@@ -281,6 +289,37 @@ export function createGameController(initialState: GameState, options: GameContr
       notify()
       if (offer.kind === 'max-level') settleProperty('accept')
       else if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
+      return
+    }
+
+    const companyId = current.skipLandingMarker ? null : companyAtPosition(current.finance, player.position)
+    if (companyId !== null) {
+      let chargeEntry = null
+      const company = current.finance.stocks[companyId]!
+      if (company.ceoId !== null && company.ceoId !== player.id) {
+        let multiplier: number
+        if (companyId >= 13) multiplier = getPropertySummary(current.properties, player.id).buildingCount
+        else {
+          const drawn = randomInt(current.rngState, 6)
+          current = { ...current, rngState: drawn.nextState }
+          multiplier = drawn.value + 1
+        }
+        const charged = chargeCompany(current, player.id, companyId, multiplier)
+        current = charged.state
+        chargeEntry = charged.entry
+      }
+      if (isHuman()) {
+        current = { ...current, phase: 'interaction',
+          interaction: { kind: 'company', playerId: player.id, companyId, resume: 'company', chargeEntry },
+          continuation: null }
+        notify()
+        return
+      }
+      const maximum = maxCompanySubscription(current, player.id, companyId)
+      if (maximum > 0) current = applyCompanySubscription(current, player.id, companyId, maximum).state
+      current = { ...current, continuation: 'finish-turn' }
+      notify()
+      schedule(finishTurn, landingDurationMs)
       return
     }
 
@@ -369,7 +408,7 @@ export function createGameController(initialState: GameState, options: GameContr
     processGodThenTerrain()
   }
 
-  processAfterBank = () => {
+  processAfterFacility = () => {
     const player = activePlayer()
     const marker = resolveWorldCell(projectWorld(current), player.id, player.position, 'step')
     current = mergeWorld(current, marker.snapshot)
@@ -389,7 +428,8 @@ export function createGameController(initialState: GameState, options: GameContr
 
   const processArrivedStep = () => {
     const player = activePlayer()
-    if (getCardCell(player.position)?.type === 18) {
+    const cell = getCardCell(player.position)
+    if (cell?.type === 18) {
       if (isHuman() && current.world.weekday !== 0) {
         current = {
           ...current,
@@ -417,8 +457,22 @@ export function createGameController(initialState: GameState, options: GameContr
         current = mergeWorld(current, bank.snapshot)
       }
     }
-    current = { ...current, continuation: 'after-bank' }
-    processAfterBank()
+    if (cell?.type === 19) {
+      if (isHuman()) {
+        if (current.world.weekday === 0) {
+          showNotice({ kind: 'stock', message: 'stock-closed', eventKind: 'stock-closed' },
+            { kind: 'stock', playerId: player.id }, 'after-stock')
+          return
+        }
+        current = { ...current, phase: 'interaction',
+          interaction: { kind: 'stock', playerId: player.id, resume: 'after-stock' },
+          continuation: null }
+        notify()
+        return
+      }
+      current = { ...current, continuation: 'after-stock' }
+    } else current = { ...current, continuation: 'after-bank' }
+    processAfterFacility()
   }
 
   startStep = () => {
@@ -552,15 +606,29 @@ export function createGameController(initialState: GameState, options: GameContr
       notify()
       return
     }
+    if (resume === 'stock') {
+      current = { ...current, phase: 'interaction',
+        interaction: { kind: 'stock', playerId: interaction.playerId, resume: 'after-stock' }, continuation: null }
+      notify()
+      return
+    }
+    if (resume === 'company') {
+      const companyId = companyAtPosition(current.finance, activePlayer().position)
+      if (companyId === null) throw new Error('公司恢复位置无效')
+      current = { ...current, phase: 'interaction',
+        interaction: { kind: 'company', playerId: interaction.playerId, companyId, resume: 'company' }, continuation: null }
+      notify()
+      return
+    }
     const phase = resume === 'await-roll' ? 'awaiting-roll' :
-      resume === 'after-bank' && current.remainingSteps > 0 ? 'moving' : 'landed'
-    const continuation: GameContinuation | null = resume === 'after-bank' ? 'after-bank' :
+      (resume === 'after-bank' || resume === 'after-stock') && current.remainingSteps > 0 ? 'moving' : 'landed'
+    const continuation: GameContinuation | null = resume === 'after-bank' || resume === 'after-stock' ? resume :
       resume === 'after-marker' ? (current.remainingSteps > 0 ? 'start-step' : 'handle-landing') :
       resume === 'after-god' ? (eventKind === 'god-property-adjusted' ? 'continue-terrain' : 'process-god') :
       resume === 'end-turn' ? 'finish-turn' : null
     current = { ...current, phase, interaction: null, continuation }
     notify()
-    if (resume === 'after-bank') processAfterBank()
+    if (resume === 'after-bank' || resume === 'after-stock') processAfterFacility()
     else if (resume === 'after-marker') {
       if (current.remainingSteps > 0) startStep()
       else handleLanding()
@@ -583,7 +651,11 @@ export function createGameController(initialState: GameState, options: GameContr
       return
     }
     if (current.continuation === 'after-bank') {
-      processAfterBank()
+      processAfterFacility()
+      return
+    }
+    if (current.continuation === 'after-stock') {
+      processAfterFacility()
       return
     }
     if (current.continuation === 'handle-landing') {
@@ -813,7 +885,56 @@ export function createGameController(initialState: GameState, options: GameContr
         continuation: 'after-bank',
       }
       notify()
-      processAfterBank()
+      processAfterFacility()
+      return true
+    },
+    tradeStock(side, companyId, shares) {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'stock') return false
+      const playerId = current.interaction.playerId
+      const result = side === 'buy' ? buyStock(current, playerId, companyId, shares) :
+        side === 'sell' ? sellStock(current, playerId, companyId, shares) : null
+      if (result === null) return false
+      if (result.error !== null) {
+        current = { ...current, interaction: { ...current.interaction, error: result.error } }
+        notify()
+        return false
+      }
+      current = result.state
+      const entry = result.entry!
+      showNotice({ kind: 'stock', message: entry.kind, eventKind: entry.kind,
+        amount: entry.sourceAmount, financeEntry: entry },
+      { kind: 'stock', playerId, amount: entry.sourceAmount, financeEntry: entry }, 'stock')
+      return true
+    },
+    leaveStock() {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'stock') return false
+      current = { ...current, phase: current.remainingSteps > 0 ? 'moving' : 'landed',
+        interaction: null, continuation: 'after-stock' }
+      notify()
+      processAfterFacility()
+      return true
+    },
+    subscribeCompany(shares) {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'company') return false
+      const { playerId, companyId } = current.interaction
+      const result = applyCompanySubscription(current, playerId, companyId, shares)
+      if (result.error !== null) {
+        current = { ...current, interaction: { ...current.interaction, error: result.error } }
+        notify()
+        return false
+      }
+      current = result.state
+      const entry = result.entry!
+      showNotice({ kind: 'company', message: entry.kind, eventKind: entry.kind,
+        amount: entry.sourceAmount, financeEntry: entry },
+      { kind: 'company', playerId, amount: entry.sourceAmount, financeEntry: entry }, 'company')
+      return true
+    },
+    leaveCompany() {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'company') return false
+      current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
+      notify()
+      schedule(finishTurn, landingDurationMs)
       return true
     },
     acknowledgeMonthly() {

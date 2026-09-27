@@ -7,13 +7,16 @@ import type { FinanceEntry } from './finance-types'
 export type InteractionResume =
   | 'await-roll'
   | 'after-bank'
+  | 'after-stock'
   | 'after-marker'
   | 'after-god'
   | 'end-turn'
   | 'shop'
   | 'bank'
+  | 'stock'
+  | 'company'
 
-export type NoticeKind = 'card' | 'world' | 'bank' | 'shop' | 'card-draw' | 'luck' | 'tickets' | 'restriction'
+export type NoticeKind = 'card' | 'world' | 'bank' | 'stock' | 'company' | 'shop' | 'card-draw' | 'luck' | 'tickets' | 'restriction'
 
 export interface InteractionNotice {
   kind: NoticeKind
@@ -43,6 +46,8 @@ export type GameInteraction =
   | (CardInteractionBase & { kind: 'credit-choice'; choiceError: string | null })
   | { kind: 'shop'; playerId: number; shop: ShopState; resume: 'shop' }
   | { kind: 'bank'; playerId: number; resume: 'after-bank'; error?: string | null }
+  | { kind: 'stock'; playerId: number; resume: 'after-stock'; error?: string | null }
+  | { kind: 'company'; playerId: number; companyId: number; resume: 'company'; chargeEntry?: FinanceEntry | null; error?: string | null }
   | { kind: 'monthly-settlement'; playerId: number; entries: FinanceEntry[] }
   | {
       kind: 'notice'

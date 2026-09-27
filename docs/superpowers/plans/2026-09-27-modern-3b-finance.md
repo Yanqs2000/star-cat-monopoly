@@ -73,9 +73,9 @@
 
 **Interfaces:** `tradeStock`, `subscribeCompany`, `leaveStock`, `leaveCompany`；`after-stock`/`after-company` 可序列化续办。
 
-- [ ] 先写自然地图 19 型股市、公司地点、AI 分支、剩余步数/标记只执行一次的 RED。
-- [ ] 确认 RED；接入真实途中/落地流程与资产查询。
-- [ ] 定向 GREEN、现有交互控制器回归，提交。
+- [x] 先写自然地图 19 型股市、公司地点、AI 分支、剩余步数/标记只执行一次的 RED。
+- [x] 确认 RED；接入真实途中/落地流程。资产查询的玩家面板显示由 Task 6 完成。
+- [x] 定向 GREEN、现有交互控制器回归，提交。
 
 ### Task 6: Vue 面板与原版公司素材
 

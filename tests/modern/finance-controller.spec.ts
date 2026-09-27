@@ -82,3 +82,103 @@ describe('3B 银行与日期控制器', () => {
     expect(restored.state.finance.entries.filter(entry => entry.kind === 'stock-price')).toHaveLength(12)
   })
 })
+
+describe('3B 股市和公司自然地图入口', () => {
+  it('人类途中进入股市、成交后退出并继续余步且不重复交易', () => {
+    const game = createGame([1, 2, 3, 4], 1, 1)
+    game.world.markers = {}
+    game.players[0] = { ...game.players[0]!, position: { column: 25, row: 21 }, direction: 4 }
+    const clock = new Clock()
+    const controller = createGameController(game, options(clock))
+    expect(controller.roll(2)).toBe(true)
+    clock.advance(10)
+    expect(controller.state).toMatchObject({ phase: 'interaction', remainingSteps: 1,
+      interaction: { kind: 'stock', playerId: 1 } })
+    expect(controller.tradeStock('buy', 2, 3)).toBe(true)
+    expect(controller.state.finance.stocks[2]?.holdings[1]?.shares).toBe(3)
+    expect(controller.tradeStock('buy', 2, 3)).toBe(false)
+    expect(controller.acknowledgeInteraction()).toBe(true)
+    expect(controller.state.interaction?.kind).toBe('stock')
+    expect(controller.leaveStock()).toBe(true)
+    clock.advance(10)
+    expect(controller.state.players[0]?.position).toEqual({ column: 27, row: 19 })
+    expect(controller.state.finance.stocks[2]?.holdings[1]?.shares).toBe(3)
+  })
+
+  it('人类最终落在公共事业公司格，认购后再确认离开只扣款一次', () => {
+    const game = createGame([1, 2, 3, 4], 1, 1)
+    game.world.markers = {}
+    game.players[0] = { ...game.players[0]!, position: { column: 25, row: 31 }, direction: 1 }
+    const clock = new Clock()
+    const controller = createGameController(game, options(clock))
+    controller.roll(1)
+    clock.advance(10)
+    expect(controller.state.interaction).toMatchObject({ kind: 'company', companyId: 13 })
+    expect(controller.subscribeCompany(10)).toBe(true)
+    expect(controller.state.players[0]?.cash).toBe(99950)
+    expect(controller.state.finance.stocks[13]?.holdings[1]?.shares).toBe(10)
+    expect(controller.subscribeCompany(10)).toBe(false)
+    expect(controller.acknowledgeInteraction()).toBe(true)
+    expect(controller.state.interaction?.kind).toBe('company')
+    expect(controller.leaveCompany()).toBe(true)
+    clock.advance(10)
+    expect(controller.state.activePlayerIndex).toBe(1)
+    expect(controller.state.finance.stocks[13]?.holdings[1]?.shares).toBe(10)
+  })
+
+  it('股市周日关闭，AI 路过股市不随机交易', () => {
+    const sunday = createGame([1, 2, 3, 4], 1, 0)
+    sunday.world.markers = {}
+    sunday.players[0] = { ...sunday.players[0]!, position: { column: 25, row: 21 }, direction: 4 }
+    const clock = new Clock()
+    const human = createGameController(sunday, options(clock))
+    human.roll(1); clock.advance(10)
+    expect(human.state.interaction).toMatchObject({ kind: 'notice', notice: { eventKind: 'stock-closed' } })
+    expect(human.acknowledgeInteraction()).toBe(true)
+    expect(human.state.finance.entries.filter(entry => entry.kind === 'stock-buy')).toHaveLength(0)
+
+    const aiGame = createGame([1, 2, 3, 4], 1, 1)
+    aiGame.world.markers = {}
+    aiGame.players[0] = { ...aiGame.players[0]!, controller: 'ai', position: { column: 25, row: 21 }, direction: 4 }
+    aiGame.forcedDice[1] = 1
+    const aiClock = new Clock()
+    const ai = createGameController(aiGame, options(aiClock))
+    aiClock.advance(20)
+    expect(ai.state.players[0]?.position).toEqual({ column: 26, row: 20 })
+    expect(ai.state.interaction?.kind).not.toBe('stock')
+    expect(ai.state.finance.entries.filter(entry => entry.kind === 'stock-buy')).toHaveLength(0)
+  })
+
+  it('公司费在落地时只记一次，恢复公司面板不重复扣款；AI 自动最大认购', () => {
+    const game = createGame([1, 2, 3, 4], 1)
+    game.world.markers = {}
+    game.players[0] = { ...game.players[0]!, position: { column: 25, row: 31 }, direction: 1,
+      cash: 100, deposit: 1000 }
+    const parcelId = Number(Object.keys(game.properties)[0])
+    game.properties[parcelId] = { ownerId: 1, level: 1 }
+    game.finance.stocks[13]!.ceoId = 2
+    const clock = new Clock()
+    const controller = createGameController(game, options(clock))
+    controller.roll(1); clock.advance(10)
+    expect(controller.state.interaction).toMatchObject({ kind: 'company', companyId: 13,
+      chargeEntry: { sourceAmount: 600, cashDelta: -100, depositDelta: -500 } })
+    expect(controller.state.players[0]).toMatchObject({ cash: 0, deposit: 500 })
+    const snapshot = structuredClone(controller.state)
+    controller.dispose()
+    const restored = createGameController(snapshot, options(new Clock()))
+    expect(restored.state.players[0]).toMatchObject({ cash: 0, deposit: 500 })
+    expect(restored.state.finance.entries.filter(entry => entry.kind === 'company-fee')).toHaveLength(1)
+
+    const aiGame = createGame([1, 2, 3, 4], 1)
+    aiGame.world.markers = {}
+    aiGame.players[0] = { ...aiGame.players[0]!, controller: 'ai', position: { column: 25, row: 31 },
+      direction: 1, cash: 1000 }
+    aiGame.forcedDice[1] = 1
+    const aiClock = new Clock()
+    const ai = createGameController(aiGame, options(aiClock))
+    aiClock.advance(20)
+    expect(ai.state.finance.stocks[13]?.holdings[1]?.shares).toBe(200)
+    expect(ai.state.players[0]?.cash).toBe(0)
+    expect(ai.state.finance.stocks[13]?.ceoId).toBe(1)
+  })
+})
