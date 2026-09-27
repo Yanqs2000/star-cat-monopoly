@@ -43,9 +43,9 @@
 
 **Interfaces:** `advanceStockPrices(finance, cadence, rngState)` 返回 finance/RNG/价格流水；`settleMonth(game)` 返回一次性财务状态与分项流水。
 
-- [ ] 先写 S6、负上界、周/月/日 RNG 顺序、利润 3:2 分配、信用月还、贷款月还与最后 10% 利息 RED。
-- [ ] 确认 RED；实施源码取整和顺序；月结用年月键防重。
-- [ ] 定向 GREEN、类型检查，提交。
+- [x] 先写 S6、负上界、周/月/日 RNG 顺序、利润 3:2 分配、信用月还、贷款月还与最后 10% 利息 RED。
+- [x] 确认 RED；实施源码取整和顺序；月结用年月键防重。
+- [x] 定向 GREEN、类型检查，提交。
 
 ### Task 3: 股票交易与公司规则
 
