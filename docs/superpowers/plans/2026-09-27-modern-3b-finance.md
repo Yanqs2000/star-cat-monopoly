@@ -89,6 +89,6 @@
 
 **Files:** Add `tests/e2e/modern-finance.spec.ts`；Create `docs/modernization/acceptance-3b.md`；Update `resume-3b.md`。
 
-- [ ] 生产构建浏览器自然开局，覆盖银行存取借还、股票买卖、公司认购/董事权与跨月结算；每条结果记录状态和截图。
-- [ ] 整套 Vitest、typecheck、现代 build、相关 Playwright 及必要回归；修复每个 RED 后复跑相关测试。
-- [ ] 核对原版差异、实际入口、提交/回退点和工作树；完成代码审查与复审；交付用户 3B 验收，不自行改写用户验收状态。
+- [x] 生产构建浏览器自然开局，覆盖银行存取借还、股票买卖、公司认购/董事权与跨月结算；每条结果记录状态和截图。
+- [x] 整套 Vitest、typecheck、现代 build、相关 Playwright 及必要回归；修复每个 RED 后复跑相关测试。
+- [x] 核对原版差异、实际入口、提交/回退点和工作树；完成代码审查与复审；交付用户 3B 验收，不自行改写用户验收状态。
