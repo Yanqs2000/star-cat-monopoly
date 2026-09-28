@@ -10,7 +10,7 @@
 
 原活动542帧已离线导出并逐帧检查几何；源文件未修改。说明框与双卡结果保存帧位，原烟雾15帧开放/19帧尾段及车辆111帧使用Pixi。对局暂停/素材等待停止时钟，恢复保留阶段和已结算结果；界面使用真实现金、存款、券和卡牌差值。
 
-测试经历：NPC8行为RED→9GREEN；兑换4RED→4GREEN；控制器4RED→5GREEN；原图缺失RED→素材检查GREEN；UI3RED→3GREEN；并发失败释放URL1RED→1GREEN；动画/重建2RED→2GREEN，双卡源快进和烟雾尾段另行RED→GREEN。整体47文件403项通过后新增烟雾1项，12项受影响定向检查通过；新增烟雾后共404项，收尾整体运行结果随后补记。
+测试经历：NPC8行为RED→9GREEN；兑换4RED→4GREEN；控制器4RED→5GREEN；原图缺失RED→素材检查GREEN；UI3RED→3GREEN；并发失败释放URL1RED→1GREEN；动画/重建2RED→2GREEN，双卡源快进和烟雾尾段另行RED→GREEN。整体47文件403项通过后新增烟雾1项，12项受影响定向检查通过；烟雾尾段增加后收尾整体47文件404项通过，类型与生产构建通过。
 
 生产回放环境：http://127.0.0.1:4184/modern.html，Chrome/Playwright，1440×1000，完整开局2026-09-28，速度2。Browser plugin not available，使用已有Playwright路径。普通选择均在页面操作；没有向生产游戏注入状态或追加测试入口。
 
