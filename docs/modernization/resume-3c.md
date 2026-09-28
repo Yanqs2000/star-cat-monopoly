@@ -12,9 +12,13 @@ base: 6c2238c
 
 ## 当前进度
 
-2026-09-28：用户已明确授权实施。现有隔离工作区干净基线6c2238c；规格与6任务计划已保存到docs/superpowers/specs和plans的2026-09-28-modern-3c-activities文件。Task1取证正在开始，无3C代码修改。六NPC源函数及witch/lottery/station/courtz/ludoz/carnie完整脚本已在先前规划读过，源缓存位于父仓库.analysis-cache/ffdec/play.swf/scripts；不要重复全仓扫描。
+2026-09-28 13:02：HEAD eab5fa7（普通NPC、兑换/招领纯规则与控制器），前一提交bdf362c为规格/实施计划/入口证据。Task1静态规则与素材元数据已完成；小游戏动态时序/碰撞probe在Task4/5进入实现前执行。Task2前两项已完成，原图UI/动画/生产回放未做；Task3…6未开始。
 
-下一步：初始化本计划ledger，写phase-3c-activities-evidence.md入口/数值表，开始NPC规则RED。静态未证实的小游戏时序/碰撞在对应任务进入实现前做原版探针。全批最终审查才派fresh reviewer，不逐模块派实现者。
+最新验证：NPC边界8个RED→9/9；兑换/招领4个RED→4/4；控制器4个RED→4/4，加AI空分支特征检查5/5。整套43文件393项通过（新增AI1项后只定向5/5，当前总数应394）；类型检查通过。只修改backend，ModernApp/Vue尚未接exchange命令，不能称已可玩。
+
+下一步：读取Task2 brief和phase-3c-activities-evidence.md最后元数据表；写activity-assets/activity-ui的RED，导出原trait1319完整60帧（pic1313按9/12/13/14/15/23选帧，排除动态示例文字）、witch2184和lottery2194原800×600背景、fog3758(19帧)、car2 865(111帧)。源脚本完整目录已核对，不重导出已有NPC世界素材。新receipt已在WorldEvent→InteractionNotice持久化；票据/手牌差值UI必须用receipt而非amount。
+
+原素材几何只读Inspector在.analysis-cache/3c-assets/InspectActivities.java，JPEXS jar父仓库.analysis-tools/ffdec-26.2.1/ffdec.jar；尚无新原图产物。全批最终审查才派fresh reviewer，不逐模块派实现者。没有运行中的测试/导出句柄。Skill ledger位于.superpowers/sdd/2026-09-28-modern-3c-activities/progress.md，Task2只能标partial，不可task-done。
 
 Ruling: 用户本轮PLEASE IMPLEMENT授权实施，覆盖引用计划末尾“本轮只规划”；3A/3B验收状态保持实际记录。
 Ruling: 已有隔离worktree及已安装依赖直接复用；基线功能70af5fc之后仅文档，既有376项通过证据复用，新功能Task2结束时跑整套验证。
