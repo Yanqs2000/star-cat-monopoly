@@ -40,6 +40,7 @@ const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
 const stockId = ref(1)
 const stockShares = ref(1)
 const companyShares = ref(1)
+const companyDialogUrl = `${import.meta.env.BASE_URL}assets/companies/dialog.png`
 const interaction = computed(() => props.game.interaction)
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const player = computed(() => props.game.players.find(item => item.id === interaction.value?.playerId) ?? active.value)
@@ -243,12 +244,18 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'company' && landedCompany">
-      <span class="eyebrow">公司</span><h2>{{ landedCompany.name }}</h2>
       <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }}</p>
-      <p>承销价 {{ landedCompany.basePrice }} · 待认购 {{ landedCompany.offerShares }} 股 · 已持 {{ landedCompany.holdings[player.id]?.shares ?? 0 }} 股</p>
-      <p>董事：{{ game.players.find(value => value.id === landedCompany?.ceoId)?.name ?? '暂无' }} · 累计经营费 {{ landedCompany.profit }}</p>
-      <p v-if="interaction.chargeEntry" class="amount">本次经营费 {{ actualChanges(interaction.chargeEntry) }}</p>
-      <p v-if="interaction.chargeEntry?.diceFaces">骰子 {{ interaction.chargeEntry.diceFaces[0] }} + {{ interaction.chargeEntry.diceFaces[1] }} = {{ interaction.chargeEntry.diceFaces[0] + interaction.chargeEntry.diceFaces[1] }}</p>
+      <div class="company-original">
+        <img data-testid="company-original-frame" :src="companyDialogUrl" alt="" @error="reportImageError">
+        <h2>{{ landedCompany.name }}</h2>
+        <div class="company-summary">
+          <p>承销价 {{ landedCompany.basePrice }} · 待认购 {{ landedCompany.offerShares }} 股</p>
+          <p>已持 {{ landedCompany.holdings[player.id]?.shares ?? 0 }} 股 · 董事：{{ game.players.find(value => value.id === landedCompany?.ceoId)?.name ?? '暂无' }}</p>
+          <p>累计经营费 {{ landedCompany.profit }}</p>
+          <p v-if="interaction.chargeEntry">本次经营费 {{ actualChanges(interaction.chargeEntry) || '账户无变化' }}</p>
+          <p v-if="interaction.chargeEntry?.diceFaces">骰子 {{ interaction.chargeEntry.diceFaces[0] }} + {{ interaction.chargeEntry.diceFaces[1] }} = {{ interaction.chargeEntry.diceFaces[0] + interaction.chargeEntry.diceFaces[1] }}</p>
+        </div>
+      </div>
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
       <div class="choice"><label>认购股数
         <input v-model.number="companyShares" data-testid="company-shares" type="number" min="1" step="1" :max="companyMaximum" :disabled="!canAct">
@@ -270,5 +277,6 @@ watch(stockId, () => { stockShares.value = 1 })
 </template>
 
 <style scoped>
+.company-original{position:relative;width:408px;max-width:100%;aspect-ratio:408/356;margin:8px auto}.company-original>img{display:block;width:100%;height:100%}.company-original>h2{position:absolute;left:24%;top:10%;margin:0;color:white;font-size:21px}.company-summary{position:absolute;left:9%;top:27%;width:82%;height:55%;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:6px;color:#153043}.company-summary p{margin:0;font-size:14px}
 .interaction{position:absolute;z-index:5;left:18px;bottom:18px;width:min(510px,calc(100% - 370px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input,.choice select{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.finance-lines{max-height:260px;overflow:auto;padding-left:20px}.finance-lines li{margin:6px 0}.finance-lines small{display:block;color:#bfd0d3}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{left:12px;right:12px;bottom:42vh;width:auto;max-height:55vh}.shop-grid{grid-template-columns:repeat(4,1fr)}}
 </style>

@@ -158,6 +158,49 @@ test('自然开局 seed16 落在公司格认购并取得董事权', async ({ pag
   await page.getByRole('button', { name: '离开公司' }).click()
 })
 
+test('公司收费后原版界面素材404，重试不重复收费并可继续认购', async ({ page }) => {
+  test.setTimeout(120_000)
+  await mkdir(evidenceDir, { recursive: true })
+  let failed = true
+  let requests = 0
+  await page.route('**/assets/companies/dialog.png', route => {
+    requests += 1
+    if (failed) void route.fulfill({ status: 404, body: '' })
+    else void route.continue()
+  })
+  await start(page, 96)
+  await playUntil(page, async () =>
+    (await page.getByTestId('company-shares').count()) > 0 ||
+    (await page.getByRole('alert').allTextContents()).some(value => value.includes('companies/dialog.png')), 700)
+  await expect(page.getByRole('alert')).toContainText('companies/dialog.png')
+  failed = false
+  await page.getByRole('button', { name: '重试载入' }).click()
+  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect(page.getByLabel('速度')).toHaveValue('2')
+  await expect.poll(() => requests).toBeGreaterThanOrEqual(2)
+  await expect(page.getByTestId('company-original-frame')).toBeVisible()
+  await expect(page.getByTestId('interaction-panel')).toContainText('本次经营费 现金 -4500')
+  const feeText = await page.getByTestId('interaction-panel').textContent() ?? ''
+  const dice = feeText.match(/骰子 (\d) \+ (\d) = (\d+)/)
+  expect(dice).not.toBeNull()
+  expect(Number(dice![1]) + Number(dice![2])).toBe(9)
+  expect(Number(dice![3])).toBe(9)
+  // Natural route: 100000 + luck reward 10000 - land 2200 - company fee 4500.
+  const charged = { cash: 103300, deposit: 100000, loan: 0 }
+  await expect.poll(() => wallet(page)).toEqual(charged)
+  await page.screenshot({ path: `${evidenceDir}/seed96-company-fee-retry-1440x1000.png` })
+  await page.getByTestId('company-shares').fill('10')
+  const description = await page.getByTestId('interaction-panel').textContent() ?? ''
+  const price = Number(description.match(/承销价 ([\d.]+)/)?.[1])
+  expect(price).toBeGreaterThan(0)
+  await page.getByTestId('company-subscribe').click()
+  await expect.poll(() => wallet(page)).toEqual({ ...charged, cash: charged.cash - price * 10 })
+  await page.getByTestId('interaction-acknowledge').click()
+  await expect(page.getByTestId('interaction-panel')).toContainText('已持 10 股')
+  await expect(page.getByTestId('interaction-panel')).toContainText('累计经营费 4500')
+  await expect(page.getByTestId('interaction-panel')).toContainText('董事：帅戈')
+})
+
 test('四名真人跨月时月结确认前不推进日期，确认后仅执行一次', async ({ page }) => {
   test.setTimeout(180_000)
   await mkdir(evidenceDir, { recursive: true })

@@ -81,6 +81,7 @@ describe('3B 银行和月结面板', () => {
         cashDelta: -100, depositDelta: -500 } }
     const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
     expect(panel.text()).toContain('电力公司')
+    expect(panel.get('[data-testid="company-original-frame"]').attributes('src')).toMatch(/assets\/companies\/dialog.png$/)
     expect(panel.text()).toContain('承销价 5')
     expect(panel.text()).toContain('董事')
     expect(panel.text()).toContain('现金 -100')
@@ -88,6 +89,8 @@ describe('3B 银行和月结面板', () => {
     await panel.get('[data-testid="company-shares"]').setValue('10')
     await panel.get('[data-testid="company-subscribe"]').trigger('click')
     expect(panel.emitted('subscribe-company')).toEqual([[10]])
+    await panel.get('[data-testid="company-original-frame"]').trigger('error')
+    expect(panel.emitted('asset-error')?.[0]?.[0]).toBeInstanceOf(Error)
   })
 
   it('普通公司收费显示最终两枚骰子与费用倍数', () => {

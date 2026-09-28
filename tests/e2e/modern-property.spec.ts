@@ -11,6 +11,9 @@ async function seedGame(page: Page, seed = 235): Promise<void> {
       return original(array)
     }
     Date.prototype.getDay = () => 1
+    Date.prototype.getFullYear = () => 2026
+    Date.prototype.getMonth = () => 8
+    Date.prototype.getDate = () => 27
   }, seed)
   await page.goto('/modern.html')
   await page.getByTestId('character-1').click()

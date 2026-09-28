@@ -15,6 +15,9 @@ async function seedMondayGame(page: Page, seed: number): Promise<void> {
       return original(array)
     }
     Date.prototype.getDay = () => 1
+    Date.prototype.getFullYear = () => 2026
+    Date.prototype.getMonth = () => 8
+    Date.prototype.getDate = () => 27
   }, seed)
   await page.goto('/modern.html')
   await page.getByTestId('character-1').click()
@@ -220,6 +223,9 @@ test('生产入口卡面404经同一完整状态边界恢复', async ({ page }) 
       return original(array)
     }
     Date.prototype.getDay = () => 1
+    Date.prototype.getFullYear = () => 2026
+    Date.prototype.getMonth = () => 8
+    Date.prototype.getDate = () => 27
   })
   await page.goto('/modern.html')
   await page.getByTestId('character-1').click()
@@ -250,8 +256,10 @@ test('自然卡片格新获卡面404重试保留原奖励且不重复发卡', as
   await seedMondayGame(page, 40)
   await playUntil(page, async () => {
     const alert = page.getByRole('alert')
-    return (await alert.count()) > 0 && (await alert.first().textContent())?.includes('cards/18.png') === true
+    return (await page.getByTestId('hand-panel').locator('[data-card-id="18"]').count()) > 0 ||
+      (await alert.count()) > 0 && (await alert.first().textContent())?.includes('cards/18.png') === true
   }, 450)
+  await expect(page.getByRole('alert')).toContainText('cards/18.png')
   expect(cardRequests).toBeGreaterThanOrEqual(1)
 
   failed = false
