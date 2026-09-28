@@ -3,7 +3,7 @@ import type { DirectCardChoice } from './direct-cards'
 import type { LuckEvent } from './events'
 import type { WorldEvent } from './world-cards'
 import type { FinanceEntry } from './finance-types'
-import type { ActivityReceipt } from './activity-types'
+import type { ActivityReceipt, ActivityPresentation } from './activity-types'
 import type { TicketExchangeMode } from './ticket-exchange'
 
 export type InteractionResume =
@@ -52,13 +52,14 @@ export type GameInteraction =
   | { kind: 'stock'; playerId: number; resume: 'after-stock'; error?: string | null }
   | { kind: 'company'; playerId: number; companyId: number; resume: 'company'; chargeEntry?: FinanceEntry | null; error?: string | null }
   | { kind: 'monthly-settlement'; playerId: number; entries: FinanceEntry[] }
-  | { kind: 'ticket-exchange'; playerId: number; mode: TicketExchangeMode; npcCellId?: number; error?: string | null }
+  | { kind: 'ticket-exchange'; playerId: number; mode: TicketExchangeMode; npcCellId?: number; error?: string | null; presentation?: ActivityPresentation }
   | {
       kind: 'notice'
       playerId: number
       notice: InteractionNotice
       resume: InteractionResume
       shop?: ShopState
+      presentation?: ActivityPresentation
     }
 
 export interface InteractionEvent {

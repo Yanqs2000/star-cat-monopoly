@@ -35,8 +35,8 @@
 **Interfaces:** resolveWorldCell返回普通NPC结果；finishNpcEncounter完成帐篷后的迁移；exchangeTickets/claimLostFunds返回状态、receipt、error；控制器exchangeTickets(amount)、leaveExchange()。
 - [x] 写六NPC、30/31券、3/4卡、3000/3001现金、支付/招领镜像/唯一重新放置RED，运行确认失败。
 - [x] 最小纯规则GREEN，再接控制器续办和AI空分支；写重复/取消/恢复RED并实现。
-- [ ] 原trait/witch/lottery图面与fog/car2动画、实际选择输入；素材错误走原恢复。
-- [ ] 定向/整套规则、类型及自然入口回放；提交并记checkpoint。
+- [x] 原trait/witch/lottery图面与fog/car2动画、实际选择输入；素材错误走原恢复。
+- [x] 定向/整套规则、类型及自然入口回放；提交并记checkpoint。
 
 ### Task 3: 魔法门与法院转运
 

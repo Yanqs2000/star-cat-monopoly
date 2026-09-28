@@ -9,12 +9,17 @@ import type { DirectCardChoice } from './direct-cards'
 import type { InteractionAsset } from './interaction-assets'
 import type { GameInteraction } from './interaction-types'
 import type { GameState } from './types'
+import { ticketExchangeMaximum } from './ticket-exchange'
+import { activityChanges, originalActivityText } from './activity-text'
+import type { ActivityManifest } from './activity-assets'
+import NativeActivity from './NativeActivity.vue'
 
 const props = withDefaults(defineProps<{
   game: GameState
   paused: boolean
   cardAssets: InteractionAsset[]
   luckAssets?: InteractionAsset[]
+  activityAssets?: ActivityManifest
 }>(), { luckAssets: () => [] })
 const emit = defineEmits<{
   confirm: []
@@ -33,7 +38,14 @@ const emit = defineEmits<{
   'subscribe-company': [shares: number]
   'leave-company': []
   'asset-error': [error: Error]
+  'exchange-tickets': [quantity: number]
+  'leave-exchange': []
+  'activity-ready': [clipId: string]
+  'skip-activity': []
 }>()
+const exchangeQuantity = ref(0)
+const exchangeLoaded = ref(false)
+const originalExchangeUrl = computed(() => `${import.meta.env.BASE_URL}assets/activities/${interaction.value?.kind === 'ticket-exchange' && interaction.value.mode === 'sell' ? 'witch' : 'lottery'}/1.png`)
 const creditAmount = ref(0)
 const bankAmount = ref(0)
 const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
@@ -47,7 +59,13 @@ const player = computed(() => props.game.players.find(item => item.id === intera
 const inventory = computed(() => props.game.inventories[player.value.id] ?? [])
 const cardInteraction = computed(() => interaction.value && 'cardId' in interaction.value ? interaction.value : null)
 const card = computed(() => cardInteraction.value ? getCardDefinition(cardInteraction.value.cardId) : null)
-const canAct = computed(() => !props.paused && player.value.controller === 'human')
+const presentation = computed(() => interaction.value && 'presentation' in interaction.value ? interaction.value.presentation : undefined)
+const presentationBlocking = computed(() => !!presentation.value && !(presentation.value.clipId === 'fog' && presentation.value.frame >= 15))
+const presentationClip = computed(() => props.activityAssets?.clips.find(clip => clip.id === presentation.value?.clipId))
+const exchangeClip = computed(() => props.activityAssets?.clips.find(clip => clip.id === (interaction.value?.kind === 'ticket-exchange' && interaction.value.mode === 'sell' ? 'witch' : 'lottery')))
+const exchangeMaximum = computed(() => interaction.value?.kind === 'ticket-exchange' ? ticketExchangeMaximum(props.game, player.value.id, interaction.value.mode) : 0)
+const canAct = computed(() => !props.paused && !presentationBlocking.value && player.value.controller === 'human')
+const activityText = computed(() => originalActivityText(interaction.value?.kind === 'notice' ? interaction.value.notice.receipt : undefined))
 const bankMax = computed(() => {
   const account = props.game.credit[player.value.id]
   const loan = props.game.finance.loans[player.value.id] ?? 0
@@ -113,6 +131,10 @@ const statusText = computed(() => {
 })
 const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   const notice = value.notice
+  if (notice.eventKind === 'npc-encountered') return ({ 9: '路遇恶犬，已送往医院', 12: '路遇警察', 13: '路遇流氓', 14: '路遇小偷', 15: '路遇乞丐' } as Record<number,string>)[notice.npcId!] ?? 'NPC遭遇'
+  if (notice.message === 'lost-found') return '失物招领'
+  if (notice.message === 'ticket-buy') return '购券完成'
+  if (notice.message === 'ticket-sell') return '兑奖完成'
   if (notice.kind === 'luck') return notice.message
   if (notice.kind === 'tickets') return `获得 ${notice.amount ?? 0} 张奖券`
   if (notice.kind === 'card-draw') return notice.message === 'full' ? '手牌已满，未抽取新卡' : `获得${notice.cardId ? getCardDefinition(notice.cardId).name : '卡片'}`
@@ -141,14 +163,37 @@ watch(() => interaction.value?.kind, kind => {
   if (kind === 'bank') bankAmount.value = 0
   if (kind === 'stock') { stockId.value = 1; stockShares.value = 1 }
   if (kind === 'company') companyShares.value = 1
+  if (kind === 'ticket-exchange') { exchangeQuantity.value = 0; exchangeLoaded.value = false }
 })
 watch(bankAction, () => { bankAmount.value = 0 })
 watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
-  <section v-if="interaction" class="interaction" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
-    <template v-if="cardInteraction && card">
+  <section v-if="interaction" class="interaction" :class="{ 'exchange-panel': interaction.kind === 'ticket-exchange', 'presentation-panel': presentationBlocking }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
+    <template v-if="presentationBlocking && presentation && ['fog','car2'].includes(presentation.clipId)">
+      <span class="sr-only">{{ presentation.clipId === 'fog' ? '帐篷开启中' : '送医途中' }}</span>
+    </template>
+    <template v-else-if="presentationBlocking && presentation && presentationClip">
+      <NativeActivity :key="presentationClip.id" :clip="presentationClip" :frame="presentation.frame" :text="activityText" :viewport="presentation.clipId === 'car2'" @pointerdown="emit('skip-activity')" @ready="emit('activity-ready', $event)" @asset-error="emit('asset-error', $event)" />
+      <button v-if="presentation.clipId.startsWith('trait-') && presentation.frame >= 10 && presentation.frame < 55" :disabled="paused" @click="emit('skip-activity')">继续动画</button>
+    </template>
+    <template v-else-if="interaction.kind === 'ticket-exchange'">
+      <div class="exchange-original">
+        <NativeActivity v-if="exchangeClip" :key="exchangeClip.id" :clip="exchangeClip" :text="{ money: String(player.cash), jiang: String(game.tickets[player.id]) }" @ready="exchangeLoaded = true" @asset-error="emit('asset-error', $event)" />
+        <img v-else data-testid="exchange-original" :src="originalExchangeUrl" alt="奖券兑换" @error="reportImageError">
+        <form data-testid="exchange-form" class="exchange-form" @submit.prevent="emit('exchange-tickets', exchangeQuantity)">
+          <label>{{ interaction.mode === 'sell' ? '兑奖张数' : '购券张数' }}
+            <input v-model.number="exchangeQuantity" data-testid="exchange-quantity" type="number" min="0" :max="exchangeMaximum" step="1" :disabled="!canAct || !!exchangeClip && !exchangeLoaded">
+          </label>
+          <small>单次最多 100 张 · 本次上限 {{ exchangeMaximum }} · 每张 100 元</small>
+          <p>{{ interaction.mode === 'sell' ? `现金 +${exchangeQuantity * 100} · 奖券 -${exchangeQuantity}` : `现金 -${exchangeQuantity * 100} · 奖券 +${exchangeQuantity}` }}</p>
+          <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
+          <div class="actions"><button data-testid="exchange-submit" type="submit" :disabled="!canAct || !!exchangeClip && !exchangeLoaded">确定</button><button type="button" :disabled="!canAct || !!exchangeClip && !exchangeLoaded" @click="emit('leave-exchange')">放弃</button></div>
+        </form>
+      </div>
+    </template>
+    <template v-else-if="cardInteraction && card">
       <div class="card-head">
         <img :src="cardAssetUrl(card.id)" :alt="card.name" @error="reportImageError">
         <div><span class="eyebrow">使用卡片</span><h2>{{ card.name }}</h2><p>{{ card.description }}</p></div>
@@ -268,6 +313,7 @@ watch(stockId, () => { stockShares.value = 1 })
       <span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2>
       <img v-if="interaction.notice.luckEvent" data-testid="luck-image" class="luck" :src="luckAssetUrl(interaction.notice.luckEvent.id)" :alt="`运气事件 ${interaction.notice.luckEvent.id}`" @error="reportImageError">
       <p v-if="interaction.notice.financeEntry" class="amount">{{ actualChanges(interaction.notice.financeEntry) || '账户无变化' }}</p>
+      <p v-else-if="interaction.notice.receipt" data-testid="activity-receipt" class="amount">{{ activityChanges(interaction.notice.receipt) }}</p>
       <p v-else-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && interaction.notice.npcId === 3 ? '现金' : interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
       <p>{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
       <p>状态：{{ statusText }}</p>
@@ -277,6 +323,7 @@ watch(stockId, () => { stockShares.value = 1 })
 </template>
 
 <style scoped>
+.interaction.exchange-panel{width:min(824px,calc(100% - 350px));padding:0;background:transparent;border:0}.exchange-original{position:relative;width:100%;aspect-ratio:824/624}.exchange-original>img{display:block;width:100%;height:auto}.exchange-form{position:absolute;left:9%;top:42%;width:43%;display:grid;gap:10px;color:#182d45;font-size:16px}.exchange-form label{display:grid;gap:6px}.exchange-form input{width:120px;padding:7px;font:inherit}.exchange-form small{font-size:12px}.exchange-form p{font-size:13px}.interaction.presentation-panel{left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(462px,70%);padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.presentation-panel:has([data-clip="car2"]){width:100%;max-height:none}.presentation-panel:has([data-clip="fog"]){width:182px}.presentation-panel>button{position:absolute;right:20px;bottom:15px}
 .company-original{position:relative;width:408px;max-width:100%;aspect-ratio:408/356;margin:8px auto}.company-original>img{display:block;width:100%;height:100%}.company-original>h2{position:absolute;left:24%;top:10%;margin:0;color:white;font-size:21px}.company-summary{position:absolute;left:9%;top:27%;width:82%;height:55%;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:6px;color:#153043}.company-summary p{margin:0;font-size:14px}
 .interaction{position:absolute;z-index:5;left:18px;bottom:18px;width:min(510px,calc(100% - 370px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input,.choice select{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.finance-lines{max-height:260px;overflow:auto;padding-left:20px}.finance-lines li{margin:6px 0}.finance-lines small{display:block;color:#bfd0d3}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{left:12px;right:12px;bottom:42vh;width:auto;max-height:55vh}.shop-grid{grid-template-columns:repeat(4,1fr)}}
 </style>

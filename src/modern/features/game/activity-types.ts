@@ -1,4 +1,12 @@
 /** Source amounts and actual account changes are intentionally separate. */
+export interface ActivityPresentation {
+  clipId: string
+  frame: number
+  totalFrames: number
+  nextClip?: string
+  cellId?: number
+}
+
 export interface ActivityReceipt {
   kind: string
   sourceAmount?: number

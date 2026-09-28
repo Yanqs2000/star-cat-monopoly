@@ -44,6 +44,8 @@ export interface PlayerTransition {
 }
 
 export interface GameControllerOptions {
+  /** Browser renderer loads a native clip before acknowledging it is ready. */
+  awaitActivityAssets?: boolean
   scheduler?: GameScheduler
   stepDurationMs?: number
   landingDurationMs?: number
@@ -76,6 +78,8 @@ export interface GameController {
   leaveCompany(): boolean
   exchangeTickets(quantity: number): boolean
   leaveExchange(): boolean
+  readyActivity(clipId: string): boolean
+  skipActivityPresentation(): boolean
   decideProperty(choice: 'accept' | 'decline'): boolean
   acknowledgeProperty(): boolean
   setPaused(paused: boolean): void
@@ -176,12 +180,16 @@ export function createGameController(initialState: GameState, options: GameContr
     remainingBaseMs: number
     startedAt: number
     speed: number
+    scaled: boolean
   } | undefined
 
   const notify = () => options.onState?.(current)
   const activePlayer = () => current.players[current.activePlayerIndex]!
   const isHuman = () => activePlayer().controller === 'human'
-  const canCommand = () => !disposed && !paused && pending === undefined && isHuman()
+  const presentation = () => current.interaction && 'presentation' in current.interaction ? current.interaction.presentation : undefined
+  let readyClip: string | undefined
+  const exchangeIsOpen = () => current.interaction?.kind === 'ticket-exchange' && presentation()?.clipId === 'fog' && presentation()!.frame >= 15
+  const canCommand = () => !disposed && !paused && isHuman() && (exchangeIsOpen() || pending === undefined && !presentation())
   const cancelPending = () => {
     if (pending?.handle !== undefined) scheduler.clearTimeout(pending.handle)
     pending = undefined
@@ -195,13 +203,13 @@ export function createGameController(initialState: GameState, options: GameContr
   const armPending = () => {
     if (!pending || paused || disposed) return
     pending.startedAt = scheduler.now()
-    pending.speed = speed
+    pending.speed = pending.scaled ? speed : 1
     const scheduledGeneration = generation
-    pending.handle = scheduler.setTimeout(() => runPending(scheduledGeneration), pending.remainingBaseMs / speed)
+    pending.handle = scheduler.setTimeout(() => runPending(scheduledGeneration), pending.remainingBaseMs / pending.speed)
   }
-  const schedule = (callback: () => void, baseDelayMs: number) => {
+  const schedule = (callback: () => void, baseDelayMs: number, scaled = true) => {
     cancelPending()
-    pending = { callback, remainingBaseMs: baseDelayMs, startedAt: scheduler.now(), speed }
+    pending = { callback, remainingBaseMs: baseDelayMs, startedAt: scheduler.now(), speed, scaled }
     armPending()
   }
   const preserveRemaining = () => {
@@ -222,6 +230,38 @@ export function createGameController(initialState: GameState, options: GameContr
   let acknowledgeNotice: () => void
   let acknowledgePropertyResult: () => void
 
+  const advancePresentation = () => {
+    const interaction = current.interaction
+    const visual = presentation()
+    if (!interaction || !visual) return
+    if (visual.frame >= visual.totalFrames) {
+      if (visual.nextClip) {
+        const next = visual.nextClip
+        current = { ...current, interaction: { ...interaction, presentation: {
+          clipId: next, frame: 1, totalFrames: next === 'car2' ? 111 : 50, cellId: visual.cellId,
+        } } as GameInteraction }
+        readyClip = undefined
+        notify()
+        return
+      }
+      const { presentation: _visual, ...rest } = interaction as Extract<GameInteraction, { presentation?: unknown }>
+      current = { ...current, interaction: rest as GameInteraction }
+      readyClip = undefined
+      notify()
+      if (!isHuman()) schedule(acknowledgeNotice, aiThinkDurationMs)
+      return
+    }
+    // Source frame actions jump immediately upon entering frame30 / frame15.
+    const frame = visual.clipId.startsWith('trait-') && visual.frame === 29 && speed === 2 ? 55 :
+      visual.clipId === 'show-npc4' && visual.frame === 14 && speed === 2 ? 40 : visual.frame + 1
+    current = { ...current, interaction: { ...interaction, presentation: { ...visual, frame } } as GameInteraction }
+    notify()
+    schedule(advancePresentation, 1000 / 30, false)
+  }
+  const beginPresentationClock = () => {
+    if (presentation() && readyClip === presentation()!.clipId && !pending) schedule(advancePresentation, 1000 / 30, false)
+  }
+
   const showNotice = (
     notice: InteractionNotice,
     event: InteractionEvent,
@@ -235,9 +275,17 @@ export function createGameController(initialState: GameState, options: GameContr
       interaction: { kind: 'notice', playerId, notice, resume, ...(shop === undefined ? {} : { shop: shop.shop }) },
       continuation: null,
     }
+    if (options.awaitActivityAssets && notice.receipt && (notice.eventKind === 'npc-encountered' || notice.message === 'lost-found')) {
+      const npcId = notice.npcId ?? 23
+      const nextClip = npcId === 9 ? 'car2' : npcId === 14 ? 'show-npc4' : undefined
+      current = { ...current, interaction: { ...current.interaction!, presentation: {
+        clipId: `trait-${npcId}`, frame: 1, totalFrames: 60, nextClip, cellId: notice.affectedCellIds?.[0],
+      } } as GameInteraction }
+      readyClip = undefined
+    }
     options.onInteractionEvent?.(event)
     notify()
-    if (!isHuman()) schedule(acknowledgeNotice, aiThinkDurationMs)
+    if (!isHuman() && !presentation()) schedule(acknowledgeNotice, aiThinkDurationMs)
   }
 
   const showWorldResult = (result: WorldResult, resume: InteractionResume) => {
@@ -253,6 +301,7 @@ export function createGameController(initialState: GameState, options: GameContr
       affectedCellIds: [...result.event.affectedCellIds],
       cardIds: [...result.event.cardIds],
       worldEvent: result.event,
+      receipt: result.event.receipt,
     }, result.endTurn ? 'end-turn' : resume)
     return true
   }
@@ -427,7 +476,8 @@ export function createGameController(initialState: GameState, options: GameContr
       if (cell && current.world.markers[cell.id] === 1) {
         if (isHuman()) {
           current = { ...current, phase: 'interaction', continuation: null,
-            interaction: { kind: 'ticket-exchange', playerId: player.id, mode: 'sell', npcCellId: cell.id } }
+            interaction: { kind: 'ticket-exchange', playerId: player.id, mode: 'sell', npcCellId: cell.id,
+              ...(options.awaitActivityAssets ? { presentation: { clipId: 'fog', frame: 1, totalFrames: 19, cellId: cell.id } } : {}) } }
           notify()
         } else {
           current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, cell.id).snapshot)
@@ -681,6 +731,7 @@ export function createGameController(initialState: GameState, options: GameContr
 
   const resumeCurrentState = () => {
     if (disposed) return
+    if (presentation()) return
     if (current.continuation === 'start-step') {
       startStep()
       return
@@ -794,6 +845,20 @@ export function createGameController(initialState: GameState, options: GameContr
     get state() { return current },
     get paused() { return paused },
     get speed() { return speed },
+    readyActivity(clipId) {
+      if (disposed || !presentation() || presentation()!.clipId !== clipId || readyClip === clipId) return false
+      readyClip = clipId
+      beginPresentationClock()
+      return true
+    },
+    skipActivityPresentation() {
+      const visual = presentation()
+      const targetFrame = visual?.clipId.startsWith('trait-') ? 55 : visual?.clipId === 'show-npc4' ? 45 : 0
+      if (disposed || paused || !isHuman() || !visual || targetFrame === 0 || visual.frame < 10 || visual.frame >= targetFrame) return false
+      current = { ...current, interaction: { ...current.interaction!, presentation: { ...visual, frame: targetFrame } } as GameInteraction }
+      notify()
+      return true
+    },
     roll(fixedDie) {
       if (!canCommand() || current.phase !== 'awaiting-roll') return false
       performRoll(fixedDie)
@@ -985,6 +1050,7 @@ export function createGameController(initialState: GameState, options: GameContr
         notify()
         return false
       }
+      cancelPending()
       current = mergeWorld(current, applied.snapshot)
       if (interaction.npcCellId !== undefined) {
         current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, interaction.npcCellId).snapshot)
@@ -997,6 +1063,7 @@ export function createGameController(initialState: GameState, options: GameContr
     leaveExchange() {
       if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'ticket-exchange') return false
       const interaction = current.interaction
+      cancelPending()
       if (interaction.npcCellId !== undefined) {
         current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, interaction.npcCellId).snapshot)
         current = { ...current, phase: 'landed', interaction: null, continuation: 'process-god' }

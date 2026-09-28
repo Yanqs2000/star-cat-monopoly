@@ -1,6 +1,7 @@
 import { expect, it } from 'vitest'
 import { createGame } from '../../src/modern/features/game/setup'
 import { createGameController } from '../../src/modern/features/game/controller'
+import type { InteractionEvent } from '../../src/modern/features/game/interaction-types'
 
 // These tests inspect immediate commits; future turn timers are not advanced.
 const dormantClock = { scheduler: { now: () => 0, setTimeout: () => 0, clearTimeout: () => {} } }
@@ -75,10 +76,12 @@ it('普通NPC通知保留实际现金、存款和奖券变化以便恢复展示'
   const game = landed()
   game.world.markers = { 1: 12 }
   game.players[0]!.cash = 300
-  const controller = createGameController(game, dormantClock)
+  let emitted: InteractionEvent | undefined
+  const controller = createGameController(game, { ...dormantClock, onInteractionEvent: event => { emitted = event } })
   expect(controller.state.interaction).toMatchObject({ kind: 'notice', notice: {
     eventKind: 'npc-encountered', npcId: 12, receipt: { cashDelta: -300, depositDelta: -700 },
   } })
+  expect(emitted?.receipt).toMatchObject({ cashDelta: -300, depositDelta: -700 })
   controller.dispose()
 })
 

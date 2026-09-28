@@ -15,6 +15,7 @@ import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
 import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
+import type { ActivityClip } from '../game/activity-assets'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
   playerId: number
@@ -37,6 +38,7 @@ export interface MapSceneHandle {
   setTargeting(targeting: boolean): void
   playReaction(playerId: number, reaction: ReactionName): Promise<void>
   playEffect(clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint): void
+  setActivity(clip: ActivityClip | null, frame?: number, position?: GridPoint): Promise<void>
   transitionPlayer(transition: PlayerTransition | null): void
   setPaused(paused: boolean): void
   setSpeed(speed: number): void
@@ -205,6 +207,39 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const worldAnimations = new Map<number, WorldAnimation>()
     const effects = new Set<EffectAnimation>()
     viewport.addChild(world)
+    const activitySprite = new Sprite()
+    const activityViewport = new Container()
+    activityViewport.addChild(activitySprite)
+    viewport.addChild(activityViewport)
+    activitySprite.visible = false
+    let activityId: string | undefined
+    let activityGeneration = 0
+    const setActivity = async (clip: ActivityClip | null, frame = 1, position?: GridPoint) => {
+      if (!clip) {
+        activityId = undefined; activityGeneration += 1; activitySprite.visible = false
+        return
+      }
+      if (activityId !== clip.id) { activityId = clip.id; activityGeneration += 1 }
+      const token = activityGeneration
+      // Share textures for this scene only; the normal scene disposal owns them.
+      let cursor = 0
+      await Promise.all(Array.from({ length: Math.min(6, clip.frames.length) }, async () => {
+        while (cursor < clip.frames.length) await loadTexture(clip.frames[cursor++]!.url)
+      }))
+      if (destroyed || token !== activityGeneration) return
+      const source = clip.frames[frame - 1]!
+      activitySprite.texture = textures.get(source.url)!
+      if (position) {
+        if (activitySprite.parent !== entities) entities.addChild(activitySprite)
+        const point = gridToScene(position)
+        activitySprite.position.set(point.x + source.offsetX, point.y + source.offsetY)
+        activitySprite.zIndex = position.row * 100 + position.column + 1
+      } else {
+        if (activitySprite.parent !== activityViewport) activityViewport.addChild(activitySprite)
+        activitySprite.position.set(source.offsetX, source.offsetY)
+      }
+      activitySprite.visible = true
+    }
     app.stage.addChild(viewport)
 
     let viewportScale = 1
@@ -481,7 +516,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect,
+      focus, follow, resize, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect, setActivity,
       setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },
