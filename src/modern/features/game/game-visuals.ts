@@ -3,6 +3,8 @@ import type { PlayerPose } from '../map/MapScene'
 import type { InteractionEvent } from './interaction-types'
 import type { GameState } from './types'
 import type { GridPoint } from '../map/types'
+import { getCardRecord } from './direct-cards'
+import type { WorldState } from './world-cards'
 
 export type EffectClipId = 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain'
 
@@ -71,17 +73,60 @@ export function reactionManifestUrl(characterId: number): string {
 export function buildPlayerPoses(state: GameState): PlayerPose[] {
   return state.players.map((player, index) => {
     const status = state.world.statuses[player.id]
+    const court=state.interaction?.kind==='court'?state.interaction:null
+    const stagedCourt=court?.jailedPlayerId===player.id && (court.stage==='judgement' || court.stage==='transfer' && (court.presentation?.frame ?? 1)<113)
+    const atOrigin=stagedCourt && (court!.stage==='judgement' || (court!.presentation?.frame ?? 1)<56)
+    const flying=state.interaction?.kind==='portal' && state.interaction.stage==='flight' && state.interaction.playerId===player.id
+    const notice=state.interaction?.kind==='notice'?state.interaction:null
+    const dog=notice?.playerId===player.id && notice.notice.npcId===9 && notice.presentation
+    const dogOrigin=dog ? getCardRecord(notice!.notice.affectedCellIds?.[0] ?? -1)?.position : undefined
+    const dogVisible=!!dog && (dog.clipId==='trait-9' || dog.clipId==='car2' && dog.frame<48)
     return {
       playerId: player.id,
       characterId: player.characterId,
-      position: player.position,
+      position: dogOrigin ?? (atOrigin && court?.transferOrigin ? court.transferOrigin : player.position),
       direction: player.direction,
       active: index === state.activePlayerIndex,
       moving: state.phase === 'moving' && index === state.activePlayerIndex,
-      visible: status?.state !== 2 && status?.state !== 3,
+      visible: !flying && (dogVisible || stagedCourt || status?.state !== 2 && status?.state !== 3),
       godId: status?.godId ?? null,
     }
   })
+}
+
+export function activityCameraTarget(state: GameState): GridPoint | undefined {
+  const interaction=state.interaction
+  if(interaction?.kind==='portal' && interaction.stage==='flight' && interaction.flight) return {column:interaction.flight.x/56,row:interaction.flight.y/40}
+  if(interaction?.kind==='court' && interaction.jailedPlayerId != null) {
+    if(interaction.stage==='transfer') return (interaction.presentation?.frame ?? 1)<113 ? interaction.transferOrigin : state.players.find(player=>player.id===interaction.jailedPlayerId)?.position
+    if(interaction.stage==='holding')return state.players.find(player=>player.id===interaction.jailedPlayerId)?.position
+  }
+  if(interaction?.kind==='notice') {
+    if(interaction.notice.npcId===9 && interaction.notice.eventKind==='npc-encountered') {
+      if(interaction.presentation)return getCardRecord(interaction.notice.affectedCellIds?.[0] ?? -1)?.position
+      return state.players.find(player=>player.id===interaction.playerId)?.position
+    }
+    if(interaction.notice.message.startsWith('court-') || interaction.notice.message==='portal-arrived')return state.players.find(player=>player.id===interaction.playerId)?.position
+  }
+}
+
+function hiddenWorldCells(state: GameState): Set<number> {
+  const hidden=new Set<number>()
+  const interaction=state.interaction
+  if(interaction?.kind==='notice' && interaction.presentation && interaction.notice.eventKind==='npc-encountered' &&
+      [9,12,13,14,15].includes(interaction.notice.npcId ?? 0)) {
+    for(const [cellId,npcId] of Object.entries(state.world.markers))if(npcId===interaction.notice.npcId)hidden.add(Number(cellId))
+  }
+  if(interaction?.kind==='ticket-exchange' && interaction.npcCellId!==undefined &&
+      (!interaction.presentation || interaction.presentation.frame>=15))hidden.add(interaction.npcCellId)
+  if(interaction?.kind==='npc-opening' && interaction.presentation.frame>=16)hidden.add(interaction.cellId)
+  return hidden
+}
+export function worldVisualKey(state: GameState): string { return [...hiddenWorldCells(state)].sort((a,b)=>a-b).join(',') }
+export function buildWorldVisual(state: GameState): WorldState {
+  const hidden=hiddenWorldCells(state)
+  if(hidden.size===0)return state.world
+  return {...state.world,markers:Object.fromEntries(Object.entries(state.world.markers).filter(([cellId])=>!hidden.has(Number(cellId))))}
 }
 
 export function visualForHandAssetFailure(
@@ -123,7 +168,9 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
     if (cellId !== undefined) effects.push({ clipId: 'explosion', cellId })
   } else if (worldKind === 'god-encountered' && event.worldEvent?.npcId === 3 && (event.worldEvent.cashDelta ?? 0) < 0) {
     react(event.playerId, 'sad')
-  } else if (worldKind === 'restriction-released' || worldKind === 'god-expired') {
+  } else if (worldKind === 'restriction-released') {
+    react(event.playerId, 'ready')
+  } else if (worldKind === 'god-expired') {
     react(event.playerId, 'neutral')
   } else if (worldKind === 'barrier-placed' || worldKind === 'mine-placed') {
     react(event.playerId, 'ready')

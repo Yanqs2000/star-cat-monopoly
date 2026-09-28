@@ -188,7 +188,7 @@ function spawnNpc(snapshot: WorldSnapshot, npcId: number, ignoredPlayerId?: numb
   snapshot.world.markers[candidates[draw.value]!] = npcId
 }
 
-function applyRestriction(
+export function applyRestriction(
   snapshot: WorldSnapshot,
   playerId: number,
   location: { direction: number; position: GridPoint; days: number },

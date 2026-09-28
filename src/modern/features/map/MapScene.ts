@@ -15,7 +15,7 @@ import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
 import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
-import type { ActivityClip } from '../game/activity-assets'
+import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
   playerId: number
@@ -38,7 +38,8 @@ export interface MapSceneHandle {
   setTargeting(targeting: boolean): void
   playReaction(playerId: number, reaction: ReactionName): Promise<void>
   playEffect(clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint): void
-  setActivity(clip: ActivityClip | null, frame?: number, position?: GridPoint): Promise<void>
+  setActivity(clip: ActivityClip | null, frame?: number, position?: GridPoint, transform?: {scale: number;depth: number}): Promise<void>
+  getPortalDecorations(): NativeOverlay[]
   transitionPlayer(transition: PlayerTransition | null): void
   setPaused(paused: boolean): void
   setSpeed(speed: number): void
@@ -82,6 +83,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   options: MapSceneOptions): Promise<MapSceneHandle> {
   const app = new Application()
   const textures = new Map<string, Texture>()
+  const textureUrls = new Map<Texture,string>()
   const bitmaps: ImageBitmap[] = []
   const inflightTextures = new Map<string, Promise<void>>()
   const controller = new AbortController()
@@ -109,7 +111,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         const bitmap = await decodeBitmap(await response.blob(), controller.signal)
         bitmaps.push(bitmap)
-        textures.set(url, new Texture({ source: new ImageSource({ resource: bitmap, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) }))
+        const texture=new Texture({ source: new ImageSource({ resource: bitmap, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) })
+        textures.set(url,texture);textureUrls.set(texture,url)
       } catch (error) {
         throw new Error(`素材加载失败：${url}（${error instanceof Error ? error.message : String(error)}）`)
       } finally {
@@ -214,7 +217,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     activitySprite.visible = false
     let activityId: string | undefined
     let activityGeneration = 0
-    const setActivity = async (clip: ActivityClip | null, frame = 1, position?: GridPoint) => {
+    const setActivity = async (clip: ActivityClip | null, frame = 1, position?: GridPoint, transform?: {scale: number;depth: number}) => {
       if (!clip) {
         activityId = undefined; activityGeneration += 1; activitySprite.visible = false
         return
@@ -229,11 +232,13 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (destroyed || token !== activityGeneration) return
       const source = clip.frames[frame - 1]!
       activitySprite.texture = textures.get(source.url)!
+      const scale=transform?.scale ?? 1
+      activitySprite.scale.set(scale)
       if (position) {
         if (activitySprite.parent !== entities) entities.addChild(activitySprite)
         const point = gridToScene(position)
-        activitySprite.position.set(point.x + source.offsetX, point.y + source.offsetY)
-        activitySprite.zIndex = position.row * 100 + position.column + 1
+        activitySprite.position.set(point.x + source.offsetX*scale, point.y + source.offsetY*scale)
+        activitySprite.zIndex = transform?.depth ?? position.row * 100 + position.column + 1
       } else {
         if (activitySprite.parent !== activityViewport) activityViewport.addChild(activitySprite)
         activitySprite.position.set(source.offsetX, source.offsetY)
@@ -330,6 +335,17 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         image.position.set(asset.offsetX, asset.offsetY)
         badge.text = state.ownerId === null ? (state.level === 0 ? '' : `中立 · ${state.level}级`) : `P${state.ownerId} · ${state.level}级`
       }
+    }
+    const getPortalDecorations = (): NativeOverlay[] => {
+      return [...properties.map(item=>({image:item.image,view:item.image.parent!,symbol:3401})),
+        ...companyViews.map(item=>({image:item.image,view:item.view,symbol:0}))].map(({image,view,symbol})=> {
+          const url=textureUrls.get(image.texture)
+          if(!url)throw new Error('小地图图层缺少原素材纹理')
+          const clip:ActivityClip={id:`mini-${url.replace(/\W/g,'-')}`,sourceSymbol:symbol,fps:30,frames:[{
+            sourceFrame:1,url,width:image.texture.width,height:image.texture.height,offsetX:image.x,offsetY:image.y,fields:[],
+          }]}
+          return {clip,frame:1,x:170+view.x*.25,y:90+view.y*.25,scale:.25,depth:30000+view.zIndex*30}
+        })
     }
     const setWorld = (state: WorldState) => {
       if (!worldManifest) return
@@ -516,7 +532,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect, setActivity,
+      focus, follow, resize, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect, setActivity, getPortalDecorations,
       setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },

@@ -26,6 +26,9 @@ import {
   type WorldSnapshot,
 } from './world-cards'
 import type { GridPoint } from '../map/types'
+import { advancePortalFlight, advancePortalHeads, chooseAiPortal, choosePortal as applyPortal, createPortalFlight, createPortalHeads, portalAt } from './portal'
+import { courtTargets, judgeCourt } from './court'
+import { randomInt } from './random'
 
 export type { InteractionEvent } from './interaction-types'
 
@@ -80,6 +83,9 @@ export interface GameController {
   leaveExchange(): boolean
   readyActivity(clipId: string): boolean
   skipActivityPresentation(): boolean
+  choosePortal(destination: number): boolean
+  chooseCourtTarget(playerId: number): boolean
+  chooseCourtCase(caseId: number): boolean
   decideProperty(choice: 'accept' | 'decline'): boolean
   acknowledgeProperty(): boolean
   setPaused(paused: boolean): void
@@ -188,8 +194,16 @@ export function createGameController(initialState: GameState, options: GameContr
   const isHuman = () => activePlayer().controller === 'human'
   const presentation = () => current.interaction && 'presentation' in current.interaction ? current.interaction.presentation : undefined
   let readyClip: string | undefined
+  const expectedActivityScene = () => {
+    const interaction=current.interaction
+    if(interaction?.kind==='portal')return interaction.stage==='choice'?'station':`fly-${activePlayer().characterId}-${interaction.flight!.heading}`
+    if(interaction?.kind==='court' && ['target','case'].includes(interaction.stage))return `court-${interaction.stage}`
+    return undefined
+  }
+  const activitySceneReady = () => !options.awaitActivityAssets || expectedActivityScene()===undefined || readyClip===expectedActivityScene()
   const exchangeIsOpen = () => current.interaction?.kind === 'ticket-exchange' && presentation()?.clipId === 'fog' && presentation()!.frame >= 15
-  const canCommand = () => !disposed && !paused && isHuman() && (exchangeIsOpen() || pending === undefined && !presentation())
+  const canCommand = () => !disposed && !paused && isHuman() && activitySceneReady() && (exchangeIsOpen() ||
+    current.interaction?.kind==='portal' && current.interaction.stage==='choice' && !presentation() || pending === undefined && !presentation())
   const cancelPending = () => {
     if (pending?.handle !== undefined) scheduler.clearTimeout(pending.handle)
     pending = undefined
@@ -229,12 +243,26 @@ export function createGameController(initialState: GameState, options: GameContr
   let beginTurn: () => void
   let acknowledgeNotice: () => void
   let acknowledgePropertyResult: () => void
+  let completeCourtPresentation: () => void
+  let advanceFlight: () => void
+  let advancePortalChoice: () => void
+  let advanceCourtHolding: () => void
 
   const advancePresentation = () => {
     const interaction = current.interaction
     const visual = presentation()
     if (!interaction || !visual) return
     if (visual.frame >= visual.totalFrames) {
+      if(interaction.kind==='npc-opening') {
+        current=mergeWorld(current,finishNpcEncounter(projectWorld(current),1,interaction.cellId).snapshot)
+        current={...current,phase:'landed',interaction:null,continuation:'process-god'}
+        readyClip=undefined;notify();processGodThenTerrain();return
+      }
+      if (interaction.kind === 'court' && (interaction.playerId !== undefined) &&
+          (!isHuman() && (interaction.stage === 'target' || interaction.stage === 'case') || interaction.stage === 'judgement' || interaction.stage === 'transfer')) {
+        completeCourtPresentation()
+        return
+      }
       if (visual.nextClip) {
         const next = visual.nextClip
         current = { ...current, interaction: { ...interaction, presentation: {
@@ -246,20 +274,27 @@ export function createGameController(initialState: GameState, options: GameContr
       }
       const { presentation: _visual, ...rest } = interaction as Extract<GameInteraction, { presentation?: unknown }>
       current = { ...current, interaction: rest as GameInteraction }
-      readyClip = undefined
+      readyClip = interaction.kind==='portal' || interaction.kind==='court' ? visual.clipId : undefined
       notify()
+      if (interaction.kind === 'portal' && interaction.stage === 'flight') { schedule(advanceFlight,1000/30,false);return }
+      if (interaction.kind === 'portal' && interaction.stage === 'choice') { schedule(advancePortalChoice,1000/30,false);return }
       if (!isHuman()) schedule(acknowledgeNotice, aiThinkDurationMs)
       return
     }
     // Source frame actions jump immediately upon entering frame30 / frame15.
     const frame = visual.clipId.startsWith('trait-') && visual.frame === 29 && speed === 2 ? 55 :
-      visual.clipId === 'show-npc4' && visual.frame === 14 && speed === 2 ? 40 : visual.frame + 1
-    current = { ...current, interaction: { ...interaction, presentation: { ...visual, frame } } as GameInteraction }
+      visual.clipId === 'show-npc4' && visual.frame === 14 && speed === 2 ? 40 :
+      visual.clipId === 'show2' && visual.frame === 14 && speed===2 ? 35 : visual.frame + 1
+    const priorVerdictFrame=interaction.kind==='court'?interaction.verdictFrame:undefined
+    const verdictFrame=priorVerdictFrame === undefined ? undefined : priorVerdictFrame>=45 ? 45 :
+      priorVerdictFrame===14 && speed===2 && interaction.kind==='court' && interaction.stage==='judgement' ? 35 : priorVerdictFrame+1
+    current = { ...current, interaction: { ...interaction, presentation: { ...visual, frame },
+      ...(verdictFrame === undefined ? {} : {verdictFrame}) } as GameInteraction }
     notify()
     schedule(advancePresentation, 1000 / 30, false)
   }
   const beginPresentationClock = () => {
-    if (presentation() && readyClip === presentation()!.clipId && !pending) schedule(advancePresentation, 1000 / 30, false)
+    if (presentation() && (!options.awaitActivityAssets || readyClip === presentation()!.clipId) && !pending) schedule(advancePresentation, 1000 / 30, false)
   }
 
   const showNotice = (
@@ -283,6 +318,10 @@ export function createGameController(initialState: GameState, options: GameContr
       } } as GameInteraction }
       readyClip = undefined
     }
+    if(options.awaitActivityAssets && ['court-no-targets','portal-cancel'].includes(notice.message)) {
+      current={...current,interaction:{...current.interaction!,presentation:{clipId:'show2',frame:1,totalFrames:45}} as GameInteraction}
+      readyClip=undefined
+    }
     options.onInteractionEvent?.(event)
     notify()
     if (!isHuman() && !presentation()) schedule(acknowledgeNotice, aiThinkDurationMs)
@@ -304,6 +343,106 @@ export function createGameController(initialState: GameState, options: GameContr
       receipt: result.event.receipt,
     }, result.endTurn ? 'end-turn' : resume)
     return true
+  }
+
+  const selectPortal = (destination: number, ai = false) => {
+    const interaction = current.interaction
+    if (interaction?.kind !== 'portal' || interaction.stage !== 'choice') return false
+    if(!ai && (!Number.isInteger(destination) || destination<1 || destination>5 || portalAt(projectWorld(current),interaction.playerId)===null)) {
+      current={...current,interaction:{...interaction,error:'魔法门目的地无效'}};notify();return false
+    }
+    if(!ai && interaction.heads) {
+      // Heads are newer MovieClips: their last native frame precedes station.frame3 removing game1.
+      const closing=advancePortalHeads(interaction.heads,current.rngState)
+      current={...current,rngState:closing.rngState}
+    }
+    const from = { ...activePlayer().position }
+    const result = ai ? chooseAiPortal(projectWorld(current),interaction.playerId) : applyPortal(projectWorld(current),interaction.playerId,destination)
+    if (result.error) { current={...current,interaction:{...interaction,error:result.error}};notify();return false }
+    cancelPending()
+    current=mergeWorld(current,result.snapshot)
+    if (!result.transferred) {
+      showNotice({kind:'activity',message:'portal-cancel'}, {kind:'activity',playerId:interaction.playerId},'end-turn')
+      return true
+    }
+    const flight=createPortalFlight(from,activePlayer().position)
+    current={...current,interaction:{kind:'portal',playerId:interaction.playerId,stage:'flight',destination:result.destination,flight,
+      ...(options.awaitActivityAssets ? {presentation:{clipId:`fly-${activePlayer().characterId}-${flight.heading}`,frame:1,totalFrames:1}} : {})}}
+    readyClip=undefined
+    notify()
+    if (!options.awaitActivityAssets) schedule(advanceFlight,1000/30,false)
+    return true
+  }
+  advanceFlight=() => {
+    const interaction=current.interaction
+    if (interaction?.kind !== 'portal' || interaction.stage !== 'flight' || !interaction.flight) return
+    const flight=advancePortalFlight(interaction.flight)
+    if (flight.done) {
+      showNotice({kind:'activity',message:'portal-arrived'}, {kind:'activity',playerId:interaction.playerId},'end-turn')
+      return
+    }
+    current={...current,interaction:{...interaction,flight}}
+    notify()
+    schedule(advanceFlight,1000/30,false)
+  }
+  advancePortalChoice=() => {
+    const interaction=current.interaction
+    if(interaction?.kind!=='portal' || interaction.stage!=='choice' || !interaction.heads)return
+    const next=advancePortalHeads(interaction.heads,current.rngState)
+    current={...current,rngState:next.rngState,interaction:{...interaction,heads:next.heads,choiceFrames:(interaction.choiceFrames ?? 0)+1}}
+    notify();schedule(advancePortalChoice,1000/30,false)
+  }
+  const finishCourt = () => {
+    const interaction=current.interaction
+    if(interaction?.kind !== 'court')return
+    showNotice({kind:'activity',message:`court-${interaction.verdict}`,affectedPlayerIds:interaction.jailedPlayerId == null ? [] : [interaction.jailedPlayerId],
+      receipt:{kind:'court',cashDelta:0,depositDelta:0,ticketDelta:0}},
+      {kind:'activity',playerId:interaction.playerId,affectedPlayerIds:interaction.jailedPlayerId == null ? [] : [interaction.jailedPlayerId]},'end-turn')
+  }
+  const selectCourtTarget = (targetId: number) => {
+    const interaction=current.interaction
+    if (interaction?.kind !== 'court' || interaction.stage !== 'target' || !courtTargets(projectWorld(current),interaction.playerId).includes(targetId)) return false
+    let caseId: number | undefined
+    if (!isHuman()) { const draw=randomInt(current.rngState,3);current={...current,rngState:draw.nextState};caseId=draw.value }
+    current={...current,interaction:{...interaction,stage:'case',targetId,caseId,
+      presentation: !isHuman() || options.awaitActivityAssets ? {clipId:'court-case',frame:1,totalFrames:isHuman()?1:60} : undefined}}
+    readyClip=undefined;notify();beginPresentationClock()
+    return true
+  }
+  const selectCourtCase = (caseId: number) => {
+    const interaction=current.interaction
+    if (interaction?.kind !== 'court' || interaction.stage !== 'case' || interaction.targetId === undefined) return false
+    const result=judgeCourt(projectWorld(current),interaction.playerId,interaction.targetId,caseId)
+    if(result.error){current={...current,interaction:{...interaction,error:result.error}};notify();return false}
+    const transferOrigin=result.jailedPlayerId === null ? undefined : {...current.players.find(player=>player.id===result.jailedPlayerId)!.position}
+    current=mergeWorld(current,result.snapshot)
+    current={...current,interaction:{...interaction,stage:'judgement',caseId,verdict:result.verdict!,roll:result.roll!,jailedPlayerId:result.jailedPlayerId,transferOrigin,verdictFrame:1,
+      presentation:{clipId:'court-verdict',frame:1,totalFrames:40}}}
+    readyClip=undefined;notify();beginPresentationClock()
+    return true
+  }
+  advanceCourtHolding=() => {
+    const interaction=current.interaction
+    if(interaction?.kind !== 'court' || interaction.stage !== 'holding')return
+    const waitFrames=(interaction.waitFrames ?? 0)+1
+    if(waitFrames>=40){finishCourt();return}
+    current={...current,interaction:{...interaction,waitFrames}}
+    notify();schedule(advanceCourtHolding,1000/30,false)
+  }
+  completeCourtPresentation=() => {
+    const interaction=current.interaction
+    if(interaction?.kind !== 'court')return
+    if(interaction.stage==='target'){selectCourtTarget(interaction.targetId!);return}
+    if(interaction.stage==='case'){selectCourtCase(interaction.caseId!);return}
+    if(interaction.stage==='judgement') {
+      if(interaction.jailedPlayerId === null){finishCourt();return}
+      current={...current,interaction:{...interaction,stage:'transfer',presentation:{clipId:'car1',frame:1,totalFrames:113}}}
+      readyClip=undefined;notify();beginPresentationClock();return
+    }
+    if(interaction.stage==='transfer') {
+      current={...current,interaction:{...interaction,stage:'holding',waitFrames:0,presentation:undefined}}
+      readyClip=undefined;notify();schedule(advanceCourtHolding,1000/30,false)
+    }
   }
 
   const settleProperty = (choice: 'accept' | 'decline') => {
@@ -379,6 +518,28 @@ export function createGameController(initialState: GameState, options: GameContr
     }
 
     const location = getCardCell(player.position)
+    if(location?.type===17) {
+      const heads=isHuman()?createPortalHeads(projectWorld(current)):undefined
+      if(heads)current={...current,rngState:heads.rngState}
+      current={...current,phase:'interaction',continuation:null,interaction:{kind:'portal',playerId:player.id,stage:'choice',
+        heads:heads?.heads,choiceFrames:0,
+        ...(options.awaitActivityAssets && isHuman() ? {presentation:{clipId:'station',frame:1,totalFrames:1}} : {})}}
+      readyClip=undefined
+      notify()
+      if(!isHuman())selectPortal(5,true)
+      else if(!options.awaitActivityAssets)schedule(advancePortalChoice,1000/30,false)
+      return
+    }
+    if(location?.type===22) {
+      const targets=courtTargets(projectWorld(current),player.id)
+      if(targets.length===0){showNotice({kind:'activity',message:'court-no-targets'},{kind:'activity',playerId:player.id},'end-turn');return}
+      let targetId: number | undefined
+      if(!isHuman()){const draw=randomInt(current.rngState,targets.length);current={...current,rngState:draw.nextState};targetId=targets[draw.value]!}
+      current={...current,phase:'interaction',continuation:null,interaction:{kind:'court',playerId:player.id,stage:'target',targetId,
+        presentation: !isHuman() || options.awaitActivityAssets ? {clipId:'court-target',frame:1,totalFrames:isHuman()?1:60} : undefined}}
+      readyClip=undefined;notify();beginPresentationClock()
+      return
+    }
     if (location?.type === 21) {
       if (isHuman()) {
         current = { ...current, phase: 'interaction', continuation: null,
@@ -479,6 +640,10 @@ export function createGameController(initialState: GameState, options: GameContr
             interaction: { kind: 'ticket-exchange', playerId: player.id, mode: 'sell', npcCellId: cell.id,
               ...(options.awaitActivityAssets ? { presentation: { clipId: 'fog', frame: 1, totalFrames: 19, cellId: cell.id } } : {}) } }
           notify()
+        } else if(options.awaitActivityAssets) {
+          current={...current,phase:'interaction',continuation:null,interaction:{kind:'npc-opening',playerId:player.id,npcId:1,cellId:cell.id,
+            presentation:{clipId:'fog',frame:1,totalFrames:18,cellId:cell.id}}}
+          readyClip=undefined;notify()
         } else {
           current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, cell.id).snapshot)
           current = { ...current, continuation: 'process-god' }
@@ -731,7 +896,17 @@ export function createGameController(initialState: GameState, options: GameContr
 
   const resumeCurrentState = () => {
     if (disposed) return
-    if (presentation()) return
+    if (presentation()) {beginPresentationClock();return}
+    if(current.interaction?.kind==='portal') {
+      if(current.interaction.stage==='flight' && !options.awaitActivityAssets) schedule(advanceFlight,1000/30,false)
+      else if(!isHuman())selectPortal(5,true)
+      else if(current.interaction.stage==='choice' && !options.awaitActivityAssets)schedule(advancePortalChoice,1000/30,false)
+      return
+    }
+    if(current.interaction?.kind==='court') {
+      if(current.interaction.stage==='holding')schedule(advanceCourtHolding,1000/30,false)
+      return
+    }
     if (current.continuation === 'start-step') {
       startStep()
       return
@@ -845,15 +1020,29 @@ export function createGameController(initialState: GameState, options: GameContr
     get state() { return current },
     get paused() { return paused },
     get speed() { return speed },
+    choosePortal(destination) { return canCommand() && selectPortal(destination) },
+    chooseCourtTarget(playerId) { return canCommand() && selectCourtTarget(playerId) },
+    chooseCourtCase(caseId) { return canCommand() && selectCourtCase(caseId) },
     readyActivity(clipId) {
-      if (disposed || !presentation() || presentation()!.clipId !== clipId || readyClip === clipId) return false
+      if(disposed || readyClip===clipId)return false
+      if(!presentation()) {
+        if(expectedActivityScene()!==clipId)return false
+        readyClip=clipId
+        if(current.interaction?.kind==='portal')schedule(current.interaction.stage==='flight'?advanceFlight:advancePortalChoice,1000/30,false)
+        return true
+      }
+      if(presentation()!.clipId!==clipId)return false
       readyClip = clipId
       beginPresentationClock()
       return true
     },
     skipActivityPresentation() {
       const visual = presentation()
-      const targetFrame = visual?.clipId.startsWith('trait-') ? 55 : visual?.clipId === 'show-npc4' ? 45 : 0
+      const court=current.interaction
+      if(court?.kind==='court' && court.stage==='judgement' && !disposed && !paused && isHuman() && (court.verdictFrame ?? 0)>=10 && court.verdictFrame!<40) {
+        current={...current,interaction:{...court,verdictFrame:40}};notify();return true
+      }
+      const targetFrame = visual?.clipId.startsWith('trait-') ? 55 : visual?.clipId === 'show-npc4' ? 45 : visual?.clipId==='show2'?40:0
       if (disposed || paused || !isHuman() || !visual || targetFrame === 0 || visual.frame < 10 || visual.frame >= targetFrame) return false
       current = { ...current, interaction: { ...current.interaction!, presentation: { ...visual, frame: targetFrame } } as GameInteraction }
       notify()

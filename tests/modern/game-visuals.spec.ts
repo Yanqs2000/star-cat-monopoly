@@ -119,7 +119,11 @@ describe('3A 对局视觉投影', () => {
     expect(interactionVisualPlan({
       kind: 'restriction', playerId: 1,
       worldEvent: { kind: 'restriction-released', playerId: 1, affectedCellIds: [], affectedPlayerIds: [1], cardIds: [] },
-    }).reactions).toEqual([{ playerId: 1, name: 'neutral' }])
+    }).reactions).toEqual([{ playerId: 1, name: 'ready' }])
+    expect(interactionVisualPlan({
+      kind: 'restriction',playerId:1,
+      worldEvent:{kind:'god-expired',playerId:1,affectedCellIds:[],affectedPlayerIds:[1],cardIds:[]},
+    }).reactions).toEqual([{playerId:1,name:'neutral'}])
   })
 
   it('住院hurt在加载和播放时暂时可见，播放结束隐藏，释放后不复现旧帧', () => {

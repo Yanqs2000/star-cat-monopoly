@@ -11,8 +11,11 @@ import type { GameInteraction } from './interaction-types'
 import type { GameState } from './types'
 import { ticketExchangeMaximum } from './ticket-exchange'
 import { activityChanges, originalActivityText } from './activity-text'
-import type { ActivityManifest } from './activity-assets'
+import type { ActivityClip, ActivityManifest, NativeOverlay } from './activity-assets'
 import NativeActivity from './NativeActivity.vue'
+import { PORTALS } from './portal'
+import { COURT_CASES, courtTargets } from './court'
+import { getCardRecord } from './direct-cards'
 
 const props = withDefaults(defineProps<{
   game: GameState
@@ -20,6 +23,7 @@ const props = withDefaults(defineProps<{
   cardAssets: InteractionAsset[]
   luckAssets?: InteractionAsset[]
   activityAssets?: ActivityManifest
+  portalDecorations?: NativeOverlay[]
 }>(), { luckAssets: () => [] })
 const emit = defineEmits<{
   confirm: []
@@ -42,10 +46,14 @@ const emit = defineEmits<{
   'leave-exchange': []
   'activity-ready': [clipId: string]
   'skip-activity': []
+  'choose-portal': [destination: number]
+  'court-target': [playerId: number]
+  'court-case': [caseId: number]
 }>()
 const exchangeQuantity = ref(0)
 const exchangeLoaded = ref(false)
 const originalExchangeUrl = computed(() => `${import.meta.env.BASE_URL}assets/activities/${interaction.value?.kind === 'ticket-exchange' && interaction.value.mode === 'sell' ? 'witch' : 'lottery'}/1.png`)
+const nativeImageUrl = (id: string) => `${import.meta.env.BASE_URL}assets/activities/${id}/1.png`
 const creditAmount = ref(0)
 const bankAmount = ref(0)
 const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
@@ -65,7 +73,72 @@ const presentationClip = computed(() => props.activityAssets?.clips.find(clip =>
 const exchangeClip = computed(() => props.activityAssets?.clips.find(clip => clip.id === (interaction.value?.kind === 'ticket-exchange' && interaction.value.mode === 'sell' ? 'witch' : 'lottery')))
 const exchangeMaximum = computed(() => interaction.value?.kind === 'ticket-exchange' ? ticketExchangeMaximum(props.game, player.value.id, interaction.value.mode) : 0)
 const canAct = computed(() => !props.paused && !presentationBlocking.value && player.value.controller === 'human')
-const activityText = computed(() => originalActivityText(interaction.value?.kind === 'notice' ? interaction.value.notice.receipt : undefined))
+const activityText = computed(() => {
+  const notice=interaction.value?.kind==='notice'?interaction.value.notice:undefined
+  if(notice?.message==='court-no-targets')return {show_say1:'目的地~~~',show_say2:'明日法院'}
+  if(notice?.message==='portal-cancel')return {show_say1:'目的地~~~',show_say2:PORTALS.find(item=>item.position.column===player.value.position.column&&item.position.row===player.value.position.row)?.name ?? '魔法门'}
+  return originalActivityText(notice?.receipt)
+})
+const activityClip = (id: string) => props.activityAssets?.clips.find(clip=>clip.id===id)
+const portalClip = computed(()=>activityClip('station'))
+const portalPrepared = computed(()=> {
+  const ids=['map-mini','magic-talk',...Object.values(props.game.world.markers).map(id=>id===6?'mini-barrier':id===7?'mini-mine':`mini-npc-${id}`),...props.game.players.filter(item=>props.game.world.statuses[item.id]?.state!==9).map(item=>`head-${item.characterId}`)]
+  return [...ids.map(activityClip).filter((clip):clip is ActivityClip=>!!clip),...(props.portalDecorations ?? []).map(item=>item.clip)]
+})
+const portalOverlays = computed(()=> {
+  const items: NativeOverlay[]=[]
+  const mini=activityClip('map-mini')
+  if(mini)items.push({clip:mini,frame:1,x:123.5,y:11.25,depth:9})
+  items.push(...props.portalDecorations ?? [])
+  for(const [recordId,npcId] of Object.entries(props.game.world.markers)) {
+    const position=getCardRecord(Number(recordId))?.position
+    const clip=activityClip(npcId===6?'mini-barrier':npcId===7?'mini-mine':`mini-npc-${npcId}`)
+    if(position&&clip)items.push({clip,frame:1,x:170+position.column*14,y:90+position.row*10,scale:.25,depth:30000+position.row*3000+position.column*30+9})
+  }
+  const heads=interaction.value?.kind==='portal'?interaction.value.heads ?? []:[]
+  for(const head of heads) {
+    const player=props.game.players.find(item=>item.id===head.playerId)!
+    const clip=activityClip(`head-${player.characterId}`)
+    if(clip)items.push({clip,frame:1,x:170+player.position.column*14,y:90+player.position.row*10,scale:.25,opacity:head.alpha/100,depth:20000000+player.position.row*3000+player.position.column*30+8-player.id})
+  }
+  const talk=activityClip('magic-talk')
+  if(talk)for(const [index,portal] of PORTALS.entries()) {
+    const column=[30,34,10,6][index] ?? 0,row=[5,27,37,15][index] ?? 0
+    items.push({clip:talk,frame:1,x:170+column*14,y:90+row*10,scale:.5,text:{say:portal.name},depth:10000+row*40000+column*560+16})
+  }
+  return items.sort((a,b)=>(a.depth ?? 0)-(b.depth ?? 0))
+})
+const courtInteraction = computed(()=>interaction.value?.kind==='court'?interaction.value:null)
+const courtClipId = computed(()=>courtInteraction.value?.stage==='target'?'court-target':courtInteraction.value?.stage==='case'?'court-case':'court-verdict')
+const courtClip = computed(()=>activityClip(courtClipId.value))
+const eligibleCourtPlayers = computed(()=>courtTargets(props.game,player.value.id).map(id=>props.game.players.find(item=>item.id===id)!))
+const courtText = computed(()=>Object.fromEntries(eligibleCourtPlayers.value.map((item,index)=>[`name${index+1}`,item.name])))
+const verdictText = computed(()=>({show_say1:'法院宣判',show_say2:({win:'原 告 胜 诉',settle:'庭 外 和 解',lose:'原 告 败 诉'} as Record<string,string>)[courtInteraction.value?.verdict ?? ''] ?? ''}))
+const courtPrepared = computed(()=> {
+  const stage=courtInteraction.value?.stage
+  const ids=stage==='target'?eligibleCourtPlayers.value.map(item=>`face-${item.characterId}`).concat('court-highlight'):stage==='case'?['court-highlight']:['show2']
+  return ids.map(activityClip).filter((clip):clip is ActivityClip=>!!clip)
+})
+const courtOverlays = computed(()=> {
+  const items: NativeOverlay[]=[]
+  const court=courtInteraction.value
+  if(!court)return items
+  if(court.stage==='target')for(const [index,item] of eligibleCourtPlayers.value.entries()) {
+    const clip=activityClip(`face-${item.characterId}`)
+    if(clip)items.push({clip,frame:1,x:499.95,y:267+50*index})
+  }
+  const elapsed=court.presentation?.frame ?? 0
+  if(player.value.controller==='ai' && elapsed>=30 && (court.stage==='target'||court.stage==='case')) {
+    const clip=activityClip('court-highlight')
+    const index=court.stage==='target'?eligibleCourtPlayers.value.findIndex(item=>item.id===court.targetId):court.caseId ?? 0
+    if(clip)items.push({clip,frame:Math.min(23,elapsed-29),x:court.stage==='target'?475:300,y:court.stage==='target'?240+50*index:250+80*index})
+  }
+  if(court.stage==='judgement' && (court.verdictFrame ?? 1)<45) {
+    const clip=activityClip('show2')
+    if(clip)items.push({clip,frame:court.verdictFrame ?? 1,x:400,y:300,text:verdictText.value})
+  }
+  return items
+})
 const bankMax = computed(() => {
   const account = props.game.credit[player.value.id]
   const loan = props.game.finance.loans[player.value.id] ?? 0
@@ -135,6 +208,9 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   if (notice.message === 'lost-found') return '失物招领'
   if (notice.message === 'ticket-buy') return '购券完成'
   if (notice.message === 'ticket-sell') return '兑奖完成'
+  if (notice.message.startsWith('court-')) return ({'court-no-targets':'法院没有合法被告','court-win':'原告胜诉','court-settle':'庭外和解','court-lose':'原告败诉'} as Record<string,string>)[notice.message] ?? notice.message
+  if (notice.message === 'portal-cancel') return '魔法门：保持原地'
+  if (notice.message === 'portal-arrived') return '魔法门：已抵达目的地'
   if (notice.kind === 'luck') return notice.message
   if (notice.kind === 'tickets') return `获得 ${notice.amount ?? 0} 张奖券`
   if (notice.kind === 'card-draw') return notice.message === 'full' ? '手牌已满，未抽取新卡' : `获得${notice.cardId ? getCardDefinition(notice.cardId).name : '卡片'}`
@@ -170,8 +246,28 @@ watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
-  <section v-if="interaction" class="interaction" :class="{ 'exchange-panel': interaction.kind === 'ticket-exchange', 'presentation-panel': presentationBlocking }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
-    <template v-if="presentationBlocking && presentation && ['fog','car2'].includes(presentation.clipId)">
+  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
+    <template v-if="interaction.kind === 'portal'">
+      <div v-if="interaction.stage === 'choice'" class="portal-original">
+        <NativeActivity v-if="portalClip" data-testid="portal-original" :clip="portalClip" :preload="portalPrepared" :overlays="portalOverlays" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+        <img v-else data-testid="portal-original" :src="nativeImageUrl('station')" alt="魔法门分布图" @error="reportImageError">
+        <button v-for="destination in 5" :key="destination" :data-testid="`portal-${destination}`" class="original-hotspot portal-choice" :style="{top:`${destination === 5 ? 319 : 88+(destination-1)*54}px`}" :disabled="!canAct" :aria-label="destination === 5 ? '保持原地' : PORTALS[destination-1]?.name" @click="emit('choose-portal',destination)">{{ destination === 5 ? '保持原地' : PORTALS[destination-1]?.name }}</button>
+        <p v-if="interaction.error" class="error">{{ interaction.error }}</p>
+      </div>
+      <span v-else class="sr-only" data-testid="portal-flight" :data-frame="interaction.flight?.frames">魔法门飞行途中</span>
+    </template>
+    <template v-else-if="interaction.kind === 'court'">
+      <div v-if="['target','case','judgement'].includes(interaction.stage)" class="court-original">
+        <NativeActivity v-if="courtClip" data-testid="court-original" :key="courtClip.id" :clip="courtClip" :preload="courtPrepared" :overlays="courtOverlays" :text="courtText" @pointerdown="interaction.stage === 'judgement' && emit('skip-activity')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+        <img v-else data-testid="court-original" :src="nativeImageUrl(courtClipId)" alt="法院" @error="reportImageError">
+        <template v-if="interaction.stage === 'target'"><button v-for="(target,index) in eligibleCourtPlayers" :key="target.id" :data-testid="`court-target-${target.id}`" class="original-hotspot court-target" :style="{top:`${252+index*50}px`}" :disabled="!canAct" @click="emit('court-target',target.id)">{{ target.name }}</button></template>
+        <template v-else-if="interaction.stage === 'case'"><button v-for="item in COURT_CASES" :key="item.id" :data-testid="`court-case-${item.id}`" class="original-hotspot court-case" :style="{top:`${254+item.id*82}px`}" :disabled="!canAct" @click="emit('court-case',item.id)">{{ item.name }} · {{ item.days }}天</button></template>
+        <p v-if="interaction.error" class="error">{{ interaction.error }}</p>
+      </div>
+      <NativeActivity v-else-if="interaction.stage === 'transfer' && (interaction.verdictFrame ?? 45)<45 && activityClip('show2')" class="court-transit-verdict" :clip="activityClip('show2')!" :frame="interaction.verdictFrame" :text="verdictText" @asset-error="emit('asset-error',$event)" />
+      <span v-else class="sr-only">拘留转运处理中</span>
+    </template>
+    <template v-else-if="presentationBlocking && presentation && ['fog','car2'].includes(presentation.clipId)">
       <span class="sr-only">{{ presentation.clipId === 'fog' ? '帐篷开启中' : '送医途中' }}</span>
     </template>
     <template v-else-if="presentationBlocking && presentation && presentationClip">
@@ -323,7 +419,8 @@ watch(stockId, () => { stockShares.value = 1 })
 </template>
 
 <style scoped>
-.interaction.exchange-panel{width:min(824px,calc(100% - 350px));padding:0;background:transparent;border:0}.exchange-original{position:relative;width:100%;aspect-ratio:824/624}.exchange-original>img{display:block;width:100%;height:auto}.exchange-form{position:absolute;left:9%;top:42%;width:43%;display:grid;gap:10px;color:#182d45;font-size:16px}.exchange-form label{display:grid;gap:6px}.exchange-form input{width:120px;padding:7px;font:inherit}.exchange-form small{font-size:12px}.exchange-form p{font-size:13px}.interaction.presentation-panel{left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(462px,70%);padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.presentation-panel:has([data-clip="car2"]){width:100%;max-height:none}.presentation-panel:has([data-clip="fog"]){width:182px}.presentation-panel>button{position:absolute;right:20px;bottom:15px}
+.interaction.portal-panel{width:min(814px,calc(100% - 350px));padding:0;background:transparent;border:0;overflow:visible}.interaction.court-panel{width:min(824px,calc(100% - 350px));padding:0;background:transparent;border:0;overflow:visible}.portal-original,.court-original{position:relative;width:100%}.portal-original>img,.court-original>img{display:block;width:100%;height:auto}.portal-map{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.original-hotspot{position:absolute;color:transparent;background:transparent;border:0;padding:0}.original-hotspot:hover{color:transparent;background:#fff2;outline:2px solid #fff7}.portal-choice{left:17px;width:139px;height:37px}.court-target{left:490px;width:190px;height:48px}.court-case{left:300px;width:192px;height:78px}.interaction.court-transfer{left:0;top:0;bottom:0;width:100%;max-height:none}.court-transit-verdict{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:408px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.interaction.exchange-panel{width:min(824px,calc(100% - 350px));padding:0;background:transparent;border:0}.exchange-original{position:relative;width:100%;aspect-ratio:824/624}.exchange-original>img{display:block;width:100%;height:auto}.exchange-form{position:absolute;left:9%;top:42%;width:43%;display:grid;gap:10px;color:#182d45;font-size:16px}.exchange-form label{display:grid;gap:6px}.exchange-form input{width:120px;padding:7px;font:inherit}.exchange-form small{font-size:12px}.exchange-form p{font-size:13px}.interaction.presentation-panel{left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(var(--activity-width,462px),70%);padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.presentation-panel:has([data-clip="car2"]){width:100%;max-height:none}.presentation-panel:has([data-clip="fog"]){width:182px}.presentation-panel>button{position:absolute;right:20px;bottom:15px}
 .company-original{position:relative;width:408px;max-width:100%;aspect-ratio:408/356;margin:8px auto}.company-original>img{display:block;width:100%;height:100%}.company-original>h2{position:absolute;left:24%;top:10%;margin:0;color:white;font-size:21px}.company-summary{position:absolute;left:9%;top:27%;width:82%;height:55%;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:6px;color:#153043}.company-summary p{margin:0;font-size:14px}
 .interaction{position:absolute;z-index:5;left:18px;bottom:18px;width:min(510px,calc(100% - 370px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input,.choice select{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.finance-lines{max-height:260px;overflow:auto;padding-left:20px}.finance-lines li{margin:6px 0}.finance-lines small{display:block;color:#bfd0d3}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{left:12px;right:12px;bottom:42vh;width:auto;max-height:55vh}.shop-grid{grid-template-columns:repeat(4,1fr)}}
 </style>

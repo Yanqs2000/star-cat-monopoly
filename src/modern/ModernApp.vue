@@ -7,10 +7,10 @@ import type { GameController, GameControllerOptions } from './features/game/cont
 import GamePanel from './features/game/GamePanel.vue'
 import InteractionPanel from './features/game/InteractionPanel.vue'
 import { parseInteractionAssets, type InteractionAssetsManifest } from './features/game/interaction-assets'
-import { parseActivityAssets, type ActivityManifest } from './features/game/activity-assets'
+import { parseActivityAssets, type ActivityManifest, type NativeOverlay } from './features/game/activity-assets'
 import { activityChanges } from './features/game/activity-text'
 import PropertyPanel from './features/game/PropertyPanel.vue'
-import { buildPlayerPoses, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, visualForHandAssetFailure, type InteractionVisualPlan } from './features/game/game-visuals'
+import { activityCameraTarget, buildPlayerPoses, buildWorldVisual, worldVisualKey, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, visualForHandAssetFailure, type InteractionVisualPlan } from './features/game/game-visuals'
 import { restoreControllerAfterVisual } from './features/game/visual-recovery'
 import { getCardRecord } from './features/game/direct-cards'
 import { createGame } from './features/game/setup'
@@ -32,6 +32,7 @@ const pending = ref<PendingGame>()
 const game = ref<GameState>()
 const interactionAssets = ref<InteractionAssetsManifest>()
 const activityAssets = ref<ActivityManifest>()
+const portalDecorations=ref<NativeOverlay[]>([])
 const loadState = ref<'idle' | 'loading' | 'ready' | 'error'>('idle')
 const loadError = ref('')
 const history = ref<string[]>([])
@@ -186,7 +187,7 @@ async function loadPendingGame() {
     scene.setPlayers(buildPlayerPoses(initial))
     scene.setCompanies(initial.players)
     scene.setProperties(initial.properties)
-    scene.setWorld(initial.world)
+    scene.setWorld(buildWorldVisual(initial))
     scene.setTargeting(initial.interaction?.kind === 'target-choice')
     scene.showMarkers(true)
     scene.setSpeed(speed.value)
@@ -194,13 +195,27 @@ async function loadPendingGame() {
     let previous = initial
     const updateActivity = (state: GameState) => {
       const interaction = state.interaction
+      if(interaction?.kind==='portal' && interaction.stage==='choice' && portalDecorations.value.length===0) {
+        try { portalDecorations.value=scene?.getPortalDecorations() ?? [] }
+        catch(error){failRuntimeAsset(error instanceof Error?error:new Error(String(error)));return}
+      } else if(interaction?.kind!=='portal')portalDecorations.value=[]
+      const cameraTarget=activityCameraTarget(state)
+      if(cameraTarget)scene?.follow(cameraTarget)
+      if(interaction?.kind==='portal' && interaction.stage==='flight' && interaction.flight) {
+        const flight=interaction.flight
+        const player=state.players.find(item=>item.id===interaction.playerId)!
+        const clip=loadedActivityAssets.clips.find(item=>item.id===`fly-${player.characterId}-${flight.heading}`)
+        if(!clip){failRuntimeAsset(new Error('缺少魔法门飞行原图'));return}
+        void scene?.setActivity(clip,1,{column:flight.x/56,row:flight.y/40},{scale:flight.scale/100,depth:flight.depth})
+          .then(()=>gameController?.readyActivity(clip.id)).catch(error=>{if(!signal.aborted)failRuntimeAsset(error instanceof Error?error:new Error(String(error)))})
+        return
+      }
       const visual = interaction && 'presentation' in interaction ? interaction.presentation : undefined
-      const onMap = visual && ['fog', 'car2'].includes(visual.clipId)
+      const onMap = visual && ['fog', 'car2','car1'].includes(visual.clipId)
       const clip = onMap ? loadedActivityAssets.clips.find(item => item.id === visual.clipId) : null
       if (onMap && !clip) { failRuntimeAsset(new Error(`缺少活动动画：${visual.clipId}`)); return }
       if (clip && visual) {
         const sourcePosition = visual.cellId === undefined ? undefined : getCardRecord(visual.cellId)?.position
-        if (visual.clipId === 'car2' && visual.frame === 55) scene?.follow(state.players[state.activePlayerIndex]!.position)
         void scene?.setActivity(clip, visual.frame, visual.clipId === 'fog' ? sourcePosition : undefined)
           .then(() => gameController?.readyActivity(clip.id)).catch(error => { if (!signal.aborted) failRuntimeAsset(error instanceof Error ? error : new Error(String(error))) })
       } else void scene?.setActivity(null)
@@ -226,13 +241,13 @@ async function loadPendingGame() {
         }
         const activeChanged = previous.activePlayerIndex !== state.activePlayerIndex
         const propertiesChanged = previous.properties !== state.properties
-        const worldChanged = previous.world !== state.world
+        const worldChanged = previous.world !== state.world || worldVisualKey(previous)!==worldVisualKey(state)
         if (previous.interaction?.kind === 'notice' && state.interaction?.kind !== 'notice') latestNoticeVisual = undefined
         previous = state
         game.value = state
         scene?.setPlayers(buildPlayerPoses(state))
         if (propertiesChanged) scene?.setProperties(state.properties)
-        if (worldChanged) scene?.setWorld(state.world)
+        if (worldChanged) scene?.setWorld(buildWorldVisual(state))
         scene?.setTargeting(!paused.value && state.interaction?.kind === 'target-choice')
         if (following.value && activeChanged) scene?.follow(state.players[state.activePlayerIndex]!.position)
         updateActivity(state)
@@ -305,6 +320,9 @@ function exchangeTickets(quantity: number) { gameController?.exchangeTickets(qua
 function leaveExchange() { gameController?.leaveExchange() }
 function readyActivity(clipId: string) { gameController?.readyActivity(clipId) }
 function skipActivity() { gameController?.skipActivityPresentation() }
+function choosePortal(destination: number) { gameController?.choosePortal(destination) }
+function chooseCourtTarget(playerId: number) { gameController?.chooseCourtTarget(playerId) }
+function chooseCourtCase(caseId: number) { gameController?.chooseCourtCase(caseId) }
 function togglePause() {
   if (!gameController || !scene) return
   paused.value = !paused.value
@@ -339,6 +357,7 @@ function returnToSelection() {
   game.value = undefined
   interactionAssets.value = undefined
   activityAssets.value = undefined
+  portalDecorations.value=[]
   loadState.value = 'idle'
   mode.value = 'selection'
 }
@@ -391,7 +410,7 @@ onBeforeUnmount(() => {
       <div ref="host" class="canvas-host" />
       <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
-      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @asset-error="failInteractionAsset" />
+      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
       <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理将在后续版本开放，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>

@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import com.jpexs.decompiler.flash.AbortRetryIgnoreHandler;
 import com.jpexs.decompiler.flash.SWF;
 import com.jpexs.decompiler.flash.exporters.FrameExporter;
@@ -24,6 +25,10 @@ class ExportActivityAssets {
     }
     private static DefineSpriteTag sprite(SWF swf, int id) { return (DefineSpriteTag) swf.getCharacter(id); }
     private static DefineSpriteTag copy(SWF swf, DefineSpriteTag source, int first, int count, Integer picId) {
+        return copy(swf,source,first,count,"pic",picId,Set.of());
+    }
+    private static DefineSpriteTag copy(SWF swf, DefineSpriteTag source, int first, int count,
+                                         String childName, Integer replacement, Set<String> removed) {
         var result = new DefineSpriteTag(swf);
         result.setCharacterId(nextId++);
         var previous = new ArrayList<Integer>();
@@ -33,8 +38,9 @@ class ExportActivityAssets {
             }
             Frame frame = source.getTimeline().getFrames().get(first + i);
             for (var entry : frame.layers.entrySet()) {
+                if (entry.getValue().instanceName != null && removed.contains(entry.getValue().instanceName)) continue;
                 var placement = entry.getValue().toPlaceObjectTag(entry.getKey());
-                if (picId != null && "pic".equals(entry.getValue().instanceName)) placement.setCharacterId(picId);
+                if (replacement != null && childName.equals(entry.getValue().instanceName)) placement.setCharacterId(replacement);
                 result.addTag(placement);
             }
             result.addTag(new ShowFrameTag(swf));
@@ -79,8 +85,15 @@ class ExportActivityAssets {
         if (npc != null) {
             var picture = copy(swf, sprite(swf, 1313), npc-1, 1, null);
             render = copy(swf, source, 0, count, picture.getCharacterId());
-        } else if (count == 1 && source.frameCount > 1) render = copy(swf, source, 0, 1, null);
-        require(source.frameCount >= count, "missing native frames "+id);
+        } else if (count == 1 && source.frameCount > 1) {
+            render = copy(swf, source, 0, 1, null);
+            b = render.getRectWithStrokes();
+        }
+        return exportRender(swf,id,sourceId,render,0,count,npc,b,output,cache);
+    }
+    private static String exportRender(SWF swf,String id,int sourceId,DefineSpriteTag render,int first,int count,Integer selection,
+                                        com.jpexs.decompiler.flash.types.RECT b,Path output,Path cache) throws Exception {
+        require(render.frameCount >= count, "missing native frames "+id);
         var indices = new ArrayList<Integer>();
         for (int i=0;i<count;i++) indices.add(i);
         Path scratch = cache.resolve(id); Files.createDirectories(scratch);
@@ -89,12 +102,11 @@ class ExportActivityAssets {
         require(files.size()==count, "frame export mismatch "+id);
         Path folder = output.resolve(id); Files.createDirectories(folder);
         StringBuilder meta=new StringBuilder("{\"id\":"+quoted(id)+",\"sourceSymbol\":"+sourceId
-            +",\"sourcePicFrame\":"+(npc==null?"null":npc)+",\"boundsTwips\":["+b.Xmin+","+b.Xmax+","+b.Ymin+","+b.Ymax+"],\"frames\":[");
+            +",\"sourcePicFrame\":"+(selection==null?"null":selection)+",\"nativeFirstFrame\":"+(first+1)+",\"boundsTwips\":["+b.Xmin+","+b.Xmax+","+b.Ymin+","+b.Ymax+"],\"frames\":[");
         for (int i=0;i<count;i++) {
             Files.copy(files.get(i).toPath(), folder.resolve((i+1)+".png"), StandardCopyOption.REPLACE_EXISTING);
             var textFields=new ArrayList<String>();
-            if (sourceId==1319 || sourceId==1479 || sourceId==2184 || sourceId==2194)
-                fields(swf, source.getTimeline().getFrames().get(i),new double[]{1,0,0,1,0,0},textFields,0);
+            fields(swf, sprite(swf,sourceId).getTimeline().getFrames().get(first+i),new double[]{1,0,0,1,0,0},textFields,0);
             if (i>0)meta.append(',');
             meta.append("{\"sourceFrame\":").append(i+1).append(",\"fields\":[").append(String.join(",",textFields)).append("]}");
         }
@@ -106,6 +118,54 @@ class ExportActivityAssets {
             for(var tag:swf.getTags()) if(tag instanceof DefineEditTextTag text) text.initialText="";
             Path out=Path.of(args[1]),cache=Path.of(args[2]);
             var clips=new ArrayList<String>();
+            if(args.length>3 && "portal-npcs".equals(args[3])) {
+                for(int npc:new int[]{1,2,3,4,5,9,10,11,12,13,14,15}) {
+                    var icon=(DefineSpriteTag)swf.getCharacterByExportName("npc"+npc+"_s");
+                    clips.add(export(swf,"mini-npc-"+npc,icon.getCharacterId(),1,null,out,cache));
+                }
+                for(String name:new String[]{"balk_s","mine_s"}) {
+                    var icon=(DefineSpriteTag)swf.getCharacterByExportName(name);
+                    clips.add(export(swf,name.equals("balk_s")?"mini-barrier":"mini-mine",icon.getCharacterId(),1,null,out,cache));
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
+            if(args.length>3 && "portal-map".equals(args[3])) {
+                clips.add(export(swf,"map-mini",216,1,null,out,cache));
+                clips.add(export(swf,"magic-talk",1298,1,null,out,cache));
+                for(int character=1;character<=12;character++) {
+                    var head=(DefineSpriteTag)swf.getCharacterByExportName("head"+character);
+                    clips.add(export(swf,"head-"+character,head.getCharacterId(),1,null,out,cache));
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
+            if(args.length>3 && "court-verdict".equals(args[3])) {
+                var verdict=copy(swf,sprite(swf,2683),2,1,null);
+                clips.add(exportRender(swf,"court-verdict",2683,verdict,2,1,null,verdict.getRectWithStrokes(),out,cache));
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
+            if (args.length>3 && "task3".equals(args[3])) {
+                var station=copy(swf,sprite(swf,2542),1,1,null);
+                clips.add(exportRender(swf,"station",2542,station,1,1,null,station.getRectWithStrokes(),out,cache));
+                var target=copy(swf,sprite(swf,2683),0,1,"",null,Set.of("man1","man2","man3","man4","man5","shan1"));
+                clips.add(exportRender(swf,"court-target",2683,target,0,1,null,target.getRectWithStrokes(),out,cache));
+                var cases=copy(swf,sprite(swf,2683),1,1,"",null,Set.of("shan2"));
+                clips.add(exportRender(swf,"court-case",2683,cases,1,1,null,cases.getRectWithStrokes(),out,cache));
+                clips.add(export(swf,"show2",1472,45,null,out,cache));
+                clips.add(export(swf,"car1",884,113,null,out,cache));
+                clips.add(export(swf,"court-highlight",2667,23,null,out,cache));
+                for(int character=1;character<=12;character++) {
+                    var face=copy(swf,sprite(swf,2042),character-1,1,null);
+                    clips.add(exportRender(swf,"face-"+character,2042,face,character-1,1,null,face.getRectWithStrokes(),out,cache));
+                    for(int heading=1;heading<=4;heading++) {
+                        int index=(character-1)*10+heading;
+                        var picture=copy(swf,sprite(swf,981),index-1,1,null);
+                        var fly=copy(swf,sprite(swf,982),0,1,"fly",picture.getCharacterId(),Set.of());
+                        clips.add(exportRender(swf,"fly-"+character+"-"+heading,982,fly,0,1,index,fly.getRectWithStrokes(),out,cache));
+                    }
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");
+                return;
+            }
             for(int npc:new int[]{9,12,13,14,15,23})clips.add(export(swf,"trait-"+npc,1319,60,npc,out,cache));
             clips.add(export(swf,"show-npc4",1479,50,null,out,cache));
             clips.add(export(swf,"witch",2184,1,null,out,cache));

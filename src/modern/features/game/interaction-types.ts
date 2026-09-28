@@ -5,6 +5,9 @@ import type { WorldEvent } from './world-cards'
 import type { FinanceEntry } from './finance-types'
 import type { ActivityReceipt, ActivityPresentation } from './activity-types'
 import type { TicketExchangeMode } from './ticket-exchange'
+import type { PortalFlight, PortalHead } from './portal'
+import type { CourtVerdict } from './court'
+import type { GridPoint } from '../map/types'
 
 export type InteractionResume =
   | 'await-roll'
@@ -43,6 +46,9 @@ interface CardInteractionBase {
 }
 
 export type GameInteraction =
+  | { kind: 'npc-opening'; playerId: number; npcId: 1; cellId: number; presentation: ActivityPresentation }
+  | { kind: 'portal'; playerId: number; stage: 'choice' | 'flight'; destination?: number; flight?: PortalFlight; heads?: PortalHead[]; choiceFrames?: number; error?: string | null; presentation?: ActivityPresentation }
+  | { kind: 'court'; playerId: number; stage: 'target' | 'case' | 'judgement' | 'transfer' | 'holding'; targetId?: number; caseId?: number; verdict?: CourtVerdict; roll?: number; jailedPlayerId?: number | null; transferOrigin?: GridPoint; waitFrames?: number; verdictFrame?: number; error?: string | null; presentation?: ActivityPresentation }
   | (CardInteractionBase & { kind: 'card-confirm'; choiceError: string | null })
   | (CardInteractionBase & { kind: 'dice-choice'; choiceError: string | null })
   | (CardInteractionBase & { kind: 'target-choice'; choiceError: string | null })

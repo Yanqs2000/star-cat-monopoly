@@ -42,9 +42,9 @@
 
 **Files:** portal.ts/court.ts；控制器和原素材场景/面板；对应规则/时序/UI测试。
 **Interfaces:** portal destination与court target/case命令；GameInteraction保存转移/判决阶段，复用WorldPlayerStatus。
-- [ ] 源四站/放弃/当前站、AI抽签、法院无目标/阈值/目标先后刑期RED→GREEN。
-- [ ] 飞行/镜头/car1原图和时序；已提交转移资源失败恢复只重放视觉，不再地点判定。
-- [ ] 人类与AI真实入口回放、状态到期/释放/神灵回归，定向/整套验证后提交。
+- [x] 源四站/放弃/当前站、AI抽签、法院无目标/阈值/目标先后刑期RED→GREEN。
+- [x] 飞行/镜头/car1原图和时序；已提交转移资源失败恢复只重放视觉，不再地点判定。
+- [x] 人类与AI真实入口回放、状态到期/释放/神灵回归，定向/整套验证后提交。
 
 ### Task 4: 彩票投注
 
