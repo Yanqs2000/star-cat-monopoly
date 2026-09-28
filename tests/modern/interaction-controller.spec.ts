@@ -476,8 +476,8 @@ describe('移动、世界结果和特殊落点串行化', () => {
     game.world.statuses[1] = { state: 0, days: 0, godId: 10, godDays: 7 }
     const controller = createGameController(game, timings(scheduler))
     controller.roll(); scheduler.advance(10)
-    expect(controller.state.interaction).toMatchObject({ kind: 'notice', notice: { eventKind: 'npc-deferred' } })
-    expect(controller.acknowledgeInteraction()).toBe(true)
+    expect(controller.state.interaction).toMatchObject({ kind: 'ticket-exchange', mode: 'sell' })
+    expect(controller.leaveExchange()).toBe(true)
     expect(controller.state.properties[1]!.level).toBe(1)
     expect(controller.state.interaction).toMatchObject({ kind: 'notice', notice: { eventKind: 'god-property-adjusted' } })
     expect(controller.acknowledgeInteraction()).toBe(true)

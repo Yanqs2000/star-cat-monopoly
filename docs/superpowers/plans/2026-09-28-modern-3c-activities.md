@@ -25,16 +25,16 @@
 
 **Files:** docs/modernization/phase-3c-activities-evidence.md；原版probe/素材导出脚本与证据。
 **Interfaces:** 源入口表、字段语义、静态推导输入/输出及动态探针结果供Task2…5使用。
-- [ ] 核对NPC/地点/AI源分支和素材符号、源几何/时间轴；记录未知项并在所属实现前探针验证。
-- [ ] 不可达定义登记；源输入/预期完整可复现，源码/动态/推导分层。
-- [ ] 源哈希和证据检查，提交。
+- [x] 核对NPC/地点/AI源分支和素材符号、源几何/时间轴；记录未知项并在所属实现前探针验证。
+- [x] 不可达定义登记；源输入/预期完整可复现，源码/动态/推导分层。
+- [x] 源哈希和证据检查，提交。
 
 ### Task 2: NPC、奖券兑换与招领闭环
 
 **Files:** npc-encounters.ts、activity-types.ts、ticket-exchange.ts；world-cards/controller/interaction-types/原图Vue面板；npc-encounters/ticket-exchange/activity-controller/activity-ui测试。
 **Interfaces:** resolveWorldCell返回普通NPC结果；finishNpcEncounter完成帐篷后的迁移；exchangeTickets/claimLostFunds返回状态、receipt、error；控制器exchangeTickets(amount)、leaveExchange()。
-- [ ] 写六NPC、30/31券、3/4卡、3000/3001现金、支付/招领镜像/唯一重新放置RED，运行确认失败。
-- [ ] 最小纯规则GREEN，再接控制器续办和AI空分支；写重复/取消/恢复RED并实现。
+- [x] 写六NPC、30/31券、3/4卡、3000/3001现金、支付/招领镜像/唯一重新放置RED，运行确认失败。
+- [x] 最小纯规则GREEN，再接控制器续办和AI空分支；写重复/取消/恢复RED并实现。
 - [ ] 原trait/witch/lottery图面与fog/car2动画、实际选择输入；素材错误走原恢复。
 - [ ] 定向/整套规则、类型及自然入口回放；提交并记checkpoint。
 

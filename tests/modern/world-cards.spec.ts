@@ -276,7 +276,7 @@ describe('六神自然遭遇', () => {
     expect(cleared.snapshot.rngState).toBe(999)
   })
 
-  it('天使恶魔没有即时奖励，其他NPC保留标记并返回deferred', () => {
+  it('天使恶魔没有即时奖励，未开放定时炸弹保留标记并返回deferred', () => {
     for (const godId of [10, 11]) {
       const source = snapshot([5])
       source.world.markers[1] = godId
@@ -287,10 +287,10 @@ describe('六神自然遭遇', () => {
     }
 
     const deferred = snapshot()
-    deferred.world.markers[1] = 14
+    deferred.world.markers[1] = 8
     const before = structuredClone(deferred)
     const result = resolveWorldCell(deferred, 1, { column: 6, row: 32 }, 'landing')
-    expect(result.event).toMatchObject({ kind: 'npc-deferred', npcId: 14 })
+    expect(result.event).toMatchObject({ kind: 'npc-deferred', npcId: 8 })
     expect(result.snapshot).toEqual(before)
   })
 })

@@ -3,6 +3,8 @@ import { advanceCalendar, assertCalendarDate } from './calendar'
 import type { CalendarDate } from './finance-types'
 import type { GridPoint } from '../map/types'
 import { drawCard } from './card-economy'
+import { applyOrdinaryNpcEffect } from './npc-encounters'
+import type { ActivityReceipt } from './activity-types'
 import {
   getCardBoardRecords,
   getCardCell,
@@ -49,6 +51,7 @@ export type WorldEventKind =
   | 'mine-triggered'
   | 'god-encountered'
   | 'npc-deferred'
+  | 'npc-encountered'
   | 'god-property-adjusted'
   | 'restriction-skipped'
   | 'restriction-released'
@@ -68,6 +71,7 @@ export interface WorldEvent {
   affectedCellIds: number[]
   affectedPlayerIds: number[]
   cardIds: number[]
+  receipt?: ActivityReceipt
 }
 
 export interface WorldResult {
@@ -85,7 +89,7 @@ const godIdSet = new Set(godIds)
 const publicMissileTypes = new Set([13, 14, 15, 18, 19, 22, 31, 32])
 const boardRecords = getCardBoardRecords()
 
-function cloneSnapshot(source: WorldSnapshot): WorldSnapshot {
+export function cloneWorldSnapshot(source: WorldSnapshot): WorldSnapshot {
   return {
     players: source.players.map(value => ({ ...value, position: { ...value.position } })),
     properties: Object.fromEntries(Object.entries(source.properties).map(([id, value]) => [id, { ...value }])),
@@ -175,9 +179,9 @@ function ensureUniqueNpc(snapshot: WorldSnapshot, npcId: number, ignoredPlayerId
   }
 }
 
-function spawnNpc(snapshot: WorldSnapshot, npcId: number, ignoredPlayerId?: number): void {
+function spawnNpc(snapshot: WorldSnapshot, npcId: number, ignoredPlayerId?: number, excludedRecordId?: number): void {
   ensureUniqueNpc(snapshot, npcId, ignoredPlayerId)
-  const candidates = candidateRecordIds(snapshot)
+  const candidates = candidateRecordIds(snapshot).filter(id => id !== excludedRecordId)
   if (candidates.length === 0) throw new Error(`NPC ${npcId} 没有可用出生格`)
   const draw = randomInt(snapshot.rngState, candidates.length)
   snapshot.rngState = draw.nextState
@@ -250,7 +254,7 @@ function applyPlacementCard(
       source.world.markers[cell.id] !== undefined || source.players.some(value => getCardCell(value.position)?.id === cell.id)) {
     return invalid(source, '目标不能放置障碍')
   }
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   snapshot.world.markers[cell.id] = cardId
   consume(snapshot, playerId, inventoryIndex)
   return result(snapshot, event(cardId === 6 ? 'barrier-placed' : 'mine-placed', playerId, {
@@ -279,7 +283,7 @@ function applyMissile(
   const positions = missilePositions(choice.position)
   const cells = positions.map(position => getCardCell(position))
   if (cells.some(cell => cell === undefined) || cells[0]!.type === 34) return invalid(source, '飞弹目标无效')
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   const affectedCellIds: number[] = []
   const damagedParcels = new Set<number>()
   let publicDamage = false
@@ -345,7 +349,7 @@ function applySummon(
   if (selected === undefined || selected.dx * 56 > 352 || selected.dy * 40 > 280) {
     return invalid(source, '附近看不到神灵')
   }
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   delete snapshot.world.markers[selected.cellId]
   const status = snapshot.world.statuses[playerId]!
   if (status.godId === selected.godId) throw new Error(`神明 ${selected.godId} 实例状态重复`)
@@ -368,7 +372,7 @@ function applyDismiss(
   choice: DirectCardChoice,
 ): WorldResult {
   if (choice.kind !== 'confirm') return invalid(source, '需要确认送神')
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   const status = snapshot.world.statuses[playerId]!
   const dismissed = status.godId
   if (dismissed !== null) spawnNpc(snapshot, dismissed, playerId)
@@ -400,7 +404,7 @@ export function applyWorldCard(
 }
 
 function encounterGod(source: WorldSnapshot, playerId: number, cellId: number, godId: number): WorldResult {
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   delete snapshot.world.markers[cellId]
   const status = snapshot.world.statuses[playerId]!
   if (status.godId === godId) throw new Error(`神明 ${godId} 实例状态重复`)
@@ -465,6 +469,14 @@ function encounterGod(source: WorldSnapshot, playerId: number, cellId: number, g
   return result(snapshot, worldEvent)
 }
 
+export function finishNpcEncounter(source: WorldSnapshot, npcId: number, cellId: number): WorldResult {
+  if (source.world.markers[cellId] !== npcId) return result(source)
+  const snapshot = cloneWorldSnapshot(source)
+  delete snapshot.world.markers[cellId]
+  spawnNpc(snapshot, npcId, undefined, cellId)
+  return result(snapshot)
+}
+
 export function resolveWorldCell(
   source: WorldSnapshot,
   playerId: number,
@@ -478,7 +490,7 @@ export function resolveWorldCell(
   if (npcId === undefined) return result(source)
   if (mode === 'step') {
     if (npcId !== 6) return result(source)
-    const snapshot = cloneSnapshot(source)
+    const snapshot = cloneWorldSnapshot(source)
     delete snapshot.world.markers[cell.id]
     return result(snapshot, event('barrier-triggered', playerId, {
       npcId,
@@ -487,7 +499,7 @@ export function resolveWorldCell(
     }), { stopMovement: true })
   }
   if (npcId === 7) {
-    const snapshot = cloneSnapshot(source)
+    const snapshot = cloneWorldSnapshot(source)
     delete snapshot.world.markers[cell.id]
     applyRestriction(snapshot, playerId, worldRules.hospital, 3)
     return result(snapshot, event('mine-triggered', playerId, {
@@ -497,6 +509,21 @@ export function resolveWorldCell(
     }), { stopMovement: true, endTurn: true })
   }
   if (godIdSet.has(npcId)) return encounterGod(source, playerId, cell.id, npcId)
+  if (npcId === 1) return result(source, event('npc-encountered', playerId, {
+    npcId, affectedCellIds: [cell.id], affectedPlayerIds: [playerId],
+  }))
+  if ([9, 12, 13, 14, 15].includes(npcId)) {
+    const snapshot = cloneWorldSnapshot(source)
+    delete snapshot.world.markers[cell.id]
+    const receipt = applyOrdinaryNpcEffect(snapshot, playerId, npcId)
+    if (npcId === 9) applyRestriction(snapshot, playerId, worldRules.hospital, 3)
+    spawnNpc(snapshot, npcId, undefined, cell.id)
+    return result(snapshot, event('npc-encountered', playerId, {
+      npcId, receipt, cashDelta: receipt.cashDelta,
+      affectedCellIds: [cell.id], affectedPlayerIds: [playerId],
+      cardIds: receipt.addedCardIds ?? receipt.removedCardIds ?? [],
+    }), { endTurn: npcId === 9, stopMovement: npcId === 9 })
+  }
   if (npcId !== 6) {
     return result(source, event('npc-deferred', playerId, {
       npcId,
@@ -517,7 +544,7 @@ export function applyLandingGod(source: WorldSnapshot, playerId: number, positio
   if (property === undefined) throw new Error('住宅状态不存在')
   const level = godId === 10 ? Math.min(5, property.level + 1) : Math.max(0, property.level - 1)
   if (level === property.level) return result(source)
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   snapshot.properties[parcel.id]!.level = level as PropertyState['level']
   return result(snapshot, event('god-property-adjusted', playerId, {
     npcId: godId,
@@ -547,7 +574,7 @@ export function prepareWorldTurn(source: WorldSnapshot, playerId: number): World
       skipTurn: true,
     }
   }
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   const status = snapshot.world.statuses[playerId]!
   let worldEvent: WorldEvent | null = null
   if (status.state === 2 || status.state === 3) {
@@ -576,7 +603,7 @@ export function applyBankCredit(source: WorldSnapshot, playerId: number): WorldR
     ? (worldRules.aiLevels[player.id - 1] ?? 0) > 1 && inventory[0] !== 1 && inventory.length < 24
     : credit.score >= 50 && credit.used === 0 && credit.available === 0 && inventory.length < 24
   if (!eligible) return result(source, event('credit-declined', playerId, { affectedPlayerIds: [playerId] }))
-  const snapshot = cloneSnapshot(source)
+  const snapshot = cloneWorldSnapshot(source)
   snapshot.inventories[playerId]!.unshift(1)
   snapshot.credit[playerId]!.available = worldRules.initialCredit.grant
   return result(snapshot, event('credit-granted', playerId, {

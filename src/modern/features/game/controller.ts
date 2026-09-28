@@ -7,6 +7,7 @@ import { advanceStockPrices } from './stock-prices'
 import { buyStock, sellStock } from './stock-trading'
 import { chargeCompany, companyAtPosition, maxCompanySubscription, rollCompanyFeeDice, subscribeCompany as applyCompanySubscription } from './company'
 import { getPropertySummary } from './property'
+import { claimLostFunds, exchangeTickets as applyTicketExchange } from './ticket-exchange'
 import { applyDirectCard, getCardCell, type DirectCardChoice } from './direct-cards'
 import { applyLuckEvent, applyTicketLanding, drawLuckEvent, findSpecialLanding } from './events'
 import type { GameInteraction, InteractionEvent, InteractionNotice, InteractionResume } from './interaction-types'
@@ -17,6 +18,7 @@ import {
   applyBankCredit,
   applyLandingGod,
   applyWorldCard,
+  finishNpcEncounter,
   prepareWorldTurn,
   resolveWorldCell,
   toPropertyEconomy,
@@ -72,6 +74,8 @@ export interface GameController {
   leaveStock(): boolean
   subscribeCompany(shares: number): boolean
   leaveCompany(): boolean
+  exchangeTickets(quantity: number): boolean
+  leaveExchange(): boolean
   decideProperty(choice: 'accept' | 'decline'): boolean
   acknowledgeProperty(): boolean
   setPaused(paused: boolean): void
@@ -152,6 +156,7 @@ function worldNotice(result: WorldResult): InteractionNotice {
     affectedPlayerIds: [...event.affectedPlayerIds],
     affectedCellIds: [...event.affectedCellIds],
     cardIds: [...event.cardIds],
+    receipt: event.receipt,
   }
 }
 
@@ -324,6 +329,26 @@ export function createGameController(initialState: GameState, options: GameContr
       return
     }
 
+    const location = getCardCell(player.position)
+    if (location?.type === 21) {
+      if (isHuman()) {
+        current = { ...current, phase: 'interaction', continuation: null,
+          interaction: { kind: 'ticket-exchange', playerId: player.id, mode: 'buy' } }
+        notify()
+      } else {
+        current = { ...current, continuation: 'finish-turn' }
+        notify()
+        schedule(finishTurn, landingDurationMs)
+      }
+      return
+    }
+    if (location?.type === 23) {
+      const claimed = claimLostFunds(projectWorld(current), player.id)
+      current = mergeWorld(current, claimed.snapshot)
+      showNotice({ kind: 'activity', message: 'lost-found', receipt: claimed.receipt! },
+        { kind: 'activity', playerId: player.id, receipt: claimed.receipt! }, 'end-turn')
+      return
+    }
     const special = findSpecialLanding(player.position)
     if (special?.kind === 'shop') {
       if (!isHuman()) {
@@ -398,6 +423,19 @@ export function createGameController(initialState: GameState, options: GameContr
   handleLanding = () => {
     const player = activePlayer()
     if (!current.skipLandingMarker) {
+      const cell = getCardCell(player.position)
+      if (cell && current.world.markers[cell.id] === 1) {
+        if (isHuman()) {
+          current = { ...current, phase: 'interaction', continuation: null,
+            interaction: { kind: 'ticket-exchange', playerId: player.id, mode: 'sell', npcCellId: cell.id } }
+          notify()
+        } else {
+          current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, cell.id).snapshot)
+          current = { ...current, continuation: 'process-god' }
+          processGodThenTerrain()
+        }
+        return
+      }
       const marker = resolveWorldCell(projectWorld(current), player.id, player.position, 'landing')
       if (marker.event !== null || marker.endTurn) {
         showWorldResult(marker, 'after-god')
@@ -936,6 +974,39 @@ export function createGameController(initialState: GameState, options: GameContr
       current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
       notify()
       schedule(finishTurn, landingDurationMs)
+      return true
+    },
+    exchangeTickets(quantity) {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'ticket-exchange') return false
+      const interaction = current.interaction
+      const applied = applyTicketExchange(projectWorld(current), interaction.playerId, interaction.mode, quantity)
+      if (applied.error) {
+        current = { ...current, interaction: { ...interaction, error: applied.error } }
+        notify()
+        return false
+      }
+      current = mergeWorld(current, applied.snapshot)
+      if (interaction.npcCellId !== undefined) {
+        current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, interaction.npcCellId).snapshot)
+      }
+      showNotice({ kind: 'activity', message: applied.receipt!.kind, receipt: applied.receipt! },
+        { kind: 'activity', playerId: interaction.playerId, receipt: applied.receipt! },
+        interaction.npcCellId === undefined ? 'end-turn' : 'after-god')
+      return true
+    },
+    leaveExchange() {
+      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'ticket-exchange') return false
+      const interaction = current.interaction
+      if (interaction.npcCellId !== undefined) {
+        current = mergeWorld(current, finishNpcEncounter(projectWorld(current), 1, interaction.npcCellId).snapshot)
+        current = { ...current, phase: 'landed', interaction: null, continuation: 'process-god' }
+        notify()
+        processGodThenTerrain()
+      } else {
+        current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
+        notify()
+        schedule(finishTurn, landingDurationMs)
+      }
       return true
     },
     acknowledgeMonthly() {
