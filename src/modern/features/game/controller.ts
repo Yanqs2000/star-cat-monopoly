@@ -28,6 +28,7 @@ import {
 import type { GridPoint } from '../map/types'
 import { advancePortalFlight, advancePortalHeads, chooseAiPortal, choosePortal as applyPortal, createPortalFlight, createPortalHeads, portalAt } from './portal'
 import { courtTargets, judgeCourt } from './court'
+import { beginLudo,placeWager as addWager,confirmWagers as startLudoDice,advanceLudo } from './ludo'
 import { randomInt } from './random'
 
 export type { InteractionEvent } from './interaction-types'
@@ -83,6 +84,8 @@ export interface GameController {
   leaveExchange(): boolean
   readyActivity(clipId: string): boolean
   skipActivityPresentation(): boolean
+  placeWager(cellId:number):boolean
+  confirmWagers():boolean
   choosePortal(destination: number): boolean
   chooseCourtTarget(playerId: number): boolean
   chooseCourtCase(caseId: number): boolean
@@ -196,6 +199,7 @@ export function createGameController(initialState: GameState, options: GameContr
   let readyClip: string | undefined
   const expectedActivityScene = () => {
     const interaction=current.interaction
+    if(interaction?.kind==='ludo')return interaction.game.stage==='betting'?'ludo-betting':'ludo-game'
     if(interaction?.kind==='portal')return interaction.stage==='choice'?'station':`fly-${activePlayer().characterId}-${interaction.flight!.heading}`
     if(interaction?.kind==='court' && ['target','case'].includes(interaction.stage))return `court-${interaction.stage}`
     return undefined
@@ -297,6 +301,22 @@ export function createGameController(initialState: GameState, options: GameContr
     if (presentation() && (!options.awaitActivityAssets || readyClip === presentation()!.clipId) && !pending) schedule(advancePresentation, 1000 / 30, false)
   }
 
+  const advanceLudoClock = () => {
+    const interaction=current.interaction
+    if(interaction?.kind!=='ludo')return
+    const result=advanceLudo(interaction.game,current.rngState,!isHuman())
+    current={...current,rngState:result.rngState,tickets:{...current.tickets,[interaction.playerId]:(current.tickets[interaction.playerId] ?? 0)+result.credit},interaction:{...interaction,game:result.game}}
+    if(result.game.stage==='done') {
+      showNotice({kind:'activity',message:'ludo-result',receipt:{kind:'ludo',sourceAmount:result.game.initialChips*10,ticketDelta:result.game.credit-result.game.debit}},
+        {kind:'activity',playerId:interaction.playerId},'end-turn');return
+    }
+    if(interaction.game.stage==='betting'&&result.game.stage==='rolling')readyClip=undefined
+    notify()
+    if(activitySceneReady())schedule(advanceLudoClock,1000/30,false)
+  }
+  const beginLudoClock = () => {
+    if(current.interaction?.kind==='ludo' && (current.interaction.game.stage!=='betting'||!isHuman()) && activitySceneReady()&&!pending)schedule(advanceLudoClock,1000/30,false)
+  }
   const showNotice = (
     notice: InteractionNotice,
     event: InteractionEvent,
@@ -518,6 +538,11 @@ export function createGameController(initialState: GameState, options: GameContr
     }
 
     const location = getCardCell(player.position)
+    if(location?.type===27) {
+      const result=beginLudo(current.tickets[player.id] ?? 0,current.rngState)
+      current={...current,rngState:result.rngState,tickets:{...current.tickets,[player.id]:(current.tickets[player.id] ?? 0)-result.debit},phase:'interaction',continuation:null,interaction:{kind:'ludo',playerId:player.id,game:result.game}}
+      readyClip=undefined;notify();beginLudoClock();return
+    }
     if(location?.type===17) {
       const heads=isHuman()?createPortalHeads(projectWorld(current)):undefined
       if(heads)current={...current,rngState:heads.rngState}
@@ -897,6 +922,7 @@ export function createGameController(initialState: GameState, options: GameContr
   const resumeCurrentState = () => {
     if (disposed) return
     if (presentation()) {beginPresentationClock();return}
+    if(current.interaction?.kind==='ludo'){beginLudoClock();return}
     if(current.interaction?.kind==='portal') {
       if(current.interaction.stage==='flight' && !options.awaitActivityAssets) schedule(advanceFlight,1000/30,false)
       else if(!isHuman())selectPortal(5,true)
@@ -1020,6 +1046,18 @@ export function createGameController(initialState: GameState, options: GameContr
     get state() { return current },
     get paused() { return paused },
     get speed() { return speed },
+    placeWager(cellId) {
+      const interaction=current.interaction
+      if(!canCommand()||interaction?.kind!=='ludo')return false
+      const game=addWager(interaction.game,cellId)
+      if(game===interaction.game)return false
+      current={...current,interaction:{...interaction,game}};notify();return true
+    },
+    confirmWagers() {
+      const interaction=current.interaction
+      if(!canCommand()||interaction?.kind!=='ludo'||interaction.game.stage!=='betting')return false
+      current={...current,interaction:{...interaction,game:startLudoDice(interaction.game)}};readyClip=undefined;notify();beginLudoClock();return true
+    },
     choosePortal(destination) { return canCommand() && selectPortal(destination) },
     chooseCourtTarget(playerId) { return canCommand() && selectCourtTarget(playerId) },
     chooseCourtCase(caseId) { return canCommand() && selectCourtCase(caseId) },
@@ -1028,6 +1066,7 @@ export function createGameController(initialState: GameState, options: GameContr
       if(!presentation()) {
         if(expectedActivityScene()!==clipId)return false
         readyClip=clipId
+        if(current.interaction?.kind==='ludo')beginLudoClock()
         if(current.interaction?.kind==='portal')schedule(current.interaction.stage==='flight'?advanceFlight:advancePortalChoice,1000/30,false)
         return true
       }

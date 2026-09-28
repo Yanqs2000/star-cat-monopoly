@@ -108,7 +108,16 @@ class ExportActivityAssets {
             var textFields=new ArrayList<String>();
             fields(swf, sprite(swf,sourceId).getTimeline().getFrames().get(first+i),new double[]{1,0,0,1,0,0},textFields,0);
             if (i>0)meta.append(',');
-            meta.append("{\"sourceFrame\":").append(i+1).append(",\"fields\":[").append(String.join(",",textFields)).append("]}");
+            var placements=new ArrayList<String>();
+            if(id.equals("ludo-dice"))for(var layer:sprite(swf,sourceId).getTimeline().getFrames().get(first+i).layers.values()) {
+                if(layer.instanceName!=null && layer.instanceName.startsWith("tz")) {
+                    var m=layer.matrix;
+                    placements.add("{\"name\":"+quoted(layer.instanceName)+",\"x\":"+m.translateX/20.0+",\"y\":"+m.translateY/20.0+",\"matrix\":["+m.getScaleXFloat()+","+m.getRotateSkew0Float()+","+m.getRotateSkew1Float()+","+m.getScaleYFloat()+"]}");
+                }
+            }
+            meta.append("{\"sourceFrame\":").append(i+1).append(",\"fields\":[").append(String.join(",",textFields)).append("]");
+            if(!placements.isEmpty())meta.append(",\"placements\":[").append(String.join(",",placements)).append("]");
+            meta.append("}");
         }
         return meta.append("]}").toString();
     }
@@ -118,6 +127,23 @@ class ExportActivityAssets {
             for(var tag:swf.getTags()) if(tag instanceof DefineEditTextTag text) text.initialText="";
             Path out=Path.of(args[1]),cache=Path.of(args[2]);
             var clips=new ArrayList<String>();
+            if(args.length>3 && "ludo".equals(args[3])) {
+                var betting=copy(swf,sprite(swf,2163),0,1,null);
+                clips.add(exportRender(swf,"ludo-betting",2163,betting,0,1,null,betting.getRectWithStrokes(),out,cache));
+                var game=copy(swf,sprite(swf,2163),2,1,null);
+                clips.add(exportRender(swf,"ludo-game",2163,game,2,1,null,game.getRectWithStrokes(),out,cache));
+                clips.add(export(swf,"ludo-chip",1571,1,null,out,cache));
+                clips.add(export(swf,"ludo-win",1575,40,null,out,cache));
+                var dice=copy(swf,sprite(swf,1594),0,40,"",null,Set.of("tz1","tz2","tz3","tz4","tz5","tz6"));
+                clips.add(exportRender(swf,"ludo-dice",1594,dice,0,40,null,dice.getRectWithStrokes(),out,cache));
+                for(int face=1;face<=6;face++) {
+                    var picture=copy(swf,sprite(swf,1576),face-1,1,null);
+                    clips.add(exportRender(swf,"ludo-face-"+face,1576,picture,face-1,1,null,picture.getRectWithStrokes(),out,cache));
+                    var shadow=copy(swf,sprite(swf,1589),face-1,1,null);
+                    clips.add(exportRender(swf,"ludo-shadow-"+face,1589,shadow,face-1,1,null,shadow.getRectWithStrokes(),out,cache));
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
             if(args.length>3 && "portal-npcs".equals(args[3])) {
                 for(int npc:new int[]{1,2,3,4,5,9,10,11,12,13,14,15}) {
                     var icon=(DefineSpriteTag)swf.getCharacterByExportName("npc"+npc+"_s");

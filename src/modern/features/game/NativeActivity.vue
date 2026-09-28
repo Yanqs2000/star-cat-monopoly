@@ -33,7 +33,7 @@ watch(() => assets.value.map(clip=>clip.id).join('|'), (_, _old, onCleanup) => {
       <foreignObject v-for="field in current.fields" :key="field.characterId" x="0" y="0" :width="field.width" :height="field.height" :transform="`matrix(${field.matrix.join(' ')} ${field.x-current.offsetX} ${field.y-current.offsetY})`">
         <div xmlns="http://www.w3.org/1999/xhtml" :style="{ fontSize: `${field.fontSize}px`, textAlign: field.align === 2 ? 'center' : field.align === 1 ? 'right' : 'left' }" class="original-text">{{ text[field.variable] ?? '' }}</div>
       </foreignObject>
-      <g v-for="(item,index) in overlays" :key="index" :transform="`translate(${item.x-current.offsetX} ${item.y-current.offsetY}) scale(${item.scale ?? 1})`" :opacity="item.opacity ?? 1">
+      <g v-for="(item,index) in overlays" :key="index" :transform="`translate(${item.x-current.offsetX} ${item.y-current.offsetY}) scale(${item.scale ?? 1}) ${item.matrix ? `matrix(${item.matrix.join(' ')} 0 0)` : ''}`" :opacity="item.opacity ?? 1">
         <image :href="loaded.get(item.clip.id)?.urls[Math.min(item.frame,item.clip.frames.length)-1]" :x="overlayFrame(item).offsetX" :y="overlayFrame(item).offsetY" :width="overlayFrame(item).width" :height="overlayFrame(item).height" />
         <foreignObject v-for="field in overlayFrame(item).fields" :key="field.characterId" x="0" y="0" :width="field.width" :height="field.height" :transform="`matrix(${field.matrix.join(' ')} ${field.x} ${field.y})`">
           <div xmlns="http://www.w3.org/1999/xhtml" :style="{ fontSize: `${field.fontSize}px`, textAlign: field.align === 2 ? 'center' : 'left' }" class="original-text">{{ item.text?.[field.variable] ?? '' }}</div>

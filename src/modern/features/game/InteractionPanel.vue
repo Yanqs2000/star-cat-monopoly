@@ -13,6 +13,7 @@ import { ticketExchangeMaximum } from './ticket-exchange'
 import { activityChanges, originalActivityText } from './activity-text'
 import type { ActivityClip, ActivityManifest, NativeOverlay } from './activity-assets'
 import NativeActivity from './NativeActivity.vue'
+import LudoActivity from './LudoActivity.vue'
 import { PORTALS } from './portal'
 import { COURT_CASES, courtTargets } from './court'
 import { getCardRecord } from './direct-cards'
@@ -46,6 +47,8 @@ const emit = defineEmits<{
   'leave-exchange': []
   'activity-ready': [clipId: string]
   'skip-activity': []
+  'place-wager':[id:number]
+  'confirm-wagers':[]
   'choose-portal': [destination: number]
   'court-target': [playerId: number]
   'court-case': [caseId: number]
@@ -232,6 +235,7 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   const eventLabel = labels[notice.eventKind ?? notice.message] ?? financeLabels[notice.eventKind ?? notice.message]
   if (eventLabel) return eventLabel
   if (notice.kind === 'card' && notice.cardId !== undefined && notice.message === 'applied') return `${getCardDefinition(notice.cardId).name}已生效`
+  if(notice.message==='ludo-result')return '投注结果'
   return notice.message
 }
 watch(() => interaction.value?.kind, kind => {
@@ -246,8 +250,9 @@ watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
-  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
-    <template v-if="interaction.kind === 'portal'">
+  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'minigame-panel': interaction.kind==='ludo', 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
+    <LudoActivity v-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+    <template v-else-if="interaction.kind === 'portal'">
       <div v-if="interaction.stage === 'choice'" class="portal-original">
         <NativeActivity v-if="portalClip" data-testid="portal-original" :clip="portalClip" :preload="portalPrepared" :overlays="portalOverlays" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
         <img v-else data-testid="portal-original" :src="nativeImageUrl('station')" alt="魔法门分布图" @error="reportImageError">
@@ -419,6 +424,7 @@ watch(stockId, () => { stockShares.value = 1 })
 </template>
 
 <style scoped>
+.interaction.minigame-panel{width:min(800px,calc(100% - 350px));padding:0;background:transparent;border:0;overflow:visible}
 .interaction.portal-panel{width:min(814px,calc(100% - 350px));padding:0;background:transparent;border:0;overflow:visible}.interaction.court-panel{width:min(824px,calc(100% - 350px));padding:0;background:transparent;border:0;overflow:visible}.portal-original,.court-original{position:relative;width:100%}.portal-original>img,.court-original>img{display:block;width:100%;height:auto}.portal-map{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.original-hotspot{position:absolute;color:transparent;background:transparent;border:0;padding:0}.original-hotspot:hover{color:transparent;background:#fff2;outline:2px solid #fff7}.portal-choice{left:17px;width:139px;height:37px}.court-target{left:490px;width:190px;height:48px}.court-case{left:300px;width:192px;height:78px}.interaction.court-transfer{left:0;top:0;bottom:0;width:100%;max-height:none}.court-transit-verdict{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:408px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .interaction.exchange-panel{width:min(824px,calc(100% - 350px));padding:0;background:transparent;border:0}.exchange-original{position:relative;width:100%;aspect-ratio:824/624}.exchange-original>img{display:block;width:100%;height:auto}.exchange-form{position:absolute;left:9%;top:42%;width:43%;display:grid;gap:10px;color:#182d45;font-size:16px}.exchange-form label{display:grid;gap:6px}.exchange-form input{width:120px;padding:7px;font:inherit}.exchange-form small{font-size:12px}.exchange-form p{font-size:13px}.interaction.presentation-panel{left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(var(--activity-width,462px),70%);padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.presentation-panel:has([data-clip="car2"]){width:100%;max-height:none}.presentation-panel:has([data-clip="fog"]){width:182px}.presentation-panel>button{position:absolute;right:20px;bottom:15px}
 .company-original{position:relative;width:408px;max-width:100%;aspect-ratio:408/356;margin:8px auto}.company-original>img{display:block;width:100%;height:100%}.company-original>h2{position:absolute;left:24%;top:10%;margin:0;color:white;font-size:21px}.company-summary{position:absolute;left:9%;top:27%;width:82%;height:55%;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:6px;color:#153043}.company-summary p{margin:0;font-size:14px}

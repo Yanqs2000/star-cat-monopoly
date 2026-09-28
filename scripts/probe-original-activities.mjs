@@ -9,7 +9,7 @@ import { chromium } from '@playwright/test'
 
 const root = fileURLToPath(new URL('..', import.meta.url))
 const mode = process.argv[2] ?? 'flight'
-if (!['flight','heads'].includes(mode)) throw Error('Unknown original activity probe')
+if (!['flight','heads','ludo','carnival'].includes(mode)) throw Error('Unknown original activity probe')
 const scratch = resolve(root, `.analysis-cache/3c-original-activities-${mode}`)
 const source = resolve(root, 'public/original/play.swf')
 const probe = resolve(scratch, 'activities-probe.swf')
@@ -71,7 +71,46 @@ this.onEnterFrame = function() {
  }
 };
 `
-writeFileSync(resolve(scratch, 'import/frame_1/DoAction.as'), mode === 'flight' ? flightHarness : headHarness)
+const ludoHarness = `gotoAndStop(4);
+this.onEnterFrame=function(){
+ if(typeof(end_pg17)=="function") {
+ delete this.onEnterFrame;pid=1;tenor_id=0;
+ setGameHide=function(){};setGameShow=function(){};
+ mouseh=createEmptyMovieClip("mouseh",100);music=new Sound();
+ playerdate=[0,["probe",0,2,0,0,0,0,1]];moneydate=[0,[0,0,0,9]];
+ probeLines=[];probeDone=false;
+ var cases=[[0,111,3,0,0],[9,0,8,0,0],[105,0,8,0,7],[105,111,3,0,7]];probeCase=0;
+ startCase=function(){
+  moneydate[1][3]=cases[probeCase][0];
+  attachMovie("ludoz","ludoz",60000);probeStage=0;
+ };
+ startCase();
+ this.onEnterFrame=function(){
+  if(probeStage==0 && ludoz.ludodate.length>0) {
+   var b=ludoz;probeLines.push([probeCase,"entry",moneydate[1][3],b.pay].join(","));
+   b.ludodate[0][0][3]=1;b.pay=cases[probeCase][4];b.num1=cases[probeCase][1];b.num2=cases[probeCase][2];b.num3=cases[probeCase][3];b.tenor_id=1;b.yesno_id=1;b.gotoAndPlay(3);probeStage=1;
+  } else if(probeStage==1 && ludoz.tenor_id==2){
+   probeLines.push([probeCase,"settled",moneydate[1][3],ludoz.pay,ludoz.payz].join(","));
+   ludoz.removeMovieClip();probeCase++;
+   if(probeCase<cases.length)startCase();
+   else {
+    delete this.onEnterFrame;
+    var parent=createEmptyMovieClip("diceParent",61000);parent.attachMovie("ludo_tz3","dice",1);
+    parent.onEnterFrame=function(){
+     var d=this.dice;var f=d._currentframe;
+     if(f==1||f==10||f==17||f==18||f==19||f==40)probeLines.push(["dice",f,d.r1,d.r2,d.r3,d.tz1._currentframe,d.tz2._currentframe,d.tz3._currentframe,d.tz4._currentframe,d.tz6._currentframe,this.num1,this.num2,this.num3].join(","));
+     if(f==40){probeDone=true;delete this.onEnterFrame;}
+    };
+   }
+  }
+ };
+ flash.external.ExternalInterface.addCallback("activityStart",this,function(){return true;});
+ flash.external.ExternalInterface.addCallback("activityProbe",this,function(){return probeLines.join(";");});
+ flash.external.ExternalInterface.addCallback("activityDone",this,function(){return probeDone;});
+ }
+};
+`
+writeFileSync(resolve(scratch, 'import/frame_1/DoAction.as'), mode === 'flight' ? flightHarness : mode === 'heads' ? headHarness : mode === 'ludo' ? ludoHarness : readFileSync(resolve(root,'scripts/original-carnival-probe.as'),'utf8'))
 execFileSync('/opt/homebrew/opt/openjdk/bin/java', ['-jar',
   '/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar',
   '-importScript', source, probe, resolve(scratch, 'import')], { stdio: 'inherit' })
@@ -113,12 +152,12 @@ try {
   await page.evaluate(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityStart'))
   await page.waitForFunction(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityDone'), null, { timeout: 15000 })
   const encoded = await page.evaluate(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityProbe'))
-  const samples = mode === 'heads' ? encoded.split(',').map(Number) : encoded.split(';').filter(Boolean).map(line => line.split(',').map(value => value === 'true' ? true : value === 'false' ? false : value === '' ? null : Number(value)))
+  const samples = mode === 'heads' ? encoded.split(',').map(Number) : encoded.split(';').filter(Boolean).map(line => line.split(',').map(value => value === 'true' ? true : value === 'false' ? false : value === '' ? null : Number.isNaN(Number(value)) ? value : Number(value)))
   if (sha(readFileSync(source)) !== originalHash) throw Error('Original SWF changed')
-  const result = { method: mode === 'heads' ? 'Original showmap_pg head handlers wrapped only to observe the first ten native frame traversal orders' : 'Original station2542 frame3 flight handler, root-frame1 controlled east-to-south harness in Ruffle',
+  const result = { method: mode==='carnival' ? 'Original carnie/boy/bb timeline: native bounding-box hitTest, interval generation and frame handler order with observation wrappers' : mode==='ludo' ? 'Original ludoz entry and frame3 settlement with controlled parent dice values; original ludo_tz3 timeline observed separately' : mode === 'heads' ? 'Original showmap_pg head handlers wrapped only to observe the first ten native frame traversal orders' : 'Original station2542 frame3 flight handler, root-frame1 controlled east-to-south harness in Ruffle',
     limitation: 'Controlled original symbol execution, not a natural original gameplay route',
     sourceSha256: originalHash, probeSha256: sha(probeBytes), frame4ActionSha256: sha(originalFrame4),
     samples }
-  writeFileSync(resolve(root, `docs/modernization/evidence/portal-${mode}-runtime.json`), `${JSON.stringify(result, null, 2)}\n`)
+  writeFileSync(resolve(root, `docs/modernization/evidence/${['ludo','carnival'].includes(mode)?mode:'portal-'+mode}-runtime.json`), `${JSON.stringify(result, null, 2)}\n`)
   console.log(JSON.stringify({ count: samples.length, first: samples[0], last: samples.at(-1), sourceSha256: originalHash }))
 } finally { await browser.close() }

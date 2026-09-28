@@ -25800,6 +25800,3547 @@
       ],
       "fps": 30,
       "loop": false
+    },
+    {
+      "id": "ludo-betting",
+      "sourceSymbol": 2163,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        0,
+        16000,
+        0,
+        12000
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [
+            {
+              "characterId": 2162,
+              "variable": "pay",
+              "x": 740.6,
+              "y": 478.05,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 47.95,
+              "height": 29.0,
+              "fontSize": 25.0,
+              "align": 2
+            }
+          ],
+          "url": "assets/activities/ludo-betting/1.png",
+          "width": 800,
+          "height": 600,
+          "offsetX": 0.0,
+          "offsetY": 0.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-game",
+      "sourceSymbol": 2163,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 3,
+      "boundsTwips": [
+        0,
+        16000,
+        0,
+        12000
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [
+            {
+              "characterId": 2162,
+              "variable": "pay",
+              "x": 740.6,
+              "y": 478.05,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 47.95,
+              "height": 29.0,
+              "fontSize": 25.0,
+              "align": 2
+            }
+          ],
+          "url": "assets/activities/ludo-game/1.png",
+          "width": 800,
+          "height": 600,
+          "offsetX": 0.0,
+          "offsetY": 0.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-chip",
+      "sourceSymbol": 1571,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -159,
+        961,
+        -129,
+        891
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-chip/1.png",
+          "width": 56,
+          "height": 51,
+          "offsetX": -7.95,
+          "offsetY": -6.45
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-win",
+      "sourceSymbol": 1575,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -321,
+        3040,
+        96,
+        1416
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-win/1.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 2,
+          "fields": [],
+          "url": "assets/activities/ludo-win/2.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 3,
+          "fields": [],
+          "url": "assets/activities/ludo-win/3.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 4,
+          "fields": [],
+          "url": "assets/activities/ludo-win/4.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 5,
+          "fields": [],
+          "url": "assets/activities/ludo-win/5.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 6,
+          "fields": [],
+          "url": "assets/activities/ludo-win/6.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 7,
+          "fields": [],
+          "url": "assets/activities/ludo-win/7.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 8,
+          "fields": [],
+          "url": "assets/activities/ludo-win/8.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 9,
+          "fields": [],
+          "url": "assets/activities/ludo-win/9.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 10,
+          "fields": [],
+          "url": "assets/activities/ludo-win/10.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 11,
+          "fields": [],
+          "url": "assets/activities/ludo-win/11.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 12,
+          "fields": [],
+          "url": "assets/activities/ludo-win/12.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 13,
+          "fields": [],
+          "url": "assets/activities/ludo-win/13.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 14,
+          "fields": [],
+          "url": "assets/activities/ludo-win/14.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 15,
+          "fields": [],
+          "url": "assets/activities/ludo-win/15.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 16,
+          "fields": [],
+          "url": "assets/activities/ludo-win/16.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 17,
+          "fields": [],
+          "url": "assets/activities/ludo-win/17.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 18,
+          "fields": [],
+          "url": "assets/activities/ludo-win/18.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 19,
+          "fields": [],
+          "url": "assets/activities/ludo-win/19.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 20,
+          "fields": [],
+          "url": "assets/activities/ludo-win/20.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 21,
+          "fields": [],
+          "url": "assets/activities/ludo-win/21.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 22,
+          "fields": [],
+          "url": "assets/activities/ludo-win/22.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 23,
+          "fields": [],
+          "url": "assets/activities/ludo-win/23.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 24,
+          "fields": [],
+          "url": "assets/activities/ludo-win/24.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 25,
+          "fields": [],
+          "url": "assets/activities/ludo-win/25.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 26,
+          "fields": [],
+          "url": "assets/activities/ludo-win/26.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 27,
+          "fields": [],
+          "url": "assets/activities/ludo-win/27.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 28,
+          "fields": [],
+          "url": "assets/activities/ludo-win/28.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 29,
+          "fields": [],
+          "url": "assets/activities/ludo-win/29.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 30,
+          "fields": [],
+          "url": "assets/activities/ludo-win/30.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 31,
+          "fields": [],
+          "url": "assets/activities/ludo-win/31.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 32,
+          "fields": [],
+          "url": "assets/activities/ludo-win/32.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 33,
+          "fields": [],
+          "url": "assets/activities/ludo-win/33.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 34,
+          "fields": [],
+          "url": "assets/activities/ludo-win/34.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 35,
+          "fields": [],
+          "url": "assets/activities/ludo-win/35.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 36,
+          "fields": [],
+          "url": "assets/activities/ludo-win/36.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 37,
+          "fields": [],
+          "url": "assets/activities/ludo-win/37.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 38,
+          "fields": [],
+          "url": "assets/activities/ludo-win/38.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 39,
+          "fields": [],
+          "url": "assets/activities/ludo-win/39.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        },
+        {
+          "sourceFrame": 40,
+          "fields": [],
+          "url": "assets/activities/ludo-win/40.png",
+          "width": 169,
+          "height": 66,
+          "offsetX": -16.05,
+          "offsetY": 4.8
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-dice",
+      "sourceSymbol": 1594,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -880,
+        1819,
+        -124,
+        2191
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 28.5,
+              "y": -37.15,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 28.5,
+              "y": -37.15,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": 28.5,
+              "y": -37.15,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/1.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 2,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 38.0,
+              "y": -52.65,
+              "matrix": [
+                0.914032,
+                -0.51293945,
+                0.5129547,
+                0.91404724
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 29.0,
+              "y": -55.15,
+              "matrix": [
+                0.914032,
+                -0.51293945,
+                0.5129547,
+                0.91404724
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": 20.0,
+              "y": -55.15,
+              "matrix": [
+                0.914032,
+                -0.51293945,
+                0.5129547,
+                0.91404724
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/2.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 3,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 47.5,
+              "y": -68.1,
+              "matrix": [
+                0.5710907,
+                -0.93733215,
+                0.93733215,
+                0.5710907
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 29.6,
+              "y": -73.1,
+              "matrix": [
+                0.5710907,
+                -0.93733215,
+                0.93733215,
+                0.5710907
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": 11.6,
+              "y": -73.1,
+              "matrix": [
+                0.5710907,
+                -0.93733215,
+                0.93733215,
+                0.5710907
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/3.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 4,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 56.95,
+              "y": -83.6,
+              "matrix": [
+                0.041015625,
+                -1.1479187,
+                1.147934,
+                0.041015625
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 30.05,
+              "y": -91.1,
+              "matrix": [
+                0.041015625,
+                -1.1479187,
+                1.147934,
+                0.041015625
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": 3.05,
+              "y": -91.1,
+              "matrix": [
+                0.041015625,
+                -1.1479187,
+                1.147934,
+                0.041015625
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/4.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 5,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 66.4,
+              "y": -99.15,
+              "matrix": [
+                -0.54566956,
+                -1.0669403,
+                1.0669556,
+                -0.54566956
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 30.55,
+              "y": -109.15,
+              "matrix": [
+                -0.54566956,
+                -1.0669403,
+                1.0669556,
+                -0.54566956
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -5.45,
+              "y": -109.15,
+              "matrix": [
+                -0.54566956,
+                -1.0669403,
+                1.0669556,
+                -0.54566956
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/5.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 6,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.5,
+              "y": -91.15,
+              "matrix": [
+                -1.1925049,
+                -0.3708191,
+                0.37083435,
+                -1.1925049
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 32.3,
+              "y": -115.3,
+              "matrix": [
+                -1.1925049,
+                -0.3708191,
+                0.37083435,
+                -1.1925049
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -30.25,
+              "y": -106.15,
+              "matrix": [
+                -1.1925049,
+                -0.3708191,
+                0.37083435,
+                -1.1925049
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/6.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 7,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.45,
+              "y": -70.7,
+              "matrix": [
+                -1.1006622,
+                -0.6378784,
+                0.6378937,
+                -1.100647
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 25.7,
+              "y": -77.6,
+              "matrix": [
+                -1.0733337,
+                -0.6919861,
+                0.6919708,
+                -1.0733337
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -33.5,
+              "y": -68.6,
+              "matrix": [
+                -1.031189,
+                -0.7659149,
+                0.7659149,
+                -1.031189
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/7.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 8,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.5,
+              "y": -50.3,
+              "matrix": [
+                -0.9467926,
+                -0.8863983,
+                0.88638306,
+                -0.94677734
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 19.15,
+              "y": -39.85,
+              "matrix": [
+                -0.86846924,
+                -0.97676086,
+                0.97673035,
+                -0.868454
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -36.85,
+              "y": -30.9,
+              "matrix": [
+                -0.73680115,
+                -1.0978851,
+                1.0978546,
+                -0.7368164
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/8.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 9,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.5,
+              "y": -29.9,
+              "matrix": [
+                -0.73680115,
+                -1.0978851,
+                1.0978546,
+                -0.7368164
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 12.65,
+              "y": -2.15,
+              "matrix": [
+                -0.58833313,
+                -1.2012024,
+                1.2012024,
+                -0.58833313
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -40.1,
+              "y": 6.7,
+              "matrix": [
+                -0.3416443,
+                -1.3172302,
+                1.3172302,
+                -0.3416443
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/9.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 10,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.55,
+              "y": -9.45,
+              "matrix": [
+                -0.48391724,
+                -1.2579956,
+                1.2579956,
+                -0.48391724
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 6.15,
+              "y": 35.6,
+              "matrix": [
+                -0.2509613,
+                -1.3454285,
+                1.3454285,
+                -0.25097656
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -43.45,
+              "y": 44.3,
+              "matrix": [
+                0.116119385,
+                -1.3947754,
+                1.3947754,
+                0.116119385
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/10.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 11,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.6,
+              "y": 10.95,
+              "matrix": [
+                -0.19221497,
+                -1.3603516,
+                1.3603363,
+                -0.19223022
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": -0.45,
+              "y": 73.3,
+              "matrix": [
+                0.116119385,
+                -1.3947754,
+                1.3947754,
+                0.116119385
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -52.85,
+              "y": 34.05,
+              "matrix": [
+                -1.008255,
+                -0.9857178,
+                0.9857178,
+                -1.008255
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/11.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 12,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 83.6,
+              "y": 31.45,
+              "matrix": [
+                0.116119385,
+                -1.3947754,
+                1.3947754,
+                0.116119385
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 2.45,
+              "y": 64.95,
+              "matrix": [
+                -1.008255,
+                -0.9857178,
+                0.9857178,
+                -1.008255
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -62.1,
+              "y": 23.75,
+              "matrix": [
+                -1.416626,
+                0.15007019,
+                -0.15007019,
+                -1.416626
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/12.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 13,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 86.3,
+              "y": 24.05,
+              "matrix": [
+                -1.008255,
+                -0.9857178,
+                0.9857178,
+                -1.008255
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 5.55,
+              "y": 56.75,
+              "matrix": [
+                -1.416626,
+                0.15007019,
+                -0.15007019,
+                -1.416626
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -71.45,
+              "y": 13.45,
+              "matrix": [
+                -0.79026794,
+                1.2011719,
+                -1.2011719,
+                -0.79026794
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/13.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 14,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 88.85,
+              "y": 16.75,
+              "matrix": [
+                -1.416626,
+                0.15007019,
+                -0.15007019,
+                -1.416626
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 8.55,
+              "y": 48.45,
+              "matrix": [
+                -0.79026794,
+                1.2011719,
+                -1.2011719,
+                -0.79026794
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -86.45,
+              "y": 8.45,
+              "matrix": [
+                0.08943176,
+                -1.4469452,
+                1.4469452,
+                0.08943176
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/14.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 15,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 91.5,
+              "y": 9.45,
+              "matrix": [
+                -0.79026794,
+                1.2011719,
+                -1.2011719,
+                -0.79026794
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": -5.85,
+              "y": 37.2,
+              "matrix": [
+                0.08943176,
+                -1.4469452,
+                1.4469452,
+                0.08943176
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -78.05,
+              "y": 41.5,
+              "matrix": [
+                0.7831116,
+                -1.2372742,
+                1.2372742,
+                0.7831116
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/15.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 16,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 108.5,
+              "y": 26.45,
+              "matrix": [
+                0.08943176,
+                -1.4469452,
+                1.4469452,
+                0.08943176
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": -2.4,
+              "y": 79.95,
+              "matrix": [
+                0.7831116,
+                -1.2372742,
+                1.2372742,
+                0.7831116
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -69.75,
+              "y": 74.45,
+              "matrix": [
+                1.2978363,
+                -0.7137909,
+                0.7137909,
+                1.2978363
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/16.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 17,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 108.85,
+              "y": 58.75,
+              "matrix": [
+                0.7831116,
+                -1.2372742,
+                1.2372742,
+                0.7831116
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 1.1,
+              "y": 122.75,
+              "matrix": [
+                1.2978363,
+                -0.7137909,
+                0.7137909,
+                1.2978363
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/17.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 18,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.1,
+              "y": 91.05,
+              "matrix": [
+                1.2978363,
+                -0.7137909,
+                0.7137909,
+                1.2978363
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/18.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 19,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/19.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 20,
+          "fields": [
+            {
+              "characterId": 1591,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/20.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 21,
+          "fields": [
+            {
+              "characterId": 1591,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/21.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 22,
+          "fields": [
+            {
+              "characterId": 1591,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/22.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 23,
+          "fields": [
+            {
+              "characterId": 1591,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/23.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 24,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/24.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 25,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/25.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 26,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/26.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 27,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/27.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 28,
+          "fields": [
+            {
+              "characterId": 1592,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/28.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 29,
+          "fields": [
+            {
+              "characterId": 1592,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/29.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 30,
+          "fields": [
+            {
+              "characterId": 1592,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/30.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 31,
+          "fields": [
+            {
+              "characterId": 1592,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/31.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 32,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/32.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 33,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/33.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 34,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/34.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 35,
+          "fields": [],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/35.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 36,
+          "fields": [
+            {
+              "characterId": 1593,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/36.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 37,
+          "fields": [
+            {
+              "characterId": 1593,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/37.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 38,
+          "fields": [
+            {
+              "characterId": 1593,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/38.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 39,
+          "fields": [
+            {
+              "characterId": 1593,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/39.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        },
+        {
+          "sourceFrame": 40,
+          "fields": [
+            {
+              "characterId": 1593,
+              "variable": "r",
+              "x": -44.0,
+              "y": -6.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "width": 134.95,
+              "height": 115.75,
+              "fontSize": 100.0,
+              "align": 2
+            }
+          ],
+          "placements": [
+            {
+              "name": "tz2",
+              "x": 109.5,
+              "y": 123.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz3",
+              "x": 4.55,
+              "y": 165.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz1",
+              "x": -61.45,
+              "y": 107.45,
+              "matrix": [
+                1.5,
+                0.0,
+                0.0,
+                1.5
+              ]
+            },
+            {
+              "name": "tz6",
+              "x": 112.45,
+              "y": 127.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz5",
+              "x": 6.1,
+              "y": 169.2,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "name": "tz4",
+              "x": -58.0,
+              "y": 110.35,
+              "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "url": "assets/activities/ludo-dice/40.png",
+          "width": 153,
+          "height": 134,
+          "offsetX": -53.0,
+          "offsetY": -15.2
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-face-1",
+      "sourceSymbol": 1576,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -420,
+        420,
+        -440,
+        460
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-face-1/1.png",
+          "width": 42,
+          "height": 45,
+          "offsetX": -21.0,
+          "offsetY": -22.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-shadow-1",
+      "sourceSymbol": 1589,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -860,
+        640,
+        -780,
+        700
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-shadow-1/1.png",
+          "width": 75,
+          "height": 74,
+          "offsetX": -43.0,
+          "offsetY": -39.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-face-2",
+      "sourceSymbol": 1576,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 2,
+      "boundsTwips": [
+        -420,
+        420,
+        -460,
+        460
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-face-2/1.png",
+          "width": 42,
+          "height": 46,
+          "offsetX": -21.0,
+          "offsetY": -23.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-shadow-2",
+      "sourceSymbol": 1589,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 2,
+      "boundsTwips": [
+        -860,
+        640,
+        -780,
+        720
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-shadow-2/1.png",
+          "width": 75,
+          "height": 75,
+          "offsetX": -43.0,
+          "offsetY": -39.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-face-3",
+      "sourceSymbol": 1576,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 3,
+      "boundsTwips": [
+        -420,
+        400,
+        -460,
+        460
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-face-3/1.png",
+          "width": 41,
+          "height": 46,
+          "offsetX": -21.0,
+          "offsetY": -23.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-shadow-3",
+      "sourceSymbol": 1589,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 3,
+      "boundsTwips": [
+        -860,
+        640,
+        -780,
+        720
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-shadow-3/1.png",
+          "width": 75,
+          "height": 75,
+          "offsetX": -43.0,
+          "offsetY": -39.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-face-4",
+      "sourceSymbol": 1576,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 4,
+      "boundsTwips": [
+        -420,
+        400,
+        -460,
+        460
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-face-4/1.png",
+          "width": 41,
+          "height": 46,
+          "offsetX": -21.0,
+          "offsetY": -23.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-shadow-4",
+      "sourceSymbol": 1589,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 4,
+      "boundsTwips": [
+        -860,
+        640,
+        -780,
+        720
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-shadow-4/1.png",
+          "width": 75,
+          "height": 75,
+          "offsetX": -43.0,
+          "offsetY": -39.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-face-5",
+      "sourceSymbol": 1576,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 5,
+      "boundsTwips": [
+        -400,
+        420,
+        -460,
+        460
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-face-5/1.png",
+          "width": 41,
+          "height": 46,
+          "offsetX": -20.0,
+          "offsetY": -23.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-shadow-5",
+      "sourceSymbol": 1589,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 5,
+      "boundsTwips": [
+        -860,
+        620,
+        -780,
+        720
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-shadow-5/1.png",
+          "width": 74,
+          "height": 75,
+          "offsetX": -43.0,
+          "offsetY": -39.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-face-6",
+      "sourceSymbol": 1576,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 6,
+      "boundsTwips": [
+        -420,
+        420,
+        -460,
+        440
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-face-6/1.png",
+          "width": 42,
+          "height": 45,
+          "offsetX": -21.0,
+          "offsetY": -23.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "ludo-shadow-6",
+      "sourceSymbol": 1589,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 6,
+      "boundsTwips": [
+        -860,
+        640,
+        -780,
+        720
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/ludo-shadow-6/1.png",
+          "width": 75,
+          "height": 75,
+          "offsetX": -43.0,
+          "offsetY": -39.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
     }
   ]
 }

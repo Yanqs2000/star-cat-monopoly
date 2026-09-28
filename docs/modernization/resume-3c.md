@@ -69,3 +69,9 @@ Task3生产回放session63063已结束：3/3通过（seed4首轮原地图/10图�
 2026-09-28：Task3功能准备提交，53文件436项GREEN，生产5/5通过（session69160结束），类型及构建成功。小地图106clips/815帧总manifest含完整房屋/公司/14种NPC障碍小图，真实页面82图层；源几何已验证。法院胜诉case/car1失败恢复与2天释放通过。NPC隐藏迁移、dog48/111、release.ready、AI tent18帧空业务均修正并测试。Task3完成内部检查，待task-done ledger。
 
 仍活跃：4184 preview56005；原4173 dev51064。无活跃浏览器或导出，dist可重建。下一项Task4：读取ludoz2163全帧与骰1594，低券/未下注及骰序受控探针后，原36区域筹码真实投注UI/骰/结算；随后Task5真20秒接物/输入/恢复、Task6联合/独立复审。Task5/6必须TDD修复ModernApp资源重试期间paused被重置false的问题。不得以Task3部分通过作整批完成。
+
+## Task4检查点
+
+真实投注已完成：ludo.ts、控制器唯一入场/开奖/入账、LudoActivity原36区和95新帧；source低券及未下注探针证实，9次骰随机；新10项及整体57文件446项通过。自然seed0第3轮6,24下注/暂停/日期生产1通过；确认后ludo-game/1.png失败恢复1通过，均2倍速。截图已看。最新构建27199须poll；全测62152、浏览器44203/20445均结束。Task4准备commit/task-done；Task5还未实施，原碰撞probe得到boy1.frame1 bbox355..445/400.35..500.35，bb1.frame1 ±18.5/±19，边界delta63.5相交、63.55不交。旧probe起点先于symbol准备约3秒，已修起点至实际carnie入口并需重跑，不能用旧时间样本作timer次序依据。scripts/original-carnival-probe.as已存，可复现。
+
+下一项Task5：source真正20秒接物，30Hz固定逻辑、落物计时/碰撞/键鼠/AI、原12 boy及4 bb素材；源frame3结束输入但现有落物仍继续碰撞，frame4每4逻辑帧优先4/3/2/1结分，等15次再入账，必须保留。然后Task6统一复审/交付，勿提前完成goal。

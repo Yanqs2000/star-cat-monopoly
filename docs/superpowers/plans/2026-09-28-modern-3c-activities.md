@@ -50,9 +50,9 @@
 
 **Files:** ludo.ts及纯数据运行状态；原投注板/筹码/骰子UI；ludo/activity-controller/UI测试。
 **Interfaces:** placeWager(cellId)、confirmWagers()；阶段/剩余筹码/投注/骰子/结果为序列化interaction。
-- [ ] 动态确认低券、未投筹码和原骰子抽样/赔付时序；锁定手算测试样例。
-- [ ] 数量/区域/三骰/输赢/AI RED→GREEN；命令重复/恢复边界RED→GREEN。
-- [ ] 原素材真实投注、摇骰和结果；暂停/2倍速/资源失败生产回放；验证提交。
+- [x] 动态确认低券、未投筹码和原骰子抽样/赔付时序；锁定手算测试样例。
+- [x] 数量/区域/三骰/输赢/AI RED→GREEN；命令重复/恢复边界RED→GREEN。
+- [x] 原素材真实投注、摇骰和结果；暂停/2倍速/资源失败生产回放；验证提交。
 
 ### Task 5: 游乐场
 

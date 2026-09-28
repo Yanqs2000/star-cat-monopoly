@@ -3,19 +3,20 @@ export interface ActivityTextField {
   matrix: [number, number, number, number]; width: number; height: number; fontSize: number; align: number
 }
 export interface ActivityFrame {
-  sourceFrame: number; url: string; width: number; height: number; offsetX: number; offsetY: number; fields: ActivityTextField[]
+  sourceFrame: number; url: string; width: number; height: number; offsetX: number; offsetY: number; fields: ActivityTextField[];placements?:{name:string;x:number;y:number;matrix:[number,number,number,number]}[]
 }
 export interface ActivityClip { id: string; sourceSymbol: number; fps: number; frames: ActivityFrame[] }
-export interface NativeOverlay { clip: ActivityClip; frame: number; x: number; y: number; scale?: number; opacity?: number; text?: Record<string,string>; depth?: number }
+export interface NativeOverlay { clip: ActivityClip; frame: number; x: number; y: number; scale?: number; opacity?: number; text?: Record<string,string>; depth?: number;matrix?:[number,number,number,number] }
 export interface ActivityManifest { version: 1; sourceSha256: string; clips: ActivityClip[] }
 
 export function parseActivityAssets(value: unknown): ActivityManifest {
   const data = value as ActivityManifest
   if (data?.version !== 1 || data.sourceSha256 !== '790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba' ||
       !Array.isArray(data.clips) || new Set(data.clips.map(item => item.id)).size !== data.clips.length) throw new Error('活动素材清单无效')
-  const required: Record<string, number> = { fog: 19, car2: 111, witch: 1, lottery: 1, 'show-npc4': 50,
+  const required: Record<string, number> = { 'ludo-betting':1,'ludo-game':1,'ludo-dice':40,'ludo-win':40,'ludo-chip':1, fog: 19, car2: 111, witch: 1, lottery: 1, 'show-npc4': 50,
     'trait-9': 60, 'trait-12': 60, 'trait-13': 60, 'trait-14': 60, 'trait-15': 60, 'trait-23': 60,
     station:1,'court-target':1,'court-case':1,'court-verdict':1,show2:45,car1:113,'court-highlight':23,'map-mini':1,'magic-talk':1 }
+  for(let face=1;face<=6;face++){required[`ludo-face-${face}`]=1;required[`ludo-shadow-${face}`]=1}
   for(let character=1;character<=12;character++) {
     required[`face-${character}`]=1;required[`head-${character}`]=1
     for(let direction=1;direction<=4;direction++)required[`fly-${character}-${direction}`]=1

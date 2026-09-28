@@ -25,6 +25,7 @@ export async function playUntil(page: Page, target: () => Promise<boolean>, limi
       page.getByRole('button', { name: '继续动画' }),
       page.locator('.exchange-form').getByRole('button', { name: '放弃' }),
       page.getByTestId('portal-5'),
+      page.getByTestId('ludo-confirm'),
       page.locator('[data-testid^="court-target-"]').first(),
       page.getByTestId('court-case-0'),
       ...['离开卡片屋', '离开银行', '离开股市', '离开公司'].map(name => page.getByRole('button', { name })),
