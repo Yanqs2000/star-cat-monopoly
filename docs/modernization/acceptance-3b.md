@@ -5,18 +5,19 @@
 ## 交付入口与回退
 
 - 本地桌面网页生产入口：`dist-modern/modern.html`（由 `npm run build:modern` 生成），开发入口 `modern.html`；对局无需 SWF/Ruffle 规则引擎。原版素材及原版运行入口保留。
-- 3A 基线/回退提交：`629db6e`；2C 基线：`204ded9`。3B 功能和测试核验提交：`545b964`（包含前序 `17204fb` 等 3B 提交）；验收记录单独提交，不改变运行代码。未推送、合并或部署。
+- 3A 基线/回退提交：`629db6e`；2C 基线：`204ded9`。3B 功能和测试核验提交：`70af5fc`（包含前序 `545b964`、`17204fb` 等 3B 提交）；验收记录单独提交，不改变运行代码。未推送、合并或部署。
 - 原版 `play.swf` SHA-256：`790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba`。金融证据见 `phase-3b-bank-evidence.md`、`phase-3b-stock-evidence.md`、`phase-3b-calendar-company-evidence.md`；受控负随机探针见 `evidence/stock-negative-random-runtime.json`。
 
 ## 能力与证据
 
 | 范围 | 已实现的可观察行为 | 证据 |
 |---|---|---|
+| 金融取证 | 原版字段、营业条件、金额控件、利率和取整、公司/股票/混合表行分类逐项指向源码；S1…S6 等输入/预期样例进入规则测试；受控 AVM1 探针确认负/零随机上界行为。 | 三份 `phase-3b-*-evidence.md`、`evidence/stock-negative-random-runtime.json` 和对应规则测试；没有把自然原版随机流宣称为已逐值重放。 |
 | 金融初态/日期 | 一次注入年月日星期；16 行股票表区分占位 0、交易所 1…12、公共事业 13…15；角色公司按角色 ID 与出生区建立，3000 初始股及 2000 待认购股。原版固定月份长度，整轮最后一人才推进。 | `finance-setup.spec.ts`、`calendar.spec.ts`；跨月生产回放。 |
 | 银行 | 人类周日休息；存款、取款、贷款、还贷、申请/还信用卡；AI 按席位等级先借款/发卡再重分配现金和存款；操作只接受整数并按原版上限。 | `bank-operations.spec.ts`、`finance-controller.spec.ts`；生产 seed8 的存取、借还、授信及反馈素材 404 恢复。 |
 | 月结 | 日期为 1 的最后玩家回合先按公司分配→信用卡月还→贷款月还→存款利息结算，用户确认后才换日；按年月键防重复；原版排名台词抽取一次 `random(15)`。 | `bank-settlement.spec.ts`、`finance-controller.spec.ts`；四真人跨月生产回放。 |
 | 股票 | 1…12 在周一至周六可买卖；现金交易、持股/均价/日限额/池值分开；跨月→跨周→每日价格更新使用单一 RNG 和原版取整；AI 路过不做交易。 | `stock-prices.spec.ts`、`stock-trading.spec.ts`、`finance-controller.spec.ts`；生产 seed5 买卖与续走。 |
-| 公司/董事权 | 12 张原 `gufen` 透明建筑按源像素原点、边界偏移和角色出生区渲染；公司格认购只扣现金，严格领先才换董事；对方落地费用进公司利润而非董事现金；普通公司按两枚最终骰子之和（2…12）收费，公共事业按已建房数收费。 | `company.spec.ts`、`company-assets.spec.ts`、`finance-controller.spec.ts`；生产 seed16 公共事业认购/董事权及全图建筑截图。 |
+| 公司/董事权 | 12 张原 `gufen` 透明建筑按源像素原点、边界偏移和角色出生区渲染，遮挡排序保留原深度的相对关系；原 `show` 对话框画面排除示例文字后接入 Vue。公司格认购只扣现金，严格领先才夺权；现任董事卖出按原版扫描顺序继任。对方落地费用进公司利润；普通公司按最终两骰之和（2…12）收费，公共事业按已建房数收费。 | `company.spec.ts`、`company-assets.spec.ts`、`company-ui-assets.spec.ts`、`finance-controller.spec.ts`；生产 seed16 认购/董事、seed96 双骰经营费及原图404恢复、全图建筑截图。 |
 | 恢复/边界 | 银行/股市途中交互结束后接着处理当前格与余步；公司落地、月结及已提交交易在恢复/重复点击下不二次结算；暂停拒绝人类命令。 | `finance-controller.spec.ts`、`interaction-controller.spec.ts`、`finance-ui.spec.ts`；生产授信反馈素材 404 后重试。 |
 
 ## 原版差异与未验证边界
@@ -29,9 +30,14 @@
 
 ## 验证与复审
 
-- 最新整套 `npm test`：39 文件、**375 项通过**（2026-09-27）；定向 RED→GREEN 覆盖原版价格/分配样例、公司六次随机、信用整数额、无持股正利润流水、重复月结等。
-- `npm run build:modern`：类型检查通过、Vite 构建 771 模块（2026-09-27）；当前构建有 500 kB 单块大小提示，非失败。
-- 生产预览 `http://127.0.0.1:4184/modern.html`：`modern-finance.spec.ts` 银行 seed8、股票 seed5、公司 seed16、四真人跨月及授信反馈素材404 均通过；另连同旧卡牌、地产、场景和回合共 **24/24 通过**。截图：[银行](../../.analysis-cache/acceptance-3b/seed8-bank-1440x1000.png)、[股票](../../.analysis-cache/acceptance-3b/seed5-stock-1440x1000.png)、[公司](../../.analysis-cache/acceptance-3b/seed16-company-1440x1000.png)、[跨月](../../.analysis-cache/acceptance-3b/month-boundary-1440x1000.png)、[全图公司建筑](../../.analysis-cache/acceptance-3b/start-companies-1440x1000.png)。
+- 最新整套 `npm test`：40 文件、**376 项通过**（2026-09-28）；定向 RED→GREEN 覆盖原版价格/分配样例、公司六次随机、信用整数额、无持股正利润流水、重复月结及原版公司框素材/图片错误事件。
+- `npm run build:modern`：类型检查通过、Vite 构建 771 模块（2026-09-28）；当前构建有 500 kB 单块大小提示，非失败。
+- 最新生产构建的 25 条用例：最后全量回放 **24 通过、1 个测试驱动竞态失败**。失败为新卡图片错误在两次 DOM 检查间出现，驱动误判为意外错误；修正目标复核后，新卡、运气8、公司原图404三条定向 **3/3 通过**，未重复无影响的24条。全部25条生产用例均有通过证据，不把该结果记成一次全量25/25。旧固定种子回放现固定完整年月日，避免运行当天跨月改变 RNG 路线。
+- 生产预览 `http://127.0.0.1:4184/modern.html`：银行 seed8、股票 seed5、公司 seed16、公司费用 seed96、四真人跨月及资源404恢复。截图：[银行](../../.analysis-cache/acceptance-3b/seed8-bank-1440x1000.png)、[股票](../../.analysis-cache/acceptance-3b/seed5-stock-1440x1000.png)、[公司原框](../../.analysis-cache/acceptance-3b/seed16-company-1440x1000.png)、[经营费重试](../../.analysis-cache/acceptance-3b/seed96-company-fee-retry-1440x1000.png)、[跨月](../../.analysis-cache/acceptance-3b/month-boundary-1440x1000.png)、[全图公司建筑](../../.analysis-cache/acceptance-3b/start-companies-1440x1000.png)。seed96 原路经神灵通知后收4500，原图失败重试仍现金103300、存款100000、两骰3+6=9，后续认购10股只再扣200。
 - 独立复审指出旧 3A 生产回放因金融 RNG 变更而缩短。按新自然路线补回 seed2 连续两次买地、seed8 授信后用信用卡实际取现 5000、在已载入对局中全屏；运气 8 图片 404 恢复仍由 seed2 自然回放验证。复审后受影响的三条生产用例定向 **3/3 通过**。飞弹选中中心的两种特效在规则/坐标测试中均锁定为 `(560,400)`；生产浏览器验证画面变化和目标住院，不把生产包中不可独立导入的 Pixi 模块当成位置探针。
 - 测试专用真实组件夹具 `tests/e2e/modern-fixtures.spec.ts` 在 Vite 开发环境 6/6 通过，非生产入口，不充当自然浏览器证明。
-- 独立复审未发现剩余的 3B 数值规则、RNG 顺序或序列化续办缺陷，无 Critical 项；其唯一 Important 覆盖缺口已按上述拆分补测。复审未独立重跑门禁。用户对 3B 的最终验收仍待反馈。
+- 独立整批复审未发现剩余的 3B 数值规则、RNG 顺序或序列化续办缺陷，无 Critical 项；其唯一 Important 覆盖缺口已按上述拆分补测。公司原框补齐后定向复审也通过，未确认 Critical/Important/Minor。复审未独立重跑门禁。用户对 3B 的最终验收仍待反馈。
+
+## 完成审计
+
+2026-09-28 按用户 3B 计划逐项核对：金融规则表/原版对照样例、银行人类与AI闭环、股票日周月价格/数量边界/实际交易界面、公司/董事/收益/原建筑和原界面素材、同局与月初顺序、唯一权威日历/流水、可序列化恢复、取消/余额与持股不足/重复提交/暂停/2倍速重试、3A回归均由上表文件和实际输出证明。独立现代生产入口、原版差异、截图、功能提交及回退点已交付。3A/3B 的用户验收不是自动测试结论，本记录不自行标记用户通过。
