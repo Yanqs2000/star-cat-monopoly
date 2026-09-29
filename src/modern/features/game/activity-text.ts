@@ -5,6 +5,10 @@ export function activityChanges(receipt: ActivityReceipt): string {
   const money = [['现金', receipt.cashDelta], ['存款', receipt.depositDelta], ['奖券', receipt.ticketDelta]]
     .filter((value): value is [string, number] => typeof value[1] === 'number' && value[1] !== 0)
     .map(([label, amount]) => `${label} ${amount > 0 ? '+' : ''}${amount}`)
+  if(receipt.kind==='ludo'&&receipt.ticketDebit!==undefined&&receipt.ticketCredit!==undefined) {
+    money.unshift(`入场 -${receipt.ticketDebit} 券`,`返还 +${receipt.ticketCredit} 券`)
+    if(receipt.ticketDelta===0)money.push('奖券 +0')
+  }
   if (receipt.addedCardIds?.length) money.push(`获得 ${receipt.addedCardIds.map(id => getCardDefinition(id).name).join('、')}`)
   if (receipt.removedCardIds?.length) money.push(`失去 ${receipt.removedCardIds.map(id => getCardDefinition(id).name).join('、')}`)
   return money.join(' · ') || '账户无变化'

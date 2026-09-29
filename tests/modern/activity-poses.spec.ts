@@ -59,3 +59,10 @@ it.each([2,3] as const)('拘束状态%s到期按原setfree.brow7重入场', stat
   const plan=visuals.interactionVisualPlan({kind:'restriction',playerId:1,worldEvent:release.event!})
   expect(plan.reactions).toEqual([{playerId:1,name:'ready'}])
 })
+
+it('小游戏结束沿原brow反馈：投注净增happy/净零neutral/净减sad，接物恒happy',()=>{
+ for(const [delta,name] of [[10,'happy'],[0,'neutral'],[-10,'sad']] as const) {
+  expect(visuals.interactionVisualPlan({kind:'activity',playerId:1,receipt:{kind:'ludo',ticketDelta:delta}}).reactions).toEqual([{playerId:1,name}])
+ }
+ expect(visuals.interactionVisualPlan({kind:'activity',playerId:1,receipt:{kind:'carnival',ticketDelta:0}}).reactions).toEqual([{playerId:1,name:'happy'}])
+})

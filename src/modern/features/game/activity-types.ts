@@ -13,6 +13,8 @@ export interface ActivityReceipt {
   cashDelta?: number
   depositDelta?: number
   ticketDelta?: number
+  ticketDebit?: number
+  ticketCredit?: number
   rate?: number
   addedCardIds?: number[]
   removedCardIds?: number[]

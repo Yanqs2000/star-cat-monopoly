@@ -34,3 +34,9 @@ it('NPC收据区分实际现金和存款扣款，失物招领镜像不呈现为�
   expect(panel.text()).not.toContain('数值 +1000')
   panel.unmount()
 })
+
+it('投注净变化为零仍明确记录入场消耗与实际返还，不能只显示账户无变化',()=>{
+ const game=createGame([1],1);game.phase='interaction';game.interaction={kind:'notice',playerId:1,resume:'end-turn',notice:{kind:'activity',message:'ludo-result',receipt:{kind:'ludo',sourceAmount:100,ticketDelta:0,ticketDebit:100,ticketCredit:100}}}
+ const panel=mount(InteractionPanel,{props:{game,paused:false,cardAssets:[]}})
+ expect(panel.text()).toContain('入场 -100 券');expect(panel.text()).toContain('返还 +100 券');expect(panel.text()).toContain('奖券 +0');panel.unmount()
+})

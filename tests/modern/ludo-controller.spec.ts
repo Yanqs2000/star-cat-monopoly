@@ -26,3 +26,19 @@ it('已开奖入账后重建同阶段，不再次加券，2倍速不加速骰子
  const r=createGameController(saved,{scheduler});vi.advanceTimersByTime(5000)
  expect(r.state.tickets[1]).toBe(tickets);expect(r.state.interaction?.kind).toBe('notice');r.dispose()
 })
+
+it('投注结果事件与界面保留实际扣券/返还/净变化，历史不能漏掉已入账数值',()=>{
+ vi.useFakeTimers();const events:unknown[]=[];const c=createGameController(entry(),{scheduler,onInteractionEvent:e=>events.push(e)})
+ c.placeWager(7);c.confirmWagers();vi.advanceTimersByTime(8000)
+ const i=c.state.interaction;if(i?.kind!=='notice')throw Error('未得到结果')
+ expect(i.notice.receipt).toMatchObject({ticketDebit:9,ticketCredit:c.state.tickets[1],ticketDelta:c.state.tickets[1]! -9})
+ expect(events).toHaveLength(1);expect(events[0]).toMatchObject({receipt:i.notice.receipt});c.dispose()
+})
+
+it('AI入场等待原隐藏按钮投注画面就绪，再按原30/40/50帧分配，70帧只开奖一次',()=>{
+ vi.useFakeTimers();const game=entry();game.players[0]!.controller='ai';game.tickets[1]=100
+ const c=createGameController(game,{scheduler,awaitActivityAssets:true});vi.advanceTimersByTime(3000)
+ expect(c.state.interaction).toMatchObject({game:{stage:'betting',frame:0}})
+ expect(c.readyActivity('ludo-ai-betting')).toBe(true);vi.advanceTimersByTime(2350)
+ expect(c.state.interaction).toMatchObject({game:{stage:'rolling',remaining:7}});expect(c.state.tickets[1]).toBe(0);c.dispose()
+})

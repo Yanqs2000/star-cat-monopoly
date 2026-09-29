@@ -28,6 +28,7 @@ import {
 import type { GridPoint } from '../map/types'
 import { advancePortalFlight, advancePortalHeads, chooseAiPortal, choosePortal as applyPortal, createPortalFlight, createPortalHeads, portalAt } from './portal'
 import { courtTargets, judgeCourt } from './court'
+import { beginCarnival,advanceCarnivalTime,setCarnivalInput as applyCarnivalInput,type CarnivalInput } from './carnival'
 import { beginLudo,placeWager as addWager,confirmWagers as startLudoDice,advanceLudo } from './ludo'
 import { randomInt } from './random'
 
@@ -84,6 +85,7 @@ export interface GameController {
   leaveExchange(): boolean
   readyActivity(clipId: string): boolean
   skipActivityPresentation(): boolean
+  setCarnivalInput(input:CarnivalInput):boolean
   placeWager(cellId:number):boolean
   confirmWagers():boolean
   choosePortal(destination: number): boolean
@@ -186,12 +188,14 @@ export function createGameController(initialState: GameState, options: GameContr
   let pending: {
     handle?: unknown
     callback: () => void
+    originalBaseMs: number
     remainingBaseMs: number
     startedAt: number
     speed: number
     scaled: boolean
   } | undefined
 
+  let firedBaseElapsedMs=0
   const notify = () => options.onState?.(current)
   const activePlayer = () => current.players[current.activePlayerIndex]!
   const isHuman = () => activePlayer().controller === 'human'
@@ -199,7 +203,8 @@ export function createGameController(initialState: GameState, options: GameContr
   let readyClip: string | undefined
   const expectedActivityScene = () => {
     const interaction=current.interaction
-    if(interaction?.kind==='ludo')return interaction.game.stage==='betting'?'ludo-betting':'ludo-game'
+    if(interaction?.kind==='carnival')return 'carnival-play'
+    if(interaction?.kind==='ludo')return interaction.game.stage==='betting'?isHuman()?'ludo-betting':'ludo-ai-betting':'ludo-game'
     if(interaction?.kind==='portal')return interaction.stage==='choice'?'station':`fly-${activePlayer().characterId}-${interaction.flight!.heading}`
     if(interaction?.kind==='court' && ['target','case'].includes(interaction.stage))return `court-${interaction.stage}`
     return undefined
@@ -215,6 +220,7 @@ export function createGameController(initialState: GameState, options: GameContr
   const runPending = (scheduledGeneration: number) => {
     if (disposed || scheduledGeneration !== generation || !pending) return
     const callback = pending.callback
+    firedBaseElapsedMs=pending.originalBaseMs+Math.max(0,(scheduler.now()-pending.startedAt)*pending.speed-pending.remainingBaseMs)
     pending = undefined
     callback()
   }
@@ -227,7 +233,7 @@ export function createGameController(initialState: GameState, options: GameContr
   }
   const schedule = (callback: () => void, baseDelayMs: number, scaled = true) => {
     cancelPending()
-    pending = { callback, remainingBaseMs: baseDelayMs, startedAt: scheduler.now(), speed, scaled }
+    pending = { callback, originalBaseMs:baseDelayMs, remainingBaseMs: baseDelayMs, startedAt: scheduler.now(), speed, scaled }
     armPending()
   }
   const preserveRemaining = () => {
@@ -301,14 +307,30 @@ export function createGameController(initialState: GameState, options: GameContr
     if (presentation() && (!options.awaitActivityAssets || readyClip === presentation()!.clipId) && !pending) schedule(advancePresentation, 1000 / 30, false)
   }
 
+  const advanceCarnivalClock = () => {
+    const interaction=current.interaction
+    if(interaction?.kind!=='carnival')return
+    const result=advanceCarnivalTime(interaction.game,current.rngState,firedBaseElapsedMs,!isHuman())
+    current={...current,rngState:result.rngState,tickets:{...current.tickets,[interaction.playerId]:(current.tickets[interaction.playerId] ?? 0)+result.credit},interaction:{...interaction,game:result.game}}
+    if(result.game.stage==='done') {
+      const receipt={kind:'carnival',sourceAmount:result.game.score,ticketDelta:result.game.score}
+      showNotice({kind:'activity',message:'carnival-result',receipt},
+        {kind:'activity',playerId:interaction.playerId,receipt},'end-turn');return
+    }
+    notify();schedule(advanceCarnivalClock,1000/30-result.game.remainderMs,false)
+  }
+  const beginCarnivalClock = () => {
+    if(current.interaction?.kind==='carnival'&&activitySceneReady()&&!pending)schedule(advanceCarnivalClock,1000/30-current.interaction.game.remainderMs,false)
+  }
   const advanceLudoClock = () => {
     const interaction=current.interaction
     if(interaction?.kind!=='ludo')return
     const result=advanceLudo(interaction.game,current.rngState,!isHuman())
     current={...current,rngState:result.rngState,tickets:{...current.tickets,[interaction.playerId]:(current.tickets[interaction.playerId] ?? 0)+result.credit},interaction:{...interaction,game:result.game}}
     if(result.game.stage==='done') {
-      showNotice({kind:'activity',message:'ludo-result',receipt:{kind:'ludo',sourceAmount:result.game.initialChips*10,ticketDelta:result.game.credit-result.game.debit}},
-        {kind:'activity',playerId:interaction.playerId},'end-turn');return
+      const receipt={kind:'ludo',sourceAmount:result.game.initialChips*10,ticketDelta:result.game.credit-result.game.debit,ticketDebit:result.game.debit,ticketCredit:result.game.credit}
+      showNotice({kind:'activity',message:'ludo-result',receipt},
+        {kind:'activity',playerId:interaction.playerId,receipt},'end-turn');return
     }
     if(interaction.game.stage==='betting'&&result.game.stage==='rolling')readyClip=undefined
     notify()
@@ -538,6 +560,11 @@ export function createGameController(initialState: GameState, options: GameContr
     }
 
     const location = getCardCell(player.position)
+    if(location?.type===28) {
+      const result=beginCarnival(player.characterId,current.rngState)
+      current={...current,rngState:result.rngState,phase:'interaction',continuation:null,interaction:{kind:'carnival',playerId:player.id,game:result.game}}
+      readyClip=undefined;notify();beginCarnivalClock();return
+    }
     if(location?.type===27) {
       const result=beginLudo(current.tickets[player.id] ?? 0,current.rngState)
       current={...current,rngState:result.rngState,tickets:{...current.tickets,[player.id]:(current.tickets[player.id] ?? 0)-result.debit},phase:'interaction',continuation:null,interaction:{kind:'ludo',playerId:player.id,game:result.game}}
@@ -922,6 +949,7 @@ export function createGameController(initialState: GameState, options: GameContr
   const resumeCurrentState = () => {
     if (disposed) return
     if (presentation()) {beginPresentationClock();return}
+    if(current.interaction?.kind==='carnival'){beginCarnivalClock();return}
     if(current.interaction?.kind==='ludo'){beginLudoClock();return}
     if(current.interaction?.kind==='portal') {
       if(current.interaction.stage==='flight' && !options.awaitActivityAssets) schedule(advanceFlight,1000/30,false)
@@ -1046,6 +1074,14 @@ export function createGameController(initialState: GameState, options: GameContr
     get state() { return current },
     get paused() { return paused },
     get speed() { return speed },
+    setCarnivalInput(input) {
+      const interaction=current.interaction
+      const release=input.kind==='key'&&input.direction===0
+      if(disposed||!isHuman()||interaction?.kind!=='carnival'||!release&&(paused||!activitySceneReady()))return false
+      const game=applyCarnivalInput(interaction.game,input)
+      if(game===interaction.game)return false
+      current={...current,interaction:{...interaction,game}};notify();return true
+    },
     placeWager(cellId) {
       const interaction=current.interaction
       if(!canCommand()||interaction?.kind!=='ludo')return false
@@ -1066,6 +1102,7 @@ export function createGameController(initialState: GameState, options: GameContr
       if(!presentation()) {
         if(expectedActivityScene()!==clipId)return false
         readyClip=clipId
+        if(current.interaction?.kind==='carnival')beginCarnivalClock()
         if(current.interaction?.kind==='ludo')beginLudoClock()
         if(current.interaction?.kind==='portal')schedule(current.interaction.stage==='flight'?advanceFlight:advancePortalChoice,1000/30,false)
         return true

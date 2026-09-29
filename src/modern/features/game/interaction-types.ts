@@ -1,3 +1,4 @@
+import type { CarnivalGame } from './carnival'
 import type { LudoGame } from './ludo'
 import type { ShopState } from './card-economy'
 import type { DirectCardChoice } from './direct-cards'
@@ -47,6 +48,7 @@ interface CardInteractionBase {
 }
 
 export type GameInteraction =
+  | { kind:'carnival';playerId:number;game:CarnivalGame }
   | { kind:'ludo';playerId:number;game:LudoGame }
   | { kind: 'npc-opening'; playerId: number; npcId: 1; cellId: number; presentation: ActivityPresentation }
   | { kind: 'portal'; playerId: number; stage: 'choice' | 'flight'; destination?: number; flight?: PortalFlight; heads?: PortalHead[]; choiceFrames?: number; error?: string | null; presentation?: ActivityPresentation }

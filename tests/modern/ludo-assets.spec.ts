@@ -13,3 +13,8 @@ it('原投注800×600、原40帧骰子与中奖动画、6种骰面阴影全部�
  expect(manifest.clips.find((c:{id:string})=>c.id==='ludo-betting').frames[0]).toMatchObject({width:800,height:600})
  expect(manifest.clips.find((c:{id:string})=>c.id==='ludo-dice').frames[39].placements).toHaveLength(6)
 })
+
+it('原AI隐藏开奖按钮，使用独立源选帧，保留800×600投注板',()=>{
+ const ai=manifest.clips.find((c:{id:string})=>c.id==='ludo-ai-betting')
+ expect(ai).toMatchObject({sourceSymbol:2163,nativeFirstFrame:1,frames:[{width:800,height:600}]})
+})

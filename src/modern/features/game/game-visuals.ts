@@ -176,6 +176,9 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
     react(event.playerId, 'ready')
   } else if (event.status === 'invalid-target' || worldKind === 'credit-declined' || worldKind === 'restriction-skipped') {
     react(event.playerId, 'sad')
+  } else if(event.receipt?.kind==='ludo') {
+    const delta=event.receipt.ticketDelta ?? 0
+    react(event.playerId,delta>0?'happy':delta<0?'sad':'neutral')
   } else if (event.kind === 'luck') {
     react(event.playerId, (event.amount ?? 0) < 0 ? 'sad' : 'happy')
     if (event.luckEvent?.kind === 'tickets' && (event.amount ?? 0) > 0) effects.push({ clipId: 'ticket-gain', playerId: event.playerId })

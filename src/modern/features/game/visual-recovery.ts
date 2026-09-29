@@ -14,10 +14,12 @@ export function restoreControllerAfterVisual(
   options: GameControllerOptions,
   replay?: () => Promise<void>,
   speed = 1,
+  paused = false,
 ): Promise<GameController> {
   return replayBeforeHydration(replay, () => {
     const controller = createGameController(initial, options)
     controller.setSpeed(speed)
+    controller.setPaused(paused)
     return controller
   })
 }

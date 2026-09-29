@@ -34,7 +34,7 @@ async function wallet(page: Page) {
   return { cash: Number(cash[1]), deposit: Number(cash[2]), tickets: Number(tickets[1]) }
 }
 
-for (const [seed, clip, cashSign] of [[20,'witch',1],[24,'lottery',-1]] as const) {
+for (const [seed, clip, cashSign] of [[103,'witch',1],[24,'lottery',-1]] as const) {
   test(`自然开局seed${seed}原${clip}场景20券交易、暂停和重复确认`, async ({ page }) => {
     test.setTimeout(180_000)
     const errors: string[] = []
@@ -57,7 +57,7 @@ for (const [seed, clip, cashSign] of [[20,'witch',1],[24,'lottery',-1]] as const
   })
 }
 
-for (const [seed,npc] of [[6,13],[11,9],[33,12],[61,14],[80,15],[0,23]] as const) {
+for (const [seed,npc] of [[112,13],[133,9],[36,12],[61,14],[113,15],[0,23]] as const) {
   test(`自然开局seed${seed}原NPC${npc}完整动画及实际结算`, async ({ page }) => {
     test.setTimeout(240_000)
     const errors: string[] = []
@@ -76,7 +76,12 @@ for (const [seed,npc] of [[6,13],[11,9],[33,12],[61,14],[80,15],[0,23]] as const
     await page.screenshot({ path: `${evidenceDir}/seed${seed}-npc${npc}-1440x1000.png` })
     await page.getByRole('button', { name: '继续对局', exact: true }).click()
     await expect(page.getByTestId('interaction-acknowledge')).toBeVisible({ timeout: 15_000 })
-    if (npc === 9) await expect(page.getByTestId('player-list').locator('li').first()).toContainText('住院 3天')
+    if (npc === 9) {
+      const patient=page.getByTestId('player-list').locator('li').first()
+      await expect(patient).toContainText('住院 3天');await page.getByTestId('interaction-acknowledge').click()
+      await playUntil(page,()=>patient.textContent().then(s=>!!s&&!s.includes('住院')),7000)
+      await expect(patient).toContainText('19,1')
+    }
     else await expect(page.getByTestId('activity-receipt')).toBeVisible()
     expect(errors).toEqual([])
   })
@@ -86,7 +91,7 @@ test('自然开局恶犬已送医后车辆素材404，重试保留医院状态�
   test.setTimeout(240_000)
   let broken = true
   await page.route('**/assets/activities/car2/80.png', route => broken ? route.fulfill({ status: 404, body: '' }) : route.continue())
-  await start(page, 11)
+  await start(page, 133)
   await playUntil(page, () => page.getByRole('alert').allTextContents().then(text => text.some(value => value.includes('activities/car2/80.png'))), 2200)
   broken = false
   await page.getByRole('button', { name: '重试载入' }).click()

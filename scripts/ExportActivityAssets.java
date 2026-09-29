@@ -5,6 +5,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.Objects;
 import com.jpexs.decompiler.flash.AbortRetryIgnoreHandler;
 import com.jpexs.decompiler.flash.SWF;
 import com.jpexs.decompiler.flash.exporters.FrameExporter;
@@ -40,7 +41,7 @@ class ExportActivityAssets {
             for (var entry : frame.layers.entrySet()) {
                 if (entry.getValue().instanceName != null && removed.contains(entry.getValue().instanceName)) continue;
                 var placement = entry.getValue().toPlaceObjectTag(entry.getKey());
-                if (replacement != null && childName.equals(entry.getValue().instanceName)) placement.setCharacterId(replacement);
+                if (replacement != null && Objects.equals(childName,entry.getValue().instanceName)) placement.setCharacterId(replacement);
                 result.addTag(placement);
             }
             result.addTag(new ShowFrameTag(swf));
@@ -48,6 +49,19 @@ class ExportActivityAssets {
         }
         result.addTag(new EndTag(swf)); result.setFrameCount(count); swf.addTag(result); result.resetTimeline();
         return result;
+    }
+    private static DefineSpriteTag walk(SWF swf, DefineSpriteTag source, int pose) {
+        var layers=source.getTimeline().getFrames().get(pose-1).layers;
+        require(layers.size()==1,"Unexpected boy pose layers");
+        var layer=layers.values().iterator().next();
+        var nativeChild=sprite(swf,layer.characterId);
+        var result=new DefineSpriteTag(swf);result.setCharacterId(nextId++);
+        for(int f=0;f<nativeChild.frameCount;f++) {
+            var selected=copy(swf,nativeChild,f,1,null);
+            if(f>0){var remove=new RemoveObject2Tag(swf);remove.setDepth(layers.keySet().iterator().next());result.addTag(remove);}
+            var placement=layer.toPlaceObjectTag(layers.keySet().iterator().next());placement.setCharacterId(selected.getCharacterId());result.addTag(placement);result.addTag(new ShowFrameTag(swf));
+        }
+        result.addTag(new EndTag(swf));result.setFrameCount(nativeChild.frameCount);swf.addTag(result);result.resetTimeline();return result;
     }
     private static String quoted(String value) {
         return "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r") + "\"";
@@ -106,7 +120,7 @@ class ExportActivityAssets {
         for (int i=0;i<count;i++) {
             Files.copy(files.get(i).toPath(), folder.resolve((i+1)+".png"), StandardCopyOption.REPLACE_EXISTING);
             var textFields=new ArrayList<String>();
-            fields(swf, sprite(swf,sourceId).getTimeline().getFrames().get(first+i),new double[]{1,0,0,1,0,0},textFields,0);
+            fields(swf, (id.startsWith("carnival-walk-")?render:sprite(swf,sourceId)).getTimeline().getFrames().get(first+i),new double[]{1,0,0,1,0,0},textFields,0);
             if (i>0)meta.append(',');
             var placements=new ArrayList<String>();
             if(id.equals("ludo-dice"))for(var layer:sprite(swf,sourceId).getTimeline().getFrames().get(first+i).layers.values()) {
@@ -127,6 +141,40 @@ class ExportActivityAssets {
             for(var tag:swf.getTags()) if(tag instanceof DefineEditTextTag text) text.initialText="";
             Path out=Path.of(args[1]),cache=Path.of(args[2]);
             var clips=new ArrayList<String>();
+            if(args.length>3 && "carnival-walk".equals(args[3])) {
+                for(int role=1;role<=12;role++)for(int pose=2;pose<=3;pose++) {
+                    var boy=(DefineSpriteTag)swf.getCharacterByExportName("boy"+role);
+                    var render=walk(swf,boy,pose);
+                    clips.add(exportRender(swf,"carnival-walk-"+role+"-"+(pose==2?"left":"right"),boy.getCharacterId(),render,0,render.frameCount,pose,render.getRectWithStrokes(),out,cache));
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
+            if(args.length>3 && "carnival-intro".equals(args[3])) {
+                var board=copy(swf,sprite(swf,2156),1,1,null);
+                clips.add(exportRender(swf,"carnival-play",2156,board,1,1,null,board.getRectWithStrokes(),out,cache));
+                clips.add(export(swf,"carnival-intro",2154,90,null,out,cache));
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
+            if(args.length>3 && "carnival".equals(args[3])) {
+                var board=copy(swf,sprite(swf,2156),0,1,null);
+                clips.add(exportRender(swf,"carnival-play",2156,board,0,1,null,board.getRectWithStrokes(),out,cache));
+                var score=copy(swf,sprite(swf,2156),3,1,null);
+                clips.add(exportRender(swf,"carnival-score",2156,score,3,1,null,score.getRectWithStrokes(),out,cache));
+                for(int role=1;role<=12;role++) {
+                    var boy=(DefineSpriteTag)swf.getCharacterByExportName("boy"+role);
+                    clips.add(export(swf,"carnival-boy-"+role,boy.getCharacterId(),3,null,out,cache));
+                }
+                for(int kind=1;kind<=4;kind++) {
+                    var ball=(DefineSpriteTag)swf.getCharacterByExportName("bb"+kind);
+                    clips.add(export(swf,"carnival-ball-"+kind,ball.getCharacterId(),30,null,out,cache));
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
+            if(args.length>3 && "ludo-ai".equals(args[3])) {
+                var board=copy(swf,sprite(swf,2163),0,1,"",null,Set.of("ok"));
+                clips.add(exportRender(swf,"ludo-ai-betting",2163,board,0,1,null,board.getRectWithStrokes(),out,cache));
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
             if(args.length>3 && "ludo".equals(args[3])) {
                 var betting=copy(swf,sprite(swf,2163),0,1,null);
                 clips.add(exportRender(swf,"ludo-betting",2163,betting,0,1,null,betting.getRectWithStrokes(),out,cache));

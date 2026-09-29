@@ -58,10 +58,10 @@
 
 **Files:** carnival.ts和固定步长逻辑；Pixi接物场景/输入生命周期；carnival/时钟/控制器测试。
 **Interfaces:** setCarnivalInput(input)、固定30Hz推进；20秒、落物/角色/生成/计分/AI/待结算interaction完整可恢复。
-- [ ] 原碰撞及同时刻timer/frame顺序探针；导出12角色boy、落物和背景原素材。
-- [ ] 固定时间表/分数/边界/AI、30/60/120刷新一致RED→GREEN。
-- [ ] 原键鼠操作和20秒场次；冻结/恢复/退出键鼠监听、半场/已结算404 RED→GREEN及生产回放。
-- [ ] 定向/整套规则与构建，提交并记checkpoint。
+- [x] 原碰撞及同时刻timer/frame顺序探针；导出12角色boy、落物和背景原素材。
+- [x] 固定时间表/分数/边界/AI、30/60/120刷新一致RED→GREEN。
+- [x] 原键鼠操作和20秒场次；冻结/恢复/退出键鼠监听、半场/已结算404 RED→GREEN及生产回放。
+- [x] 定向/整套规则与构建，提交并记checkpoint。
 
 ### Task 6: 联合审查与整批验收
 

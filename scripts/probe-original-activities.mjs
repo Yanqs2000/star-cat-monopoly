@@ -9,7 +9,7 @@ import { chromium } from '@playwright/test'
 
 const root = fileURLToPath(new URL('..', import.meta.url))
 const mode = process.argv[2] ?? 'flight'
-if (!['flight','heads','ludo','carnival'].includes(mode)) throw Error('Unknown original activity probe')
+if (!['flight','heads','ludo','carnival','carnival-walk'].includes(mode)) throw Error('Unknown original activity probe')
 const scratch = resolve(root, `.analysis-cache/3c-original-activities-${mode}`)
 const source = resolve(root, 'public/original/play.swf')
 const probe = resolve(scratch, 'activities-probe.swf')
@@ -110,7 +110,7 @@ this.onEnterFrame=function(){
  }
 };
 `
-writeFileSync(resolve(scratch, 'import/frame_1/DoAction.as'), mode === 'flight' ? flightHarness : mode === 'heads' ? headHarness : mode === 'ludo' ? ludoHarness : readFileSync(resolve(root,'scripts/original-carnival-probe.as'),'utf8'))
+writeFileSync(resolve(scratch, 'import/frame_1/DoAction.as'), mode === 'flight' ? flightHarness : mode === 'heads' ? headHarness : mode === 'ludo' ? ludoHarness : readFileSync(resolve(root,'scripts/original-carnival-probe.as'),'utf8').replace('for(var w=1;w<=16;w++)','for(var w=1;w<=child._totalframes;w++)').replace('if(carnie._currentframe>=4)',mode==='carnival-walk'?'if(probeFrame>=85)':'if(carnie._currentframe>=4)').replace('this.sourceFn();if(_root.probeFrame<35)',mode==='carnival-walk'?'if(_root.probeFrame==35)this._parent.LR_id=2;if(_root.probeFrame==70)this._parent.LR_id=0;this.sourceFn();if(_root.probeFrame<85)':'this.sourceFn();if(_root.probeFrame<35)'))
 execFileSync('/opt/homebrew/opt/openjdk/bin/java', ['-jar',
   '/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.analysis-tools/ffdec-26.2.1/ffdec.jar',
   '-importScript', source, probe, resolve(scratch, 'import')], { stdio: 'inherit' })
@@ -139,6 +139,7 @@ const browser = await chromium.launch({ executablePath: '/Applications/Google Ch
   args: ['--enable-unsafe-swiftshader', '--use-angle=swiftshader'] })
 try {
   const page = await browser.newPage()
+  if(process.env.PROBE_DEBUG)page.on('console',m=>{if(m.type()==='error')console.log(m.text())})
   await page.route('**/__activities-probe.swf', route => route.fulfill({ path: probe, contentType: 'application/x-shockwave-flash' }))
   await page.goto(process.env.ORIGINAL_PREVIEW_URL ?? 'http://127.0.0.1:4173/')
   await page.getByText('原版已载入', { exact: true }).waitFor()
@@ -150,7 +151,7 @@ try {
     catch { return false }
   }, null, { timeout: 15000 })
   await page.evaluate(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityStart'))
-  await page.waitForFunction(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityDone'), null, { timeout: 15000 })
+  await page.waitForFunction(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityDone'), null, { timeout: mode==='carnival'?35000:15000 })
   const encoded = await page.evaluate(() => document.querySelector('ruffle-player').ruffle().callExternalInterface('activityProbe'))
   const samples = mode === 'heads' ? encoded.split(',').map(Number) : encoded.split(';').filter(Boolean).map(line => line.split(',').map(value => value === 'true' ? true : value === 'false' ? false : value === '' ? null : Number.isNaN(Number(value)) ? value : Number(value)))
   if (sha(readFileSync(source)) !== originalHash) throw Error('Original SWF changed')
@@ -158,6 +159,6 @@ try {
     limitation: 'Controlled original symbol execution, not a natural original gameplay route',
     sourceSha256: originalHash, probeSha256: sha(probeBytes), frame4ActionSha256: sha(originalFrame4),
     samples }
-  writeFileSync(resolve(root, `docs/modernization/evidence/${['ludo','carnival'].includes(mode)?mode:'portal-'+mode}-runtime.json`), `${JSON.stringify(result, null, 2)}\n`)
+  writeFileSync(resolve(root, `docs/modernization/evidence/${['ludo','carnival','carnival-walk'].includes(mode)?mode:'portal-'+mode}-runtime.json`), `${JSON.stringify(result, null, 2)}\n`)
   console.log(JSON.stringify({ count: samples.length, first: samples[0], last: samples.at(-1), sourceSha256: originalHash }))
 } finally { await browser.close() }

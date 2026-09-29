@@ -8,7 +8,7 @@ const emit=defineEmits<{wager:[id:number];confirm:[];ready:[id:string];'asset-er
 const loaded=ref(false)
 const find=(id:string)=>props.assets?.clips.find(c=>c.id===id)
 const baseUrl=import.meta.env.BASE_URL
-const clipId=computed(()=>props.game.stage==='betting'?'ludo-betting':'ludo-game')
+const clipId=computed(()=>props.game.stage==='betting'?props.human?'ludo-betting':'ludo-ai-betting':'ludo-game')
 const clip=computed(()=>find(clipId.value))
 watch(clipId,()=>{loaded.value=false})
 const canAct=computed(()=>props.human&&!props.paused&&props.game.stage==='betting'&&(!props.assets||loaded.value))
@@ -42,7 +42,7 @@ function ready(id:string){loaded.value=true;emit('ready',id)}
  <div class="ludo-activity" data-testid="ludo-original" :data-stage="game.stage" :data-frame="game.frame">
   <NativeActivity v-if="clip" :key="clipId" :clip="clip" :text="{pay:String(game.remaining)}" :preload="prepared" :overlays="overlays" @ready="ready" @asset-error="emit('asset-error',$event)" />
   <img v-else :src="`${baseUrl}assets/activities/${clipId}/1.png`" alt="原版投注盘">
-  <template v-if="game.stage==='betting'">
+  <template v-if="game.stage==='betting'&&human">
    <button v-for="(_,id) in LUDO_CELLS" :key="id" :data-testid="`ludo-cell-${id}`" class="hotspot cell" :style="{left:`${(50+id%6*80)/8}%`,top:`${(75+Math.trunc(id/6)*80)/6}%`}" :aria-label="label(id)" :disabled="!canAct||game.remaining<=0" @click="emit('wager',id)">{{ label(id) }}</button>
    <button data-testid="ludo-confirm" class="hotspot confirm" :disabled="!canAct" @click="emit('confirm')">开奖</button>
   </template>

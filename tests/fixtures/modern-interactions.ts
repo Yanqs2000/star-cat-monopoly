@@ -116,7 +116,7 @@ const Fixture = defineComponent({
     else if (scenario === 'barrier') { initial = before({ column: 18, row: 14 }, 1); initial.world.markers = { 142: 6 } }
     else if (scenario === 'god-property') {
       initial = before({ column: 7, row: 31 }, 2)
-      initial.world.markers = { 1: 1 }
+      initial.world.markers = { 1: 15 }
       initial.world.statuses[1] = { state: 0, days: 0, godId: 10, godDays: 7 }
     } else if (scenario === 'god-expiry') {
       initial = baseGame()

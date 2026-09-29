@@ -32,6 +32,8 @@ const pending = ref<PendingGame>()
 const game = ref<GameState>()
 const interactionAssets = ref<InteractionAssetsManifest>()
 const activityAssets = ref<ActivityManifest>()
+const controllerReady=ref(false)
+let continuePausedReplay:(()=>void)|undefined
 const portalDecorations=ref<NativeOverlay[]>([])
 const loadState = ref<'idle' | 'loading' | 'ready' | 'error'>('idle')
 const loadError = ref('')
@@ -92,6 +94,7 @@ function seed(): number {
   return value[0]!
 }
 function cleanupGame() {
+  controllerReady.value=false
   generation += 1
   abort?.abort(); abort = undefined
   observer?.disconnect(); observer = undefined
@@ -162,7 +165,7 @@ async function loadPendingGame() {
   gameController = undefined; scene = undefined
   abort = new AbortController()
   const signal = abort.signal
-  loadState.value = 'loading'; loadError.value = ''; paused.value = false; following.value = true
+  loadState.value = 'loading'; loadError.value = ''; following.value = true
   try {
     const [entries, loadedInteractionAssets, loadedActivityAssets] = await Promise.all([Promise.all(pending.value.state.players.map(async player => {
       const item = characters.value.find(character => character.id === player.characterId)!
@@ -265,13 +268,25 @@ async function loadPendingGame() {
     }
     const replay = pending.value.visual
     if (replay) latestNoticeVisual = replay
+    if(replay && paused.value) {
+      scene.setPaused(true);loadState.value='ready'
+      await new Promise<void>((resolve,reject)=>{
+        const cancel=()=>{continuePausedReplay=undefined;reject(new DOMException('Aborted','AbortError'))}
+        signal.addEventListener('abort',cancel,{once:true})
+        continuePausedReplay=()=>{signal.removeEventListener('abort',cancel);continuePausedReplay=undefined;resolve()}
+      })
+      if(current!==generation)return
+    }
     gameController = await restoreControllerAfterVisual(
       initial,
       controllerOptions,
       replay === undefined ? undefined : () => playVisual(initial, replay),
       speed.value,
+      paused.value,
     )
     if (current !== generation) return
+    controllerReady.value=true
+    scene.setPaused(paused.value)
     updateActivity(gameController.state)
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })
     observer.observe(host.value)
@@ -293,10 +308,12 @@ async function startGame() {
   latestNoticeVisual = undefined
   history.value = []
   speed.value = 1
+  paused.value = false
   mode.value = 'game'
   await nextTick()
   await loadPendingGame()
 }
+function carnivalInput(input:import('./features/game/carnival').CarnivalInput){gameController?.setCarnivalInput(input)}
 function placeWager(id:number){gameController?.placeWager(id)}
 function confirmWagers(){gameController?.confirmWagers()}
 function roll() { gameController?.roll() }
@@ -326,6 +343,9 @@ function choosePortal(destination: number) { gameController?.choosePortal(destin
 function chooseCourtTarget(playerId: number) { gameController?.chooseCourtTarget(playerId) }
 function chooseCourtCase(caseId: number) { gameController?.chooseCourtCase(caseId) }
 function togglePause() {
+  if(continuePausedReplay && scene) {
+    paused.value=false;scene.setPaused(false);continuePausedReplay();return
+  }
   if (!gameController || !scene) return
   paused.value = !paused.value
   gameController.setPaused(paused.value)
@@ -366,6 +386,7 @@ function returnToSelection() {
 function fullscreenChanged() { fullscreen.value = document.fullscreenElement === stage.value }
 function keydown(event: KeyboardEvent) {
   if (mode.value !== 'game' || event.defaultPrevented) return
+  if(game.value?.interaction?.kind==='carnival')return
   const target = event.target as HTMLElement | null
   if (target?.matches('input, select, textarea, button, [contenteditable=true]')) return
   if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key) && gameController?.skipActivityPresentation()) { event.preventDefault(); return }
@@ -410,9 +431,9 @@ onBeforeUnmount(() => {
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="host" class="canvas-host" />
-      <GamePanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
-      <InteractionPanel v-if="game && interactionAssets && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
+      <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
       <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理将在后续版本开放，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
 import type { BankOperation } from './bank-operations'
 import type { FinanceEntry } from './finance-types'
@@ -13,6 +13,8 @@ import { ticketExchangeMaximum } from './ticket-exchange'
 import { activityChanges, originalActivityText } from './activity-text'
 import type { ActivityClip, ActivityManifest, NativeOverlay } from './activity-assets'
 import NativeActivity from './NativeActivity.vue'
+const CarnivalStage=defineAsyncComponent({loader:()=>import('./CarnivalStage.vue'),onError(error,_retry,fail){emit('asset-error',error);fail()}})
+import type { CarnivalInput } from './carnival'
 import LudoActivity from './LudoActivity.vue'
 import { PORTALS } from './portal'
 import { COURT_CASES, courtTargets } from './court'
@@ -47,6 +49,7 @@ const emit = defineEmits<{
   'leave-exchange': []
   'activity-ready': [clipId: string]
   'skip-activity': []
+  'carnival-input':[input:CarnivalInput]
   'place-wager':[id:number]
   'confirm-wagers':[]
   'choose-portal': [destination: number]
@@ -235,6 +238,7 @@ const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   const eventLabel = labels[notice.eventKind ?? notice.message] ?? financeLabels[notice.eventKind ?? notice.message]
   if (eventLabel) return eventLabel
   if (notice.kind === 'card' && notice.cardId !== undefined && notice.message === 'applied') return `${getCardDefinition(notice.cardId).name}已生效`
+  if(notice.message==='carnival-result')return '游乐场奖券到账'
   if(notice.message==='ludo-result')return '投注结果'
   return notice.message
 }
@@ -250,8 +254,9 @@ watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
-  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'minigame-panel': interaction.kind==='ludo', 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
-    <LudoActivity v-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'minigame-panel': ['ludo','carnival'].includes(interaction.kind), 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
+    <CarnivalStage v-if="interaction.kind==='carnival' && activityAssets" :game="interaction.game" :paused="paused" :human="player.controller==='human'" :assets="activityAssets" @input="emit('carnival-input',$event)" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+    <LudoActivity v-else-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <template v-else-if="interaction.kind === 'portal'">
       <div v-if="interaction.stage === 'choice'" class="portal-original">
         <NativeActivity v-if="portalClip" data-testid="portal-original" :clip="portalClip" :preload="portalPrepared" :overlays="portalOverlays" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />

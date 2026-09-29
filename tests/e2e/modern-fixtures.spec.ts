@@ -71,7 +71,7 @@ test('测试专用真实组件夹具区分地雷经过、落地及银行后路�
 
 test('测试专用真实组件夹具显示神灵先改地产、到期与住院释放重返', async ({ page }) => {
   await page.goto('/tests/fixtures/modern-interactions.html?scenario=god-property')
-  await expect(page.getByTestId('interaction-panel')).toContainText('遇到原版 NPC')
+  await expect(page.getByTestId('interaction-panel')).toContainText('路遇乞丐')
   await page.getByTestId('interaction-acknowledge').click()
   await expect(page.getByTestId('interaction-panel')).toContainText('神灵改变了房屋等级')
   await expect(page.getByTestId('fixture-summary')).toContainText('"property1":{"ownerId":null,"level":1}')

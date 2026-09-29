@@ -44,21 +44,21 @@ test('自然seed4飞行原图404后重试继续同一目的地并保留两倍速
   await expect(page.getByTestId('interaction-panel')).toContainText('已抵达目的地',{timeout:15_000})
   await expect(page.getByTestId('player-list').locator('li').first()).toContainText('31,7')
 })
-test('自然seed24法院合法被告、原案件面板和实际判决',async({page})=>{
-  test.setTimeout(360_000);await mkdir(evidenceDir,{recursive:true});await start(page,24)
+test('自然seed150法院合法被告、原案件面板和实际判决',async({page})=>{
+  test.setTimeout(360_000);await mkdir(evidenceDir,{recursive:true});await start(page,150)
   await playUntil(page,async()=>{
     const [who]=await page.getByTestId('current-player').allTextContents()
     return !!who && !who.includes('AI') && await page.locator('[data-testid^="court-target-"]').count()>0
   },5000)
   const target=page.locator('[data-testid^="court-target-"]').first()
   await expect(target).toBeEnabled()
-  await page.screenshot({path:`${evidenceDir}/seed24-court-target-1440x1000.png`})
+  await page.screenshot({path:`${evidenceDir}/seed150-court-target-1440x1000.png`})
   await target.click();await expect(page.getByTestId('court-case-0')).toBeEnabled()
-  await page.screenshot({path:`${evidenceDir}/seed24-court-case-1440x1000.png`})
+  await page.screenshot({path:`${evidenceDir}/seed150-court-case-1440x1000.png`})
   await page.getByTestId('court-case-0').click()
   await expect(page.getByTestId('interaction-acknowledge')).toBeVisible({timeout:20_000})
   await expect(page.getByTestId('interaction-panel')).toContainText(/原告胜诉|庭外和解|原告败诉/)
-  await page.screenshot({path:`${evidenceDir}/seed24-court-result-1440x1000.png`})
+  await page.screenshot({path:`${evidenceDir}/seed150-court-result-1440x1000.png`})
 })
 
 test('自然seed4当前北站和保持原地均不飞行',async({page})=>{
@@ -73,12 +73,12 @@ test('自然seed4当前北站和保持原地均不飞行',async({page})=>{
   }
 })
 
-test('自然seed41法院胜诉转运素材失败恢复，拘留2天后重新入场',async({page})=>{
+test('自然seed150法院胜诉转运素材失败恢复，拘留2天后重新入场',async({page})=>{
   test.setTimeout(360_000)
   let brokenCase=false,brokenCar=false
   await page.route('**/assets/activities/court-case/1.png',route=>brokenCase?route.fulfill({status:404,body:''}):route.continue())
   await page.route('**/assets/activities/car1/80.png',route=>brokenCar?route.fulfill({status:404,body:''}):route.continue())
-  await start(page,41)
+  await start(page,150)
   await playUntil(page,async()=>{
     const [who]=await page.getByTestId('current-player').allTextContents()
     return !!who&&!who.includes('AI')&&await page.locator('[data-testid^="court-target-"]').count()>0

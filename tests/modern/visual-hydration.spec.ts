@@ -86,3 +86,11 @@ describe('恢复视觉与AI控制器顺序', () => {
     controller.dispose()
   })
 })
+
+it('资源重试保留暂停与2倍速，恢复AI续办在继续前不前进',async()=>{
+ const game=createGame([1],0,1);game.activePlayerIndex=1;game.phase='interaction';game.interaction={kind:'notice',playerId:2,resume:'await-roll',notice:{kind:'restriction',message:'restriction-released'}}
+ const scheduler=new ManualScheduler()
+ const controller=await restoreControllerAfterVisual(game,{scheduler},undefined,2,true)
+ expect(controller.paused).toBe(true);expect(controller.speed).toBe(2);scheduler.advance(10000);expect(controller.state).toEqual(game)
+ controller.setPaused(false);expect(scheduler.jobs).toHaveLength(1);controller.dispose()
+})

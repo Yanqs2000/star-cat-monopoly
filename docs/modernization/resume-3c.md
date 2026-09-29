@@ -75,3 +75,25 @@ Task3生产回放session63063已结束：3/3通过（seed4首轮原地图/10图�
 真实投注已完成：ludo.ts、控制器唯一入场/开奖/入账、LudoActivity原36区和95新帧；source低券及未下注探针证实，9次骰随机；新10项及整体57文件446项通过。自然seed0第3轮6,24下注/暂停/日期生产1通过；确认后ludo-game/1.png失败恢复1通过，均2倍速。截图已看。最新构建27199须poll；全测62152、浏览器44203/20445均结束。Task4准备commit/task-done；Task5还未实施，原碰撞probe得到boy1.frame1 bbox355..445/400.35..500.35，bb1.frame1 ±18.5/±19，边界delta63.5相交、63.55不交。旧probe起点先于symbol准备约3秒，已修起点至实际carnie入口并需重跑，不能用旧时间样本作timer次序依据。scripts/original-carnival-probe.as已存，可复现。
 
 下一项Task5：source真正20秒接物，30Hz固定逻辑、落物计时/碰撞/键鼠/AI、原12 boy及4 bb素材；源frame3结束输入但现有落物仍继续碰撞，frame4每4逻辑帧优先4/3/2/1结分，等15次再入账，必须保留。然后Task6统一复审/交付，勿提前完成goal。
+
+## Task5进行中：完整规则/界面和首次真实回放
+
+HEAD6b35bd6；Task4 ledger完成。Task5未提交WIP：carnival.ts/geometry/158+90新原图/Pixi CarnivalStage/键鼠独占/控制器23秒（3倒数+20操作）、原计分收尾。Controlled carnival-runtime.json含12角色×3姿态和4落物×30帧的156包围盒；真实碰撞delta63.5命中/63.55不命中。完整原回放观察29次生成（13/9/6/1）、3秒倍数奇次bb3先bb1、6秒倍数1/2/3、10秒特殊4先2、20秒不再type2，模型逐项匹配。原2154第90帧额外random1000已保留。纯规则6、控制器3、键鼠2、原图1及暂停恢复新增1均GREEN；整体61文件459通过（59126结束）。显示30/60/120分区与延迟补步/暂停计时证明一致。
+
+ModernApp已修暂停重试pref，restoreAfterVisual(paused)保留；暂停视觉重放在原资源准备好后等手动继续再播，controllerReady避免提前启动交互。生产投注暂停后原图404重试仍暂停/速度2通过（8188结束57s）。
+
+首次自然seed21第9轮1,29游乐场：键鼠/暂停/足20秒/发券/退出后方向键掷骰全部走通，但末尾pageerror "Cannot read properties of null (reading clear)"，故整条不计GREEN。卸载时app仍可被排队draw访问；已将loaded=false/app=undefined置于destroy前，待原回放定向复测。第二条因测试target textContent等待无alert阻塞已中断（runner23504 SIGINT），改allTextContents；两者都应重跑。另一Playwright并发共用/tmp输出清掉首个失败artifact，后续每个命令独立--output，不再同时共享产物。
+
+当前新build句柄见当前工具（需poll）；没有活跃浏览器，4184 preview56005/4173原版51064继续服务。下步：新build后modern-carnival两条独立output回放、看截图；459定向变更+类型确认；提交Task5/Task6联合日期月结、普通NPC自然全入口新规则复测、一次fresh最终全批审查、完善acceptance/rollback。3C尚未完成，goal仍active。
+
+Task5异常根因更正：queued draw假设的guard并未解决原失败，44097复测首条仍RED/第二条404GREEN。真实stack定位Pixi Batcher.break.textureBatch.clear；本地8.20.1 AbstractRenderer.destroy(true)触发GlobalResourceRegistry.release，小游戏app.destroy(true)清了主地图共享batchPool。改为app.destroy({removeView:true},{children:true})，仅释放当前renderer，abort候选同样对象参数。sourceAPI证据与MapScene已有对象销毁方式一致。首条回放保留stack断言；404新增pageerror断言，下一次均定向复测。god-property夹具从旧帐篷占位改成真实乞丐，RED兑换→GREEN乞丐→神灵→地产/到期/释放。Task6新增彩票跨月/接物信用神灵月结组合检查（月结确认后有520ms收尾，按已有规则修正测试等待）。
+
+## 2026-09-29最新检查点
+
+HEAD仍6b35bd6，Task5/6 WIP未提交。62文件467项、类型和生产构建通过。更新种子的9条NPC/兑换/招领/住院释放/车辆重试通过；魔法门4条和法院seed150第5轮胜诉/2天释放通过；普通法院已改为seed150，旧seed24在新小游戏随机时序下不再按旧路线可达。正常法院1条、投注3条、接物正常操作/退出1条及入场与发券后happy反馈两处404恢复1条通过。神灵/地产/释放、银行/商店恢复、B01回归通过。明确标注的接物中段与投注已入账保存恢复夹具2条通过：真实原图404冻结，重试资金、随机和阶段保持。
+
+接物步行还在收尾：原boy子动画角色1/2/3/5/7/8/9/11/12为16帧、4为18、6为12、10为14。原carnival-walk运行证实逐帧前进、左右转换保持子帧、停止回站立。376个动态碰撞边界和85条帧样本、376张左右原图已补；boyFrame序列化、规则与Pixi呈现已接入，定向15项和类型通过。当前完整测试/新构建句柄69646待poll，不能重启它；dist新建后再定向接物回放，不能以旧首帧版本的截图称已验证动画。
+
+服务：4184 preview56005，原4173 dev51064，现代5184夹具dev6068。其余浏览器均结束，无回放占用dist。下一步：步行构建与回放，提交Task5并task-done（base6b35bd6）；完成Task6联合验证、一次fresh全分支独立复审、重要问题RED修复与定向复测、重写acceptance-3c及最终resume、提交/回退6c2238c/干净状态核对，整批给用户验收。3D等后续不启动，goal保持active。
+
+Task5最终步行版：完整469项/构建与2条自然接物回放通过（30845结束），保存恢复夹具2通过（79187结束）。当前无活动测试或导出。167clips/1535帧来源锁定。准备功能提交/task-done5，随后Task6全批独立审查与最终文档，不以模块完成代替goal完成。

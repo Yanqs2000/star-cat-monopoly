@@ -43,7 +43,7 @@ def main():
         with Image.open(output / clip['id'] / '1.png') as image:
             width, height = image.size
         # Native filters extend these dialogue/viewport canvases symmetrically.
-        padding = 12 if clip['id'] in ['witch', 'lottery','court-target','court-case','court-verdict'] else 9 if clip['id']=='ludo-dice' else 7 if clip['id']=='station' else 6 if clip['id'].startswith('trait-') or clip['id'] in ['show-npc4','show2'] else 0
+        padding = 12 if clip['id'] in ['witch', 'lottery','court-target','court-case','court-verdict'] else 13 if clip['id']=='carnival-intro' else 9 if clip['id']=='ludo-dice' else 7 if clip['id']=='station' else 6 if clip['id'].startswith('trait-') or clip['id'] in ['show-npc4','show2'] else 0
         expected = (math.ceil((bounds[1]-bounds[0])/20)+padding*2, math.ceil((bounds[3]-bounds[2])/20)+padding*2)
         if (width,height) != expected: raise SystemExit(f'Unexpected source raster geometry {clip["id"]}: {(width,height)} expected {expected}')
         clip.update(fps=30, loop=False)
