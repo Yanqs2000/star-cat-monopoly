@@ -1,3 +1,4 @@
+import { advanceSourceMoodRandom } from './source-mood'
 import { buyShopCard, createCardShop, drawCard, sellInventoryCard } from './card-economy'
 import worldRules from '../../data/world-rules.json'
 import { advanceCalendar } from './calendar'
@@ -346,6 +347,12 @@ export function createGameController(initialState: GameState, options: GameContr
     shop?: Extract<GameInteraction, { kind: 'shop' }>,
   ) => {
     const playerId = activePlayer().id
+    // Source end_pg17/21/22/23/27/28 emit one mood at their completed boundary.
+    // Ordinary NPC mood is already sampled before its source respawn; tent has none.
+    if (['portal-cancel', 'portal-arrived', 'ticket-buy', 'lost-found',
+      'court-win', 'court-settle', 'court-lose', 'ludo-result', 'carnival-result'].includes(notice.message)) {
+      current = { ...current, rngState: advanceSourceMoodRandom(current.rngState) }
+    }
     current = {
       ...current,
       phase: 'interaction',
@@ -688,6 +695,7 @@ export function createGameController(initialState: GameState, options: GameContr
       const cell = getCardCell(player.position)
       if (cell && current.world.markers[cell.id] === 1) {
         if (isHuman()) {
+          readyClip = undefined
           current = { ...current, phase: 'interaction', continuation: null,
             interaction: { kind: 'ticket-exchange', playerId: player.id, mode: 'sell', npcCellId: cell.id,
               ...(options.awaitActivityAssets ? { presentation: { clipId: 'fog', frame: 1, totalFrames: 19, cellId: cell.id } } : {}) } }
@@ -1335,7 +1343,7 @@ export function createGameController(initialState: GameState, options: GameContr
         notify()
         processGodThenTerrain()
       } else {
-        current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
+        current = { ...current, rngState: advanceSourceMoodRandom(current.rngState), phase: 'landed', interaction: null, continuation: 'finish-turn' }
         notify()
         schedule(finishTurn, landingDurationMs)
       }

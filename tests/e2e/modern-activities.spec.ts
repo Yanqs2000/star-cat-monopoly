@@ -57,7 +57,7 @@ for (const [seed, clip, cashSign] of [[103,'witch',1],[24,'lottery',-1]] as cons
   })
 }
 
-for (const [seed,npc] of [[112,13],[133,9],[36,12],[61,14],[113,15],[0,23]] as const) {
+for (const [seed,npc] of [[112,13],[133,9],[36,12],[221,14],[219,15],[0,23]] as const) {
   test(`自然开局seed${seed}原NPC${npc}完整动画及实际结算`, async ({ page }) => {
     test.setTimeout(240_000)
     const errors: string[] = []

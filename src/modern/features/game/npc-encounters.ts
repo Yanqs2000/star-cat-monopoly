@@ -1,5 +1,6 @@
 import { drawCard } from './card-economy'
 import { randomInt } from './random'
+import { advanceSourceMoodRandom } from './source-mood'
 import type { ActivityReceipt } from './activity-types'
 import type { WorldSnapshot } from './world-cards'
 
@@ -63,6 +64,8 @@ export function applyOrdinaryNpcEffect(snapshot: WorldSnapshot, playerId: number
       player.cash += 20000
     }
   }
+  // Original mood follows the card/percentage draw and precedes setnpc.
+  snapshot.rngState = advanceSourceMoodRandom(snapshot.rngState)
   receipt.cashDelta = player.cash - beforeCash
   receipt.depositDelta = player.deposit - beforeDeposit
   receipt.ticketDelta = snapshot.tickets[playerId]! - beforeTickets

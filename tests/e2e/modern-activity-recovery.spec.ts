@@ -13,7 +13,14 @@ for(const [scenario,url] of [['carnival-mid','carnival-ball-3/17.png'],['ludo-pa
   const restored=JSON.parse((await summary.textContent())!);expect(restored).toEqual(saved)
   await page.getByTestId('recovery-advance').click();const advanced=JSON.parse((await summary.textContent())!)
   expect(advanced.frame).toBeGreaterThan(saved.frame);expect(advanced.tickets).toBe(saved.tickets)
-  if(scenario==='ludo-paid') {await page.getByTestId('recovery-finish').click();const done=JSON.parse((await summary.textContent())!);expect(done.phase).toBe('notice');expect(done.tickets).toBe(saved.tickets);expect(done.rng).toBe(saved.rng)}
+  if(scenario==='ludo-paid') {
+   expect(advanced.rng).toBe(saved.rng) // paid dice/payout recovery has no draws
+   await page.getByTestId('recovery-finish').click();const done=JSON.parse((await summary.textContent())!)
+   let expectedMoodRng=saved.rng
+   for(let i=0;i<2;i++)expectedMoodRng=(Math.imul(expectedMoodRng,1664525)+1013904223)>>>0 // source final mood depth/phrase
+   expect(done.phase).toBe('notice');expect(done.tickets).toBe(saved.tickets);expect(done.rng).toBe(expectedMoodRng)
+   await page.getByTestId('recovery-finish').click();expect(JSON.parse((await summary.textContent())!)).toEqual(done)
+  }
   expect(errors).toEqual([])
  })
 }

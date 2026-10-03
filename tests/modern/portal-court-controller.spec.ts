@@ -102,6 +102,7 @@ it('魔法门头像随机在素材等待/暂停/重建时冻结，选择后不�
   let rng=restored.state.rngState
   for(let i=0;i<4;i++)rng=randomInt(rng,40).nextState
   expect(restored.choosePortal(5)).toBe(true)
+  rng=randomInt(randomInt(rng,1000).nextState,10).nextState // source mood_pg(8)
   vi.advanceTimersByTime(2000)
   expect(restored.state.rngState).toBe(rng)
   restored.dispose()
@@ -112,6 +113,7 @@ it('原版地图在较早创建的站点关窗处理前仍推进最后一轮四�
   const c=createGameController(game,dormantClock)
   let expected=c.state.rngState
   for(let i=0;i<4;i++)expected=randomInt(expected,40).nextState
+  expected=randomInt(randomInt(expected,1000).nextState,10).nextState // source mood_pg(8)
   expect(c.choosePortal(5)).toBe(true)
   expect(c.state.rngState).toBe(expected)
   c.dispose()

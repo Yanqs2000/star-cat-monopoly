@@ -73,12 +73,12 @@ test('自然seed4当前北站和保持原地均不飞行',async({page})=>{
   }
 })
 
-test('自然seed150法院胜诉转运素材失败恢复，拘留2天后重新入场',async({page})=>{
+test('自然seed446法院胜诉转运素材失败恢复，拘留2天后重新入场',async({page})=>{
   test.setTimeout(360_000)
   let brokenCase=false,brokenCar=false
   await page.route('**/assets/activities/court-case/1.png',route=>brokenCase?route.fulfill({status:404,body:''}):route.continue())
   await page.route('**/assets/activities/car1/80.png',route=>brokenCar?route.fulfill({status:404,body:''}):route.continue())
-  await start(page,150)
+  await start(page,446)
   await playUntil(page,async()=>{
     const [who]=await page.getByTestId('current-player').allTextContents()
     return !!who&&!who.includes('AI')&&await page.locator('[data-testid^="court-target-"]').count()>0

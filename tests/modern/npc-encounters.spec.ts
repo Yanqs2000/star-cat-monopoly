@@ -65,7 +65,7 @@ describe('原版普通NPC落地效果', () => {
     expect(result.snapshot.players[0]?.cash).toBe(23000)
     expect(result.snapshot.lostAndFoundFunds).toEqual([0, 0])
     expect(result.event).toMatchObject({ receipt: { cashDelta: 20000 } })
-    expect(result.snapshot.rngState).toBe(1015568748)
+    expect(result.snapshot.rngState).toBe(2165703038) // mood depth/phrase, then respawn; no percentage draw
   })
 
   it('乞丐在3001现金按源随机6%扣整数180并记两条招领', () => {
