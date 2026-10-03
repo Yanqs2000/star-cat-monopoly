@@ -1,50 +1,37 @@
-# 3C续跑入口
+# 3C续跑与交付入口
 
-更新时间：2026-10-03。状态：Task1–5完成内部检查；Task6联合验证及三项已确认审查修复完成，完整独立审查结论进行中。用户验收未登记。
+更新时间：2026-10-03。状态：整个3C实施、计划偏移检查、独立审查和有效重要修复、最终验证完成，交付用户验收。用户尚未明确通过。
 
-## 当前权威状态
+## 当前提交与工作区
 
-- 目标：检查是否偏移3C原计划，然后继续至完整交付。已完成逐项检查，见 [计划偏移检查](plan-audit-3c.md)。
-- 工作树：`/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/modern-map-foundation`
-- 分支：`feat/modern-map-foundation`；最新功能提交：`373906c`；初版功能：`ff4d662`；3C基线/整批回退点：`6c2238c`。文档检查点提交以`git log -1`核对。
-- 功能代码/测试已提交；文档改动：acceptance-3c、resume-3c、phase-3c-activities-evidence、plan-audit-3c及Task6首项勾选，作为本次检查点保存。
-- 原SWF SHA256：`790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba`，本轮核对未变。
-- 不推送/合并/部署，不改Xcode许可，不自动登记用户3A/3B/3C验收，不启动3D。
+工作树：`/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/modern-map-foundation`；分支`feat/modern-map-foundation`。最终功能提交`a10f9d5`，首轮审查修复`373906c`，初版功能`ff4d662`；3C基线/整批回退点`6c2238c`。最终文档提交用`/opt/homebrew/bin/git log -1 --oneline`核对，文档以当前记录为准。
 
-## 下一步（不要重复Task1–5）
+不推送/合并/部署，不改Xcode许可，不改写用户3A/3B验收。下一步是实际用户3C确认；收到通过后按总路线推进3D，不能把本批称整款完整游戏。
 
-1. 收取`/root/review_3c_finish`的完整独立报告。此前Astra代理确认三项重要发现后额度中断并终止，没有最终报告；目前6.1-sol恢复审查完整范围`6c2238c..373906c`。不得声称审查已经通过，也不能用作者自审替代。
-2. 按实际用户影响复核剩余发现，重要问题RED→最小修复→GREEN与整套/受影响流程，Minor登记交付，Declined to judge逐项裁决。
-3. 完整结论后更新验收/计划/Task6 ledger，核对提交/干净工作树与全部要求，呈交用户验收。原工作区scratch仅在全部结束并保存Ruling/Minor后清理。
+## 最终验证
 
-## 有效进程
+- 66文件508项单测通过：`.analysis-cache/3c-final-full-tests.log`。
+- 类型检查和生产构建通过：3c-final-typecheck.log、3c-final-build.log。
+- 全部新增自然入口19/19一次通过：3c-final-browser.log（3.3分钟）。完整日期2026-09-28、角色1人类/原AI、速度2、1440×1000。
+- 明确标注的保存恢复/相关旧夹具5/5：3c-final-fixtures.log，含carnival-mid、ludo-paid、神灵/地产/释放、银行/商店续办、B-01。
+- 1440/1100桌面真实组件点击可见姓名/案件/站点6/6：3c-layout-green.log；1100三项原RED见3c-layout-red.log。
+- 原brow2独立48clip/3232PNG新增，已有20动作和旧PNG未改；source-feedback真实事件13 RED→GREEN、动作/素材5 RED→GREEN；cheer导出日志3c-cheer-export.log。
+- 原SWF SHA256仍`790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba`；全部12角色源哈希核对，原目录无Git变更。
 
-生产预览4184：exec session `98526`，日志`.analysis-cache/3c-final-preview.log`，最近HTTP200。最初31885已不存在，确认Unknown process及无监听才恢复；不要再poll旧句柄或因观察超时重启。
+自然种子：帐篷103/1、购券24/3、流氓112/1、恶犬133/1、警察36/1、小偷221/1、乞丐219/1、招领0/1；魔法门4/1；法院正常150/5、胜诉446/1；投注145/1；接物104/1。最终截图.analysis-cache/acceptance-3c，步行图已查看。早期失败和累计补跑不代替最终证据。
 
-无活跃浏览器、导出或测试；原4173未启动，5184夹具服务由Playwright临时管理。所有本轮浏览器句柄72005/95909/92190/21459/36209/28862均已结束（最后结论见日志）。typecheck13934及整体26943均结束并通过。恢复时先核对真实句柄/监听，文档不能作为活跃证明。
+## 审查和差异
 
-## 最近验证（373906c）
+Astra额度中断后，当前可用6.1-sol完成独立只读审查；无新增Critical。全部有效重要发现均TDD修复并整体/受影响真实路径复测：暂停反馈恢复继续按钮、连续帐篷就绪、根mood抽样、法院子mood抽样、缩放热点、原brow反馈/cheer。
 
-- 最终fresh整体64文件487项通过：`.analysis-cache/3c-review-full-tests.log`；新增18项审查回归GREEN，原RED分别为3c-paused-feedback-unit-red和3c-review-regressions-red。
-- 生产构建含类型检查通过：3c-review-build.log；最终单独类型检查3c-review-typecheck.log退出0。
-- 自然生产19条累计通过：3c-review-browser-green.log原批17条通过，正常投注日期和法院胜诉转运两条用3c-review-ludo-date.log、3c-review-court-recovery.log定向补跑通过。
-- 旧seed150本轮成为和解，胜诉改为首轮seed446；新seed145首轮投注后AI接物令350轮询预算不足，增加该用例等待预算后日期推进通过。不是修改玩法或跳过检查。
-- 保存恢复夹具2条：3c-review-fixtures-green.log；神灵/地产/释放、银行/商店、B-01三个既有夹具：3c-review-existing.log，全部通过。
-- 最终自然种子：帐篷103/1、购券24/3、NPC13 112/1、狗133/1、警察36/1、小偷221/1、乞丐219/1、招领0/1；魔法门4/1；法院正常150/5、胜诉446/1；投注145/1；接物104/1。完整日期2026-09-28、速度2、1440×1000。
-- 原最终步行图seed104-carnival-walking-1440x1000.png已查看；截图在.analysis-cache/acceptance-3c。Browser plugin不可用，使用仓库Playwright，不操作用户原标签。
+源反馈原P3升为Important并修复；Deferred minor是彩票公司AI省略原show2地点提示，业务/余额/RNG仍原空分支。随机台词气泡不投影，结果面板和原随机保留；原counter改网页整数输入，动态中文使用浏览器字体。完整裁决与成本见acceptance-3c及review-3c，不推定全像素或跨浏览器字体一致。
 
-旧模块469项及早期种子日志保留但不当本轮修复的最终证明。生产回放时不重建dist；并发Playwright使用不同output目录。
+## 进程与后续操作
 
-## 本轮修复与恢复重点
+生产4184预览exec session`98526`，日志3c-final-preview.log，最后HTTP200。恢复时先poll真实句柄和检查监听，文档不是进程存活证明。旧31885已不存在。所有测试/导出已结束，原4173未启动，5184仅由Playwright按需管理。
 
-1. paused反馈重建在controllerReady=false时提供独立继续入口，保持规则面板等待；组件和自然已发券happy404 RED→GREEN，金额不重复。
-2. fog第16帧提交/放弃后，下一人正常走到迁移帐篷，清新入口readyClip，避免沿用旧fog就绪状态永久停1帧；连续回合两个RED→GREEN。
-3. NPC9/12/13/14/15在respawn前保留原mood两次随机；牌/百分比在前。门、彩票公司人类、法院判决、招领、投注/接物收尾亦保留。帐篷/彩票公司AI无mood，不加抽样；已完成通知恢复不重抽。15组RED→GREEN，自然种子更新并回放。
+不要重复Task1–5或重导未变化素材，不在生产回放占dist时重建；并发Playwright使用不同output目录。若重新生成旧反应素材，再运行`export-cheer-assets.py`补本批root2，正式manifest需24动作；实际资产测试会检查覆盖。
 
-单一GameState；招领仅第一条并两条清零；狗48/111、法院56/113、座次+1、原ready释放。彩票36区/9次骰/低券1筹码/赢时退未下注；接物3秒+20秒/固定30Hz/完整12角色步行/输入释放；Pixi只销毁当前renderer，不能布尔destroy释放全局池。保存夹具明确标记，不冒充自然开局。
+工具：Git`/opt/homebrew/bin/git`；Python`/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`；Java`/opt/homebrew/opt/openjdk/bin/java`。原完整AS父仓库.analysis-cache/ffdec/play.swf/scripts。
 
-## 工具与计划
-
-Git `/opt/homebrew/bin/git`；Node/npm `/opt/homebrew/bin/`；Python `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3`；Java `/opt/homebrew/opt/openjdk/bin/java`。原完整AS父仓库`.analysis-cache/ffdec/play.swf/scripts`。167clips/1535frames已导出，未变化素材不重导。
-
-计划docs/superpowers/plans/2026-09-28-modern-3c-activities.md；规格docs/superpowers/specs/2026-09-28-modern-3c-activities-design.md；源证据phase-3c-activities-evidence.md；执行ledger `.superpowers/sdd/2026-09-28-modern-3c-activities/progress.md`，Task6 brief同目录task-6-brief.md。四项Ruling已保存在acceptance-3c；剩余审查裁决/Minor必须追加，不能删除记录。
+计划docs/superpowers/plans/2026-09-28-modern-3c-activities.md；规格docs/superpowers/specs/2026-09-28-modern-3c-activities-design.md。审计plan-audit-3c.md、审查review-3c.md、交付acceptance-3c.md均在docs/modernization。执行scratch在全部核对后仅清本计划目录，Ruling和Minor已完整保存在交付材料。
