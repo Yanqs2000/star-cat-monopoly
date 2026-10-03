@@ -152,7 +152,16 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
   const affectedPlayers = event.affectedPlayerIds ?? event.worldEvent?.affectedPlayerIds ?? []
   const affectedCells = event.affectedCellIds ?? event.worldEvent?.affectedCellIds ?? []
 
-  if (worldKind === 'missile-fired') {
+  if (event.sourceBrow !== undefined) {
+    if (event.sourceBrow !== 0) react(event.playerId, event.sourceBrow === 1 ? 'neutral' : event.sourceBrow === 2 ? 'cheer' : 'sad')
+  } else if (worldKind === 'npc-encountered' && [9,12,13,14,15].includes(event.worldEvent?.npcId ?? 0)) {
+    const npcId=event.worldEvent!.npcId
+    const receipt=event.receipt ?? event.worldEvent!.receipt
+    const loss=npcId===9 || npcId===12 || (receipt?.ticketDelta ?? 0)<0 || (receipt?.cashDelta ?? 0)<0 || (receipt?.removedCardIds?.length ?? 0)>0
+    react(event.playerId,loss?'sad':'neutral')
+  } else if (event.receipt?.kind==='carnival') {
+    react(event.playerId,'cheer')
+  } else if (worldKind === 'missile-fired') {
     if (affectedPlayers.includes(event.playerId)) react(event.playerId, 'hurt')
     else react(event.playerId, 'happy')
     for (const playerId of affectedPlayers) if (playerId !== event.playerId) react(playerId, 'hurt')
@@ -178,7 +187,7 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
     react(event.playerId, 'sad')
   } else if(event.receipt?.kind==='ludo') {
     const delta=event.receipt.ticketDelta ?? 0
-    react(event.playerId,delta>0?'happy':delta<0?'sad':'neutral')
+    react(event.playerId,delta>0?'cheer':delta<0?'sad':'neutral')
   } else if (event.kind === 'luck') {
     react(event.playerId, (event.amount ?? 0) < 0 ? 'sad' : 'happy')
     if (event.luckEvent?.kind === 'tickets' && (event.amount ?? 0) > 0) effects.push({ clipId: 'ticket-gain', playerId: event.playerId })

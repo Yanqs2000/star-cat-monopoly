@@ -1,9 +1,12 @@
+import cheerSources from '../../data/cheer-source.json'
 import type { Facing } from './assets'
 import { FACINGS } from './assets'
 import type { WorldFrame } from '../map/world-assets'
 
 export const REACTION_NAMES = ['neutral', 'ready', 'happy', 'sad', 'hurt'] as const
-export type ReactionName = typeof REACTION_NAMES[number]
+type StandardReactionName = typeof REACTION_NAMES[number]
+export type ReactionName = StandardReactionName | 'cheer'
+const CHEER_SOURCES: Record<number, number[][]> = cheerSources
 export type GodId = 2 | 3 | 4 | 5 | 10 | 11
 
 export interface ReactionClip {
@@ -30,6 +33,7 @@ export interface ReactionManifest {
 
 const GOD_IDS = [2, 3, 4, 5, 10, 11] as const
 const ROOT_OFFSETS: Record<ReactionName, number> = {
+  cheer: 2,
   neutral: 1,
   ready: 7,
   happy: 3,
@@ -54,6 +58,7 @@ const SOURCE_SYMBOLS: Record<number, readonly number[]> = {
 }
 
 function expectedFrames(characterId: number, facing: Facing, name: ReactionName): number {
+  if (name === 'cheer') return CHEER_SOURCES[characterId]![FACINGS.indexOf(facing)]![1]!
   if (name === 'neutral' || name === 'ready') return 1
   if (name === 'hurt') return characterId === 8 ? 33 : 60
   if (name === 'happy') {
@@ -76,7 +81,7 @@ const positiveInteger = (value: unknown): value is number =>
 const isFacing = (value: unknown): value is Facing =>
   FACINGS.includes(value as Facing)
 const isReaction = (value: unknown): value is ReactionName =>
-  REACTION_NAMES.includes(value as ReactionName)
+  REACTION_NAMES.includes(value as StandardReactionName) || value === 'cheer'
 const isGodId = (value: unknown): value is GodId =>
   GOD_IDS.includes(value as GodId)
 
@@ -114,7 +119,7 @@ export function parseReactionManifest(value: unknown): ReactionManifest {
   if (typeof raw.sourceSha256 !== 'string' || !/^[0-9a-f]{64}$/.test(raw.sourceSha256)) {
     throw new Error('来源哈希错误')
   }
-  if (!Array.isArray(raw.clips) || raw.clips.length !== 20) {
+  if (!Array.isArray(raw.clips) || ![20, 24].includes(raw.clips.length)) {
     throw new Error('必须完整包含 20 个反馈动作')
   }
   if (!Array.isArray(raw.godOverlays) || raw.godOverlays.length !== 6) {
@@ -147,13 +152,18 @@ export function parseReactionManifest(value: unknown): ReactionManifest {
     throw new Error('反馈动作覆盖错误')
   }
 
+  if (clips.some(clip => clip.name === 'cheer') && FACINGS.some(facing => !keys.includes(`${facing}:cheer`))) {
+    throw new Error('欢呼动作覆盖错误')
+  }
+
   for (const clip of clips) {
     const facingIndex = FACINGS.indexOf(clip.facing)
-    const reactionIndex = REACTION_NAMES.indexOf(clip.name)
+    const reactionIndex = REACTION_NAMES.indexOf(clip.name as StandardReactionName)
     const definitionIndex = facingIndex * REACTION_NAMES.length + reactionIndex
     const expectedRoot = facingIndex * 30 + ROOT_OFFSETS[clip.name]
+    const expectedSymbol = clip.name === 'cheer' ? CHEER_SOURCES[characterId]![facingIndex]![0] : SOURCE_SYMBOLS[characterId]![definitionIndex]
     if (clip.sourceRootFrame !== expectedRoot ||
-        clip.sourceSymbol !== SOURCE_SYMBOLS[characterId]![definitionIndex] ||
+        clip.sourceSymbol !== expectedSymbol ||
         clip.frames.length !== expectedFrames(characterId, clip.facing, clip.name)) {
       throw new Error('反馈动作来源定义错误')
     }

@@ -134,7 +134,7 @@ describe('原版角色反馈素材清单', () => {
 
       expect(manifest.characterId).toBe(characterId)
       expect(manifest.sourceSha256).toBe(sourceHash)
-      expect(manifest.clips).toHaveLength(20)
+      expect(manifest.clips.filter(clip => clip.name !== 'cheer')).toHaveLength(20)
       expect(manifest.godOverlays.map(({ godId }) => godId)).toEqual(GOD_IDS)
 
       for (const facing of FACINGS) {
@@ -147,7 +147,7 @@ describe('原版角色反馈素材清单', () => {
         }
       }
 
-      const frames = [...manifest.clips.flatMap(({ frames }) => frames), ...manifest.godOverlays]
+      const frames = [...manifest.clips.filter(clip => clip.name !== 'cheer').flatMap(({ frames }) => frames), ...manifest.godOverlays]
       expect(new Set(frames.map(({ url }) => url)).size).toBe(frames.length)
       pngCount += frames.length
       for (const item of frames) {

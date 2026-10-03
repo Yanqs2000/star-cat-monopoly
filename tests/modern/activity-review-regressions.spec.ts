@@ -78,3 +78,34 @@ it.each(['court', 'ludo', 'carnival'] as const)('%s原收尾台词仅推进两�
   const restored = createGameController(saved, { scheduler }); vi.advanceTimersByTime(100)
   expect(restored.state.rngState).toBe(saved.rngState); restored.dispose()
 })
+
+it.each(['win', 'lose', 'settle'] as const)('法院%s保留court子场景转运台词及根结果台词，holding恢复不重抽', verdict => {
+  vi.useFakeTimers()
+  let seed = 0
+  while (true) {
+    const value = randomInt(seed, 101).value
+    if ((value < 60 ? 'win' : value <= 80 ? 'settle' : 'lose') === verdict) break
+    seed++
+  }
+  const game = createGame([1, 2, 3, 4], 1, 1)
+  game.players[0]!.position = { column: 36, row: 10 }; game.world.markers = {}; game.rngState = seed
+  game.phase = 'landed'; game.continuation = 'handle-landing'
+  const c = createGameController(game, { scheduler })
+  c.chooseCourtTarget(2); c.chooseCourtCase(0)
+  const judgedRng = c.state.rngState
+  expect(c.state.interaction).toMatchObject({ stage: 'judgement', verdict })
+  vi.advanceTimersByTime(5300)
+  if (verdict === 'settle') {
+    expect(c.state.interaction).toMatchObject({ kind: 'notice', notice: { message: 'court-settle' } })
+    expect(c.state.rngState).toBe(draws(judgedRng, 2)); c.dispose(); return
+  }
+  expect(c.state.interaction).toMatchObject({ stage: 'holding' })
+  expect(c.state.rngState).toBe(draws(judgedRng, 2)) // courtz frame5 car1 completion
+  const saved = structuredClone(c.state); c.dispose()
+  const restored = createGameController(saved, { scheduler })
+  expect(restored.state.rngState).toBe(saved.rngState)
+  vi.advanceTimersByTime(1500)
+  expect(restored.state.interaction).toMatchObject({ kind: 'notice', notice: { message: `court-${verdict}` } })
+  expect(restored.state.rngState).toBe(draws(judgedRng, 4)) // then root end_pg22 completion
+  restored.dispose()
+})

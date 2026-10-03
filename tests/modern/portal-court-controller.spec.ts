@@ -75,7 +75,7 @@ it('法院判决等待40帧独立于原说明框快进，送拘留恢复不重�
   expect(restored.state).toEqual(saved)
   restored.readyActivity('car1');vi.advanceTimersByTime(4200)
   expect(restored.state.interaction).toMatchObject({stage:'holding'})
-  expect(restored.state.rngState).toBe(rng)
+  expect(restored.state.rngState).toBe(randomInt(randomInt(rng,1000).nextState,10).nextState) // courtz inner mood once
   expect(restored.state.world.statuses[2]).toMatchObject({state:2,days:2})
   restored.dispose()
 })

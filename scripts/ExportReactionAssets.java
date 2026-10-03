@@ -177,8 +177,10 @@ class ExportReactionAssets {
     }
 
     public static void main(String[] args) throws Exception {
-        require(args.length == 4,
-            "usage: ExportReactionAssets star.swf output-dir scratch-dir character-id");
+        require(args.length == 4 || (args.length == 5 && "cheer".equals(args[4])),
+            "usage: ExportReactionAssets star.swf output-dir scratch-dir character-id [cheer]");
+        String[] names = args.length == 5 ? new String[] {"cheer"} : REACTIONS;
+        int[] offsets = args.length == 5 ? new int[] {2} : OFFSETS;
         Path sourcePath = Path.of(args[0]);
         Path output = Path.of(args[1]);
         Path scratch = Path.of(args[2]);
@@ -193,8 +195,8 @@ class ExportReactionAssets {
             List<ClipExport> clips = new ArrayList<>();
 
             for (int facingIndex = 0; facingIndex < FACINGS.length; facingIndex++) {
-                for (int reactionIndex = 0; reactionIndex < REACTIONS.length; reactionIndex++) {
-                    int rootFrame = facingIndex * 30 + OFFSETS[reactionIndex];
+                for (int reactionIndex = 0; reactionIndex < names.length; reactionIndex++) {
+                    int rootFrame = facingIndex * 30 + offsets[reactionIndex];
                     DepthState placement = swf.getTimeline().getDepthState(rootFrame - 1, 1);
                     require(placement != null, "missing depth-1 actor at root frame " + rootFrame);
                     requireIdentityScale(placement.matrix, "root frame " + rootFrame);
@@ -202,7 +204,7 @@ class ExportReactionAssets {
                     require(character instanceof DrawableTag && character instanceof BoundedTag,
                         "depth-1 actor is not drawable at root frame " + rootFrame);
                     int frames = ((DrawableTag) character).getNumFrames();
-                    if (reactionIndex < 2) {
+                    if ("neutral".equals(names[reactionIndex]) || "ready".equals(names[reactionIndex])) {
                         require(frames == 1, "neutral/ready must be static at root frame " + rootFrame);
                     } else {
                         require(character instanceof DefineSpriteTag,
@@ -212,7 +214,7 @@ class ExportReactionAssets {
                     DefineSpriteTag rendered = timelineForPlacement(
                         swf, placement, frames, nextId++);
                     clips.add(new ClipExport(
-                        REACTIONS[reactionIndex], FACINGS[facingIndex], rootFrame,
+                        names[reactionIndex], FACINGS[facingIndex], rootFrame,
                         placement.characterId, frames, new MATRIX(placement.matrix),
                         bounds((BoundedTag) character), rendered, bounds(rendered)));
                 }

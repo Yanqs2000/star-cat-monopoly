@@ -199,3 +199,8 @@ describe('3A 对局视觉投影', () => {
     expect(visualForHandAssetFailure(game, 26, visual)).toBeUndefined()
   })
 })
+
+it.each([[0, null], [1, 'neutral'], [2, 'cheer'], [5, 'sad']] as const)('3C显式源brow%s反馈使用准确的原动作', (sourceBrow, name) => {
+  const plan = interactionVisualPlan({ kind: 'activity', playerId: 1, sourceBrow })
+  expect(plan.reactions).toEqual(name === null ? [] : [{ playerId: 1, name }])
+})

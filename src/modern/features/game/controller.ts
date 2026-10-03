@@ -371,7 +371,13 @@ export function createGameController(initialState: GameState, options: GameContr
       current={...current,interaction:{...current.interaction!,presentation:{clipId:'show2',frame:1,totalFrames:45}} as GameInteraction}
       readyClip=undefined
     }
-    options.onInteractionEvent?.(event)
+    const sourceBrows: Record<string, 0 | 1 | 2 | 5> = {
+      'portal-cancel': 0, 'portal-arrived': 1, 'court-no-targets': 0,
+      'court-win': 1, 'court-settle': 2, 'court-lose': 5,
+      'ticket-buy': 0, 'ticket-sell': 0, 'lost-found': 1,
+    }
+    const sourceBrow=sourceBrows[notice.message]
+    options.onInteractionEvent?.(sourceBrow === undefined ? event : { ...event, sourceBrow })
     notify()
     if (!isHuman() && !presentation()) schedule(acknowledgeNotice, aiThinkDurationMs)
   }
@@ -489,7 +495,7 @@ export function createGameController(initialState: GameState, options: GameContr
       readyClip=undefined;notify();beginPresentationClock();return
     }
     if(interaction.stage==='transfer') {
-      current={...current,interaction:{...interaction,stage:'holding',waitFrames:0,presentation:undefined}}
+      current={...current,rngState:advanceSourceMoodRandom(current.rngState),interaction:{...interaction,stage:'holding',waitFrames:0,presentation:undefined}} // courtz frame5 mood_pg(12)
       readyClip=undefined;notify();schedule(advanceCourtHolding,1000/30,false)
     }
   }

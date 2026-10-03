@@ -41,7 +41,7 @@ it('已入账反馈在暂停时失败：重建先提供继续按钮，再重放�
   } }
   const saved = structuredClone(game)
   state.mode = 'game'; state.paused = true; state.speed = 2
-  state.pending = { state: game, lineup: 'saved game', visual: { reactions: [{ playerId: 1, name: 'happy' }], effects: [] } }
+  state.pending = { state: game, lineup: 'saved game', visual: { reactions: [{ playerId: 1, name: 'cheer' }], effects: [] } }
   await nextTick()
   let settled = false
   const recovery = state.loadPendingGame().finally(() => { settled = true })
@@ -58,7 +58,7 @@ it('已入账反馈在暂停时失败：重建先提供继续按钮，再重放�
   await recovery
   await flushPromises()
   expect(settled).toBe(true)
-  expect(scene.playReaction).toHaveBeenCalledExactlyOnceWith(1, 'happy')
+  expect(scene.playReaction).toHaveBeenCalledExactlyOnceWith(1, 'cheer')
   expect(state.controllerReady).toBe(true)
   expect(state.paused).toBe(false)
   const panel = wrapper.findComponent({ name: 'GamePanel' })

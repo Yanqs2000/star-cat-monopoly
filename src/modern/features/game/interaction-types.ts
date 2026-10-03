@@ -75,6 +75,8 @@ export type GameInteraction =
 export interface InteractionEvent {
   kind: NoticeKind
   playerId: number
+  /** Original brow_pg selector; 0 means no new character feedback. */
+  sourceBrow?: 0 | 1 | 2 | 5
   cardId?: number
   consumed?: boolean
   status?: 'applied' | 'invalid-target'

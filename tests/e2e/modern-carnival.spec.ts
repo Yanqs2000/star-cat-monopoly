@@ -25,7 +25,7 @@ test('自然seed104第1轮真20秒接物：原Pixi素材、键鼠、暂停、发
 test('自然游乐场入场和暂停时已发券反馈各404恢复，可继续且不重复开始或发券',async({page})=>{
  test.setTimeout(360_000);let broken=true,brokenReward=false,rewardRequested=false;let releaseReward:(()=>void)|undefined;let creditedTickets:number|null=null;const errors:string[]=[];page.on('pageerror',e=>errors.push(e.stack ?? e.message))
  await page.route('**/assets/activities/carnival-boy-1/3.png',route=>broken?route.fulfill({status:404,body:''}):route.continue())
- await page.route('**/assets/characters/1/reactions/happy/*/57.png',async route=>{
+ await page.route('**/assets/characters/1/reactions/cheer/*/57.png',async route=>{
   if(!brokenReward){await route.continue();return}
   rewardRequested=true;await new Promise<void>(resolve=>{releaseReward=resolve})
   const text=await page.getByTestId('player-list').locator('li').first().textContent()
@@ -36,7 +36,7 @@ test('自然游乐场入场和暂停时已发券反馈各404恢复，可继续�
  await expect(page.getByTestId('carnival-original')).toHaveAttribute('data-stage','intro')
  await expect.poll(()=>rewardRequested,{timeout:45000}).toBe(true)
  await page.getByRole('button',{name:'暂停对局',exact:true}).click();releaseReward!()
- await expect(page.getByRole('alert')).toContainText('reactions/happy/',{timeout:45000});expect(creditedTickets).not.toBeNull()
+ await expect(page.getByRole('alert')).toContainText('reactions/cheer/',{timeout:45000});expect(creditedTickets).not.toBeNull()
  brokenReward=false;await page.getByRole('button',{name:'重试载入'}).click()
  await expect(page.getByRole('status')).toContainText('对局已载入')
  await expect(page.getByRole('button',{name:'继续对局',exact:true})).toBeVisible()
