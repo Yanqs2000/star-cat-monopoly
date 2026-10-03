@@ -66,6 +66,6 @@
 ### Task 6: 联合审查与整批验收
 
 **Files:** tests/e2e/modern-activities.spec.ts；docs/modernization/acceptance-3c.md、resume-3c.md。
-- [ ] NPC→地产、法院/医院→后续回合、小游戏→日期/月结等组合及3A/3B相关回归。
+- [x] NPC→地产、法院/医院→后续回合、小游戏→日期/月结等组合及3A/3B相关回归。
 - [ ] 整套单测/类型/构建、全部新增自然入口回放与必要夹具；独立全批审查、重要问题RED修复及相关复测。
 - [ ] 源差异/证据/提交/回退点和干净工作树核对，呈交用户验收。
