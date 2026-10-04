@@ -1,15 +1,45 @@
-# 第4阶段续跑记录
+# 第4阶段续跑与交付记录
 
-2026-10-04，用户目标“进入第四阶段，直到完成”有效。基线e73cb33，当前使用既有隔离工作树feat/modern-map-foundation，未修改3D用户验收。计划docs/superpowers/plans/2026-10-04-modern-saves.md，规格同目录../specs/2026-10-04-modern-saves-design.md。
+2026-10-04收尾。用户目标“进入第四阶段，直到完成”已完成所需工程工作；用户验收仍待确认。第5阶段高清化、第6阶段部署均未开始，原有阶段验收不自动更新。
 
-任务1开始：先写完整快照验证测试，生成权威TS JSON schema，再语义验证。Node24.19.0已在Codex依赖运行时，node:sqlite实际3.53.3可用；全局Homebrew Node26不作为交付运行时。依赖选择Fastify5.12.5/Ajv8.20.0/tsx4.23.15，schema generator2.9.0，static10.1.5/cookie11.1.2；会验证兼容。
+## 工作树、提交与验证
 
-本轮连续内联执行并最后一次独立审查。既有批准架构和“直到完成”授权允许细化本地实现，不重复请求流程批准。用户旧浏览器对局不动，生产4184保留；SQLite数据不进git，无自动存档/旧档兼容/高清化/部署。
+工作树 `/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/modern-map-foundation`，分支 `feat/modern-map-foundation`。Git使用 `/opt/homebrew/bin/git`。
 
-任务1/2进展：24项快照、5项真实SQLite、4项Fastify API测试通过（4-snapshot-green/4-store-green/4-api-green日志）。numeric Record联合类型的schema生成器推为数组，已显式投影forcedDice/pendingControl为JSON对象；TS中补上真实credit.grant可选字段，不改经济规则。Node24后端初次启动句柄43740需现场复查，默认4186/.data/saves.sqlite。类型检查发现Fastify新版错误参数unknown，已显式收窄，正复测。尚未接Vue菜单，不可声称完成存读档。
+- `e73cb33`：第4阶段前回退点。
+- `977bb1e`：已批准架构下的规格/实施计划。
+- `d33b25c`：全快照、共享校验、真实SQLite/API。
+- `dfd159e`：菜单、双确认、暂停、候选场景替换与UI。
+- `c432611`：独立复审2项有效发现修复。
+- 最终文档提交：以 `git log -1` 读取，消息 `docs(modern): deliver phase 4 save acceptance and runtime evidence`；包含本记录，避免自引用提交哈希。
 
-任务3进展：手动菜单/双确认、输入inert、暂停恢复、候选素材准备后替换已接入。真实浏览器Chrome/IAB三槽/跨页/后端重启/逐字段28核心一致/下一骰4一致/过期409/SQL失败/提交丢响应同请求重试不重复/坏版本拒绝/取消候选及素材503保留原局已验证；nativefetch绑定this问题已RED→GREEN修复。最新schema补充公司类别/坐标/历史引用与终局键顺序不敏感。保存入口扩展稳定AI/托管；Node虚拟时钟托管恢复暂停、不重复roll回归通过。全量600之前此最后一项601待运行。
+未提交功能修改：无。日志、独立测试数据库和旧产物备份在忽略目录中，不当作用户槽位。
 
-当前进程：正式Node24服务4186 exec43740（旧实例需收尾重启）；独立验收服务4187 exec70536有效，DB.analysis-cache/4-browser/saves.sqlite，非用户正式槽。正式.data/saves.sqlite仍空。Chrome自建tab747752123、IAB自建tab1均测试对局；用户其他标签页不动。初步生产及夹具build通过，但正式build还需纳入nativefetch与末轮校验/AI修改。旧JS备份.analysis-cache/4-prior-js，build后补回dist-modern/assets。测试服务的fault.json当前已消费，无常驻故障。
+78文件616项单元通过（19:01:42运行），类型通过，schema一致检查通过，最终现代生产构建通过。后续只改文档/证据。真实持久化、跨浏览器、重启、409、SQL回滚、丢响应重试、素材失败/取消、托管、终局与服务离线证据详见 [acceptance-4.md](acceptance-4.md)、[review-4.md](review-4.md) 及 [evidence/phase-4](evidence/phase-4)。
 
-最终Task3检查：Node24全量77文件601项通过（4-ui-full-final.log），类型通过；AI暂停恢复29项快照回归通过（4-autoplay-save-green.log），生产夹具最新ModernApp-CP_hTUR8.js。最新正式production尚待最终build。Task3将提交并进入Task4整批独立复审/交付，不能标记goal完成。
+## 当前进程与数据
+
+以下句柄只适用于本Codex会话，下一次先用lsof/HTTP检查，不能据旧句柄推断服务活着。
+
+| 用途 | 收尾状态 |
+|---|---|
+| 正式Node24服务 | exec82390，PID54367，127.0.0.1:4186；页面/API200；同一 `.data/saves.sqlite` |
+| 生产预览 | exec55463，PID54331，127.0.0.1:4184；新proxy配置到4186，页面/API200 |
+| 独立验收4187 | 已正常关闭；最新exec86109/PID54125不再使用 |
+| Chrome正式页 | 自建747752126，4184/modern.html，已标记交付；第2轮自然对局菜单展示三个空槽 |
+| 测试浏览器 | 自建Chrome747752123已关闭；测试IAB已关闭；未动用户其他标签页 |
+
+正式 `.data/saves.sqlite` 收尾0条/三个revision0，目录700、文件600。测试在 `.analysis-cache/4-browser/saves.sqlite`，隔离数据保留用于查证；无故障标记或SQL触发器影响正式数据库。已复制精简JSON证据入Git，不依赖测试SQLite长期保留。
+
+Node运行时 `/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin`，24.19.0；Homebrew Node26不是交付运行时。复启命令：
+
+```bash
+env PATH=/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/opt/homebrew/bin:$PATH npm run server:modern
+env PATH=/Users/yanqs/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/opt/homebrew/bin:$PATH npm run preview:modern
+```
+
+`dist-modern`已含最后修复，旧JS/CSS哈希从 `.analysis-cache/4-prior-js` 补回，避免遗留页面按旧hash加载失败。正常后续构建可以清理，但先确认没有仍使用旧产物的用户页。
+
+## 下一步
+
+等待用户第4阶段验收。如发现问题，先复现/定向修复，不重新跑无变化的整个取证流程；维持数据库、正式槽和用户对局。通过后再按路线图规划第5阶段样本高清化，不自动进行素材替换或部署。

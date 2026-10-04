@@ -42,7 +42,7 @@
 
 ### Task 4: 实际持久化和故障交付
 **Files:** tests/fixtures/modern-saves.html, docs/modernization/{acceptance-4.md,resume-4.md,review-4.md}, README.md
-- [ ] 实际生产UI选人/保存三槽、掷骰/加载、刷新/关页/后端重启读回；跨浏览器同槽；旧标签页冲突；SQLite写失败/断网/读资源失败保留局；自然状态全部字段与下一骰RNG对照。
-- [ ] npm test、typecheck、build:modern及schema重新生成一致 → 通过。
-- [ ] 独立fresh reviewer整体审查；重要发现一次TDD修复和全量回归。
-- [ ] 验收与续跑记录、入口/持久化路径/回退点、干净提交；不代用户验收，不进入5/6。
+- [x] 实际生产UI选人/保存三槽、掷骰/加载、刷新/关页/后端重启读回；跨浏览器同槽；旧标签页冲突；SQLite写失败/断网/读资源失败保留局；自然状态全部字段与下一骰RNG对照。
+- [x] npm test、typecheck、build:modern及schema重新生成一致 → 通过。
+- [x] 独立fresh reviewer整体审查；重要发现一次TDD修复和全量回归。
+- [x] 验收与续跑记录、入口/持久化路径/回退点、干净提交；不代用户验收，不进入5/6。

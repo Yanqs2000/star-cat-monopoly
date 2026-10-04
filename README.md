@@ -1,26 +1,40 @@
 # 星猫大富翁 · 原版兼容运行
 
-## 现代版 3A 对局
+## 现代版：完整对局与第4阶段手动存读档
 
-独立现代入口使用 **Vue + TypeScript + PixiJS 8.20.1** 绘制原地图、12名原角色和原交互素材。它不加载 SWF、Ruffle 或旧规则核心，当前可选择1至4名人类玩家、由AI补满四人，并游玩卡片、特殊格、卡片屋、奖券、信用和地产流程。
+独立入口使用 Vue、TypeScript 与 PixiJS 绘制原地图、12名角色和原素材，规则不调用 SWF/Ruffle。已接入卡牌、金融、公司、NPC、特殊地点、小游戏、破产胜负、托管、日历与声音；本批新增三个服务器手动存档槽位。阶段验证与保留差异见 [3D记录](docs/modernization/acceptance-3d.md) 和 [第4阶段记录](docs/modernization/acceptance-4.md)，用户验收状态按实际确认记录。
+
+使用 `.node-version` 指定的 Node 24（至少24.19.0）：
 
 ```bash
 npm ci
-npm run dev:modern
+npm run build:modern
+npm run server:modern
 ```
 
-打开 http://127.0.0.1:5184/modern.html 。选人后点击“开始对局”；人类可点击“掷骰”或在输入控件未聚焦时按 ↑。对局可暂停、切换标准/快速移动、拖拽地图、查看全图、重新跟随当前玩家或进入全屏。2A地图与动画检查仍可从选人页的“场景检查”进入。
+打开 [现代对局](http://127.0.0.1:4186/modern.html)。后端只监听本机127.0.0.1，同时提供页面、原素材和存档API。数据库默认 `.data/saves.sqlite`，独立于构建产物；可用 `STAR_CAT_SAVE_DB` 设置另一个文件路径、`STAR_CAT_SAVE_PORT` 设置端口。备份正在使用的数据库时需使用SQLite备份工具，或正常关闭服务后再复制文件，不只复制活跃WAL模式的主文件。
+
+选人页“读取存档”、对局中“手动存读档”均可读回三个槽位。仅在稳定等待掷骰（人类、AI或托管）或终局允许保存，移动、交互和小游戏途中需完成后再保存。打开菜单冻结对局，关闭恢复原暂停设置；覆盖旧槽、替换当前局需分别确认。过期标签页会提示修订冲突，重新查看槽位后再作选择。失败不会显示保存成功，素材准备失败保留原局。
+
+没有自动存档或旧Flash存档兼容。全量规则状态、随机状态、原选人顺序、暂停与速度会恢复；镜头、界面历史、音乐播放位置不写入存档，音量/静音保持当前浏览器偏好。
+
+开发或静态生产预览时，先保留上面的后端进程，再在另一个终端运行：
 
 ```bash
-npm run build:modern
-npm run preview:modern
-npm test -- tests/modern
-npm run test:e2e:modern
+npm run dev:modern     # http://127.0.0.1:5184/modern.html
+npm run preview:modern # http://127.0.0.1:4184/modern.html
 ```
 
-生产预览为 http://127.0.0.1:4184/modern.html ，产物仅在 `dist-modern/`，不含原版运行库。原素材转换只在离线工具中读取SWF，发布产物为PNG/JSON。
+这两个入口将 `/api` 代理到本机4186，存档使用同一数据库。现代产物位于 `dist-modern/`；原素材转换只在离线工具中读取SWF，发布为PNG/JSON。选人后的“场景检查”仍可检查地图和动画。
 
-当前批次仍不处理完整银行业务、普通 NPC 的六类遭遇规则、破产淘汰、存档和声音。验证范围、合法种子流程、截图和已知边界见 [3A 验收记录](docs/modernization/acceptance-3a.md)。以下原版对照入口与命令继续保留。
+```bash
+npm test
+npm run typecheck
+npm run check:saves
+npm run build:modern
+```
+
+以下原版对照入口与命令继续保留。
 
 现在的默认入口运行 **4399《星猫大富翁》的原始游戏文件**。人物、人物动画、地图、建筑、界面、音效和游戏逻辑由原程序提供，不再使用此前自绘的猫、方形棋盘或自编规则。
 
