@@ -33,8 +33,9 @@ const emit = defineEmits<{
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
 const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' && props.game.lastRoll !== null)
+const serializedGameState = computed(() => JSON.stringify(props.game))
 const gameStateFingerprint = computed(() => {
-  const serialized=JSON.stringify(props.game)
+  const serialized=serializedGameState.value
   let first=0x811c9dc5,second=0x9e3779b9
   for(let index=0;index<serialized.length;index++){
     const code=serialized.charCodeAt(index)
@@ -66,7 +67,7 @@ function restriction(playerId: number): string {
 
 <template>
   <aside class="panel" aria-label="对局控制" :data-speed="String(speed)">
-    <span data-testid="game-state-fingerprint" :data-fingerprint="gameStateFingerprint" hidden aria-hidden="true" />
+    <span data-testid="game-state-fingerprint" :data-fingerprint="gameStateFingerprint" :data-state-json="serializedGameState" hidden aria-hidden="true" />
     <div class="panel-head">
       <div><span class="eyebrow">当前对局</span><h2 data-testid="round">第 {{ game.round }} 轮</h2></div>
       <span class="phase">{{ phaseText }}</span>

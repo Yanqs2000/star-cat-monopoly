@@ -412,8 +412,7 @@ export function createGameController(initialState: GameState, options: GameContr
     }
     if(!ai && interaction.heads) {
       // Heads are newer MovieClips: their last native frame precedes station.frame3 removing game1.
-      const closing=advancePortalHeads(interaction.heads,current.rngState)
-      current={...current,rngState:closing.rngState}
+      advancePortalHeads(interaction.heads,interaction.visualRngState ?? current.rngState)
     }
     const from = { ...activePlayer().position }
     const result = ai ? chooseAiPortal(projectWorld(current),interaction.playerId) : applyPortal(projectWorld(current),interaction.playerId,destination)
@@ -447,8 +446,8 @@ export function createGameController(initialState: GameState, options: GameContr
   advancePortalChoice=() => {
     const interaction=current.interaction
     if(interaction?.kind!=='portal' || interaction.stage!=='choice' || !interaction.heads)return
-    const next=advancePortalHeads(interaction.heads,current.rngState)
-    current={...current,rngState:next.rngState,interaction:{...interaction,heads:next.heads,choiceFrames:(interaction.choiceFrames ?? 0)+1}}
+    const next=advancePortalHeads(interaction.heads,interaction.visualRngState ?? current.rngState)
+    current={...current,interaction:{...interaction,heads:next.heads,visualRngState:next.rngState,choiceFrames:(interaction.choiceFrames ?? 0)+1}}
     notify();schedule(advancePortalChoice,1000/30,false)
   }
   const finishCourt = () => {
@@ -586,7 +585,7 @@ export function createGameController(initialState: GameState, options: GameContr
       const heads=isHuman()?createPortalHeads(projectWorld(current)):undefined
       if(heads)current={...current,rngState:heads.rngState}
       current={...current,phase:'interaction',continuation:null,interaction:{kind:'portal',playerId:player.id,stage:'choice',
-        heads:heads?.heads,choiceFrames:0,
+        heads:heads?.heads,visualRngState:heads?.rngState,choiceFrames:0,
         ...(options.awaitActivityAssets && isHuman() ? {presentation:{clipId:'station',frame:1,totalFrames:1}} : {})}}
       readyClip=undefined
       notify()

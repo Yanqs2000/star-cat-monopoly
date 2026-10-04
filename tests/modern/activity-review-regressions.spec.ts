@@ -49,12 +49,11 @@ it.each(['portal', 'lottery-submit', 'lottery-leave', 'lost-found'] as const)('%
   game.rngState = 1
   const c = createGameController(game, { scheduler })
   const before = entry === 'lost-found' ? game.rngState : c.state.rngState
-  const closingHeads = c.state.interaction?.kind === 'portal' ? c.state.interaction.heads?.length ?? 0 : 0
   if (entry === 'portal') { expect(c.choosePortal(5)).toBe(true); expect(c.choosePortal(5)).toBe(false) }
   else if (entry === 'lottery-submit') { expect(c.exchangeTickets(0)).toBe(true); expect(c.exchangeTickets(0)).toBe(false) }
   else if (entry === 'lottery-leave') { expect(c.leaveExchange()).toBe(true); expect(c.leaveExchange()).toBe(false) }
   else expect(c.state.interaction).toMatchObject({ kind: 'notice', notice: { message: 'lost-found' } })
-  expect(c.state.rngState).toBe(draws(before, closingHeads + 2))
+  expect(c.state.rngState).toBe(draws(before, 2))
   const saved = structuredClone(c.state); c.dispose()
   const restored = createGameController(saved, { scheduler }); restored.setPaused(true); vi.advanceTimersByTime(100)
   expect(restored.state.rngState).toBe(saved.rngState); restored.dispose()

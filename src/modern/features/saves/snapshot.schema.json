@@ -973,6 +973,9 @@
                 "$ref": "#/definitions/PortalHead"
               }
             },
+            "visualRngState": {
+              "type": "number"
+            },
             "choiceFrames": {
               "type": "number"
             },
