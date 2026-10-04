@@ -9,7 +9,7 @@
 - 本批基线：`8d2813b`；阶段 4 回退点：`5bca5b8`；5A/5B 规划提交：`b8dd51a`
 - 正式 `public/original/*.swf` 未修改。`public/modern/assets-hd/` 和 JPEXS 工作 SWF 均处于忽略目录。
 - 当前高清清单 SHA-256：`9cb6b606e2dcb7491d15002e51752b6df4a616e1f0e6983e4fb14f3819bb5e28`。
-- 最终实现提交号待提交后填写；完成后应在此记录提交号与干净状态。
+- 5A/5B 实现提交：`ced33f8`（`feat(modern): add original and hd asset profiles`）；当前工作树干净。阶段 4 回退点仍为 `5bca5b8`。
 
 ## 5A/5B 当前结果
 
