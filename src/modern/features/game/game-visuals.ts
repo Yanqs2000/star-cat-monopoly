@@ -175,7 +175,8 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
     react(event.playerId, 'hurt')
     const cellId = affectedCells[0]
     if (cellId !== undefined) effects.push({ clipId: 'explosion', cellId })
-  } else if (worldKind === 'god-encountered' && event.worldEvent?.npcId === 3 && (event.worldEvent.cashDelta ?? 0) < 0) {
+  } else if (worldKind === 'god-encountered' && [3, 5].includes(event.worldEvent?.npcId ?? 0)) {
+    // Source npc3/npc5 use brow_pg(5), even with no cash or cards to lose.
     react(event.playerId, 'sad')
   } else if (worldKind === 'restriction-released') {
     react(event.playerId, 'ready')

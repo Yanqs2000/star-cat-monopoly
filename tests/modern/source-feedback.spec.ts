@@ -8,6 +8,39 @@ import type { InteractionEvent } from '../../src/modern/features/game/interactio
 afterEach(() => vi.useRealTimers())
 const scheduler = { now: () => Date.now(), setTimeout: (f: () => void, ms: number) => setTimeout(f, ms), clearTimeout: (h: unknown) => clearTimeout(h as ReturnType<typeof setTimeout>) }
 
+it.each([0, 1, 2, 3])('妮妮遇到衰神，手牌为%s张时均播放原版难过表情', count => {
+  vi.useFakeTimers()
+  const game = createGame([1, 7, 12, 2], 1, 1)
+  game.activePlayerIndex = 2
+  game.players[2]!.position = { column: 16, row: 16 }
+  game.players[2]!.controller = 'ai'
+  game.world.markers = { 53: 5 }
+  game.inventories[3] = [5, 6, 7].slice(0, count)
+  game.phase = 'landed'
+  game.continuation = 'handle-landing'
+  const events: InteractionEvent[] = []
+  const controller = createGameController(game, { scheduler, landingDurationMs: 10, onInteractionEvent: event => events.push(event) })
+  vi.advanceTimersByTime(10)
+  expect(game.players[2]!.name).toBe('妮妮')
+  expect(events).toHaveLength(1)
+  expect(events[0]!.worldEvent).toMatchObject({ kind: 'god-encountered', npcId: 5, amount: 0 })
+  expect(controller.state.world.statuses[3]).toMatchObject({ godId: 5, godDays: 7 })
+  expect(controller.state.inventories[3]).toHaveLength(Math.max(0, count - 2))
+  expect(interactionVisualPlan(events[0]!)).toEqual({ reactions: [{ playerId: 3, name: 'sad' }], effects: [] })
+  controller.dispose()
+})
+
+it.each([0, 100000])('穷神遭遇在现金为%s时均播放原版难过表情', cash => {
+  const game = createGame([1, 2, 3, 4], 1, 1)
+  game.players[0]!.cash = cash
+  game.world.markers = { 53: 3 }
+  const result = resolveWorldCell(game, 1, { column: 16, row: 16 }, 'landing')
+  expect(result.event).toMatchObject({ kind: 'god-encountered', npcId: 3 })
+  expect(interactionVisualPlan({ kind: 'world', playerId: 1, worldEvent: result.event })).toEqual({
+    reactions: [{ playerId: 1, name: 'sad' }], effects: [],
+  })
+})
+
 it.each([[9, 200, 4, 40000, 'sad'], [12, 200, 4, 40000, 'sad'], [13, 31, 4, 40000, 'sad'], [13, 30, 4, 40000, 'neutral'], [14, 200, 4, 40000, 'sad'], [14, 200, 3, 40000, 'neutral'], [15, 200, 4, 3001, 'sad'], [15, 200, 4, 3000, 'neutral']] as const)(
   'NPC%s券%s卡%s现金%s的实际规则事件选择原%s反馈', (npc, tickets, cards, cash, name) => {
     const game = createGame([1, 2, 3, 4], 1, 1)
