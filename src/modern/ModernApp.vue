@@ -23,16 +23,28 @@ import { restoreControllerAfterVisual } from './features/game/visual-recovery'
 import { getCardRecord } from './features/game/direct-cards'
 import { createGame } from './features/game/setup'
 import type { GameState } from './features/game/types'
-import { createMapScene, type MapSceneHandle } from './features/map/MapScene'
+import { createMapScene, type MapCameraState, type MapSceneHandle } from './features/map/MapScene'
 import SceneInspector from './features/map/SceneInspector.vue'
 import type { MapData } from './features/map/types'
+import { isCompleteHdProfileIndex, mapAssetProfile, profileAssetUrl, type AssetProfile } from './features/assets/profiles'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
-interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; stagingHost?:HTMLElement; committed?:boolean }
-interface PendingGame { state: GameState; lineup: string; visual?: InteractionVisualPlan }
+interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; assetProfile:AssetProfile; stagingHost?:HTMLElement; committed?:boolean }
+interface PendingGame { state: GameState; lineup: string; assetProfile:AssetProfile; visual?: InteractionVisualPlan }
 
 const map = mapJson as MapData
 const mode = ref<'selection' | 'game' | 'inspection'>('selection')
+function storedAssetProfile():AssetProfile {
+  try{return localStorage.getItem('star-cat-monopoly:asset-profile')==='hd'?'hd':'original'}
+  catch{return 'original'}
+}
+const assetProfile=ref<AssetProfile>(storedAssetProfile())
+const assetProfileSelection=ref<AssetProfile>(assetProfile.value)
+const assetProfileNotice=ref('')
+const assetProfileBusy=ref(false)
+const assetProfileBusyLabel=computed(()=>mode.value==='selection'
+  ?assetProfileSelection.value==='hd'?'正在校验高清图集…':'正在保存原版素材偏好…'
+  :assetProfileSelection.value==='hd'?'正在准备高清素材…':'正在准备原版素材…')
 const characters = ref<CharacterIndexItem[]>([])
 const indexState = ref<'loading' | 'ready' | 'error'>('loading')
 const indexError = ref('')
@@ -71,6 +83,9 @@ const preparedImages=ref<Record<string,string>>({})
 let ownedUiAssets:PreparedUiAssets|undefined
 let scene: MapSceneHandle | undefined
 let gameController: GameController | undefined
+let sceneActivityAssets:ActivityManifest|undefined
+let assetProfileRequest = 0
+let assetProfileAbort: AbortController | undefined
 let abort: AbortController | undefined
 let observer: ResizeObserver | undefined
 let generation = 0
@@ -79,8 +94,54 @@ let latestNoticeVisual: InteractionVisualPlan | undefined
 
 const selectedCharacters = computed(() => selected.value.map(id => characters.value.find(item => item.id === id)!).filter(Boolean))
 const humanSummary = computed(() => `人类 ${selected.value.length} · AI ${4 - selected.value.length}`)
+const canSwitchAssetProfile=computed(()=>mode.value==='selection'||(
+  mode.value==='game'&&paused.value&&loadState.value==='ready'&&controllerReady.value&&
+  gameController!==undefined&&game.value!==undefined&&canSaveGame(gameController.state)
+))
 function thumbnail(item: CharacterIndexItem): string {
-  return `${import.meta.env.BASE_URL}${item.manifestUrl.replace(/manifest\.json$/, 'walk/down-right/1.png')}`
+  const path=item.manifestUrl.replace(/manifest\.json$/, 'walk/down-right/1.png')
+  return `${import.meta.env.BASE_URL}${profileAssetUrl(path,assetProfile.value)}`
+}
+async function verifyHdAssetProfile(signal?:AbortSignal){
+ const response=await fetch(`${import.meta.env.BASE_URL}assets-hd/hd-profile.json`,{signal})
+ if(!response.ok)throw new Error(`高清图集不可用（HTTP ${response.status}）`)
+ const profile=await response.json()
+ if(!isCompleteHdProfileIndex(profile))throw new Error('高清图集不完整或清单无效')
+ const manifestResponse=await fetch(`${import.meta.env.BASE_URL}assets-hd/hd-manifest.json`,{signal})
+ if(!manifestResponse.ok)throw new Error(`高清图集清单不可用（HTTP ${manifestResponse.status}）`)
+ const bytes=await manifestResponse.arrayBuffer()
+ const hash=new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))
+ const actualHash=Array.from(hash,b=>b.toString(16).padStart(2,'0')).join('')
+ if(actualHash.toLowerCase()!==String(profile.manifestSha256).toLowerCase())throw new Error('高清图集清单校验失败')
+}
+async function setAssetProfile(event:Event){
+ const requested=(event.target as HTMLSelectElement).value==='hd'?'hd':'original'
+ assetProfileSelection.value=requested
+ const request=++assetProfileRequest
+ assetProfileAbort?.abort()
+ const controller=new AbortController()
+ assetProfileAbort=controller
+ assetProfileNotice.value=''
+ assetProfileBusy.value=true
+ try{
+  if(requested===assetProfile.value){assetProfileSelection.value=assetProfile.value;return}
+  if(requested==='hd')await verifyHdAssetProfile(controller.signal)
+  if(request!==assetProfileRequest||controller.signal.aborted)return
+  if(mode.value==='game')await switchPausedGameAssetProfile(requested,request,controller.signal)
+  else commitAssetProfile(requested)
+ }catch(error){
+  if(request===assetProfileRequest&&!controller.signal.aborted){
+   assetProfileSelection.value=assetProfile.value
+   assetProfileNotice.value=error instanceof Error?error.message:String(error)
+  }
+ }finally{
+  if(request===assetProfileRequest){assetProfileBusy.value=false;assetProfileAbort=undefined}
+ }
+}
+function commitAssetProfile(profile:AssetProfile){
+ assetProfile.value=profile
+ assetProfileSelection.value=profile
+ try{localStorage.setItem('star-cat-monopoly:asset-profile',profile)}catch{}
 }
 function parseCharacterIndex(value: unknown): CharacterIndexItem[] {
   if (!value || typeof value !== 'object' || !Array.isArray((value as { characters?: unknown }).characters)) throw new Error('角色索引结构错误')
@@ -127,6 +188,7 @@ function cleanupGame() {
   observer?.disconnect(); observer = undefined
   gameController?.dispose(); gameController = undefined
   scene?.destroy(); scene = undefined
+  sceneActivityAssets=undefined
 }
 async function fetchInteractionManifest(signal: AbortSignal): Promise<InteractionAssetsManifest> {
   const url = 'assets/interactions/manifest.json'
@@ -156,6 +218,7 @@ function failRuntimeAsset(error: Error, visual?: InteractionVisualPlan) {
   if (state) pending.value = {
     state,
     lineup: state.players.map(player => player.name).join(' · '),
+    assetProfile: assetProfile.value,
     ...(visual === undefined ? {} : { visual }),
   }
   loadError.value = error.message
@@ -173,7 +236,7 @@ async function playVisual(state: GameState, visual: InteractionVisualPlan): Prom
   try {
     await Promise.all(visual.reactions.map(reaction => scene?.playReaction(reaction.playerId, reaction.name)))
     visualRecovery.complete(token)
-    if (pending.value?.visual === visual) pending.value = { state: pending.value.state, lineup: pending.value.lineup }
+    if (pending.value?.visual === visual) pending.value = { state: pending.value.state, lineup: pending.value.lineup, assetProfile:pending.value.assetProfile }
   } catch (error) {
     const failedVisual = visualRecovery.fail(token)
     if (failedVisual) failRuntimeAsset(error instanceof Error ? error : new Error(String(error)), failedVisual)
@@ -185,7 +248,7 @@ function failHandAsset(error: Error, cardId: number) {
   const state = gameController?.state ?? game.value
   failRuntimeAsset(error, state === undefined ? undefined : visualForHandAssetFailure(state, cardId, latestNoticeVisual))
 }
-async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortSignal,staged=false):Promise<PreparedGame> {
+async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortSignal,profile:AssetProfile,staged=false):Promise<PreparedGame> {
   let prepared:PreparedGame|undefined
     const [entries, loadedInteractionAssets, loadedActivityAssets] = await Promise.all([Promise.all(state.players.map(async player => {
       const item = characters.value.find(character => character.id === player.characterId)
@@ -193,10 +256,13 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
       const [manifest, reactions] = await Promise.all([fetchManifest(item, signal), fetchReactionManifest(item, signal)])
       return { playerId: player.id, characterId: player.characterId, manifest, reactions }
     })), fetchInteractionManifest(signal), fetchActivityManifest(signal)])
-    const ui=await prepareGameUiAssets(state,loadedInteractionAssets,signal)
+    const displayInteractions=mapAssetProfile(loadedInteractionAssets,profile)
+    const displayActivities=mapAssetProfile(loadedActivityAssets,profile)
+    const ui=await prepareGameUiAssets(state,displayInteractions,signal,undefined,profile)
     try{
     const loaded = await createMapScene(target, map, entries[0]!.manifest, {
       signal,
+      assetProfile:profile,
       playerManifests: entries,
       onFrame: () => {},
       onManualCamera: () => { following.value = false },
@@ -208,7 +274,7 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
         return god?[god.url]:[]
       })],
     })
-  prepared={loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets,ui}
+  prepared={loaded,interactions:displayInteractions,activities:displayActivities,ui,assetProfile:profile}
   return prepared
   }catch(error){ui.release();throw error}
 }
@@ -222,10 +288,13 @@ async function loadPendingGame(prepared?:PreparedGame) {
   const signal = abort.signal
   loadState.value = 'loading'; loadError.value = ''; following.value = true
   try {
-    const resources=prepared??await prepareGameScene(pending.value.state,host.value!,signal)
+    const resources=prepared??await prepareGameScene(pending.value.state,host.value!,signal,pending.value.assetProfile)
     const {loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets}=resources
     if (current !== generation) {loaded.destroy();resources.ui.release();resources.stagingHost?.remove();return}
     resources.committed=true
+    assetProfile.value=resources.assetProfile
+    assetProfileSelection.value=resources.assetProfile
+    sceneActivityAssets=loadedActivityAssets
     ownedUiAssets=resources.ui;preparedImages.value=resources.ui.urls
     if(resources.stagingHost){host.value!.replaceChildren(...resources.stagingHost.childNodes);resources.stagingHost.remove();loaded.resize(host.value!.clientWidth,host.value!.clientHeight)}
     scene = loaded
@@ -254,7 +323,7 @@ async function loadPendingGame(prepared?:PreparedGame) {
       if(interaction?.kind==='portal' && interaction.stage==='flight' && interaction.flight) {
         const flight=interaction.flight
         const player=state.players.find(item=>item.id===interaction.playerId)!
-        const clip=loadedActivityAssets.clips.find(item=>item.id===`fly-${player.characterId}-${flight.heading}`)
+        const clip=sceneActivityAssets?.clips.find(item=>item.id===`fly-${player.characterId}-${flight.heading}`)
         if(!clip){failRuntimeAsset(new Error('缺少魔法门飞行原图'));return}
         void scene?.setActivity(clip,1,{column:flight.x/56,row:flight.y/40},{scale:flight.scale/100,depth:flight.depth})
           .then(()=>gameController?.readyActivity(clip.id)).catch(error=>{if(!signal.aborted)failRuntimeAsset(error instanceof Error?error:new Error(String(error)))})
@@ -262,7 +331,7 @@ async function loadPendingGame(prepared?:PreparedGame) {
       }
       const visual = interaction && 'presentation' in interaction ? interaction.presentation : undefined
       const onMap = visual && ['fog', 'car2','car1'].includes(visual.clipId)
-      const clip = onMap ? loadedActivityAssets.clips.find(item => item.id === visual.clipId) : null
+      const clip = onMap ? sceneActivityAssets?.clips.find(item => item.id === visual.clipId) : null
       if (onMap && !clip) { failRuntimeAsset(new Error(`缺少活动动画：${visual.clipId}`)); return }
       if (clip && visual) {
         const sourcePosition = visual.cellId === undefined ? undefined : getCardRecord(visual.cellId)?.position
@@ -351,8 +420,75 @@ async function loadPendingGame(prepared?:PreparedGame) {
     loadState.value = 'error'
   }
 }
+async function switchPausedGameAssetProfile(target:AssetProfile,request:number,signal:AbortSignal):Promise<void>{
+  if(!canSwitchAssetProfile.value||!gameController||!scene||!host.value||!game.value)
+    throw new Error('请在暂停后的稳定回合边界切换素材画质')
+  const controller=gameController
+  const currentState=controller.state
+  const stateFingerprint=JSON.stringify(currentState)
+  const camera:MapCameraState=scene.getCameraState()
+  const currentSpeed=speed.value
+  const currentPaused=paused.value
+  const targetHost=document.createElement('div')
+  targetHost.style.cssText=`position:fixed;left:-20000px;top:0;width:${host.value.clientWidth}px;height:${host.value.clientHeight}px;pointer-events:none`
+  document.body.append(targetHost)
+  let prepared:PreparedGame|undefined
+  let committed=false
+  try{
+    prepared=await prepareGameScene(currentState,targetHost,signal,target,true)
+    prepared.stagingHost=targetHost
+    const candidate=prepared.loaded
+    candidate.setPlayers(buildPlayerPoses(currentState))
+    candidate.setCompanies(currentState.players)
+    candidate.setProperties(currentState.properties)
+    candidate.setWorld(buildWorldVisual(currentState))
+    candidate.setTargeting(false)
+    candidate.showMarkers(true)
+    candidate.setSpeed(currentSpeed)
+    candidate.setPaused(currentPaused)
+    candidate.restoreCameraState(camera)
+    signal.throwIfAborted()
+    const liveCamera=scene?.getCameraState()
+    if(request!==assetProfileRequest||controller!==gameController||controller.state!==currentState||
+       JSON.stringify(controller.state)!==stateFingerprint||!paused.value||speed.value!==currentSpeed||
+       !canSaveGame(controller.state)||!liveCamera||JSON.stringify(liveCamera)!==JSON.stringify(camera))
+      throw new DOMException('The paused game changed while preparing the artwork profile','AbortError')
+
+    const previousScene=scene
+    const previousUi=ownedUiAssets
+    const oldCanvas=host.value.firstChild
+    host.value.replaceChildren(...targetHost.childNodes)
+    targetHost.remove()
+    candidate.resize(host.value.clientWidth,host.value.clientHeight)
+    candidate.restoreCameraState(camera)
+    scene=candidate
+    sceneActivityAssets=prepared.activities
+    interactionAssets.value=prepared.interactions
+    activityAssets.value=prepared.activities
+    ownedUiAssets=prepared.ui
+    preparedImages.value=prepared.ui.urls
+    portalDecorations.value=[]
+    following.value=camera.following
+    assetProfile.value=prepared.assetProfile
+    assetProfileSelection.value=prepared.assetProfile
+    try{localStorage.setItem('star-cat-monopoly:asset-profile',prepared.assetProfile)}catch{}
+    prepared.committed=true
+    committed=true
+    await nextTick()
+    previousScene.destroy()
+    previousUi?.release()
+    if(oldCanvas?.parentNode)oldCanvas.parentNode.removeChild(oldCanvas)
+  }catch(error){
+    if(!committed){
+      prepared?.loaded.destroy()
+      prepared?.ui.release()
+      targetHost.remove()
+    }
+    throw error
+  }
+}
 async function startGame() {
-  if (selected.value.length === 0) return
+  if (selected.value.length === 0 || assetProfileBusy.value) return
   cleanupGame()
   audio.startMatch()
   backgroundMusic=`backmusic${Date.now()%5+1}`
@@ -362,7 +498,7 @@ async function startGame() {
   const state = createGame([...selected.value], seed(), now.getDay(), {
     year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate(),
   })
-  pending.value = { state, lineup: state.players.map(player => player.name).join(' · ') }
+  pending.value = { state, lineup: state.players.map(player => player.name).join(' · '), assetProfile:assetProfile.value }
   latestNoticeVisual = undefined
   history.value = []
   speed.value = 1
@@ -401,6 +537,7 @@ function choosePortal(destination: number) { gameController?.choosePortal(destin
 function chooseCourtTarget(playerId: number) { gameController?.chooseCourtTarget(playerId) }
 function chooseCourtCase(caseId: number) { gameController?.chooseCourtCase(caseId) }
 function togglePause() {
+  if(assetProfileBusy.value)return
   if(continuePausedReplay && scene) {
     paused.value=false;audio.setPaused(false);scene.setPaused(false);continuePausedReplay();return
   }
@@ -412,17 +549,20 @@ function togglePause() {
   scene.setTargeting(!paused.value && game.value?.interaction?.kind === 'target-choice')
 }
 function changeSpeed(value: number) {
+  if(assetProfileBusy.value)return
   speed.value = value
   gameController?.setSpeed(value)
   scene?.setSpeed(value)
 }
 function followCurrent() {
+  if(assetProfileBusy.value)return
   if (!game.value) return
   following.value = true
   scene?.follow(game.value.players[game.value.activePlayerIndex]!.position)
 }
-function overview() { following.value = false; scene?.overview() }
+function overview() { if(assetProfileBusy.value)return;following.value = false; scene?.overview() }
 async function toggleFullscreen() {
+  if(assetProfileBusy.value)return
   fullscreenError.value = ''
   try {
     if (document.fullscreenElement) await document.exitFullscreen()
@@ -445,7 +585,7 @@ function returnToSelection() {
 }
 function pauseForSaves(value:boolean){gameController?.setPaused(value);scene?.setPaused(value);audio.setPaused(value)}
 async function openSaves(){
- if(savesOpen.value)return
+ if(savesOpen.value||assetProfileBusy.value)return
  pauseBeforeSaves=paused.value;savesOpen.value=true;paused.value=true;pauseForSaves(true)
  savesMessage.value='';savesError.value='';retrySave=undefined;retryableSave.value=false
  await refreshSaveSlots()
@@ -491,14 +631,14 @@ async function loadFromSlot(slot:number){
   await commitPreparedSave(async()=>{
    const stagingHost=document.createElement('div');stagingHost.style.cssText=`position:fixed;left:-20000px;top:0;width:${host.value?.clientWidth??900}px;height:${host.value?.clientHeight??600}px;pointer-events:none`
    document.body.append(stagingHost)
-   try{const prepared=await prepareGameScene(record.snapshot.state,stagingHost,controller.signal,true);prepared.stagingHost=stagingHost;return prepared}
+   try{const prepared=await prepareGameScene(record.snapshot.state,stagingHost,controller.signal,assetProfile.value,true);prepared.stagingHost=stagingHost;return prepared}
    catch(error){stagingHost.remove();throw error}
   },async prepared=>{
    if(epoch!==savesEpoch||controller.signal.aborted)throw new DOMException('Cancelled','AbortError')
    // All snapshot and required image validation has succeeded; adopt the candidate.
    selected.value=[...record.snapshot.selection];matchCreatedAt=record.snapshot.createdAt
    speed.value=record.snapshot.settings.speed;pauseBeforeSaves=record.snapshot.settings.paused;paused.value=true
-   pending.value={state:record.snapshot.state,lineup:record.snapshot.state.players.map(p=>p.name).join(' · ')}
+   pending.value={state:record.snapshot.state,lineup:record.snapshot.state.players.map(p=>p.name).join(' · '),assetProfile:prepared.assetProfile}
    latestNoticeVisual=undefined;history.value=[];audio.startMatch();mode.value='game'
    await nextTick();await loadPendingGame(prepared)
    if(loadState.value!=='ready')throw new Error(loadError.value)
@@ -509,7 +649,7 @@ async function loadFromSlot(slot:number){
 }
 function fullscreenChanged() { fullscreen.value = document.fullscreenElement === stage.value }
 function keydown(event: KeyboardEvent) {
-  if(savesOpen.value)return
+  if(savesOpen.value||assetProfileBusy.value)return
   if (mode.value !== 'game' || event.defaultPrevented) return
   if(game.value?.interaction?.kind==='carnival')return
   const target = event.target as HTMLElement | null
@@ -522,9 +662,21 @@ function keydown(event: KeyboardEvent) {
 onMounted(() => {
   document.addEventListener('fullscreenchange', fullscreenChanged)
   document.addEventListener('keydown', keydown)
+  if(assetProfile.value==='hd'){
+    const request=++assetProfileRequest
+    const controller=new AbortController();assetProfileAbort=controller
+    assetProfileBusy.value=true
+    void verifyHdAssetProfile(controller.signal).catch(error=>{
+      if(request===assetProfileRequest&&!controller.signal.aborted){
+        assetProfile.value='original';assetProfileSelection.value='original';assetProfileNotice.value=error instanceof Error?error.message:String(error)
+        try{localStorage.setItem('star-cat-monopoly:asset-profile','original')}catch{}
+      }
+    }).finally(()=>{if(request===assetProfileRequest){assetProfileBusy.value=false;assetProfileAbort=undefined}})
+  }
   void loadIndex()
 })
 onBeforeUnmount(() => {
+  assetProfileRequest++;assetProfileAbort?.abort();assetProfileAbort=undefined
   saveAbort?.abort();saveClient.cancel()
   audio.destroy()
   cleanupGame()
@@ -536,7 +688,8 @@ onBeforeUnmount(() => {
 <template>
   <SceneInspector v-if="mode === 'inspection'" @back="mode = 'selection'" />
   <main v-else-if="mode === 'selection'" :inert="savesOpen" class="selection-shell">
-    <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><div><button @click="openSaves">读取存档</button><button @click="mode = 'inspection'">场景检查</button></div></header>
+    <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><div class="selection-actions"><label>素材画质 <select aria-label="素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label><span v-if="assetProfileBusy" data-testid="asset-profile-busy" role="status">{{ assetProfileBusyLabel }}</span><button @click="openSaves">读取存档</button><button @click="mode = 'inspection'">场景检查</button></div></header>
+    <p v-if="assetProfileNotice" class="asset-profile-error" role="alert">{{ assetProfileNotice }}；当前已保留原版素材模式。</p>
     <section class="selection-card">
       <div class="selection-title"><div><h2>选择参赛角色</h2><p>按选择顺序加入 1–4 名人类玩家，不足四人由 AI 随机补位；第五次选择会滚出最早选择。</p></div><strong data-testid="human-count">{{ humanSummary }}</strong></div>
       <div v-if="indexState === 'loading'" class="selection-state">正在读取12名原版角色…</div>
@@ -549,35 +702,41 @@ onBeforeUnmount(() => {
       </div>
       <div class="selection-footer">
         <div><small>已选顺序</small><p data-testid="selected-order">{{ selectedCharacters.length ? selectedCharacters.map(item => item.name).join(' → ') : '请至少选择一名角色' }}</p></div>
-        <button class="start" :disabled="selected.length === 0 || indexState !== 'ready'" @click="startGame">开始对局</button>
+        <button class="start" :disabled="selected.length === 0 || indexState !== 'ready' || assetProfileBusy" @click="startGame">开始对局</button>
       </div>
     </section>
     <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
   <main v-else :inert="savesOpen" class="game-shell">
     <div class="audio-controls" aria-label="声音设置">
-      <button data-testid="open-saves" @click="openSaves">手动存读档</button>
+      <button data-testid="open-saves" :disabled="assetProfileBusy" @click="openSaves">手动存读档</button>
       <button @click="audio.unlock();audio.retry()">开启声音</button>
+      <label>素材画质 <select aria-label="对局素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label>
       <label>音乐 <input aria-label="音乐音量" type="range" min="0" max="1" step="0.1" v-model.number="musicVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
       <label>音效 <input aria-label="音效音量" type="range" min="0" max="1" step="0.1" v-model.number="effectsVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
       <label><input type="checkbox" v-model="muted" @change="audio.setMuted(muted)">静音</label>
       <span v-if="audioError" role="status">{{ audioError }} <button @click="audio.unlock();audio.retry()">重试声音</button></span>
+      <span v-if="assetProfileBusy" data-testid="asset-profile-busy" role="status">{{ assetProfileBusyLabel }}</span>
     </div>
+    <p v-if="assetProfileNotice" class="asset-profile-error" role="alert">{{ assetProfileNotice }}；当前画质与对局均已保留。</p>
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
-    <section ref="stage" class="game-stage">
+    <section ref="stage" class="game-stage" :inert="assetProfileBusy">
       <div ref="host" class="canvas-host" />
       <div v-if="game && paused && !controllerReady && loadState === 'ready'" class="overlay">
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
-      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :asset-profile="assetProfile" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
-      <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
-      <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
+      <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" :asset-profile="assetProfile" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
+      <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" :asset-profile="assetProfile" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">
         <div v-if="loadState === 'loading'"><p>正在载入地图、本局角色动作与完整交互素材…</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p></div>
         <div v-else role="alert"><p>{{ loadError }}</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p><div class="error-actions"><button @click="loadPendingGame()">重试载入</button><button @click="returnToSelection">返回选人</button></div></div>
+      </div>
+      <div v-if="assetProfileBusy&&mode==='game'" class="profile-switch-overlay" role="status">
+        <div><p>{{ assetProfileBusyLabel }}</p><small>正在准备候选素材；可从上方画质菜单取消。</small></div>
       </div>
     </section>
   </main>
@@ -587,8 +746,9 @@ onBeforeUnmount(() => {
 <style scoped>
 .audio-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:#d6e8eb;font:13px system-ui}.audio-controls label{display:flex;align-items:center;gap:5px}.audio-controls input[type=range]{width:90px}
 button,select{font:inherit;background:#294b58;color:#edf6f3;border:1px solid #55717a;border-radius:8px;padding:8px 12px;cursor:pointer}button:hover,select:hover{background:#376271}button:disabled{opacity:.42;cursor:default}button:focus-visible,select:focus-visible{outline:2px solid #ffe18a;outline-offset:3px}.eyebrow{font-size:11px;color:#a9c3c8;letter-spacing:.13em}
-.selection-shell,.game-shell{min-height:100dvh;background:radial-gradient(circle at 50% 0,#28505f,#132a35 55%);color:#ebf4f2;font:14px/1.5 system-ui,"PingFang SC",sans-serif;padding:20px 28px}.selection-shell header,.game-shell header{width:min(1260px,100%);margin:0 auto 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}h1{margin:2px 0;font-size:24px}.selection-card{width:min(1120px,100%);margin:5vh auto 0;background:#183542e8;border:1px solid #466775;border-radius:18px;padding:24px;box-shadow:0 24px 70px #07151d88}.selection-title{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.selection-title h2{margin:0;font-size:25px}.selection-title p{margin:5px 0 18px;color:#abc1c5}.selection-title strong{white-space:nowrap;color:#ffe18a}.characters{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.characters button{padding:10px;display:flex;flex-direction:column;gap:6px;align-items:center;background:#20424f}.characters button[aria-pressed=true]{background:#40594f;border-color:#ffe18a;box-shadow:0 0 0 1px #ffe18a}.portrait{position:relative;width:72px;height:82px;display:grid;place-items:center;background:#68cef4;border-radius:11px;overflow:hidden}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:auto}.portrait b{position:absolute;top:5px;right:5px;z-index:1;width:22px;height:22px;display:grid;place-items:center;background:#ffe18a;color:#273733;border-radius:50%}.selection-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px}.selection-footer small{color:#9cb4b9}.selection-footer p{margin:2px 0;font-size:16px}.start{background:#ffe18a;color:#263d3b;border-color:#ffe18a;font-weight:800;padding:11px 24px}.selection-state{min-height:380px;display:grid;place-items:center;text-align:center}.scope{text-align:center;color:#91aab0;font-size:12px;margin:18px auto 0}
+.selection-shell,.game-shell{min-height:100dvh;background:radial-gradient(circle at 50% 0,#28505f,#132a35 55%);color:#ebf4f2;font:14px/1.5 system-ui,"PingFang SC",sans-serif;padding:20px 28px}.selection-shell header,.game-shell header{width:min(1260px,100%);margin:0 auto 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}.selection-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.selection-actions label{display:flex;align-items:center;gap:6px;color:#c4d5da}h1{margin:2px 0;font-size:24px}.asset-profile-error{width:min(1260px,100%);margin:0 auto 12px;color:#ffe18a}.selection-card{width:min(1120px,100%);margin:5vh auto 0;background:#183542e8;border:1px solid #466775;border-radius:18px;padding:24px;box-shadow:0 24px 70px #07151d88}.selection-title{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.selection-title h2{margin:0;font-size:25px}.selection-title p{margin:5px 0 18px;color:#abc1c5}.selection-title strong{white-space:nowrap;color:#ffe18a}.characters{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.characters button{padding:10px;display:flex;flex-direction:column;gap:6px;align-items:center;background:#20424f}.characters button[aria-pressed=true]{background:#40594f;border-color:#ffe18a;box-shadow:0 0 0 1px #ffe18a}.portrait{position:relative;width:72px;height:82px;display:grid;place-items:center;background:#68cef4;border-radius:11px;overflow:hidden}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:auto}.portrait b{position:absolute;top:5px;right:5px;z-index:1;width:22px;height:22px;display:grid;place-items:center;background:#ffe18a;color:#273733;border-radius:50%}.selection-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px}.selection-footer small{color:#9cb4b9}.selection-footer p{margin:2px 0;font-size:16px}.start{background:#ffe18a;color:#263d3b;border-color:#ffe18a;font-weight:800;padding:11px 24px}.selection-state{min-height:380px;display:grid;place-items:center;text-align:center}.scope{text-align:center;color:#91aab0;font-size:12px;margin:18px auto 0}
 .game-shell{display:flex;flex-direction:column}.game-stage{position:relative;width:min(1400px,100%);height:calc(100dvh - 104px);min-height:570px;margin:0 auto;display:flex;overflow:hidden;background:#66ccff;border:1px solid #486a75;border-radius:12px;box-shadow:0 12px 45px #0006}.canvas-host{flex:1;min-width:0;height:100%;cursor:grab}.canvas-host:active{cursor:grabbing}.canvas-host :deep(canvas){display:block;width:100%;height:100%}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#17323df2;text-align:center;padding:28px}.overlay p{max-width:720px;overflow-wrap:anywhere}.error-actions{display:flex;justify-content:center;gap:10px}.exit-fullscreen{position:absolute;right:334px;top:14px;z-index:4}.fullscreen-error{position:absolute;z-index:4;left:16px;top:16px;margin:0;padding:9px 12px;border:1px solid #ffb19a;border-radius:8px;background:#5b2925;color:#fff}.game-stage:fullscreen{width:100vw;height:100vh;max-width:none;border:0;border-radius:0}.game-stage:fullscreen .canvas-host{height:100vh}
+.profile-switch-overlay{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:#132f39b8;color:#eff7f5;text-align:center;pointer-events:all}.profile-switch-overlay p{margin:0 0 6px;font-size:18px;font-weight:700}.profile-switch-overlay small{color:#c4d8dc}
 .insolvent{position:absolute;z-index:3;left:18px;bottom:18px;width:min(470px,calc(100% - 370px));padding:18px;border:1px solid #ffb19a;border-radius:12px;background:#572d2be8;color:#fff}.insolvent h2{margin:0 0 8px}.insolvent p{margin:0 0 12px}
 @media(max-width:900px){.characters{grid-template-columns:repeat(4,1fr)}.game-stage{height:calc(100dvh - 90px);flex-direction:column}.canvas-host{min-height:58vh}.insolvent{left:12px;right:12px;bottom:42vh;width:auto;max-height:45vh;overflow:auto;box-sizing:border-box}.exit-fullscreen{right:14px}.game-shell{padding:12px}.game-shell header{margin-bottom:8px}}
 @media(max-width:600px){.selection-shell{padding:14px}.selection-card{padding:15px;margin-top:2vh}.characters{grid-template-columns:repeat(3,1fr);gap:7px}.portrait{width:60px;height:66px}.selection-title,.selection-footer{align-items:stretch;flex-direction:column}}

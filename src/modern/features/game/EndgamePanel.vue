@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { GameState } from './types'
-const props=defineProps<{game:GameState;paused:boolean;preparedImages?:Record<string,string>}>()
+import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
+const props=withDefaults(defineProps<{game:GameState;paused:boolean;preparedImages?:Record<string,string>;assetProfile?:AssetProfile}>(),{assetProfile:'original'})
 const emit=defineEmits<{'acknowledge':[];'restart':[];'selection':[];'asset-error':[error:Error]}>()
 const bankruptcy=computed(()=>props.game.interaction?.kind==='bankruptcy'?props.game.interaction:null)
 const actor=computed(()=>props.game.players.find(player=>player.id===(bankruptcy.value?.playerId ?? props.game.outcome?.winnerId)))
 const art=computed(()=>bankruptcy.value?'bankrupt':props.game.outcome?.kind==='victory'?'gamewin':'gameover')
-const artUrl=computed(()=>{const path=`assets/activities/${art.value}/1.png`;return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`})
+const artUrl=computed(()=>{const path=profileAssetUrl(`assets/activities/${art.value}/1.png`,props.assetProfile);return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`})
 </script>
 <template>
  <section v-if="bankruptcy || game.outcome" class="endgame" data-testid="endgame-panel" aria-label="对局结果">

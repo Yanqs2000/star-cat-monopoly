@@ -3,12 +3,14 @@ import { computed, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
 import type { InteractionAsset } from './interaction-assets'
 import type { GameState } from './types'
+import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
 
 const props = defineProps<{
   game: GameState
   paused: boolean
   cardAssets: InteractionAsset[]
   preparedImages?:Record<string,string>
+  assetProfile?:AssetProfile
 }>()
 const emit = defineEmits<{ 'begin-card': [index: number]; 'asset-error': [error: Error, cardId: number] }>()
 const page = ref(0)
@@ -19,7 +21,7 @@ const visibleCards = computed(() => inventory.value.slice(page.value * 8, page.v
   .map((id, offset) => ({ id, index: page.value * 8 + offset, definition: getCardDefinition(id) })))
 const canUse = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
 const assetUrl = (id: number) => {
-  const url = props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`
+  const url = profileAssetUrl(props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`,props.assetProfile ?? 'original')
   return props.preparedImages?.[url] ?? `${import.meta.env.BASE_URL}${url}`
 }
 const reportImageError = (event: Event, cardId: number) => {

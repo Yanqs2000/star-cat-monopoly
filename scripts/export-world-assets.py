@@ -74,7 +74,7 @@ def write_json(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
 
 
-def decoded_rgba(path: Path, expected_size: tuple[int, int]) -> Image.Image:
+def decoded_rgba(path: Path, expected_size: tuple[int, int], density: int = 1) -> Image.Image:
     with Image.open(path) as source:
         source.load()
         if source.format != "PNG" or source.mode != "RGBA" or source.size != expected_size:
@@ -86,14 +86,16 @@ def decoded_rgba(path: Path, expected_size: tuple[int, int]) -> Image.Image:
 
 
 def normalize_png(source: Path, target: Path, render_bounds: list[int],
-                  target_bounds: tuple[int, int, int, int]) -> None:
-    render_size = canvas_size(render_bounds)
-    image = decoded_rgba(source, render_size)
+                  target_bounds: tuple[int, int, int, int], density: int = 1) -> None:
+    render_size = (math.ceil((render_bounds[1] - render_bounds[0]) * density / 20),
+                   math.ceil((render_bounds[3] - render_bounds[2]) * density / 20))
+    image = decoded_rgba(source, render_size, density)
     shift_twips = (render_bounds[0] - target_bounds[0], render_bounds[2] - target_bounds[2])
-    if shift_twips[0] % 20 or shift_twips[1] % 20:
+    if shift_twips[0] * density % 20 or shift_twips[1] * density % 20:
         raise SystemExit(f"Non-pixel-aligned render origin: {source} {shift_twips}")
-    shift = shift_twips[0] // 20, shift_twips[1] // 20
-    canvas = Image.new("RGBA", canvas_size(target_bounds), (0, 0, 0, 0))
+    shift = shift_twips[0] * density // 20, shift_twips[1] * density // 20
+    target_size = canvas_size(target_bounds)
+    canvas = Image.new("RGBA", (target_size[0] * density, target_size[1] * density), (0, 0, 0, 0))
     if shift[0] < 0 or shift[1] < 0 or shift[0] + image.width > canvas.width \
             or shift[1] + image.height > canvas.height:
         raise SystemExit(f"Rendered frame exceeds source canvas: {source}")
@@ -102,7 +104,7 @@ def normalize_png(source: Path, target: Path, render_bounds: list[int],
     canvas.save(target)
 
 
-def normalize_exports(raw: Path, staging: Path, metadata: dict[str, object]) -> None:
+def normalize_exports(raw: Path, staging: Path, metadata: dict[str, object], density: int = 1) -> None:
     clip_metadata = {item["id"]: item for item in metadata["clips"]}
     if set(clip_metadata) != {clip.id for clip in CLIPS}:
         raise SystemExit("Java exporter returned unexpected clip metadata")
@@ -123,6 +125,7 @@ def normalize_exports(raw: Path, staging: Path, metadata: dict[str, object]) -> 
                 staging / clip.id / f"{frame}.png",
                 item["renderBoundsTwips"],
                 clip.bounds,
+                density,
             )
 
     house_metadata = metadata["neutralHouses"]
@@ -143,6 +146,7 @@ def normalize_exports(raw: Path, staging: Path, metadata: dict[str, object]) -> 
                 staging / f"neutral-houses/{facing}/{level}.png",
                 house_metadata["renderBoundsTwips"],
                 HOUSE_BOUNDS,
+                density,
             )
 
 

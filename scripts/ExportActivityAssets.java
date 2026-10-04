@@ -21,6 +21,7 @@ class ExportActivityAssets {
         public AbortRetryIgnoreHandler getNewInstance() { return this; }
     };
     private static int nextId = 7000;
+    private static double pixelDensity = 1.0;
     private static void require(boolean value, String reason) {
         if (!value) throw new IllegalStateException(reason);
     }
@@ -112,7 +113,7 @@ class ExportActivityAssets {
         for (int i=0;i<count;i++) indices.add(i);
         Path scratch = cache.resolve(id); Files.createDirectories(scratch);
         var files = new FrameExporter().exportSpriteFrames(HANDLER, scratch.toString(), swf,
-            render.getCharacterId(), indices, 1, new SpriteExportSettings(SpriteExportMode.PNG,1.0,4), null);
+            render.getCharacterId(), indices, 1, new SpriteExportSettings(SpriteExportMode.PNG,pixelDensity,4), null);
         require(files.size()==count, "frame export mismatch "+id);
         Path folder = output.resolve(id); Files.createDirectories(folder);
         StringBuilder meta=new StringBuilder("{\"id\":"+quoted(id)+",\"sourceSymbol\":"+sourceId
@@ -137,6 +138,9 @@ class ExportActivityAssets {
     }
     public static void main(String[] args) throws Exception {
         try (var input=new FileInputStream(args[0])) {
+            pixelDensity=Double.parseDouble(System.getProperty("starcat.pixelDensity", "1.0"));
+            require(Double.isFinite(pixelDensity) && pixelDensity >= 1.0 && pixelDensity <= 4.0,
+                "pixel density must be between 1 and 4");
             var swf=new SWF(input,true);
             for(var tag:swf.getTags()) if(tag instanceof DefineEditTextTag text) text.initialText="";
             Path out=Path.of(args[1]),cache=Path.of(args[2]);

@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { expect, it } from 'vitest'
-import { parseActivityAssets } from '../../src/modern/features/game/activity-assets'
+import { afterEach, expect, it, vi } from 'vitest'
+import { ImageSource, Texture } from 'pixi.js'
+import { activityPixelDensity, loadActivityFrames, parseActivityAssets } from '../../src/modern/features/game/activity-assets'
 
 it('3C原图完整保留NPC60帧、烟雾19帧、送医111帧和原800×600兑换场景', () => {
   const root = resolve(import.meta.dirname, '../..')
@@ -40,4 +41,40 @@ it('活动清单缺少必须的烟雾或NPC时间轴时明确失败，避免对�
   expect(parseActivityAssets(manifest).clips.length).toBeGreaterThan(0)
   manifest.clips = manifest.clips.filter((clip: { id: string }) => clip.id !== 'fog')
   expect(() => parseActivityAssets(manifest)).toThrow('缺少活动时间轴')
+})
+
+afterEach(() => vi.unstubAllGlobals())
+
+it('高清活动图片允许像素尺寸为逻辑画布的2倍', async () => {
+  vi.stubGlobal('fetch', async () => new Response(new Uint8Array([1,2,3]), { status: 200 }))
+  class HighDensityImage {
+    naturalWidth=20
+    naturalHeight=40
+    set src(_value:string) {}
+    async decode() {}
+  }
+  vi.stubGlobal('Image', HighDensityImage)
+  const assets=await loadActivityFrames({id:'hd-fixture',sourceSymbol:1,fps:30,frames:[{
+    sourceFrame:1,url:'assets-hd/activities/fixture/1.webp',width:10,height:20,
+    offsetX:0,offsetY:0,fields:[],
+  }]},new AbortController().signal)
+  expect(assets.urls).toHaveLength(1)
+  assets.release()
+})
+
+it('给自定义Pixi活动渲染器传入匹配源图倍率的纹理分辨率', () => {
+  expect(activityPixelDensity('assets/activities/carnival-boy-1/1.png')).toBe(1)
+  expect(activityPixelDensity('assets-hd/activities/carnival-boy-1/1.webp')).toBe(2)
+
+  const texture = (width:number,height:number,url:string) => new Texture({
+    source:new ImageSource({
+      resource:{width,height,naturalWidth:width,naturalHeight:height,complete:true} as unknown as HTMLImageElement,
+      resolution:activityPixelDensity(url),scaleMode:'linear',
+    }),
+  })
+  const original = texture(800,600,'assets/activities/carnival-play/1.png')
+  const hd = texture(1600,1200,'assets-hd/activities/carnival-play/1.webp')
+  expect([original.width,original.height]).toEqual([800,600])
+  expect([hd.width,hd.height]).toEqual([800,600])
+  original.destroy(true);hd.destroy(true)
 })

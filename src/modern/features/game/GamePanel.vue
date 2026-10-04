@@ -7,6 +7,7 @@ import type { InteractionAsset } from './interaction-assets'
 import { getPropertySummary } from './property'
 import { stockMarketValue } from './stock-trading'
 import type { GameState } from './types'
+import type { AssetProfile } from '../assets/profiles'
 
 const props = withDefaults(defineProps<{
   game: GameState
@@ -15,7 +16,8 @@ const props = withDefaults(defineProps<{
   history: string[]
   cardAssets?: InteractionAsset[]
   preparedImages?:Record<string,string>
-}>(), { cardAssets: () => [] })
+  assetProfile?:AssetProfile
+}>(), { cardAssets: () => [], assetProfile:'original' })
 const emit = defineEmits<{
   roll: []
   pause: []
@@ -31,6 +33,16 @@ const emit = defineEmits<{
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
 const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' && props.game.lastRoll !== null)
+const gameStateFingerprint = computed(() => {
+  const serialized=JSON.stringify(props.game)
+  let first=0x811c9dc5,second=0x9e3779b9
+  for(let index=0;index<serialized.length;index++){
+    const code=serialized.charCodeAt(index)
+    first=Math.imul(first^code,0x01000193)
+    second=Math.imul(second^code,0x85ebca6b)
+  }
+  return `${(first>>>0).toString(16).padStart(8,'0')}${(second>>>0).toString(16).padStart(8,'0')}`
+})
 const owned = computed(() => (mapJson.parcels as Parcel[]).filter(parcel => props.game.properties[parcel.id]?.ownerId === active.value.id))
 const phaseText = computed(() => ({
   'awaiting-roll': active.value.controller === 'human' ? '等待人类掷骰' : 'AI 正在思考',
@@ -53,7 +65,8 @@ function restriction(playerId: number): string {
 </script>
 
 <template>
-  <aside class="panel" aria-label="对局控制">
+  <aside class="panel" aria-label="对局控制" :data-speed="String(speed)">
+    <span data-testid="game-state-fingerprint" :data-fingerprint="gameStateFingerprint" hidden aria-hidden="true" />
     <div class="panel-head">
       <div><span class="eyebrow">当前对局</span><h2 data-testid="round">第 {{ game.round }} 轮</h2></div>
       <span class="phase">{{ phaseText }}</span>
@@ -97,7 +110,7 @@ function restriction(playerId: number): string {
     <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>已发生的回合与交易</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>
     <p class="funds">失物招领 {{ game.lostAndFoundFunds[0] }} / {{ game.lostAndFoundFunds[1] }} · {{ game.world.year }}年{{ game.world.month }}月{{ game.world.day }}日 · 星期 {{ game.world.weekday }} · 已过 {{ game.world.elapsedDays }}天</p>
-    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" :prepared-images="preparedImages" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
+    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" :prepared-images="preparedImages" :asset-profile="assetProfile" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
     <p class="scope">银行、股市、公司、普通 NPC 和奖券兑换已开放。</p>
   </aside>
 </template>

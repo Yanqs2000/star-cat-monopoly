@@ -12,6 +12,7 @@ import type { GameState } from './types'
 import { ticketExchangeMaximum } from './ticket-exchange'
 import { activityChanges, originalActivityText } from './activity-text'
 import type { ActivityClip, ActivityManifest, NativeOverlay } from './activity-assets'
+import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
 import NativeActivity from './NativeActivity.vue'
 const CarnivalStage=defineAsyncComponent({loader:()=>import('./CarnivalStage.vue'),onError(error,_retry,fail){emit('asset-error',error);fail()}})
 import type { CarnivalInput } from './carnival'
@@ -27,7 +28,8 @@ const props = withDefaults(defineProps<{
   luckAssets?: InteractionAsset[]
   activityAssets?: ActivityManifest
   portalDecorations?: NativeOverlay[]
-}>(), { luckAssets: () => [] })
+  assetProfile?: AssetProfile
+}>(), { luckAssets: () => [], assetProfile:'original' })
 const emit = defineEmits<{
   confirm: []
   cancel: []
@@ -58,8 +60,8 @@ const emit = defineEmits<{
 }>()
 const exchangeQuantity = ref(0)
 const exchangeLoaded = ref(false)
-const originalExchangeUrl = computed(() => `${import.meta.env.BASE_URL}assets/activities/${interaction.value?.kind === 'ticket-exchange' && interaction.value.mode === 'sell' ? 'witch' : 'lottery'}/1.png`)
-const nativeImageUrl = (id: string) => `${import.meta.env.BASE_URL}assets/activities/${id}/1.png`
+const originalExchangeUrl = computed(() => `${import.meta.env.BASE_URL}${profileAssetUrl(`assets/activities/${interaction.value?.kind === 'ticket-exchange' && interaction.value.mode === 'sell' ? 'witch' : 'lottery'}/1.png`,props.assetProfile)}`)
+const nativeImageUrl = (id: string) => `${import.meta.env.BASE_URL}${profileAssetUrl(`assets/activities/${id}/1.png`,props.assetProfile)}`
 function nativeHotspot(id: string, left: number, top: number, width: number, height: number) {
   const frame = props.activityAssets?.clips.find(clip => clip.id === id)?.frames[0]
   const canvasWidth = frame?.width ?? (id === 'station' ? 814 : 824)
@@ -74,7 +76,7 @@ const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
 const stockId = ref(1)
 const stockShares = ref(1)
 const companyShares = ref(1)
-const companyDialogUrl = `${import.meta.env.BASE_URL}assets/companies/dialog.png`
+const companyDialogUrl = computed(() => `${import.meta.env.BASE_URL}${profileAssetUrl('assets/companies/dialog.png',props.assetProfile)}`)
 const interaction = computed(() => props.game.interaction)
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const player = computed(() => props.game.players.find(item => item.id === interaction.value?.playerId) ?? active.value)
@@ -197,11 +199,11 @@ const actualChanges = (entry: FinanceEntry) => [
 ].filter((item): item is [string, number] => typeof item[1] === 'number' && item[1] !== 0)
   .map(([label, amount]) => `${label} ${amount > 0 ? '+' : ''}${amount}`).join(' · ')
 const cardAssetUrl = (id: number) => {
-  const url = props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`
+  const url = profileAssetUrl(props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`,props.assetProfile)
   return `${import.meta.env.BASE_URL}${url}`
 }
 const luckAssetUrl = (id: number) => {
-  const url = props.luckAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/luck/${id}.png`
+  const url = profileAssetUrl(props.luckAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/luck/${id}.png`,props.assetProfile)
   return `${import.meta.env.BASE_URL}${url}`
 }
 const reportImageError = (event: Event) => {
@@ -264,7 +266,7 @@ watch(stockId, () => { stockShares.value = 1 })
 <template>
   <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'minigame-panel': ['ludo','carnival'].includes(interaction.kind), 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
     <CarnivalStage v-if="interaction.kind==='carnival' && activityAssets" :game="interaction.game" :paused="paused" :human="player.controller==='human'" :assets="activityAssets" @input="emit('carnival-input',$event)" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
-    <LudoActivity v-else-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+    <LudoActivity v-else-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" :asset-profile="assetProfile" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <template v-else-if="interaction.kind === 'portal'">
       <div v-if="interaction.stage === 'choice'" class="portal-original">
         <NativeActivity v-if="portalClip" data-testid="portal-original" :clip="portalClip" :preload="portalPrepared" :overlays="portalOverlays" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
