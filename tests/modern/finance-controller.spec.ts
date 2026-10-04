@@ -143,28 +143,80 @@ describe('3B 股市和公司自然地图入口', () => {
     expect(controller.state.finance.stocks[2]?.holdings[1]?.shares).toBe(3)
   })
 
-  it('人类最终落在公共事业公司格，认购后再确认离开只扣款一次', () => {
+  it.each([null, 1, 2])('公司董事为 %s 时，每次落地只能认购一次，结算恢复后直接结束回合', ceoId => {
     const game = createGame([1, 2, 3, 4], 1, 1)
     game.world.markers = {}
     game.players[0] = { ...game.players[0]!, position: { column: 25, row: 31 }, direction: 1 }
+    game.finance.stocks[13]!.ceoId = ceoId
     const clock = new Clock()
     const controller = createGameController(game, options(clock))
     controller.roll(1)
     clock.advance(10)
     expect(controller.state.interaction).toMatchObject({ kind: 'company', companyId: 13 })
     controller.setPaused(true)
-    expect(controller.subscribeCompany(10)).toBe(false)
+    expect(controller.subscribeCompany(1000)).toBe(false)
     controller.setPaused(false)
-    expect(controller.subscribeCompany(10)).toBe(true)
-    expect(controller.state.players[0]?.cash).toBe(99950)
-    expect(controller.state.finance.stocks[13]?.holdings[1]?.shares).toBe(10)
-    expect(controller.subscribeCompany(10)).toBe(false)
+    controller.setSpeed(2)
+    expect(controller.subscribeCompany(1000)).toBe(true)
+    expect(controller.state.players[0]?.cash).toBe(95000)
+    expect(controller.state.finance.stocks[13]?.holdings[1]?.shares).toBe(1000)
+    expect(controller.subscribeCompany(1000)).toBe(false)
+    const settled = structuredClone(controller.state)
+    controller.dispose()
+    const restored = createGameController(settled, options(new Clock()))
+    restored.setPaused(true)
+    expect(restored.acknowledgeInteraction()).toBe(false)
+    restored.setPaused(false)
+    expect(restored.acknowledgeInteraction()).toBe(true)
+    expect(restored.subscribeCompany(1000)).toBe(false)
+    expect(restored.acknowledgeInteraction()).toBe(false)
+    expect(restored.state.activePlayerIndex).toBe(1)
+    expect(restored.state.players[0]?.cash).toBe(95000)
+    expect(restored.state.finance.stocks[13]?.holdings[1]?.shares).toBe(1000)
+    expect(restored.state.finance.entries.filter(entry => entry.kind === 'company-subscribe')).toHaveLength(1)
+    restored.dispose()
+  })
+
+  it('无效认购可修改或放弃，下次重新遇到同一公司仍可认购', () => {
+    const game = createGame([1, 2, 3, 4], 1, 1)
+    game.world.markers = {}
+    game.players[0] = { ...game.players[0]!, position: { column: 25, row: 31 }, direction: 1 }
+    const clock = new Clock()
+    const controller = createGameController(game, options(clock))
+    controller.roll(1); clock.advance(10)
+    expect(controller.subscribeCompany(1001)).toBe(false)
+    expect(controller.state.players[0]?.cash).toBe(100000)
+    expect(controller.state.finance.entries.filter(entry => entry.kind === 'company-subscribe')).toHaveLength(0)
+    expect(controller.subscribeCompany(1000)).toBe(true)
     expect(controller.acknowledgeInteraction()).toBe(true)
-    expect(controller.state.interaction?.kind).toBe('company')
-    expect(controller.leaveCompany()).toBe(true)
-    clock.advance(10)
-    expect(controller.state.activePlayerIndex).toBe(1)
-    expect(controller.state.finance.stocks[13]?.holdings[1]?.shares).toBe(10)
+    const nextEncounter = structuredClone(controller.state)
+    controller.dispose()
+    // Explicit fixture for a later visit; preserve the previous cash and holdings.
+    nextEncounter.activePlayerIndex = 0
+    nextEncounter.phase = 'awaiting-roll'
+    nextEncounter.interaction = null
+    nextEncounter.continuation = null
+    nextEncounter.players[0] = { ...nextEncounter.players[0]!, position: { column: 25, row: 31 }, direction: 1 }
+    const nextClock = new Clock()
+    const next = createGameController(nextEncounter, options(nextClock))
+    next.roll(1); nextClock.advance(10)
+    expect(next.subscribeCompany(1000)).toBe(true)
+    expect(next.acknowledgeInteraction()).toBe(true)
+    expect(next.state.players[0]?.cash).toBe(90000)
+    expect(next.state.finance.stocks[13]?.holdings[1]?.shares).toBe(2000)
+    expect(next.state.finance.entries.filter(entry => entry.kind === 'company-subscribe')).toHaveLength(2)
+    next.dispose()
+
+    const cancelClock = new Clock()
+    const cancel = createGameController(game, options(cancelClock))
+    cancel.roll(1); cancelClock.advance(10)
+    expect(cancel.subscribeCompany(0)).toBe(false)
+    expect(cancel.leaveCompany()).toBe(true)
+    cancelClock.advance(10)
+    expect(cancel.state.activePlayerIndex).toBe(1)
+    expect(cancel.state.players[0]?.cash).toBe(100000)
+    expect(cancel.state.finance.entries.filter(entry => entry.kind === 'company-subscribe')).toHaveLength(0)
+    cancel.dispose()
   })
 
   it('股市周日关闭，AI 路过股市不随机交易', () => {

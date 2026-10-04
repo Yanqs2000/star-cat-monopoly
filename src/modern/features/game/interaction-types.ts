@@ -21,7 +21,6 @@ export type InteractionResume =
   | 'shop'
   | 'bank'
   | 'stock'
-  | 'company'
 
 export type NoticeKind = 'card' | 'world' | 'bank' | 'stock' | 'company' | 'shop' | 'card-draw' | 'luck' | 'tickets' | 'restriction' | 'activity'
 

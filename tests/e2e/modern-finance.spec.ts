@@ -138,8 +138,10 @@ test('自然开局 seed5 在第2轮股市按现价买卖并继续路径', async 
   await expect(page.getByTestId('stock-company')).toHaveCount(0)
 })
 
-test('自然开局 seed16 落在公司格认购并取得董事权', async ({ page }) => {
+test('自然开局 seed16 遇到公司只认购一次，确认结算后结束回合', async ({ page }) => {
   test.setTimeout(120_000)
+  const errors: string[] = []
+  page.on('pageerror', error => errors.push(error.message))
   await mkdir(evidenceDir, { recursive: true })
   await start(page, 16)
   await playUntil(page, () => page.getByTestId('company-shares').count().then(Boolean))
@@ -147,15 +149,20 @@ test('自然开局 seed16 落在公司格认购并取得董事权', async ({ pag
   await expect(company).toContainText('电力公司')
   await expect(company).toContainText('董事：暂无')
   const before = await wallet(page)
-  await page.getByTestId('company-shares').fill('10')
-  await page.getByTestId('company-subscribe').click()
-  await expect(company).toContainText('现金 -50')
-  await expect.poll(() => wallet(page)).toEqual({ ...before, cash: before.cash - 50 })
+  await page.getByTestId('company-shares').fill('1000')
+  await page.getByTestId('company-subscribe').evaluate((button: HTMLButtonElement) => { button.click(); button.click() })
+  await expect(company).toContainText('现金 -5000')
+  await expect(company).toContainText('持股 +1000')
+  await expect.poll(() => wallet(page)).toEqual({ ...before, cash: before.cash - 5000 })
+  await page.screenshot({ path: `${evidenceDir}/company-once-seed16-result.png` })
   await page.getByTestId('interaction-acknowledge').click()
-  await expect(company).toContainText('董事：卷毛')
-  await expect(company).toContainText('已持 10 股')
-  await page.screenshot({ path: `${evidenceDir}/seed16-company-1440x1000.png` })
-  await page.getByRole('button', { name: '离开公司' }).click()
+  await expect(page.getByTestId('company-shares')).toHaveCount(0)
+  await expect(page.getByTestId('company-subscribe')).toHaveCount(0)
+  await expect(page.getByTestId('current-player')).not.toContainText('卷毛')
+  await expect.poll(() => wallet(page)).toEqual({ ...before, cash: before.cash - 5000 })
+  await page.getByRole('button', { name: '暂停对局', exact: true }).click()
+  await page.screenshot({ path: `${evidenceDir}/company-once-seed16-next-turn.png` })
+  expect(errors).toEqual([])
 })
 
 test('公司收费后原版界面素材404，重试不重复收费并可继续认购', async ({ page }) => {
@@ -188,17 +195,18 @@ test('公司收费后原版界面素材404，重试不重复收费并可继续�
   // Natural route: 100000 + luck reward 10000 - land 2200 - company fee 4500.
   const charged = { cash: 103300, deposit: 100000, loan: 0 }
   await expect.poll(() => wallet(page)).toEqual(charged)
-  await page.screenshot({ path: `${evidenceDir}/seed96-company-fee-retry-1440x1000.png` })
+  await page.screenshot({ path: `${evidenceDir}/company-once-seed96-fee-retry.png` })
   await page.getByTestId('company-shares').fill('10')
   const description = await page.getByTestId('interaction-panel').textContent() ?? ''
   const price = Number(description.match(/承销价 ([\d.]+)/)?.[1])
   expect(price).toBeGreaterThan(0)
   await page.getByTestId('company-subscribe').click()
   await expect.poll(() => wallet(page)).toEqual({ ...charged, cash: charged.cash - price * 10 })
+  await expect(page.getByTestId('interaction-panel')).toContainText('持股 +10')
   await page.getByTestId('interaction-acknowledge').click()
-  await expect(page.getByTestId('interaction-panel')).toContainText('已持 10 股')
-  await expect(page.getByTestId('interaction-panel')).toContainText('累计经营费 4500')
-  await expect(page.getByTestId('interaction-panel')).toContainText('董事：帅戈')
+  await expect(page.getByTestId('company-shares')).toHaveCount(0)
+  await expect(page.getByTestId('company-subscribe')).toHaveCount(0)
+  await expect(page.getByTestId('current-player')).not.toContainText('卷毛')
 })
 
 test('四名真人跨月时月结确认前不推进日期，确认后仅执行一次', async ({ page }) => {

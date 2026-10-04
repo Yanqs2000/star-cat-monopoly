@@ -932,14 +932,6 @@ export function createGameController(initialState: GameState, options: GameContr
       notify()
       return
     }
-    if (resume === 'company') {
-      const companyId = companyAtPosition(current.finance, activePlayer().position)
-      if (companyId === null) throw new Error('公司恢复位置无效')
-      current = { ...current, phase: 'interaction',
-        interaction: { kind: 'company', playerId: interaction.playerId, companyId, resume: 'company' }, continuation: null }
-      notify()
-      return
-    }
     const phase = resume === 'await-roll' ? 'awaiting-roll' :
       (resume === 'after-bank' || resume === 'after-stock') && current.remainingSteps > 0 ? 'moving' : 'landed'
     const continuation: GameContinuation | null = resume === 'after-bank' || resume === 'after-stock' ? resume :
@@ -1310,7 +1302,7 @@ export function createGameController(initialState: GameState, options: GameContr
       const entry = result.entry!
       showNotice({ kind: 'company', message: entry.kind, eventKind: entry.kind,
         amount: entry.sourceAmount, financeEntry: entry },
-      { kind: 'company', playerId, amount: entry.sourceAmount, financeEntry: entry }, 'company')
+      { kind: 'company', playerId, amount: entry.sourceAmount, financeEntry: entry }, 'end-turn')
       return true
     },
     leaveCompany() {
