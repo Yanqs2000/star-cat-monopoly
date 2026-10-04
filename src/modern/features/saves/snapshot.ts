@@ -23,10 +23,10 @@ function safeJson(value:unknown,depth=0):void {
  }
 }
 export function canSaveGame(state:GameState):boolean {
- if(state.phase==='ended')return state.outcome!==null&&state.interaction===null&&state.continuation===null
+ if(state.phase==='ended')return state.outcome!==null&&state.interaction===null&&state.continuation===null&&state.remainingSteps===0&&state.propertyOffer===null
  const player=state.players[state.activePlayerIndex]
  return state.phase==='awaiting-roll'&&state.interaction===null&&state.continuation===null&&state.propertyOffer===null&&state.remainingSteps===0&&
-  player?.controller==='human'&&!state.eliminatedPlayerIds.includes(player.id)&&state.outcome===null
+  player!==undefined&&!state.eliminatedPlayerIds.includes(player.id)&&state.outcome===null
 }
 export function parseSnapshot(value:unknown):SaveSnapshot {
  safeJson(value)
@@ -46,7 +46,7 @@ export function parseSnapshot(value:unknown):SaveSnapshot {
  assertCalendarDate(g.world);integer(g.world.weekday,0,6);integer(g.world.elapsedDays)
  for(const p of g.players){
   integer(p.characterId,1,12);requireValue(typeof p.name==='string'&&p.name.length>0&&p.name.length<100,'角色名称')
-  requireValue(getCardCell(p.position)!==undefined,'玩家地图坐标')
+  const cell=getCardCell(p.position);requireValue(cell!==undefined&&cell.type>0&&cell.type<34,'玩家地图坐标')
   integer(p.cash,-Number.MAX_SAFE_INTEGER);integer(p.deposit,-Number.MAX_SAFE_INTEGER)
   const status=g.world.statuses[p.id]!;integer(status.days);integer(status.godDays)
   requireValue(status.godId===null||worldRules.godIds.includes(status.godId),'神灵引用')
@@ -66,6 +66,7 @@ export function parseSnapshot(value:unknown):SaveSnapshot {
  requireValue(g.finance.stocks.length===16,'股票记录不完整')
  for(const [i,stock] of g.finance.stocks.entries()){
   requireValue(stock.id===i,'股票ID');keys(stock.holdings,ids)
+  requireValue(stock.kind===(i===0?0:i>=13?3:characters.includes(i)?2:1),'公司类别')
   requireValue(stock.ceoId===null||ids.includes(stock.ceoId)&&!g.eliminatedPlayerIds.includes(stock.ceoId),'董事引用')
   requireValue(getCardRecord(stock.mainRecordId)!==undefined,'公司地图引用')
   integer(stock.dailyBuyLimit);integer(stock.offerShares);integer(stock.poolBandValue,-Number.MAX_SAFE_INTEGER)
@@ -85,8 +86,10 @@ export function parseSnapshot(value:unknown):SaveSnapshot {
   requireValue(r.propertyIds.every(id=>Object.hasOwn(g.properties,id)),'清算地产引用')
  }
  for(const key of Object.keys(g.pendingControl))requireValue(ids.some(id=>String(id)===key)&&!g.eliminatedPlayerIds.includes(Number(key)),'控制切换引用')
+ if(g.lastPropertyEvent){const e=g.lastPropertyEvent;requireValue(Object.hasOwn(g.properties,e.parcelId)&&ids.includes(e.playerId)&&(e.recipientId===undefined||e.recipientId===0||ids.includes(e.recipientId)),'历史地产引用')}
+ for(const point of g.turnPath){const cell=getCardCell(point);requireValue(cell!==undefined&&cell.type>0&&cell.type<34,'路径坐标')}
  requireValue(canSaveGame(g),'只能保存稳定等待操作或终局')
- if(g.phase==='ended')requireValue(JSON.stringify(getOutcome(g))===JSON.stringify(g.outcome),'终局结果与存活者不一致')
+ if(g.phase==='ended'){const outcome=getOutcome(g);requireValue(outcome?.kind===g.outcome?.kind&&outcome?.winnerId===g.outcome?.winnerId,'终局结果与存活者不一致')}
  return JSON.parse(JSON.stringify(snap)) as SaveSnapshot
 }
 export function createSnapshot(state:GameState,selection:number[],settings:SaveSnapshot['settings'],createdAt:string,now:string):SaveSnapshot {

@@ -44,3 +44,7 @@ describe('真实SQLite手动槽',()=>{
   expect(()=>s.save(4,0,'req-00000002',snap())).toThrow();expect(s.list()).toHaveLength(3)
  })
 })
+it('请求标识必须为字符串，不能被正则隐式转换接受',()=>{
+ const s=store();expect(()=>s.save(1,0,12345678 as unknown as string,snap())).toThrow()
+ expect(s.read(1)).toBeNull()
+})

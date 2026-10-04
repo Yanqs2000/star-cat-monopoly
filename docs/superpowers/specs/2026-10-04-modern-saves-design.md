@@ -6,7 +6,7 @@
 
 新版Snapshot包含format/version/rulesVersion、创建和保存时间、完整GameState、原开局选人顺序、速度/暂停。GameState JSON schema由权威TypeScript生成，Ajv不转换或补默认值；增加数值、地图/玩家/股票引用、日期、终局与稳定流程的语义校验。不读取旧SharedObject。
 
-仅真人awaiting-roll且无interaction/continuation、或已结束结果允许保存。禁止保存移动/动画/小游戏中间时刻，菜单提示当前为何不可保存。打开存档菜单冻结当前控制器、场景、音频；快捷键被菜单截断，关闭恢复原暂停状态。读取可从选人或对局打开；当前局替换需明确点击确认，先请求/校验/准备新场景，任何失败保留旧局，可关菜单继续。
+仅存活玩家awaiting-roll且无interaction/continuation（包括菜单冻结后的AI/托管）、或已结束结果允许保存。禁止保存移动/动画/小游戏中间时刻，菜单提示当前为何不可保存。打开存档菜单冻结当前控制器、场景、音频；快捷键被菜单截断，关闭恢复原暂停状态。读取可从选人或对局打开；当前局替换需明确点击确认，先请求/校验/准备新场景，任何失败保留旧局，可关菜单继续。
 
 GET /api/saves列三个槽位摘要（空槽revision0），GET /api/saves/:slot返回完整版本化快照。PUT携带expectedRevision/requestId/snapshot：BEGIN IMMEDIATE比较修订号并提交；409只提示冲突，不自动覆盖；重新查看槽位后手动再次保存。相同requestId及请求内容的最后一次写入重复请求返回同一结果，解决响应丢失后手动重试。无自动保存、后台上传、定时重试或客户端副本降级。
 

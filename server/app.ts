@@ -6,7 +6,7 @@ import { SaveStore, SaveError } from './store'
 import { parseSnapshot } from '../src/modern/features/saves/snapshot'
 import type { SaveSnapshot } from '../src/modern/features/saves/snapshot-types'
 
-export async function createSaveServer(options:{dbPath:string;staticRoot?:string;allowedOrigins?:string[]}){
+export async function createSaveServer(options:{dbPath:string;staticRoot?:string|string[];allowedOrigins?:string[]}){
  const app=Fastify({bodyLimit:16*1024*1024,logger:false})
  const store=new SaveStore(options.dbPath)
  const sessions=new Map<string,{csrf:string;expires:number}>()

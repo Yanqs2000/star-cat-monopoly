@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import mapJson from './data/map.json'
+import SavePanel from './features/saves/SavePanel.vue'
+import { SaveClient, SaveClientError } from './features/saves/client'
+import { createSnapshot, canSaveGame } from './features/saves/snapshot'
+import { commitPreparedSave } from './features/saves/restore'
+import type { SaveSlot, SaveSnapshot } from './features/saves/snapshot-types'
 import { parseAssetManifest, type AssetManifest } from './features/characters/assets'
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
 import type { GameController, GameControllerOptions } from './features/game/controller'
@@ -22,6 +27,7 @@ import SceneInspector from './features/map/SceneInspector.vue'
 import type { MapData } from './features/map/types'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
+interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; stagingHost?:HTMLElement; committed?:boolean }
 interface PendingGame { state: GameState; lineup: string; visual?: InteractionVisualPlan }
 
 const map = mapJson as MapData
@@ -41,6 +47,14 @@ const loadState = ref<'idle' | 'loading' | 'ready' | 'error'>('idle')
 const loadError = ref('')
 const history = ref<string[]>([])
 const paused = ref(false)
+const savesOpen=ref(false), savesBusy=ref(false), savesError=ref(''), savesMessage=ref('')
+const saveSlots=ref<SaveSlot[]>([])
+const saveClient=new SaveClient()
+let savesEpoch=0, pauseBeforeSaves=false, saveAbort:AbortController|undefined
+let retrySave:{slot:number;revision:number;requestId:string;snapshot:SaveSnapshot}|undefined
+const retryableSave=ref(false)
+let matchCreatedAt=new Date().toISOString()
+const saveAllowed=computed(()=>!!game.value&&loadState.value==='ready'&&controllerReady.value&&canSaveGame(game.value))
 const audioError = ref<string|null>(null)
 const musicVolume = ref(1), effectsVolume = ref(1), muted = ref(false)
 const audio = new AudioSession(undefined,message=>{audioError.value=message})
@@ -167,7 +181,31 @@ function failHandAsset(error: Error, cardId: number) {
   const state = gameController?.state ?? game.value
   failRuntimeAsset(error, state === undefined ? undefined : visualForHandAssetFailure(state, cardId, latestNoticeVisual))
 }
-async function loadPendingGame() {
+async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortSignal,staged=false):Promise<PreparedGame> {
+  let prepared:PreparedGame|undefined
+    const [entries, loadedInteractionAssets, loadedActivityAssets] = await Promise.all([Promise.all(state.players.map(async player => {
+      const item = characters.value.find(character => character.id === player.characterId)
+      if(!item)throw new Error('角色索引尚未准备，请返回选人重试索引后读取')
+      const [manifest, reactions] = await Promise.all([fetchManifest(item, signal), fetchReactionManifest(item, signal)])
+      return { playerId: player.id, characterId: player.characterId, manifest, reactions }
+    })), fetchInteractionManifest(signal), fetchActivityManifest(signal)])
+    const loaded = await createMapScene(target, map, entries[0]!.manifest, {
+      signal,
+      playerManifests: entries,
+      onFrame: () => {},
+      onManualCamera: () => { following.value = false },
+      onTargetCell: position => gameController?.chooseCard({ kind: 'cell', position }),
+      onAssetError: error=>{if(!staged||prepared?.committed)failRuntimeAsset(error)},
+      requiredTextureUrls:[...entries.flatMap(entry=>{
+        const godId=state.world.statuses[entry.playerId]?.godId
+        const god=entry.reactions.godOverlays.find(g=>g.godId===godId)
+        return god?[god.url]:[]
+      }),...(state.outcome?[`assets/activities/${state.outcome.kind==='victory'?'gamewin':'gameover'}/1.png`]:[])],
+    })
+  prepared={loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets}
+  return prepared
+}
+async function loadPendingGame(prepared?:PreparedGame) {
   if (!pending.value) return
   const current = ++generation
   abort?.abort(); observer?.disconnect(); gameController?.dispose(); scene?.destroy()
@@ -176,21 +214,11 @@ async function loadPendingGame() {
   const signal = abort.signal
   loadState.value = 'loading'; loadError.value = ''; following.value = true
   try {
-    const [entries, loadedInteractionAssets, loadedActivityAssets] = await Promise.all([Promise.all(pending.value.state.players.map(async player => {
-      const item = characters.value.find(character => character.id === player.characterId)!
-      const [manifest, reactions] = await Promise.all([fetchManifest(item, signal), fetchReactionManifest(item, signal)])
-      return { playerId: player.id, characterId: player.characterId, manifest, reactions }
-    })), fetchInteractionManifest(signal), fetchActivityManifest(signal)])
-    if (current !== generation || !host.value) return
-    const loaded = await createMapScene(host.value, map, entries[0]!.manifest, {
-      signal,
-      playerManifests: entries,
-      onFrame: () => {},
-      onManualCamera: () => { following.value = false },
-      onTargetCell: position => gameController?.chooseCard({ kind: 'cell', position }),
-      onAssetError: failRuntimeAsset,
-    })
-    if (current !== generation) { loaded.destroy(); return }
+    const resources=prepared??await prepareGameScene(pending.value.state,host.value!,signal)
+    const {loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets}=resources
+    if (current !== generation) {loaded.destroy();return}
+    resources.committed=true
+    if(resources.stagingHost){host.value!.replaceChildren(...resources.stagingHost.childNodes);resources.stagingHost.remove();loaded.resize(host.value!.clientWidth,host.value!.clientHeight)}
     scene = loaded
     interactionAssets.value = loadedInteractionAssets
     activityAssets.value = loadedActivityAssets
@@ -306,7 +334,7 @@ async function loadPendingGame() {
     scene.setPaused(paused.value)
     updateActivity(gameController.state)
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })
-    observer.observe(host.value)
+    observer.observe(host.value!)
     audio.setPaused(paused.value);loadState.value = 'ready'
   } catch (reason) {
     if (current !== generation || signal.aborted) return
@@ -321,6 +349,7 @@ async function startGame() {
   backgroundMusic=`backmusic${Date.now()%5+1}`
   audio.unlock();audio.setPaused(false);audio.effect('sn_2')
   const now = new Date()
+  matchCreatedAt=now.toISOString()
   const state = createGame([...selected.value], seed(), now.getDay(), {
     year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate(),
   })
@@ -405,8 +434,73 @@ function returnToSelection() {
   loadState.value = 'idle'
   mode.value = 'selection'
 }
+function pauseForSaves(value:boolean){gameController?.setPaused(value);scene?.setPaused(value);audio.setPaused(value)}
+async function openSaves(){
+ if(savesOpen.value)return
+ pauseBeforeSaves=paused.value;savesOpen.value=true;paused.value=true;pauseForSaves(true)
+ savesMessage.value='';savesError.value='';retrySave=undefined;retryableSave.value=false
+ await refreshSaveSlots()
+}
+function closeSaves(){
+ savesEpoch++;saveAbort?.abort();saveAbort=undefined;saveClient.cancel()
+ savesOpen.value=false;savesBusy.value=false;retrySave=undefined;retryableSave.value=false
+ paused.value=pauseBeforeSaves;pauseForSaves(paused.value)
+}
+async function refreshSaveSlots(){
+ if(savesBusy.value)return
+ const epoch=++savesEpoch;savesBusy.value=true;savesError.value='';savesMessage.value='';retrySave=undefined;retryableSave.value=false
+ try{const slots=await saveClient.list();if(epoch===savesEpoch)saveSlots.value=slots}
+ catch(error){if(epoch===savesEpoch)savesError.value=error instanceof Error?error.message:String(error)}
+ finally{if(epoch===savesEpoch)savesBusy.value=false}
+}
+async function saveToSlot(slot:number){
+ if(savesBusy.value||!saveAllowed.value||!gameController)return
+ const row=saveSlots.value.find(s=>s.slot===slot);if(!row)return
+ try{retrySave={slot,revision:row.revision,requestId:crypto.randomUUID(),snapshot:createSnapshot(gameController.state,[...selected.value],{speed:speed.value===2?2:1,paused:pauseBeforeSaves},matchCreatedAt,new Date().toISOString())}}
+ catch(error){savesError.value=error instanceof Error?error.message:String(error);return}
+ await submitRetrySave()
+}
+async function submitRetrySave(){
+ if(savesBusy.value||!retrySave)return
+ const request=retrySave,epoch=++savesEpoch;savesBusy.value=true;savesError.value='';savesMessage.value='';retryableSave.value=false
+ try{
+  const record=await saveClient.save(request.slot,request.revision,request.requestId,request.snapshot)
+  if(epoch!==savesEpoch)return
+  const g=record.snapshot.state
+  saveSlots.value=saveSlots.value.map(row=>row.slot===record.slot?{slot:record.slot,revision:record.revision,savedAt:record.snapshot.savedAt,summary:{round:g.round,date:`${g.world.year}-${g.world.month}-${g.world.day}`,players:g.players.map(p=>p.name)}}:row)
+  savesMessage.value=`槽位${record.slot}保存成功 · 修订${record.revision}`;retrySave=undefined
+ }catch(error){if(epoch===savesEpoch){savesError.value=error instanceof Error?error.message:String(error);retryableSave.value=!(error instanceof SaveClientError&&error.status===409)}}
+ finally{if(epoch===savesEpoch)savesBusy.value=false}
+}
+async function loadFromSlot(slot:number){
+ if(savesBusy.value)return
+ const epoch=++savesEpoch;savesBusy.value=true;savesError.value='';savesMessage.value='';retrySave=undefined;retryableSave.value=false
+ const controller=new AbortController();saveAbort=controller
+ try{
+  const record=await saveClient.read(slot)
+  if(epoch!==savesEpoch)return
+  await commitPreparedSave(async()=>{
+   const stagingHost=document.createElement('div');stagingHost.style.cssText=`position:fixed;left:-20000px;top:0;width:${host.value?.clientWidth??900}px;height:${host.value?.clientHeight??600}px;pointer-events:none`
+   document.body.append(stagingHost)
+   try{const prepared=await prepareGameScene(record.snapshot.state,stagingHost,controller.signal,true);prepared.stagingHost=stagingHost;return prepared}
+   catch(error){stagingHost.remove();throw error}
+  },async prepared=>{
+   if(epoch!==savesEpoch||controller.signal.aborted)throw new DOMException('Cancelled','AbortError')
+   // All snapshot and required image validation has succeeded; adopt the candidate.
+   selected.value=[...record.snapshot.selection];matchCreatedAt=record.snapshot.createdAt
+   speed.value=record.snapshot.settings.speed;pauseBeforeSaves=record.snapshot.settings.paused;paused.value=true
+   pending.value={state:record.snapshot.state,lineup:record.snapshot.state.players.map(p=>p.name).join(' · ')}
+   latestNoticeVisual=undefined;history.value=[];audio.startMatch();mode.value='game'
+   await nextTick();await loadPendingGame(prepared)
+   if(loadState.value!=='ready')throw new Error(loadError.value)
+  },prepared=>{prepared.loaded.destroy();prepared.stagingHost?.remove()})
+  if(epoch===savesEpoch){savesMessage.value=`槽位${slot}读取成功`;savesOpen.value=false;paused.value=pauseBeforeSaves;pauseForSaves(paused.value)}
+ }catch(error){if(epoch===savesEpoch)savesError.value=`${error instanceof Error?error.message:String(error)}；当前对局保留`}
+ finally{if(epoch===savesEpoch){savesBusy.value=false;saveAbort=undefined}}
+}
 function fullscreenChanged() { fullscreen.value = document.fullscreenElement === stage.value }
 function keydown(event: KeyboardEvent) {
+  if(savesOpen.value)return
   if (mode.value !== 'game' || event.defaultPrevented) return
   if(game.value?.interaction?.kind==='carnival')return
   const target = event.target as HTMLElement | null
@@ -422,6 +516,7 @@ onMounted(() => {
   void loadIndex()
 })
 onBeforeUnmount(() => {
+  saveAbort?.abort();saveClient.cancel()
   audio.destroy()
   cleanupGame()
   document.removeEventListener('fullscreenchange', fullscreenChanged)
@@ -431,8 +526,8 @@ onBeforeUnmount(() => {
 
 <template>
   <SceneInspector v-if="mode === 'inspection'" @back="mode = 'selection'" />
-  <main v-else-if="mode === 'selection'" class="selection-shell">
-    <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><button @click="mode = 'inspection'">场景检查</button></header>
+  <main v-else-if="mode === 'selection'" :inert="savesOpen" class="selection-shell">
+    <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><div><button @click="openSaves">读取存档</button><button @click="mode = 'inspection'">场景检查</button></div></header>
     <section class="selection-card">
       <div class="selection-title"><div><h2>选择参赛角色</h2><p>按选择顺序加入 1–4 名人类玩家，不足四人由 AI 随机补位；第五次选择会滚出最早选择。</p></div><strong data-testid="human-count">{{ humanSummary }}</strong></div>
       <div v-if="indexState === 'loading'" class="selection-state">正在读取12名原版角色…</div>
@@ -450,8 +545,9 @@ onBeforeUnmount(() => {
     </section>
     <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
-  <main v-else class="game-shell">
+  <main v-else :inert="savesOpen" class="game-shell">
     <div class="audio-controls" aria-label="声音设置">
+      <button data-testid="open-saves" @click="openSaves">手动存读档</button>
       <button @click="audio.unlock();audio.retry()">开启声音</button>
       <label>音乐 <input aria-label="音乐音量" type="range" min="0" max="1" step="0.1" v-model.number="musicVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
       <label>音效 <input aria-label="音效音量" type="range" min="0" max="1" step="0.1" v-model.number="effectsVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
@@ -472,10 +568,11 @@ onBeforeUnmount(() => {
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">
         <div v-if="loadState === 'loading'"><p>正在载入地图、本局角色动作与完整交互素材…</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p></div>
-        <div v-else role="alert"><p>{{ loadError }}</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p><div class="error-actions"><button @click="loadPendingGame">重试载入</button><button @click="returnToSelection">返回选人</button></div></div>
+        <div v-else role="alert"><p>{{ loadError }}</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p><div class="error-actions"><button @click="loadPendingGame()">重试载入</button><button @click="returnToSelection">返回选人</button></div></div>
       </div>
     </section>
   </main>
+  <SavePanel v-if="savesOpen" :slots="saveSlots" :can-save="saveAllowed" :busy="savesBusy" :error="savesError" :message="savesMessage" :has-game="!!game" :retryable="retryableSave" @save="saveToSlot" @load="loadFromSlot" @refresh="refreshSaveSlots" @retry="submitRetrySave" @close="closeSaves" />
 </template>
 
 <style scoped>

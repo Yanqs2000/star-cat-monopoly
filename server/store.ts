@@ -26,7 +26,7 @@ export class SaveStore {
  }
  save(slot:number,revision:number,requestId:string,value:SaveSnapshot):SaveRecord {
   slotId(slot)
-  if(!Number.isSafeInteger(revision)||revision<0||!/^[-\w]{8,100}$/.test(requestId))throw new SaveError(400,'修订号或请求标识无效')
+  if(!Number.isSafeInteger(revision)||revision<0||typeof requestId!=='string'||!/^[-\w]{8,100}$/.test(requestId))throw new SaveError(400,'修订号或请求标识无效')
   const snapshot=parseSnapshot(value);const payload=JSON.stringify(snapshot)
   const hash=createHash('sha256').update(payload).digest('hex')
   this.db.exec('BEGIN IMMEDIATE')

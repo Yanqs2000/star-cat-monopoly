@@ -56,6 +56,7 @@ export interface MapSceneOptions {
   onManualCamera?: () => void
   onTargetCell?: (position: GridPoint) => void
   onAssetError?: (error: Error) => void
+  requiredTextureUrls?: string[]
 }
 
 const FACING_BY_DIRECTION: Record<Direction, Facing> = {
@@ -145,7 +146,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parseCompanyAssets(await response.json())
     })() : undefined
-    const urls = [...new Set([manifest.map.url, ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+    const urls = [...new Set([manifest.map.url, ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),

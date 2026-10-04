@@ -9,7 +9,7 @@
 
 ## Global Constraints
 
-三个手动槽位；不自动保存/兼容旧档；stable awaiting-roll真人或ended可保存；数据独立代码，loopback单用户；验证失败保留当前局与旧槽；全部GameState与RNG原样。沿用原素材，不刷新用户已有对局。
+三个手动槽位；不自动保存/兼容旧档；stable awaiting-roll存活玩家（人类/AI/托管）或ended可保存；数据独立代码，loopback单用户；验证失败保留当前局与旧槽；全部GameState与RNG原样。沿用原素材，不刷新用户已有对局。
 
 ## Review Focus
 
@@ -36,9 +36,9 @@
 ### Task 3: 手动存读档菜单和无损替换
 **Files:** src/modern/features/saves/{client.ts,SavePanel.vue,restore.ts}, src/modern/ModernApp.vue, tests/saves/{client.spec.ts,panel.spec.ts,restore.spec.ts}
 **Interfaces:** SaveClient.list/read/save；SavePanel(props canSave,busy,slots,error; emits save/load/refresh/close)；prepare-before-commit恢复流程。
-- [ ] 写失败测试：网络失败无成功；409不自动重试；未知数据不替换；读图失败保留旧局；操作中双击只提交一次；稳定暂停捕获；菜单关闭解除输入锁且恢复原暂停。
-- [ ] npm test -- tests/saves/client.spec.ts tests/saves/panel.spec.ts tests/saves/restore.spec.ts → RED，实现后GREEN。
-- [ ] 类型/生产构建，单元回归；提交。
+- [x] 写失败测试：网络失败无成功；409不自动重试；未知数据不替换；读图失败保留旧局；操作中双击只提交一次；稳定暂停捕获；菜单关闭解除输入锁且恢复原暂停。
+- [x] npm test -- tests/saves/client.spec.ts tests/saves/panel.spec.ts tests/saves/restore.spec.ts → RED，实现后GREEN。
+- [x] 类型/生产构建，单元回归；提交。
 
 ### Task 4: 实际持久化和故障交付
 **Files:** tests/fixtures/modern-saves.html, docs/modernization/{acceptance-4.md,resume-4.md,review-4.md}, README.md

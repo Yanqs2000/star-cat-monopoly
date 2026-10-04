@@ -33,11 +33,11 @@ describe('新版手动快照',()=>{
   ['duplicate dead',(s:any)=>s.state.eliminatedPlayerIds=[3,3]],['bad timestamp',(s:any)=>s.savedAt='tomorrow'],
  ]
  it.each(corruptions)('拒绝%s快照',(_,corrupt)=>{const snap=sample();corrupt(snap);expect(()=>parseSnapshot(snap)).toThrow()})
- it('保存必须在稳定等待操作，移动/交互/AI/淘汰者不能保存',()=>{
+ it('保存必须在稳定等待操作，移动/交互/淘汰者不能保存',()=>{
   const game=createGame([1],1);expect(canSaveGame(game)).toBe(true)
   game.phase='moving';expect(canSaveGame(game)).toBe(false)
   expect(()=>createSnapshot(game,[1],{speed:1,paused:false},now,now)).toThrow()
-  game.phase='awaiting-roll';game.players[0]!.controller='autoplay';expect(canSaveGame(game)).toBe(false)
+  game.phase='awaiting-roll';game.players[0]!.controller='autoplay';expect(canSaveGame(game)).toBe(true)
   game.players[0]!.controller='human';game.eliminatedPlayerIds=[1];expect(canSaveGame(game)).toBe(false)
  })
  it('终局可保存，结束结果和清算只保留一次',()=>{
@@ -47,4 +47,30 @@ describe('新版手动快照',()=>{
   expect(parseSnapshot(snap).state.bankruptcyReceipts).toHaveLength(1)
   expect(parseSnapshot(snap).state.outcome).toEqual({kind:'defeat',winnerId:null})
  })
+})
+it('合法终局的JSON对象键顺序不改变可读性',()=>{
+ let game=createGame([1],1);game.players[0]!.cash=0;game.players[0]!.deposit=0;game=settleBankruptcy(game,1)
+ game.phase='ended';game.outcome={kind:'defeat',winnerId:null}
+ const snap=createSnapshot(game,[1],{speed:1,paused:false},now,now)
+ snap.state.outcome={winnerId:null,kind:'defeat'}
+ expect(parseSnapshot(snap).state.outcome).toMatchObject({kind:'defeat',winnerId:null})
+})
+const invalidReferences:Array<[string,(s:any)=>void]>=[
+ ['非道路坐标',s=>{s.state.players[0].position={column:0,row:0}}],
+ ['错误历史引用',s=>{s.state.lastPropertyEvent={kind:'rent-paid',parcelId:999,playerId:1,recipientId:99,amount:100}}],
+ ['错误公司类别',s=>{s.state.finance.stocks[1].kind=3}],
+]
+it.each(invalidReferences)('拒绝%s',(_,corrupt)=>{const s=createSnapshot(createGame([1],1),[1],{speed:1,paused:false},now,now);corrupt(s);expect(()=>parseSnapshot(s)).toThrow()})
+it('稳定的全体托管快照读回先保持暂停，继续后AI只掷骰一次',async()=>{
+ const {vi}=await import('vitest');const {restoreControllerAfterVisual}=await import('../../src/modern/features/game/visual-recovery')
+ vi.useFakeTimers()
+ let controller:Awaited<ReturnType<typeof restoreControllerAfterVisual>>|undefined
+ try{
+  const g=createGame([1],102);for(const p of g.players)p.controller='autoplay'
+  const s=createSnapshot(g,[1],{speed:2,paused:true},now,now)
+  controller=await restoreControllerAfterVisual(parseSnapshot(s).state,{aiThinkDurationMs:20,scheduler:{now:()=>Date.now(),setTimeout:(f,ms)=>setTimeout(f,ms),clearTimeout:h=>clearTimeout(h as ReturnType<typeof setTimeout>)}},undefined,2,true)
+  vi.advanceTimersByTime(1000);expect(controller.state.rngState).toBe(3281556859);expect(controller.state.lastRoll).toBeNull()
+  controller.setPaused(false);vi.advanceTimersByTime(10)
+  expect(controller.state.lastRoll).toBe(4);expect(controller.state.phase).toBe('moving');expect(controller.state.activePlayerIndex).toBe(0)
+ }finally{controller?.dispose();vi.useRealTimers()}
 })
