@@ -80,7 +80,7 @@ it('法院判决等待40帧独立于原说明框快进，送拘留恢复不重�
   restored.dispose()
 })
 
-it('魔法门头像随机在素材等待/暂停/重建时冻结，选择后不留下原地图时钟', () => {
+it('魔法门头像视觉随机在素材等待/暂停/重建时冻结且不推进规则随机流', () => {
   vi.useFakeTimers()
   const game=landing({column:31,row:7});game.rngState=1
   const c=createGameController(game,{scheduler:clock,awaitActivityAssets:true})
@@ -91,7 +91,9 @@ it('魔法门头像随机在素材等待/暂停/重建时冻结，选择后不�
   expect(c.state.rngState).toBe(initialRng)
   expect(c.choosePortal(5)).toBe(false)
   c.readyActivity('station');vi.advanceTimersByTime(130)
-  expect(c.state.rngState).not.toBe(initialRng)
+  expect(c.state.rngState).toBe(initialRng)
+  expect(c.state.interaction).toMatchObject({kind:'portal',visualRngState:expect.any(Number)})
+  expect((c.state.interaction as Extract<typeof c.state.interaction,{kind:'portal'}>).visualRngState).not.toBe(initialRng)
   c.setPaused(true)
   const saved=structuredClone(c.state);c.dispose()
   const restored=createGameController(saved,{scheduler:clock,awaitActivityAssets:true})
@@ -100,7 +102,6 @@ it('魔法门头像随机在素材等待/暂停/重建时冻结，选择后不�
   expect(restored.choosePortal(5)).toBe(false)
   expect(restored.readyActivity('station')).toBe(true)
   let rng=restored.state.rngState
-  for(let i=0;i<4;i++)rng=randomInt(rng,40).nextState
   expect(restored.choosePortal(5)).toBe(true)
   rng=randomInt(randomInt(rng,1000).nextState,10).nextState // source mood_pg(8)
   vi.advanceTimersByTime(2000)
@@ -108,11 +109,29 @@ it('魔法门头像随机在素材等待/暂停/重建时冻结，选择后不�
   restored.dispose()
 })
 
-it('原版地图在较早创建的站点关窗处理前仍推进最后一轮四头像随机', () => {
+it('魔法门头像动画等待时长不改变转运方向或权威规则随机流', () => {
+  vi.useFakeTimers()
+  const transferAfter = (waitMs: number) => {
+    const game=landing({column:31,row:7});game.rngState=1
+    const c=createGameController(game,{scheduler:clock,awaitActivityAssets:true}) as ActivityController
+    expect(c.readyActivity('station')).toBe(true)
+    vi.advanceTimersByTime(waitMs)
+    expect(c.choosePortal(2)).toBe(true)
+    const result={
+      direction:c.state.players[0]!.direction,
+      position:c.state.players[0]!.position,
+      rngState:c.state.rngState,
+    }
+    c.dispose()
+    return result
+  }
+  expect(transferAfter(100)).toEqual(transferAfter(1_000))
+})
+
+it('魔法门关窗时保留原头像转场，但不把装饰随机写入规则流', () => {
   const game=landing({column:31,row:7});game.rngState=1
   const c=createGameController(game,dormantClock)
   let expected=c.state.rngState
-  for(let i=0;i<4;i++)expected=randomInt(expected,40).nextState
   expected=randomInt(randomInt(expected,1000).nextState,10).nextState // source mood_pg(8)
   expect(c.choosePortal(5)).toBe(true)
   expect(c.state.rngState).toBe(expected)

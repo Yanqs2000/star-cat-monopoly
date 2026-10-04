@@ -52,7 +52,7 @@ export type GameInteraction =
   | { kind:'carnival';playerId:number;game:CarnivalGame }
   | { kind:'ludo';playerId:number;game:LudoGame }
   | { kind: 'npc-opening'; playerId: number; npcId: 1; cellId: number; presentation: ActivityPresentation }
-  | { kind: 'portal'; playerId: number; stage: 'choice' | 'flight'; destination?: number; flight?: PortalFlight; heads?: PortalHead[]; choiceFrames?: number; error?: string | null; presentation?: ActivityPresentation }
+  | { kind: 'portal'; playerId: number; stage: 'choice' | 'flight'; destination?: number; flight?: PortalFlight; heads?: PortalHead[]; visualRngState?: number; choiceFrames?: number; error?: string | null; presentation?: ActivityPresentation }
   | { kind: 'court'; playerId: number; stage: 'target' | 'case' | 'judgement' | 'transfer' | 'holding'; targetId?: number; caseId?: number; verdict?: CourtVerdict; roll?: number; jailedPlayerId?: number | null; transferOrigin?: GridPoint; waitFrames?: number; verdictFrame?: number; error?: string | null; presentation?: ActivityPresentation }
   | (CardInteractionBase & { kind: 'card-confirm'; choiceError: string | null })
   | (CardInteractionBase & { kind: 'dice-choice'; choiceError: string | null })
