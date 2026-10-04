@@ -72,6 +72,7 @@ export function createGame(
 
   return {
     players,
+    eliminatedPlayerIds: [], bankruptcyReceipts: [], outcome: null, pendingControl: {},
     finance: createFinanceState(players),
     properties: createPropertyLedger(),
     prices: createPropertyPrices(),

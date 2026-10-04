@@ -25,6 +25,7 @@ const emit = defineEmits<{
   restart: []
   'begin-card': [index: number]
   'asset-error': [error: Error, cardId: number]
+  control: [playerId:number,control:'human'|'autoplay']
 }>()
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
@@ -38,9 +39,11 @@ const phaseText = computed(() => ({
   'property-result': '交易结果待确认',
   interaction: '等待交互处理',
   insolvent: '资金耗尽，回合已停止',
+  ended: '对局已结束',
 }[props.game.phase]))
 const godNames: Record<number, string> = { 2: '财神', 3: '穷神', 4: '福神', 5: '衰神', 10: '天使', 11: '恶魔' }
 function restriction(playerId: number): string {
+  if (props.game.eliminatedPlayerIds.includes(playerId)) return '已淘汰'
   const status = props.game.world.statuses[playerId]
   if (!status) return '正常'
   const state = status.state === 2 ? `拘留 ${status.days}天` : status.state === 3 ? `住院 ${status.days}天` : status.state === 9 ? `受伤 ${status.days}天` : '正常'
@@ -55,7 +58,7 @@ function restriction(playerId: number): string {
       <span class="phase">{{ phaseText }}</span>
     </div>
     <div class="turn-card">
-      <strong data-testid="current-player">{{ active.name }} · {{ active.controller === 'human' ? '人类' : 'AI' }}</strong>
+      <strong data-testid="current-player">{{ active.name }} · {{ active.controller === 'human' ? '人类' : active.controller==='autoplay'?'托管':'AI' }}</strong>
       <span data-testid="last-roll">骰子 {{ game.lastRoll ?? '—' }}{{ showingPreviousTurn ? '（上一回合）' : '' }}</span>
       <span data-testid="remaining-steps">剩余 {{ game.remainingSteps }} 步</span>
       <span>位置 {{ active.position.column }}, {{ active.position.row }}</span>
@@ -78,9 +81,17 @@ function restriction(playerId: number): string {
     <ol class="players" data-testid="player-list">
       <li v-for="(player, index) in game.players" :key="player.id" :class="{ active: index === game.activePlayerIndex }">
         <span class="token">{{ index + 1 }}</span>
-        <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : 'AI' }} · {{ player.position.column }},{{ player.position.row }}</small><small>现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</small><small>信用 {{ game.credit[player.id]?.available }} / 已用 {{ game.credit[player.id]?.used }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</small><small>股票市值 {{ stockMarketValue(game.finance, player.id) }}</small><small>{{ restriction(player.id) }}</small><small>地 {{ getPropertySummary(game.properties, player.id).landCount }} · 建筑 {{ getPropertySummary(game.properties, player.id).buildingCount }}</small></span>
+        <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : player.controller==='autoplay'?'托管':'AI' }} · {{ player.position.column }},{{ player.position.row }}</small><small>现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</small><small>信用 {{ game.credit[player.id]?.available }} / 已用 {{ game.credit[player.id]?.used }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</small><small>股票市值 {{ stockMarketValue(game.finance, player.id) }}</small><small>{{ restriction(player.id) }}</small><small>地 {{ getPropertySummary(game.properties, player.id).landCount }} · 建筑 {{ getPropertySummary(game.properties, player.id).buildingCount }}</small></span>
       </li>
     </ol>
+    <div v-if="!game.outcome" class="control-panel">
+      <strong>控制切换（回合结束生效）</strong>
+      <div v-for="player in game.players" :key="player.id">
+        <button v-if="!game.eliminatedPlayerIds.includes(player.id)" :data-testid="`control-${player.id}`" @click="emit('control',player.id,(game.pendingControl[player.id] ?? player.controller)==='human'?'autoplay':'human')">{{ player.name }} · {{ (game.pendingControl[player.id] ?? player.controller)==='human'?'托管':'接管' }}</button>
+        <small v-if="game.pendingControl[player.id]">待切换为{{ game.pendingControl[player.id]==='human'?'人类':'托管' }}</small>
+      </div>
+      <button data-testid="control-all" @click="game.players.filter(p=>!game.eliminatedPlayerIds.includes(p.id)).forEach(p=>emit('control',p.id,'autoplay'))">全体托管</button>
+    </div>
     <div class="property-list" data-testid="property-list"><strong>{{ active.name }}的地产</strong><span v-if="!owned.length">暂无地产</span><ol v-else><li v-for="parcel in owned" :key="parcel.id">{{ parcel.streetName }} #{{ parcel.id }} · {{ game.properties[parcel.id]?.level }} 级</li></ol></div>
     <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>已发生的回合与交易</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>

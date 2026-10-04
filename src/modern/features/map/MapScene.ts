@@ -18,6 +18,7 @@ import { ReactionVisibility } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
+  eliminated?: boolean
   playerId: number
   moving: boolean
   active: boolean
@@ -289,6 +290,11 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
           actor.reactionSprite.visible = false
         }
         actor.facing = FACING_BY_DIRECTION[pose.direction]
+        if (pose.eliminated) {
+          actor.visibility.clear();actor.reacting=false;actor.reactionSprite.visible=false
+          actor.walker.view.visible=false;actor.view.visible=false;actor.godId=null;actor.godSprite.visible=false
+          return
+        }
         actor.walker.setPose(actor.facing, pose.moving)
         if (pose.moving) {
           actor.visibility.clear()

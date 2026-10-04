@@ -256,7 +256,7 @@ describe('2C 地产控制器', () => {
     }
   })
 
-  it('租金先扣现金后扣存款，地主收到完整存款；耗尽时确认后停局', () => {
+  it('租金先扣现金后扣存款，地主收到完整存款；耗尽时确认破产后继续剩余玩家', () => {
     for (const [cash, deposit, remainingDeposit, insolvent] of [[100, 2000, 1300, false], [100, 400, -300, true]] as const) {
       const scheduler = new FakeScheduler()
       const game = arrivingAt(47)
@@ -273,9 +273,10 @@ describe('2C 地产控制器', () => {
       expect(controller.state.lastPropertyEvent).toMatchObject({ kind: 'rent-paid', amount: 800, recipientId: 2 })
       expect(controller.acknowledgeProperty()).toBe(true)
       if (insolvent) {
-        expect(controller.state.phase).toBe('insolvent')
-        scheduler.advance(10_000)
-        expect(controller.state.activePlayerIndex).toBe(0)
+        scheduler.advance(10)
+        expect(controller.state.interaction?.kind).toBe('bankruptcy')
+        expect(controller.acknowledgeBankruptcy()).toBe(true)
+        expect(controller.state.eliminatedPlayerIds).toEqual([1])
       } else {
         scheduler.advance(10)
         expect(controller.state.activePlayerIndex).toBe(1)

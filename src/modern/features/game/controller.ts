@@ -32,6 +32,7 @@ import { courtTargets, judgeCourt } from './court'
 import { beginCarnival,advanceCarnivalTime,setCarnivalInput as applyCarnivalInput,type CarnivalInput } from './carnival'
 import { beginLudo,placeWager as addWager,confirmWagers as startLudoDice,advanceLudo } from './ludo'
 import { randomInt } from './random'
+import { settleBankruptcy, getOutcome, applyPendingControl } from './lifecycle'
 
 export type { InteractionEvent } from './interaction-types'
 
@@ -78,6 +79,8 @@ export interface GameController {
   bankOperation(operation: BankOperation, amount: number): boolean
   leaveBank(): boolean
   acknowledgeMonthly(): boolean
+  acknowledgeBankruptcy(): boolean
+  requestControl(playerId: number, control: 'human' | 'autoplay'): boolean
   tradeStock(side: 'buy' | 'sell', companyId: number, shares: number): boolean
   leaveStock(): boolean
   subscribeCompany(shares: number): boolean
@@ -113,6 +116,7 @@ const confirmCardIds = new Set([11, 14, 18, 19, 21, 22, 27])
 
 function projectWorld(state: GameState): WorldSnapshot {
   return {
+    eliminatedPlayerIds: state.eliminatedPlayerIds,
     players: state.players,
     properties: state.properties,
     prices: state.prices,
@@ -249,7 +253,7 @@ export function createGameController(initialState: GameState, options: GameContr
   let handleLanding: () => void
   let processGodThenTerrain: () => void
   let continueTerrain: () => void
-  let finishTurn: () => void
+  let finishTurn: (skipSolvency?: boolean) => void
   let acknowledgeMonthlyResult: () => void
   let beginTurn: () => void
   let acknowledgeNotice: () => void
@@ -519,11 +523,6 @@ export function createGameController(initialState: GameState, options: GameContr
   acknowledgePropertyResult = () => {
     current = { ...current, phase: 'landed', propertyOffer: null, continuation: 'finish-turn' }
     notify()
-    if (activePlayer().cash + activePlayer().deposit <= 0) {
-      current = { ...current, phase: 'insolvent', continuation: null }
-      notify()
-      return
-    }
     schedule(finishTurn, landingDurationMs)
   }
 
@@ -846,14 +845,19 @@ export function createGameController(initialState: GameState, options: GameContr
     startStep()
   }
 
-  finishTurn = () => {
-    if (activePlayer().cash + activePlayer().deposit <= 0) {
-      current = { ...current, phase: 'insolvent', interaction: null, propertyOffer: null, continuation: null }
+  finishTurn = (skipSolvency = false) => {
+    if (current.outcome !== null) return
+    const cleared = skipSolvency ? current : settleBankruptcy(current, activePlayer().id)
+    if (cleared !== current) {
+      current = { ...cleared, phase: 'interaction', propertyOffer: null, continuation: null,
+        interaction: { kind: 'bankruptcy', playerId: activePlayer().id, receipt: cleared.bankruptcyReceipts.at(-1)! } }
       notify()
+      if (!isHuman()) schedule(acknowledgeBankruptcyResult, aiThinkDurationMs)
       return
     }
     const endingIndex = current.activePlayerIndex
-    if (endingIndex === current.players.length - 1 && current.world.day === 1) {
+    const lastLivingSeat = !current.players.slice(endingIndex + 1).some(player => !current.eliminatedPlayerIds.includes(player.id))
+    if (lastLivingSeat && current.world.day === 1) {
       const settlement = settleMonth(current)
       if (settlement.settled) {
         current = { ...settlement.state, phase: 'interaction',
@@ -864,6 +868,14 @@ export function createGameController(initialState: GameState, options: GameContr
         return
       }
     }
+    const outcome = getOutcome(current)
+    if (outcome !== null) {
+      cancelPending()
+      current = { ...current, phase: 'ended', outcome, interaction: null, continuation: null, propertyOffer: null, remainingSteps: 0 }
+      notify()
+      return
+    }
+    current = applyPendingControl(current)
     const landed = {
       ...current,
       phase: 'landed' as const,
@@ -873,7 +885,7 @@ export function createGameController(initialState: GameState, options: GameContr
       continuation: 'finish-turn' as const,
     }
     current = { ...nextTurn(landed), continuation: null }
-    if (endingIndex === landed.players.length - 1) {
+    if (current.round !== landed.round) {
       const calendar = advanceCalendar(current.world)
       const stocks = advanceStockPrices(current.finance, calendar, current.rngState)
       current = { ...current, world: calendar.world, finance: stocks.finance, rngState: stocks.rngState }
@@ -896,9 +908,16 @@ export function createGameController(initialState: GameState, options: GameContr
 
   acknowledgeMonthlyResult = () => {
     if (current.interaction?.kind !== 'monthly-settlement') return
+    current = { ...current, phase: 'landed', interaction: null, continuation: 'after-monthly' }
+    notify()
+    schedule(() => finishTurn(true), landingDurationMs)
+  }
+
+  const acknowledgeBankruptcyResult = () => {
+    if (current.interaction?.kind !== 'bankruptcy') return
     current = { ...current, phase: 'landed', interaction: null, continuation: 'finish-turn' }
     notify()
-    schedule(finishTurn, landingDurationMs)
+    finishTurn()
   }
 
   acknowledgeNotice = () => {
@@ -954,6 +973,12 @@ export function createGameController(initialState: GameState, options: GameContr
 
   const resumeCurrentState = () => {
     if (disposed) return
+    if (current.phase === 'ended' || current.outcome !== null) return
+    if (current.continuation === 'after-monthly') { schedule(() => finishTurn(true), landingDurationMs); return }
+    if (current.interaction?.kind === 'bankruptcy') {
+      if (!isHuman()) schedule(acknowledgeBankruptcyResult, aiThinkDurationMs)
+      return
+    }
     if (presentation()) {beginPresentationClock();return}
     if(current.interaction?.kind==='carnival'){beginCarnivalClock();return}
     if(current.interaction?.kind==='ludo'){beginLudoClock();return}
@@ -1350,6 +1375,18 @@ export function createGameController(initialState: GameState, options: GameContr
     acknowledgeMonthly() {
       if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'monthly-settlement') return false
       acknowledgeMonthlyResult()
+      return true
+    },
+    acknowledgeBankruptcy() {
+      if (!canCommand() || current.interaction?.kind !== 'bankruptcy') return false
+      acknowledgeBankruptcyResult()
+      return true
+    },
+    requestControl(playerId, control) {
+      if (disposed || current.outcome !== null || !['human', 'autoplay'].includes(control) ||
+          !current.players.some(player => player.id === playerId) || current.eliminatedPlayerIds.includes(playerId)) return false
+      current = { ...current, pendingControl: { ...current.pendingControl, [playerId]: control } }
+      notify()
       return true
     },
     decideProperty(choice) {

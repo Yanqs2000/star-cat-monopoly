@@ -69,11 +69,17 @@ export function step(state: GameState): GameState {
 
 export function nextTurn(state: GameState): GameState {
   if (state.phase !== 'landed') throw new Error('当前阶段不能结束回合')
-  const activePlayerIndex = (state.activePlayerIndex + 1) % state.players.length
+  let activePlayerIndex = state.activePlayerIndex
+  let wrapped = false
+  for (let tried = 0; tried < state.players.length; tried++) {
+    activePlayerIndex = (activePlayerIndex + 1) % state.players.length
+    if (activePlayerIndex === 0) wrapped = true
+    if (!state.eliminatedPlayerIds.includes(state.players[activePlayerIndex]!.id)) break
+  }
   return {
     ...state,
     activePlayerIndex,
-    round: activePlayerIndex === 0 ? state.round + 1 : state.round,
+    round: wrapped ? state.round + 1 : state.round,
     phase: 'awaiting-roll',
     remainingSteps: 0,
   }

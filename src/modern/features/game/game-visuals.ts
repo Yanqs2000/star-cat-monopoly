@@ -83,12 +83,13 @@ export function buildPlayerPoses(state: GameState): PlayerPose[] {
     const dogVisible=!!dog && (dog.clipId==='trait-9' || dog.clipId==='car2' && dog.frame<48)
     return {
       playerId: player.id,
+      eliminated: state.eliminatedPlayerIds.includes(player.id),
       characterId: player.characterId,
       position: dogOrigin ?? (atOrigin && court?.transferOrigin ? court.transferOrigin : player.position),
       direction: player.direction,
       active: index === state.activePlayerIndex,
       moving: state.phase === 'moving' && index === state.activePlayerIndex,
-      visible: !flying && (dogVisible || stagedCourt || status?.state !== 2 && status?.state !== 3),
+      visible: !state.eliminatedPlayerIds.includes(player.id) && !flying && (dogVisible || stagedCourt || status?.state !== 2 && status?.state !== 3),
       godId: status?.godId ?? null,
     }
   })

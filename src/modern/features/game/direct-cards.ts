@@ -5,6 +5,7 @@ import type { PlayerState } from './types'
 import type { PropertyLedger, PropertyPrices } from './property'
 
 export interface DirectCardSnapshot {
+  eliminatedPlayerIds?: number[]
   players: PlayerState[]
   properties: PropertyLedger
   prices: PropertyPrices
@@ -125,6 +126,7 @@ export function pickCardCell(scenePoint: ScenePoint): PickedCardCell | undefined
 
 function cloneSnapshot(snapshot: DirectCardSnapshot): DirectCardSnapshot {
   return {
+    eliminatedPlayerIds: [...(snapshot.eliminatedPlayerIds ?? [])],
     players: snapshot.players.map(player => ({ ...player, position: { ...player.position } })),
     properties: Object.fromEntries(Object.entries(snapshot.properties).map(([id, state]) => [id, { ...state }])),
     prices: { ...snapshot.prices },
@@ -198,6 +200,7 @@ function targetPlayer(snapshot: DirectCardSnapshot, playerId: number, choice: Di
   if (actor?.position.column === choice.position.column && actor.position.row === choice.position.row) return undefined
   return snapshot.players.find(player =>
     player.id !== playerId &&
+    !(snapshot.eliminatedPlayerIds ?? []).includes(player.id) &&
     player.position.column === choice.position.column &&
     player.position.row === choice.position.row)
 }

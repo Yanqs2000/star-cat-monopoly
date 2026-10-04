@@ -141,6 +141,14 @@ class ExportActivityAssets {
             for(var tag:swf.getTags()) if(tag instanceof DefineEditTextTag text) text.initialText="";
             Path out=Path.of(args[1]),cache=Path.of(args[2]);
             var clips=new ArrayList<String>();
+            if(args.length>3 && "endgame".equals(args[3])) {
+                for(var entry:new String[][]{{"bankrupt","2282","6"},{"gamewin","2246","59"},{"gameover","2209","6"}}) {
+                    int symbol=Integer.parseInt(entry[1]),frame=Integer.parseInt(entry[2]);
+                    var chosen=copy(swf,sprite(swf,symbol),frame,1,null);
+                    clips.add(exportRender(swf,entry[0],symbol,chosen,frame,1,null,chosen.getRectWithStrokes(),out,cache));
+                }
+                System.out.println("{\"clips\":["+String.join(",",clips)+"]}");return;
+            }
             if(args.length>3 && "carnival-walk".equals(args[3])) {
                 for(int role=1;role<=12;role++)for(int pose=2;pose<=3;pose++) {
                     var boy=(DefineSpriteTag)swf.getCharacterByExportName("boy"+role);

@@ -10,6 +10,8 @@ import { parseInteractionAssets, type InteractionAssetsManifest } from './featur
 import { parseActivityAssets, type ActivityManifest, type NativeOverlay } from './features/game/activity-assets'
 import { activityChanges } from './features/game/activity-text'
 import PropertyPanel from './features/game/PropertyPanel.vue'
+import EndgamePanel from './features/game/EndgamePanel.vue'
+import { AudioSession, sceneTrack, soundForEvent } from './features/game/audio'
 import { activityCameraTarget, buildPlayerPoses, buildWorldVisual, worldVisualKey, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, visualForHandAssetFailure, type InteractionVisualPlan } from './features/game/game-visuals'
 import { restoreControllerAfterVisual } from './features/game/visual-recovery'
 import { getCardRecord } from './features/game/direct-cards'
@@ -39,6 +41,11 @@ const loadState = ref<'idle' | 'loading' | 'ready' | 'error'>('idle')
 const loadError = ref('')
 const history = ref<string[]>([])
 const paused = ref(false)
+const audioError = ref<string|null>(null)
+const musicVolume = ref(1), effectsVolume = ref(1), muted = ref(false)
+const audio = new AudioSession(undefined,message=>{audioError.value=message})
+audio.setTracks(Date.now()%2?'startmusic1':'startmusic2',null)
+let backgroundMusic = 'backmusic1'
 const speed = ref(1)
 const following = ref(true)
 const fullscreen = ref(false)
@@ -81,6 +88,7 @@ async function loadIndex() {
   }
 }
 function toggleCharacter(id: number) {
+  audio.unlock(); audio.effect('sn_1')
   const index = selected.value.indexOf(id)
   if (index >= 0) selected.value.splice(index, 1)
   else {
@@ -94,6 +102,7 @@ function seed(): number {
   return value[0]!
 }
 function cleanupGame() {
+  audio.setPaused(true)
   controllerReady.value=false
   generation += 1
   abort?.abort(); abort = undefined
@@ -186,6 +195,7 @@ async function loadPendingGame() {
     interactionAssets.value = loadedInteractionAssets
     activityAssets.value = loadedActivityAssets
     const initial = pending.value.state
+    audio.restoreTracks(backgroundMusic,sceneTrack(initial))
     game.value = initial
     scene.setPlayers(buildPlayerPoses(initial))
     scene.setCompanies(initial.players)
@@ -227,6 +237,12 @@ async function loadPendingGame() {
       awaitActivityAssets: true,
       onTransition: transition => scene?.transitionPlayer(transition),
       onState: state => {
+        audio.setScene(sceneTrack(state))
+        if (state.bankruptcyReceipts.length > previous.bankruptcyReceipts.length) audio.effect('sn_10')
+        const oldClip=previous.interaction && 'presentation' in previous.interaction?previous.interaction.presentation?.clipId:undefined
+        const newClip=state.interaction && 'presentation' in state.interaction?state.interaction.presentation?.clipId:undefined
+        if (newClip!==oldClip && (newClip==='car1'||newClip==='car2')) audio.effect('sn_8')
+        if (state.outcome) {audio.stop(); if(!previous.outcome && state.outcome.kind==='victory')audio.effect('sn_9')}
         if (previous.phase === 'awaiting-roll' && state.phase === 'moving') {
           const player = state.players[state.activePlayerIndex]!
           history.value.push(`${player.name} ${player.controller === 'ai' ? 'AI ' : ''}掷出 ${state.lastRoll}`)
@@ -256,6 +272,7 @@ async function loadPendingGame() {
         updateActivity(state)
       },
       onInteractionEvent: event => {
+        const sound=soundForEvent(event);if(sound)audio.effect(sound)
         const state = gameController?.state ?? game.value
         const actor = state?.players.find(player => player.id === event.playerId)
         const detail = event.reason ?? event.worldEvent?.kind ?? event.shopAction ?? event.luckEvent?.description ?? event.kind
@@ -290,7 +307,7 @@ async function loadPendingGame() {
     updateActivity(gameController.state)
     observer = new ResizeObserver(([entry]) => { if (entry) scene?.resize(entry.contentRect.width, entry.contentRect.height) })
     observer.observe(host.value)
-    loadState.value = 'ready'
+    audio.setPaused(paused.value);loadState.value = 'ready'
   } catch (reason) {
     if (current !== generation || signal.aborted) return
     loadError.value = reason instanceof Error ? reason.message : String(reason)
@@ -298,6 +315,9 @@ async function loadPendingGame() {
   }
 }
 async function startGame() {
+  audio.startMatch()
+  backgroundMusic=`backmusic${Date.now()%5+1}`
+  audio.unlock();audio.setPaused(false);audio.effect('sn_2')
   if (selected.value.length === 0) return
   cleanupGame()
   const now = new Date()
@@ -319,7 +339,7 @@ function confirmWagers(){gameController?.confirmWagers()}
 function roll() { gameController?.roll() }
 function decideProperty(choice: 'accept' | 'decline') { gameController?.decideProperty(choice) }
 function acknowledgeProperty() { gameController?.acknowledgeProperty() }
-function beginCard(index: number) { gameController?.beginCard(index) }
+function beginCard(index: number) { if(gameController?.beginCard(index))audio.effect('sn_7') }
 function confirmInteraction() { gameController?.confirmCard() }
 function cancelInteraction() { gameController?.cancelInteraction() }
 function chooseInteraction(choice: import('./features/game/direct-cards').DirectCardChoice) { gameController?.chooseCard(choice) }
@@ -344,10 +364,11 @@ function chooseCourtTarget(playerId: number) { gameController?.chooseCourtTarget
 function chooseCourtCase(caseId: number) { gameController?.chooseCourtCase(caseId) }
 function togglePause() {
   if(continuePausedReplay && scene) {
-    paused.value=false;scene.setPaused(false);continuePausedReplay();return
+    paused.value=false;audio.setPaused(false);scene.setPaused(false);continuePausedReplay();return
   }
   if (!gameController || !scene) return
   paused.value = !paused.value
+  audio.setPaused(paused.value)
   gameController.setPaused(paused.value)
   scene.setPaused(paused.value)
   scene.setTargeting(!paused.value && game.value?.interaction?.kind === 'target-choice')
@@ -374,6 +395,7 @@ function returnToSelection() {
   if (document.fullscreenElement === stage.value) void document.exitFullscreen()
   fullscreenError.value = ''
   cleanupGame()
+  audio.stop();audio.setPaused(false);audio.setTracks('startmusic1',null)
   pending.value = undefined
   latestNoticeVisual = undefined
   game.value = undefined
@@ -400,6 +422,7 @@ onMounted(() => {
   void loadIndex()
 })
 onBeforeUnmount(() => {
+  audio.destroy()
   cleanupGame()
   document.removeEventListener('fullscreenchange', fullscreenChanged)
   document.removeEventListener('keydown', keydown)
@@ -428,16 +451,23 @@ onBeforeUnmount(() => {
     <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
   <main v-else class="game-shell">
+    <div class="audio-controls" aria-label="声音设置">
+      <button @click="audio.unlock();audio.retry()">开启声音</button>
+      <label>音乐 <input aria-label="音乐音量" type="range" min="0" max="1" step="0.1" v-model.number="musicVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
+      <label>音效 <input aria-label="音效音量" type="range" min="0" max="1" step="0.1" v-model.number="effectsVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
+      <label><input type="checkbox" v-model="muted" @change="audio.setMuted(muted)">静音</label>
+      <span v-if="audioError" role="status">{{ audioError }} <button @click="audio.unlock();audio.retry()">重试声音</button></span>
+    </div>
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="host" class="canvas-host" />
       <div v-if="game && paused && !controllerReady && loadState === 'ready'" class="overlay">
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
-      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
-      <div v-if="game?.phase === 'insolvent'" class="insolvent" role="alert"><h2>资金耗尽，回合已停止</h2><p>本次租金已完整结算。完整破产处理将在后续版本开放，请返回选人重新开始。</p><button @click="returnToSelection">返回选人</button></div>
+      <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">
@@ -449,6 +479,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+.audio-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:#d6e8eb;font:13px system-ui}.audio-controls label{display:flex;align-items:center;gap:5px}.audio-controls input[type=range]{width:90px}
 button,select{font:inherit;background:#294b58;color:#edf6f3;border:1px solid #55717a;border-radius:8px;padding:8px 12px;cursor:pointer}button:hover,select:hover{background:#376271}button:disabled{opacity:.42;cursor:default}button:focus-visible,select:focus-visible{outline:2px solid #ffe18a;outline-offset:3px}.eyebrow{font-size:11px;color:#a9c3c8;letter-spacing:.13em}
 .selection-shell,.game-shell{min-height:100dvh;background:radial-gradient(circle at 50% 0,#28505f,#132a35 55%);color:#ebf4f2;font:14px/1.5 system-ui,"PingFang SC",sans-serif;padding:20px 28px}.selection-shell header,.game-shell header{width:min(1260px,100%);margin:0 auto 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}h1{margin:2px 0;font-size:24px}.selection-card{width:min(1120px,100%);margin:5vh auto 0;background:#183542e8;border:1px solid #466775;border-radius:18px;padding:24px;box-shadow:0 24px 70px #07151d88}.selection-title{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.selection-title h2{margin:0;font-size:25px}.selection-title p{margin:5px 0 18px;color:#abc1c5}.selection-title strong{white-space:nowrap;color:#ffe18a}.characters{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.characters button{padding:10px;display:flex;flex-direction:column;gap:6px;align-items:center;background:#20424f}.characters button[aria-pressed=true]{background:#40594f;border-color:#ffe18a;box-shadow:0 0 0 1px #ffe18a}.portrait{position:relative;width:72px;height:82px;display:grid;place-items:center;background:#68cef4;border-radius:11px;overflow:hidden}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:auto}.portrait b{position:absolute;top:5px;right:5px;z-index:1;width:22px;height:22px;display:grid;place-items:center;background:#ffe18a;color:#273733;border-radius:50%}.selection-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px}.selection-footer small{color:#9cb4b9}.selection-footer p{margin:2px 0;font-size:16px}.start{background:#ffe18a;color:#263d3b;border-color:#ffe18a;font-weight:800;padding:11px 24px}.selection-state{min-height:380px;display:grid;place-items:center;text-align:center}.scope{text-align:center;color:#91aab0;font-size:12px;margin:18px auto 0}
 .game-shell{display:flex;flex-direction:column}.game-stage{position:relative;width:min(1400px,100%);height:calc(100dvh - 104px);min-height:570px;margin:0 auto;display:flex;overflow:hidden;background:#66ccff;border:1px solid #486a75;border-radius:12px;box-shadow:0 12px 45px #0006}.canvas-host{flex:1;min-width:0;height:100%;cursor:grab}.canvas-host:active{cursor:grabbing}.canvas-host :deep(canvas){display:block;width:100%;height:100%}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#17323df2;text-align:center;padding:28px}.overlay p{max-width:720px;overflow-wrap:anywhere}.error-actions{display:flex;justify-content:center;gap:10px}.exit-fullscreen{position:absolute;right:334px;top:14px;z-index:4}.fullscreen-error{position:absolute;z-index:4;left:16px;top:16px;margin:0;padding:9px 12px;border:1px solid #ffb19a;border-radius:8px;background:#5b2925;color:#fff}.game-stage:fullscreen{width:100vw;height:100vh;max-width:none;border:0;border-radius:0}.game-stage:fullscreen .canvas-host{height:100vh}

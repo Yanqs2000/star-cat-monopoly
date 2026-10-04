@@ -91,6 +91,7 @@ const boardRecords = getCardBoardRecords()
 
 export function cloneWorldSnapshot(source: WorldSnapshot): WorldSnapshot {
   return {
+    eliminatedPlayerIds: [...(source.eliminatedPlayerIds ?? [])],
     players: source.players.map(value => ({ ...value, position: { ...value.position } })),
     properties: Object.fromEntries(Object.entries(source.properties).map(([id, value]) => [id, { ...value }])),
     prices: { ...source.prices },
@@ -164,8 +165,8 @@ function assertWorldSnapshot(source: WorldSnapshot, playerId: number): PlayerSta
   return player
 }
 
-function candidateRecordIds(snapshot: Pick<WorldSnapshot, 'players' | 'world'>): number[] {
-  const occupiedByPlayers = new Set(snapshot.players.map(value => getCardCell(value.position)?.id).filter((id): id is number => id !== undefined))
+function candidateRecordIds(snapshot: Pick<WorldSnapshot, 'players' | 'world' | 'eliminatedPlayerIds'>): number[] {
+  const occupiedByPlayers = new Set(snapshot.players.filter(player => !(snapshot.eliminatedPlayerIds ?? []).includes(player.id)).map(value => getCardCell(value.position)?.id).filter((id): id is number => id !== undefined))
   return boardRecords
     .filter(record => record.id > 0 && record.type < 23 && typeof record.facing === 'number' && record.facing > 0 &&
       snapshot.world.markers[record.id] === undefined && !occupiedByPlayers.has(record.id))
@@ -301,7 +302,7 @@ function applyMissile(
       if (!affectedCellIds.includes(cell!.id)) affectedCellIds.push(cell!.id)
     }
   }
-  const affectedPlayerIds = snapshot.players
+  const affectedPlayerIds = snapshot.players.filter(player => !(snapshot.eliminatedPlayerIds ?? []).includes(player.id))
     .filter(player => positions.some(position => samePoint(player.position, position)) &&
       ![2, 3, 9].includes(snapshot.world.statuses[player.id]!.state))
     .map(player => player.id)

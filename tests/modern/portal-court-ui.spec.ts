@@ -20,7 +20,7 @@ it('魔法门原选择场景可选原四站与保持原地，界面只提交站�
 
 it('法院原被告列表仅包含合法目标，三案选择提交原0/1/2编号', async () => {
   const game=createGame([1,2,3,4],1)
-  game.world.statuses[3]!.state=3;game.world.statuses[4]!.state=9
+  game.world.statuses[3]!.state=3;game.eliminatedPlayerIds=[4]
   game.phase='interaction';game.interaction={kind:'court',playerId:1,stage:'target'}
   const panel=mount(InteractionPanel,{props:{game,paused:false,cardAssets:[]}})
   expect(panel.find('[data-testid="court-original"]').exists()).toBe(true)

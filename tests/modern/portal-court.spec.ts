@@ -63,13 +63,13 @@ it.each([[1,31,7,[2,4]],[2,32,28,[1,3]],[3,9,35,[2,4]],[4,8,14,[1,3]]] as const)
   }
 })
 
-it('法院候选排除自己/住院/拘留/受伤，非法目标与案件不抽签', async () => {
+it('法院候选排除自己/住院/拘留/淘汰，非法目标与案件不抽签', async () => {
   const rule = courtRules
   const game = createGame([1,2,3,4],1)
   game.world.statuses[2]!.state=2
   game.world.statuses[3]!.state=3
   expect(rule.courtTargets(game,1)).toEqual([4])
-  game.world.statuses[4]!.state=9
+  game.eliminatedPlayerIds=[4]
   expect(rule.courtTargets(game,1)).toEqual([])
   for(const [target,caseId] of [[1,0],[2,0],[4,0],[3,5]]) {
     const result = rule.judgeCourt(game,1,target,caseId)

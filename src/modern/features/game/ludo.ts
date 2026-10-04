@@ -6,13 +6,14 @@ export const LUDO_CELLS:LudoCell[]=[
  ...[4,5,6,7].flatMap((sum,i)=>[{type:1 as const,value:sum,payout:20},...row(2,[0,0,1,1],[2,2,2,2]),{type:1 as const,value:17-i,payout:20}]),
  ...row(1,[8,9,10,11,12,13],[8,10,10,10,10,8])]
 export interface LudoGame {
- stage:'betting'|'rolling'|'payout'|'awards'|'done';frame:number;remaining:number;initialChips:number;debit:number;
+ musicIndex:number;stage:'betting'|'rolling'|'payout'|'awards'|'done';frame:number;remaining:number;initialChips:number;debit:number;
  bets:number[];placements:number[];faces:[number,number,number];displayFaces:[number,number,number];payout:number;credit:number;paid:boolean;winningCells:number[]
 }
 export function beginLudo(tickets:number,rngState:number) {
  const initialChips=Math.max(1,Math.min(10,Math.trunc(tickets/10))),debit=Math.min(tickets,initialChips*10)
  // The original music choice still consumes the shared random stream.
- return {debit,rngState:randomInt(rngState,3).nextState,game:{stage:'betting',frame:0,remaining:initialChips,initialChips,debit,
+ const music=randomInt(rngState,3)
+ return {debit,rngState:music.nextState,game:{musicIndex:music.value,stage:'betting',frame:0,remaining:initialChips,initialChips,debit,
   bets:Array(36).fill(0),placements:[],faces:[1,1,1],displayFaces:[1,1,1],payout:0,credit:0,paid:false,winningCells:[]} as LudoGame}
 }
 export function wagerCell(id:number) {

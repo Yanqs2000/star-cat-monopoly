@@ -13,7 +13,7 @@ export interface CourtResult {
 }
 export function courtTargets(source: WorldSnapshot, playerId: number): number[] {
   if (!source.players.some(player => player.id === playerId)) return []
-  return source.players.filter(player => player.id !== playerId && ![2,3,9].includes(source.world.statuses[player.id]!.state)).map(player => player.id)
+  return source.players.filter(player => player.id !== playerId && !(source.eliminatedPlayerIds ?? []).includes(player.id) && ![2,3].includes(source.world.statuses[player.id]!.state)).map(player => player.id)
 }
 export function judgeCourt(source: WorldSnapshot, plaintiffId: number, defendantId: number, caseId: number): CourtResult {
   if (!courtTargets(source, plaintiffId).includes(defendantId) || !Number.isInteger(caseId) || !COURT_CASES[caseId]) {

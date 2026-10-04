@@ -6,8 +6,8 @@ import type { WorldSnapshot } from './world-cards'
 
 export type Direction = 1 | 2 | 3 | 4
 export type Hometown = 1 | 2 | 3 | 4
-export type PlayerController = 'human' | 'ai'
-export type GamePhase = 'awaiting-roll' | 'moving' | 'landed' | 'property-decision' | 'property-result' | 'interaction' | 'insolvent'
+export type PlayerController = 'human' | 'ai' | 'autoplay'
+export type GamePhase = 'awaiting-roll' | 'moving' | 'landed' | 'property-decision' | 'property-result' | 'interaction' | 'insolvent' | 'ended'
 export type GameContinuation =
   | 'start-step'
   | 'process-arrival'
@@ -17,6 +17,7 @@ export type GameContinuation =
   | 'process-god'
   | 'continue-terrain'
   | 'finish-turn'
+  | 'after-monthly'
 
 export interface PlayerState {
   id: number
@@ -31,6 +32,10 @@ export interface PlayerState {
 }
 
 export interface GameState extends WorldSnapshot {
+  eliminatedPlayerIds: number[]
+  bankruptcyReceipts: import('./lifecycle').BankruptcyReceipt[]
+  outcome: import('./lifecycle').GameOutcome | null
+  pendingControl: Record<number, 'human' | 'autoplay'>
   finance: FinanceState
   activePlayerIndex: number
   round: number

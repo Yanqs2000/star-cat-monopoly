@@ -3,13 +3,14 @@ import { randomInt } from './random'
 export type CarnivalInput={kind:'key';direction:-1|0|1}|{kind:'pointer';x:number}
 export interface CarnivalBall {id:number;kind:1|2|3|4;x:number;y:number;frame:number;creation:number}
 export interface CarnivalGame {
- stage:'intro'|'play'|'tally'|'done';characterId:number;frame:number;remainingTenths:number;remainderMs:number;x:number;pose:1|2|3;boyFrame:number;input:CarnivalInput;
+ musicIndex:number;stage:'intro'|'play'|'tally'|'done';characterId:number;frame:number;remainingTenths:number;remainderMs:number;x:number;pose:1|2|3;boyFrame:number;input:CarnivalInput;
  balls:CarnivalBall[];counts:number[];generated:number[];serial:number;coinSerial:number;creation:number;targets:Record<number,number>;scanFrom:number;
  aiStage:0|1|2;aiTarget:number;aiAim:number;aiDirection:number;score:number;tallyFrames:number;idleCounts:number;paid:boolean
 }
 const points=[1,5,8,30],fall=[1.5,5,8,16]
 export function beginCarnival(characterId:number,rngState:number) {
- return {rngState:randomInt(rngState,3).nextState,game:{stage:'intro',characterId,frame:0,remainingTenths:200,remainderMs:0,x:400,pose:1,boyFrame:1,input:{kind:'key',direction:0},balls:[],counts:[0,0,0,0],generated:[0,0,0,0],serial:10,coinSerial:0,creation:0,targets:{},scanFrom:9,aiStage:0,aiTarget:0,aiAim:0,aiDirection:0,score:0,tallyFrames:0,idleCounts:0,paid:false} as CarnivalGame}
+ const music=randomInt(rngState,3)
+ return {rngState:music.nextState,game:{musicIndex:music.value,stage:'intro',characterId,frame:0,remainingTenths:200,remainderMs:0,x:400,pose:1,boyFrame:1,input:{kind:'key',direction:0},balls:[],counts:[0,0,0,0],generated:[0,0,0,0],serial:10,coinSerial:0,creation:0,targets:{},scanFrom:9,aiStage:0,aiTarget:0,aiAim:0,aiDirection:0,score:0,tallyFrames:0,idleCounts:0,paid:false} as CarnivalGame}
 }
 export function setCarnivalInput(game:CarnivalGame,input:CarnivalInput):CarnivalGame {
  if(!['intro','play'].includes(game.stage)||input.kind==='pointer'&&!Number.isFinite(input.x)||input.kind==='key'&&![-1,0,1].includes(input.direction))return game
