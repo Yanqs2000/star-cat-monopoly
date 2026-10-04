@@ -68,3 +68,12 @@ it('原版月结后不重入本回合破产检查：月结产生负余额留待�
  c.acknowledgeMonthly();vi.advanceTimersByTime(10)
  expect(c.state.eliminatedPlayerIds).toEqual([]);expect(c.state.activePlayerIndex).toBe(0);c.dispose()
 })
+
+it('托管经过银行沿用非真人等级策略，不误发人类信用卡',()=>{
+ vi.useFakeTimers();const game=createGame([1],1,0)
+ game.phase='moving';game.continuation='process-arrival';game.remainingSteps=0
+ game.players[0]={...game.players[0]!,controller:'autoplay',cash:300,deposit:700,position:{column:19,row:27}}
+ const c=createGameController(game,options)
+ expect(c.state.players[0]).toMatchObject({cash:1000,deposit:0})
+ expect(c.state.credit[1]!.available).toBe(0);expect(c.state.inventories[1]).not.toContain(1);c.dispose()
+})

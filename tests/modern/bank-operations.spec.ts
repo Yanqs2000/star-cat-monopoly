@@ -73,3 +73,10 @@ describe('原版银行业务', () => {
     expect(result.entries.map(entry => entry.kind)).toEqual(['bank-borrow', 'credit-granted', 'ai-bank-transfer'])
   })
 })
+
+it('托管与普通AI银行等级处理一致',()=>{
+ const game=createGame([1],1,0);game.players[0]!.controller='autoplay'
+ game.players[0]!.cash=300;game.players[0]!.deposit=700
+ const result=applyAiBankVisit(game,1,1)
+ expect(result.error).toBeNull();expect(result.state.players[0]).toMatchObject({cash:1000,deposit:0})
+})

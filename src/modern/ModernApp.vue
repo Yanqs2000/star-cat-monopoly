@@ -315,11 +315,11 @@ async function loadPendingGame() {
   }
 }
 async function startGame() {
+  if (selected.value.length === 0) return
+  cleanupGame()
   audio.startMatch()
   backgroundMusic=`backmusic${Date.now()%5+1}`
   audio.unlock();audio.setPaused(false);audio.effect('sn_2')
-  if (selected.value.length === 0) return
-  cleanupGame()
   const now = new Date()
   const state = createGame([...selected.value], seed(), now.getDay(), {
     year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate(),

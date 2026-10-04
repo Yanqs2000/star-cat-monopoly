@@ -36,7 +36,7 @@ export class AudioSession {
  constructor(private factory:()=>AudioPort=()=>new Audio(),private onError:(message:string|null)=>void=()=>{}){}
  private play(port:AudioPort){
   if(this.paused||!this.unlocked||this.destroyed)return
-  void port.play().catch(()=>this.fail(port))
+  void port.play().catch(error=>{if(error?.name!=='AbortError')this.fail(port)})
  }
  private fail(port:AudioPort){
   if(this.destroyed||this.failed.has(port)||port!==this.bg&&port!==this.foreground&&!this.effects.has(port))return

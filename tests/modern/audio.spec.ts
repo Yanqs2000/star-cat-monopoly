@@ -59,3 +59,12 @@ describe('原声音播放和规则隔离',()=>{
   expect(soundForEvent({kind:'world',playerId:1,worldEvent:{kind:'god-encountered',npcId:5,playerId:1,affectedCellIds:[],affectedPlayerIds:[1],cardIds:[]}})).toBeNull()
  })
 })
+
+it('主动暂停导致的原生play中断不是素材加载失败',async()=>{
+ const errors:string[]=[];let reject!:(reason:unknown)=>void
+ const port=new Port();port.play=()=>new Promise<void>((_,r)=>{reject=r})
+ const audio=new AudioSession(()=>port,e=>{if(e)errors.push(e)})
+ audio.unlock();audio.effect('sn_2');audio.setPaused(true)
+ reject(new DOMException('play interrupted by pause','AbortError'));await Promise.resolve()
+ expect(errors).toEqual([]);audio.destroy()
+})

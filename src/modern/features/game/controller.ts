@@ -759,7 +759,7 @@ export function createGameController(initialState: GameState, options: GameContr
         notify()
         return
       }
-      if (player.controller === 'ai') {
+      if (player.controller !== 'human') {
         const visit = applyAiBankVisit(current, player.id, worldRules.aiLevels[player.id - 1] ?? 0)
         current = visit.state
         const creditEntry = visit.entries.find(entry => entry.kind === 'credit-granted')

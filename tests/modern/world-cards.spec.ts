@@ -400,3 +400,11 @@ describe('日期、限制释放、神到期与信用申请', () => {
     expect(applyBankCredit(ai, 2).event?.kind).toBe('credit-declined')
   })
 })
+
+it.each([6,7] as const)('淘汰玩家原位置不阻挡障碍卡%d，存活玩家仍阻挡',card=>{
+ const source=snapshot([card],[player(1,{column:34,row:8}),player(2)])
+ const choice={kind:'cell' as const,position:{column:6,row:32}}
+ expect(applyWorldCard(source,1,0,choice).consumed).toBe(false)
+ source.eliminatedPlayerIds=[2]
+ expect(applyWorldCard(source,1,0,choice).consumed).toBe(true)
+})

@@ -59,7 +59,7 @@ export function applyAiBankVisit(
   draw: (state: number, bound: number) => RandomResult = randomInt,
 ): { state: GameState; entries: FinanceEntry[]; error: string | null } {
   const original = source.players.find(value => value.id === playerId)
-  if (!original || original.controller !== 'ai' || !Number.isInteger(level) || level < 0 ||
+  if (!original || original.controller === 'human' || !Number.isInteger(level) || level < 0 ||
       !Number.isInteger(priceId) || priceId < 1) {
     return { state: source, entries: [], error: 'AI 银行参数无效' }
   }

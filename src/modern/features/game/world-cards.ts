@@ -252,7 +252,7 @@ function applyPlacementCard(
   const record = cell === undefined ? undefined : getCardRecord(cell.id)
   if (cell === undefined || record === undefined || cell.type < 1 || cell.type > 29 ||
       (cell.type < 24 && !(typeof record.facing === 'number' && record.facing > 0)) ||
-      source.world.markers[cell.id] !== undefined || source.players.some(value => getCardCell(value.position)?.id === cell.id)) {
+      source.world.markers[cell.id] !== undefined || source.players.some(value => !source.eliminatedPlayerIds?.includes(value.id) && getCardCell(value.position)?.id === cell.id)) {
     return invalid(source, '目标不能放置障碍')
   }
   const snapshot = cloneWorldSnapshot(source)
