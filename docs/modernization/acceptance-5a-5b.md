@@ -15,15 +15,17 @@
 ## 验证证据
 
 - `npm run typecheck` 通过。
-- `npm test`：80 个测试文件、626 项通过。
+- `npm test`：80 个测试文件、627 项通过。
+- `npm run check:saves` 通过；魔法门交互新增的可选视觉随机状态已重新生成到权威快照 Schema，旧快照省略此字段时仍可解析。
 - `scripts/test_modern_hd_assets.py`：6 项通过。
 - `scripts/verify-modern-hd-assets.py`：15,849 个源路径与高清路径逐一匹配；逐图 WebP 哈希、解码尺寸、alpha 哈希、源哈希、候选映射和角色/活动帧时序均通过。WebP 文件总量 244,614,960 字节；`hd-manifest.json` SHA-256 为 `9cb6b606e2dcb7491d15002e51752b6df4a616e1f0e6983e4fb14f3819bb5e28`。
-- 生产构建通过，输出在忽略目录 `.analysis-cache/modern-hd-prod/`。Vite 有既有 Pixi 主包 769 KB 的非阻塞体积警告（gzip 约 231 KB）。
-- 生产 Chrome/Playwright `tests/e2e/modern-hd-assets.spec.ts`：6 项通过。覆盖原/高清首回合相同随机输入、掷骰和 JSON 序列化完整 `GameState`（包括 RNG）的 64 位指纹；角色帧 404 后恢复；暂停安全点切换失败保护、候选预载期间阻断速度/继续输入、成功切换及切回原版；选人页高清验证竞速取消；游乐场逻辑画布比例；以及 27 组原/高清资源预览（54 张图）的尺寸。
+- 生产构建通过，最终输出在忽略目录 `.analysis-cache/modern-hd-parity-prod/`。Vite 有 Pixi 主包约 770 KB 的非阻塞体积警告（gzip 约 231 KB）。
+- 生产 Chrome/Playwright 共 13 项通过：6 项画质切换、恢复、游乐场和 27 组资源对照；6 类同种子原/高清回放逐字段比较，覆盖开局掷骰、公司认购、NPC 结算、魔法门转运、彩票和跨月结算，并直接比较序列化完整 `GameState`（含 `rngState`）；另 1 项检查实际生产资源加载量和纹理上限。差分测试发现魔法门头像的视觉时钟曾推进权威 RNG，导致相同对局指令会因素材准备与动画时机产生不同转运方向和后续股价；现将后续头像动画随机保存在可序列化的视觉状态，保留入场抽样和选站方向抽样，动画等待不再改变规则 RNG。控制器测试验证 100ms 和 1,000ms 不同等待时长仍得到相同转运结果。
+- 生产 Chromium 资源检查通过：`MAX_TEXTURE_SIZE=8192`，高清图集中最大单图边长 5400；开局实际捕获到 1,294 个高清资源响应、1,288 张唯一图像，响应正文合计 13,642,813 字节。按图组统计：世界/NPC 动画 810 张（224,849,152 解码字节），地图 1 张（110,246,400），角色 360 张（45,017,808），住宅 100 张（17,375,616），公司 12 张（7,311,760），互动 5 张（348,400）。合计按唯一图像像素尺寸和 RGBA 每像素 4 字节计算为 405,149,136 字节；这是解码尺寸估算，不等同于浏览器实际驻留的 GPU 内存。一次 Chromium 页面采样的 JS 堆约 13.8 MB，图像/GPU 内存不计入此数值。Playwright 从完整网络响应逐条计量，没有依赖有条目数上限的 Resource Timing。浏览器控制台、页面异常及资源响应均无错误。
 - 三张画布回放截图显示切换前、高清、切回原版的全图构图与镜头一致：[切换前](evidence/phase-5b/camera-before-profile-switch.png)、[高清](evidence/phase-5b/camera-after-profile-switch-hd.png)、[切回原版](evidence/phase-5b/camera-after-profile-switch-original.png)。开局和游乐场对照截图以及透明棋盘联系表位于同目录。
-- 独立代码复审复核了 170 个活动 clip / 1,538 帧、候选公司形状映射、2×渲染补边及最后两项交互修复；没有新的 Critical/Important 遗留。
+- 独立代码复审复核高清资源映射、头像规则 RNG 隔离、快照 Schema、跨画质回放采样和全响应资源计量；先前两项测试证据问题已关闭，最终复审没有 Critical/Important 遗留。最终 13 项生产 E2E 由主执行者在复审后重新运行并通过；复审者未重复运行这 13 项。
 
-可从本地现代入口试玩：`http://127.0.0.1:4184/modern.html`；原版/高清分组对照页为[`/hd-review/5b/index.html`](../../public/modern/hd-review/5b/index.html)，5A 角色与地图样本为[`/hd-review/5a/index.html`](../../public/modern/hd-review/5a/index.html)。完整高清图集是被 `.gitignore` 排除的可复现构建产物，不作为 262 MB 静态资源提交。
+当前分支的生产回放预览为 [http://127.0.0.1:5193/modern.html](http://127.0.0.1:5193/modern.html)；原版/高清分组对照页为[`/hd-review/5b/index.html`](http://127.0.0.1:5193/hd-review/5b/index.html)，5A 角色与地图样本为[`/hd-review/5a/index.html`](http://127.0.0.1:5193/hd-review/5a/index.html)。完整高清图集是被 `.gitignore` 排除的可复现构建产物，不作为 262 MB 静态资源提交。
 
 ## 明确保留的差异
 
@@ -31,6 +33,6 @@
 
 生产浏览器测试检查了开局、掷骰、游乐场、切换和素材失败恢复，没有完成长时间人工通关或所有地点逐帧目检。用户尚未确认本批验收；确认后才按路线图规划 5C 的 1080p/全屏整体画面与高清文本覆盖。
 
-同条件对比中已验证开局到首次掷骰的完整 GameState 指纹一致；已有 `carnival.spec.ts` 另行验证 30/60/120 次刷新率下 `CarnivalGame` 和 RNG 一致。本批没有为公司、NPC、月结等更长规则命令逐条制作原/高清跨 profile 全状态差分；画质仅改变资源路径，控制器也在切换中保留原实例。
+已有 `carnival.spec.ts` 验证相同输入在 30/60/120 次刷新率下的完整 `CarnivalGame` 和 RNG 一致。分组联系表覆盖27个代表样本的原/高清图像，完整资源验证器另逐路径校验 15,849 项来源、哈希、透明通道、尺寸、时序、逻辑锚点和候选映射。浏览器没有逐张打开全部动画帧，本批也未进行长时间人工通关或所有地点逐帧目检。
 
 回退代码点：`5bca5b8`。正式原始 SWF 未修改；高清输出和 JPEXS 临时工作 SWF 均位于忽略路径。工作分支、最终提交号及复审结论在[续跑记录](resume-5.md)更新。
