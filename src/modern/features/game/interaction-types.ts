@@ -1,3 +1,4 @@
+import type { BankruptcyReceipt } from './lifecycle'
 import type { CarnivalGame } from './carnival'
 import type { LudoGame } from './ludo'
 import type { ShopState } from './card-economy'
@@ -47,7 +48,7 @@ interface CardInteractionBase {
 }
 
 export type GameInteraction =
-  | { kind: 'bankruptcy'; playerId: number; receipt: import('./lifecycle').BankruptcyReceipt }
+  | { kind: 'bankruptcy'; playerId: number; receipt: BankruptcyReceipt }
   | { kind:'carnival';playerId:number;game:CarnivalGame }
   | { kind:'ludo';playerId:number;game:LudoGame }
   | { kind: 'npc-opening'; playerId: number; npcId: 1; cellId: number; presentation: ActivityPresentation }

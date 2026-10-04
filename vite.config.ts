@@ -11,9 +11,11 @@ export const createViteConfig = (mode: string) => ({
   },
   publicDir: mode === 'modern' ? 'public/modern' : 'public',
   build: mode === 'modern' ? { outDir: 'dist-modern', rolldownOptions: { input: fileURLToPath(new URL('./modern.html', import.meta.url)) } } : {},
+  preview: { proxy: mode === 'modern' ? { '/api': { target: 'http://127.0.0.1:4186', changeOrigin: true } } : undefined },
   server: {
     port: mode === 'modern' ? 5184 : 5173,
     open: false,
+    proxy: mode === 'modern' ? { '/api': { target: 'http://127.0.0.1:4186', changeOrigin: true } } : undefined,
   },
 })
 export default defineConfig(({ mode }) => createViteConfig(mode))

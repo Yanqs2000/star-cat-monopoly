@@ -22,16 +22,16 @@
 ### Task 1: 版本化快照与完整校验
 **Files:** src/modern/features/saves/{snapshot.ts,snapshot-types.ts,snapshot.schema.json}, scripts/build-save-schema.mjs, tests/saves/snapshot.spec.ts
 **Interfaces:** createSnapshot(state,selection,settings,createdAt,now):SaveSnapshot; parseSnapshot(unknown):SaveSnapshot; canSaveGame(GameState):boolean。
-- [ ] 写失败测试：完整初局round1/RNG/持股/地图roundtrip；缺字段/未知版本/坏日期/坏引用/小数计数/重复玩家拒绝；非stable保存拒绝；终局快照可恢复。
-- [ ] npm test -- tests/saves/snapshot.spec.ts → RED，再实现generator/schema与语义校验。
-- [ ] 同命令 → GREEN；npm run typecheck → 通过；提交。
+- [x] 写失败测试：完整初局round1/RNG/持股/地图roundtrip；缺字段/未知版本/坏日期/坏引用/小数计数/重复玩家拒绝；非stable保存拒绝；终局快照可恢复。
+- [x] npm test -- tests/saves/snapshot.spec.ts → RED，再实现generator/schema与语义校验。
+- [x] 同命令 → GREEN；npm run typecheck → 通过；提交。
 
 ### Task 2: SQLite事务与本地API
 **Files:** server/{store.ts,app.ts,main.ts}, tests/saves/{store.spec.ts,api.spec.ts}, package.json, tsconfig.json, .gitignore, vite.config.ts
 **Interfaces:** SaveStore(path).list/read/save(slot,expectedRevision,requestId,snapshot)；createSaveServer({dbPath,staticRoot?,allowedOrigins?}):FastifyInstance；/api/session、/api/saves、/api/saves/:slot。
-- [ ] 写失败测试：三个槽/重开数据库原样；CAS双实例一胜一409；真实SQLite触发器失败旧值保留；同请求重试revision不变、不同内容拒绝；空槽404、坏格式400、无CSRF/坏Origin/Host403。
-- [ ] npm test -- tests/saves/store.spec.ts tests/saves/api.spec.ts → RED，锁定依赖并实现SQLite/Fastify。
-- [ ] 同命令 → GREEN；typecheck；启动实际Node24服务curl核对；提交。
+- [x] 写失败测试：三个槽/重开数据库原样；CAS双实例一胜一409；真实SQLite触发器失败旧值保留；同请求重试revision不变、不同内容拒绝；空槽404、坏格式400、无CSRF/坏Origin/Host403。
+- [x] npm test -- tests/saves/store.spec.ts tests/saves/api.spec.ts → RED，锁定依赖并实现SQLite/Fastify。
+- [x] 同命令 → GREEN；typecheck；启动实际Node24服务curl核对；提交。
 
 ### Task 3: 手动存读档菜单和无损替换
 **Files:** src/modern/features/saves/{client.ts,SavePanel.vue,restore.ts}, src/modern/ModernApp.vue, tests/saves/{client.spec.ts,panel.spec.ts,restore.spec.ts}

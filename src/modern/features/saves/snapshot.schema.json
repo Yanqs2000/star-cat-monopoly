@@ -1,0 +1,2086 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SaveSnapshot",
+  "definitions": {
+    "SaveSnapshot": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "const": "star-cat-monopoly"
+        },
+        "formatVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "rulesVersion": {
+          "type": "string",
+          "const": "modern-3d-v1"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "savedAt": {
+          "type": "string"
+        },
+        "selection": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "speed": {
+              "type": "number",
+              "enum": [
+                1,
+                2
+              ]
+            },
+            "paused": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "speed",
+            "paused"
+          ],
+          "additionalProperties": false
+        },
+        "state": {
+          "$ref": "#/definitions/GameState"
+        }
+      },
+      "required": [
+        "format",
+        "formatVersion",
+        "rulesVersion",
+        "createdAt",
+        "savedAt",
+        "selection",
+        "settings",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "GameState": {
+      "type": "object",
+      "properties": {
+        "eliminatedPlayerIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "players": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PlayerState"
+          }
+        },
+        "properties": {
+          "$ref": "#/definitions/PropertyLedger"
+        },
+        "prices": {
+          "$ref": "#/definitions/PropertyPrices"
+        },
+        "inventories": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "credit": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "used": {
+                "type": "number"
+              },
+              "available": {
+                "type": "number"
+              },
+              "score": {
+                "type": "number"
+              },
+              "grant": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "used",
+              "available",
+              "score"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "forcedDice": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "stayPlayerIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "unownedOwnerDeposit": {
+          "type": "number"
+        },
+        "rngState": {
+          "type": "number"
+        },
+        "world": {
+          "$ref": "#/definitions/WorldState"
+        },
+        "tickets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "lostAndFoundFunds": {
+          "$ref": "#/definitions/LostAndFoundFunds"
+        },
+        "bankruptcyReceipts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BankruptcyReceipt"
+          }
+        },
+        "outcome": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/GameOutcome"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pendingControl": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "human",
+              "autoplay"
+            ]
+          }
+        },
+        "finance": {
+          "$ref": "#/definitions/FinanceState"
+        },
+        "activePlayerIndex": {
+          "type": "number"
+        },
+        "round": {
+          "type": "number"
+        },
+        "phase": {
+          "$ref": "#/definitions/GamePhase"
+        },
+        "remainingSteps": {
+          "type": "number"
+        },
+        "lastRoll": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "turnPath": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GridPoint"
+          }
+        },
+        "propertyOffer": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/PropertyOffer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lastPropertyEvent": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/PropertyEvent"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "interaction": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/GameInteraction"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "skipLandingMarker": {
+          "type": "boolean"
+        },
+        "continuation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/GameContinuation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "activePlayerIndex",
+        "bankruptcyReceipts",
+        "continuation",
+        "credit",
+        "eliminatedPlayerIds",
+        "finance",
+        "forcedDice",
+        "interaction",
+        "inventories",
+        "lastPropertyEvent",
+        "lastRoll",
+        "lostAndFoundFunds",
+        "outcome",
+        "pendingControl",
+        "phase",
+        "players",
+        "prices",
+        "properties",
+        "propertyOffer",
+        "remainingSteps",
+        "rngState",
+        "round",
+        "skipLandingMarker",
+        "stayPlayerIds",
+        "tickets",
+        "turnPath",
+        "unownedOwnerDeposit",
+        "world"
+      ],
+      "additionalProperties": false
+    },
+    "PlayerState": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "characterId": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "controller": {
+          "$ref": "#/definitions/PlayerController"
+        },
+        "hometown": {
+          "$ref": "#/definitions/Hometown"
+        },
+        "position": {
+          "$ref": "#/definitions/GridPoint"
+        },
+        "direction": {
+          "$ref": "#/definitions/Direction"
+        },
+        "cash": {
+          "type": "number"
+        },
+        "deposit": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "characterId",
+        "name",
+        "controller",
+        "hometown",
+        "position",
+        "direction",
+        "cash",
+        "deposit"
+      ],
+      "additionalProperties": false
+    },
+    "PlayerController": {
+      "type": "string",
+      "enum": [
+        "human",
+        "ai",
+        "autoplay"
+      ]
+    },
+    "Hometown": {
+      "type": "number",
+      "enum": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "GridPoint": {
+      "type": "object",
+      "properties": {
+        "column": {
+          "type": "number"
+        },
+        "row": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "column",
+        "row"
+      ],
+      "additionalProperties": false
+    },
+    "Direction": {
+      "type": "number",
+      "enum": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "PropertyLedger": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/PropertyState"
+      }
+    },
+    "PropertyState": {
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "level": {
+          "type": "number",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      "required": [
+        "ownerId",
+        "level"
+      ],
+      "additionalProperties": false
+    },
+    "PropertyPrices": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "WorldState": {
+      "type": "object",
+      "properties": {
+        "markers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "statuses": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/WorldPlayerStatus"
+          }
+        },
+        "weekday": {
+          "type": "number"
+        },
+        "elapsedDays": {
+          "type": "number"
+        },
+        "year": {
+          "type": "number"
+        },
+        "month": {
+          "type": "number"
+        },
+        "day": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "markers",
+        "statuses",
+        "weekday",
+        "elapsedDays",
+        "year",
+        "month",
+        "day"
+      ],
+      "additionalProperties": false
+    },
+    "WorldPlayerStatus": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "number",
+          "enum": [
+            0,
+            2,
+            3,
+            9
+          ]
+        },
+        "days": {
+          "type": "number"
+        },
+        "godId": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "godDays": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "state",
+        "days",
+        "godId",
+        "godDays"
+      ],
+      "additionalProperties": false
+    },
+    "LostAndFoundFunds": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "BankruptcyReceipt": {
+      "type": "object",
+      "properties": {
+        "playerId": {
+          "type": "number"
+        },
+        "cashBefore": {
+          "type": "number"
+        },
+        "depositBefore": {
+          "type": "number"
+        },
+        "loanBefore": {
+          "type": "number"
+        },
+        "creditUsedBefore": {
+          "type": "number"
+        },
+        "sharesReturned": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "propertyIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "round": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "playerId",
+        "cashBefore",
+        "depositBefore",
+        "loanBefore",
+        "creditUsedBefore",
+        "sharesReturned",
+        "propertyIds",
+        "round"
+      ],
+      "additionalProperties": false
+    },
+    "GameOutcome": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "victory",
+            "defeat"
+          ]
+        },
+        "winnerId": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "winnerId"
+      ],
+      "additionalProperties": false
+    },
+    "FinanceState": {
+      "type": "object",
+      "properties": {
+        "stocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StockCompany"
+          }
+        },
+        "loans": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "lastSettledMonth": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "monthlyQuoteIndex": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FinanceEntry"
+          }
+        }
+      },
+      "required": [
+        "stocks",
+        "loans",
+        "lastSettledMonth",
+        "monthlyQuoteIndex",
+        "entries"
+      ],
+      "additionalProperties": false
+    },
+    "StockCompany": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "basePrice": {
+          "type": "number"
+        },
+        "previousPrice": {
+          "type": "number"
+        },
+        "price": {
+          "type": "number"
+        },
+        "change": {
+          "type": "number"
+        },
+        "high": {
+          "type": "number"
+        },
+        "low": {
+          "type": "number"
+        },
+        "factorA": {
+          "type": "number"
+        },
+        "factorB": {
+          "type": "number"
+        },
+        "dailyBuyLimit": {
+          "type": "number"
+        },
+        "poolBandValue": {
+          "type": "number"
+        },
+        "holdings": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/StockHolding"
+          }
+        },
+        "profit": {
+          "type": "number"
+        },
+        "kind": {
+          "type": "number",
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "ceoId": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "mainRecordId": {
+          "type": "number"
+        },
+        "offerShares": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "basePrice",
+        "previousPrice",
+        "price",
+        "change",
+        "high",
+        "low",
+        "factorA",
+        "factorB",
+        "dailyBuyLimit",
+        "poolBandValue",
+        "holdings",
+        "profit",
+        "kind",
+        "ceoId",
+        "mainRecordId",
+        "offerShares"
+      ],
+      "additionalProperties": false
+    },
+    "StockHolding": {
+      "type": "object",
+      "properties": {
+        "shares": {
+          "type": "number"
+        },
+        "averageCost": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "shares",
+        "averageCost"
+      ],
+      "additionalProperties": false
+    },
+    "FinanceEntry": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "playerId": {
+          "type": "number"
+        },
+        "companyId": {
+          "type": "number"
+        },
+        "sourceAmount": {
+          "type": "number"
+        },
+        "cashDelta": {
+          "type": "number"
+        },
+        "depositDelta": {
+          "type": "number"
+        },
+        "loanDelta": {
+          "type": "number"
+        },
+        "creditUsedDelta": {
+          "type": "number"
+        },
+        "creditAvailableDelta": {
+          "type": "number"
+        },
+        "sharesDelta": {
+          "type": "number"
+        },
+        "priceBefore": {
+          "type": "number"
+        },
+        "priceAfter": {
+          "type": "number"
+        },
+        "diceFaces": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "GamePhase": {
+      "type": "string",
+      "enum": [
+        "awaiting-roll",
+        "moving",
+        "landed",
+        "property-decision",
+        "property-result",
+        "interaction",
+        "insolvent",
+        "ended"
+      ]
+    },
+    "PropertyOffer": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "purchase",
+            "upgrade",
+            "rent",
+            "max-level"
+          ]
+        },
+        "parcelId": {
+          "type": "number"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "ownerId": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "parcelId",
+        "amount",
+        "ownerId"
+      ],
+      "additionalProperties": false
+    },
+    "PropertyEvent": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "purchased",
+            "upgraded",
+            "upgrade-failed",
+            "rent-paid",
+            "declined",
+            "insufficient-cash",
+            "max-level"
+          ]
+        },
+        "playerId": {
+          "type": "number"
+        },
+        "parcelId": {
+          "type": "number"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "recipientId": {
+          "type": "number"
+        },
+        "level": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind",
+        "playerId",
+        "parcelId",
+        "amount"
+      ],
+      "additionalProperties": false
+    },
+    "GameInteraction": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "bankruptcy"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "receipt": {
+              "$ref": "#/definitions/BankruptcyReceipt"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "receipt"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "carnival"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "game": {
+              "$ref": "#/definitions/CarnivalGame"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "game"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "ludo"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "game": {
+              "$ref": "#/definitions/LudoGame"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "game"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "npc-opening"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "npcId": {
+              "type": "number",
+              "const": 1
+            },
+            "cellId": {
+              "type": "number"
+            },
+            "presentation": {
+              "$ref": "#/definitions/ActivityPresentation"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "npcId",
+            "cellId",
+            "presentation"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "portal"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "stage": {
+              "type": "string",
+              "enum": [
+                "choice",
+                "flight"
+              ]
+            },
+            "destination": {
+              "type": "number"
+            },
+            "flight": {
+              "$ref": "#/definitions/PortalFlight"
+            },
+            "heads": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PortalHead"
+              }
+            },
+            "choiceFrames": {
+              "type": "number"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "presentation": {
+              "$ref": "#/definitions/ActivityPresentation"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "stage"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "court"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "stage": {
+              "type": "string",
+              "enum": [
+                "target",
+                "case",
+                "judgement",
+                "transfer",
+                "holding"
+              ]
+            },
+            "targetId": {
+              "type": "number"
+            },
+            "caseId": {
+              "type": "number"
+            },
+            "verdict": {
+              "$ref": "#/definitions/CourtVerdict"
+            },
+            "roll": {
+              "type": "number"
+            },
+            "jailedPlayerId": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "transferOrigin": {
+              "$ref": "#/definitions/GridPoint"
+            },
+            "waitFrames": {
+              "type": "number"
+            },
+            "verdictFrame": {
+              "type": "number"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "presentation": {
+              "$ref": "#/definitions/ActivityPresentation"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "stage"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "card-confirm"
+            },
+            "choiceError": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "cardId": {
+              "type": "number"
+            },
+            "cardIndex": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "await-roll"
+            }
+          },
+          "required": [
+            "cardId",
+            "cardIndex",
+            "choiceError",
+            "kind",
+            "playerId",
+            "resume"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "dice-choice"
+            },
+            "choiceError": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "cardId": {
+              "type": "number"
+            },
+            "cardIndex": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "await-roll"
+            }
+          },
+          "required": [
+            "cardId",
+            "cardIndex",
+            "choiceError",
+            "kind",
+            "playerId",
+            "resume"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "target-choice"
+            },
+            "choiceError": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "cardId": {
+              "type": "number"
+            },
+            "cardIndex": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "await-roll"
+            }
+          },
+          "required": [
+            "cardId",
+            "cardIndex",
+            "choiceError",
+            "kind",
+            "playerId",
+            "resume"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "credit-choice"
+            },
+            "choiceError": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "cardId": {
+              "type": "number"
+            },
+            "cardIndex": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "await-roll"
+            }
+          },
+          "required": [
+            "cardId",
+            "cardIndex",
+            "choiceError",
+            "kind",
+            "playerId",
+            "resume"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "shop"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "shop": {
+              "$ref": "#/definitions/ShopState"
+            },
+            "resume": {
+              "type": "string",
+              "const": "shop"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "shop",
+            "resume"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "bank"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "after-bank"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "resume"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "stock"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "after-stock"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "resume"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "company"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "companyId": {
+              "type": "number"
+            },
+            "resume": {
+              "type": "string",
+              "const": "company"
+            },
+            "chargeEntry": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FinanceEntry"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "companyId",
+            "resume"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "monthly-settlement"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FinanceEntry"
+              }
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "entries"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "ticket-exchange"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "mode": {
+              "$ref": "#/definitions/TicketExchangeMode"
+            },
+            "npcCellId": {
+              "type": "number"
+            },
+            "error": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "presentation": {
+              "$ref": "#/definitions/ActivityPresentation"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "mode"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "notice"
+            },
+            "playerId": {
+              "type": "number"
+            },
+            "notice": {
+              "$ref": "#/definitions/InteractionNotice"
+            },
+            "resume": {
+              "$ref": "#/definitions/InteractionResume"
+            },
+            "shop": {
+              "$ref": "#/definitions/ShopState"
+            },
+            "presentation": {
+              "$ref": "#/definitions/ActivityPresentation"
+            }
+          },
+          "required": [
+            "kind",
+            "playerId",
+            "notice",
+            "resume"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CarnivalGame": {
+      "type": "object",
+      "properties": {
+        "musicIndex": {
+          "type": "number"
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "intro",
+            "play",
+            "tally",
+            "done"
+          ]
+        },
+        "characterId": {
+          "type": "number"
+        },
+        "frame": {
+          "type": "number"
+        },
+        "remainingTenths": {
+          "type": "number"
+        },
+        "remainderMs": {
+          "type": "number"
+        },
+        "x": {
+          "type": "number"
+        },
+        "pose": {
+          "type": "number",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "boyFrame": {
+          "type": "number"
+        },
+        "input": {
+          "$ref": "#/definitions/CarnivalInput"
+        },
+        "balls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CarnivalBall"
+          }
+        },
+        "counts": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "generated": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "serial": {
+          "type": "number"
+        },
+        "coinSerial": {
+          "type": "number"
+        },
+        "creation": {
+          "type": "number"
+        },
+        "targets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "scanFrom": {
+          "type": "number"
+        },
+        "aiStage": {
+          "type": "number",
+          "enum": [
+            0,
+            1,
+            2
+          ]
+        },
+        "aiTarget": {
+          "type": "number"
+        },
+        "aiAim": {
+          "type": "number"
+        },
+        "aiDirection": {
+          "type": "number"
+        },
+        "score": {
+          "type": "number"
+        },
+        "tallyFrames": {
+          "type": "number"
+        },
+        "idleCounts": {
+          "type": "number"
+        },
+        "paid": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "musicIndex",
+        "stage",
+        "characterId",
+        "frame",
+        "remainingTenths",
+        "remainderMs",
+        "x",
+        "pose",
+        "boyFrame",
+        "input",
+        "balls",
+        "counts",
+        "generated",
+        "serial",
+        "coinSerial",
+        "creation",
+        "targets",
+        "scanFrom",
+        "aiStage",
+        "aiTarget",
+        "aiAim",
+        "aiDirection",
+        "score",
+        "tallyFrames",
+        "idleCounts",
+        "paid"
+      ],
+      "additionalProperties": false
+    },
+    "CarnivalInput": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "key"
+            },
+            "direction": {
+              "type": "number",
+              "enum": [
+                -1,
+                0,
+                1
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "direction"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "pointer"
+            },
+            "x": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "kind",
+            "x"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "CarnivalBall": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "kind": {
+          "type": "number",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "frame": {
+          "type": "number"
+        },
+        "creation": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "x",
+        "y",
+        "frame",
+        "creation"
+      ],
+      "additionalProperties": false
+    },
+    "LudoGame": {
+      "type": "object",
+      "properties": {
+        "musicIndex": {
+          "type": "number"
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "betting",
+            "rolling",
+            "payout",
+            "awards",
+            "done"
+          ]
+        },
+        "frame": {
+          "type": "number"
+        },
+        "remaining": {
+          "type": "number"
+        },
+        "initialChips": {
+          "type": "number"
+        },
+        "debit": {
+          "type": "number"
+        },
+        "bets": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "placements": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "faces": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "displayFaces": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "payout": {
+          "type": "number"
+        },
+        "credit": {
+          "type": "number"
+        },
+        "paid": {
+          "type": "boolean"
+        },
+        "winningCells": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "required": [
+        "musicIndex",
+        "stage",
+        "frame",
+        "remaining",
+        "initialChips",
+        "debit",
+        "bets",
+        "placements",
+        "faces",
+        "displayFaces",
+        "payout",
+        "credit",
+        "paid",
+        "winningCells"
+      ],
+      "additionalProperties": false
+    },
+    "ActivityPresentation": {
+      "type": "object",
+      "properties": {
+        "clipId": {
+          "type": "string"
+        },
+        "frame": {
+          "type": "number"
+        },
+        "totalFrames": {
+          "type": "number"
+        },
+        "nextClip": {
+          "type": "string"
+        },
+        "cellId": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "clipId",
+        "frame",
+        "totalFrames"
+      ],
+      "additionalProperties": false,
+      "description": "Source amounts and actual account changes are intentionally separate."
+    },
+    "PortalFlight": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "scale": {
+          "type": "number"
+        },
+        "stage": {
+          "type": "number",
+          "enum": [
+            0,
+            1,
+            2
+          ]
+        },
+        "stageFrames": {
+          "type": "number"
+        },
+        "frames": {
+          "type": "number"
+        },
+        "to": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "additionalProperties": false
+        },
+        "stepX": {
+          "type": "number"
+        },
+        "stepY": {
+          "type": "number"
+        },
+        "heading": {
+          "type": "number"
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "depth": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "scale",
+        "stage",
+        "stageFrames",
+        "frames",
+        "to",
+        "stepX",
+        "stepY",
+        "heading",
+        "done",
+        "depth"
+      ],
+      "additionalProperties": false
+    },
+    "PortalHead": {
+      "type": "object",
+      "properties": {
+        "playerId": {
+          "type": "number"
+        },
+        "t": {
+          "type": "number"
+        },
+        "phase": {
+          "type": "number",
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "alpha": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "playerId",
+        "t",
+        "phase",
+        "alpha"
+      ],
+      "additionalProperties": false
+    },
+    "CourtVerdict": {
+      "type": "string",
+      "enum": [
+        "win",
+        "settle",
+        "lose"
+      ]
+    },
+    "ShopState": {
+      "type": "object",
+      "properties": {
+        "stock": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      },
+      "required": [
+        "stock"
+      ],
+      "additionalProperties": false
+    },
+    "TicketExchangeMode": {
+      "type": "string",
+      "enum": [
+        "buy",
+        "sell"
+      ]
+    },
+    "InteractionNotice": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/NoticeKind"
+        },
+        "message": {
+          "type": "string"
+        },
+        "cardId": {
+          "type": "number"
+        },
+        "eventKind": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "npcId": {
+          "type": "number"
+        },
+        "affectedPlayerIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "affectedCellIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "cardIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "luckEvent": {
+          "$ref": "#/definitions/LuckEvent"
+        },
+        "financeEntry": {
+          "$ref": "#/definitions/FinanceEntry"
+        },
+        "receipt": {
+          "$ref": "#/definitions/ActivityReceipt"
+        }
+      },
+      "required": [
+        "kind",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "NoticeKind": {
+      "type": "string",
+      "enum": [
+        "card",
+        "world",
+        "bank",
+        "stock",
+        "company",
+        "shop",
+        "card-draw",
+        "luck",
+        "tickets",
+        "restriction",
+        "activity"
+      ]
+    },
+    "LuckEvent": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "cash",
+            "tickets"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "sourceAmount": {
+          "type": "number"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "correction": {
+          "type": "string",
+          "const": "B-01"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "description",
+        "sourceAmount",
+        "amount"
+      ],
+      "additionalProperties": false
+    },
+    "ActivityReceipt": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "sourceAmount": {
+          "type": "number"
+        },
+        "cashDelta": {
+          "type": "number"
+        },
+        "depositDelta": {
+          "type": "number"
+        },
+        "ticketDelta": {
+          "type": "number"
+        },
+        "ticketDebit": {
+          "type": "number"
+        },
+        "ticketCredit": {
+          "type": "number"
+        },
+        "rate": {
+          "type": "number"
+        },
+        "addedCardIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "removedCardIds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "lostAndFoundDeltas": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "InteractionResume": {
+      "type": "string",
+      "enum": [
+        "await-roll",
+        "after-bank",
+        "after-stock",
+        "after-marker",
+        "after-god",
+        "end-turn",
+        "shop",
+        "bank",
+        "stock"
+      ]
+    },
+    "GameContinuation": {
+      "type": "string",
+      "enum": [
+        "start-step",
+        "process-arrival",
+        "after-bank",
+        "after-stock",
+        "handle-landing",
+        "process-god",
+        "continue-terrain",
+        "finish-turn",
+        "after-monthly"
+      ]
+    }
+  }
+}

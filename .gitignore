@@ -16,3 +16,10 @@ __pycache__/
 .analysis-tools/
 .analysis-cache/
 .worktrees/
+
+# Local manual saves and private development data
+.data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.superpowers/

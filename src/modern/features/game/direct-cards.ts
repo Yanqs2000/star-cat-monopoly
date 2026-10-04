@@ -10,7 +10,7 @@ export interface DirectCardSnapshot {
   properties: PropertyLedger
   prices: PropertyPrices
   inventories: Record<number, number[]>
-  credit: Record<number, { used: number; available: number; score: number }>
+  credit: Record<number, { used: number; available: number; score: number; grant?: number }>
   forcedDice: Record<number, number | null>
   stayPlayerIds: number[]
   unownedOwnerDeposit: number

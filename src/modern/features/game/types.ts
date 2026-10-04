@@ -1,3 +1,4 @@
+import type { BankruptcyReceipt, GameOutcome } from './lifecycle'
 import type { GridPoint } from '../map/types'
 import type { GameInteraction } from './interaction-types'
 import type { PropertyEvent, PropertyOffer } from './property'
@@ -33,8 +34,8 @@ export interface PlayerState {
 
 export interface GameState extends WorldSnapshot {
   eliminatedPlayerIds: number[]
-  bankruptcyReceipts: import('./lifecycle').BankruptcyReceipt[]
-  outcome: import('./lifecycle').GameOutcome | null
+  bankruptcyReceipts: BankruptcyReceipt[]
+  outcome: GameOutcome | null
   pendingControl: Record<number, 'human' | 'autoplay'>
   finance: FinanceState
   activePlayerIndex: number
