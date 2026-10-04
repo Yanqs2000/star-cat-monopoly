@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<{
   speed: number
   history: string[]
   cardAssets?: InteractionAsset[]
+  preparedImages?:Record<string,string>
 }>(), { cardAssets: () => [] })
 const emit = defineEmits<{
   roll: []
@@ -96,7 +97,7 @@ function restriction(playerId: number): string {
     <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>已发生的回合与交易</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>
     <p class="funds">失物招领 {{ game.lostAndFoundFunds[0] }} / {{ game.lostAndFoundFunds[1] }} · {{ game.world.year }}年{{ game.world.month }}月{{ game.world.day }}日 · 星期 {{ game.world.weekday }} · 已过 {{ game.world.elapsedDays }}天</p>
-    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
+    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" :prepared-images="preparedImages" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
     <p class="scope">银行、股市、公司、普通 NPC 和奖券兑换已开放。</p>
   </aside>
 </template>

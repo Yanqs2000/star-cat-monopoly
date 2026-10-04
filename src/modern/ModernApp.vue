@@ -5,6 +5,7 @@ import SavePanel from './features/saves/SavePanel.vue'
 import { SaveClient, SaveClientError } from './features/saves/client'
 import { createSnapshot, canSaveGame } from './features/saves/snapshot'
 import { commitPreparedSave } from './features/saves/restore'
+import { prepareGameUiAssets, type PreparedUiAssets } from './features/saves/ui-assets'
 import type { SaveSlot, SaveSnapshot } from './features/saves/snapshot-types'
 import { parseAssetManifest, type AssetManifest } from './features/characters/assets'
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
@@ -27,7 +28,7 @@ import SceneInspector from './features/map/SceneInspector.vue'
 import type { MapData } from './features/map/types'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
-interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; stagingHost?:HTMLElement; committed?:boolean }
+interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; stagingHost?:HTMLElement; committed?:boolean }
 interface PendingGame { state: GameState; lineup: string; visual?: InteractionVisualPlan }
 
 const map = mapJson as MapData
@@ -66,6 +67,8 @@ const fullscreen = ref(false)
 const fullscreenError = ref('')
 const host = ref<HTMLElement>()
 const stage = ref<HTMLElement>()
+const preparedImages=ref<Record<string,string>>({})
+let ownedUiAssets:PreparedUiAssets|undefined
 let scene: MapSceneHandle | undefined
 let gameController: GameController | undefined
 let abort: AbortController | undefined
@@ -116,6 +119,7 @@ function seed(): number {
   return value[0]!
 }
 function cleanupGame() {
+  ownedUiAssets?.release();ownedUiAssets=undefined
   audio.setPaused(true)
   controllerReady.value=false
   generation += 1
@@ -189,6 +193,8 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
       const [manifest, reactions] = await Promise.all([fetchManifest(item, signal), fetchReactionManifest(item, signal)])
       return { playerId: player.id, characterId: player.characterId, manifest, reactions }
     })), fetchInteractionManifest(signal), fetchActivityManifest(signal)])
+    const ui=await prepareGameUiAssets(state,loadedInteractionAssets,signal)
+    try{
     const loaded = await createMapScene(target, map, entries[0]!.manifest, {
       signal,
       playerManifests: entries,
@@ -200,24 +206,27 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
         const godId=state.world.statuses[entry.playerId]?.godId
         const god=entry.reactions.godOverlays.find(g=>g.godId===godId)
         return god?[god.url]:[]
-      }),...(state.outcome?[`assets/activities/${state.outcome.kind==='victory'?'gamewin':'gameover'}/1.png`]:[])],
+      })],
     })
-  prepared={loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets}
+  prepared={loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets,ui}
   return prepared
+  }catch(error){ui.release();throw error}
 }
 async function loadPendingGame(prepared?:PreparedGame) {
   if (!pending.value) return
   const current = ++generation
   abort?.abort(); observer?.disconnect(); gameController?.dispose(); scene?.destroy()
   gameController = undefined; scene = undefined
+  ownedUiAssets?.release();ownedUiAssets=undefined
   abort = new AbortController()
   const signal = abort.signal
   loadState.value = 'loading'; loadError.value = ''; following.value = true
   try {
     const resources=prepared??await prepareGameScene(pending.value.state,host.value!,signal)
     const {loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets}=resources
-    if (current !== generation) {loaded.destroy();return}
+    if (current !== generation) {loaded.destroy();resources.ui.release();resources.stagingHost?.remove();return}
     resources.committed=true
+    ownedUiAssets=resources.ui;preparedImages.value=resources.ui.urls
     if(resources.stagingHost){host.value!.replaceChildren(...resources.stagingHost.childNodes);resources.stagingHost.remove();loaded.resize(host.value!.clientWidth,host.value!.clientHeight)}
     scene = loaded
     interactionAssets.value = loadedInteractionAssets
@@ -493,7 +502,7 @@ async function loadFromSlot(slot:number){
    latestNoticeVisual=undefined;history.value=[];audio.startMatch();mode.value='game'
    await nextTick();await loadPendingGame(prepared)
    if(loadState.value!=='ready')throw new Error(loadError.value)
-  },prepared=>{prepared.loaded.destroy();prepared.stagingHost?.remove()})
+  },prepared=>{prepared.loaded.destroy();prepared.ui.release();prepared.stagingHost?.remove()})
   if(epoch===savesEpoch){savesMessage.value=`槽位${slot}读取成功`;savesOpen.value=false;paused.value=pauseBeforeSaves;pauseForSaves(paused.value)}
  }catch(error){if(epoch===savesEpoch)savesError.value=`${error instanceof Error?error.message:String(error)}；当前对局保留`}
  finally{if(epoch===savesEpoch){savesBusy.value=false;saveAbort=undefined}}
@@ -560,10 +569,10 @@ onBeforeUnmount(() => {
       <div v-if="game && paused && !controllerReady && loadState === 'ready'" class="overlay">
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
-      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
-      <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
+      <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
       <button v-if="fullscreen" class="exit-fullscreen" @click="toggleFullscreen">退出全屏</button>
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">

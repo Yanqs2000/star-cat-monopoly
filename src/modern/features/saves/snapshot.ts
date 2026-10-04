@@ -76,7 +76,11 @@ export function parseSnapshot(value:unknown):SaveSnapshot {
   }
  }
  for(const entry of g.finance.entries){if(entry.playerId!==undefined)requireValue(ids.includes(entry.playerId),'金融玩家引用');if(entry.companyId!==undefined)integer(entry.companyId,0,15)}
- if(g.finance.lastSettledMonth!==null)requireValue(/^\d+-\d{2}$/.test(g.finance.lastSettledMonth),'月结键')
+ if(g.finance.lastSettledMonth!==null){
+  const key=g.finance.lastSettledMonth;requireValue(/^\d+-\d{1,2}$/.test(key),'月结键')
+  const [year,month]=key.split('-').map(Number) as [number,number];assertCalendarDate({year,month,day:1})
+  requireValue(key===`${year}-${month}`&&(year<g.world.year||year===g.world.year&&month<=g.world.month),'月结键不是引擎的已结算月份')
+ }
  if(g.finance.monthlyQuoteIndex!==null)integer(g.finance.monthlyQuoteIndex)
  unique(g.bankruptcyReceipts.map(r=>r.playerId))
  requireValue(g.bankruptcyReceipts.length===g.eliminatedPlayerIds.length,'清算记录缺项')

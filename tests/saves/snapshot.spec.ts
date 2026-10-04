@@ -74,3 +74,12 @@ it('稳定的全体托管快照读回先保持暂停，继续后AI只掷骰一�
   expect(controller.state.lastRoll).toBe(4);expect(controller.state.phase).toBe('moving');expect(controller.state.activePlayerIndex).toBe(0)
  }finally{controller?.dispose();vi.useRealTimers()}
 })
+it.each([1,2,3,4,5,6,7,8,9,10,11,12])('真实%d月月结后的合法快照可保存，读回不再次结息',async month=>{
+ const {settleMonth}=await import('../../src/modern/features/game/bank-settlement')
+ const state=settleMonth(createGame([1],102,1,{year:2027,month,day:1})).state
+ const saved=createSnapshot(state,[1],{speed:1,paused:false},now,now)
+ const loaded=parseSnapshot(JSON.parse(JSON.stringify(saved)))
+ expect(loaded.state.finance.lastSettledMonth).toBe(`2027-${month}`)
+ expect(loaded.state.players[0]!.deposit).toBe(110000)
+ expect(settleMonth(loaded.state).settled).toBe(false)
+})

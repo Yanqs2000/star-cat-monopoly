@@ -17,3 +17,15 @@ it('不稳定或请求中禁止保存重复操作，错误信息不显示成功'
  expect(p.get('[data-testid="save-slot-1"]').attributes()).toHaveProperty('disabled');expect(p.text()).toContain('当前对局保留')
  await p.setProps({canSave:true,busy:true});expect(p.get('[data-testid="load-slot-2"]').attributes()).toHaveProperty('disabled')
 })
+
+it('准备好的手牌和结果图片直接使用本地URL，不在提交后再发网络请求',async()=>{
+ const {default:HandPanel}=await import('../../src/modern/features/game/HandPanel.vue')
+ const {default:EndgamePanel}=await import('../../src/modern/features/game/EndgamePanel.vue')
+ const {createGame}=await import('../../src/modern/features/game/setup')
+ const game=createGame([1],102);game.inventories[1]=[1]
+ const hand=mount(HandPanel,{props:{game,paused:true,cardAssets:[],preparedImages:{'assets/interactions/cards/1.png':'blob:ready-card1'}}})
+ expect(hand.get('img').attributes('src')).toBe('blob:ready-card1')
+ game.phase='ended';game.outcome={kind:'defeat',winnerId:null}
+ const end=mount(EndgamePanel,{props:{game,paused:false,preparedImages:{'assets/activities/gameover/1.png':'blob:ready-end'}}})
+ expect(end.get('img').attributes('src')).toBe('blob:ready-end')
+})

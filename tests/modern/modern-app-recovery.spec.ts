@@ -25,10 +25,10 @@ let wrapper: VueWrapper | undefined
 afterEach(() => { wrapper?.unmount(); vi.unstubAllGlobals(); vi.clearAllMocks() })
 
 it('已入账反馈在暂停时失败：重建先提供继续按钮，再重放及恢复控制器，不重复奖励', async () => {
-  vi.stubGlobal('fetch', vi.fn(async (url: string) => ({
-    ok: true,
-    json: async () => JSON.parse(readFileSync(`public/modern/${url.replace(/^\//, '')}`, 'utf8')),
-  })))
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(readFileSync(`public/modern/${url.replace(/^\//, '')}`), {status:200})))
+  vi.stubGlobal('Image', class {src='';async decode(){}})
+  const NativeURL=URL;let imageId=0
+  vi.stubGlobal('URL', class extends NativeURL {static override createObjectURL(){return `blob:decoded-${++imageId}`}static override revokeObjectURL(){}})
   vi.stubGlobal('ResizeObserver', class { observe() {} disconnect() {} })
   wrapper = shallowMount(ModernApp)
   await flushPromises()
