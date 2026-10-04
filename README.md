@@ -1,8 +1,10 @@
 # 星猫大富翁 · 原版兼容运行
 
-## 现代版：完整对局与第4阶段手动存读档
+## 现代版：完整对局、手动存读档与 5A/5B 双画质
 
 独立入口使用 Vue、TypeScript 与 PixiJS 绘制原地图、12名角色和原素材，规则不调用 SWF/Ruffle。已接入卡牌、金融、公司、NPC、特殊地点、小游戏、破产胜负、托管、日历与声音；本批新增三个服务器手动存档槽位。阶段验证与保留差异见 [3D记录](docs/modernization/acceptance-3d.md) 和 [第4阶段记录](docs/modernization/acceptance-4.md)，用户验收状态按实际确认记录。
+
+5A/5B 已加入原版/高清资源选择；工程验证完成，整批仍待用户验收，详见 [5A/5B验收记录](docs/modernization/acceptance-5a-5b.md)。选人页可选“原版”或“高清”；对局中须先暂停并处于稳定回合边界，切换不会改动规则状态或存档。画质偏好保存在当前浏览器，不随存档迁移。高清资源包约 262 MB，是本地可重建且被 Git 忽略的产物；没有生成图集时仍可用原版画质。
 
 使用 `.node-version` 指定的 Node 24（至少24.19.0）：
 
@@ -26,6 +28,17 @@ npm run preview:modern # http://127.0.0.1:4184/modern.html
 ```
 
 这两个入口将 `/api` 代理到本机4186，存档使用同一数据库。现代产物位于 `dist-modern/`；原素材转换只在离线工具中读取SWF，发布为PNG/JSON。选人后的“场景检查”仍可检查地图和动画。
+
+若要重建高清资源包，先安装 [锁定的 Python 依赖](scripts/requirements-modern-hd.txt)，并提供 JPEXS 26.2.1、Java 与 Python 路径：
+
+```bash
+FFDEC_ROOT=/path/to/ffdec-26.2.1/full \
+FFDEC_JAVA=/path/to/java \
+PYTHON=/path/to/python3 npm run assets:modern-hd
+npm run build:modern:hd
+```
+
+生成流程只读正式 SWF，临时补丁与输出位于忽略缓存；完整步骤、哈希与尺寸见[资源清单报告](docs/modernization/evidence/phase-5b/asset-inventory.md)。
 
 ```bash
 npm test
