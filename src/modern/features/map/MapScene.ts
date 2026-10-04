@@ -195,7 +195,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     }) : []
     const actors = (options.playerManifests ?? []).map(({ playerId, manifest: playerManifest, reactions }) => {
       const view = new Container()
-      const active = new Graphics().circle(0, -4, 18).fill({ color: '#ffe18a', alpha: 0.28 }).stroke({ color: '#ffe18a', width: 2 })
+      const active = new Graphics().circle(28, 20, 18).fill({ color: '#ffe18a', alpha: 0.28 }).stroke({ color: '#ffe18a', width: 2 })
       const walker = new WalkPreview(playerManifest.clips, textures)
       const initialReaction = reactions.clips.find(clip => clip.facing === 'down-right' && clip.name === 'neutral')!
       const reaction = new ReactionPlayer(initialReaction)
