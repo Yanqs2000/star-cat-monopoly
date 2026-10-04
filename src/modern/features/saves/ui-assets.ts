@@ -1,5 +1,6 @@
 import type { GameState } from '../game/types'
 import type { InteractionAssetsManifest } from '../game/interaction-assets'
+import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
 export interface UiImageResource {url:string;release:()=>void}
 export interface PreparedUiAssets {urls:Record<string,string>;release:()=>void}
 
@@ -19,14 +20,15 @@ async function loadImage(url:string,signal:AbortSignal):Promise<UiImageResource>
 export async function prepareGameUiAssets(
  state:GameState,assets:InteractionAssetsManifest,signal:AbortSignal,
  load:(url:string,signal:AbortSignal)=>Promise<UiImageResource>=loadImage,
+ profile:AssetProfile='original',
 ):Promise<PreparedUiAssets>{
  const needed=Array.from(new Set(Object.values(state.inventories).flat())).map(id=>{
   const asset=assets.cards.find(card=>card.id===id)
   if(!asset)throw new Error(`缺少存档手牌素材：${id}`)
   return asset.url
  })
- if(state.outcome)needed.push(`assets/activities/${state.outcome.kind==='victory'?'gamewin':'gameover'}/1.png`)
- if(state.interaction?.kind==='bankruptcy')needed.push('assets/activities/bankrupt/1.png')
+ if(state.outcome)needed.push(profileAssetUrl(`assets/activities/${state.outcome.kind==='victory'?'gamewin':'gameover'}/1.png`,profile))
+ if(state.interaction?.kind==='bankruptcy')needed.push(profileAssetUrl('assets/activities/bankrupt/1.png',profile))
  const results=await Promise.allSettled(needed.map(url=>load(url,signal)))
  const resources=results.flatMap(r=>r.status==='fulfilled'?[r.value]:[])
  const failure=results.find(r=>r.status==='rejected')

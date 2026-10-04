@@ -16,6 +16,7 @@ import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './wo
 import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
+import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
   eliminated?: boolean
@@ -45,13 +46,18 @@ export interface MapSceneHandle {
   setPaused(paused: boolean): void
   setSpeed(speed: number): void
   overview(): void
+  getCameraState(): MapCameraState
+  restoreCameraState(state: MapCameraState): void
   resize(width: number, height: number): void
   destroy(): void
 }
 
+export interface MapCameraState { x:number; y:number; scale:number; following:boolean }
+
 export interface MapSceneOptions {
   signal: AbortSignal
   onFrame: (frame: number) => void
+  assetProfile?: AssetProfile
   playerManifests?: { playerId: number; characterId: number; manifest: AssetManifest; reactions: ReactionManifest }[]
   onManualCamera?: () => void
   onTargetCell?: (position: GridPoint) => void
@@ -84,6 +90,7 @@ function worldFrameAt(clip: WorldClip, elapsedMs: number) {
 export async function createMapScene(host: HTMLElement, map: MapData, manifest: AssetManifest,
   options: MapSceneOptions): Promise<MapSceneHandle> {
   const app = new Application()
+  const assetProfile = options.assetProfile ?? 'original'
   const textures = new Map<string, Texture>()
   const textureUrls = new Map<Texture,string>()
   const bitmaps: ImageBitmap[] = []
@@ -108,15 +115,17 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const existing = inflightTextures.get(url)
     if (existing) return existing
     const loading = (async () => {
+      const selectedUrl = profileAssetUrl(url, assetProfile)
       try {
-        const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
+        const response = await fetch(`${import.meta.env.BASE_URL}${selectedUrl}`, { signal: controller.signal })
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         const bitmap = await decodeBitmap(await response.blob(), controller.signal)
         bitmaps.push(bitmap)
-        const texture=new Texture({ source: new ImageSource({ resource: bitmap, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) })
-        textures.set(url,texture);textureUrls.set(texture,url)
+        const resolution = assetProfile === 'hd' ? 2 : 1
+        const texture=new Texture({ source: new ImageSource({ resource: bitmap, resolution, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) })
+        textures.set(url,texture);textureUrls.set(texture,selectedUrl)
       } catch (error) {
-        throw new Error(`素材加载失败：${url}（${error instanceof Error ? error.message : String(error)}）`)
+        throw new Error(`素材加载失败：${selectedUrl}（${error instanceof Error ? error.message : String(error)}）`)
       } finally {
         inflightTextures.delete(url)
       }
@@ -274,6 +283,12 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const follow = (point: GridPoint) => {
       following = true
       placeCamera(gridToScene(point))
+    }
+    const getCameraState = ():MapCameraState => ({x:world.position.x,y:world.position.y,scale:world.scale.x,following})
+    const restoreCameraState = (state:MapCameraState) => {
+      following=state.following
+      world.position.set(state.x,state.y)
+      world.scale.set(state.scale)
     }
     const setPlayers = (poses: PlayerPose[]) => {
       poses.forEach((pose) => {
@@ -539,7 +554,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect, setActivity, getPortalDecorations,
+      focus, follow, resize, getCameraState, restoreCameraState, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect, setActivity, getPortalDecorations,
       setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },

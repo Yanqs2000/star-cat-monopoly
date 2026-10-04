@@ -76,7 +76,10 @@ class ExportInteractionAssets {
             requireBounds(luck, LUCK_BOUNDS, "luck sprite");
 
             FrameExporter exporter = new FrameExporter();
-            SpriteExportSettings settings = new SpriteExportSettings(SpriteExportMode.PNG, 1.0, 4);
+            double pixelDensity = Double.parseDouble(System.getProperty("starcat.pixelDensity", "1.0"));
+            require(Double.isFinite(pixelDensity) && pixelDensity >= 1.0 && pixelDensity <= 4.0,
+                "pixel density must be between 1 and 4");
+            SpriteExportSettings settings = new SpriteExportSettings(SpriteExportMode.PNG, pixelDensity, 4);
             for (int cardId : CARD_IDS) {
                 int sourceFrame = cardId + 1;
                 exportFrame(exporter, settings, swf, CARD_SPRITE_ID, sourceFrame - 1,

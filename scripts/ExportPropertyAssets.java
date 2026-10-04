@@ -157,7 +157,10 @@ class ExportPropertyAssets {
             swf.updateCharacters();
 
             FrameExporter exporter = new FrameExporter();
-            SpriteExportSettings settings = new SpriteExportSettings(SpriteExportMode.PNG, 1.0, 4);
+            double pixelDensity = Double.parseDouble(System.getProperty("starcat.pixelDensity", "1.0"));
+            require(Double.isFinite(pixelDensity) && pixelDensity >= 1.0 && pixelDensity <= 4.0,
+                "pixel density must be between 1 and 4");
+            SpriteExportSettings settings = new SpriteExportSettings(SpriteExportMode.PNG, pixelDensity, 4);
             for (int facing = 1; facing <= 4; facing++) {
                 exportFrame(exporter, settings, swf, BRAND_ID, facing - 1,
                     scratch.resolve("sign-" + facing),

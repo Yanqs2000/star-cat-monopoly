@@ -10,6 +10,10 @@ export interface ActivityClip { id: string; sourceSymbol: number; fps: number; f
 export interface NativeOverlay { clip: ActivityClip; frame: number; x: number; y: number; scale?: number; opacity?: number; text?: Record<string,string>; depth?: number;matrix?:[number,number,number,number] }
 export interface ActivityManifest { version: 1; sourceSha256: string; clips: ActivityClip[] }
 
+export function activityPixelDensity(url:string):1|2 {
+  return url.startsWith('assets-hd/')?2:1
+}
+
 export function parseActivityAssets(value: unknown): ActivityManifest {
   const data = value as ActivityManifest
   if (data?.version !== 1 || data.sourceSha256 !== '790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba' ||
@@ -61,7 +65,8 @@ export async function loadActivityFrames(clip: ActivityClip, signal: AbortSignal
       image.src = url
       await image.decode()
       abort.signal.throwIfAborted()
-      if (image.naturalWidth !== frame.width || image.naturalHeight !== frame.height) throw new Error(`活动素材尺寸错误：${frame.url}`)
+      const pixelDensity=activityPixelDensity(frame.url)
+      if (image.naturalWidth !== frame.width*pixelDensity || image.naturalHeight !== frame.height*pixelDensity) throw new Error(`活动素材尺寸错误：${frame.url}`)
     }
   })
   try {

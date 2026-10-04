@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed,onBeforeUnmount,onMounted,ref,watch } from 'vue'
 import { Application,Container,ImageSource,Sprite,Text,Texture } from 'pixi.js'
-import { loadActivityFrames,type ActivityManifest,type ActivityFrame } from './activity-assets'
+import { activityPixelDensity,loadActivityFrames,type ActivityManifest,type ActivityFrame } from './activity-assets'
 import type { CarnivalGame,CarnivalInput } from './carnival'
 import { listenCarnivalInputs } from './carnival-input'
 const props=defineProps<{game:CarnivalGame;paused:boolean;human:boolean;assets:ActivityManifest}>()
@@ -44,7 +44,8 @@ onMounted(async()=>{
   for(let i=0;i<results.length;i++) {
    const result=results[i]!;if(result.status!=='fulfilled')continue
    const frames:Texture[]=[]
-   for(const url of result.value.urls){const image=new Image();image.src=url;await image.decode();abort.signal.throwIfAborted();const texture=new Texture({source:new ImageSource({resource:image,scaleMode:'linear'})});frames.push(texture);owned.push(texture)}
+   const resolution=activityPixelDensity(clips[i]!.frames[0]!.url)
+   for(const url of result.value.urls){const image=new Image();image.src=url;await image.decode();abort.signal.throwIfAborted();const texture=new Texture({source:new ImageSource({resource:image,resolution,scaleMode:'linear'})});frames.push(texture);owned.push(texture)}
    textures.set(clips[i]!.id,frames)
   }
   const candidate=new Application();await candidate.init({width:800,height:600,resolution:1,backgroundAlpha:0,autoStart:false})
