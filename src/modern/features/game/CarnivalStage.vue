@@ -48,7 +48,7 @@ onMounted(async()=>{
    for(const url of result.value.urls){const image=new Image();image.src=url;await image.decode();abort.signal.throwIfAborted();const texture=new Texture({source:new ImageSource({resource:image,resolution,scaleMode:'linear'})});frames.push(texture);owned.push(texture)}
    textures.set(clips[i]!.id,frames)
   }
-  const candidate=new Application();await candidate.init({width:800,height:600,resolution:1,backgroundAlpha:0,autoStart:false})
+  const candidate=new Application();await candidate.init({width:800,height:600,resolution:Math.min(devicePixelRatio || 1,2),autoDensity:true,backgroundAlpha:0,autoStart:false})
   if(abort.signal.aborted){candidate.destroy({removeView:true});releaseResources();return}
   app=candidate;host.value!.append(app.canvas);app.stage.addChild(background,objects,labels,intro)
   loaded.value=true;draw();removeInputs=listenCarnivalInputs(host.value!,()=>playing.value,input=>emit('input',input))

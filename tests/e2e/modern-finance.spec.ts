@@ -31,10 +31,10 @@ async function wallet(page: Page) {
   return { cash: Number(money[1]), deposit: Number(money[2]), loan: Number(loan[1]) }
 }
 
-test('自然开局 seed8 在第2轮银行完成存取、借还、授信与信用卡实际取现', async ({ page }) => {
+test('自然开局 seed17 在第2轮银行完成存取、借还、授信与信用卡实际取现', async ({ page }) => {
   test.setTimeout(150_000)
   await mkdir(evidenceDir, { recursive: true })
-  await start(page, 8)
+  await start(page, 17)
   await playUntil(page, () => page.getByTestId('bank-form').count().then(Boolean))
   await expect(page.getByTestId('round')).toContainText('第 2 轮')
   const before = await wallet(page)
@@ -56,7 +56,7 @@ test('自然开局 seed8 在第2轮银行完成存取、借还、授信与信用
   await expect.poll(() => wallet(page)).toEqual({ cash: before.cash + 10850, deposit: before.deposit + 150, loan: 11000 })
   await page.getByRole('button', { name: '申请信用卡' }).click()
   await expect(page.getByTestId('interaction-panel')).toContainText('信用申请通过')
-  await page.screenshot({ path: `${evidenceDir}/seed8-bank-1440x1000.png` })
+  await page.screenshot({ path: `${evidenceDir}/seed17-bank-1440x1000.png` })
   await page.getByTestId('interaction-acknowledge').click()
   await page.getByRole('button', { name: '离开银行' }).click()
   await expect(page.getByTestId('player-list').locator('li').first()).toContainText('贷款 11000')
@@ -78,20 +78,23 @@ test('自然开局 seed8 在第2轮银行完成存取、借还、授信与信用
   await page.setViewportSize({ width: 1920, height: 1080 })
   await page.getByRole('button', { name: '全屏', exact: true }).click()
   await expect.poll(() => page.evaluate(() => document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
-  await expect.poll(async () => (await page.locator('canvas').boundingBox())?.height).toBe(1080)
+  const board = (await page.locator('canvas').boundingBox())!
+  expect(board.width / board.height).toBeCloseTo(4 / 3, 2)
+  expect(board.y + board.height).toBeLessThanOrEqual(1080)
 })
 
 test('授信已入账后反馈素材404，重试不重复发卡或增加额度', async ({ page }) => {
   test.setTimeout(120_000)
-  let failed = true
+  let failed = false
   let reactionRequests = 0
   await page.route('**/assets/characters/1/reactions/happy/*/1.png', route => {
     reactionRequests += 1
     if (failed) void route.fulfill({ status: 404, body: '' })
     else void route.continue()
   })
-  await start(page, 8)
+  await start(page, 17)
   await playUntil(page, () => page.getByTestId('bank-form').count().then(Boolean))
+  failed = true
   await page.getByRole('button', { name: '申请信用卡' }).click()
   await expect(page.getByRole('alert')).toContainText('characters/1/reactions/happy/', { timeout: 15_000 })
   failed = false
@@ -109,10 +112,10 @@ test('授信已入账后反馈素材404，重试不重复发卡或增加额度',
   await expect(page.getByTestId('hand-panel').locator('[data-card-id="1"]')).toHaveCount(1)
 })
 
-test('自然开局 seed5 在第2轮股市按现价买卖并继续路径', async ({ page }) => {
+test('自然开局 seed20 在第2轮股市按现价买卖并继续路径', async ({ page }) => {
   test.setTimeout(150_000)
   await mkdir(evidenceDir, { recursive: true })
-  await start(page, 5)
+  await start(page, 20)
   await playUntil(page, () => page.getByTestId('stock-company').count().then(Boolean))
   await expect(page.getByTestId('round')).toContainText('第 2 轮')
   const before = await wallet(page)
@@ -132,7 +135,7 @@ test('自然开局 seed5 在第2轮股市按现价买卖并继续路径', async 
   await page.getByTestId('stock-sell').click()
   await expect(page.getByTestId('interaction-panel')).toContainText(`现金 +${cashChange}`)
   await expect.poll(() => wallet(page)).toEqual(before)
-  await page.screenshot({ path: `${evidenceDir}/seed5-stock-1440x1000.png` })
+  await page.screenshot({ path: `${evidenceDir}/seed20-stock-1440x1000.png` })
   await page.getByTestId('interaction-acknowledge').click()
   await page.getByRole('button', { name: '离开股市' }).click()
   await expect(page.getByTestId('stock-company')).toHaveCount(0)

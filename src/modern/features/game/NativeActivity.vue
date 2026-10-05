@@ -43,5 +43,5 @@ watch(() => assets.value.map(clip=>clip.id).join('|'), (_, _old, onCleanup) => {
   </svg>
 </template>
 <style scoped>
-.native-activity{display:block;width:100%;height:auto}.original-text{font-family:'Songti SC','SimSun',serif;color:#122844;line-height:1.2;white-space:pre-wrap}
+.native-activity{display:block;width:100%;height:auto}.original-text{text-rendering:optimizeLegibility;font-family:'Songti SC','SimSun',serif;color:#122844;line-height:1.2;white-space:pre-wrap}
 </style>
