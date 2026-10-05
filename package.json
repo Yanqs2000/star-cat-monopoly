@@ -25,7 +25,9 @@
     "test:e2e:modern": "playwright test --config playwright.modern.config.ts",
     "schema:saves": "node scripts/build-save-schema.mjs",
     "check:saves": "node scripts/build-save-schema.mjs --check",
-    "server:modern": "tsx server/main.ts"
+    "server:modern": "tsx server/main.ts",
+    "report:modern-art": "python3 scripts/report-modern-art-coverage.py",
+    "check:modern-art": "python3 scripts/report-modern-art-coverage.py --check"
   },
   "dependencies": {
     "@fastify/cookie": "11.1.2",

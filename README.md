@@ -1,10 +1,12 @@
 # 星猫大富翁 · 原版兼容运行
 
-## 现代版：完整对局、手动存读档与 5A/5B 双画质
+## 现代版：完整对局、手动存读档与第五阶段双画质
 
 独立入口使用 Vue、TypeScript 与 PixiJS 绘制原地图、12名角色和原素材，规则不调用 SWF/Ruffle。已接入卡牌、金融、公司、NPC、特殊地点、小游戏、破产胜负、托管、日历与声音；本批新增三个服务器手动存档槽位。阶段验证与保留差异见 [3D记录](docs/modernization/acceptance-3d.md) 和 [第4阶段记录](docs/modernization/acceptance-4.md)，用户验收状态按实际确认记录。
 
 5A/5B 已加入原版/高清资源选择；工程验证完成，整批仍待用户验收，详见 [5A/5B验收记录](docs/modernization/acceptance-5a-5b.md)。选人页可选“原版”或“高清”；对局中须先暂停并处于稳定回合边界，切换不会改动规则状态或存档。画质偏好保存在当前浏览器，不随存档迁移。高清资源包约 262 MB，是本地可重建且被 Git 忽略的产物；没有生成图集时仍可用原版画质。
+
+5C 已完成桌面1080p/1366×768布局、4:3画布、全屏画质/声音/存档工具栏和小游戏DPR适配；工程验证通过，用户验收待确认。详见 [5C验收记录](docs/modernization/acceptance-5c.md) 和 [15,849项PNG覆盖清单](docs/modernization/evidence/phase-5c/art-coverage.md)。完整本地版本验收后进入6A上线准备，尚未部署。
 
 使用 `.node-version` 指定的 Node 24（至少24.19.0）：
 
