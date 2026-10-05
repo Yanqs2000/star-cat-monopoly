@@ -1,15 +1,16 @@
 # 5C续跑与合并记录
 
-日期：2026-10-05。任务为完成5C、检查并合并分支。工程实现、复审与定向验证已完成；合并步骤正在收尾，最终状态在提交后补录。用户验收待确认，第6阶段未实施。
+日期：2026-10-05。任务为完成5C、检查并合并分支。工程实现、复审、定向验证与本地main快进合并已完成。用户验收待确认，第6阶段未实施。
 
 ## 工作区与回退
 
 - 工作区：`/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/modern-map-foundation`
-- 工作分支：`feat/modern-map-foundation`；5C基线及代码回退点：`9a39411`。
+- 当前分支：`main`；保留工作分支 `feat/modern-map-foundation`；5C基线及代码回退点：`9a39411`。
 - 合并前main/origin/main：`50981d3`；该提交为功能分支祖先，可快进。
-- 当前待提交：5C布局/文字/DPR/全屏、覆盖脚本和报告、浏览器回归、验收与续跑文档。未修改规则、快照Schema、原始SWF或高清资源包。
+- 5C工程提交：`754224b77c42b475fe8cca9afcb3cb58b5306a86`。包含布局/文字/DPR/全屏、覆盖报告和浏览器回归；未修改规则、快照Schema、原始SWF或高清资源包。后续文档提交仅补录合并结果。
 - 主工作区在 `analysis/modernization-baseline`、HEAD `b149386`，已有修改 `.gitignore`、未跟踪 `docs/modernization/resume-state.md` 和 `scripts/requirements-modern-hd.txt`，全部保留；不要切换或重置该工作区。
-- 在现有隔离工作区提交后切到main，再 `git merge --ff-only feat/modern-map-foundation`；保留feature分支和本地忽略资源。没有推送或部署授权。
+- 已在现有隔离工作区切到main，执行 `git merge --ff-only feat/modern-map-foundation`，从 `50981d3` 快进到 `754224b`。合并当时main与feature提交和文件树完全相同，树哈希 `9a570aaf9ff5a0cfd4cdc0bf0c1d8cd39b742616`。feature分支及本地忽略资源保留；未推送或部署。
+- 合并后核对主工作区HEAD与三份已有文件SHA-256均保持不变；预览HTTP 200。合并后的类型检查、Schema和PNG报告门禁通过，627项单测和最终生产构建/回放复用同一已验证树的证据，没有无理由重复整批。
 
 ## 有效验证
 
@@ -26,6 +27,6 @@
 - 本批开发5194，PID `69060`，exec句柄 `94681`。
 - 用户4184、存档后端4186（PID `54367`）、既有5185/5192/5193服务未替换或停止。旧5193读取5A/5B产物，仅用作基线对照。
 - 上述句柄仅对当前会话有效；恢复时先核对监听端口和命令，不以记录PID盲目结束进程。合并保留忽略目录中的高清图集与预览产物。
-- 剩余：提交、快进main并验证与测试树相同，记录最终hash和主工作区保留状态；随后交付用户验收。用户确认后按路线图进入6A本地上线准备，不提前触碰服务器。
+- 工程剩余工作：无。交付用户验收5C；用户确认完整本地版本后按路线图进入6A本地上线准备，不提前触碰服务器。下一阶段先核对服务器/域名/访问保护要求，再形成数据库卷、备份恢复、健康检查和回退的具体方案。
 
 完整交付和限制见 [5C验收](acceptance-5c.md)，本批执行细目见 [计划](../superpowers/plans/2026-10-05-modern-display-5c.md)。
