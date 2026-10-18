@@ -12,6 +12,7 @@ interface ReplayResult {
   history: string
   stateFingerprint: string | null
   hdRequests: string[]
+  staticRequests: string[]
   failures: string[]
   pageErrors: string[]
 }
@@ -79,6 +80,7 @@ async function replayProfile(page: Page, profile: 'original' | 'hd'): Promise<Re
     history: await page.getByTestId('turn-history').innerText(),
     stateFingerprint: await page.getByTestId('game-state-fingerprint').getAttribute('data-fingerprint'),
     hdRequests: requests.filter(url => url.startsWith('/assets-hd/')),
+    staticRequests: requests.filter(url => url.startsWith('/hd-static/')),
     failures,
     pageErrors,
   }
@@ -92,6 +94,9 @@ test('原版/高清入口使用对应像素倍率且同种子掷骰不改变对�
     const original = await replayProfile(originalPage, 'original')
     const hd = await replayProfile(hdPage, 'hd')
     expect(original.hdRequests).toEqual([])
+    expect(original.staticRequests).toEqual([])
+    expect(hd.staticRequests).toContain('/hd-static/companies/1.webp')
+    expect(hd.staticRequests.some(url => url.includes('/properties/houses/'))).toBe(true)
     expect(hd.hdRequests.some(url => url.endsWith('/walk/down-right/1.webp'))).toBe(true)
     expect(hd.hdRequests.some(url => url.endsWith('/characters/2/walk/down-right/1.webp'))).toBe(true)
     expect(hd.players).toBe(original.players)
@@ -183,7 +188,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
   let holdCandidate=false
   let candidateRequestHeld=false
   let releaseCandidate:()=>void=()=>{}
-  await page.route('**/assets-hd/companies/1.webp', route => {
+  await page.route('**/hd-static/companies/1.webp', route => {
     if (failCandidate) void route.fulfill({ status: 404, body: '' })
     else if(holdCandidate){candidateRequestHeld=true;void new Promise<void>(resolve=>{releaseCandidate=resolve}).then(()=>route.continue())}
     else void route.continue()
