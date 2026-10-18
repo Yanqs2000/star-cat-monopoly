@@ -1,0 +1,13 @@
+Use case: style-transfer
+Asset type: adjacent high-definition map artwork for the existing desktop Star Cat Monopoly game.
+
+Image 1 is the exact layout/edit target: a 288×288 context-padded crop from the original map. Its central 256×256 region is the new tile; the outer 16 pixels on all sides are neighboring context. The flat light blue seen through holes is only a diagnostic backing behind transparent map pixels, not new terrain.
+Image 2 is the already accepted neighboring HD map master: use its polished toy-like 2.5D rendering, vivid green leaves, gray granular pavement, glossy bubble, soft highlight and fine material detail ONLY as the style reference. Do not copy its buildings, water shapes, road intersection, circles or composition into this tile.
+
+Redraw Image 1 in this HD style, exactly preserving its camera, framing, geometry and object positions. Square output, native resolution at least 1152×1152, preferably 2048×2048. Create actual crisp small-scale leaf, pavement and cliff detail, not a blurred enlargement.
+
+Preserve the original diagonal road strip at the upper-left, its two straight edges and the SINGLE partly cropped green circular tile at approximately (25,51) in the 288×288 reference. Preserve its existing pale green swirl symbol. Preserve both plants at the top edge and the partly cropped plant at the left edge; keep the original counts and locations. Preserve the upper-right grassy plateau, the warm brown faceted cliff face beneath it, the lower-left grassy island and its notched edge, the white cloud at the lower-right, and the small clipped paved corner along the bottom edge. The cliff outline, gap between islands, road widths, and cloud boundary must follow Image 1 without shifting or adding land.
+
+Grass and bush rendering: crisp luminous blades and thick lime-green toy foliage matching Image 2. Pavement: finely resolved gray grain, matching width and diagonal projection. Cliff: clear warm ochre/brown dimensional facets, retaining the original silhouette and facet divisions. Cloud: soft white/light cyan toy volume with a clean contour. Shadows: the same soft upper-left lighting as the approved neighbor, with no cast shadow floating across the sky gap.
+
+Output genuine transparency in the gaps between the islands and in any original transparent areas. Keep the original cloud visible and opaque where it exists. No flat blue backing, rectangular background, checkerboard, text, digits, labels, coordinate marks, borders or watermarks. Do not add buildings, characters, trees, circles, flowers, cliff pillars or new road junctions. This is an exact-layout game tile, not a redesigned scene or standalone floating-island illustration.

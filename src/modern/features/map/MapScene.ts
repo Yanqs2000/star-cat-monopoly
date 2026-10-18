@@ -17,6 +17,9 @@ import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
 import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
+import type { HdMapRegion } from '../assets/hd-map-art'
+import { visibleMapRegions } from './map-region-visibility'
+import { HdMapRegionLoader } from './hd-map-region-loader'
 
 export interface PlayerPose extends Pick<PlayerState, 'characterId' | 'position' | 'direction'> {
   eliminated?: boolean
@@ -58,6 +61,8 @@ export interface MapSceneOptions {
   signal: AbortSignal
   onFrame: (frame: number) => void
   assetProfile?: AssetProfile
+  mapRegions?: HdMapRegion[]
+  textureResolutions?: Readonly<Record<string, number>>
   playerManifests?: { playerId: number; characterId: number; manifest: AssetManifest; reactions: ReactionManifest }[]
   onManualCamera?: () => void
   onTargetCell?: (position: GridPoint) => void
@@ -93,8 +98,10 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   const assetProfile = options.assetProfile ?? 'original'
   const textures = new Map<string, Texture>()
   const textureUrls = new Map<Texture,string>()
-  const bitmaps: ImageBitmap[] = []
+  const bitmaps = new Map<string, ImageBitmap>()
   const inflightTextures = new Map<string, Promise<void>>()
+  let hdMapRegionLoader: HdMapRegionLoader<HdMapRegion> | undefined
+  let refreshMapRegions = () => {}
   const controller = new AbortController()
   let initialized = false
   let destroyed = false
@@ -106,9 +113,12 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     destroyed = true
     options.signal.removeEventListener('abort', abort)
     controller.abort()
+    hdMapRegionLoader?.dispose()
+    hdMapRegionLoader = undefined
     if (initialized) app.destroy({ removeView: true }, { children: true })
     for (const texture of textures.values()) texture.destroy(true)
-    for (const bitmap of bitmaps) bitmap.close()
+    for (const bitmap of bitmaps.values()) bitmap.close()
+    textures.clear(); textureUrls.clear(); bitmaps.clear()
   }
   const loadTexture = (url: string): Promise<void> => {
     if (textures.has(url)) return Promise.resolve()
@@ -120,8 +130,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const response = await fetch(`${import.meta.env.BASE_URL}${selectedUrl}`, { signal: controller.signal })
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         const bitmap = await decodeBitmap(await response.blob(), controller.signal)
-        bitmaps.push(bitmap)
-        const resolution = assetProfile === 'hd' ? 2 : 1
+        bitmaps.set(url, bitmap)
+        const resolution = assetProfile === 'hd' ? options.textureResolutions?.[url] ?? 2 : 1
         const texture=new Texture({ source: new ImageSource({ resource: bitmap, resolution, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) })
         textures.set(url,texture);textureUrls.set(texture,selectedUrl)
       } catch (error) {
@@ -132,6 +142,19 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     })()
     inflightTextures.set(url, loading)
     return loading
+  }
+  const releaseTexture = (url: string) => {
+    const texture = textures.get(url)
+    if (texture) {
+      texture.destroy(true)
+      textures.delete(url)
+      textureUrls.delete(texture)
+    }
+    const bitmap = bitmaps.get(url)
+    if (bitmap) {
+      bitmap.close()
+      bitmaps.delete(url)
+    }
   }
   try {
     await app.init({ width: 800, height: 600, resolution: Math.min(devicePixelRatio || 1, 2), autoDensity: true, antialias: true, background: '#66ccff', preference: 'webgl', autoStart: false, sharedTicker: false })
@@ -172,7 +195,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     entities.sortableChildren = true
     const background = new Sprite(textures.get(manifest.map.url)!)
     background.position.set(manifest.map.offsetX, manifest.map.offsetY)
-    world.addChild(background, markers, entities)
+    const hdMapLayer = new Container()
+    const mapRegionSprites = new Map<string, Sprite>()
+    world.addChild(background, hdMapLayer, markers, entities)
     for (const parcel of map.parcels) {
       const road = gridToScene(parcel.roadCell)
       const building = gridToScene(parcel.buildingCell)
@@ -266,6 +291,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const placeCamera = (target: { x: number; y: number }) => {
       world.scale.set(1)
       world.position.set(400 - target.x - 28, 320 - target.y - 20)
+      refreshMapRegions()
     }
     const resize = (width: number, height: number) => {
       if (destroyed || width <= 0 || height <= 0) return
@@ -273,6 +299,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       viewportScale = Math.min(width / 800, height / 600)
       viewport.scale.set(viewportScale)
       viewport.position.set((width - 800 * viewportScale) / 2, (height - 600 * viewportScale) / 2)
+      refreshMapRegions()
     }
     const focus = (point: GridPoint) => {
       const target = gridToScene(point)
@@ -289,6 +316,39 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       following=state.following
       world.position.set(state.x,state.y)
       world.scale.set(state.scale)
+      refreshMapRegions()
+    }
+    hdMapRegionLoader = new HdMapRegionLoader<HdMapRegion>({
+      load: region => loadTexture(region.url),
+      attach: region => {
+        const texture = textures.get(region.url)
+        if (!texture) throw new Error(`高清地图切片纹理未准备：${region.url}`)
+        const sprite = new Sprite(texture)
+        sprite.position.set(region.scenePosition[0], region.scenePosition[1])
+        hdMapLayer.addChild(sprite)
+        mapRegionSprites.set(region.url, sprite)
+      },
+      detach: region => {
+        const sprite = mapRegionSprites.get(region.url)
+        if (!sprite) return
+        hdMapLayer.removeChild(sprite)
+        sprite.destroy({ children: true })
+        mapRegionSprites.delete(region.url)
+      },
+      release: region => releaseTexture(region.url),
+      onError: error => { if (!destroyed) options.onAssetError?.(error) },
+    })
+    refreshMapRegions = () => {
+      if (destroyed || world.scale.x <= 0 || world.scale.y <= 0) return
+      const bounds = {
+        left: -world.x / world.scale.x,
+        top: -world.y / world.scale.y,
+        right: (800 - world.x) / world.scale.x,
+        bottom: (600 - world.y) / world.scale.y,
+      }
+      const screenScale = viewportScale * world.scale.x * Math.min(devicePixelRatio || 1, 2)
+      hdMapRegionLoader?.update(visibleMapRegions(options.mapRegions ?? [], bounds,
+                                                  { screenScale, padding: 64 }))
     }
     const setPlayers = (poses: PlayerPose[]) => {
       poses.forEach((pose) => {
@@ -527,6 +587,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       world.x += (event.clientX - drag.x) / viewportScale
       world.y += (event.clientY - drag.y) / viewportScale
       drag.x = event.clientX; drag.y = event.clientY
+      refreshMapRegions()
     }
     const up = (event: PointerEvent) => {
       if (!drag || drag.id !== event.pointerId) return
@@ -568,6 +629,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const scale = Math.min(760 / manifest.map.width, 560 / manifest.map.height)
         world.scale.set(scale)
         world.position.set(400 - (manifest.map.offsetX + manifest.map.width / 2) * scale, 300 - (manifest.map.offsetY + manifest.map.height / 2) * scale)
+        refreshMapRegions()
       },
       destroy: () => {
         canvas.removeEventListener('pointerdown', down)
