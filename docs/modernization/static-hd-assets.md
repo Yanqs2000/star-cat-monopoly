@@ -2,6 +2,8 @@
 
 用户授权使用 GPT 内置生图替换尚未重绘的静态场景与界面图片，保留既有高清成果。工作分支 `feat/static-hd-art` 基于本地 `main` 的 `eda3c57`；不导入人物动作、立绘、神灵贴图或 Blender 文件。事件插图中的人物属于静态插画。
 
+2026-10-18 应用户要求，将当前 120 项已接入素材及必要加载、房屋配准代码合并到本地 `main`。主分支工作目录复用 `.worktrees/non-character-assets`；根目录及建模 worktree 保持原状。完整剩余项和本次合并验证见 `static-hd-remaining.md`。
+
 ## 素材与进度
 
 机器清单为 `static-hd-production.json`，记录 142 项去重后的非地图任务、原图哈希、重复资源别名、各图完整提示词与生成来源。补查的 12 项为静态骰面与投影，不属于人物头像。地图另列，尚未完成。运行映射为 `src/modern/data/static-hd-assets.json`。
