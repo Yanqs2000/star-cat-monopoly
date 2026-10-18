@@ -16,7 +16,7 @@ import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './wo
 import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
-import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
+import { profileAssetUrl, profileTextureResolution, type AssetProfile } from '../assets/profiles'
 import type { HdMapRegion } from '../assets/hd-map-art'
 import { visibleMapRegions } from './map-region-visibility'
 import { HdMapRegionLoader } from './hd-map-region-loader'
@@ -131,7 +131,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         const bitmap = await decodeBitmap(await response.blob(), controller.signal)
         bitmaps.set(url, bitmap)
-        const resolution = assetProfile === 'hd' ? options.textureResolutions?.[url] ?? 2 : 1
+        const resolution = assetProfile === 'hd'
+          ? options.textureResolutions?.[url] ?? profileTextureResolution(url, assetProfile) : 1
         const texture=new Texture({ source: new ImageSource({ resource: bitmap, resolution, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) })
         textures.set(url,texture);textureUrls.set(texture,selectedUrl)
       } catch (error) {

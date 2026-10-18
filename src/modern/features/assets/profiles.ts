@@ -1,4 +1,14 @@
+import staticArtwork from '../../data/static-hd-assets.json'
+
 export type AssetProfile = 'original' | 'hd'
+
+const staticOverrides = new Map(staticArtwork.assets.filter(asset => asset.enabled)
+  .map(asset => [asset.source, asset]))
+
+export function profileTextureResolution(url: string, profile: AssetProfile): number {
+  if (profile === 'original') return 1
+  return staticOverrides.get(url.split(/[?#]/, 1)[0]!)?.pixelDensity ?? 2
+}
 
 export function isCompleteHdProfileIndex(value: unknown): boolean {
   if (!value || typeof value !== 'object') return false
@@ -32,6 +42,8 @@ export function profileAssetUrl(url: string, profile: AssetProfile): string {
   const path = suffixStart < 0 ? url : url.slice(0, suffixStart)
   if (!path.startsWith('assets/') || !/\.png$/i.test(path)) return url
   const suffix = suffixStart < 0 ? '' : url.slice(suffixStart)
+  const replacement = staticOverrides.get(path)
+  if (replacement) return `${replacement.url}${suffix}`
   return `${path.replace(/^assets\//, 'assets-hd/').replace(/\.png$/i, '.webp')}${suffix}`
 }
 
