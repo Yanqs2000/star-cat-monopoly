@@ -16,7 +16,7 @@
     "test:e2e": "playwright test",
     "dev:modern": "vite --mode modern --host 127.0.0.1",
     "build:modern": "vue-tsc --noEmit && vite build --mode modern",
-    "build:modern:hd": "npm run verify:modern-hd-assets && npm run build:modern",
+    "build:modern:hd": "npm run verify:modern-hd-assets && npm run verify:modern-map-assets && npm run build:modern",
     "assets:modern-hd": "${PYTHON:-python3} scripts/build-modern-hd-assets.py",
     "verify:modern-hd-assets": "${PYTHON:-python3} scripts/verify-modern-hd-assets.py",
     "test:modern-hd-assets": "${PYTHON:-python3} scripts/test_modern_hd_assets.py",
@@ -27,7 +27,9 @@
     "check:saves": "node scripts/build-save-schema.mjs --check",
     "server:modern": "tsx server/main.ts",
     "report:modern-art": "python3 scripts/report-modern-art-coverage.py",
-    "check:modern-art": "python3 scripts/report-modern-art-coverage.py --check"
+    "check:modern-art": "python3 scripts/report-modern-art-coverage.py --check",
+    "verify:modern-map-assets": "${PYTHON:-python3} scripts/verify_hd_map_assets.py",
+    "test:modern-map-assets": "${PYTHON:-python3} -m unittest discover -s scripts -p \"test_hd_map_*.py\""
   },
   "dependencies": {
     "@fastify/cookie": "11.1.2",

@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "status": "unreviewed",
+  "method": "imagegen high-density tiles from shared continuous map repaint",
+  "sourceMap": "public/modern/assets/map.png",
+  "sourceMapSha256": "e95bc2626fa2b1b89cdb8d52e84fbb69153aa97aebaeb2cedf5b5f3a34556653",
+  "mapRect": [
+    640,
+    420,
+    512,
+    512
+  ],
+  "gameWorldOffset": [
+    -184,
+    -313
+  ],
+  "logicalSize": [
+    512,
+    512
+  ],
+  "tileGrid": [
+    2,
+    2
+  ],
+  "paddingUsedForReference": 16,
+  "tiles": [
+    {
+      "tile": "r0c0",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9-v2/r0c0.png",
+      "sourceSha256": "1cc8f953a962990232d7ec8991491863682373aa0fb75fb2af6eceb9904006de",
+      "logicalPosition": [
+        640,
+        420
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/region-global-v1.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated high-density tile from shared continuous repaint; geometry verification pending",
+      "inputReferenceSha256": "7b7437afa4be6c32fa532c45bc235a9197333cf0e014c6ac18ded1b7acf24fb2",
+      "inputCropRelativeLogicalRect": [
+        -16,
+        -16,
+        288,
+        288
+      ],
+      "inputCropMode": "reflect-edge-context"
+    },
+    {
+      "tile": "r0c1",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9-v2/r0c1.png",
+      "sourceSha256": "6c3947687bb974d78153025dc3da18cb1586a4a2d9cc55ac6449f39ef5716772",
+      "logicalPosition": [
+        896,
+        420
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/region-global-v1.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated high-density tile from shared continuous repaint; geometry verification pending",
+      "inputReferenceSha256": "7b7437afa4be6c32fa532c45bc235a9197333cf0e014c6ac18ded1b7acf24fb2",
+      "inputCropRelativeLogicalRect": [
+        240,
+        -16,
+        288,
+        288
+      ],
+      "inputCropMode": "reflect-edge-context"
+    },
+    {
+      "tile": "r1c0",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9-v2/r1c0.png",
+      "sourceSha256": "56a42ce813f4c2b373be97404a5c7a83ebcac986e1e59b6a52aaaeafecf44bb4",
+      "logicalPosition": [
+        640,
+        676
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/region-global-v1.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated high-density tile from shared continuous repaint; geometry verification pending",
+      "inputReferenceSha256": "7b7437afa4be6c32fa532c45bc235a9197333cf0e014c6ac18ded1b7acf24fb2",
+      "inputCropRelativeLogicalRect": [
+        -16,
+        240,
+        288,
+        288
+      ],
+      "inputCropMode": "reflect-edge-context"
+    },
+    {
+      "tile": "r1c1",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9-v2/r1c1.png",
+      "sourceSha256": "a4759f5c7e4af9a69ebbb19f37e0581fe287a3210d27954150097c74581f4b67",
+      "logicalPosition": [
+        896,
+        676
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/region-global-v1.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated high-density tile from shared continuous repaint; geometry verification pending",
+      "inputReferenceSha256": "7b7437afa4be6c32fa532c45bc235a9197333cf0e014c6ac18ded1b7acf24fb2",
+      "inputCropRelativeLogicalRect": [
+        240,
+        240,
+        288,
+        288
+      ],
+      "inputCropMode": "reflect-edge-context"
+    }
+  ],
+  "globalStyleReference": {
+    "path": "public/modern/hd-masters/map/region-11-9/region-global-v1.png",
+    "sha256": "7b7437afa4be6c32fa532c45bc235a9197333cf0e014c6ac18ded1b7acf24fb2",
+    "logicalSize": [
+      512,
+      512
+    ]
+  }
+}
