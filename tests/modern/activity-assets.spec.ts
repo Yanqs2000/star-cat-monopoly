@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { afterEach, expect, it, vi } from 'vitest'
 import { ImageSource, Texture } from 'pixi.js'
 import { activityPixelDensity, loadActivityFrames, parseActivityAssets } from '../../src/modern/features/game/activity-assets'
+import staticArtwork from '../../src/modern/data/static-hd-assets.json'
 
 it('3C原图完整保留NPC60帧、烟雾19帧、送医111帧和原800×600兑换场景', () => {
   const root = resolve(import.meta.dirname, '../..')
@@ -65,6 +66,7 @@ it('高清活动图片允许像素尺寸为逻辑画布的2倍', async () => {
 it('给自定义Pixi活动渲染器传入匹配源图倍率的纹理分辨率', () => {
   expect(activityPixelDensity('assets/activities/carnival-boy-1/1.png')).toBe(1)
   expect(activityPixelDensity('assets-hd/activities/carnival-boy-1/1.webp')).toBe(2)
+  expect(activityPixelDensity('hd-static/companies/1.webp')).toBe(4)
 
   const texture = (width:number,height:number,url:string) => new Texture({
     source:new ImageSource({
@@ -77,4 +79,24 @@ it('给自定义Pixi活动渲染器传入匹配源图倍率的纹理分辨率', 
   expect([original.width,original.height]).toEqual([800,600])
   expect([hd.width,hd.height]).toEqual([800,600])
   original.destroy(true);hd.destroy(true)
+})
+
+it('小地图复用登记后的高清房屋时按素材像素校验，允许其显示范围随占位配准变化', async () => {
+  const asset = staticArtwork.assets.find(asset => asset.source === 'assets/properties/houses/owner-1/facing-1/level-5.png')!
+  vi.stubGlobal('fetch', async () => new Response(new Uint8Array([1, 2, 3]), { status: 200 }))
+  class RegisteredImage {
+    naturalWidth = asset.pixelSize[0]
+    naturalHeight = asset.pixelSize[1]
+    set src(_value: string) {}
+    async decode() {}
+  }
+  vi.stubGlobal('Image', RegisteredImage)
+  const clip = { id: 'registered-house', sourceSymbol: 1, fps: 30, frames: [{
+    sourceFrame: 1, url: asset.url, width: 130, height: 172, offsetX: -40, offsetY: -160, fields: [],
+  }] }
+  const loaded = await loadActivityFrames(clip, new AbortController().signal)
+  expect(loaded.urls).toHaveLength(1)
+  loaded.release()
+  RegisteredImage.prototype.decode = async function () { this.naturalWidth = 1 }
+  await expect(loadActivityFrames(clip, new AbortController().signal)).rejects.toThrow('活动素材尺寸错误')
 })

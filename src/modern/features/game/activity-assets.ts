@@ -1,4 +1,5 @@
 import carnivalGeometry from '../../data/carnival-geometry.json'
+import { staticAssetPixels } from '../assets/profiles'
 export interface ActivityTextField {
   characterId: number; variable: string; x: number; y: number
   matrix: [number, number, number, number]; width: number; height: number; fontSize: number; align: number
@@ -10,8 +11,8 @@ export interface ActivityClip { id: string; sourceSymbol: number; fps: number; f
 export interface NativeOverlay { clip: ActivityClip; frame: number; x: number; y: number; scale?: number; opacity?: number; text?: Record<string,string>; depth?: number;matrix?:[number,number,number,number] }
 export interface ActivityManifest { version: 1; sourceSha256: string; clips: ActivityClip[] }
 
-export function activityPixelDensity(url:string):1|2 {
-  return url.startsWith('assets-hd/')?2:1
+export function activityPixelDensity(url:string):number {
+  return staticAssetPixels(url)?.pixelDensity ?? (url.startsWith('assets-hd/')?2:1)
 }
 
 export function parseActivityAssets(value: unknown): ActivityManifest {
@@ -66,7 +67,8 @@ export async function loadActivityFrames(clip: ActivityClip, signal: AbortSignal
       await image.decode()
       abort.signal.throwIfAborted()
       const pixelDensity=activityPixelDensity(frame.url)
-      if (image.naturalWidth !== frame.width*pixelDensity || image.naturalHeight !== frame.height*pixelDensity) throw new Error(`活动素材尺寸错误：${frame.url}`)
+      const expected = staticAssetPixels(frame.url)?.pixelSize ?? [frame.width*pixelDensity, frame.height*pixelDensity]
+      if (image.naturalWidth !== expected[0] || image.naturalHeight !== expected[1]) throw new Error(`活动素材尺寸错误：${frame.url}`)
     }
   })
   try {

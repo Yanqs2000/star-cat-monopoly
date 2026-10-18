@@ -16,7 +16,7 @@ import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './wo
 import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
-import { profileAssetUrl, profileTextureResolution, type AssetProfile } from '../assets/profiles'
+import { profileAssetUrl, profileSpriteTransform, profileTextureResolution, type AssetProfile } from '../assets/profiles'
 import type { HdMapRegion } from '../assets/hd-map-art'
 import { visibleMapRegions } from './map-region-visibility'
 import { HdMapRegionLoader } from './hd-map-region-loader'
@@ -415,7 +415,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
             : worldManifest!.neutralHouses.find(item => item.facing === parcel.facing && item.level === state.level)!
           : propertyManifest.houses.find(item => item.ownerId === state.ownerId && item.facing === parcel.facing && item.level === state.level)!
         image.texture = textures.get(asset.url)!
-        image.position.set(asset.offsetX, asset.offsetY)
+        const transform = profileSpriteTransform(asset.url, assetProfile)
+        image.scale.set(transform.scaleX, transform.scaleY)
+        image.position.set(asset.offsetX + transform.x, asset.offsetY + transform.y)
         badge.text = state.ownerId === null ? (state.level === 0 ? '' : `中立 · ${state.level}级`) : `P${state.ownerId} · ${state.level}级`
       }
     }
@@ -425,7 +427,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
           const url=textureUrls.get(image.texture)
           if(!url)throw new Error('小地图图层缺少原素材纹理')
           const clip:ActivityClip={id:`mini-${url.replace(/\W/g,'-')}`,sourceSymbol:symbol,fps:30,frames:[{
-            sourceFrame:1,url,width:image.texture.width,height:image.texture.height,offsetX:image.x,offsetY:image.y,fields:[],
+            sourceFrame:1,url,width:image.width,height:image.height,offsetX:image.x,offsetY:image.y,fields:[],
           }]}
           return {clip,frame:1,x:170+view.x*.25,y:90+view.y*.25,scale:.25,depth:30000+view.zIndex*30}
         })

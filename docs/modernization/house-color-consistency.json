@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "date": "2026-10-18",
+  "status": "engineering-checked-pending-user-review",
+  "requirement": "同一朝向、同一等级的四种业主颜色仅归属色块不同；不得增减屋顶、窗户、管道、侧罐、附楼、底座等部件。允许轻微像素、光照与抗锯齿差异。",
+  "distinctSpritesReviewed": 40,
+  "facings": [
+    1,
+    2
+  ],
+  "levels": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "owners": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "visualChecks": {
+    "roofAndSilhouette": "matched",
+    "windowAndPanelLayout": "matched within each facing",
+    "pipesAndSideAttachments": "matched",
+    "platformAndLawn": "matched",
+    "ownershipColors": [
+      "white-grey",
+      "orange",
+      "red",
+      "magenta-pink"
+    ],
+    "unexpectedAddedOrMissingParts": "none observed"
+  },
+  "artwork": {
+    "assets/properties/houses/owner-1/facing-1/level-1.png": "f454b7e611c71eab9f2cac430136e8265bf207003c787079b0834f5c427ec051",
+    "assets/properties/houses/owner-1/facing-1/level-2.png": "825131ce9a5c16521ba4b2ec38fb547b2687b72c0f9c166a0c8ad0c77d8ddbed",
+    "assets/properties/houses/owner-1/facing-1/level-3.png": "07981a483b0bc2007ad97146e4459f09469f2198e62ea00df6d38fd326f49efb",
+    "assets/properties/houses/owner-1/facing-1/level-4.png": "0bc42ffa74cb40aa63597b6fed51295d71582d1cfcd4053802a66429ef96bc97",
+    "assets/properties/houses/owner-1/facing-1/level-5.png": "0a8629f776f3ab5cc286f2391da956d955cc8ab2f0abd6671155eecc9c309282",
+    "assets/properties/houses/owner-1/facing-2/level-1.png": "f606f866dbc5dc6113e2579ce5ee3ec575c40c4e027680d43c564fd33729be63",
+    "assets/properties/houses/owner-1/facing-2/level-2.png": "a05f0e176538e773479d96e9671023f481a4e0abaee13d96a926bd3701dd6645",
+    "assets/properties/houses/owner-1/facing-2/level-3.png": "d3e0480b9542bff3068be6beeed0dd8b233519e454e36ae35ec44d8e5f527eff",
+    "assets/properties/houses/owner-1/facing-2/level-4.png": "9bb69fc22a84d81c4a5e07a8bc1f4b4f5b4d386229cd7bc5796fde4f521b1460",
+    "assets/properties/houses/owner-1/facing-2/level-5.png": "210deb37488387df180bc0a815de17a3da757ac0573f40ab6bccc3c6b731d45c",
+    "assets/properties/houses/owner-2/facing-1/level-1.png": "447c79f52cfb16edcc2b2368600eb0d1cf7a4fedc8a618681683004530e7c6b2",
+    "assets/properties/houses/owner-2/facing-1/level-2.png": "4d2d81c72220f4c223aeafc09a00882fc106775a4f09e401c16e80648f3ba21e",
+    "assets/properties/houses/owner-2/facing-1/level-3.png": "89a446427adaf64e4f7753a35be20d41e042968ad6669024a79f89a505c0ecfa",
+    "assets/properties/houses/owner-2/facing-1/level-4.png": "8e77d6c4eb5606c5c919b74f79fa31a57deb834135dfda77af1de531d95b7e2c",
+    "assets/properties/houses/owner-2/facing-1/level-5.png": "3af32ba812ef9856701428b79e55d7cda6d19f9bd62cf36553456b25482df0db",
+    "assets/properties/houses/owner-2/facing-2/level-1.png": "7f0977f18b4cc03f68aef0078a0dc6f6abe2c974cf80b78952aad768d9c8602a",
+    "assets/properties/houses/owner-2/facing-2/level-2.png": "6bbce97cbe0a07c2ac677c1a3f746073beef7b2988a37034ed4ce37236a377d1",
+    "assets/properties/houses/owner-2/facing-2/level-3.png": "19f7d18654cc7bfefca3550240f79b86b9e202537780d30eb9c6fe36f7961220",
+    "assets/properties/houses/owner-2/facing-2/level-4.png": "61414e19f1736b35465b072dff73c3c3f27d1bb9a3069b0a6f9277f3b50e5845",
+    "assets/properties/houses/owner-2/facing-2/level-5.png": "18bdfbc7252daf22faf4f4e894b1797ab3f12e8086e1a566302c1e33a7af3249",
+    "assets/properties/houses/owner-3/facing-1/level-1.png": "4a45cc99cd4bccb7a8a3400f9c9feb69a916533e8666644ab03c9cb88003465b",
+    "assets/properties/houses/owner-3/facing-1/level-2.png": "d0c1dec3bd8bbb37c88561670b6687d2901e52237ee36e73263df66d93c9f06d",
+    "assets/properties/houses/owner-3/facing-1/level-3.png": "594a0752da8928e07b0574a97d5a4dd6f14629b0153b679efd3ca80805effa0f",
+    "assets/properties/houses/owner-3/facing-1/level-4.png": "c4e55e3d815f8f4e0f8d19d9709bc853ad305d947465ededc06be6c75983460a",
+    "assets/properties/houses/owner-3/facing-1/level-5.png": "732577f857441e275be673b1aa8d50b0f40e5927105b10ccc102f767f8f06f6f",
+    "assets/properties/houses/owner-3/facing-2/level-1.png": "3260fe7b0e885d7144df34896c63fcaf9e6ba0ebc2e97bb15312e8b2dc0e99fc",
+    "assets/properties/houses/owner-3/facing-2/level-2.png": "1f462dda432f9a6439303ed94611cee7b30980f6604275036f423e052442f9db",
+    "assets/properties/houses/owner-3/facing-2/level-3.png": "fbe9332d9daabf38c589f161b895dfb7c76fcc3f51866dd757f8c8c73f264ed8",
+    "assets/properties/houses/owner-3/facing-2/level-4.png": "701ce8c915ec55befda8e919d9e95e072234fcb0207ab5d76de7220febf516b7",
+    "assets/properties/houses/owner-3/facing-2/level-5.png": "42a091a683723db2ad2f90f06e1ff15f470054646773a4c3cf3e0763f2a7bdd4",
+    "assets/properties/houses/owner-4/facing-1/level-1.png": "0fd3fc7ca74b5f51f3814bcf19cf5b83e74f1c9b1260ddfe301d6b167038cbd2",
+    "assets/properties/houses/owner-4/facing-1/level-2.png": "e7f9d78e6bbc92ceeee0f3ce363eb276558fd1bafdc09c0843445e91723ad44f",
+    "assets/properties/houses/owner-4/facing-1/level-3.png": "a51bde471b319b6f0b9da5feb4b5348d586cec8507b4cd61d12412b0757d3dc2",
+    "assets/properties/houses/owner-4/facing-1/level-4.png": "1843be1d2cefb3d075d26168f6cf094212247b1158fb226c322f8d1d8e662a01",
+    "assets/properties/houses/owner-4/facing-1/level-5.png": "3ddcf8f50854eb8a1570c1aeb4598b38571dc084e21907756bc2c399173dc675",
+    "assets/properties/houses/owner-4/facing-2/level-1.png": "a045061f96055b6faa0afee2dae7e80aab920c33be7f8b5fdc07dfd4b8f6a65b",
+    "assets/properties/houses/owner-4/facing-2/level-2.png": "f43c66677b91e511e6888a4b723c86441fa988c0bebbe09a239298fa4961c6fe",
+    "assets/properties/houses/owner-4/facing-2/level-3.png": "1dfba17ba55e949446d7bbe867cb3ebaa436f6f01a78f0246c3af58afde23673",
+    "assets/properties/houses/owner-4/facing-2/level-4.png": "6eeb1859ac0bdb33f2493cdf61d064f8dd6c885e413e47e2f1ccd91b99341672",
+    "assets/properties/houses/owner-4/facing-2/level-5.png": "30d4201dcc987c1b7bac044c04039deca44024a94c492941a07b2b670f3aa5b4"
+  },
+  "diagnostics": {
+    "purpose": "diagnostic only; requires visual part-by-part review",
+    "pairs": [
+      {
+        "facing": 1,
+        "level": 1,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9941254874858074,
+        "bodyRgbMae": 4.9370510146654745,
+        "source": "assets/properties/houses/owner-2/facing-1/level-1.png",
+        "masterSha256": "447c79f52cfb16edcc2b2368600eb0d1cf7a4fedc8a618681683004530e7c6b2"
+      },
+      {
+        "facing": 1,
+        "level": 1,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9969866126562268,
+        "bodyRgbMae": 4.527797046873451,
+        "source": "assets/properties/houses/owner-3/facing-1/level-1.png",
+        "masterSha256": "4a45cc99cd4bccb7a8a3400f9c9feb69a916533e8666644ab03c9cb88003465b"
+      },
+      {
+        "facing": 1,
+        "level": 1,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9950999802019402,
+        "bodyRgbMae": 6.654978031998674,
+        "source": "assets/properties/houses/owner-4/facing-1/level-1.png",
+        "masterSha256": "0fd3fc7ca74b5f51f3814bcf19cf5b83e74f1c9b1260ddfe301d6b167038cbd2"
+      },
+      {
+        "facing": 1,
+        "level": 2,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9942701105689601,
+        "bodyRgbMae": 5.368105893476205,
+        "source": "assets/properties/houses/owner-2/facing-1/level-2.png",
+        "masterSha256": "4d2d81c72220f4c223aeafc09a00882fc106775a4f09e401c16e80648f3ba21e"
+      },
+      {
+        "facing": 1,
+        "level": 2,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9956234369417649,
+        "bodyRgbMae": 3.460856433719087,
+        "source": "assets/properties/houses/owner-3/facing-1/level-2.png",
+        "masterSha256": "d0c1dec3bd8bbb37c88561670b6687d2901e52237ee36e73263df66d93c9f06d"
+      },
+      {
+        "facing": 1,
+        "level": 2,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9904660073064243,
+        "bodyRgbMae": 5.812567470313063,
+        "source": "assets/properties/houses/owner-4/facing-1/level-2.png",
+        "masterSha256": "e7f9d78e6bbc92ceeee0f3ce363eb276558fd1bafdc09c0843445e91723ad44f"
+      },
+      {
+        "facing": 1,
+        "level": 3,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9943695062178475,
+        "bodyRgbMae": 6.1204442996034985,
+        "source": "assets/properties/houses/owner-2/facing-1/level-3.png",
+        "masterSha256": "89a446427adaf64e4f7753a35be20d41e042968ad6669024a79f89a505c0ecfa"
+      },
+      {
+        "facing": 1,
+        "level": 3,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9893303156448289,
+        "bodyRgbMae": 8.727072184321255,
+        "source": "assets/properties/houses/owner-3/facing-1/level-3.png",
+        "masterSha256": "594a0752da8928e07b0574a97d5a4dd6f14629b0153b679efd3ca80805effa0f"
+      },
+      {
+        "facing": 1,
+        "level": 3,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.992758313779432,
+        "bodyRgbMae": 9.527065759267561,
+        "source": "assets/properties/houses/owner-4/facing-1/level-3.png",
+        "masterSha256": "a51bde471b319b6f0b9da5feb4b5348d586cec8507b4cd61d12412b0757d3dc2"
+      },
+      {
+        "facing": 1,
+        "level": 4,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9944532923279696,
+        "bodyRgbMae": 5.760345335395037,
+        "source": "assets/properties/houses/owner-2/facing-1/level-4.png",
+        "masterSha256": "8e77d6c4eb5606c5c919b74f79fa31a57deb834135dfda77af1de531d95b7e2c"
+      },
+      {
+        "facing": 1,
+        "level": 4,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9958268127282212,
+        "bodyRgbMae": 6.2816850927738415,
+        "source": "assets/properties/houses/owner-3/facing-1/level-4.png",
+        "masterSha256": "c4e55e3d815f8f4e0f8d19d9709bc853ad305d947465ededc06be6c75983460a"
+      },
+      {
+        "facing": 1,
+        "level": 4,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9955758291885356,
+        "bodyRgbMae": 7.906283926764193,
+        "source": "assets/properties/houses/owner-4/facing-1/level-4.png",
+        "masterSha256": "1843be1d2cefb3d075d26168f6cf094212247b1158fb226c322f8d1d8e662a01"
+      },
+      {
+        "facing": 1,
+        "level": 5,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9941191191191191,
+        "bodyRgbMae": 5.557155443675268,
+        "source": "assets/properties/houses/owner-2/facing-1/level-5.png",
+        "masterSha256": "3af32ba812ef9856701428b79e55d7cda6d19f9bd62cf36553456b25482df0db"
+      },
+      {
+        "facing": 1,
+        "level": 5,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9965398791465035,
+        "bodyRgbMae": 4.136671279406214,
+        "source": "assets/properties/houses/owner-3/facing-1/level-5.png",
+        "masterSha256": "732577f857441e275be673b1aa8d50b0f40e5927105b10ccc102f767f8f06f6f"
+      },
+      {
+        "facing": 1,
+        "level": 5,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.995069699927422,
+        "bodyRgbMae": 5.464042588866533,
+        "source": "assets/properties/houses/owner-4/facing-1/level-5.png",
+        "masterSha256": "3ddcf8f50854eb8a1570c1aeb4598b38571dc084e21907756bc2c399173dc675"
+      },
+      {
+        "facing": 2,
+        "level": 1,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9955055069886897,
+        "bodyRgbMae": 4.388370708473904,
+        "source": "assets/properties/houses/owner-2/facing-2/level-1.png",
+        "masterSha256": "7f0977f18b4cc03f68aef0078a0dc6f6abe2c974cf80b78952aad768d9c8602a"
+      },
+      {
+        "facing": 2,
+        "level": 1,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9953628336046569,
+        "bodyRgbMae": 4.473443359600865,
+        "source": "assets/properties/houses/owner-3/facing-2/level-1.png",
+        "masterSha256": "3260fe7b0e885d7144df34896c63fcaf9e6ba0ebc2e97bb15312e8b2dc0e99fc"
+      },
+      {
+        "facing": 2,
+        "level": 1,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9933925049309664,
+        "bodyRgbMae": 4.784158972831662,
+        "source": "assets/properties/houses/owner-4/facing-2/level-1.png",
+        "masterSha256": "a045061f96055b6faa0afee2dae7e80aab920c33be7f8b5fdc07dfd4b8f6a65b"
+      },
+      {
+        "facing": 2,
+        "level": 2,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9953927458331451,
+        "bodyRgbMae": 4.350516555490009,
+        "source": "assets/properties/houses/owner-2/facing-2/level-2.png",
+        "masterSha256": "6bbce97cbe0a07c2ac677c1a3f746073beef7b2988a37034ed4ce37236a377d1"
+      },
+      {
+        "facing": 2,
+        "level": 2,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.995706020611101,
+        "bodyRgbMae": 7.348979375671463,
+        "source": "assets/properties/houses/owner-3/facing-2/level-2.png",
+        "masterSha256": "1f462dda432f9a6439303ed94611cee7b30980f6604275036f423e052442f9db"
+      },
+      {
+        "facing": 2,
+        "level": 2,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9927650915668098,
+        "bodyRgbMae": 5.095346542169589,
+        "source": "assets/properties/houses/owner-4/facing-2/level-2.png",
+        "masterSha256": "f43c66677b91e511e6888a4b723c86441fa988c0bebbe09a239298fa4961c6fe"
+      },
+      {
+        "facing": 2,
+        "level": 3,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9945463167878597,
+        "bodyRgbMae": 5.357228006039896,
+        "source": "assets/properties/houses/owner-2/facing-2/level-3.png",
+        "masterSha256": "19f7d18654cc7bfefca3550240f79b86b9e202537780d30eb9c6fe36f7961220"
+      },
+      {
+        "facing": 2,
+        "level": 3,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9929483138985188,
+        "bodyRgbMae": 4.3192885009588045,
+        "source": "assets/properties/houses/owner-3/facing-2/level-3.png",
+        "masterSha256": "fbe9332d9daabf38c589f161b895dfb7c76fcc3f51866dd757f8c8c73f264ed8"
+      },
+      {
+        "facing": 2,
+        "level": 3,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9939243302954984,
+        "bodyRgbMae": 4.378054750658252,
+        "source": "assets/properties/houses/owner-4/facing-2/level-3.png",
+        "masterSha256": "1dfba17ba55e949446d7bbe867cb3ebaa436f6f01a78f0246c3af58afde23673"
+      },
+      {
+        "facing": 2,
+        "level": 4,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9967979229770662,
+        "bodyRgbMae": 4.081785032123633,
+        "source": "assets/properties/houses/owner-2/facing-2/level-4.png",
+        "masterSha256": "61414e19f1736b35465b072dff73c3c3f27d1bb9a3069b0a6f9277f3b50e5845"
+      },
+      {
+        "facing": 2,
+        "level": 4,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.9940399067115833,
+        "bodyRgbMae": 6.164503919978372,
+        "source": "assets/properties/houses/owner-3/facing-2/level-4.png",
+        "masterSha256": "701ce8c915ec55befda8e919d9e95e072234fcb0207ab5d76de7220febf516b7"
+      },
+      {
+        "facing": 2,
+        "level": 4,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9948991354466858,
+        "bodyRgbMae": 6.124931205283434,
+        "source": "assets/properties/houses/owner-4/facing-2/level-4.png",
+        "masterSha256": "6eeb1859ac0bdb33f2493cdf61d064f8dd6c885e413e47e2f1ccd91b99341672"
+      },
+      {
+        "facing": 2,
+        "level": 5,
+        "owner": 2,
+        "bodySilhouetteIoU": 0.9960752569480217,
+        "bodyRgbMae": 5.207369829503944,
+        "source": "assets/properties/houses/owner-2/facing-2/level-5.png",
+        "masterSha256": "18bdfbc7252daf22faf4f4e894b1797ab3f12e8086e1a566302c1e33a7af3249"
+      },
+      {
+        "facing": 2,
+        "level": 5,
+        "owner": 3,
+        "bodySilhouetteIoU": 0.994228558851581,
+        "bodyRgbMae": 7.945230188988645,
+        "source": "assets/properties/houses/owner-3/facing-2/level-5.png",
+        "masterSha256": "42a091a683723db2ad2f90f06e1ff15f470054646773a4c3cf3e0763f2a7bdd4"
+      },
+      {
+        "facing": 2,
+        "level": 5,
+        "owner": 4,
+        "bodySilhouetteIoU": 0.9960537281239277,
+        "bodyRgbMae": 6.416459548359049,
+        "source": "assets/properties/houses/owner-4/facing-2/level-5.png",
+        "masterSha256": "30d4201dcc987c1b7bac044c04039deca44024a94c492941a07b2b670f3aa5b4"
+      }
+    ]
+  },
+  "comparisonGenerator": "scripts/review_static_hd_houses.py"
+}
