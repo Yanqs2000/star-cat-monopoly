@@ -1,0 +1,2503 @@
+{
+  "version": 1,
+  "scope": "all non-animated scene textures and static UI; excludes character poses, portraits, animations, DOM controls and audio",
+  "baselineCommit": "eda3c57",
+  "generator": "built-in image_gen",
+  "protectedExistingFiles": {
+    "public/hd-review/building-hd-candidate.png": "edb8ab95d6d86bef97b238e72028304adaf7723cf28b8bfaf06bba844e47cf6b",
+    "public/hd-review/juanmao-original.jpg": "dd6da6fe98b992868ae868f27175327b3a2a779cf54f511b3bfe46f08458239c",
+    "public/hd-review/building-187-hd-candidate.png": "cb70fd055c1960fc59eceb99554897c18134968b3ca4bf7a51cd430d9834ca29",
+    "public/hd-review/ajie-original.jpg": "4ecf8ca7f7b286010f7059f0a7663e5a8dafa899bb958196f5ab27a43d4658af",
+    "public/hd-review/building-181-original.jpg": "85060b04292ebe609159cfdb074c819af5d14c6c9baf4af17987c6ebdd55367e",
+    "public/hd-review/building-193-hd-candidate.png": "1824f881460beefaa85a04f79d019bcf553f3b4eed50859da3aca81a7c9f1c1a",
+    "public/hd-review/building-211-original.jpg": "e1169a468e6f363df74caed2246b3d982df1e13afbf03f89648bbf722980001f",
+    "public/hd-review/jijimimi-original.jpg": "c83423361578162ddb30f70626afc16006106d23e5f66088cd05e44866662568",
+    "public/hd-review/building-193-original.jpg": "5faac4c516b9ce1c5e2accfb59223c8b2e3853101290e690f159786e72692d5b",
+    "public/hd-review/jiajia-hd-candidate.png": "26a56a22b8c7139d7989510986561d20703a49990b18b427da50bbff2aba95fb",
+    "public/hd-review/juanmao-hd-candidate.png": "d377c470c3814851903428e5b5af66f3f79e09ef66480b4982e872c5bd4dfb8c",
+    "public/hd-review/guaika-hd-candidate.png": "8b99eec87c7865480408e9d01d5c10101f75162fe87b89b6b7e386ec07c03145",
+    "public/hd-review/index.html": "51f15b3bc4df04a63d604d6125b98b122d5728ba1fafe3bd3d14c1c6bfd09290",
+    "public/hd-review/nini-original.jpg": "ad96b77ec1158b3bed6df877963957decb5d17c015969215e3ead23c24bd9aa1",
+    "public/hd-review/shuaige-hd-candidate.png": "f5cf78f2c9bffb314be42f4b8ccffd89545880ef9e9b63187a06d681933060aa",
+    "public/hd-review/nini-hd-candidate.png": "e0485a74f17ab24c0537aa76d017270ab28ced1e29c351c64790c097283d9d88",
+    "public/hd-review/building-202-original.jpg": "bb967fcdc6d491253500cbd7714777e948dfebcc23b55b8ae98d24d9b64840cf",
+    "public/hd-review/building-205-original.jpg": "7ef51e31d48bb5e783d39979162632758374f15af4c0d8edef1cb7d98729ca4c",
+    "public/hd-review/building-187-original.jpg": "f7a09374d42e32e8c08ce0885d5a0967a24b9aefb5c59683e7f8097dcd25bbc2",
+    "public/hd-review/afei-hd-candidate.png": "67ca5820e782792f76e5f70e54b658e98f7ae28de23dd5302bd52f76be3849e4",
+    "public/hd-review/jijimimi-hd-candidate.png": "e089967007e82f8f86265fc30a5be314fdb89a5b4778ee4bad707f60aa7d3aab",
+    "public/hd-review/building-199-hd-candidate.png": "2dec23baea7e1fc8600abad4d1c738552d88e5ee03cbe8cdaded6501ab169217",
+    "public/hd-review/building-208-original.jpg": "a114fdefc0bcb319cab8c7e54b6c7e4f5c17c00bbae5a7e49723af9fe2b9ad86",
+    "public/hd-review/aniu-hd-candidate.png": "52cdb3cc8814cb5d263301816ea93e503715eaeca84154fac318caf5d9f8ce39",
+    "public/hd-review/weiwei-hd-candidate.png": "be4e2db7efb8cf1a42234c31db233c9b1b92205eaf611c4a5b6d3b7dac9e07c4",
+    "public/hd-review/alpha-integration-check.md": "ce3b5a8323fe8d9603865c6455e3e5f59ffebf9340cd107d60a6c25a76476bc5",
+    "public/hd-review/building-199-original.jpg": "1f577b155b5b6643760f2d5a04e428c151ba049d05989333e27e77f3a788e77b",
+    "public/hd-review/building-196-hd-candidate.png": "5bba7bc941d2199bceff0b60dcf571762ded8a39431b03c23c55e3d036370b84",
+    "public/hd-review/building-211-hd-candidate.png": "459d094d367951fcfb25f56e6560a1798f50e5161b3fe3b5be20bc41987b3fd2",
+    "public/hd-review/dawei-hd-candidate.png": "6625c5a36e015dbf49e18686d3dfe27b2931bd296a3bceb9266de848736b15f5",
+    "public/hd-review/guaika-original.jpg": "de694bd6093c1acbb980917fe1c662853a769e0096598d8628b1b89d207472cb",
+    "public/hd-review/building-205-hd-candidate.png": "44505b61ac1ceb55e79dc32df0eb7d2fc809c96b40f9f3a33ac395184517cc69",
+    "public/hd-review/juanmao-hd-v2.png": "eaf779f5c40e22732afb973912caf489bc9cf022719bbbb0166a582326600964",
+    "public/hd-review/building-202-hd-candidate.png": "c479de76d93520be51d6cbc51b8092d340241dd0e3f1a845eb7d5a02640026f5",
+    "public/hd-review/weiwei-original.jpg": "e70545003959f8574eca55afd66b8c6e4fb86b9986ceeaccffaa22c48ba00df5",
+    "public/hd-review/building-181-hd-candidate.png": "2a46c06bf3b51fda437b179d06ba6070936d3b912ce7fd8e836aee6b0482b991",
+    "public/hd-review/shuaige-original.jpg": "6709e0ef30857954e8c6496eb360d3346899d9e503c1086f1eb84691e78d2c74",
+    "public/hd-review/afei-original.jpg": "3a78f43d79b68170a0f1fd6ba239a16623f56f46d50050e882f01a8dd6e7becc",
+    "public/hd-review/aniu-original.jpg": "4e735d862e1d70b45a2701c55e5057cbb52bb41ce5700f2833f6af81cd306bfc",
+    "public/hd-review/shuaige-rejected-extra-hand.png": "4ee19c97e9a411a83bfd557f0d2319f8525de80dd1a418d4a700942690aa2af2",
+    "public/hd-review/building-190-hd-candidate.png": "cb2036e74c60dba991efd297f680dd8616320f567c48fc22a71d0585a93fcb42",
+    "public/hd-review/ajie-hd-candidate.png": "30ee5e508f8f35dbf2916d89a44050556183021b583a3c096d2b6d761327d343",
+    "public/hd-review/building-208-hd-candidate.png": "5fe58bef7889c3470655abf2c13b4700a7b24be7107ea3964272d23b5fce83d5",
+    "public/hd-review/prompts.md": "eb9bbc7fb0d1c799378979cd34fa0094e367a87032af4cd406b871f4a07a5ddc",
+    "public/hd-review/building-190-original.jpg": "c492fc253072d97a34e5f3661c091ece8eecedf2a68741e392293e049d12a577",
+    "public/hd-review/dapai-hd-candidate.png": "e40af70961d35653478f5ba01ec608b2172d4a6f3e630d810dde2ea7e4039712",
+    "public/hd-review/dapai-original.jpg": "7b91e944b9760d2314d60b3da6e10f15c9f077c40de6778b9486e406d2ced860",
+    "public/hd-review/jiajia-original.jpg": "f4a1b17662f8db5f78c24ae05b4c55134a87688f824a90722149c29556e7a890",
+    "public/hd-review/building-original.jpg": "6b0727b700b1065406ab652ec89d019a964c831a37ea02cb24db24c91b029f53",
+    "public/hd-review/batch-manifest.json": "a69522fba28883587a76ac5af269248019b2c65fbad4aa2c25466991601e9be9",
+    "public/hd-review/dawei-original.jpg": "93deaf2a2be516b1737e41a106e29f91c5a7f9afa9bbc8c78adca5c12f46f2f7",
+    "public/hd-review/building-196-original.jpg": "aa3ac0de4204ea0fdcb6d980c581b7b70dac1190a49ff3fb87d5aac017387518",
+    "public/modern/hd-map/manifest.json": "d25c12304ff5be8aa5aeba34ac14034d1e13a92e936d328753683af4acf798d9",
+    "public/modern/hd-map/region-11-9/r0c1.webp": "67801637d661a0afc15f03d664d196a6c562623cb03e04e95a0f3c1d18037174",
+    "public/modern/hd-map/region-11-9/r0c0.webp": "8d72840ad39ee8c7e0d1d77001070b21868baea1cf7ae4cf633da07e27a970f0",
+    "public/modern/hd-map/region-11-9/r1c1.webp": "10b4e4ba4b2af1abea93b812340d8a53e928112d5d34faf064c8fc3ff3970221",
+    "public/modern/hd-map/region-11-9/r1c0.webp": "09985e3b639b44463e29c8ddd9f166fe5b6b5ec470b58651ff67ac1f8a990995",
+    "public/modern/hd-masters/map/inventory.json": "4c5248164f56a392082793defd253a8fe0ef05a365a3154e48e06febab91b39f",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-reference/generation-prompt.md": "38d10302595b5bde0d800c744a40301ad2fff2b128ba42d20e45ad08d5f0a823",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-reference/layout-context.png": "f564a0eed54af28145ba16acb804533edb029440b10ec232db4d112df9436696",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-reference/manifest.json": "aebef858ddcf6da41407087c9f8870f92a9cd2ff56b220ec3179e7fed81f6d84",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-reference/refinement-r02.md": "f6113320e0c2aefa30a847e0ae7e5983dacc3390c479ce253585bc6dc151aece",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-r02/master.png": "5b055be59cdf3b3b466887bb211f49b0d1cd5b067509c1d707d0e85d470dd35e",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-r02/investigation.json": "1abaaf71e14e357053ebef27dadece8525159c76a6d2dfab9062852c99980065",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-r01/master.png": "aed75b41d2c557bbf38eb862d43a6a1686b0113a08764d5c60b7daea3a7c9923",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-r01/investigation.json": "7da5a682e0399be7df90cdd2f5bdaf1f2c3682891721ef01264cde7a10eb74c5",
+    "public/modern/hd-masters/map/region-11-9-v2/r0c0.png": "1cc8f953a962990232d7ec8991491863682373aa0fb75fb2af6eceb9904006de",
+    "public/modern/hd-masters/map/region-11-9-v2/r0c1.png": "6c3947687bb974d78153025dc3da18cb1586a4a2d9cc55ac6449f39ef5716772",
+    "public/modern/hd-masters/map/region-11-9-v2/masters.json": "b391c6e883de0ff76f96a3e2cde56fa6249084cb8bac134ff03c7e1200a95faa",
+    "public/modern/hd-masters/map/region-11-9-v2/r1c0.png": "56a42ce813f4c2b373be97404a5c7a83ebcac986e1e59b6a52aaaeafecf44bb4",
+    "public/modern/hd-masters/map/region-11-9-v2/r1c1.png": "a4759f5c7e4af9a69ebbb19f37e0581fe287a3210d27954150097c74581f4b67",
+    "public/modern/hd-masters/map/region-11-9/r0c0.png": "37698686b0e891e6b5e93b1557d5424dcba7956c71d8b0f488e93a9159a8037f",
+    "public/modern/hd-masters/map/region-11-9/r0c1.png": "31c3e6f3ce4dc635ea73ee4e609a4e39afe69f45db3c7454797d2a4dd89d6883",
+    "public/modern/hd-masters/map/region-11-9/masters.json": "7d5ba3e0affda93a7e509826fff9533fbb750be88ca6089a844a9a0f979f04c5",
+    "public/modern/hd-masters/map/region-11-9/region-global-v1.png": "7b7437afa4be6c32fa532c45bc235a9197333cf0e014c6ac18ded1b7acf24fb2",
+    "public/modern/hd-masters/map/region-11-9/r1c0.png": "9e30ec58b75a2f6cf511e1486bb32c3558b42d0fb7778abbe809ad243e140705",
+    "public/modern/hd-masters/map/region-11-9/r1c1.png": "5d9c91bc37ea14d485fb7d1f0e36c706d1ea442d053ec199e9334099d5e97f87",
+    "public/modern/hd-masters/map/region-11-9/references/r0c1-reference.png": "fe1e8130e3e7ebc921f21e2ad1d1d963930c5fc39f2e2dd3792094fe52a27895",
+    "public/modern/hd-masters/map/region-11-9/references/r1c1-reference.png": "488c79a089bbea3ba6a85a1571413f4c5a0a2d756c620573e83dcfab61333ce4",
+    "public/modern/hd-masters/map/region-11-9/references/r1c0-reference.png": "c19e6501e7b09d8dcd0efb3ca6a2b8f85282ae2a7443f2633601ac066093f06d",
+    "public/modern/hd-masters/map/region-11-9/references/r0c0-reference.png": "9bc55df2ea2f33fcf1abcbd5e7c71149594b025637fa8250473b3c0056ee4810"
+  },
+  "jobs": [
+    {
+      "source": "assets/companies/1.png",
+      "sourceSha256": "c8737bde0bb09d117be03f7eeefdd891a79f9a789c1d5187bb98e2282743dc84",
+      "kind": "building",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/companies/1.png",
+        "url": "hd-static/companies/1.webp",
+        "logicalSize": [
+          178,
+          191
+        ],
+        "pixelSize": [
+          712,
+          764
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1211,
+          1299
+        ],
+        "masterPath": "public/modern/hd-static-masters/companies/1.png",
+        "masterSha256": "16622350d02a2c9aa3d8a83c2baaa507e118cdcd697ff27ec66a94e7d47782aa",
+        "outputSha256": "668248a1ed903f91dd056466349fb9f7cbff1fb67b44248c29f0d07cc9e7480c",
+        "outputAlphaSha256": "9ba8bbcc935f15434d040098ea1b378ed14ffb6b2aea40e139315d90ba3fe893",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review"
+      }
+    },
+    {
+      "source": "assets/companies/dialog.png",
+      "sourceSha256": "1b107b4bf0f004baf5443a61ce010a4f538bb6ec7b9fc4d5fb20de59536afd3d",
+      "kind": "ui-panel",
+      "aliases": [],
+      "status": "candidate-rejected-alpha",
+      "candidates": [
+        "public/modern/hd-static-masters/companies/dialog-r02.png"
+      ],
+      "reason": "Content rectangle alpha minimum 89 instead of 255; keep original runtime panel"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-1/level-0.png",
+      "sourceSha256": "9d8689ea4a8f4dcbfac279ccfd0218eb5d23567077a09d2df68338c34c295fb7",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-2/level-0.png",
+        "assets/properties/houses/owner-1/facing-3/level-0.png",
+        "assets/properties/houses/owner-1/facing-4/level-0.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-1/level-1.png",
+      "sourceSha256": "1d3d585efb2af7b151f1d3843bc55316f4519d6349038f62f53d33acf04c5038",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-3/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-1/level-2.png",
+      "sourceSha256": "6c5928fa94bdd2543bdc882ccddf126c034fea8727d7a5686bb2a417247101d8",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-3/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-1/level-3.png",
+      "sourceSha256": "6e3db681be5cffc5f452d868638671567f2e97d0295b195bc0f9c314405dbfb0",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-3/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-1/level-4.png",
+      "sourceSha256": "c74ba6753749f6d01fde8f9e00ea404de9e4b306b63fe186ef0c83c45d407347",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-3/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-1/level-5.png",
+      "sourceSha256": "80980425bbd0ac8c657d7560fdcbf81cda88bc1dc376c983e52eed672af4921a",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-3/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-2/level-1.png",
+      "sourceSha256": "223a8bc201ab7a490af153b08e9adbf833afa5b90acf1c1ab920bda62a0e5835",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-4/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-2/level-2.png",
+      "sourceSha256": "72d99e0e1fbe41e9163ec2668d892027c3f4020062281b4f6de77f8e44462650",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-4/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-2/level-3.png",
+      "sourceSha256": "3b4b138ed68f9fe61aa2f3ab2f33861b2b544ee2038f8cbf926676b6915c668f",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-4/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-2/level-4.png",
+      "sourceSha256": "28431b9323cb142d4a2b1e0dcdc9e9b5e848dfaba4ad4ec14d65925c42fda016",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-4/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-1/facing-2/level-5.png",
+      "sourceSha256": "4ab3fec9278f65be521fc2495aff7061236f4e053bb8232bb978ac439c436f12",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-1/facing-4/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-1/level-0.png",
+      "sourceSha256": "bea9bd4c9be939a1d97f6643c2188790795a9e112b4c8ceabc20711c8d183806",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-2/level-0.png",
+        "assets/properties/houses/owner-2/facing-3/level-0.png",
+        "assets/properties/houses/owner-2/facing-4/level-0.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-1/level-1.png",
+      "sourceSha256": "a4eeb513028b0974523240ee9334d08c59cca96e5ad70cdd3a341f38923b51bd",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-3/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-1/level-2.png",
+      "sourceSha256": "4335a9aaae2a5d3d597d619f5255e51e282c01e0377ff28f0f352bc0c4f7d481",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-3/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-1/level-3.png",
+      "sourceSha256": "06e93d950d37d9dacd82c8483aba81eb06d19b572ca7d09f9a4224c986a4129d",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-3/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-1/level-4.png",
+      "sourceSha256": "c00bfb9ec70284cd68d1f794375aee73901e81687a48ed8c6bbdbcfb40f7e741",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-3/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-1/level-5.png",
+      "sourceSha256": "088776c3044a341f6a703527111af1b9b0393b84c1351405d15adf10b0e07888",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-3/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-2/level-1.png",
+      "sourceSha256": "dac402312cd08fffa009e9de6b009bacfaaa6fe6b1c8bb79e67368166bf82a7a",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-4/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-2/level-2.png",
+      "sourceSha256": "1f16a36f3fe1d97f9173977485d2527e654bb660902684796979eb1906eb131d",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-4/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-2/level-3.png",
+      "sourceSha256": "d17e063e110c8790fc61998b0b18431fe030d65b4295dc4a1643140d3452f420",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-4/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-2/level-4.png",
+      "sourceSha256": "e1cc04f526a24154d2a2d5241cea6934eba717c7685069989391b235429d04f7",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-4/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-2/facing-2/level-5.png",
+      "sourceSha256": "b395fa2202e1e387a1cfcd4cd32d465e514574910404b03b29e84f0fbed5fbdd",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-2/facing-4/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-1/level-0.png",
+      "sourceSha256": "f41e2ea9dcace945a7da628cd074d573588c67e6c35d83748d6b76fda147f933",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-2/level-0.png",
+        "assets/properties/houses/owner-3/facing-3/level-0.png",
+        "assets/properties/houses/owner-3/facing-4/level-0.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-1/level-1.png",
+      "sourceSha256": "b7f1a28a49f3c3ab2cd45be5c7d3b9416ef9c5adfec1be98e7d68162460a2e9d",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-3/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-1/level-2.png",
+      "sourceSha256": "41863644b49858e7f0c96dcf1fc45e3212e2b546bb93e1fadcd1716b3bcf44f9",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-3/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-1/level-3.png",
+      "sourceSha256": "83b481bb08b3550113b326cc0ba0f580021fd81c85d8a59c14146abb639864e9",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-3/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-1/level-4.png",
+      "sourceSha256": "b9b34e74e55d4464804899c64c2f94ac300a1a417b157dfe58ed3faf7abbf29f",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-3/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-1/level-5.png",
+      "sourceSha256": "f2d3a89c234e3dd915a69ee83f4f73f4d9822fccbb170ee6462f130b237b0c94",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-3/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-2/level-1.png",
+      "sourceSha256": "dd6e800c8b4b1bba8601412a993f50981f291b18225de50a5834388c4bbb7a33",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-4/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-2/level-2.png",
+      "sourceSha256": "fcb63ae7d6e55d371cad7dc14abf4355c8397277b7cfac9c5acc069be42ebb13",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-4/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-2/level-3.png",
+      "sourceSha256": "3ede3b22c1f5bb3b7cd00029ee30a7b53b37ddf72c21b4aa7162c241d7e8a0f8",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-4/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-2/level-4.png",
+      "sourceSha256": "6a374a4c0c61b9b656d6a71187bc3b1561056646666f661b5034605bbb92bd85",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-4/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-3/facing-2/level-5.png",
+      "sourceSha256": "8daef2c23c59e2c849165ec57517a16865379b4f7fd357d181bb38cc9a8d4ef2",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-3/facing-4/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-1/level-0.png",
+      "sourceSha256": "0b8c9eaf4ea5dc801e585d0296e336c05602173a5b36edf1b44b17571760f013",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-2/level-0.png",
+        "assets/properties/houses/owner-4/facing-3/level-0.png",
+        "assets/properties/houses/owner-4/facing-4/level-0.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-1/level-1.png",
+      "sourceSha256": "02deec92b8b69c46c27c5420e3c49fea9e027e477956ccfa7260a63e31d8b8b7",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-3/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-1/level-2.png",
+      "sourceSha256": "87024b261a560bffaf249e0cab89d2162881fe9ef960609fab61b1c7d70d0c1d",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-3/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-1/level-3.png",
+      "sourceSha256": "c4fd6da485bcffe02ad6abead89e2d972c70eaf2b322528c7001e05ae1fb86a0",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-3/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-1/level-4.png",
+      "sourceSha256": "fd4a00a1ff3aa9602d685372cbc44a0e20ecfd30a36fa91b450ebbbcb33f5fa3",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-3/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-1/level-5.png",
+      "sourceSha256": "a23038f17d5ee339d4baa98cd60fb300fb659add3d7d66a09504b6993de96849",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-3/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-2/level-1.png",
+      "sourceSha256": "6cc0f312379fd90662f89340df3e68c7a5045c0f9a7f65b921f7d56301ed4127",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-4/level-1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-2/level-2.png",
+      "sourceSha256": "b50dec2c3c10d0262633ce1a0543fa08c50aa6ce6f4203ccc2f2c273b8958f70",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-4/level-2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-2/level-3.png",
+      "sourceSha256": "016241efdd7cab87fdec4287d2052f66288f927a9deeb11719adac1ab700d708",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-4/level-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-2/level-4.png",
+      "sourceSha256": "f3135893c9ebb7107ad1f89c5ecdc9154bc448e6448bcdef40abb45db8e344e6",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-4/level-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/houses/owner-4/facing-2/level-5.png",
+      "sourceSha256": "7d338b3ab7c82872a49420cd552eecd93d47b1b0e4b41a1bcafc74696aea3b39",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/houses/owner-4/facing-4/level-5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/sell-sign/facing-1.png",
+      "sourceSha256": "b26f4c4e763cca10201fdc2b8fb5da6e156f856db5fe3653643ddc0c77a9923a",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/sell-sign/facing-3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/properties/sell-sign/facing-2.png",
+      "sourceSha256": "40911d782a781fd37023a543df1f2378250e7bc72c270f4005cf47f88b4e9a8e",
+      "kind": "property",
+      "aliases": [
+        "assets/properties/sell-sign/facing-4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/1/1.png",
+      "sourceSha256": "374f74181dab8f5d9e68ba200285a436e22c5cc2aa3b6b046d60f33da8aab209",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/3/1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/1/2.png",
+      "sourceSha256": "a729238ee1e4b5531d64360be089e81d5578aecac935d1a85a213fa17ab0e99b",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/3/2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/1/3.png",
+      "sourceSha256": "200ee57c390d7bbb8efef72f023cabb231864088cbefcadf1484876942ac2bf6",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/3/3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/1/4.png",
+      "sourceSha256": "9215692e4ad29d8dced339313d1a17e197f2f2b6a7dd33b29da67100b44490b7",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/3/4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/1/5.png",
+      "sourceSha256": "f6c2907aef7aba26f6137dbd8d24bdceea9bb91c8f204762101a3b4ccf79b652",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/3/5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/2/1.png",
+      "sourceSha256": "72ba8b76da466f7d481422565cc88975a4f6fa032bd7ffe93f3a5938b33445e1",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/4/1.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/2/2.png",
+      "sourceSha256": "f8e0b7087f6e032fe5cb7c16809c5c2c24e6d3d410439a4221ee961e34152781",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/4/2.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/2/3.png",
+      "sourceSha256": "546239ccde8fbe992d0a227560e11ca5c498d96aac5ea94764690ba0bfd67bc2",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/4/3.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/2/4.png",
+      "sourceSha256": "9eec5008c2f7e53b19e05f0f7004399c07161b94c7bf8d468c4e6e5091011153",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/4/4.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/world/neutral-houses/2/5.png",
+      "sourceSha256": "af5cc27aa0458f504b08d13d0c39d9154f75167b1d09234acfa1a1aeb1160fcd",
+      "kind": "neutral-property",
+      "aliases": [
+        "assets/world/neutral-houses/4/5.png"
+      ],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/interactions/cards/1.png",
+      "sourceSha256": "53bd9e32c0329a2e37d99224f3607db54f9b1fedcbc45f8b2b1dbe9fb7114187",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/1.png",
+        "url": "hd-static/interactions/cards/1.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/1.png",
+        "masterSha256": "0f296dd1fbaab73e185bedeaf799395680fc2ed14dccd00be9512a7cf5787fce",
+        "outputSha256": "b9d506479842476d8606d142e4bb301c7f81e008a36e8f7a7aa6cc8e6bb62068",
+        "outputAlphaSha256": "679bc84021dadc8f16ac68aeb7925f314058615465f6153d2b38fab37beb52d3",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review"
+      }
+    },
+    {
+      "source": "assets/interactions/cards/11.png",
+      "sourceSha256": "d88fd7b455bb19ea0ced39712af90acc70919682037763f4129d8761f1c295a4",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/11.png",
+        "url": "hd-static/interactions/cards/11.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1234,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/11-selected.png",
+        "masterSha256": "15ef5713341ffbefd120c5b1b82c00b72042b895844f9f5cbff560d7d31e8059",
+        "outputSha256": "b9af76e86a566b06baef26ee7fbd5702ac716d80968b78c722ed3b96db826938",
+        "outputAlphaSha256": "c11a1e6c522897c8a8d175730a3d6315ed331c49de2afc307546f3604cc3f3c6",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static card icon from Star Cat Monopoly, 购地卡. The input is the precise identity and layout reference. Faithfully redraw it with crisp high-definition polished colorful 2.5D toy-game shading. Keep the original 65:67 canvas aspect ratio, original clockwise card tilt, cyan border, light-blue/white card face, image position and all source framing. Preserve the exact bold black Chinese heading \"购地\" at the top (two characters, verbatim), with the small colorful parcel/property graphic underneath. No extra wording or additional objects. Real transparent alpha ONLY outside the card silhouette; the entire card face and symbol are opaque. Native resolution at least 1024 pixels. Do not make a photo/mockup, add watermark, expand the card, change the game meaning or invent extra details."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/14.png",
+      "sourceSha256": "4f49b574ba030eb8699994838ba312b422d9e4e91b737595511f5b75f500127e",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/14.png",
+        "url": "hd-static/interactions/cards/14.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/14-selected.png",
+        "masterSha256": "b8adea635c6ff32738e50c3b907552a386db9f47add2136858d1203c8eb40b82",
+        "outputSha256": "960827ed2b736323f6c9324a10c2cd24c9e9422b56d925193873634331cb4d1b",
+        "outputAlphaSha256": "3cf41ac6cdad374163ad5e5366fae45a3c75c4b4793c1b899d8431c088373cae",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One static 炒地卡 icon for the existing Star Cat Monopoly game. The attached image is the EXACT layout and identity target. Faithfully redraw this existing artwork in crisp polished colorful 2.5D toy-game style at native high resolution. Preserve source 65:67 aspect ratio, clockwise blue card tilt, same cyan outer border, light-blue/white face, object position, framing and silhouette. Keep the exact two bold black Chinese characters \"炒地\" at the top, with the same colorful little property/parcel symbols underneath. Do not change it to 购地 or 沙地. The text is 炒 地, verbatim. Entire card face and contents must remain opaque; genuine alpha only outside the tilted card. No extra objects, extra decorations, mockup or watermark. Keep card meaning and composition unchanged."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/15.png",
+      "sourceSha256": "a8b21a1e7431866fc9faa932fd72db32a18b9b39a7d4a541429c63a571ddbd29",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/15.png",
+        "url": "hd-static/interactions/cards/15.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/15-selected.png",
+        "masterSha256": "284feba2339c7389175c1945361ce314bbb8e7d7881fdf118f3ac0d136ff359f",
+        "outputSha256": "d786d896050d36889fb15b4da5235cdb143c3740bd016ab723c6995e9091e6c2",
+        "outputAlphaSha256": "a3c4a5a6a43cd9abea9f7f86779da69a67e8e190fe41c2ad580b4ae8a1897ad5",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One static 拆屋卡 icon for the existing Star Cat Monopoly game. The attached image is the EXACT layout and identity target. Faithfully redraw this existing artwork in crisp polished colorful 2.5D toy-game style at native high resolution. Preserve source 65:67 aspect ratio, clockwise blue card tilt, same cyan outer border, light-blue/white face, object position, framing and silhouette. Keep the exact two black Chinese characters \"拆屋\" at the top. Under them is the original small cartoon demolition/house-removal symbol, a tan/yellow breaking or collapsing house/tower with its small green/gold base. Preserve the reference symbol rather than inventing a meteor or a vehicle. Text 拆 屋, verbatim. Entire card face and contents must remain opaque; genuine alpha only outside the tilted card. No extra objects, extra decorations, mockup or watermark. Keep card meaning and composition unchanged."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/18.png",
+      "sourceSha256": "9cb77130cd1f099f77b39d369dcb6de45cd52f3f288231f912914ad48e189183",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/18.png",
+        "url": "hd-static/interactions/cards/18.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/18-selected.png",
+        "masterSha256": "75fcc3ce4b23ff5ba2e77eae4d64e8206c99b66019ca67e16c0d6a663c7e2b17",
+        "outputSha256": "7e5ac5508c73ef1b7285f733eb35d17ec7e856e4776776134e65e858bc380f0f",
+        "outputAlphaSha256": "e36808e6dcc9ccc6ea53d511efceaca7f1970fa9c579efdc106555be8925a932",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One static 天使卡 icon for the existing Star Cat Monopoly game. The attached image is the EXACT layout and identity target. Faithfully redraw this existing artwork in crisp polished colorful 2.5D toy-game style at native high resolution. Preserve source 65:67 aspect ratio, clockwise blue card tilt, same cyan outer border, light-blue/white face, object position, framing and silhouette. Preserve the same small cute blond angel figure on the card, with spiky yellow hair, the same expressive face, light-colored angel clothing and pose and the same tiny light/gold accents. Keep the reference character identity, haircut, face, costume and number of limbs; only make the existing static illustration crisp. No extra words or new character design. Entire card face and contents must remain opaque; genuine alpha only outside the tilted card. No extra objects, extra decorations, mockup or watermark. Keep card meaning and composition unchanged."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/19.png",
+      "sourceSha256": "4977a653441a5f729c2405cec080f54d4f9c1efc10885fc8913a091124a67f0c",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/19.png",
+        "url": "hd-static/interactions/cards/19.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/19-selected.png",
+        "masterSha256": "57278919cbb8867a6f5693e206e7451dd9b5e2dff3af5a5c8f684f6886483a78",
+        "outputSha256": "658da059dec1e165453b3bd58cb7bead80aa5cbd6ed7155a1ee6cea889bcea65",
+        "outputAlphaSha256": "c9bdfec36256f178b07ec6538194ea385b3a180634a563a9fd34e6ceb5824193",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One static 恶魔卡 icon for the existing Star Cat Monopoly game. The attached image is the EXACT layout and identity target. Faithfully redraw this existing artwork in crisp polished colorful 2.5D toy-game style at native high resolution. Preserve source 65:67 aspect ratio, clockwise blue card tilt, same cyan outer border, light-blue/white face, object position, framing and silhouette. Preserve the same small red-haired mischievous devil figure on the card, its exact red spiky hair/cap silhouette, playful original face, light costume, tiny arms and original pose. Keep the reference identity and all clothing details; only sharpen/redraw the existing static illustration. No extra words, wings, horns or new character design unless already visible. Entire card face and contents must remain opaque; genuine alpha only outside the tilted card. No extra objects, extra decorations, mockup or watermark. Keep card meaning and composition unchanged."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/20.png",
+      "sourceSha256": "3857ce2c8d3caeb1745c32f7c45e2e56a79b1b1e3a5c044175a8108b2cdff244",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/20.png",
+        "url": "hd-static/interactions/cards/20.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/20-selected.png",
+        "masterSha256": "0d91fe9fc5a4648b2b0e5fa1137ed730fe299f8b1460f08002ef3afad55173f0",
+        "outputSha256": "bb5e5f9581db7ab8706958b42e0b5ccd7679fc4949253100393f471b44eb0812",
+        "outputAlphaSha256": "bdc44b57a064c875540243f0bcd29c1264a5851fdd60b8ecb2504cf2312ae5fe",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. Production transparent 怪兽卡 static card icon for Star Cat Monopoly. The attached image is the EXACT layout, object identity, colors and framing reference. Faithfully redraw it as crisp polished colorful 2.5D toy-game art in high resolution. Preserve the original 65:67 canvas aspect ratio, exact clockwise tilt of the cyan blue card, the same light-blue/white face, border widths, object placement, full image extents and composition. Preserve the exact cute round bright-green horned monster from the reference, including the two small red horn/ear interiors, dark eyes, wide mischievous mouth and small blue collar/body base. It is the original monster, not a realistic frog, dragon or new mascot. No text. Transparency ONLY outside the tilted card silhouette; the entire card face is opaque. Keep existing object count, original card meaning and legible correct Chinese. No watermark, mockup, extra props or decoration."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/21.png",
+      "sourceSha256": "ba4e5853a0c5d9431e98158ec6200e0b3bf9e247515b68992f068ee01ba4a1a4",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/21.png",
+        "url": "hd-static/interactions/cards/21.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/21-selected.png",
+        "masterSha256": "e6f6d13628abee43bb871be3f283603a0bb28e5a4799b7bc71783c9f8ddf938c",
+        "outputSha256": "a53b0d664482fb681a5d8d95935b1976f674707d95a5195c4bb1b0c71b51ee38",
+        "outputAlphaSha256": "79669fb6c2e190190ff2290deb9bf34524605722dd15ddcb1e852adc83a25fa0",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. Faithfully redraw this exact Star Cat Monopoly 招神卡 as a crisp high-definition static game card. Preserve the original 65:67 canvas, same clockwise tilt, cyan blue frame and light face. Keep the exact two black Chinese characters \"招神\" at the top, not 召神. Preserve the same small blond angel/spirit illustration underneath, with the same original haircut, expression and pose. Keep image positions and identity, no extra scene or objects. Entire card face opaque; real transparent alpha only outside the tilted card. Bright polished 2.5D toy-game shading, no mockup or watermark."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/22.png",
+      "sourceSha256": "20d9795871a30a0ceab2b16b32f99bbff988fd5cc9b34cc50aff231da8c3b80e",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/22.png",
+        "url": "hd-static/interactions/cards/22.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/22-selected.png",
+        "masterSha256": "7b88b98aeb64169b7b5d4f9f71c700ce6319c9b3467fb5e66e4b4735dc904fde",
+        "outputSha256": "9429d0da9e188a7301f22bbc57e89efa6ce910d73f72806190f3e3c931bd4918",
+        "outputAlphaSha256": "c1f0d3a77c7327541e55593b0c5812effd953e3ace4a78eb32735c7696eb9e1e",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static 送神卡 icon for Star Cat Monopoly. Faithfully redraw the attached exact source image in crisp high-definition bright polished 2.5D toy-game style. Preserve the 65:67 canvas aspect ratio, existing clockwise tilt, cyan card border, pale blue/white face, original framing, symbol position and original meaning. Keep the two exact bold black Chinese characters \"送神\" at top, with the same small red-haired devil/spirit face/figure beneath, same expression and original pose. No text other than 送神, no new people or scene. Genuine transparent alpha only outside the tilted card silhouette; card face and all contents fully opaque. No watermark, mockup or extra decoration. Native high resolution."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/25.png",
+      "sourceSha256": "f255097babee7691b2d0fd3951433483729a697be7bb00554f39f6c939db4b41",
+      "kind": "card",
+      "aliases": [
+        "assets/interactions/cards/26.png"
+      ],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/25.png",
+        "url": "hd-static/interactions/cards/25.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/25-selected.png",
+        "masterSha256": "12a086afa132aa317591268f693c76b92f6803f1ce381ad44882ed0a1572dbd9",
+        "outputSha256": "93a21cfd0d5e95239ab5627c425779fa74db358ff8741c9ca764e8b33bf15846",
+        "outputAlphaSha256": "be86894243addfb5919524bf93c7df76186df660c944f31400708d55a7246256",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static 特殊卡图 icon for Star Cat Monopoly. Faithfully redraw the attached exact source image in crisp high-definition bright polished 2.5D toy-game style. Preserve the 65:67 canvas aspect ratio, existing clockwise tilt, cyan card border, pale blue/white face, original framing, symbol position and original meaning. Keep only the two exact black Chinese characters \"特殊\", centered exactly as in the original. No other text, icons, people, money or graphics. This shared artwork will serve both 均富卡 and 均贫卡, so do not write either card name. Genuine transparent alpha only outside the tilted card silhouette; card face and all contents fully opaque. No watermark, mockup or extra decoration. Native high resolution."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/27.png",
+      "sourceSha256": "6d025329a9cf850d059c408dde6bfddc33e2b61a5e2a353b2d98575494e8841b",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/27.png",
+        "url": "hd-static/interactions/cards/27.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/27-selected.png",
+        "masterSha256": "5cebdfb44fb376177a501c2944313cd158b80f99906686f9a5097ee761d73239",
+        "outputSha256": "5184dd2eb82cc07c9a066a21ac2c4a2abf49c1177e9b4ac34696d355e4341fb3",
+        "outputAlphaSha256": "e3439f6a9b405c3b6704ba81785219e2ffac07d44d0aecb4329373c579358cc1",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static 停留卡 icon for Star Cat Monopoly. Faithfully redraw the attached exact source image in crisp high-definition bright polished 2.5D toy-game style. Preserve the 65:67 canvas aspect ratio, existing clockwise tilt, cyan card border, pale blue/white face, original framing, symbol position and original meaning. Keep only the same centered red prohibition circle with its diagonal red slash, precisely the same orientation, scale and position. No text or other objects. Genuine transparent alpha only outside the tilted card silhouette; card face and all contents fully opaque. No watermark, mockup or extra decoration. Native high resolution."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/33.png",
+      "sourceSha256": "7552cf63ae659727d80b43ff6eaeb273c2efaec953e7691df49950d161c56481",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/33.png",
+        "url": "hd-static/interactions/cards/33.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1236,
+          1273
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/33-selected.png",
+        "masterSha256": "364153aa1ec63b3a59be40b2378192645abc77df1675a498a33b0692f55f2f6c",
+        "outputSha256": "8df00cc5e0221cc3c657e0e82f20938d539087754779165e5782473c20ac6948",
+        "outputAlphaSha256": "bd90c9d980969baa26e17ad55fb0001ac72da60f347ede9b2fac044d24061c93",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static 查税卡 icon for Star Cat Monopoly. Faithfully redraw the attached exact source image in crisp high-definition bright polished 2.5D toy-game style. Preserve the 65:67 canvas aspect ratio, existing clockwise tilt, cyan card border, pale blue/white face, original framing, symbol position and original meaning. Keep the two exact black Chinese characters \"查税\" at top and the same small tied golden money sack with its original black dollar sign and same coin accents beneath. No extra wording or objects. Genuine transparent alpha only outside the tilted card silhouette; card face and all contents fully opaque. No watermark, mockup or extra decoration. Native high resolution."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/5.png",
+      "sourceSha256": "bf36e581832826929cf8d48e1e25e31e55889db76fadf816d209597dd23d5199",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/5.png",
+        "url": "hd-static/interactions/cards/5.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1236,
+          1273
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/5.png",
+        "masterSha256": "8249edc32acd74a0882e39bddf1ce6c0fad0ad480191fe047a1b98a4170281ce",
+        "outputSha256": "4905a4a2eba698083d9160b9b937c23a74613daf1ddacda6064752c18f5570cf",
+        "outputAlphaSha256": "eea1696395ebf0674fd281813937d62a3b4779990c620429243826955375992d",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review"
+      }
+    },
+    {
+      "source": "assets/interactions/cards/6.png",
+      "sourceSha256": "4f4266506c28a2cc27d63ca215e6bea8732c6f891d1041a129d590bb31020c30",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "request": "Initial parallel request did not return; retry succeeded sequentially",
+      "reason": "Card6 is 障碍卡: a road barrier, not a bus. Redraw before enabling.",
+      "runtime": {
+        "source": "assets/interactions/cards/6.png",
+        "url": "hd-static/interactions/cards/6.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1236,
+          1272
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/6-selected.png",
+        "masterSha256": "208a12e509e5db2f89f3ddd215c2af781b66fae76d710bbf0981336ce47626a0",
+        "outputSha256": "e99a61c946290757a25405f9b09ff8074ad9d02de4c7dd5529095b070cee73ac",
+        "outputAlphaSha256": "db6452b37710a62ad7fbfc1f902a0123e33920f06d796302a965fed05506535e",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static card icon from Star Cat Monopoly, 障碍卡. The input is the precise identity and layout reference. Faithfully redraw it with crisp high-definition polished colorful 2.5D toy-game shading. Keep the original 65:67 canvas aspect ratio, original clockwise card tilt, cyan border, light-blue/white card face, image position and all source framing. The picture is a ROAD CONSTRUCTION BARRIER: an orange/yellow horizontal barrier beam with black-and-white diagonal warning stripes and its two short silver/gray support feet. It is NOT A BUS, TRUCK or any vehicle: no windows, cabin, wheels or windscreen. Preserve the barrier silhouette and its orientation from the image. Real transparent alpha ONLY outside the card silhouette; the entire card face and symbol are opaque. Native resolution at least 1024 pixels. Do not make a photo/mockup, add watermark, expand the card, change the game meaning or invent extra details."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/7.png",
+      "sourceSha256": "cfa75d327c122982ac21648cf3b8136a672b96b348be82f055ddafb4860fd20d",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/7.png",
+        "url": "hd-static/interactions/cards/7.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/7-selected.png",
+        "masterSha256": "9aaceb214e707b65df756735cf7a4832f61a2eeacce2538e907a07e24e1402d8",
+        "outputSha256": "65a8611db9802d447f2ff38ddc3104b2683829e668522c36e98de6b4327b0b54",
+        "outputAlphaSha256": "02f3bdcdf83d84e1bda8cd78c970402246131072183981154bbecf104a1b4f5d",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static card icon from Star Cat Monopoly, 地雷卡. The input is the precise identity and layout reference. Faithfully redraw it with crisp high-definition polished colorful 2.5D toy-game shading. Keep the original 65:67 canvas aspect ratio, original clockwise card tilt, cyan border, light-blue/white card face, image position and all source framing. Preserve the original small black spherical cartoon mine/bomb symbol, its small light-colored front marking and the tiny orange/yellow fuse accents. Preserve the object count and original silhouette. No text, no bus, no vehicle and no added scenery. Real transparent alpha ONLY outside the card silhouette; the entire card face and symbol are opaque. Native resolution at least 1024 pixels. Do not make a photo/mockup, add watermark, expand the card, change the game meaning or invent extra details."
+      }
+    },
+    {
+      "source": "assets/interactions/cards/9.png",
+      "sourceSha256": "dbc864429ac9b30900b161467748722f0f553e9ff96eebb615d85e8f970fa4bf",
+      "kind": "card",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/cards/9.png",
+        "url": "hd-static/interactions/cards/9.webp",
+        "logicalSize": [
+          65,
+          67
+        ],
+        "pixelSize": [
+          260,
+          268
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1235,
+          1274
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/cards/9-selected.png",
+        "masterSha256": "83b716c4da528ed3ccbbc105821dbccc8237bc67338c3218e8e00cf038828470",
+        "outputSha256": "5e6109038191e1bcbcceee6ffa6a69ad561017465f7601d1451dd086a055cc30",
+        "outputAlphaSha256": "5d0226869b0c663379c3a1b230d4bcf7c7b71bfb69bab28b7c79c90c66ba1195",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. One production transparent static card icon from Star Cat Monopoly, 飞弹卡. The input is the precise identity and layout reference. Faithfully redraw it with crisp high-definition polished colorful 2.5D toy-game shading. Keep the original 65:67 canvas aspect ratio, original clockwise card tilt, cyan border, light-blue/white card face, image position and all source framing. Preserve the single gray upward-pointing cartoon missile, dark fins, light nose and exact source pose and framing. Do not add exhaust flames, a launchpad, other weapons or scenery. No text. Real transparent alpha ONLY outside the card silhouette; the entire card face and symbol are opaque. Native resolution at least 1024 pixels. Do not make a photo/mockup, add watermark, expand the card, change the game meaning or invent extra details."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/1.png",
+      "sourceSha256": "bf3e6fbcc4265fcd73fa6e5bf34a92001442717546662fb0dccc68ae200dec69",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/1.png",
+        "url": "hd-static/interactions/luck/1.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/1-selected.png",
+        "masterSha256": "c86bbb2735f25f9108a17de21067d0f9f9af3e64f2cffad3b910ddca75089dc3",
+        "outputSha256": "a8c99332cdbd8c2c3ecb9c9061e31036a6998810be3c7fa64e2ae9f80499f2f3",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful high-definition replacement of one static luck-event illustration in Star Cat Monopoly. The attached 400x300 image is the exact scene, layout and character-identity reference. Redraw it in a crisp polished modern cartoon game-illustration finish: clean intentional linework, smooth colorful shading, clear tiny facial/clothing detail, retaining the original stylized 2D cartoon personalities rather than photorealism. Keep the same pink-haired woman with high side ponytail, red bow-front sleeveless top, pale green skirt and lavender boots, walking on the gray tiled pavement and spitting one small drop. Same half-closed eyes and puckered mouth, orange sky, white clouds/birds, bright green hedge and tiny flowers in the lower right. Do not turn it into crying, add people or change the pose. Preserve the exact 4:3 aspect ratio, camera, framing, silhouettes, expressions, palette, all relative positions and story meaning. Match the source composition rather than redesigning it. Deliver native 1600x1200 if possible, at least 1200x900 actual new detail, no blurred enlargement. The entire rectangular illustration is FULLY OPAQUE; no alpha, transparency, border, watermark, captions or extra symbols. Any existing small currency symbols remain as in the source; do not invent wording or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/10.png",
+      "sourceSha256": "62bedca8cd882f09ee9f69dc3bb143685c27f88ce0b52cc019270316d7a1e19c",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/10.png",
+        "url": "hd-static/interactions/luck/10.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/10-selected.png",
+        "masterSha256": "ff845ae8109abf64896701be94f5089a467f0fc6b1d0c9a165b1d9f743f90906",
+        "outputSha256": "b4a12fb33d14f2eee002ced187301853072f183991b60235ab2f34cca7b0dd23",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful high-definition replacement of one static luck-event illustration in Star Cat Monopoly. The attached 400x300 image is the exact scene, layout and character-identity reference. Redraw it in a crisp polished modern cartoon game-illustration finish: clean intentional linework, smooth colorful shading, clear tiny facial/clothing detail, retaining the original stylized 2D cartoon personalities rather than photorealism. Keep the same brown/orange mouse-like cartoon animal standing on a large pink bubble at center-right, the same yellow cat at lower left, floating translucent pastel colored bubbles, green background with diagonal white light streaks. Preserve the animal count, exact shapes, colors and placement. No people, extra objects or lettering. Preserve the exact 4:3 aspect ratio, camera, framing, silhouettes, expressions, palette, all relative positions and story meaning. Match the source composition rather than redesigning it. Deliver native 1600x1200 if possible, at least 1200x900 actual new detail, no blurred enlargement. The entire rectangular illustration is FULLY OPAQUE; no alpha, transparency, border, watermark, captions or extra symbols. Any existing small currency symbols remain as in the source; do not invent wording or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/11.png",
+      "sourceSha256": "cc95f7bec5b88757d3f819780f48ef0a4bfd0526695b67ab2eec813a927d703b",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/11.png",
+        "url": "hd-static/interactions/luck/11.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/11-selected.png",
+        "masterSha256": "1e004f376f13922384a368b5b15818e84031c35214d81cfcb704821fab5e0a84",
+        "outputSha256": "5aaadbb69a6a0f62b1a7a332a492f53f20cfb597fe26902ba54243cace96e547",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful high-definition replacement of one static luck-event illustration in Star Cat Monopoly. The attached 400x300 image is the exact scene, layout and character-identity reference. Redraw it in a crisp polished modern cartoon game-illustration finish: clean intentional linework, smooth colorful shading, clear tiny facial/clothing detail, retaining the original stylized 2D cartoon personalities rather than photorealism. Keep the same blond/orange-haired boy with a small yellow ponytail in pale blue clothes, delighted toothy smile and money held at his waist. Preserve the flying yellow winged banknotes, dollar-sign coins, blue sky, white clouds and green ground/cliff. Same composition and object placement, no new text. Preserve the exact 4:3 aspect ratio, camera, framing, silhouettes, expressions, palette, all relative positions and story meaning. Match the source composition rather than redesigning it. Deliver native 1600x1200 if possible, at least 1200x900 actual new detail, no blurred enlargement. The entire rectangular illustration is FULLY OPAQUE; no alpha, transparency, border, watermark, captions or extra symbols. Any existing small currency symbols remain as in the source; do not invent wording or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/12.png",
+      "sourceSha256": "38e2c290771a976a0529bbaad8ed68604088664ae64abc5bb72d6c302b50c7b3",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/12.png",
+        "url": "hd-static/interactions/luck/12.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/12-selected.png",
+        "masterSha256": "4a466cd7b7b2eda9cb930f4c5b91a1989e6adab410d3690d9c34e911c772158a",
+        "outputSha256": "0832cd8dc83022d1e616a3e49060a8160dcace42d762ad3ab19546b93ef73fd5",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful high-definition replacement of one static luck-event illustration in Star Cat Monopoly. The attached 400x300 image is the exact scene, layout and character-identity reference. Redraw it in a crisp polished modern cartoon game-illustration finish: clean intentional linework, smooth colorful shading, clear tiny facial/clothing detail, retaining the original stylized 2D cartoon personalities rather than photorealism. Keep the same smiling blond girl with red hairband/bow, green-and-pink outfit and original pose sitting/riding on the white rising zigzag arrow. Preserve the yellow background, coral upward arrows and small gold coins, exact composition and proportions. No text or extra people. Preserve the exact 4:3 aspect ratio, camera, framing, silhouettes, expressions, palette, all relative positions and story meaning. Match the source composition rather than redesigning it. Deliver native 1600x1200 if possible, at least 1200x900 actual new detail, no blurred enlargement. The entire rectangular illustration is FULLY OPAQUE; no alpha, transparency, border, watermark, captions or extra symbols. Any existing small currency symbols remain as in the source; do not invent wording or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/13.png",
+      "sourceSha256": "53a8f6f3b70c522e245198b5af872c4ba9273990d441e9e62f84bb36d498b0c4",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/13.png",
+        "url": "hd-static/interactions/luck/13.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/13-selected.png",
+        "masterSha256": "1688c7be43e21808002d0aa866c6f0f0e3112e48dccf49209f344089ca32ce08",
+        "outputSha256": "8e43f5e4bf77a3dd1f282a743ff07d2caafa450fe21e7d4468baba3fdcdd73fa",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful high-definition replacement of one static luck-event illustration in Star Cat Monopoly. The attached 400x300 image is the exact scene, layout and character-identity reference. Redraw it in a crisp polished modern cartoon game-illustration finish: clean intentional linework, smooth colorful shading, clear tiny facial/clothing detail, retaining the original stylized 2D cartoon personalities rather than photorealism. Keep the same original blond cartoon boy comically wrapped in white bandages, one leg raised, arms reaching toward one yellow banknote offered by the cropped hand at left. Preserve original face/expression and small non-graphic scratch marks, blue polka-dot background and purple ground shadow. No extra money, wounds, people or text. Preserve the exact 4:3 aspect ratio, camera, framing, silhouettes, expressions, palette, all relative positions and story meaning. Match the source composition rather than redesigning it. Deliver native 1600x1200 if possible, at least 1200x900 actual new detail, no blurred enlargement. The entire rectangular illustration is FULLY OPAQUE; no alpha, transparency, border, watermark, captions or extra symbols. Any existing small currency symbols remain as in the source; do not invent wording or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/14.png",
+      "sourceSha256": "6a67f031ea50942de47c3fb804fd8d8eab1b29107f07b4576131df9706ea889a",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/14.png",
+        "url": "hd-static/interactions/luck/14.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/14-selected.png",
+        "masterSha256": "1081cc789f62eb545da38adecba8eb60781b23e3e0928ba99f178f924dd9aaf9",
+        "outputSha256": "9a65b10e962d2b4542fc86005d8de9fd1a6c771b78eb759dbf7991fd3b009bc6",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful high-definition replacement of one static luck-event illustration in Star Cat Monopoly. The attached 400x300 image is the exact scene, layout and character-identity reference. Redraw it in a crisp polished modern cartoon game-illustration finish: clean intentional linework, smooth colorful shading, clear tiny facial/clothing detail, retaining the original stylized 2D cartoon personalities rather than photorealism. Keep the same orange/red-haired girl with purple hair clips, pink blouse and pale blue jeans in her original satisfied eyes-closed stance on the left, and the same tiny pink/lavender cartoon police van at right with pink roof siren and the same small blue-gray passenger visible through its cyan window. Green diagonal-striped background. Keep original positions and counts, no additional people, lettering or objects. Preserve the exact 4:3 aspect ratio, camera, framing, silhouettes, expressions, palette, all relative positions and story meaning. Match the source composition rather than redesigning it. Deliver native 1600x1200 if possible, at least 1200x900 actual new detail, no blurred enlargement. The entire rectangular illustration is FULLY OPAQUE; no alpha, transparency, border, watermark, captions or extra symbols. Any existing small currency symbols remain as in the source; do not invent wording or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/15.png",
+      "sourceSha256": "3a27d9dc7a80d95c4da247564d6359ade66b5de8826cad05b1862f5ea46c42aa",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/15.png",
+        "url": "hd-static/interactions/luck/15.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/15-selected.png",
+        "masterSha256": "e202be51d665da96c7a7c2deb27f27826da4c0e230cabc09f459de677fa174b8",
+        "outputSha256": "cb159d1c4a8bd36255ce3525846306f703c7cac7f91db924364be5bdbe9079e2",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful HD replacement of one static Star Cat Monopoly luck-event illustration. Use the attached 400x300 source as the exact scene, character identity, pose, placement and framing reference. Redraw with clear modern cartoon-game linework, smooth vivid shading and crisp fine details while preserving the original stylized cartoon design and expressions. Keep the same comic antique collector with pink/yellow patterned headscarf, blond forelock, money-symbol eyes, red/orange clothes and same pose carrying the two long antique scrolls horizontally. Preserve the small cigarette and its white smoke curl exactly as in the source, green curtain, blue-and-white vase with rolled scrolls, decorative brown Chinese-style corner frame and blue-to-gray background. No added writing or objects. Keep the exact 4:3 rectangular aspect ratio and composition, no redesigned layout, extra props, captions, border or watermark. Native new detail at least 1200x900, ideally 1600x1200, not sharpening or blurry enlargement. Entire rectangle fully opaque with no transparent holes. Keep all existing small symbols as in the source and do not invent words or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/16.png",
+      "sourceSha256": "b2cbb08a02fe931526375e3239c275a4165076a1491ace6a21e7fcb6e3dd2999",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/16.png",
+        "url": "hd-static/interactions/luck/16.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/16-selected.png",
+        "masterSha256": "b0e2ca274ff1f40977fa96c88c05d5a468107875d7110ac4193ea79ab69885c0",
+        "outputSha256": "4996ff057436e263d0d5af0d9cffcd08325543d39e4bce0a191be4d8515bd0e1",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful HD replacement of one static Star Cat Monopoly luck-event illustration. Use the attached 400x300 source as the exact scene, character identity, pose, placement and framing reference. Redraw with clear modern cartoon-game linework, smooth vivid shading and crisp fine details while preserving the original stylized cartoon design and expressions. Keep the same smiling purple-haired cartoon beggar in ragged patched purple clothes seated in front of the cracked red-brick wall and large orange/gold pipe on the right. Preserve the banana peel, shallow gray bowl, two small gold coins, green leaves and small green caterpillars in their original positions. Same pose, expression, source object counts and ground tiles; no extra people or text. Keep the exact 4:3 rectangular aspect ratio and composition, no redesigned layout, extra props, captions, border or watermark. Native new detail at least 1200x900, ideally 1600x1200, not sharpening or blurry enlargement. Entire rectangle fully opaque with no transparent holes. Keep all existing small symbols as in the source and do not invent words or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/17.png",
+      "sourceSha256": "9063360c3ae94b84d545eafb57767c84aaf0910795d9fffa522dcb6ea5042092",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/17.png",
+        "url": "hd-static/interactions/luck/17.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/17-selected.png",
+        "masterSha256": "3b8dc1b59bf158ed62b481fe1bdedacb63477dce3426e8769a7d558fb7f744a3",
+        "outputSha256": "56e586078650a130bdc0447b03b2016577a69a23922ff6d226194a5204f07e5d",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful HD replacement of one static Star Cat Monopoly luck-event illustration. Use the attached 400x300 source as the exact scene, character identity, pose, placement and framing reference. Redraw with clear modern cartoon-game linework, smooth vivid shading and crisp fine details while preserving the original stylized cartoon design and expressions. Keep the same pink-haired girl with little golden crown and side braid, pale-green puff-sleeve top and ruffled green skirt, red-pink boots and the same puffed-cheek expression and original arm pose. Preserve the purple diagonal-striped background and the same surrounding watermelon slice, lemon-colored oval, whole orange, sliced orange, banana, lollipop and green apple, all at their original positions. No extra food, people or wording. Keep the exact 4:3 rectangular aspect ratio and composition, no redesigned layout, extra props, captions, border or watermark. Native new detail at least 1200x900, ideally 1600x1200, not sharpening or blurry enlargement. Entire rectangle fully opaque with no transparent holes. Keep all existing small symbols as in the source and do not invent words or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/18.png",
+      "sourceSha256": "788002cdb669794c850a755f65f2d62855d6346085c7b40f3ec0213cce8157fd",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/18.png",
+        "url": "hd-static/interactions/luck/18.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/18-selected.png",
+        "masterSha256": "ef6971b3a9c504136c98bcf4865d7f0acde465447060c25208ad199f63524cb8",
+        "outputSha256": "889efbff4f6360a2d5b4021b80bac27c6a1a10d7e4e1c7cb553ec52b9e1ff326",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful HD replacement of one static Star Cat Monopoly luck-event illustration. Use the attached 400x300 source as the exact scene, character identity, pose, placement and framing reference. Redraw with clear modern cartoon-game linework, smooth vivid shading and crisp fine details while preserving the original stylized cartoon design and expressions. Keep the same red/pink-haired girl with high ponytail and green hair ties, pink sunflower shirt, green pants and pink/white shoes in the original pose. Preserve the turquoise skyline background, small pink snail at lower left, floating red hearts, golden heart with dollar symbol and ribbon at top right, clapping hands at bottom and thumbs-up hand at right. Same counts, relative placements and expression. No extra wording. Keep the exact 4:3 rectangular aspect ratio and composition, no redesigned layout, extra props, captions, border or watermark. Native new detail at least 1200x900, ideally 1600x1200, not sharpening or blurry enlargement. Entire rectangle fully opaque with no transparent holes. Keep all existing small symbols as in the source and do not invent words or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/19.png",
+      "sourceSha256": "035006d57d06124266d8f7480da591c44af227452495c1e8bc48a74f719729f9",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/19.png",
+        "url": "hd-static/interactions/luck/19.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/19-selected.png",
+        "masterSha256": "f13e6e02242dd3afae3e1a5e437b12e8ebd66d54b8d52f7ab98165ac86dcf131",
+        "outputSha256": "9b8219c73b02d294319bfe7d838efd409f3cc01685f07c92251cfaec34d85a30",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful HD replacement of one static Star Cat Monopoly luck-event illustration. Use the attached 400x300 source as the exact scene, character identity, pose, placement and framing reference. Redraw with clear modern cartoon-game linework, smooth vivid shading and crisp fine details while preserving the original stylized cartoon design and expressions. Keep the same orange-haired nervous smiling cartoon girl holding the large green rounded traffic-light-shaped object horizontally, wearing the same pale blue shirt and pink pants. Preserve the blue sky, white cloud, sweating yellow sun at upper left, road stripe background and diagonal yellow-white streaks, exact pose, palette and composition. No cars, extra people or lettering. Keep the exact 4:3 rectangular aspect ratio and composition, no redesigned layout, extra props, captions, border or watermark. Native new detail at least 1200x900, ideally 1600x1200, not sharpening or blurry enlargement. Entire rectangle fully opaque with no transparent holes. Keep all existing small symbols as in the source and do not invent words or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/2.png",
+      "sourceSha256": "9163c9e22d6fa592989f3235a252f5bd21f3539cf69d33205a9457fb1d64f9b6",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/2.png",
+        "url": "hd-static/interactions/luck/2.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/2-selected.png",
+        "masterSha256": "b2136f1530f11ea17797d31091f2e683be52ffc9879ec26b120c754039695933",
+        "outputSha256": "9cb43093e392b905d18ab4be47cbc95fdab2b433449588833546f9fcddad5b63",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: style-transfer. A faithful HD replacement of one static Star Cat Monopoly luck-event illustration. Use the attached 400x300 source as the exact scene, character identity, pose, placement and framing reference. Redraw with clear modern cartoon-game linework, smooth vivid shading and crisp fine details while preserving the original stylized cartoon design and expressions. Keep the same comically singing green cartoon bird at right with its enormous open red mouth, small orange/pink bird-like figure inside/near its upper mouth and original raised limb, microphone floating at left within a jagged yellow sound burst, red music note above, vertical-striped blue backdrop and the same white clouds. Preserve the original surreal character shapes and object counts; do not turn it into a realistic bird, add audience or write lyrics. Keep the exact 4:3 rectangular aspect ratio and composition, no redesigned layout, extra props, captions, border or watermark. Native new detail at least 1200x900, ideally 1600x1200, not sharpening or blurry enlargement. Entire rectangle fully opaque with no transparent holes. Keep all existing small symbols as in the source and do not invent words or amounts."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/20.png",
+      "sourceSha256": "6d0bb213040f5c47e161c7cfdbc4207aeea6e591413eeb17dbaab5fcbe2f79e4",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/20.png",
+        "url": "hd-static/interactions/luck/20.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/20-selected.png",
+        "masterSha256": "37ee301056e89577a6270932c37e952c1825bfa7d150e1d2f78813176ea39e3b",
+        "outputSha256": "463220d336b31b18b3009abb16f7cb4b60d0403fcb15df97d18cf3e4f58f2c77",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Faithfully remaster this exact static Star Cat Monopoly event illustration as a crisp high definition polished 2D cartoon, maintaining its original character identities, expressions, poses, composition, color palette and 4:3 framing. blue-haired tearful girl interviewed by a cluster of orange green and teal microphones on a purple vertical striped background. Preserve all microphone labels as in reference and her pose, don't invent new words. Native output at least 1200x900, preferably 1600x1200, exact 4:3 landscape. Smooth clean ink lines, subtle cel shading, detailed readable props, no blur or pixelation. Fully opaque artwork edge to edge. No border, no watermark, no added characters, no new captions or amounts. This is an illustration in a static event panel, not an animation sprite or a new character design. Use attached original as layout and identity authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/21.png",
+      "sourceSha256": "fec67ab94479233308f94ab92117f18e5d6bca1d5d5fdb77f7da1b46ee3aff8a",
+      "kind": "event-illustration",
+      "aliases": [
+        "assets/interactions/luck/23.png",
+        "assets/interactions/luck/25.png"
+      ],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/21.png",
+        "url": "hd-static/interactions/luck/21.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/21-selected.png",
+        "masterSha256": "075de9db9159740b91b6e4f6e98e9c1e6d0c94c304f87ccef0c3f628772b172b",
+        "outputSha256": "f1c57b5282d1e4b3e51d2cab191f72667c43bd96093f15c9dafd1473509b1c9c",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Faithfully remaster this exact static Star Cat Monopoly event illustration as a crisp high definition polished 2D cartoon, maintaining its original character identities, expressions, poses, composition, color palette and 4:3 framing. cream cartoon kitten with red flower garland and orange tiger stripes crouches facing a colorful magazine, butterfly and clover plants above, blue sky and grey pavement. Preserve the magazine title 非常娱乐 legibly and all original composition. Native output at least 1200x900, preferably 1600x1200, exact 4:3 landscape. Smooth clean ink lines, subtle cel shading, detailed readable props, no blur or pixelation. Fully opaque artwork edge to edge. No border, no watermark, no added characters, no new captions or amounts. This is an illustration in a static event panel, not an animation sprite or a new character design. Use attached original as layout and identity authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/22.png",
+      "sourceSha256": "dc4be8ab021fffe1de66d55eb92b642796f58b28db574a4aea6df9dca1e10d87",
+      "kind": "event-illustration",
+      "aliases": [
+        "assets/interactions/luck/24.png",
+        "assets/interactions/luck/26.png"
+      ],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/22.png",
+        "url": "hd-static/interactions/luck/22.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/22-selected.png",
+        "masterSha256": "d49fd8ef47e15eb0d29d1f9d430b0135e940e3336eb8da18f510de305c74a84c",
+        "outputSha256": "af2d894ceefeb30cc39ccca0a2011f513a3b8901944c19ceab7a8817d8b8957e",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Faithfully remaster this exact static Star Cat Monopoly event illustration as a crisp high definition polished 2D cartoon, maintaining its original character identities, expressions, poses, composition, color palette and 4:3 framing. two sleepy orange spotted mushrooms on a moonlit green lawn, grass and flowers framing edges, open colorful magazines on the lower center/right ground. Preserve original magazine graphics without inventing new text. Native output at least 1200x900, preferably 1600x1200, exact 4:3 landscape. Smooth clean ink lines, subtle cel shading, detailed readable props, no blur or pixelation. Fully opaque artwork edge to edge. No border, no watermark, no added characters, no new captions or amounts. This is an illustration in a static event panel, not an animation sprite or a new character design. Use attached original as layout and identity authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/27.png",
+      "sourceSha256": "d7e8bbf5e88e22db8837026b9101811a628b25d58b326762c37ae366027733ef",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/27.png",
+        "url": "hd-static/interactions/luck/27.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/27-selected.png",
+        "masterSha256": "807de1223987dcf9ea10b31ec3c3b5281fc7404795228ff4b034a57efe11057d",
+        "outputSha256": "5655da4b176b461f7bf3f4c706a923a2c6d2f6b6f65226eccbab41d1d6929146",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Faithfully remaster this exact static Star Cat Monopoly event illustration as a crisp high definition polished 2D cartoon, maintaining its original character identities, expressions, poses, composition, color palette and 4:3 framing. nervous sweaty brown-haired man at a bank window, blue black-haired lady behind glass at left, mint sign reads exactly 取款. Preserve faces, gestures, window geometry and original framing. Native output at least 1200x900, preferably 1600x1200, exact 4:3 landscape. Smooth clean ink lines, subtle cel shading, detailed readable props, no blur or pixelation. Fully opaque artwork edge to edge. No border, no watermark, no added characters, no new captions or amounts. This is an illustration in a static event panel, not an animation sprite or a new character design. Use attached original as layout and identity authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/28.png",
+      "sourceSha256": "06261af7b4fe4fe43ede623ee2a07f0bbc6c2010147de94ccca6e9677d8bac4e",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/28.png",
+        "url": "hd-static/interactions/luck/28.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/28-selected.png",
+        "masterSha256": "58d9c87bda21b7056215d69be657868744297313e5a562c2382f726c565735a3",
+        "outputSha256": "2ed2d5ba621c10259531f34de4b5585f2a098fe1fb3cb79d7040b05e5d876275",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Faithfully remaster this exact static Star Cat Monopoly event illustration as a crisp high definition polished 2D cartoon, maintaining its original character identities, expressions, poses, composition, color palette and 4:3 framing. brown-haired boy smiling and scratching head as he places a bill in a red charity box with pink heart and black words 捐款, blue cheering simplified audience behind on sunny street. Native output at least 1200x900, preferably 1600x1200, exact 4:3 landscape. Smooth clean ink lines, subtle cel shading, detailed readable props, no blur or pixelation. Fully opaque artwork edge to edge. No border, no watermark, no added characters, no new captions or amounts. This is an illustration in a static event panel, not an animation sprite or a new character design. Use attached original as layout and identity authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/29.png",
+      "sourceSha256": "5b67497e45ca57ce15f5e22de2616cdde34e5c1d930929aaf30c1fd214331121",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/29.png",
+        "url": "hd-static/interactions/luck/29.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/29-selected.png",
+        "masterSha256": "9edc7eaf9e994a9ed83683674749b0f1e8e2d17c7e4dbc8a80d1ccaba58ce5a0",
+        "outputSha256": "d8f7d4a2fa44fd2378b865d8462c2b5065a32b25d7814ffb09d3e11fd2a0efd7",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Faithfully remaster this exact static Star Cat Monopoly event illustration as a crisp high definition polished 2D cartoon, maintaining its original character identities, expressions, poses, composition, color palette and 4:3 framing. orange red-haired man kneeling distressed on tiled floor before sealed vases and gold money stacks at left, thought bubble contains winged banknote. Preserve literal Chinese 封 tags, kneeling pose, lavender spotlight background. Native output at least 1200x900, preferably 1600x1200, exact 4:3 landscape. Smooth clean ink lines, subtle cel shading, detailed readable props, no blur or pixelation. Fully opaque artwork edge to edge. No border, no watermark, no added characters, no new captions or amounts. This is an illustration in a static event panel, not an animation sprite or a new character design. Use attached original as layout and identity authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/3.png",
+      "sourceSha256": "5fd0196174ffc8d58a35096458bff5e881f30e380ec25e18ed8778802dc80ca9",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/3.png",
+        "url": "hd-static/interactions/luck/3.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/3-selected.png",
+        "masterSha256": "72a3786cafee4086f21b47ca306a82e33af768fc6898ee83fbfdf03adb5be6a7",
+        "outputSha256": "25999a402b363e319a07a9c6040400bdfab87b1ec547d1ed8de3e7b31af4d1ba",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. blond crying girl with white bow falling face first onto brown ground, purple handbag and shoe thrown aside, swirling stars over her head, purple nighttime sky and flying leaves. Keep the same comic fall pose. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/30.png",
+      "sourceSha256": "1639e787b2db13c394e96c94a1980f22ffa30429b96f6213e5a86992259147d4",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/30.png",
+        "url": "hd-static/interactions/luck/30.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/30-selected.png",
+        "masterSha256": "3b7de6096b2ea6fe7a9417ca8038ba0c3215ec8378c34ddb1b6562648e17d0d4",
+        "outputSha256": "f8818f6b62640e26991468e6ef8c23fef27d9af4e321a56592156a4d01f01f0c",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. shocked brown-haired boy in white shirt blue pants holding pink leash of small beige puppy that is urinating beside a pink street dumpling stall; surprised mustached chef at right, bamboo basket of leaf-wrapped dumplings, stall label exactly 粽. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/31.png",
+      "sourceSha256": "960437dc049028ac31664b386fbc1ca6ab67bcc9b7ed0f20a1defe99dec7cc14",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/31.png",
+        "url": "hd-static/interactions/luck/31.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/31-selected.png",
+        "masterSha256": "ee51a9d27bdbc023270bb4fb2f5d43d07128f49a549025d805cfff9ce38ad9ae",
+        "outputSha256": "ff5eb3eaaef0c28821a75e8f647ab1d94b4f3d9d88d09024efb278f556ada99c",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. angry brown-haired boy in white shirt blue pants performing a high martial kick surrounded by comic orange red flames in police station, uniformed officers in blue at edges and background, flying black notebook, same composition. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/32.png",
+      "sourceSha256": "a1e3f819f1aa527e7203533648d9700e4a3adce82851b43a7286aa4be948b95c",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/32.png",
+        "url": "hd-static/interactions/luck/32.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/32-selected.png",
+        "masterSha256": "625ca5d72fc1889fa769f1cd8c96adce992a539d2621c628c0b4ae618531a828",
+        "outputSha256": "2fd5d4b2f2f7b1bf8f2a0a608fcdad17092911f7c0d470ee8252eecb46c5d5ea",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. shocked sweaty brown-haired boy in white shirt in center of mahjong table scene, one arm outstretched, dark blue-haired player back in left foreground and brown-haired player at right, green table with original mahjong tile arrangement. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/33.png",
+      "sourceSha256": "b92fc25979de6551730ef83c1d34124ae6b17223f26ba1dccbc31878b4ad953b",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/33.png",
+        "url": "hd-static/interactions/luck/33.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/33-selected.png",
+        "masterSha256": "27869d0915f2e834f23446d1b4c6d732372220a97acdcb5ec3e6c8495cf00926",
+        "outputSha256": "501ac389aceb1cb620a69792c919ca645b109e784d6c6aa8f581d9db022745f9",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. dejected brown-haired boy white shirt blue pants at left before an industrial pipe discharging grey wastewater, mustached blue-uniform officer at right pointing at him, wall sign exactly 造纸厂. Preserve spatial arrangement. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/34.png",
+      "sourceSha256": "214d00ea176d1ffbff0d3630f2e4d8d15f8bdbfc84f6a004dcb36cccf1d34713",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/34.png",
+        "url": "hd-static/interactions/luck/34.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/34-selected.png",
+        "masterSha256": "9c571f09fdf348ad039969d5edd35b70cd1c5f3134fc685b2712602858155141",
+        "outputSha256": "75f3de0f2936aaa936b652688e18218e489167d6b772b604f84c505396452d2f",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. worried blue-haired boy in yellow shirt dark shorts giving folded white paper to an anthropomorphic beige floppy-eared dog in purple tracksuit, green bushes pink flowers yellow fence and blue sky. Preserve same poses and composition. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/35.png",
+      "sourceSha256": "a15a2cca3e82631d5e359e5e59fed6ef80f9b7502bae531d5eea258f43cdebe1",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/35.png",
+        "url": "hd-static/interactions/luck/35.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/35-selected.png",
+        "masterSha256": "500e29d1a25b25687825d192423bbd781ee4eb29c07f5a6cb5139b441b795a4c",
+        "outputSha256": "f892ae074e9c9d32ab8fbc5b07c46d4db2411ed244d8ad985666786e117cb7a3",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. purple-haired crying boy kneeling on floor amid scattered bills, huge red circular stamp with Chinese character 罚 behind left, blue desk with books at right, violet wall and cream tiled floor. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/36.png",
+      "sourceSha256": "f1aa0db830c4365e33c338930034341b2ee0897dd658c7ae50a84c2ef4020074",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/36.png",
+        "url": "hd-static/interactions/luck/36.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/36-selected.png",
+        "masterSha256": "cca6dea78430e1958f4eb48e3c8dab7747ae1ae7df1a22c4f5866563cd107f49",
+        "outputSha256": "fdabe2cdafb6015fbc3288cf59e515f80a2341734a5c1f92281e3258092eed46",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. green-haired bowed boy in white shirt and purple pants on blue pavement under descending big grey Chinese word 遗产, beige little dog at right beside street lamp, grey stone wall. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/37.png",
+      "sourceSha256": "8a5022e9733f24f206d0488ac81c6c32ac14d3f92fce63fbd9283c7fe7a7b184",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/37.png",
+        "url": "hd-static/interactions/luck/37.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/37-selected.png",
+        "masterSha256": "fdb5fd499a376e809a02ea26ded9fe509a1ff3722dc586cce83772352e9f6904",
+        "outputSha256": "d206237f852a68765f038663fbf4f8fe1ef95eaa39d8c08f58b8c9cf6b7b5256",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. brown-haired white-shirt blue-pants boy crying painfully and holding his lower abdomen, pink and blue curved prop hanging at chest, blue pavement, beige building corner and window, few leaves. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/38.png",
+      "sourceSha256": "37e6bfd20a405a5cccdfca8a143818d2af7299e429d2a1ef1a339af4e7099cfa",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/38.png",
+        "url": "hd-static/interactions/luck/38.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/38-selected.png",
+        "masterSha256": "93ea6bb2bd8476e5a484b0bfe1f478a14820b40bbf6476220d8698ca2fb76d05",
+        "outputSha256": "230aa4e478b80e3c33b28425c6197e2f56f83cc311ceee4769f7ab9d3d5308cc",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. round bespectacled balding blue-haired boy in orange shirt magenta pants standing back to back with black white panda in green bamboo grove, proudly holds yellow framed certificate with exact Chinese 奖, pink flower above head. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/39.png",
+      "sourceSha256": "65bc5f8a0cbefca3be538d2c047df68b7343bd857bbfb3d8cfe30c2208fc095b",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/39.png",
+        "url": "hd-static/interactions/luck/39.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/39-selected.png",
+        "masterSha256": "153b7cd84fe3f8705a06315326c4a7d0c4cb4fdd0c0ffe124294f0529377f6af",
+        "outputSha256": "1586b44ac33ad0ead0feef08bf06e2640a9e0f91ba2fbf8045278a8536e9f747",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. pink-haired boy striped pink shirt blue pants on first-place brown podium marked 1, holds happy small golden dog above his head, petals falling, green bushes pink buildings blue sky. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/4.png",
+      "sourceSha256": "a6da5203d6caf96b9f9c0dd43dec861777273b7d3c4251b05ad4763bb20fecbe",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/4.png",
+        "url": "hd-static/interactions/luck/4.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/4-selected.png",
+        "masterSha256": "08e9056f02fcd519e4e02e6e853e55aacd1587e64a76e94cd1f0557da2897d49",
+        "outputSha256": "64967d08461131c31d99d62dfc19271c767a86a685517259305c2a5201dfa714",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. laughing blond spiky-haired freckled man with lime vest, blue shorts and purple star tattoo seated on floor with pink knees, beer mug and orange roast chicken legs, colored bottles, pink curtains on red party background. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/40.png",
+      "sourceSha256": "6e86c1a701291577531c171729b49a0ff890de5e636260c6b9e99cd5f09561ca",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/40.png",
+        "url": "hd-static/interactions/luck/40.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/40-selected.png",
+        "masterSha256": "e93567e1b7aad5bb7eb8ec21110b5e0e30f07ab86627955e9ef98606966c4c83",
+        "outputSha256": "242a473f95a3378c46639368daf22b9fec2037b14d925dc0b395926842893602",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. brown-haired white-shirt boy kneeling excitedly opening an ornate golden treasure chest, dollar signs in eyes, golden coins and white money symbol floating above, leafy green bushes trees and brown path. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/41.png",
+      "sourceSha256": "33efb2b8326044c8f5462e06884ef5210ad585a74803772602304da9508b42b5",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/41.png",
+        "url": "hd-static/interactions/luck/41.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/41-selected.png",
+        "masterSha256": "c8519beb14b8f76db2760e4cb7047eab12c754e700ba9db60885092c544c5232",
+        "outputSha256": "b49a85fef2d606ed8766326d0c3da3502ed229ee5f0e921a76e5b48e55c1c92f",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. pink-haired boy blue shirt and purple shorts running left tied by orange string around tree to purple-haired boy yellow shirt red pants at right, both worried, toy trains and chirping yellow birds behind sunny green lawn. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/5.png",
+      "sourceSha256": "ff91a73218a77b48472956ff28bbe269d2322858bea3666d31f57a9cb9c17fa2",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/5.png",
+        "url": "hd-static/interactions/luck/5.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/5-selected.png",
+        "masterSha256": "8ee3e0f40c1897eb69cd6a153dd6c2e5f66b644fbb31dd8e4dec89ecc46ac6f6",
+        "outputSha256": "f81e09dddc4142971e534e52217b304d0ae93894f9e660e74202b54cbcac8168",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. red spiky-haired boy in orange purple striped shirt running left holding big purple bomb, orange explosion at rear and three frightened tiny purple figures on green grass below blue sky. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/6.png",
+      "sourceSha256": "79f1edd2bb195a23eec7b66fb9765eca5e2e0ece3ea02024e6531488e94feb3b",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/6.png",
+        "url": "hd-static/interactions/luck/6.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/6-selected.png",
+        "masterSha256": "0ada5dd79794cf5ef715d919fdceaa5f756ed62f7a0275f777a4f828b07c70bf",
+        "outputSha256": "cc5ac11a05727063313e617ef6d9d11bb4b4a1ad264db534b185877925cced5f",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. red-haired boy in backward purple blue cap green striped shirt blue shorts walking white puppy on leash across striped crosswalk, carries orange basketball, frightened blue-haired driver in turquoise car behind, pink traffic light at left. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/7.png",
+      "sourceSha256": "c1ad035e940513b64ba1d9974e3cfbb3a6e3935835e37064f7e9ad59a4b563c4",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/7.png",
+        "url": "hd-static/interactions/luck/7.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/7-selected.png",
+        "masterSha256": "e95bad747d19bdd40e2ecdb5dabc71ace2f8c67793d508f188d49787ef5941b7",
+        "outputSha256": "786cea1ec1c62f1a092fcb62ec997b5d1ea98eff2d83db2c15a45b8de64c6a8a",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. two schoolgirls, red-haired braids sitting on books at left and pink-haired green-headband girl standing at right in sailor white tops red neckties blue skirts, stack of books and orange gift box, lavender wall floor. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/8.png",
+      "sourceSha256": "baabce0669ba87b680e1af073057618b2ec26d735f45ea7dca17036f0dafa60f",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/8.png",
+        "url": "hd-static/interactions/luck/8.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/8-selected.png",
+        "masterSha256": "33c40abd8ec7a95cc7240a08dc10e87f2504fab345fafbb3c9a46e57c3b2ef52",
+        "outputSha256": "a9477bad0646bb866a390b8537313b914bce556514519450c43850a538261750",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. giant golden Chinese 招財 symbols falling or splashing into blue water below purple flying cartoon bird, green banknote corners and white diagonal motion streaks on turquoise blue sky. Preserve exact original characters and graphic arrangement. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/interactions/luck/9.png",
+      "sourceSha256": "214d8d87b09e45c1d11e413fd6827e6cd3795cab24a8f293909396a81d14fd90",
+      "kind": "event-illustration",
+      "aliases": [],
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/interactions/luck/9.png",
+        "url": "hd-static/interactions/luck/9.webp",
+        "logicalSize": [
+          400,
+          300
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/interactions/luck/9-selected.png",
+        "masterSha256": "f3bebfc0026629d3b2ba55b3125b22e1e201a5494133b14d00fdb9e70d65b621",
+        "outputSha256": "3a3b9ee52a98f65d0928d05ff35f6c11d6021a02051d222c26b56100f9a23cfc",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: identity-preserve. Edit target: attached original static Star Cat Monopoly event image. Faithfully remaster it into crisp high definition polished 2D cartoon. Keep character identities, expressions, pose, all original props, camera, layout and palette unchanged. orange-haired woman bathing in pink clawfoot bathtub and white foam, pink patterned curtains blue bubbles, white rabbit beside tub and crying white rabbit at right foreground, yellow bathroom tiled floor. Exact 4:3 landscape native at least 1200x900 preferably 1600x1200. Clean smooth ink, subtle cel shading, readable fine details, no blur or pixelation. Fully opaque edge to edge. No added captions, figures, amounts, watermark, or border. Source is layout authority."
+      }
+    },
+    {
+      "source": "assets/activities/witch/1.png",
+      "sourceSha256": "392b9b4c9c34d37a81dabd31f48197a7dcfa5137c1efcda91515c89c0735bdde",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/lottery/1.png",
+      "sourceSha256": "04ac21fb01fde6fc654d45cef0c807544d63917a2e09853ed251057138171823",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/station/1.png",
+      "sourceSha256": "86f6c8f883cf88c52853b738aa00bb79047143e8153949b64248393f61ad4b40",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/court-target/1.png",
+      "sourceSha256": "15cefd0b1c3ff4bedeb0359983a0be1471c243345795ee7a01c4ec152ccf8a5c",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/court-case/1.png",
+      "sourceSha256": "042734641c9064938d3f306a62f7cc2dd4a14ca5fdabc8eb63678bcde71c7d03",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/court-verdict/1.png",
+      "sourceSha256": "cae725f904e8dd103a95d62f233b5f102c66d8f729113e7433c4c7cad971e8c1",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/map-mini/1.png",
+      "sourceSha256": "c4eb8d447a79b6d3bb3dde03974de6024e129be16da7685bd37a8e6e32136940",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/magic-talk/1.png",
+      "sourceSha256": "911c0e81f5b784d85ca9d8794373cb7b007f62bfd1858ea93a0a409fdbe496bf",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/mini-barrier/1.png",
+      "sourceSha256": "df7834992cb64306a9066ed9a720f1be48425f520b70f4074ee002c373abf3e9",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/mini-mine/1.png",
+      "sourceSha256": "ea1af9ec3f24a9cf9df83769d1d5087ce45c43cc3d3de647f2478cf325e245c9",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/ludo-betting/1.png",
+      "sourceSha256": "65cf3fcbbf5910b9e1f10b3b8dc7ca98f493fb211dd936473b5fc7ec4f56634f",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/ludo-game/1.png",
+      "sourceSha256": "ad972c146159c0a41804c95c2e5e05a9a8a16159842c290c496916025333cd4f",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/ludo-chip/1.png",
+      "sourceSha256": "2a73e8d1af0da8f28970657ff3e83bcb324f7479c6f1da36c5400509431853f8",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/carnival-play/1.png",
+      "sourceSha256": "66226845d2a195065d7673c42197c3f3ecad0c56ca886f8f1b83df217c7a8219",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/carnival-score/1.png",
+      "sourceSha256": "66226845d2a195065d7673c42197c3f3ecad0c56ca886f8f1b83df217c7a8219",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/ludo-ai-betting/1.png",
+      "sourceSha256": "cc56cc252f39539f2059ca2d941b3008b3c9b3c2e7da825d5496a47ed83d0278",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/bankrupt/1.png",
+      "sourceSha256": "71ada8b460ab41aae9c6b4c4013cce209e8f4c2535a361292b5a76c1998643bd",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/gamewin/1.png",
+      "sourceSha256": "7d4c6dba460f83e319f6b1597f07713711e00e67bc4db0d5d76c6dbb83df880c",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    },
+    {
+      "source": "assets/activities/gameover/1.png",
+      "sourceSha256": "bc447fb432cef6de76c8ec8371dcb5e6de2a435a45b50d4e09e9e08faaa2cd0a",
+      "kind": "activity-panel",
+      "aliases": [],
+      "status": "pending-generation"
+    }
+  ],
+  "map": {
+    "source": "assets/map.png",
+    "sourceSize": [
+      2700,
+      2552
+    ],
+    "protectedRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "status": "candidate-rejected-seam",
+    "newCandidate": "public/modern/hd-static-masters/map/m02-r01.png",
+    "existingReusableCandidates": [
+      "public/modern/hd-masters/map/experiments/map-extension-m01-r01/master.png",
+      "public/modern/hd-masters/map/experiments/map-extension-m01-r02/master.png"
+    ],
+    "reason": "Hard join with protected left neighbor shows road marking and curb drift. Candidate retained, not installed.",
+    "diagnostic": "/tmp/starcat-map-m02-hard-join.png"
+  }
+}
