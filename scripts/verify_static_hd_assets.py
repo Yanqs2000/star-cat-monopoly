@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 from PIL import Image
+from register_static_hd_master import validate_panel_opacity
 
 ROOT = Path(__file__).resolve().parents[1]
 sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
@@ -35,15 +36,27 @@ def verify() -> dict:
         if sha(output) != entry['outputSha256']:
             raise ValueError(f'Runtime image changed: {output}')
         with Image.open(source_path) as image:
+            source_image = image.convert('RGBA')
             if list(image.size) != entry['logicalSize']:
                 raise ValueError(f'Logical canvas changed: {source}')
+            source_bounds = image.convert('RGBA').getchannel('A').point(lambda value: 255 if value >= 128 else 0).getbbox()
         with Image.open(output) as image:
+            validate_panel_opacity(source_image, image, job['kind'])
             if list(image.size) != entry['pixelSize']:
                 raise ValueError('Runtime bounds differ')
             alpha = image.convert('RGBA').getchannel('A')
             if hashlib.sha256(alpha.tobytes()).hexdigest() != entry['outputAlphaSha256']:
                 raise ValueError('Generated alpha not preserved')
-        if entry['pixelSize'] != [value * entry['pixelDensity'] for value in entry['logicalSize']]:
+            bounds = alpha.point(lambda value: 255 if value >= 128 else 0).getbbox()
+            registration = entry.get('registration')
+            if registration:
+                rendered = [value / entry['pixelDensity'] for value in bounds]
+                if registration != {'sourceBounds': list(source_bounds), 'renderedBounds': rendered}:
+                    raise ValueError('Sprite registration differs from measured source and output bounds')
+                if min((bounds[2] - bounds[0]) / (source_bounds[2] - source_bounds[0]),
+                       (bounds[3] - bounds[1]) / (source_bounds[3] - source_bounds[1])) < 4:
+                    raise ValueError('Registered visible artwork is below 4x density')
+        if entry['pixelSize'] != [round(value * entry['pixelDensity']) for value in entry['logicalSize']]:
             raise ValueError('Runtime density differs from logical size')
     return {'protectedFilesUnchanged': len(queue['protectedExistingFiles']),
             'installedPaths': len(sources), 'distinctStaticJobs': len(queue['jobs']),

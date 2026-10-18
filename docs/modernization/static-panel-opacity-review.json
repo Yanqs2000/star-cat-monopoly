@@ -1,0 +1,47 @@
+{
+  "method": "built-in image_gen regeneration, fully opaque printed UI panel; no alpha editing",
+  "checks": [
+    {
+      "source": "assets/activities/lottery/1.png",
+      "rejectedInput": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-84d26b64-49a4-422d-aa78-5c23fa854cb5.png",
+      "selectedMaster": "public/modern/hd-static-masters/activities/lottery/1-selected.png",
+      "selectedSha256": "aa93565f19fe124635cff010a65495bc9fccc990d2d71c8469ec4956cfe80334",
+      "nativeAlphaRange": [
+        255,
+        255
+      ],
+      "runtimeAlphaRange": [
+        255,
+        255
+      ],
+      "damagedOriginalRejectedByGate": true
+    },
+    {
+      "source": "assets/activities/court-case/1.png",
+      "rejectedInput": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-9e38c891-3659-4bbb-a674-0565976cdd43.png",
+      "selectedMaster": "public/modern/hd-static-masters/activities/court-case/1-selected.png",
+      "selectedSha256": "e0f0d0ef6dfe8a0718a11d208fec3fc2c13dc626e0fd7653a51211f71152a193",
+      "nativeAlphaRange": [
+        255,
+        255
+      ],
+      "runtimeAlphaRange": [
+        255,
+        255
+      ],
+      "damagedOriginalRejectedByGate": true
+    }
+  ],
+  "verification": {
+    "registrationPythonTests": 4,
+    "unitTests": 643,
+    "browserTests": 5,
+    "browserWidths": [
+      1440,
+      1100
+    ],
+    "buildModern": "passed",
+    "protectedExistingFilesUnchanged": 81,
+    "artAcceptance": "pending-user-review"
+  }
+}

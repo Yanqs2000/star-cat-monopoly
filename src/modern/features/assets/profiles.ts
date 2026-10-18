@@ -2,8 +2,27 @@ import staticArtwork from '../../data/static-hd-assets.json'
 
 export type AssetProfile = 'original' | 'hd'
 
-const staticOverrides = new Map(staticArtwork.assets.filter(asset => asset.enabled)
+type Bounds = readonly number[]
+type StaticArtworkOverride = { source: string; url: string; pixelSize: readonly number[]; pixelDensity: number; registration?: { sourceBounds: Bounds; renderedBounds: Bounds } }
+const staticOverrides = new Map<string, StaticArtworkOverride>(staticArtwork.assets.filter(asset => asset.enabled)
   .map(asset => [asset.source, asset]))
+const staticResolved = new Map([...staticOverrides.values()].map(asset => [asset.url, asset]))
+
+export function staticAssetPixels(url: string) {
+  return staticResolved.get(url)
+}
+
+export function spriteBoundsTransform(source: Bounds, rendered: Bounds) {
+  const scaleX = (source[2]! - source[0]!) / (rendered[2]! - rendered[0]!)
+  const scaleY = (source[3]! - source[1]!) / (rendered[3]! - rendered[1]!)
+  return { x: source[0]! - rendered[0]! * scaleX, y: source[1]! - rendered[1]! * scaleY, scaleX, scaleY }
+}
+
+export function profileSpriteTransform(url: string, profile: AssetProfile) {
+  const registration = profile === 'hd' ? staticOverrides.get(url)?.registration : undefined
+  return registration ? spriteBoundsTransform(registration.sourceBounds, registration.renderedBounds)
+    : { x: 0, y: 0, scaleX: 1, scaleY: 1 }
+}
 
 export function profileTextureResolution(url: string, profile: AssetProfile): number {
   if (profile === 'original') return 1
