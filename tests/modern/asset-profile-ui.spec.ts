@@ -15,7 +15,7 @@ it('同一公司交互组件在原子切换后改用当前画质的对话框资�
 
   await wrapper.setProps({assetProfile:'hd'})
   await nextTick()
-  expect(image.attributes('src')).toContain('/assets-hd/companies/dialog.webp')
+  expect(image.attributes('src')).toContain('/hd-static/companies/dialog.webp')
 
   await wrapper.setProps({assetProfile:'original'})
   await nextTick()

@@ -11,8 +11,10 @@ describe('generated static artwork overrides', () => {
     expect(profileAssetUrl('assets/companies/1.png?v=2', 'hd')).toBe('hd-static/companies/1.webp?v=2')
   })
 
-  it('does not activate an unaccepted panel with transparent content', () => {
-    expect(profileAssetUrl('assets/companies/dialog.png', 'hd')).toBe('assets-hd/companies/dialog.webp')
+  it('uses the regenerated opaque company panel while preserving the original profile', () => {
+    expect(profileAssetUrl('assets/companies/dialog.png', 'hd')).toBe('hd-static/companies/dialog.webp')
+    expect(profileTextureResolution('assets/companies/dialog.png', 'hd')).toBe(3)
+    expect(profileAssetUrl('assets/companies/dialog.png', 'original')).toBe('assets/companies/dialog.png')
   })
 
   it('keeps the existing completed buildings and character paths', () => {

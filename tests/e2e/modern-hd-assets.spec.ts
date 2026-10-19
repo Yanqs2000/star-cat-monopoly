@@ -304,6 +304,7 @@ test('游乐场Pixi图集在原版/高清模式下保持同一逻辑画布与玩
       players: await page.getByTestId('player-list').innerText(),
       canvasRatio: box!.width / box!.height,
       hdRequests: requests.filter(url => url.startsWith('/assets-hd/')),
+      staticRequests: requests.filter(url => url.startsWith('/hd-static/')),
       pageErrors,
     }
     await page.getByRole('button', { name: '继续对局', exact: true }).click()
@@ -319,8 +320,9 @@ test('游乐场Pixi图集在原版/高清模式下保持同一逻辑画布与玩
     expect(hd.currentPlayer).toBe(original.currentPlayer)
     expect(hd.players).toBe(original.players)
     expect(hd.canvasRatio).toBeCloseTo(original.canvasRatio, 4)
-    expect(hd.hdRequests.some(url => url.includes('/activities/carnival-play/'))).toBe(true)
+    expect(hd.staticRequests).toContain('/hd-static/activities/carnival-play/1.webp')
     expect(original.hdRequests).toEqual([])
+    expect(original.staticRequests).toEqual([])
     expect(original.pageErrors).toEqual([])
     expect(hd.pageErrors).toEqual([])
   } finally {

@@ -122,3 +122,27 @@ test('regenerated opaque court and lottery panels retain real controls at deskto
   }
   expect(errors).toEqual([])
 })
+
+for (const scenario of ['carnival-mid', 'ludo-paid']) test(`HD generated backgrounds and dice render in the real saved ${scenario} game`, async ({ page }, testInfo) => {
+  const errors: string[] = [], requested: string[] = []
+  page.on('pageerror', error => errors.push(error.message))
+  page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`) })
+  page.on('request', request => requested.push(new URL(request.url()).pathname))
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.goto(`/tests/fixtures/modern-activity-recovery.html?scenario=${scenario}&profile=hd`)
+  await expect(page.getByTestId('recovery-ready')).toHaveText('原素材已准备')
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  if (scenario === 'carnival-mid') {
+    await expect(page.getByTestId('carnival-original').locator('canvas')).toBeVisible()
+    expect(requested).toContain('/hd-static/activities/carnival-play/1.webp')
+    expect(requested).toContain('/hd-static/activities/carnival-score/1.webp')
+  } else {
+    await expect(page.getByTestId('ludo-original')).toBeVisible()
+    expect(requested).toContain('/hd-static/activities/ludo-game/1.webp')
+    expect(requested.some(url => url.startsWith('/hd-static/activities/ludo-shadow-'))).toBe(true)
+  }
+  await page.screenshot({ path: testInfo.outputPath(`${scenario}-HD.png`), fullPage: true })
+  await page.getByTestId('recovery-advance').click()
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  expect(errors).toEqual([])
+})

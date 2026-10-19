@@ -4,6 +4,8 @@ import { createGameController,type GameController,type GameScheduler } from '../
 import type { GameState } from '../../src/modern/features/game/types'
 import { parseActivityAssets,type ActivityManifest } from '../../src/modern/features/game/activity-assets'
 import InteractionPanel from '../../src/modern/features/game/InteractionPanel.vue'
+import { mapAssetProfile } from '../../src/modern/features/assets/profiles'
+const profile = new URLSearchParams(location.search).get('profile') === 'hd' ? 'hd' : 'original'
 class Clock implements GameScheduler {
  time=0;id=0;jobs=new Map<number,{at:number;callback:()=>void}>()
  now=()=>this.time
@@ -26,7 +28,7 @@ const Fixture=defineComponent({setup(){
  let controller:GameController
  const rebuild=(saved:GameState)=>createGameController(saved,{scheduler:clock,awaitActivityAssets:true,onState:s=>{state.value=structuredClone(s)}})
  controller=rebuild(initial);controller.setSpeed(2)
- void fetch('/assets/activities/manifest.json').then(async r=>{if(!r.ok)throw Error(`HTTP${r.status}`);assets.value=parseActivityAssets(await r.json())}).catch(e=>{error.value=String(e)})
+ void fetch('/assets/activities/manifest.json').then(async r=>{if(!r.ok)throw Error(`HTTP${r.status}`);assets.value=mapAssetProfile(parseActivityAssets(await r.json()),profile)}).catch(e=>{error.value=String(e)})
  const fail=(e:Error)=>{paused.value=true;controller.setPaused(true);error.value=e.message;ready.value=false}
  const retry=()=>{const saved=structuredClone(controller.state);controller.dispose();version.value++;state.value=saved;error.value='';paused.value=false;ready.value=false;controller=rebuild(saved);controller.setSpeed(2)}
  const summary=()=>{const i=state.value.interaction,g=i?.kind==='carnival'||i?.kind==='ludo'?i.game:undefined;return JSON.stringify({phase:g?.stage ?? i?.kind,frame:g?.frame,paid:g?.paid,tickets:state.value.tickets[1],rng:state.value.rngState})}
@@ -36,7 +38,7 @@ const Fixture=defineComponent({setup(){
   h('pre',{'data-testid':'recovery-summary'},summary()),h('span',{'data-testid':'recovery-ready'},ready.value?'原素材已准备':'等待原素材'),
   h('button',{'data-testid':'recovery-advance',onClick:()=>clock.advance(100)},'推进100毫秒'),h('button',{'data-testid':'recovery-finish',onClick:()=>clock.advance(10000)},'完成本场'),
   error.value?h('div',{role:'alert'},[error.value,h('button',{'data-testid':'recovery-retry',onClick:retry},'重试恢复')]):null,
-  h('div',{class:'recovery-stage'},[error.value?null:h(InteractionPanel,{key:version.value,game:state.value,paused:paused.value,cardAssets:[],activityAssets:assets.value,
+  h('div',{class:'recovery-stage'},[error.value?null:h(InteractionPanel,{key:version.value,game:state.value,paused:paused.value,cardAssets:[],activityAssets:assets.value,assetProfile:profile,
    onAssetError:fail,onActivityReady:(id:string)=>{controller.readyActivity(id);ready.value=true},onCarnivalInput:controller.setCarnivalInput,onPlaceWager:controller.placeWager,onConfirmWagers:controller.confirmWagers,onAcknowledge:controller.acknowledgeInteraction,
   })])
  ])

@@ -71,6 +71,30 @@ class StaticRegistrationTests(unittest.TestCase):
                 production.register('assets/fixture.png', master, 'test')
             self.assertEqual(json.loads((root / 'src/modern/data/static-hd-assets.json').read_text()), {'assets': []})
 
+    def test_tiny_cutout_allows_one_logical_pixel_of_canvas_rounding_but_not_portrait_drift(self):
+        for native_size, accepted in [((900, 900), True), ((900, 1100), False)]:
+            with self.subTest(native_size=native_size), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                master = self.prepare(root, kind='activity-panel')
+                source = root / 'public/modern/assets/fixture.png'
+                original = Image.new('RGBA', (74, 75))
+                ImageDraw.Draw(original).rectangle((9, 0, 73, 71), fill='white')
+                original.save(source)
+                queue_path = root / 'docs/modernization/static-hd-production.json'
+                queue = json.loads(queue_path.read_text())
+                queue['jobs'][0]['sourceSha256'] = hashlib.sha256(source.read_bytes()).hexdigest()
+                queue_path.write_text(json.dumps(queue))
+                generated = Image.new('RGBA', native_size)
+                ImageDraw.Draw(generated).rectangle((110, 10, 880, native_size[1] - 30), fill='white')
+                generated.save(master)
+                with patch.object(production, 'ROOT', root):
+                    if accepted:
+                        result = production.register('assets/fixture.png', master, 'test')
+                        self.assertEqual(result['pixelSize'], [296, 300])
+                    else:
+                        with self.assertRaisesRegex(ValueError, 'aspect ratio'):
+                            production.register('assets/fixture.png', master, 'test')
+
 
 if __name__ == '__main__':
     unittest.main()
