@@ -63,7 +63,11 @@ def register(source: str, generated: Path, prompt: str) -> dict:
         raise ValueError(f'Master below {density}x native density')
     # Registered sprites align visible bounds in the renderer; their empty margins
     # may differ. Illustrations and UI canvases must retain their original aspect.
-    if not registered_sprite and abs(image.width / image.height / (width / height) - 1) > 0.01:
+    # Tiny cutouts can differ by one source-canvas pixel because the original
+    # transparent margins were rounded to whole pixels. Large UI remains strict.
+    tiny_cutout = job['kind'] == 'activity-panel' and max(width, height) <= 100 and source_image.getchannel('A').getextrema()[0] == 0
+    canvas_rounding = tiny_cutout and abs(image.width / image.height * height - width) <= 1.000001 and abs(image.height / image.width * width - height) <= 1.000001
+    if not registered_sprite and not canvas_rounding and abs(image.width / image.height / (width / height) - 1) > 0.01:
         raise ValueError('Master aspect ratio differs from original logical canvas')
     validate_panel_opacity(source_image, image, job['kind'])
     relative = Path(source.removeprefix('assets/'))

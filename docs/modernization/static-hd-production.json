@@ -123,11 +123,38 @@
       "sourceSha256": "1b107b4bf0f004baf5443a61ce010a4f538bb6ec7b9fc4d5fb20de59536afd3d",
       "kind": "ui-panel",
       "aliases": [],
-      "status": "candidate-rejected-alpha",
-      "candidates": [
-        "public/modern/hd-static-masters/companies/dialog-r02.png"
-      ],
-      "reason": "Content rectangle alpha minimum 89 instead of 255; keep original runtime panel"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/companies/dialog.png",
+        "url": "hd-static/companies/dialog.webp",
+        "logicalSize": [
+          408,
+          356
+        ],
+        "pixelSize": [
+          1224,
+          1068
+        ],
+        "pixelDensity": 3,
+        "nativePixelSize": [
+          1342,
+          1172
+        ],
+        "masterPath": "public/modern/hd-static-masters/companies/dialog-selected.png",
+        "masterSha256": "4647a01ed6fa608eda4a5729c9539d5ecea1f637963473d4fd403961ded67e19",
+        "outputSha256": "27519abcf6c2551b9a18bbad682048f32a8a4230f66c02ec6ffc3613ca0b8e91",
+        "outputAlphaSha256": "a584c675373fcd70d3746aec8016104a41dae1b0f7d4063868624d2ef5e66874",
+        "method": "built-in image_gen faithful redraw; downsampled for 3x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Edit target: original Star Cat Monopoly company dialog panel. Faithful HD redraw only, preserve exact original proportions408:356, same glossy blue rectangular rounded border, thin white inner rim and dark blue outer rim, original silver Q logo with one small yellow star at upper left, and large blank pale-blue content rectangle at original x35 y91 width338 height209. Do not invent any text or buttons. Crisp clean glossy cartoon game UI. Entire panel including empty light-blue area MUST be fully opaque solid enamel; no interior transparency or erased patches. Extend blue into the extreme external corners, output an opaque rectangular image without external black or white margins. At least1250px wide and1100px tall at the reference aspect ratio. Keep same rim thickness, content shape and Q-logo placement. No changed objects, watermark, speckles or holes."
+      },
+      "previousRejection": {
+        "candidates": [
+          "public/modern/hd-static-masters/companies/dialog-r02.png"
+        ],
+        "reason": "Content rectangle alpha minimum 89 instead of 255; keep original runtime panel"
+      }
     },
     {
       "source": "assets/properties/houses/owner-1/facing-1/level-0.png",
@@ -4726,7 +4753,32 @@
       "sourceSha256": "c4eb8d447a79b6d3bb3dde03974de6024e129be16da7685bd37a8e6e32136940",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/map-mini/1.png",
+        "url": "hd-static/activities/map-mini/1.webp",
+        "logicalSize": [
+          675,
+          638
+        ],
+        "pixelSize": [
+          1012,
+          957
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1290,
+          1219
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/map-mini/1-selected.png",
+        "masterSha256": "a751317230ca73b31b8df48de7af82eb1d368919e2fe7052c49486830ebe434f",
+        "outputSha256": "1d235011cba6bc3f1dd36a22d4c3224596f33c82a96c910c665e0ef62df7e521",
+        "outputAlphaSha256": "bd5491fa971ceab918c85a93f9cc5254cf507c10b9f11b91fd962eefe2927af7",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. HIGH-FIDELITY HD RESTORATION of supplied Star Cat Monopoly minimap, not a redesign. Preserve original675:638 canvas and EVERY normalized coordinate. Output target1350x1276 or larger same ratio, entire map fully visible with original tiny margin. Lock exact three-island silhouette and exact road/bridge topology: large central floating grassy island with golden vertical cliffs, four fenced rectangular grass lots in their same locations, straight diagonal light-grey roads and identical intersections, central colorful blue/yellow castle, same two matching toy amusement parks on upper-right and lower-left corners with same blue loops/gold wheel/green cone tower; small satellite island at top with circular tree grove and small blue/pink portal tower, connected by exact original upper bridge; small golden jail rock at bottom with grey barred house in blue pool connected by exact lower bridge. Preserve ALL other fixed buildings, portals, road-space circle markers, colored property plots, fences, trees, shrubs and clouds at exactly source positions and original counts. Do not add or remove objects, roads, plots, islands, trees or clouds. All shapes match source; only improve line clarity, texture detail, smooth original glossy colorful cartoon shading. Transparent outside the map and clouds, solid opaque islands/roads/cliffs/buildings, no holes inside. No extra background, text, watermark, characters or labels. Roads and markers MUST remain aligned to original coordinates because game overlays use fixed positions."
+      }
     },
     {
       "source": "assets/activities/magic-talk/1.png",
@@ -4829,14 +4881,64 @@
       "sourceSha256": "65cf3fcbbf5910b9e1f10b3b8dc7ca98f493fb211dd936473b5fc7ec4f56634f",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-betting/1.png",
+        "url": "hd-static/activities/ludo-betting/1.webp",
+        "logicalSize": [
+          800,
+          600
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-betting/1-selected.png",
+        "masterSha256": "036c3447e1fbf583e4b07933ef387ecd9d6116a80c0fe96806536928665d1896",
+        "outputSha256": "374efbe7c041d9e00f338b01e4c16db591ac8524d949e3d59e8c5682a0dc0a54",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Faithful HD redraw of supplied original Star Cat Monopoly dice betting board. EXACT4:3 canvas800x600, native1600x1200 or at least1400px wide. Preserve ALL layout/geometry and all original numbers, pips, multipliers, fence segments, flowers, grass, train tracks and text. Same green grassy background. Gold title 彩票现场开奖 at top-left. Top strip six groups of THREE small white flat die-face tiles per group with pips1,2,3,4,5,6 respectively; 1 and4 RED, all other pips BLACK, exact original arrangements. Preserve top multipliers100 and central ×80. Left numbered strip reads4,5,6,7 downward, right17,16,15,14 downward, bottom8,9,10,11,12,13 left-to-right, all same coordinates. Central blue/yellow striped border x155 y190 to422 y456, same vertical train track at x285, labels Small and Big with ×2 under each; keep side×20 and bottom×10 plus corner×8 exactly as source. Top-right brown gold-rimmed warning sign text verbatim: ★ 彩市有风险 / 购买须谨慎 / 买定请离手 / 选错必不赔. Right lower pale blue pill 确定 at logical x600,y465,w138,h38, same location and size. Right background faint stars/circles stay decorative green. Fully OPAQUE clean board, no transparency or holes, no extra labels, scores, chips, dice, objects or changed numbers. Original colorful glossy cartoon style with crisp readable Chinese and numerals. Do not rearrange any betting regions."
+      }
     },
     {
       "source": "assets/activities/ludo-game/1.png",
       "sourceSha256": "ad972c146159c0a41804c95c2e5e05a9a8a16159842c290c496916025333cd4f",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-game/1.png",
+        "url": "hd-static/activities/ludo-game/1.webp",
+        "logicalSize": [
+          800,
+          600
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-game/1-selected.png",
+        "masterSha256": "85b993b9440cb579102a3b69b90557d74731b2d0f023413a2110d0a8c77f1ffe",
+        "outputSha256": "e13bdc5f6153c9a6bab5d56449092aa2ad421a799286e9084f634f2f866bee8c",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 selected HD AI-betting board is EDIT TARGET; image2 original game-phase board shows desired difference. Remove ONLY black Chinese 确定 in lower-right around logical x637..699,y473..497, reconstruct that small region with continuous green grass texture. This game phase has no confirmation label and no button. Preserve every other part EXACTLY: same4:3 canvas1448x1086, gold title, warning sign and all text,18die tiles with pips, all numerals4..17, multipliers, Small/Big labels, train tracks, striped border, flowers, faint right stars and circle. No other changes, no added elements or removed artwork. Fully opaque board, no transparency, holes or artifacts."
+      }
     },
     {
       "source": "assets/activities/ludo-chip/1.png",
@@ -4875,126 +4977,582 @@
       "sourceSha256": "66226845d2a195065d7673c42197c3f3ecad0c56ca886f8f1b83df217c7a8219",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/carnival-play/1.png",
+        "url": "hd-static/activities/carnival-play/1.webp",
+        "logicalSize": [
+          800,
+          600
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/carnival-play/1-selected.png",
+        "masterSha256": "d8f034bcb5a81e4b4cbab02eac04d7938d94807ee939c9ce74fcf129de047637",
+        "outputSha256": "2638c691c07b93fc41e989c246be554b5e877f2375da3303fab9a59fdc8ae43f",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Faithful HD redraw of supplied original Star Cat Monopoly amusement park UI. Exact4:3 canvas800x600 logical; native target1600x1200 or at least1400px wide. Preserve geometry and every existing element in same coordinates: cyan sky with faint stars and clouds; rainbow arcing from top-left to ground near x650,y350; white 游乐场 title at x55,y30; green grassland, brown cat-face direction sign at left x30..130,y320..430; one central-right toy amusement assembly with blue round platform, blue castle base and green/yellow cone tower, gold wheel, blue rollercoaster loop and yellow-blue cars, all unchanged in counts/shapes/positions; brown foreground fence at y450..500; bottom striped cyan/blue counter strip y500..600 with silver coin and X at far left and THREE distinct magazine covers and X marks at original positions. Preserve all original objects, no additions or removals, exact layout for runtime moving overlays. Improve clarity and original glossy colorful cartoon materials. Whole canvas fully opaque with uninterrupted sky/grass/UI, no transparency or holes. Keep only original title and X symbols; do not add scores, prices, buttons, text or characters."
+      }
     },
     {
       "source": "assets/activities/carnival-score/1.png",
       "sourceSha256": "66226845d2a195065d7673c42197c3f3ecad0c56ca886f8f1b83df217c7a8219",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/carnival-score/1.png",
+        "url": "hd-static/activities/carnival-score/1.webp",
+        "logicalSize": [
+          800,
+          600
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/carnival-score/1-selected.png",
+        "masterSha256": "d8f034bcb5a81e4b4cbab02eac04d7938d94807ee939c9ce74fcf129de047637",
+        "outputSha256": "2638c691c07b93fc41e989c246be554b5e877f2375da3303fab9a59fdc8ae43f",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Faithful HD redraw of supplied original Star Cat Monopoly amusement park UI. Exact4:3 canvas800x600 logical; native target1600x1200 or at least1400px wide. Preserve geometry and every existing element in same coordinates: cyan sky with faint stars and clouds; rainbow arcing from top-left to ground near x650,y350; white 游乐场 title at x55,y30; green grassland, brown cat-face direction sign at left x30..130,y320..430; one central-right toy amusement assembly with blue round platform, blue castle base and green/yellow cone tower, gold wheel, blue rollercoaster loop and yellow-blue cars, all unchanged in counts/shapes/positions; brown foreground fence at y450..500; bottom striped cyan/blue counter strip y500..600 with silver coin and X at far left and THREE distinct magazine covers and X marks at original positions. Preserve all original objects, no additions or removals, exact layout for runtime moving overlays. Improve clarity and original glossy colorful cartoon materials. Whole canvas fully opaque with uninterrupted sky/grass/UI, no transparency or holes. Keep only original title and X symbols; do not add scores, prices, buttons, text or characters.\nIdentical original carnival-score source SHA; same generated master reused."
+      }
     },
     {
       "source": "assets/activities/ludo-ai-betting/1.png",
       "sourceSha256": "cc56cc252f39539f2059ca2d941b3008b3c9b3c2e7da825d5496a47ed83d0278",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-ai-betting/1.png",
+        "url": "hd-static/activities/ludo-ai-betting/1.webp",
+        "logicalSize": [
+          800,
+          600
+        ],
+        "pixelSize": [
+          1200,
+          900
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1448,
+          1086
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-ai-betting/1-selected.png",
+        "masterSha256": "96fa0894c3a921a106ad620259f8680c211549bac960acc47411c9a8e6ce035e",
+        "outputSha256": "52ed67ec6d6f0c80cd6a0937779b3582b578770afc80e67a6f0a824b13ba4095",
+        "outputAlphaSha256": "ecbc9c6a8ce5483b759d5f8f640f5af587ae63113ab58abaf95ed4f288203311",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 is the SELECTED HD dice betting board EDIT TARGET; image2 is original AI-betting version showing the single intended difference. Change ONLY the lower-right confirmation treatment: remove the blue rounded pill and its white rim, restore the uninterrupted surrounding green grass texture behind it, retain plain BLACK Chinese 确定 centered at original logical x668,y485. The AI original has plain black text without any button background. Keep ALL other pixels/composition, every numeral4..17, top18die tiles/pips, gold title, warning sign text, betting fence/track geometry, multipliers, Small/Big and flowers unchanged. Same4:3 canvas1448x1086 as target, fully opaque. No added objects/text, no transparency, no holes. Exact geometry/canvas/style of image1."
+      }
     },
     {
       "source": "assets/activities/bankrupt/1.png",
       "sourceSha256": "71ada8b460ab41aae9c6b4c4013cce209e8f4c2535a361292b5a76c1998643bd",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "rejectedCandidates": [
+        {
+          "reason": "Small opaque black exterior corner wedges; replaced by built-in edit before batch completion",
+          "generatedImage": "exec-f57acbb9-f4a6-47ba-b613-2e4d294a579d.png"
+        }
+      ],
+      "runtime": {
+        "source": "assets/activities/bankrupt/1.png",
+        "url": "hd-static/activities/bankrupt/1.webp",
+        "logicalSize": [
+          826,
+          629
+        ],
+        "pixelSize": [
+          1239,
+          944
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1437,
+          1094
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/bankrupt/1-selected.png",
+        "masterSha256": "af3b94944b2d2dad51f191399f1344fa8bac550de1ec352611f1e0925d07fcf7",
+        "outputSha256": "5eeb968a50599e1b36fb76ed3921eb9280ce442155acd41c3058e82ac2c86e00",
+        "outputAlphaSha256": "b165751938cbbb6c24128a92e6297da6b68d015d4544af4bbb101286f8b354ad",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Keep this selected Star Cat Monopoly bankruptcy panel unchanged except the tiny BLACK external corner wedges outside its rounded pink frame. Replace those black corner wedges with matching violet-purple paint. Canvas remains fully opaque and same1438x1094 near4:3 shape. Preserve all five pale-purple outline stars, pink glossy corner ornaments, white border rim, exact white handwritten 数据归零中, text position, colors and all geometry. Do not repaint or restyle any other area. No black external background, no transparency, holes, extra text or added objects. Only fill the four small black corner wedges with matching purple."
+      }
     },
     {
       "source": "assets/activities/gamewin/1.png",
       "sourceSha256": "7d4c6dba460f83e319f6b1597f07713711e00e67bc4db0d5d76c6dbb83df880c",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/gamewin/1.png",
+        "url": "hd-static/activities/gamewin/1.webp",
+        "logicalSize": [
+          828,
+          632
+        ],
+        "pixelSize": [
+          1242,
+          948
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1436,
+          1095
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/gamewin/1-selected.png",
+        "masterSha256": "fd3b54e9342cfd68662ad5629408d2d909f43b3550a597043537151728a44f50",
+        "outputSha256": "60ffa687604a14b12eebce5e05e1d38f70278e8d70e3d3ab633d3ccaa2c5a8ba",
+        "outputAlphaSha256": "422067c5a89d3030a146df9654c6fc5c7e8a8c07fdd8c49118e81e9c56098ac5",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Faithful HD redraw of supplied original Star Cat Monopoly victory UI. Preserve exact828:632 aspect, same five pale-pink outlined stars in original positions/sizes, pink-magenta upper background fading to pale pink below, glossy pink rounded corner frame with thin white inner highlights. Retain large white handwritten simplified Chinese 恭喜过关 in one line at original x225 y230 area. No other text, objects or decorations. Keep all geometry/counts/layout the same, improve crispness and material polish. Fully opaque printed board with continuous pink background, no transparency, erased regions, smears or speckles. Extend pink paint into external corner pixels, no black/white exterior margins. At least1400px wide."
+      }
     },
     {
       "source": "assets/activities/gameover/1.png",
       "sourceSha256": "bc447fb432cef6de76c8ec8371dcb5e6de2a435a45b50d4e09e9e08faaa2cd0a",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/gameover/1.png",
+        "url": "hd-static/activities/gameover/1.webp",
+        "logicalSize": [
+          826,
+          629
+        ],
+        "pixelSize": [
+          1239,
+          944
+        ],
+        "pixelDensity": 1.5,
+        "nativePixelSize": [
+          1437,
+          1095
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/gameover/1-selected.png",
+        "masterSha256": "6ec05ecda6c9f0a636697293278286481be59107c987cb9f34d34d4abb77f7c9",
+        "outputSha256": "66bb7ea3cf0a5666ffbd3f443467543ea480ab482a35fee9f65b973c1fc0e7cb",
+        "outputAlphaSha256": "b165751938cbbb6c24128a92e6297da6b68d015d4544af4bbb101286f8b354ad",
+        "method": "built-in image_gen faithful redraw; downsampled for 1.5x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Faithful HD redraw of the supplied game-over panel. CANVAS SHAPE MUST MATCH REFERENCE EXACTLY: width:height=826:629=1.3132, a near-4:3 panel, NOT widescreen. Native target1440x1096 pixels. Preserve every layout coordinate normalized to original826x629. Blue rounded corner frame at canvas edges; five pale-blue outline stars in exactly original positions. Dialog MUST be original logical x217,y195,width393,height242, meaning its top is31% of total height. It contains silver Q/yellowstar logo top-left, white Game Over title, and pale-blue box with black handwritten simplified Chinese *游戏结束*. Preserve spelling, counts and positions. Clean glossy Star Cat Monopoly original cartoon style. Every pixel is solid opaque, including empty blue spaces and outer corners; fill extreme corners with matching blue rather than black. No transparency, holes, blotches, added text or added controls. Do not make a wide banner. Match reference aspect ratio and geometry."
+      }
     },
     {
       "source": "assets/activities/ludo-face-1/1.png",
       "sourceSha256": "d14e800092dbe8f40731b9c7be6e312eddef6f2d3bba12f04779ce51a22868d4",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-face-1/1.png",
+        "url": "hd-static/activities/ludo-face-1/1.webp",
+        "logicalSize": [
+          42,
+          45
+        ],
+        "pixelSize": [
+          168,
+          180
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1212,
+          1298
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-face-1/1-selected.png",
+        "masterSha256": "3458485cd7cba03edbff94f53ae31dc49836e89ecfe92561204c757454d32ee6",
+        "outputSha256": "5831e4564e0f3d288bd3becae605f8922f87e2415fb35746764601a3c1455372",
+        "outputAlphaSha256": "c140fb0c13daf23013619f877c4ab6aeea589668e3afe0f70e09a7f515a95e72",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. HD sprite redraw of this exact Star Cat Monopoly dice result icon. Keep the original three-quarter isometric cube orientation, visible face proportions and original42:45 canvas aspect (target1008x1080). White ivory glossy rounded die, one LARGE RED circular recessed pip on top, same exact black pip arrangements on left and right faces as the reference (left3 and right5). Dark thin outline and subtle grey side shading, original friendly polished game style. Single isolated die fills canvas to same normalized bounding box as reference with tiny margin, no ground plane and no extra shadow. Background genuinely transparent; all white die material is solid opaque, no holes inside die. Preserve perspective, pip numbers, pip colors and silhouette exactly. No letters, no labels, no extra objects or extra pips."
+      }
     },
     {
       "source": "assets/activities/ludo-face-2/1.png",
       "sourceSha256": "39ae72f34942fe962c57a8600cb7044e0b2e398f37aa421a60fd7d95f9ae5271",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-face-2/1.png",
+        "url": "hd-static/activities/ludo-face-2/1.webp",
+        "logicalSize": [
+          42,
+          46
+        ],
+        "pixelSize": [
+          168,
+          184
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1198,
+          1313
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-face-2/1-selected.png",
+        "masterSha256": "ddcb6d5a5082caf50ab1c06d3d1753facc6f453cc0feec8b521fa4f9cb71ebae",
+        "outputSha256": "33578be91e033ffacbe48177219839282b68f663c273689a0bf5732ca28cc010",
+        "outputAlphaSha256": "5bef03566c3abc8833534cb42d6f2770f78a791dd04d536c2be81ea2d4acc02c",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 is the original dice-2 layout and pip reference; image2 is the selected HD material/style reference. Redraw image1 as a clean HD transparent sprite matching the exact cube silhouette, camera, glossy ivory material, outline and lighting of image2, while retaining image1 pip values. TOP face exactly 2 BLACK pips in original arrangement; LEFT and RIGHT faces use original black pip patterns, left5 and right6. Canvas aspect MUST be 42:46, not square, native height at least1100px. Fully visible complete die, tiny even outer margin matching original normalized bounds. Three-quarter isometric cube. Keep same object count and orientation as source, no ground plane or extra cast shadow. Background genuinely transparent, white solid die material opaque with no erased patches or holes. No text, labels or extra pips."
+      }
     },
     {
       "source": "assets/activities/ludo-face-3/1.png",
       "sourceSha256": "e8778c43de7566f2cfa22111fd9398eb0ce0564cee5827bd972b920ea2cbe11d",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-face-3/1.png",
+        "url": "hd-static/activities/ludo-face-3/1.webp",
+        "logicalSize": [
+          41,
+          46
+        ],
+        "pixelSize": [
+          164,
+          184
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1184,
+          1328
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-face-3/1-selected.png",
+        "masterSha256": "fb32fdbeb3d32d75ee4650097309c60701b687e2bc9f49711ea8e6c76a22ee21",
+        "outputSha256": "5dfa7e6ad3f951e3c18a1b48c855a7125b05536841fd7ef6788d1493eb29fa38",
+        "outputAlphaSha256": "6043d0b05268eecf9614891278d9c1fef95e5f011de6baae12968227813112b7",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 is the original dice-3 layout and pip reference; image2 is the selected HD material/style reference. Redraw image1 as a clean HD transparent sprite matching the exact cube silhouette, camera, glossy ivory material, outline and lighting of image2, while retaining image1 pip values. TOP face exactly 3 BLACK pips in original arrangement; LEFT and RIGHT faces use original black pip patterns, left4 and right5. Canvas aspect MUST be 41:46, not square, native height at least1100px. Fully visible complete die, tiny even outer margin matching original normalized bounds. Three-quarter isometric cube. Keep same object count and orientation as source, no ground plane or extra cast shadow. Background genuinely transparent, white solid die material opaque with no erased patches or holes. No text, labels or extra pips."
+      }
     },
     {
       "source": "assets/activities/ludo-face-4/1.png",
       "sourceSha256": "b2642394e57b22576cdd15ca02a5a7778b93c9bcd11bf2bedf51a767e6532603",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-face-4/1.png",
+        "url": "hd-static/activities/ludo-face-4/1.webp",
+        "logicalSize": [
+          41,
+          46
+        ],
+        "pixelSize": [
+          164,
+          184
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1186,
+          1326
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-face-4/1-selected.png",
+        "masterSha256": "f57cf476e17b22c70bf255c7f6c6daeeda1698b804a0d403669eecf9a9d80d69",
+        "outputSha256": "d1e9ebed9bf438f1a391c783e5cebbeb52db00857420380932e64198d1efc526",
+        "outputAlphaSha256": "f113bd95c36e0ab256aca979122010fa28fccdde10424444861cb52801084b47",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 is the selected HD die5, EDIT TARGET; image2 is original die4 pip reference. Keep image1 canvas EXACTLY UNCHANGED at1186x1326 pixels (aspect41:46), same cube body silhouette, camera, lighting, white ivory material, outline, and transparent background. Change ONLY pip layout/color to die4: TOP4 RED pips at the four corners, no center pip; LEFT6 BLACK pips in two columns of3; RIGHT3 BLACK diagonal pips. No other changes. All white die material remains opaque and intact; outside transparent. No extra objects, glow, ground, cast shadow or text. Preserve target1 canvas dimensions and shape exactly; do not adopt another aspect ratio."
+      }
     },
     {
       "source": "assets/activities/ludo-face-5/1.png",
       "sourceSha256": "13b3536072bb6b502843943e5928c90e12ec4656a11c2250bbe8b1130a004e4c",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-face-5/1.png",
+        "url": "hd-static/activities/ludo-face-5/1.webp",
+        "logicalSize": [
+          41,
+          46
+        ],
+        "pixelSize": [
+          164,
+          184
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1186,
+          1326
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-face-5/1-selected.png",
+        "masterSha256": "cdf5e02b236ba4a07f43867a2859e9de1555e0efdd4d2087fc3fb11d3908b5e0",
+        "outputSha256": "4a02a8609a5ee51deefda97b59cd65edac8fc8be52fd97ec1a1c3a779eb70198",
+        "outputAlphaSha256": "da0541b0e2026871dd2ebe239d4d7afccef6bf9c8c6ee539baebdc9fbdc5ae10",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 original dice5 is exact geometry/pip reference; image2 is selected HD material and silhouette reference. Redraw matching glossy ivory rounded die. TOP exactly5 BLACK pips (four corners and center), LEFT exactly3 BLACK pips diagonal, RIGHT exactly6 BLACK pips in original arrangement. Preserve reference1 orientation and three visible face proportions; match reference2 polished white material, grey side lighting, dark thin outline, rounded cubic shape and pip style. Canvas ratio41:46, native height>=1100px, tiny margin and full die silhouette occupying original normalized bounds. Transparent background with fully opaque white cube; no holes, external glow, cast shadow, floor, text, extra pips or objects. Only pip arrangement differs from selected HD die."
+      }
     },
     {
       "source": "assets/activities/ludo-face-6/1.png",
       "sourceSha256": "676bc9040b0af50020a15f378ed090054881c04ba28f0f1d5951bd01e5cd7295",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-face-6/1.png",
+        "url": "hd-static/activities/ludo-face-6/1.webp",
+        "logicalSize": [
+          42,
+          45
+        ],
+        "pixelSize": [
+          168,
+          180
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1212,
+          1298
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-face-6/1-selected.png",
+        "masterSha256": "00bd88fee00b35a738355a0b7c35899c8a8df99c70c02c20e9d84126c49dd6a1",
+        "outputSha256": "a6db1977622a765d71a5c4c1d3908093847e70a895d02b1861a5a93dbaca150d",
+        "outputAlphaSha256": "fd6cb8c70d9666166afaf5fb4984fa42a5661d8682b4954d2d57d13302762ee3",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 original dice6 defines pip layout and geometry. Image2 HD die defines material, silhouette and lighting. Redraw original as matching HD die with TOP exactly6 BLACK pips in two rows of three, LEFT exactly2 BLACK pips diagonal, RIGHT exactly5 BLACK pips with corner four and center, all as original orientation. Keep same isometric camera, rounded cubic body, ivory white gloss, grey side shading, dark thin outline, no changed parts. Canvas aspect42:45, target1008x1080 or larger matching ratio. Full die with tiny outer margin occupying same original normalized bounds. Genuine transparent background, all white cube material opaque. No ground plane, cast shadow, glow, text, added objects or extra pips."
+      }
     },
     {
       "source": "assets/activities/ludo-shadow-1/1.png",
       "sourceSha256": "64af987d7b5e6652d0c04b0fb6ffb6ae2928b68e28112540612b7d13b41a6c88",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-shadow-1/1.png",
+        "url": "hd-static/activities/ludo-shadow-1/1.webp",
+        "logicalSize": [
+          75,
+          74
+        ],
+        "pixelSize": [
+          300,
+          296
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1263,
+          1246
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-shadow-1/1-selected.png",
+        "masterSha256": "95a276b8ce42866c6c189a04da77761af0adddadba60214a9be3623d8e27cbd6",
+        "outputSha256": "cb2a52dcce4f6fc72bb9176e1ae4f75ff0a2a66feee1e42a715f0486bb0950ce",
+        "outputAlphaSha256": "75e0aab7e401ff6ed6ce3e1057da98e7a35d20e51a9a0733b734a0f93510f536",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 original large dice-with-shadow1 is the exact canvas/layout reference; image2 HD small die1 defines polished material/pip style. Recreate image1 in HD using same rounded white die, large1 RED pip on top,3 BLACK pips on left,5 BLACK on right. Three-quarter camera and visible face proportions match originals. IMPORTANT preserve75:74 canvas shape and original placement: cube opaque bounds approximately x9..74,y0..71 in a75x74 logical canvas; compact soft grey cast shadow extends left from cube onto transparency. Do not center differently or enlarge cube to fill all width. Native target1200x1184 or larger with same ratio. Transparent outside die and its short original left cast shadow. White die material fully opaque, no cutouts. Keep all pip counts, original shadow direction and footprint. No text, extra objects, floor, large halo or added pips."
+      }
     },
     {
       "source": "assets/activities/ludo-shadow-2/1.png",
       "sourceSha256": "26b9be996954d495b3b3df4f4ecec4c796934ed059cdae417b1f35f3d2a2df1a",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-shadow-2/1.png",
+        "url": "hd-static/activities/ludo-shadow-2/1.webp",
+        "logicalSize": [
+          75,
+          75
+        ],
+        "pixelSize": [
+          300,
+          300
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-shadow-2/1-selected.png",
+        "masterSha256": "19457aed992775a1f7070c1fc71d374e0072b2c77bf312081ebfe59aaa194b5a",
+        "outputSha256": "417e945454aebf18bb58dd8fb4e35ef4cc758ad0c97999ea6c216c5cfdf632b5",
+        "outputAlphaSha256": "6164b22501189a3f47cb1ba1b03b380db1f3b1dc275fff57eec241c2aefd3637",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 original shadow-die2 defines exact layout; image2 HD die2 defines cube material and pip layout; image3 HD shadow-die1 defines cast shadow style. Produce one matching HD result sprite. Exact SQUARE75:75 canvas, native1200x1200. White glossy rounded cube at original logical bounds x10..75,y0..72, tiny right/top margin, short compact soft grey cast shadow extends LEFT as in reference1. TOP2 BLACK pips; LEFT5 BLACK pips; RIGHT6 BLACK pips, original arrangements and orientation. Preserve camera, cube silhouette and lighting across selected HD set. Background genuinely transparent; all white cube opaque with no holes. No floor, halo, long shadow, text or extra objects/pips."
+      }
     },
     {
       "source": "assets/activities/ludo-shadow-3/1.png",
       "sourceSha256": "d65896c29ed09718f6863f42608e6e5d3abfa1b07e4967ddfac1548d024d8622",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-shadow-3/1.png",
+        "url": "hd-static/activities/ludo-shadow-3/1.webp",
+        "logicalSize": [
+          75,
+          75
+        ],
+        "pixelSize": [
+          300,
+          300
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-shadow-3/1-selected.png",
+        "masterSha256": "870f5ec8dad8f599c6447ce565e84d5bfb9042f750c27d72cb7546af4b20951a",
+        "outputSha256": "0910079baeb7040545cbfbdad9abcc4fb062600b2506960aa31d1cc2d6762b71",
+        "outputAlphaSha256": "e06bf3a21fe1fae9252e6a0e5729571524cb07ea9a1c6945a3f19a85b53f14ce",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 original shadow-die3 defines original composition, cube bounds, pip layout and short left cast shadow. Image2 selected HD die3 defines crisp glossy ivory material and pip rendering. Recreate image1 as one HD transparent sprite. SQUARE canvas1200x1200, original logical75x75. Cube opaque bounds approximately x10..75,y0..72, short soft grey cast shadow extends LEFT with original footprint, not a halo. TOP3 BLACK diagonal pips; LEFT4 BLACK pips; RIGHT5 BLACK pips, all original arrangements. Same isometric camera and rounded cube silhouette as HD set. A clean thin dark outline encloses white cube; no white wisps or isolated fragments outside. Background genuinely transparent, die fully opaque. No floor, glow, text, new objects or extra pips."
+      }
     },
     {
       "source": "assets/activities/ludo-shadow-4/1.png",
       "sourceSha256": "bc0ef053f81f0bf2267e1ade061429c9c62c21e7f1a6f271f0e11557a2c099cf",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-shadow-4/1.png",
+        "url": "hd-static/activities/ludo-shadow-4/1.webp",
+        "logicalSize": [
+          75,
+          75
+        ],
+        "pixelSize": [
+          300,
+          300
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-shadow-4/1-selected.png",
+        "masterSha256": "1b67d74fd779726fbd2ae52063ced943ea4c450855187a26afd81158f669e85a",
+        "outputSha256": "55d39f304008faea1f72669e0d36b6127e191f58101d18e5466290797421c9c3",
+        "outputAlphaSha256": "61de58aa1e5126a26574a6ed90399fa5fd17c0543331eca140b8831943a9de2e",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 is original shadow-die4 layout/pip reference; image2 selected HD die4 is the body/material reference. Recreate original as crisp transparent HD sprite. SQUARE1200x1200 canvas (logical75x75); preserve original opaque cube placement x10..75,y0..72, short soft grey cast shadow to LEFT. TOP exactly4 bright RED pips, LEFT6 BLACK pips, RIGHT3 BLACK pips in original arrangements. Same three-quarter isometric camera, rounded cube silhouette, polished ivory material, thin dark edge and smooth grey side shading as selected HD set. White cube is fully opaque. Clean transparent background, no white wisps, holes or disconnected fragments. No floor, glow, long shadow, text, extra objects or pips."
+      }
     },
     {
       "source": "assets/activities/ludo-shadow-5/1.png",
       "sourceSha256": "68a15ecc72def6ca81655ce091f7b07c2a3ec708173466adcd19c14c312accdb",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-shadow-5/1.png",
+        "url": "hd-static/activities/ludo-shadow-5/1.webp",
+        "logicalSize": [
+          74,
+          75
+        ],
+        "pixelSize": [
+          296,
+          300
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-shadow-5/1-selected.png",
+        "masterSha256": "ad04e0dc8dd5ea222c5db801032e0a718b894482bb65fc79d13592a492bedbf1",
+        "outputSha256": "493f5ed584c37c736fba5563bcb58898ab8e3922fc79663ec4115b824983d704",
+        "outputAlphaSha256": "d80b5fbd38a52f848d834b2c507d927a8aef4e2061e36fe159470b86e4f539c0",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Edit this image of one white glossy die, keeping its canvas dimensions, transparent background, shape, camera, outline, shadows and lighting EXACTLY unchanged. Change only the BLACK PIPS: top face must show FIVE dots in the quincunx pattern, FOUR CORNER dots plus ONE CENTER dot. FIVE total. Left side must have THREE dots diagonally, right side must keep SIX dots. Do not remove the center dot on top. Do not change die body, framing or silhouette. Same square output as input; no crop or portrait reframing. Preserve transparency outside cube and the small left shadow; cube fully opaque. No text or added objects."
+      }
     },
     {
       "source": "assets/activities/ludo-shadow-6/1.png",
       "sourceSha256": "2614338e6ff6d44fff9b85529b7eb6915645c10f9113315a7fca1fa0c94dab72",
       "kind": "activity-panel",
       "aliases": [],
-      "status": "pending-generation"
+      "status": "installed-pending-user-review",
+      "runtime": {
+        "source": "assets/activities/ludo-shadow-6/1.png",
+        "url": "hd-static/activities/ludo-shadow-6/1.webp",
+        "logicalSize": [
+          75,
+          75
+        ],
+        "pixelSize": [
+          300,
+          300
+        ],
+        "pixelDensity": 4,
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "masterPath": "public/modern/hd-static-masters/activities/ludo-shadow-6/1-selected.png",
+        "masterSha256": "17400af7f14a4a5a87f2dacb92953a0139823908438fc7f56116803901602dec",
+        "outputSha256": "2247119e00bad150e909c9a390615295a103369fa690d38edf3cdbfb28cdf00c",
+        "outputAlphaSha256": "4a2d131e70a4cfc52a2d9fa4f615169034fd6c01d69a87f953ffb2a2dffbfd9e",
+        "method": "built-in image_gen faithful redraw; downsampled for 4x runtime",
+        "enabled": true,
+        "reviewStatus": "pending-user-review",
+        "prompt": "Use case: precise-object-edit. Image1 original shadow-die6 is exact geometry/layout reference; image2 HD die6 defines material and pip rendering. Render original as one matching HD sprite on transparent background. Canvas MUST be SQUARE1200x1200, logical75x75. Rounded white cube at original bounds x9..75,y0..72 with a short soft grey cast shadow to LEFT. TOP exactly6 BLACK pips, LEFT exactly2 BLACK pips diagonal, RIGHT exactly5 BLACK pips, original arrangements and isometric orientation. Same polished ivory material, thin dark edge, grey side shading and cube silhouette as selected HD set. Fully opaque white cube, clean smooth boundary, no wisps, holes or isolated fragments. No floor, halo, long shadow, text, added objects or extra pips."
+      }
     }
   ],
   "map": {
@@ -5010,12 +5568,34 @@
       512
     ],
     "status": "candidate-rejected-seam",
-    "newCandidate": "public/modern/hd-static-masters/map/m02-r01.png",
+    "newCandidate": "public/modern/hd-static-masters/map/m02-r03.png",
     "existingReusableCandidates": [
       "public/modern/hd-masters/map/experiments/map-extension-m01-r01/master.png",
       "public/modern/hd-masters/map/experiments/map-extension-m01-r02/master.png"
     ],
-    "reason": "Hard join with protected left neighbor shows road marking and curb drift. Candidate retained, not installed.",
-    "diagnostic": "/tmp/starcat-map-m02-hard-join.png"
+    "reason": "R03 improves geometry continuity but hard join still shows lot-pattern, road-marking and material texture mismatch; not installed.",
+    "diagnostic": "docs/modernization/evidence/static-hd-20261019/map-m02-r03-seam.png",
+    "attempts": [
+      {
+        "id": "m02-r03",
+        "method": "built-in image_gen",
+        "masterPath": "public/modern/hd-static-masters/map/m02-r03.png",
+        "masterSha256": "7cb3812bfe267b0a6b39b96a63089bffca6d1492e39733120925707e1732799e",
+        "referenceRect": [
+          1120,
+          676,
+          288,
+          256
+        ],
+        "contentRect": [
+          1152,
+          676,
+          256,
+          256
+        ],
+        "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD map extension. Image1 is an input geometry guide, width1253,height1114. Its LEFTMOST139px strip is existing APPROVED HD neighbor artwork: copy and preserve that strip exactly, including every curb and road marking that meets x139. ONLY redraw the blurred part to its right as a seamless extension in matching glossy bright cartoon style. Image2 is original288x256 region for object identity/layout; image3 is approved neighbor for exact materials. Output same aspect288:256, native at least1253x1114. Right area contains exactly one orange/yellow rounded shop with purple glass panels, blue trim and white/yellow doorway, four cone-shaped trees, grey stone terminal behind building, patterned green land squares with brown brick borders, green grass/shrubs and grey asphalt road with original star-cat circular manhole. Keep original counts and exact original relative locations, no invented parts, characters, windows, signs or text. Restore crisp detail and smooth original toy-like gloss. Especially continue road edge, white curb bricks, patterned lot borders and asphalt texture from locked left strip without any kink, gap or double marking. All road markings meet approved neighbor EXACTLY at the seam. Do not change or repaint the approved strip. Opaque wherever map material is present; keep only original tiny exterior transparent corner. No large white holes or blotches.",
+        "runtimeEnabled": false
+      }
+    ]
   }
 }
