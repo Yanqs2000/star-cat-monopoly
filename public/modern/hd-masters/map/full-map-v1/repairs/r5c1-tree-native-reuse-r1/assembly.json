@@ -1,0 +1,50 @@
+{
+  "baseReference": [
+    128,
+    1132,
+    312,
+    312
+  ],
+  "basePath": "public/modern/hd-masters/map/full-map-v1/repairs/r5c1-cloud-native-reuse-r1/reference-after-reuse.png",
+  "donorNativeReference": [
+    0,
+    1100,
+    256,
+    384
+  ],
+  "rect": [
+    80,
+    1280,
+    144,
+    160
+  ],
+  "canonicalNativeCrop": [
+    348,
+    783,
+    975,
+    1480
+  ],
+  "readyContext": [
+    {
+      "id": "r5c0",
+      "sha256": "f546a5feeaccf4431674203676cd948bd28526bb10f2eb26183881a0fd4b31e9",
+      "rect": [
+        80,
+        1280,
+        80,
+        132
+      ]
+    },
+    {
+      "id": "r6c0",
+      "sha256": "acd002914291d5e72787ab92952758867cf4ac2ee340e7bac14f82d30b1dbf81",
+      "rect": [
+        80,
+        1412,
+        80,
+        28
+      ]
+    }
+  ],
+  "method": "Whole existing tree reused by native donor and exact old/new RGBA pixel selection; no drawing, blending or alpha edits."
+}

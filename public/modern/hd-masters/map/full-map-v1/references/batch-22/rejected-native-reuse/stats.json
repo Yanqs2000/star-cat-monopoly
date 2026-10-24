@@ -1,0 +1,41 @@
+{
+  "rect": [
+    608,
+    912,
+    72,
+    48
+  ],
+  "sourceTile": "r3c2",
+  "sourceMaster": "public/modern/hd-masters/map/full-map-v1/masters/r3c2-r4.png",
+  "sourceSha256": "dfcc6cab90a892ca84b4317ccfaabc866266121047072257ae64b059b370c271",
+  "seams": [
+    {
+      "side": "left",
+      "meanRgbDifference": 3.110047846889952,
+      "p95RgbDifference": 6.0,
+      "visibleCutSamples": 209,
+      "maximumChangedPixels": 39
+    },
+    {
+      "side": "right",
+      "meanRgbDifference": 15.14354066985646,
+      "p95RgbDifference": 70.79999999999998,
+      "visibleCutSamples": 209,
+      "maximumChangedPixels": 39
+    },
+    {
+      "side": "top",
+      "meanRgbDifference": 2.9148029818956336,
+      "p95RgbDifference": 10.666666666666666,
+      "visibleCutSamples": 313,
+      "maximumChangedPixels": 51
+    },
+    {
+      "side": "bottom",
+      "meanRgbDifference": 19.70500532481363,
+      "p95RgbDifference": 81.46666666666665,
+      "visibleCutSamples": 313,
+      "maximumChangedPixels": 51
+    }
+  ]
+}

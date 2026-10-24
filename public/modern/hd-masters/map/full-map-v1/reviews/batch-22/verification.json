@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-22",
+  "completedImageGenerationCallsThisBatch": 2,
+  "failedImageGenerationCallsThisBatch": 1,
+  "failedCallReason": "Connection failed before image was returned; same built-in request retried once",
+  "newEngineeringCandidates": [],
+  "reviewOnlyJointRepairs": [
+    "southwest-curb-whole-joint-r1",
+    "southeast-road-whole-joint-r1"
+  ],
+  "counts": {
+    "selected-engineering": 105,
+    "approved-source-reused": 4,
+    "pending": 0
+  },
+  "immutableAttemptMasterHashesVerified": 192,
+  "all109WorkingAssembliesByteIdentical": true,
+  "allPriorRepairFilesUnchanged": true,
+  "approvedFourNativeAndRuntimeFilesUnchanged": true,
+  "existing111ReviewAtlasesByteIdentical": true,
+  "reviewAtlasCount": 113,
+  "drawRegionCount": 127,
+  "retainedExactRgbaCrops": 20,
+  "replacementDoesNotDoubleCompositeAlpha": true,
+  "newRegressionTestsPassed": 13,
+  "mapPythonTestsPassed": 30,
+  "existingExportTestsPassed": 4,
+  "existingNortheastTestsPassed": 8,
+  "existingUnderlayAndGhostTestsPassed": 12,
+  "actualMapSceneViews": 23,
+  "browserErrors": [],
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "remaining": [
+    "upper-cloud-whole-review",
+    "remaining-grass-texture-joins",
+    "whole-map-road-grain-review",
+    "full-map-final-review"
+  ],
+  "newRepairSeams": {
+    "southwest-curb-whole-joint-r1": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.2622754491017965,
+        "p95RgbDifference": 5.0,
+        "visibleCutSamples": 835,
+        "maximumChangedPixels": 86
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 4.988822355289421,
+        "p95RgbDifference": 9.766666666666652,
+        "visibleCutSamples": 835,
+        "maximumChangedPixels": 85
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.13755980861244,
+        "p95RgbDifference": 6.0,
+        "visibleCutSamples": 836,
+        "maximumChangedPixels": 84
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 2.1953748006379588,
+        "p95RgbDifference": 4.333333333333333,
+        "visibleCutSamples": 836,
+        "maximumChangedPixels": 79
+      }
+    ],
+    "southeast-road-whole-joint-r1": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.3298212005108554,
+        "p95RgbDifference": 8.333333333333334,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 103
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 2.0667305236270757,
+        "p95RgbDifference": 7.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 93
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 1.9201787994891444,
+        "p95RgbDifference": 6.333333333333333,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 97
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 1.8004469987228606,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 88
+      }
+    ]
+  },
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "8de33885265b1bb2ef66bc4fb0b05f51a72fa6d14101089c39c2144015f7eead"
+    },
+    {
+      "view": "northeast-whole-2x",
+      "sha256": "bff0e275b27e6156b0c796ae7920798b404169e85047b3096daa3d4a6232835c"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "e3f5a75451c610f44553834ee74f192c00da842add6fa2009a78d896c4262f08"
+    },
+    {
+      "view": "cyan10-whole-4x",
+      "sha256": "dce2b7a493ce72c5536996aeac01c5ec1996fcc71eda9f76bc5c480152f7d71a"
+    },
+    {
+      "view": "cyan10-left-4x",
+      "sha256": "42aa020856db30254a0cee788d740e1fdde378f0d8ec8aaea05dec68cab0e600"
+    },
+    {
+      "view": "cyan10-top-4x",
+      "sha256": "a3125d12f39a8e0b17914b174108f088599eb0c346c62b0861dce8a552604acc"
+    },
+    {
+      "view": "cyan10-bottom-4x",
+      "sha256": "4f744851597dafce16cbe8330327f370e7470e00f449195a31486fa9fceba754"
+    },
+    {
+      "view": "northeast-road-right-4x",
+      "sha256": "62b301431ec891fa570e61b28129b1e92a72052664a767485904bfa9bf375166"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "646e6bc4710ac92d7258097f2b74eee6e57d191691b3616a88209c882d7b0c84"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "f22b01a27d8d8edbd8cd11d7cfa18d0bdc8913446791d0cf9ef34e75ec061faf"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "7cb98d6ca795682a420914e2f97048d850217ad414a12996ad832e613c92de37"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "ba80a33817e3b70bf42d5baaee9828d4138bffb4dd6e103d33bfcc91d37b8b4c"
+    },
+    {
+      "view": "southwest-whole-2x",
+      "sha256": "70b1bf048503d1a691593f0358e01b41482d31ee16d60366ce1bd86c6687cbc0"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "5ab324465f5c89491faf8f27591b9169205fdce575b45ead4d20d26b99b2e0b7"
+    },
+    {
+      "view": "southeast-whole-2x",
+      "sha256": "26f7ac4d32a4ba199b2efa5813f7af5844d66c59318d439b675aa031595abfc3"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "867247436b4f9e3ae3e6d460120064f473d5f51e28c8176ef7ca5d50b621ff66"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e02aa5b026a80f6d9a1bea361687bc4c7f0652c4b55124af486fb2428f0cc307"
+    },
+    {
+      "view": "ride-whole-2x",
+      "sha256": "98572e841e49f2d33274c54bbe3a1324f0ca75675436f7cef0cf93905d1c4866"
+    },
+    {
+      "view": "west-grass-whole-2x",
+      "sha256": "41b6fd41193a6b9408b622c24a126cabd38e226a74a61555a8bc5d196ac43a33"
+    },
+    {
+      "view": "west-road-whole-2x",
+      "sha256": "304bd4802859cea6515c9718bbd8ac303d95c86f2af2e754334e37d606bd793b"
+    },
+    {
+      "view": "green30-whole-4x",
+      "sha256": "46280992cffda3129f9a24a64463efc5c1617406c28370fede48ad9cad37a696"
+    },
+    {
+      "view": "approved-east-mid-4x",
+      "sha256": "4e856fb29945f2d7392f6afa1d9bef13e4c37226a2fa5f4edd20e77d092b1a6e"
+    },
+    {
+      "view": "approved-east-row-joint-4x",
+      "sha256": "b963cd3046d61fa46ed01b8fd42f331defd2de532492d6e124d7e9b6ee0a9122"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: style-transfer. HD game map bridge LOWER half. Image1 is EDIT TARGET and exact original geometry. Image2 is style reference only: its bridge is TOO NARROW and must not be traced. Repaint Image1 sharply in Image2's HD style with dark fine-grain asphalt, solid white stone curbs and gold polygonal terrain. Keep Image1's wider straight bridge upper-left boundary at EXACT Image1 coordinates and preserve the lower-right boundary. No perspective change, zoom, camera shift, taper, bends, added structures. Keep every object including prison, purple padlock, tree, river, stones; complete CYAN \"10\" and cropped GREEN \"20\", same positions and sizes as Image1. Entire frame same 36:31 aspect ratio, minimum native resolution 1254x1080, crisp native detail. Keep original upper edge precisely (at reference x560,y276; x600,y252; x640,y220 approximately), no narrower inset seen in Image2. Opaque. No extra texts, markers or white holes.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1280,
+    1832,
+    288,
+    248
+  ],
+  "status": "candidate-not-installed",
+  "generatedPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-e5427d76-da97-4884-9177-191cf6335887.png"
+}

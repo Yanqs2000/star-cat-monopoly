@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: precise-object-edit. Edit this HD game bridge source image for a compositing donor. Remove ALL colored circular number discs on the road completely, including partial circles, borders, numerals, shadows and glare. Fill ONLY their former interiors and outlines with the exact same continuous fine neutral dark gray asphalt as the surrounding road. No remaining arcs, white glyphs, bright spots, pale patches or bumps. Keep the exact geometry of BOTH white curbs, road width, every curb joint and the entire original outer crop boundary unchanged. Keep all cliffs, grass, trees, prison/building, water and other scenery pixel-position identical. No added elements. This is an empty bridge surface donor; final game will retain separate existing discs. Same canvas framing and aspect ratio, native detailed output at least1300px wide, opaque.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1280,
+    1832,
+    288,
+    248
+  ],
+  "status": "native-donor-not-installed",
+  "sourceReference": "south-bridge-geometry-lower-r1/master.png"
+}

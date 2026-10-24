@@ -1,0 +1,86 @@
+
+> star-cat-monopoly@0.1.0 test:e2e:modern
+> playwright test --config playwright.modern.config.ts tests/e2e/modern-map-visible-bounds.spec.ts
+
+
+Running 2 tests using 1 worker
+
+(node:23666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 高窗口上下扩展区域内的可见地图小切片仍会载入 (6.2s)
+(node:23685) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 宽窗口左右扩展区域内的可见地图小切片仍会载入 (6.4s)
+
+
+  1) tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 高窗口上下扩展区域内的可见地图小切片仍会载入 ──────────────────────
+
+    Error: Actually visible edge tile must replace the sky color
+
+    Actually visible edge tile must replace the sky color
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    +   102,
+    +   204,
+        255,
+    -   0,
+    -   0,
+        255,
+      ]
+
+    Call Log:
+    - Timeout 3000ms exceeded while waiting on the predicate
+
+      47 |       }, { data: shot.toString('base64'), probe: fixture.probe })
+      48 |     }, { timeout: 3000, intervals: [100, 250, 500], message: 'Actually visible edge tile must replace the sky color' })
+    > 49 |       .toEqual([255, 0, 0, 255])
+         |        ^
+      50 |   })
+      51 | }
+      52 |
+        at /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/tests/e2e/modern-map-visible-bounds.spec.ts:49:8
+
+    Error Context: ../../../../../../../../../tmp/starcat-modern-e2e/modern-map-visible-bounds-高窗口上下扩展区域内的可见地图小切片仍会载入/error-context.md
+
+  2) tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 宽窗口左右扩展区域内的可见地图小切片仍会载入 ──────────────────────
+
+    Error: Actually visible edge tile must replace the sky color
+
+    Actually visible edge tile must replace the sky color
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    +   102,
+    +   204,
+        255,
+    -   0,
+    -   0,
+        255,
+      ]
+
+    Call Log:
+    - Timeout 3000ms exceeded while waiting on the predicate
+
+      47 |       }, { data: shot.toString('base64'), probe: fixture.probe })
+      48 |     }, { timeout: 3000, intervals: [100, 250, 500], message: 'Actually visible edge tile must replace the sky color' })
+    > 49 |       .toEqual([255, 0, 0, 255])
+         |        ^
+      50 |   })
+      51 | }
+      52 |
+        at /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/tests/e2e/modern-map-visible-bounds.spec.ts:49:8
+
+    Error Context: ../../../../../../../../../tmp/starcat-modern-e2e/modern-map-visible-bounds-宽窗口左右扩展区域内的可见地图小切片仍会载入/error-context.md
+
+  2 failed
+    tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 高窗口上下扩展区域内的可见地图小切片仍会载入 ───────────────────────
+    tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 宽窗口左右扩展区域内的可见地图小切片仍会载入 ───────────────────────

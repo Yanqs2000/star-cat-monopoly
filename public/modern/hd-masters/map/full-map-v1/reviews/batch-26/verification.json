@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-23",
+  "builtInImageGenerationCalls": 2,
+  "selectedRepair": "west-upper-terrain-cap-r2",
+  "rejectedCandidates": [
+    "west-upper-terrain-cap-r1: stippled grain differs from existing rounded grass"
+  ],
+  "nativePixelSize": [
+    1562,
+    1007
+  ],
+  "nativeDensity": 4.060483870967742,
+  "all109WorkingAssembliesUnchanged": true,
+  "all192TileMastersUnchanged": true,
+  "allPriorRepairAndPropFilesUnchanged": true,
+  "all125PriorReviewAtlasesUnchanged": true,
+  "approvedMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productCodeUnchangedSinceBatch25": true,
+  "reviewAtlasCount": 126,
+  "drawRegionCount": 163,
+  "retainedExactRgbaCrops": 70,
+  "nativePropInstances": 4,
+  "nativeOldNewRgbaExact": true,
+  "alphaAudits": {
+    "master": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 541157,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0004615578276011581,
+      "nativeAlphaModified": false
+    },
+    "assembled": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 620994,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.029207840892641133,
+      "nativeAlphaModified": false
+    }
+  },
+  "artifactTestsPassed": 37,
+  "mapPythonTestsPassed": 30,
+  "actualMapSceneViews": 16,
+  "browserErrors": [],
+  "visualReview": {
+    "westY1264": "Original horizontal coastline/material cutoff removed in actual4x; original cyan10 retained; whole native cloud preserves existing lobes/curl/layout without interior cuts; old curb notch removed.",
+    "westPerimeters": "Top/cliff, right/curb, bottom/grass and left/cloud/sky checked; broader west grass balance remains whole-map review.",
+    "northeast": "Six actual2x/4x views checked. Existing hospital edge, field and outer-coast art retained; no regeneration performed for these finished assets."
+  },
+  "remaining": [
+    "Whole-map terrain/material balance including west x432",
+    "Whole-map asphalt grain and lighting transitions",
+    "Full replacement integration and final visual acceptance"
+  ],
+  "productionEnabled": false,
+  "fullMapAccepted": false,
+  "screenshots": [
+    {
+      "name": "west-cap-whole-2x",
+      "sha256": "5f892f20b20ad7a3f8fa4d627300cae2aa67a2ae11cc4ace78f0245e369d6acf"
+    },
+    {
+      "name": "west-cap-old-frontier-4x",
+      "sha256": "bce560098f1f450bd6da5a1651f8dc8ead609d847d5e61c2e96d069d1d65c633"
+    },
+    {
+      "name": "west-cap-bottom-4x",
+      "sha256": "f60fbee89847bda1c2e86d70614e66f6f2a4140793f7ea2112eb41a6bf1a4c02"
+    },
+    {
+      "name": "west-cap-right-curb-4x",
+      "sha256": "12fa076803d28f6b274b5e133c96331e47a951654ef1830a10825d0ec1d46c35"
+    },
+    {
+      "name": "west-cap-cliff-4x",
+      "sha256": "0af92a309073b934ca591fb4ea9edfec836327a9a16c1f821d757bb6a5199373"
+    },
+    {
+      "name": "west-coast-tree-4x",
+      "sha256": "7b88135bd48490cb0b27ac2a0031945a79081756df844773e8cb97ac095c4dd8"
+    },
+    {
+      "name": "five-trees-whole-4x",
+      "sha256": "2ae1462f54cf279cac2282a66a99994c1f0734db6b47ef86f3538f52418dcee4"
+    },
+    {
+      "name": "northeast-grass-next-2x",
+      "sha256": "b64cfc96be6f69e128a8f5b741eca598544e0fd53fdfd01be8167fd2169d81ca"
+    },
+    {
+      "name": "whole-map-080",
+      "sha256": "a4fb59ab60c69785ca22f6e77ed4a269a69e2396cf0ddcc3b600f39aba79c5ce"
+    },
+    {
+      "name": "ne-hospital-lower-grass-4x",
+      "sha256": "00e3cf5218038f4118d786a889545ee7714ae88dc3f2eca183bc06bf61ed5378"
+    },
+    {
+      "name": "ne-field-west-join-4x",
+      "sha256": "12daa36d737667bee5d7f58fa716e5c6bfd0e465dca05e5615c929d01d1fe866"
+    },
+    {
+      "name": "ne-field-east-join-4x",
+      "sha256": "afd1d3abeb750714c10781c3b95b7b01b35c7eff096da4d211d8075f42bc6b75"
+    },
+    {
+      "name": "ne-field-south-join-4x",
+      "sha256": "c756e2e42dc28e188e6a0871856acdc98cbd72a4cdf6f27ed33e8141812f34ff"
+    },
+    {
+      "name": "ne-outer-grass-2x",
+      "sha256": "e13bb97c7bbf76020d7325d98e17260faa6a2e0efccb4b2c2e77e5aa467e4ed5"
+    },
+    {
+      "name": "ne-outer-grass-join-4x",
+      "sha256": "246934e30e33f74e98744ea4f9a5f4b9956500593359cc2a0611d81a04cfc8be"
+    },
+    {
+      "name": "pilot-north-right-4x",
+      "sha256": "c952481ddbaf664576511c7fc2a2b9175f4c23acfd3641aaf7b40b85e76d0934"
+    }
+  ]
+}

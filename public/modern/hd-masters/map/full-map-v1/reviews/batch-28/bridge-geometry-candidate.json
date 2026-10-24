@@ -1,0 +1,28 @@
+{
+  "image": ".analysis-cache/map-continuation-20261023-batch28/bridge-native-candidate.png",
+  "allowance": 4,
+  "samples": [
+    {
+      "x": 1420,
+      "expectedOriginalUpperY": 1901,
+      "observedUpperY": 1905,
+      "error": 4,
+      "passed": true
+    },
+    {
+      "x": 1430,
+      "expectedOriginalUpperY": 1895,
+      "observedUpperY": 1897,
+      "error": 2,
+      "passed": true
+    },
+    {
+      "x": 1440,
+      "expectedOriginalUpperY": 1887,
+      "observedUpperY": 1890,
+      "error": 3,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

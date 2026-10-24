@@ -1,0 +1,40 @@
+
+ RUN  v5.0.0 /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets
+
+ ❯ tests/modern/hd-full-map-art.spec.ts (4 tests | 2 failed) 3ms
+   ❯ full native map and matching overview (4)
+     × loads installed static map regions with their matching two-density base 2ms
+     × preserves subpixel native boundary rounding without allowing arbitrary negative bounds 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/modern/hd-full-map-art.spec.ts > full native map and matching overview > loads installed static map regions with their matching two-density base
+TypeError: parseHdMapArtwork is not a function
+ ❯ tests/modern/hd-full-map-art.spec.ts:14:17
+     12| describe('full native map and matching overview', () => {
+     13|   it('loads installed static map regions with their matching two-densi…
+     14|     const art = parseHdMapArtwork(fixture(), offset)
+       |                 ^
+     15|     expect(art.baseMap).toEqual({ url: 'hd-map/full-map-v1/base.webp',…
+     16|     expect(art.regions).toHaveLength(1)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/modern/hd-full-map-art.spec.ts > full native map and matching overview > preserves subpixel native boundary rounding without allowing arbitrary negative bounds
+TypeError: parseHdMapArtwork is not a function
+ ❯ tests/modern/hd-full-map-art.spec.ts:36:12
+     34|     const value = fixture(); value.mapRegions[0]!.logicalRect[1] = -.08
+     35|     value.mapRegions[0]!.scenePosition[1] = -313.08
+     36|     expect(parseHdMapArtwork(value, offset).regions[0]!.logicalRect[1]…
+       |            ^
+     37|     value.mapRegions[0]!.logicalRect[1] = -1
+     38|     value.mapRegions[0]!.scenePosition[1] = -314
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  02:46:18
+   Duration  91ms (transform 68%, import 15%, tests 10%, worker 6%)
+

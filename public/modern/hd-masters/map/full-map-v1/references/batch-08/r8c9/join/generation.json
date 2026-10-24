@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-dbfa4e99-577f-420b-b4cd-ebac2d4c1ac5.png",
+  "prompt": "Repair a single game texture JOIN. FIRST image is the authoritative already completed HD map: its colored TOP and LEFT bands MUST stay exactly where they are, same shape, strokes and colors. SECOND image is a new candidate; its TOP connection is correct but it incorrectly replaced the LEFT band's cliff grooves and outer silhouette. Restore the FIRST image's entire left 20.5%-width colored band faithfully. In particular the small dark notch halfway down the left band and the long narrow gold outlined outer edge below it must stay at exactly the FIRST reference coordinates. Preserve all first-reference colored pixels, connect candidate's central cliff naturally to them. The missing central area should otherwise use the second image's cliff projection layout, including short golden central protrusion, recessed brown rock behind it, long narrow right protrusion ending lower, and existing cloud cropped at upper-right. Preserve first-reference top 20.5% band. Do NOT extend or redraw projections inside the fixed left band, do NOT insert extra cracks there. Transparent outside cliff/cloud remains native RGBA transparency. All cliff interiors solid, no holes. No plants, objects, text, new clouds or border. Square canvas, matching both reference coordinates exactly, no reframing. Render polished crisp gold faceted cartoon art matching first reference.",
+  "referenceRect": [
+    2048,
+    1828,
+    312,
+    312
+  ]
+}

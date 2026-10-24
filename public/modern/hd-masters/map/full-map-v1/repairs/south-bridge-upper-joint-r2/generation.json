@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: precise-object-edit. Image1 is a geometry guide: MAGENTA line is the required OUTER/grass-side edge of the single white curb. Follow this line exactly with a smooth shallow curve, then remove ALL magenta markings/text. Image2 is the unannotated edit target. Image3 has the intact building/plinth before broken seam editing. Fix Image2's upper-left curb, broken yellow base/green wall edge and thin vertical strips. Use the annotated path as an authoritative structural constraint: white curb lies on the asphalt side BELOW-RIGHT of this line. Keep its LEFT edge crossing at y740 of1114, not y800; smoothly meet the right corner at(790,285). Restore building and yellow platform intact from Image3, with one clean black silhouette, no white teeth biting into it. The slight gradual curve is INTENTIONAL, joining a widened lower bridge to unchanged building frontage. Maintain the exact left/right/top/bottom frame and ALL other objects/discs. No straight-line simplification that shifts the left contact. Preserve fine road texture, partial green20, blue30, cyan10, key, monument, grass. Opaque square, high resolution at least1254, no annotation remnants.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1536,
+    1648,
+    256,
+    256
+  ],
+  "status": "rejected-boundary-moved-not-installed",
+  "reason": "Generated left curb contact shifted from required boundary; replaced by user-authorized deterministic geometry registration of existing generated artwork."
+}

@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7c5f5af9-7c07-4b4f-bfdb-564ef103e475.png",
+  "prompt": "Use case: precise-object-edit / transparent contour stitch. Image1 EDIT TARGET has a narrow missing horizontal band near the bottom of a mostly-transparent portrait island-edge crop. Image2 same framing shows a step between the fixed upper grassy edge and fixed bottom grassy edge. Image3 original layout. Reconnect ONLY this narrow band into ONE smooth continuous grassy silhouette, no abrupt horizontal ledge, notch or doubled green outline. Preserve all visible fixed pixels and alpha on both sides, including nearly all empty transparent upper sky and left context. Native RGBA outside island remains transparent; solid grass has no internal holes. Exact1:2 portrait144x288logical framing, output887x1774 or larger. Do not zoom, fill upper sky, or add any trees/clouds/objects. Join existing grass grain and subtle dark contour. This is only an edge continuity correction.",
+  "referenceRect": [
+    2560,
+    420,
+    144,
+    288
+  ]
+}

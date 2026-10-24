@@ -1,0 +1,138 @@
+{
+  "batch": "batch-30",
+  "date": "2026-10-24",
+  "scope": "User-marked two white road markings at northern crossing, after completing batch29 repairs",
+  "installed": true,
+  "runtimeManifestSha256": "1eefd5cca527e91f083509f25a56c3fe2fbace8856d52f0d4e19bddc19c79702",
+  "runtimeRegions": 192,
+  "correctedRuntimePart": "hd-map/full-map-v1/part-187.webp",
+  "correctedSource": "reviews/batch-30/north-road-markings.webp",
+  "sourceFragments": [
+    {
+      "id": "r3c5-retained-0",
+      "url": "hd-masters/map/full-map-v1/reviews/batch-27/r3c5-retained-0.webp",
+      "rect": [
+        1120.0574506283663,
+        676.0,
+        271.8563734290844,
+        192.1149012567325
+      ]
+    },
+    {
+      "id": "r1c1-retained-0",
+      "url": "hd-masters/map/full-map-v1/reviews/batch-27/r1c1-retained-0.webp",
+      "rect": [
+        894.8509874326751,
+        674.8509874326751,
+        257.149012567325,
+        193.26391382405745
+      ]
+    },
+    {
+      "id": "southeast-road-whole-joint-r1",
+      "url": "hd-masters/map/full-map-v1/reviews/batch-26/southeast-road-whole-joint-r1.webp",
+      "rect": [
+        1040.0861759425493,
+        868.1149012567325,
+        239.91382405745063,
+        239.91382405745063
+      ]
+    }
+  ],
+  "changes": [
+    "Restore complete upper multi-stroke symbol from original silhouette",
+    "Restore lower chevron at original position and clean old misplaced paint"
+  ],
+  "originalReferenceBounds": {
+    "upper": {
+      "referenceRect": [
+        1120,
+        820,
+        80,
+        70
+      ],
+      "paintBounds": [
+        1128,
+        834,
+        1194,
+        879
+      ],
+      "paintPixels": 989,
+      "centroid": [
+        1161.9494438827098,
+        855.7846309403437
+      ],
+      "threshold": 232,
+      "gaussianRadius": 0.45,
+      "medianSize": 3
+    },
+    "lower": {
+      "referenceRect": [
+        1140,
+        902,
+        70,
+        62
+      ],
+      "paintBounds": [
+        1157,
+        917,
+        1187,
+        939
+      ],
+      "paintPixels": 319,
+      "centroid": [
+        1176.347962382445,
+        924.3605015673982
+      ],
+      "threshold": 232,
+      "gaussianRadius": 0.45,
+      "medianSize": 3
+    }
+  },
+  "installedChecks": {
+    "checks": [
+      {
+        "name": "upper",
+        "originalPaintCoverage": 0.9696663296258847,
+        "passed": true
+      },
+      {
+        "name": "lower",
+        "originalPaintCoverage": 0.9310344827586207,
+        "passed": true
+      },
+      {
+        "name": "no-old-arrow-ghost",
+        "whitePixels": 0,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "outsideRepairMaskUnchanged": true,
+  "greenForegroundUnchanged": true,
+  "alphaUnchanged": true,
+  "newImageGenerationCalls": 0,
+  "programmaticCorrectionExplicitlyAuthorized": true,
+  "tests": {
+    "projectUnit": 648,
+    "mapPython": 33,
+    "e2e": 4,
+    "actualRendererViews": 6,
+    "controlledWalkingProfiles": [
+      "hd",
+      "original"
+    ],
+    "controlledWalkingStepsPerProfile": 5,
+    "build": "passed"
+  },
+  "runtimeErrors": [],
+  "warnings": [
+    "Initial verification server was stopped; confirmed missing process and no listener before restarting modern dev server",
+    "Existing large-chunk and Vite preparation timing warnings"
+  ],
+  "userVisualAcceptance": "approved",
+  "preApprovalTestedManifestSha256": "1028e8424b0f852416ab06e6f1778381fc82ca0293427e69ceca4968a146e9c6",
+  "userAcceptance": "user-acceptance.json",
+  "gitCommitOrPushAtVerification": false
+}

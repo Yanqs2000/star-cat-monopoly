@@ -1,0 +1,941 @@
+[
+  {
+    "id": "r6c1",
+    "row": 6,
+    "col": 1,
+    "rect": [
+      160,
+      1412,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r1.png",
+        "masterSha256": "a831f6bfb349bdaeebc425668daae52c50e11167070a5359c7398228a5b8ca1a",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          160,
+          1412,
+          368,
+          246
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nLandscape 3:2. Missing western side: diagonal grey road with one engraved circular cat-face manhole and glossy red, cyan, green, blue numeric discs in EXACT original positions (disc numerals 20,10,20,30 respectively where visible). Preserve original cropped colorful amusement ride and its curved blue rail on right. One cropped round tree at lower left, cropped orange/yellow building at lower right. Strictly same objects and marking counts as image2. Existing right context must remain unchanged, do not move the ride, red parcels or cyan disc.",
+        "generator": "built-in image_gen",
+        "rejected": "Visual: duplicated overlapping cat face on the manhole"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r2.png",
+        "masterSha256": "20fb6e9c36b3142ba5c13a4450105321cbd975c3a98102292a0cd5152279fa03",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          160,
+          1412,
+          368,
+          246
+        ],
+        "prompt": "Use case: precise-object-edit. Image1 is the current HD Star Cat Monopoly map, edit target. Image2 is the exact original manhole emblem crop, supporting identity reference. Fix ONLY the engraved cat emblem in the circular grey manhole near the top left of image1. Currently two overlapping duplicated cat faces appear. Replace with exactly ONE cheerful cat head, following image2: two triangular ears, tiny hair tufts, two curved closed happy eyes, one small dark round nose at center, smile/muzzle, whiskers; head rotated to match original road perspective. No ghost face, no doubled nose or muzzle, no extra face. Keep the existing circular rim, location, diameter and grey monochrome engraving material. Everything outside the manhole must be copied from image1 identically: same road, numeric discs, ride, bushes, grass, buildings, contours and canvas 1536x1024. Do not reframe or shift. Entire canvas opaque, no white holes.",
+        "generator": "built-in image_gen",
+        "rejected": "Visual: duplicate face still remains; never assembled"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r3.png",
+        "masterSha256": "a62debcdfb533babb0bd8218b6c90e3e4a942d00647fc44e428a291c6cbffdd4",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          128,
+          1380,
+          312,
+          312
+        ],
+        "generator": "built-in image_gen",
+        "prompt": "Use case: style-transfer. Asset type: sharp HD square isometric game map fragment.\nImage 1 is EDIT TARGET: completed right and bottom edge anchors with unfinished transparent middle. Image 2 is ORIGINAL LAYOUT of exactly this square. Fill unfinished area faithfully in the same crisp outlined glossy cartoon style as finished anchors. Image 3 is supporting identity reference for a SINGLE engraved cat emblem only; do not copy its grass/road texture scale or its large framing.\nSame square coordinates, no reframing, movement or magnification. Preserve all finished right and bottom anchor shapes, colors and texture scale, including curved blue ride rail, colorful cropped ride, leafy bushes, fine gray spiral asphalt, white curb, lower round tree and lower yellow-roof building. Complete their cropped upper halves without changing their positions.\nPreserve original diagonal gray road and its complete objects in exact original positions: one blue circular disc marked \"30\" near upper middle, one red/pink disc marked \"20\" below the manhole, one cyan disc marked \"10\" diagonally lower-right, one green disc marked \"20\" near right lower-middle (part crosses into finished right edge). Exactly these discs, correct numerals and colors, same size and perspective. One circular gray cat manhole left of blue30 and above red20. It has exactly ONE cheerful cat head engraving: two triangular ears, one top hair tuft, two closed happy eyes, ONE round central nose, single mouth/muzzle, whiskers, two small paws at bottom. Never duplicated/overlapping faces, extra nose, ghost lines or multiple heads. Gray engraving only, no colored cat. Fine asphalt texture scale must match completed right edge, not Image3.\nGrass dense small yellow-green leaves with subtle dirt path shading as original. Keep original cropped upper-left trees and round tree at lower left; no added trees, props, cracks, lane marks, flowers, shadows or labels. Original square is entirely inside island: finished image must be solid opaque artwork throughout, no black/white gaps or transparent holes. Use exactly the same crop and positions as Image2, native high resolution square.",
+        "rejected": "Visual: red disc incorrectly reads30 rather than20. Green30 was actually source-correct; the initial rejection text confused it with red20. Never assembled."
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r4.png",
+        "masterSha256": "787ea675f1754c635d62f30f624159db3f797267be293409d187ad3735b48eae",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          128,
+          1380,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. This exact square image is the EDIT TARGET. Correct ONLY two engraved numerals on circular road discs. The glossy RED/PINK disc immediately below the cat manhole must read \"20\", numeral TWO followed by ZERO, NOT 30 or 10. The glossy GREEN disc near lower right above yellow-roof building must also read \"20\", TWO followed by ZERO, NOT 30. Replace the wrong first character with an unmistakable standard numeral 2 with curved upper stroke, diagonal descent and flat lower bar, rotated to exactly the road-disc perspective. Retain the same disc centers, diameter, rim, highlights, vivid colors and embossed lettering style. No ghost or duplicated strokes from old numbers. The BLUE disc stays \"30\". Both CYAN discs stay \"10\". Keep the SINGLE cat face, every tree, ride, platform, road, curb, grass and building visually identical, especially all outer32-logical-pixel anchors. No reframing or rescaling. Same square opaque HD image, no holes, native high resolution.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 12.889208173690934,
+            "p95RgbDifference": 43.23333333333328,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 4.737480063795853,
+            "p95RgbDifference": 8.666666666666666,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 66
+          }
+        ],
+        "rejected": "Overlap disagreement too large",
+        "additionalVisualRejection": "Green20 is wrong: source is30. Later shared native donor corrects numeral; raw master remains immutable."
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r5.png",
+        "masterSha256": "787ea675f1754c635d62f30f624159db3f797267be293409d187ad3735b48eae",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          128,
+          1380,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. This exact square image is the EDIT TARGET. Correct ONLY two engraved numerals on circular road discs. The glossy RED/PINK disc immediately below the cat manhole must read \"20\", numeral TWO followed by ZERO, NOT 30 or 10. The glossy GREEN disc near lower right above yellow-roof building must also read \"20\", TWO followed by ZERO, NOT 30. Replace the wrong first character with an unmistakable standard numeral 2 with curved upper stroke, diagonal descent and flat lower bar, rotated to exactly the road-disc perspective. Retain the same disc centers, diameter, rim, highlights, vivid colors and embossed lettering style. No ghost or duplicated strokes from old numbers. The BLUE disc stays \"30\". Both CYAN discs stay \"10\". Keep the SINGLE cat face, every tree, ride, platform, road, curb, grass and building visually identical, especially all outer32-logical-pixel anchors. No reframing or rescaling. Same square opaque HD image, no holes, native high resolution.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 4.737480063795853,
+            "p95RgbDifference": 8.666666666666666,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 66
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "west-road-ride-native-reassembly-r1",
+            "rect": [
+              280,
+              1412,
+              320,
+              240
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-road-ride-native-reassembly-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        }
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r6.png",
+        "masterSha256": "114e0b9f4c946edcee985b847d47eeaf03e3a2d2599f773f786f65c1f07b1cf6",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          128,
+          1380,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one square HD Star Cat Monopoly map continuation. This image is the EDIT TARGET, a current sharp native map quilt. Repair the visible horizontal discontinuity about 10% down the image through the BLUE disc30, asphalt and white curbs, and the vertical discontinuity at ~87% across through the blue rail and turquoise castle platform. Produce one coherent continuous surface. The BLUE disc must have exactly ONE embossed numeral \"30\", THREE followed by ZERO; currently duplicated/overlapping glyphs at horizontal seam must disappear. Restore smooth continuous ellipse rim, one30, same center/diameter/perspective. Gray asphalt on both sides of seam uses the same fine pebble grain. White curbs join straight with no kink, step or protruding wedge. Blue rail/turquoise platform contours connect with no shift. Everything else must remain visually identical, especially outermost16 logical pixels on all four sides, existing single happy engraved cat face, red20, cyan10, green30, two original cropped trees, lower cropped pink/yellow roof building and right cropped castle. Exact original object counts/positions/grass leaf scale and colors. Do not add trees, rocks, labels, faces or features. Do not change correct red20/cyan10/green30 or single cat. Same square composition and camera, no reframing or rescaling. Entire frame lies within island: solid opaque artwork alpha255 throughout, no transparent pinholes or white gaps. Native high-resolution square, sharp outlines.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 3.696040868454662,
+            "p95RgbDifference": 7.666666666666667,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 7.395274584929757,
+            "p95RgbDifference": 21.94999999999997,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.0586921850079745,
+            "p95RgbDifference": 7.333333333333333,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 1.9457735247208932,
+            "p95RgbDifference": 4.666666666666667,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 47
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": false,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "repairAttempts": [
+      {
+        "id": "r6c1-manhole-r1",
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/repairs/r6c1-manhole-r1/master.png",
+        "masterSha256": "ef9732c754b7f893ea010347fb493bdfc165e3b07817b46647f2b35b98aea0a4",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          160,
+          1412,
+          112,
+          112
+        ],
+        "prompt": "Use case: style-transfer. Restore this exact square crop of Star Cat Monopoly map as crisp high-definition glossy cartoon game art. This is an engraved circular metal manhole with exactly ONE single happy cat face, rotated slightly clockwise in isometric perspective. Match original circular rim and position; one small round nose, two closed smiling eyes, two triangular ears, hair tuft, two cheek shapes and whiskers. One face only, no ghosting or duplicated features. Engraving is single thin dark grey linework on matte silver grey. Grey asphalt has fine evenly distributed spiral-like pebble texture, white curb, vivid yellow-green grass; cropped blue numeric disc top right and cropped red numeric disc bottom right remain exactly same positions and outlines as image1. Restore shapes sharply, no new objects. Same square canvas, no cropping, full alpha255.",
+        "generator": "built-in image_gen",
+        "status": "native-candidate-only-not-assembled",
+        "review": "Single face restored; surrounding texture differs from finished map. Integration and seam check required."
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r6c1-r6.png",
+    "referenceRect": [
+      128,
+      1380,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 3.696040868454662,
+        "p95RgbDifference": 7.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 7.395274584929757,
+        "p95RgbDifference": 21.94999999999997,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 3.0586921850079745,
+        "p95RgbDifference": 7.333333333333333,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 1.9457735247208932,
+        "p95RgbDifference": 4.666666666666667,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 47
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-render-reviewed-pending-user-art-acceptance",
+    "assembledSha256": "91ce5576b3c2ba08a74ecc6256914c9a8f14f758f6aab3bd8329ad4bee6bbba8",
+    "sourceValueAudit": {
+      "blue": 30,
+      "red": 20,
+      "cyan": 10,
+      "green": 30,
+      "evidence": "Original source magnified and rotated for inspection; green30 corrected by native donor reuse, not raw r4/r5 numeral20"
+    },
+    "relatedPreviewLeakFixedInBatch12": true,
+    "appliedRepairs": [
+      "west-castle-whole-r1",
+      "west-blue30-curb-whole-r1"
+    ],
+    "supersededVisualRejection": "Whole draft remains unqualified at west road/blue30/curb contact. Rejected parcel background no longer exported over completed r6c2; only validated green30 subregion is retained.",
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "date": "2026-10-21",
+      "scope": [
+        160,
+        1412,
+        240,
+        240
+      ],
+      "status": "local-seams-reviewed-candidate-only",
+      "evidence": "reviews/batch-13/native-alpha-browser-verification.json",
+      "fullMapAcceptance": "incomplete"
+    }
+  },
+  {
+    "id": "r6c4",
+    "row": 6,
+    "col": 4,
+    "rect": [
+      896,
+      1412,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c4-r1.png",
+        "masterSha256": "c523d55b9d821849cc9f145b52eda7c7956eaf5852af1e6a4af1837fb00763be",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          840,
+          1412,
+          368,
+          246
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. OUTPUT3:2 landscape1536x1024 matching exact368:246 canvas. Preserve LEFT56 and RIGHT56logicalpixels exactly, finish central map per source. Large dense grass field fills upper-left/center; long wooden fence descends diagonally from upper-right to its square end post near(130,140) in this368x246canvas; white curb outlines its corner. Grey diagonal road runs lower-left to upper-right with white dashed line and original white looping-symbol fragment at lowerleft, one bent white arrow near lower middle. Red-orange spiral parcel row along lower-right with brown borders/grey corner stones, same number and phase as right context. Continue partial shrub on left. No new tree/building/rock. Do not shift parcel border, curb or fence.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 12.338441890166028,
+            "p95RgbDifference": 52.89999999999994,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 21.511813537675607,
+            "p95RgbDifference": 80.61666666666665,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c4-r2.png",
+        "masterSha256": "65b46da939e7bebe57c751af879c11f2479836e0ac636f90d9c9ce036f5a0744",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          864,
+          1380,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has ready sharp borders and a central transparent missing rectangle; Image2 is original layout of the exact same square. Fill unfinished area faithfully. Keep the existing sharp left32, right24 and bottom40 logical pixels at identical coordinates, shapes, crop and texture scale; never reframe or magnify. Main interior is original dense green grass enclosure. One long brown wooden picket fence descends diagonally from upperRIGHT to its square end post near center-left/lower-middle, preserving exact original fence angle/end coordinate and original picket spacing. One grey diagonal asphalt road runs lowerLEFT toward upperRIGHT, with original white dashed centerline, white curved loop-symbol fragment at lowerleft and one bent right-angle arrow near lower middle. Continue existing road/curbs through left, right and bottom anchors in straight unbroken lines; no offset or extra white spur. Red-orange spiral parcel row at lower/right boundary has same original brick dimensions, gray corner-stone positions, parcel count and spiral pattern phase as ready anchors. Preserve cropped small left shrub and bottomright lobed tree fragment. No new trees, buildings, stones, gates or objects. Match sharp glossy cartoon outlines, fine grass leaf size and fine gray asphalt grain of Image1. Same square view and original object footprints. Entire frame within island: alpha255 everywhere, no transparent or white holes. High native resolution square.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.4715836526181354,
+            "p95RgbDifference": 5.94999999999997,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 3.8256704980842913,
+            "p95RgbDifference": 11.333333333333334,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 11.892280071813286,
+            "p95RgbDifference": 44.11666666666664,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c4-r3.png",
+        "masterSha256": "65b46da939e7bebe57c751af879c11f2479836e0ac636f90d9c9ce036f5a0744",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          864,
+          1380,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has ready sharp borders and a central transparent missing rectangle; Image2 is original layout of the exact same square. Fill unfinished area faithfully. Keep the existing sharp left32, right24 and bottom40 logical pixels at identical coordinates, shapes, crop and texture scale; never reframe or magnify. Main interior is original dense green grass enclosure. One long brown wooden picket fence descends diagonally from upperRIGHT to its square end post near center-left/lower-middle, preserving exact original fence angle/end coordinate and original picket spacing. One grey diagonal asphalt road runs lowerLEFT toward upperRIGHT, with original white dashed centerline, white curved loop-symbol fragment at lowerleft and one bent right-angle arrow near lower middle. Continue existing road/curbs through left, right and bottom anchors in straight unbroken lines; no offset or extra white spur. Red-orange spiral parcel row at lower/right boundary has same original brick dimensions, gray corner-stone positions, parcel count and spiral pattern phase as ready anchors. Preserve cropped small left shrub and bottomright lobed tree fragment. No new trees, buildings, stones, gates or objects. Match sharp glossy cartoon outlines, fine grass leaf size and fine gray asphalt grain of Image1. Same square view and original object footprints. Entire frame within island: alpha255 everywhere, no transparent or white holes. High native resolution square.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.493933588761175,
+            "p95RgbDifference": 4.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 3.8256704980842913,
+            "p95RgbDifference": 11.333333333333334,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 1.3994614003590662,
+            "p95RgbDifference": 5.44999999999997,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "central-red-parcels-whole-r2",
+            "rect": [
+              864,
+              1576,
+              216,
+              208
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/central-red-parcels-whole-r2/assembled.png",
+            "requiredOverlay": true,
+            "scope": "Local artifact correction; preserve in later exports"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "repairAttempts": [
+      {
+        "id": "central-red-parcels-whole-r1",
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/repairs/central-red-parcels-whole-r1/master.png",
+        "masterSha256": "69ea65439fda8086f78f8dff68b78114535b71caacd1717dfe9e892c4885cac6",
+        "referenceRect": [
+          864,
+          1576,
+          312,
+          208
+        ],
+        "prompt": "Use case: precise-object-edit. Landscape3:2 HD isometric map shared joint. Image1 EDIT TARGET is native sharp map quilt with an obvious HORIZONTAL discontinuity about36% down, through the red spiral parcel borders and corner posts, plus small far-right vertical misalignment. Image2 is exact original layout, shape/count reference only. Repair into ONE continuous sharp map surface. The central red/orange parcel must be ONE whole diamond with straight continuous brown brick border, one consistent set of gray corner stones and continuous red spiral pattern across the horizontal seam, no doubled/broken brick, corner or stencil. Match the same original parcel arrangement: clipped row lowerleft, isolated end parcel at centerleft, two cropped parcels upperright; no extra parcel/post or blank grass filling. Keep original diagonal gray asphalt/white curb and existing white road symbols fixed at TOP. Keep exactly the original three visible leafy rosettes along lowerleft (lowest partly cropped) and one large lobed tree partly cropped at RIGHT; preserve every silhouette and position. Same fine grass leaf scale and gray pebble grain. Copy outer16-logical-pixel frame on all four sides at identical coordinates and colors, no rescaling, reframing, moved corners, recoloring, new objects or text. Make internal parcel pattern and black contours continuous through the seam. Opaque alpha255 throughout, no pinholes or white gaps. Native high-resolution landscape3:2.",
+        "generator": "built-in image_gen",
+        "rejected": "All four context cuts exceed thresholds; geometry shifted; never assembled",
+        "nativePixelSize": [
+          1536,
+          1024
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r6c4-r3.png",
+    "referenceRect": [
+      864,
+      1380,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 1.493933588761175,
+        "p95RgbDifference": 4.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 3.8256704980842913,
+        "p95RgbDifference": 11.333333333333334,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 1.3994614003590662,
+        "p95RgbDifference": 5.44999999999997,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "central-red-parcels-whole-r2",
+        "rect": [
+          864,
+          1576,
+          216,
+          208
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/central-red-parcels-whole-r2/assembled.png",
+        "requiredOverlay": true,
+        "scope": "Local artifact correction; preserve in later exports"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-render-reviewed-pending-user-art-acceptance",
+    "assembledSha256": "dc0772b3eaeed51b8bede8b975a745362c6c635e1fd7a1ae7db7b0ddd8fcc82e",
+    "appliedRepairs": [
+      "central-curb-cut-whole-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "date": "2026-10-21",
+      "scope": [
+        896,
+        1412,
+        256,
+        240
+      ],
+      "status": "local-seams-reviewed-candidate-only",
+      "evidence": "reviews/batch-13/native-alpha-browser-verification.json",
+      "fullMapAcceptance": "incomplete"
+    }
+  },
+  {
+    "id": "r7c2",
+    "row": 7,
+    "col": 2,
+    "rect": [
+      400,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c2-r1.png",
+        "masterSha256": "eadfda8cb701cb36e434bc6871d6d0c9a8ed1c449ab61dac976dca13538b80cf",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          400,
+          1596,
+          296,
+          296
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nSquare 1184x1184. Complete the southwest grass parcel and diagonal road. Preserve the cropped colorful building on far left, small trees and grey stacked pillar on upper right exactly as layout. Preserve the large branching white junction marking in upper left and corner road markings. No extra objects.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 9.870813397129186,
+            "p95RgbDifference": 53.199999999999974,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.4869093231162203,
+            "p95RgbDifference": 11.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c2-r2.png",
+        "masterSha256": "300f790798c7071c182f01b4fefacf180316a65afa835210e9c2519952c5d001",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          400,
+          1596,
+          296,
+          296
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nCritical: Copy ALL opaque existing HD pixels of image1 at EXACT same coordinates, only generate transparent missing pixels; the lower/right existing road marking and curb must NOT MOVE, SCALE, WARP OR BE REDESIGNED. This is a locked tile continuation, not a new composition. Match image1 canvas proportions exactly. Square. Branching road arrows and white corner marking on right are LOCKED. Continue diagonal white curb as one straight line, unchanged stone pillar and bushes. Missing area contains grass and cropped pink building on far left.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 9.701116427432218,
+            "p95RgbDifference": 71.0666666666666,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.3093869731800765,
+            "p95RgbDifference": 10.333333333333334,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 66
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c2-r3.png",
+        "masterSha256": "2390aa4e52f283dfdbf4944a87faef5b49c23ada6c7f32638fe4a8f5023bd75b",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          400,
+          1636,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nSquare. Lock top16, right32 and bottom16 logical pixels. Fill grass parcel and missing diagonal road. Match exact original white dashes and clipped branching road marking; existing corner white marking on right stays stationary, no extra stripe/spur or double arrow. Preserve partial pink building at far left, existing stone/bushes at upper right and the tree fragment in bottom edge. No new objects or text.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 9.72280701754386,
+            "p95RgbDifference": 48.86666666666664,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 5.418582375478927,
+            "p95RgbDifference": 13.283333333333303,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 2.91698595146871,
+            "p95RgbDifference": 7.333333333333333,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 64
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c2-r4.png",
+        "masterSha256": "7fb3bcc3536a6bbd3b24929d966cd4835c8f63179229032da8a14bb2dd3783a0",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          1620,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Asset: square native HD Star Cat Monopoly map tile continuation. Image1 is EDIT TARGET with existing sharp finished neighbor anchors and transparent central area. Image2 is the exact ORIGINAL LAYOUT of same square. Image3 is an earlier sharp candidate for design guidance only, not authority for shifted borders. Fill missing area faithfully while preserving ALL finished outer32-logical-pixel anchors in Image1 at identical coordinates. Same square crop, isometric projection, no reframing, rescaling, shifting or new objects. Match fine gray pebble asphalt and fine dense yellow-green leaf grass to Image1. Complete diagonal road, original white branching junction marking near TOP and source-exact dash positions; keep existing RIGHT corner-white-mark, right white curb, upper-right gray stone pillar and shrubs stationary. The diagonal curb must be straight and continuous through the right edge, no step, double stroke or extra short white spur. Preserve cropped pink/yellow building and its blue floor at farLEFT with original two visible conical trees/crops; preserve the ONE lobed tree fragment cut by BOTTOM edge, no extra tree. Fill only the original grass parcel and earth footpath, following Image2 footprints/counts. All existing native top/right/bottom/left anchors take precedence over Image3. Opaque alpha255 everywhere, no pinholes, no blank gap. Glossy outlined cartoon map, sharp detailed high-resolution square.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 41.427432216905906,
+            "p95RgbDifference": 125.6,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 17.760765550239235,
+            "p95RgbDifference": 85.0666666666666,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 13.668901660280971,
+            "p95RgbDifference": 78.84999999999991,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 67
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 7.864942528735632,
+            "p95RgbDifference": 19.61666666666664,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c2-r5.png",
+        "masterSha256": "1c9fc0f896297a71a4dc976c9309ba3b72e8880923fb502e415b95b151d1f6b4",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          1620,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET is a square native map with a CENTRAL transparent unfinished rectangle. Image2 is the original source layout of precisely the same square, for missing-region shape/count reference only. COMPLETE IMAGE1, retaining its existing outer anchors pixel-positionally fixed. Never copy Image2 low-resolution shading or move any existing objects. Exact Image1 square framing, zoom and crop. Existing PINK BUILDING far-left is tightly cropped with only ONE conical tree visible in Image1; keep that exact crop, do NOT reveal additional floor/building/tree. Existing gray pillar in upper-right is tightly cut by top edge: keep its crop/size/position. Existing lobed tree in bottom crosses bottom boundary at same original coordinates. Existing far-right white V road corner/curb/grass stays stationary, including its sharp black contour. Complete missing diagonal fine-gray-asphalt road with exactly source markings: original branching white arrow at top, regular white dashes leading diagonally to right V marking. Continue white curb in ONE straight continuous line through fixed top/right anchors with no step/double stroke or added spur. Fill original grass parcel and original light-brown footpath; match fine dense yellow-green grass leaf scale to bottom/left anchors. No additional props, stones, trees, faces, words, symbols, road lines or decorations. Preserve bright glossy cartoon outlines of Image1. Entire frame is inside island, solid opaque alpha255, no pinholes or blank patches. High native resolution square. Most important: fixed existing Image1 art, not a new composition.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.0704944178628386,
+            "p95RgbDifference": 4.333333333333333,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 7.9397129186602875,
+            "p95RgbDifference": 23.466666666666544,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.719029374201788,
+            "p95RgbDifference": 10.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 2.622924648786718,
+            "p95RgbDifference": 6.283333333333303,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 67
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": false,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c2-r5.png",
+    "referenceRect": [
+      368,
+      1620,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.0704944178628386,
+        "p95RgbDifference": 4.333333333333333,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 7.9397129186602875,
+        "p95RgbDifference": 23.466666666666544,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 3.719029374201788,
+        "p95RgbDifference": 10.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 2.622924648786718,
+        "p95RgbDifference": 6.283333333333303,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 67
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-render-reviewed-pending-user-art-acceptance",
+    "assembledSha256": "7677d2cc0742ebea146023a87f8dc0ff38e0518db64d2793190da7d272ac0724",
+    "appliedRepairs": [
+      "southwest-V-curb-whole-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "date": "2026-10-21",
+      "scope": [
+        400,
+        1652,
+        240,
+        240
+      ],
+      "status": "local-geometry-reviewed-grass-harmonization-pending",
+      "evidence": "reviews/batch-13/native-alpha-browser-verification.json",
+      "fullMapAcceptance": "incomplete",
+      "remainingMaterialDebt": "Grass leaf scale differs across r7c1/r7c2 and connects to broader r8c1/r8c2 terrain pass; candidate only."
+    }
+  }
+]

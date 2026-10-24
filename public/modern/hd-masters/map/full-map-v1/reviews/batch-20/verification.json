@@ -1,0 +1,677 @@
+{
+  "date": "2026-10-22",
+  "completedImageGenerationCallsThisBatch": 6,
+  "nativeContextReusedCells": [],
+  "newEngineeringCandidates": [
+    "r3c9",
+    "r4c9"
+  ],
+  "counts": {
+    "selected-engineering": 105,
+    "pending": 0,
+    "pending-visual-review": 0,
+    "approved-source-reused": 4
+  },
+  "immutableAttemptMasterHashesVerified": 192,
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "allPreviousAssemblyChangesInsideDeclaredScopes": true,
+  "repairsAreExactOldOrNewRgbaSelection": true,
+  "nativeAlphaModified": false,
+  "newLocalRepairs": [
+    "r3c9-dice-emblem-r3",
+    "ride-parcel-column-whole-r1",
+    "r4c9-dice-emblem-r2"
+  ],
+  "nativeAssembledAlphaAudits": {
+    "r3c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r3c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.6411511105608177,
+      "nativeAlphaModified": false
+    },
+    "r3c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.8390495057677625,
+      "nativeAlphaModified": false
+    },
+    "r4c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    }
+  },
+  "mapPythonTestsPassed": 30,
+  "preservedExportRegressionTestsPassed": 4,
+  "eastUnderlayRegressionTestsPassed": 3,
+  "southUnderlayRegressionTestsPassed": 3,
+  "actualNativeReplacementViews": 24,
+  "reviewAtlasCount": 110,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "northUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "southUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "eastUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 110,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "remainingVisualCorrectionTiles": [],
+  "visualCorrectionDebt": [
+    "Northeast approved corner cloud/road block and cyan20 shade phase require a whole native joint correction",
+    "Review southwest/southeast corner road phase, upper-cloud shading handoff and previous grass texture transitions"
+  ],
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "b7d83d15bd10d1e359d133ac95c9c4202db2f2e814bba66193e3d6f0a5ecc38c"
+    },
+    {
+      "view": "ride-whole-2x",
+      "sha256": "98572e841e49f2d33274c54bbe3a1324f0ca75675436f7cef0cf93905d1c4866"
+    },
+    {
+      "view": "ride-north-parcels-2x",
+      "sha256": "40fe95f0e99b4069453556ce58a17140fee4e2a79520c4ea708bee4d9586d343"
+    },
+    {
+      "view": "ride-curb-west-4x",
+      "sha256": "19507ffc8e49dcabaaeb1c55f958e71438b683374b7409e3257ddaca93742921"
+    },
+    {
+      "view": "ride-curb-middle-4x",
+      "sha256": "880ffc5baca62b4504bb98690bff5d92e91d60c05b2140dd0b68e710f536909e"
+    },
+    {
+      "view": "ride-curb-east-4x",
+      "sha256": "9241dec482aaa1faa3e9dda304cba80239e2cb6f78ec24f6333f472dfcfbc6c2"
+    },
+    {
+      "view": "ride-parcel-column-4x",
+      "sha256": "edce6075e9bd0dbd17468b105dd5acc68915cd2ba020d9ddd6a839754e1ff8ff"
+    },
+    {
+      "view": "dice202-4x",
+      "sha256": "a2d7e81181bd5d99d342deab60392a6a857d7382eb6ad5ae09ad5e04d9b5c375"
+    },
+    {
+      "view": "ride-east-rail-4x",
+      "sha256": "60531cf0641717dcce7b52d37085cf09b7829a146f6a4ddef73ade3d7e3fb1c5"
+    },
+    {
+      "view": "dice200-4x",
+      "sha256": "656af20e6c88d5ece803e70e0bb798999d718d16b5c5d1233eb188eaf88e62e0"
+    },
+    {
+      "view": "ride-bottom-whole-2x",
+      "sha256": "347fcc16b66a6856915fc97be12c1054bbd1b03d467fd146a949e89619acddba"
+    },
+    {
+      "view": "ride-bottom-road-4x",
+      "sha256": "e0f2936cad36ad0ca993f7f47891bc011b8a79605c81d69a3518cf2bcf6e82b9"
+    },
+    {
+      "view": "ride-middle-joint-4x",
+      "sha256": "49e9bcafa6adef84d44f1b96cdc83d296be5dc4f55fd949e0b0429b0e2afe02b"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "520525c3a5493d3a658b0a7a538ae840aeb2b6c11b12fc9135e36b15cbfe24b4"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "91aa0957be2d4f208a3985f03f55a80700c32913ad2db1c785eb1294f6385fec"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "87e6582bea1230c02ac9833947336f16f53b73fc751809f4176cee5907048162"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "4375e51ede1b0f06fef7bd6af4354e0203a6bc9d6af6bf2a11e7cb630aaf180d"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "ccc0dee6b86c1e611e8a1da7766e8e2cf35fc3ebadb32d5976ac1d627f59e0b4"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "4935792e7862d6eaa0cfe9276ca4c60a8c23132be5de22f36d1675ffe7bcbdf7"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e02aa5b026a80f6d9a1bea361687bc4c7f0652c4b55124af486fb2428f0cc307"
+    },
+    {
+      "view": "r3c9-top-4x",
+      "sha256": "827caf276a0dd6cca33bdd9ada9b6599bbaa27376c38ad912440fa85f167811b"
+    },
+    {
+      "view": "r3c9-right-4x",
+      "sha256": "75fd699bac4e98002b32605fbdea7cc6d337bc336ddc8308ac3b624c17a80170"
+    },
+    {
+      "view": "r4c9-left-4x",
+      "sha256": "f1d36a938e06dca3c1b94a63dbb98f7090ded68ce38bd46d496c900bd499ee61"
+    },
+    {
+      "view": "r4c9-right-4x",
+      "sha256": "6206d624950e536f5f39b169791bbee35c183d6e47d56ea646b83ad9c260c1f3"
+    }
+  ],
+  "referenceInputFilesHashed": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/curb-audit/current.png",
+      "sha256": "86431ba93c05caa5962bd4f37b9442677ccc5322358772dadc0a4fddda5c5ca0"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/curb-audit/original.png",
+      "sha256": "1f22ccf0710e7558a176c7cd974d23b7e45f6c3c8de1ef1c90b016b0fcab0785"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/r3c9/current.png",
+      "sha256": "e2a8fbd6b9b5662a19dc82de12ab0eafaa68505df1a390f06505de13894d929a"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/r3c9/original-on-sky.png",
+      "sha256": "62e681fe56af09224af7c7a5acfe3000e571bd953786e5d0e912cbfdb01c459e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/r3c9/reference.json",
+      "sha256": "e83649b20db6d45db25c578c6731ddf3db8681aa2b9e3d7ca85b3213aeedc7e3"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/source-dice-comparison/id199.png",
+      "sha256": "621f1fd63ff44ac244cd4b2403fec5b582755b4f73eee7c5562cd37f5e842367"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/source-dice-comparison/id200.png",
+      "sha256": "6fc34602a52d126c5e84439aff95d27776800cdc8d7f4d7788041602412154eb"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/source-dice-comparison/id201.png",
+      "sha256": "0a968f01c3591c208e647143e2ab2bd626e82293be4497aeb85663df7c03d249"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/batch20-inputs/source-dice-comparison/id202.png",
+      "sha256": "97bdb526e560c148d9636cf2518d275554d040943cb4fb3d0a73a06ddef406b1"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/imagegen-calls.json",
+      "sha256": "788e4a292fbf889bda2840ec7582b64fdcde68d36504f0893f35e1311aa51105"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/before.png",
+      "sha256": "9da302cfdcc2ca6370dd742a9801fe9d6434353f3263f7f9f67e5f7295a1dde0"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/correct-dice-style.png",
+      "sha256": "621f1fd63ff44ac244cd4b2403fec5b582755b4f73eee7c5562cd37f5e842367"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/correct-style-nearest.png",
+      "sha256": "cfa168a27a8df03a325e84693a25d879b1d3b46023fa662ca8e761ae978b1fd2"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/generation.json",
+      "sha256": "9ca2cdb1c7c8f5e374845515507a473a7e6340e1008c28a92667111f7852e177"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/layout.png",
+      "sha256": "3e5657f4880aef0442853459a0c965e22eb8582048e094d68bdb152c3a6914e8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/original-pips-nearest.png",
+      "sha256": "65311a2a90c7316dd87bd43440cd90dc67d8ab82b0d66d1f39686aea0582e6ee"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/reference.json",
+      "sha256": "5c4c243b821ea7502010d7cad13798806be5359e69d6318f41b902c78110c275"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/rejected.json",
+      "sha256": "385f4cc396cb55e2fa8fa6f8309c3f3d42c5867b70365aa81139083dc46f9c3a"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/unobscured-original-dice.png",
+      "sha256": "3c49d60a5254a7782cec25e2b6e7280850125d0aadd6020531b36a002942696c"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/before.png",
+      "sha256": "59825d31938ac3843b9423de7eccd1967561e6c4502d225c24bf77ddc638c548"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/correct-dice-style.png",
+      "sha256": "621f1fd63ff44ac244cd4b2403fec5b582755b4f73eee7c5562cd37f5e842367"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/generation.json",
+      "sha256": "fa4eac13705a4f81413b9cb981c7285f9a1843dcf0f8a1fb85784600657577f1"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/layout.png",
+      "sha256": "50db4129a8f1a0e048440173f7ecfe894f70241e7d16f44385fdf8009268d782"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/reference.json",
+      "sha256": "81a75be1e64ad58dc1f8fa2cc28ccb14b0cb32b38f7e3de4dadbf6314b38495d"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/rejected.json",
+      "sha256": "6566368b729b63282e7d37bc3b53ae082abab391d12c4cb7afd91d0dac07269b"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/before.png",
+      "sha256": "59825d31938ac3843b9423de7eccd1967561e6c4502d225c24bf77ddc638c548"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/correct-dice-style.png",
+      "sha256": "621f1fd63ff44ac244cd4b2403fec5b582755b4f73eee7c5562cd37f5e842367"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/generation.json",
+      "sha256": "47f9676f0f5cabf0e670d338a6956d1ec24fcda8818abe5ffc566f70a5ee9a82"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/layout.png",
+      "sha256": "50db4129a8f1a0e048440173f7ecfe894f70241e7d16f44385fdf8009268d782"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/reference.json",
+      "sha256": "81a75be1e64ad58dc1f8fa2cc28ccb14b0cb32b38f7e3de4dadbf6314b38495d"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/target-upscaled.png",
+      "sha256": "b15634b6adcb727c02d8d2e7eb03b4ded498e3f983934e5fe088092803679524"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/before.png",
+      "sha256": "167766dcfcfb682177456da98bc97cda3b192ee0eca5dbc02d44699e1b2c8127"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/correct-dice-style.png",
+      "sha256": "621f1fd63ff44ac244cd4b2403fec5b582755b4f73eee7c5562cd37f5e842367"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/generation.json",
+      "sha256": "b5bed5c7201148037843b7c8637ba28a0f020fd38c00ce76f1d24b475024f5f6"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/layout.png",
+      "sha256": "122eed7d8d22addd0d88a7ed584af1fa2328aa475952886d38b7139667c318d2"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/raw-workspace-copy.json",
+      "sha256": "99dcf0cea56bc40f7fcb83f39570e4c88c3a8f4f8859048dfcb80e6af7f1abf1"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/reference.json",
+      "sha256": "1601fed2497e45499cb18b7d3839e81eb24f75fa3b792b0a7ae53d8d2c6d4eb8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/rejected.json",
+      "sha256": "98f4fdfff3964f6c82a52a0fa64485d998c1a489a559dd1ab3f873a468504861"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/target-upscaled.png",
+      "sha256": "831a3e3a3e70846e6718aa3e9903a05f4c6e03ec0f3008ef1240fea61b9392f4"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r2/before.png",
+      "sha256": "167766dcfcfb682177456da98bc97cda3b192ee0eca5dbc02d44699e1b2c8127"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r2/correct-dice-style.png",
+      "sha256": "621f1fd63ff44ac244cd4b2403fec5b582755b4f73eee7c5562cd37f5e842367"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r2/generation.json",
+      "sha256": "835eaf5e6c47f23ba9817c8710949d98e5ec41fbb9c095de90f417f80ec25214"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r2/layout.png",
+      "sha256": "122eed7d8d22addd0d88a7ed584af1fa2328aa475952886d38b7139667c318d2"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r2/reference.json",
+      "sha256": "1601fed2497e45499cb18b7d3839e81eb24f75fa3b792b0a7ae53d8d2c6d4eb8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/ride-parcel-column-whole-r1/before.png",
+      "sha256": "ca6006db72e0dbc7ae0870446f39ce7fb6a6a70e391825d5eb1d941e83672fca"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/ride-parcel-column-whole-r1/generation.json",
+      "sha256": "f8c5cc7aa4869ad3ee9cdba04fccf4ec060c8a496405ba0c57a2459f84519ce4"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/ride-parcel-column-whole-r1/layout.png",
+      "sha256": "a377c6ff3576b52c42fad3cb86bc542a27b6bbd2b66b05e003c7f48ebd8520f0"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/ride-parcel-column-whole-r1/reference.json",
+      "sha256": "fdd98a0867cdd2634f53cbf46605c6b36517b35a07c7f351d0b8269964cf12fc"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-20/ride-parcel-column-whole-r1/target-upscaled.png",
+      "sha256": "4188f85f1496ecc68d3e117e8c2cc9d84bb6cef4cb07c34321c8b4e7ac2963ca"
+    }
+  ],
+  "approvedTopCropReviewOnly": {
+    "removedNativeRows": 139,
+    "logicalBand": 32,
+    "replacedByExistingNativeContexts": true,
+    "sourceFilesUnchanged": true,
+    "retainedPixelsExactRgba": true,
+    "afterGhostRgb": [
+      102,
+      204,
+      255
+    ],
+    "skyRgb": [
+      102,
+      204,
+      255
+    ],
+    "beforeGhostRgb": [
+      59,
+      143,
+      213
+    ],
+    "beforeApprovedAlphaAtWorld1004_429": 139,
+    "nativeAlphaAtSamePoint": 0
+  },
+  "approvedNorthGhostRegressionTestsPassed": 3,
+  "northUnderlayRegressionTestsPassed": 3,
+  "northUnderlayCornerOwnership": "West/east own32x32 corners; two224x32 native strips fill north middle without overlap",
+  "sourceDiceAudit": {
+    "boardSha256": "0c577b7a36eee635c5c32b3e1ba54e6407e2cf86c74c62ad1adf1e5f1e226986",
+    "records": [
+      {
+        "id": 199,
+        "type": 27,
+        "ordinal": 1,
+        "streetId": 0,
+        "facing": 1,
+        "position": {
+          "column": 3,
+          "row": 25
+        }
+      },
+      {
+        "id": 200,
+        "type": 27,
+        "ordinal": 1,
+        "streetId": 0,
+        "facing": 1,
+        "position": {
+          "column": 36,
+          "row": 18
+        }
+      },
+      {
+        "id": 201,
+        "type": 27,
+        "ordinal": 1,
+        "streetId": 0,
+        "facing": 2,
+        "position": {
+          "column": 6,
+          "row": 24
+        }
+      },
+      {
+        "id": 202,
+        "type": 27,
+        "ordinal": 1,
+        "streetId": 0,
+        "facing": 2,
+        "position": {
+          "column": 38,
+          "row": 12
+        }
+      }
+    ],
+    "repairedRecords": [
+      202,
+      200
+    ],
+    "unchangedExistingRecords": [
+      199,
+      201
+    ],
+    "originalsComparedToNativeEmblems": true,
+    "designReference": "Existing id199/id201 white dice with one red top pip, one violet left pip and six on right; preserve occlusion for id202",
+    "wholeSurroundingTilesRegenerated": false
+  },
+  "rejectedImageCalls": [
+    "r3c9-dice-emblem-r1",
+    "r3c9-dice-emblem-r2",
+    "r4c9-dice-emblem-r1"
+  ],
+  "imageCallProvenance": [
+    {
+      "id": "r3c9-dice-emblem-r1",
+      "sha256": "a7352b7faf618ba9d5de7f406c26ca209b83a8c68491d524a95ad483dab51052",
+      "workspaceMaster": "public/modern/hd-masters/map/full-map-v1/repairs/r3c9-dice-emblem-r1/master.png",
+      "builtInOutputPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-021273fc-e8c8-4d47-81d8-9baba16b1ab3.png",
+      "applied": false,
+      "promptMetadata": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r1/generation.json"
+    },
+    {
+      "id": "r3c9-dice-emblem-r2",
+      "sha256": "17a678245bf6071ef12d54962d166315dcf96e816415a7017ad6b8b9d3a0f73f",
+      "workspaceMaster": "public/modern/hd-masters/map/full-map-v1/repairs/r3c9-dice-emblem-r2/master.png",
+      "builtInOutputPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7aa503bb-9ed3-408f-a731-eb61fce10989.png",
+      "applied": false,
+      "promptMetadata": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r2/generation.json"
+    },
+    {
+      "id": "r3c9-dice-emblem-r3",
+      "sha256": "fa687b39e0914cc81f5d7d2d39f827310417b5546993a6843cd935962dfe043d",
+      "workspaceMaster": "public/modern/hd-masters/map/full-map-v1/repairs/r3c9-dice-emblem-r3/master.png",
+      "builtInOutputPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-45763602-d3c6-4f78-b5f4-82fd6ff0dac3.png",
+      "applied": true,
+      "promptMetadata": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r3c9-dice-emblem-r3/generation.json"
+    },
+    {
+      "id": "ride-parcel-column-whole-r1",
+      "sha256": "6bf8c8ece75c9756218d514c9274eec2b31ef539d8b161eea5b41654057d489e",
+      "workspaceMaster": "public/modern/hd-masters/map/full-map-v1/repairs/ride-parcel-column-whole-r1/master.png",
+      "builtInOutputPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-db5df68b-f0ab-40a4-8561-9a29c39d13b0.png",
+      "applied": true,
+      "promptMetadata": "public/modern/hd-masters/map/full-map-v1/references/batch-20/ride-parcel-column-whole-r1/generation.json"
+    },
+    {
+      "id": "r4c9-dice-emblem-r1",
+      "sha256": "eb65308b7ccaca2b310fcc162643eded6942d2bcf421cfb9d6c9772a52611311",
+      "workspaceMaster": "public/modern/hd-masters/map/full-map-v1/repairs/r4c9-dice-emblem-r1/master.png",
+      "builtInOutputPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-04e277fc-9ab3-43e8-9b04-271c3b5b2a4c.png",
+      "applied": false,
+      "promptMetadata": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r1/generation.json"
+    },
+    {
+      "id": "r4c9-dice-emblem-r2",
+      "sha256": "7bd143f99b1e458a05cdc4b75cb354d95875fd57c4650be289ae00052672e48b",
+      "workspaceMaster": "public/modern/hd-masters/map/full-map-v1/repairs/r4c9-dice-emblem-r2/master.png",
+      "builtInOutputPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-be175d9e-61ad-4fe5-9b47-d1fe830197a2.png",
+      "applied": true,
+      "promptMetadata": "public/modern/hd-masters/map/full-map-v1/references/batch-20/r4c9-dice-emblem-r2/generation.json"
+    }
+  ],
+  "inheritedNorthRegressionHistory": "reviews/batch-19/verification.json",
+  "previousWhiteCurbIssue": "Current actual renderer shows the previously recorded white curb notch already connected by later neighbors; no white curb regeneration. Corrected remaining sliced gray post/rail nicks with whole112x112 native scene."
+}

@@ -1,0 +1,13 @@
+.F
+======================================================================
+FAIL: test_sky_has_no_detached_old_curb_and_cyan10_is_retained (__main__.Curb.test_sky_has_no_detached_old_curb_and_cyan10_is_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch27_pilot_curb.py", line 17, in test_sky_has_no_detached_old_curb_and_cyan10_is_retained
+    self.assertEqual(int(b[:,:,3][sky].max()),0,'Reuse native sky outside the complete curb; old detached white fragments must not remain')
+AssertionError: 255 != 0 : Reuse native sky outside the complete curb; old detached white fragments must not remain
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.021s
+
+FAILED (failures=1)

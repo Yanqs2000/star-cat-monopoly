@@ -1,0 +1,63 @@
+{
+  "sourceNativePixelSize": [
+    1092,
+    1441
+  ],
+  "nativeAlphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 835831,
+    "solidAlphaMedian": 252.0,
+    "fullyOpaqueFraction": 0.0004753516203897883,
+    "nativeAlphaModified": false
+  },
+  "instances": [
+    {
+      "id": "west-round-tree-original-placement",
+      "targetWholeTreeRect": [
+        158,
+        1603,
+        78,
+        80
+      ],
+      "sourceBodyPixelBox": [
+        35,
+        171,
+        1064,
+        1275
+      ],
+      "compiledBodyPixelBox": [
+        12,
+        54,
+        351,
+        402
+      ],
+      "technicalResize": [
+        360,
+        454
+      ],
+      "logicalRect": [
+        155.34649910233395,
+        1590.6140035906642,
+        82.72890484739676,
+        104.33034111310593
+      ],
+      "scenePosition": [
+        -28.65350089766605,
+        1277.6140035906642
+      ],
+      "pixelDensity": 4.3515625,
+      "pixelSize": [
+        360,
+        454
+      ],
+      "path": "public/modern/hd-masters/map/full-map-v1/native-props/west-round-tree-v1/tree.png",
+      "sha256": "8db0199313bde9ea3a5b74bb40b105213363195f795117c70c6dbc19f4b8c24d",
+      "spriteOnBase": true,
+      "replacement": false,
+      "nativeSourceDensity": 13.199739583333335
+    }
+  ],
+  "method": "Native imagegen foreground extraction, technical resize and original world placement only"
+}

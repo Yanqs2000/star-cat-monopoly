@@ -1,0 +1,270 @@
+{
+  "date": "2026-10-22",
+  "completedImageGenerationCallsThisBatch": 6,
+  "selectedNewSceneRepairs": [
+    "west-grass1412-whole-r1",
+    "west-grass-scale-transition-r1",
+    "yellow-building-empty-base-r3"
+  ],
+  "selectedNativeProp": "native-props/yellow-building-cone-v1",
+  "rejectedGeometryCandidates": [
+    "yellow-building-five-trees-r1",
+    "yellow-building-five-trees-r2"
+  ],
+  "all109WorkingAssembliesByteIdentical": true,
+  "all192TileAttemptMastersUnchanged": true,
+  "allPriorRepairFilesUnchanged": true,
+  "approvedFourNativeAndRuntimeFilesUnchanged": true,
+  "existing114ReviewAtlasesByteIdentical": true,
+  "reviewAtlasCount": 119,
+  "drawRegionCount": 149,
+  "retainedExactRgbaCrops": 52,
+  "nativePropSpritesOnCleanBase": 2,
+  "alphaAudits": {
+    "west-grass1412-whole-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 275538,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.036688255042427766,
+      "nativeAlphaModified": false
+    },
+    "west-grass-scale-transition-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9352995901091207,
+      "nativeAlphaModified": false
+    },
+    "yellow-building-empty-base-r3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9997987989847087,
+      "nativeAlphaModified": false
+    },
+    "nativeCone": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 663350,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00043800650461909326,
+      "nativeAlphaModified": false
+    }
+  },
+  "originalWholeBuildingTrees": 5,
+  "beforeWholeBuildingTrees": 3,
+  "afterActualRenderTrees": 5,
+  "restoredTreeGeometry": [
+    {
+      "sourceGreenBounds": [
+        448,
+        1687,
+        468,
+        1710
+      ],
+      "actualGreenBounds": [
+        448.0,
+        1686.75,
+        468.25,
+        1710.0
+      ],
+      "maximumWorldEdgeError": 0.25
+    },
+    {
+      "sourceGreenBounds": [
+        416,
+        1710,
+        435,
+        1738
+      ],
+      "actualGreenBounds": [
+        416.0,
+        1710.25,
+        435.0,
+        1738.0
+      ],
+      "maximumWorldEdgeError": 0.25
+    }
+  ],
+  "sourceGeometryToleranceWorldPixels": 1.25,
+  "existingThreeTreeNativePixelsUnchanged": true,
+  "runtimeFix": {
+    "path": "src/modern/features/map/MapScene.ts",
+    "addedLines": 3,
+    "behavior": "Stable mapRegions order instead of image arrival order",
+    "sha256": "5d7e084ee91a2c5cb30a103edbf313470bff43dd2de884d65b2088bf31696cd7",
+    "regression": "tests/e2e/modern-map-layer-order.spec.ts",
+    "testSha256": "dc3222ae823e6e7da4b1b8ff5d0390e9944baa34f7af4ecace728d4b01dd1c23",
+    "verifiedCameraVisits": 3
+  },
+  "projectUnitTestsPassed": 643,
+  "modernE2eTestsPassed": 4,
+  "modernBuildPassed": true,
+  "mapPythonTestsPassed": 30,
+  "nativeArtifactChecksPassed": 49,
+  "actualMapSceneViews": 32,
+  "browserErrors": [],
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "remaining": [
+    "Broad west leaf-scale difference remains visible despite softened local transition; do not mark whole grass pass accepted",
+    "Northeast lower grass/leaf-scale joins",
+    "Whole map asphalt grain and lighting review",
+    "Full map art acceptance and final integration"
+  ],
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "762a3d6c07e54b2fbfe1f5f77d1be162abe7cdc184a4c7009c4e1407b262dbbd"
+    },
+    {
+      "view": "northeast-whole-2x",
+      "sha256": "ec93c00c10773ef48c12bda43d2adb86b69f179abcca847261eb0bd2c2eab1f2"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "9c65e3fc983478691ae05e38997abf8d262fe2099c9013305697863528b517a5"
+    },
+    {
+      "view": "cyan10-whole-4x",
+      "sha256": "ccaa41c3c6f9c56e1cde4d0c9a3b13a8454621063908a0d3250a85519ec14045"
+    },
+    {
+      "view": "cyan10-left-4x",
+      "sha256": "fc1f4749b30974e00e6998f19b484319acf8b6ba17a1d1a3833fb42fc2d97d25"
+    },
+    {
+      "view": "cyan10-top-4x",
+      "sha256": "e2d438f9cdb7acdcb4bed2293686a39b0e58006ce2dfe8bdf7ef51b9c9ea2ceb"
+    },
+    {
+      "view": "cyan10-bottom-4x",
+      "sha256": "8d24bb2e6aaf51f1854f95ac0719175bd4827a1b8ae5f20722038fdd3716ae79"
+    },
+    {
+      "view": "northeast-road-right-4x",
+      "sha256": "3d8e449c43b03ed49a8920f4fa7853e35c5c5acacb6bef61c874d0970b0569a5"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "acebc0367fffbf7eec1b4bd1bd87968635020d4da605d4c221c173842781be20"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "c952481ddbaf664576511c7fc2a2b9175f4c23acfd3641aaf7b40b85e76d0934"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "6f4f409ade1a948343368d6122217ae3be89c16b597e6f32a281d80366fde986"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "2a39705f95719ccd92d70d6544d78b8334f3c4a10048d4f7eee0135c84f81afd"
+    },
+    {
+      "view": "southwest-whole-2x",
+      "sha256": "991db542861272c0ac34414c5ad42225f383a3942cfb74096a4f63fb11ac9577"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "db679e0448cae398ea0a07b1b869623bd05c4e4735ae6c7704c4ce6bbde2efe1"
+    },
+    {
+      "view": "southeast-whole-2x",
+      "sha256": "b04796baf346fccf08e48f5a22746e7a2337422dab10c7317c4ab8f9ee2842e7"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "867247436b4f9e3ae3e6d460120064f473d5f51e28c8176ef7ca5d50b621ff66"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e5aa7b9225dc965684c237a017340fc4962e3b9d4777b0a86e84891dbb96386a"
+    },
+    {
+      "view": "upper-cloud-full-4x",
+      "sha256": "fe8606c5e85d71058eee0562c3b31b9d8526fa25f20b4669f7114637f950495f"
+    },
+    {
+      "view": "upper-cloud-left-joint-4x",
+      "sha256": "fcc8b7d65cd9a0a7278f024355288e49b142097a1e099a34bcdd11de3bc041eb"
+    },
+    {
+      "view": "upper-cloud-tail-4x",
+      "sha256": "9f251fc4be665d9cdb0eb911faa029cf786274fd73ae8d8e2192d24cac83d115"
+    },
+    {
+      "view": "ride-whole-2x",
+      "sha256": "98572e841e49f2d33274c54bbe3a1324f0ca75675436f7cef0cf93905d1c4866"
+    },
+    {
+      "view": "west-grass-whole-2x",
+      "sha256": "11321a843bb67e4e1bb5069aabaa84f30838dc4c25b6e19a249909b7ffce0d74"
+    },
+    {
+      "view": "west1412-whole-2x",
+      "sha256": "d7b2a3277bbb413a693550c19f05c91106560bf11b89585890800007b7b97d5c"
+    },
+    {
+      "view": "west1412-join-4x",
+      "sha256": "9cf1ddb141203840d9fc3f1057f7eb4b608b2afa919fb574d44d3df37a715d99"
+    },
+    {
+      "view": "five-trees-whole-4x",
+      "sha256": "657b98200cf44675bd4e17c9c90b60c5c702bab525433636219db02bd22982e5"
+    },
+    {
+      "view": "five-trees-right-4x",
+      "sha256": "b950e5529bd015baeb0884e480555c28269cbee8e11153e9fe7d38a9679eb767"
+    },
+    {
+      "view": "grass-scale-whole-2x",
+      "sha256": "258f8882d6c4f2156f08a6b417ef4669f48a2755eb52f269b72dd0198c5a4279"
+    },
+    {
+      "view": "grass-scale-cross-4x",
+      "sha256": "73ff6bc1c064bacc96b6d727fea0ec4d6f87811eb4ddb512da37310594b3f8fc"
+    },
+    {
+      "view": "west-road-whole-2x",
+      "sha256": "24fb63685a7182664184d6c27c7a0dc4a07f2f225c93a718ddad450d74d3adc0"
+    },
+    {
+      "view": "green30-whole-4x",
+      "sha256": "43c0eead821e6f9bcf7db1048d208bcb3a7121aa392993bbcbc130e752ef8e22"
+    },
+    {
+      "view": "approved-east-mid-4x",
+      "sha256": "dbc8c4e44576012463b8cf6a55097bf78679b8b1d3683003bfd0a7d1906f920e"
+    },
+    {
+      "view": "approved-east-row-joint-4x",
+      "sha256": "b79febe7a31ce3817cfe874d0eb28e19f8c0e7948c7e6c37000422df2ced5784"
+    }
+  ]
+}

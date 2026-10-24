@@ -1,0 +1,58 @@
+{
+  "rect": [
+    320,
+    596,
+    160,
+    160
+  ],
+  "knownContexts": [
+    {
+      "id": "r2c1",
+      "rect": [
+        320,
+        596,
+        80,
+        80
+      ],
+      "sha256": "e52d2ec2079db2a3f965eb876839925845854118d0318e2cedafa09b8b0bce05"
+    },
+    {
+      "id": "r2c2",
+      "rect": [
+        400,
+        596,
+        80,
+        80
+      ],
+      "sha256": "5e95fcf484af48c1a1f03f2df3bd36302fd64a32f47b17dbeb69b434b5eca756"
+    },
+    {
+      "id": "r3c1",
+      "rect": [
+        320,
+        676,
+        80,
+        80
+      ],
+      "sha256": "c622b640455413010b5568c56877fb57a9c5d0dbfec7728f5b47f474e4ff100a"
+    }
+  ],
+  "unknownContextUsesSameNativeOutput": true,
+  "unknownContextIsNotAnAcceptedNeighborJoin": true,
+  "nativeAlphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 738350,
+    "solidAlphaMedian": 253.0,
+    "fullyOpaqueFraction": 0.0,
+    "nativeAlphaModified": false
+  },
+  "wholeNativeInteriorRect": [
+    352,
+    628,
+    96,
+    96
+  ],
+  "method": "Whole native grass outline preserved inside border cuts; unknown neighboring area uses same new native image, not blank/legacy art. Exact old/new RGBA selection only."
+}

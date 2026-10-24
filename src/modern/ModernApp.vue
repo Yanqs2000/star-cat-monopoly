@@ -26,7 +26,7 @@ import type { GameState } from './features/game/types'
 import { createMapScene, type MapCameraState, type MapSceneHandle } from './features/map/MapScene'
 import SceneInspector from './features/map/SceneInspector.vue'
 import type { MapData } from './features/map/types'
-import { loadHdMapRegions } from './features/assets/hd-map-art'
+import { loadHdMapArtwork } from './features/assets/hd-map-art'
 import { isCompleteHdProfileIndex, mapAssetProfile, profileAssetUrl, type AssetProfile } from './features/assets/profiles'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
@@ -258,7 +258,8 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
       const [manifest, reactions] = await Promise.all([fetchManifest(item, signal), fetchReactionManifest(item, signal)])
       return { playerId: player.id, characterId: player.characterId, manifest, reactions }
     })), fetchInteractionManifest(signal), fetchActivityManifest(signal)])
-    const mapRegions=profile==='hd'?await loadHdMapRegions(entries[0]!.manifest.map,signal):[]
+    const mapArtwork=profile==='hd'?await loadHdMapArtwork(entries[0]!.manifest.map,signal):undefined
+    const mapRegions=mapArtwork?.regions??[]
     const textureResolutions=Object.fromEntries(mapRegions.map(region=>[region.url,region.pixelDensity]))
     const displayInteractions=mapAssetProfile(loadedInteractionAssets,profile)
     const displayActivities=mapAssetProfile(loadedActivityAssets,profile)
@@ -269,6 +270,7 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
       assetProfile:profile,
       playerManifests: entries,
       mapRegions,
+      mapBase:mapArtwork?.baseMap,
       textureResolutions,
       onFrame: () => {},
       onManualCamera: () => { following.value = false },

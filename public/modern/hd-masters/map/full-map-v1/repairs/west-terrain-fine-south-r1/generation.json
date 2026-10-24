@@ -1,0 +1,29 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-9d11c48a-dd3a-44f0-8a81-5daa47bb30a9.png",
+  "prompt": "Use case: precise-object-edit. Existing Star Cat Monopoly HD map western island terrain. Image1 is EDIT TARGET, exact geography/shape authority. Image2 is a48x48 logical sample of the ALREADY FINISHED neighboring fine grass at the SAME4.35 native pixel density as Image1; match its tiny dense leaf size and tone. Replace ALL oversized broad grass leaves in Image1 with that same fine dense small yellow-green grass, approximately one-third the current big leaf diameter. This is a whole-surface material harmonization, not a blurred stripe or a diagonal transition: grass should have consistent fine scale across the visible field, including its TOP edge which will connect to a subsequent northern terrain update. Keep crisp individual tiny leaves, same gentle isometric lighting and irregular small color variation, no geometric rows or sharp rectangular bands. Retain EXACTLY the original island's dark scalloped main contour, the golden/brown cliff lip, faces, grooves and projections, transparent sky outside the cliff, the small cropped blue building platform at the top and the small tan ground patch at upper right. Do not move or redraw those non-grass features. Keep outer16 logical pixels along RIGHT/BOTTOM matching existing fine grass/cliff connection geometry and colors; left outer sky/cliff remains identical. Top grass is intentionally being replaced to fine grass, not anchored to old coarse leaves. Preserve the blue platform fragment at top pixel-for-pixel. Do not add/delete/move any object, tree, shrub, flower, rock, path or marking. No holes inside the island. Native RGBA transparency outside island only, exact9:7 wide framing, native output at least1296x1008.",
+  "rect": [
+    144,
+    1776,
+    288,
+    224
+  ],
+  "context": 16,
+  "contextSides": {
+    "left": 16,
+    "right": 24,
+    "top": 0,
+    "bottom": 24
+  },
+  "protectedRects": [
+    [
+      360,
+      1776,
+      48,
+      8
+    ]
+  ],
+  "pendingNeighborEdges": [
+    "top"
+  ],
+  "purpose": "Whole west-coast grass material replacement; north grass will be continued in following frame"
+}

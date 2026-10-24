@@ -1,0 +1,130 @@
+[
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r0c8/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-c093d02d-94b6-4760-931a-994b675d6a53.png",
+    "prompt": "Use case: precise-object-edit, native map OUTPAINT. Image1 square312logical crop already contains completed sharp native cloud from y148 to bottom312; its main white crown is wrongly FLAT-CUT at y148 only because upper art has not been made. Image2 ORIGINAL exact same square shows the intended full cloud silhouette. Extend Image1 upward to restore ONLY missing original top cap: original tallest rounded white/cyan crown reaches approximately y124, with same neighboring lobes and original contour matching Image2. Retain existing native positions, scale, lobe count, colors and shading; especially preserve the ONE existing painted cyan curl and entire lower cloud body at exactly its present coordinates. Do not add a curl, lobe, separate cloud, star, object or decoration. Keep completed LOWER164logical-pixel body/anchors visually identical and stationary; continue cut outline endpoints smoothly upward, no flat shelf, disconnected cap, rectangular cut or extra ridge at old y148. The rest of upper canvas is EXTERIOR SKY: clear transparent alpha0, no opaque blue backdrop. Solid white/cyan cloud interiors opaque, soft narrow native antialias at outer contour only; no pinholes or translucent highlights. Same square camera/crop, no zoom/reframe/rescale or moving the cloud inward. Match original cloud structure and existing native lower body, smooth original white/cyan volume, no drop shadow or aura.",
+    "referenceRect": [
+      1840,
+      0,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/generation-r2.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7032ce08-7a95-4491-9633-6ed236b62f4d.png",
+    "prompt": "Use case: precise-object-edit. Image1 is the current square HD cloudbank edge. Image2 has the authoritative completed LEFT32 and BOTTOM40 anchor bands of the same exact square. Fix Image1's LEFT32 cloud contour and white/cyan shading to match Image2 exactly at identical coordinates, especially the partly clipped large lowerLEFT cloud crest near80–90%down. Its slope/top is shifted relative to the finished left neighbor. Continue that ONE original crest naturally from the exact Image2 left curve; no spike, vertical jump, clipped white triangle, duplicated rim or extra lobe at the join. Keep Image1 BOTTOM40 identical and preserve same original middle crest and lower-right scallops, tiny grass corner, all object counts and original transparent sky. Do not copy a cropped strip as a whole new cloud or move the cloudbank up/down; correct only left registration while preserving source lobe structure. All other positions/crop/frame unchanged; square no zoom/reframe. Solid cloud interior opaque; outside sky alpha0 with narrow clean native antialias, no blue backdrop, new clouds, halos or holes. Sharp native geometry, smooth original cyan/white shading.",
+    "referenceRect": [
+      2320,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/generation-r3-reused.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7032ce08-7a95-4491-9633-6ed236b62f4d.png",
+    "prompt": "Use case: precise-object-edit. Image1 is the current square HD cloudbank edge. Image2 has the authoritative completed LEFT32 and BOTTOM40 anchor bands of the same exact square. Fix Image1's LEFT32 cloud contour and white/cyan shading to match Image2 exactly at identical coordinates, especially the partly clipped large lowerLEFT cloud crest near80–90%down. Its slope/top is shifted relative to the finished left neighbor. Continue that ONE original crest naturally from the exact Image2 left curve; no spike, vertical jump, clipped white triangle, duplicated rim or extra lobe at the join. Keep Image1 BOTTOM40 identical and preserve same original middle crest and lower-right scallops, tiny grass corner, all object counts and original transparent sky. Do not copy a cropped strip as a whole new cloud or move the cloudbank up/down; correct only left registration while preserving source lobe structure. All other positions/crop/frame unchanged; square no zoom/reframe. Solid cloud interior opaque; outside sky alpha0 with narrow clean native antialias, no blue backdrop, new clouds, halos or holes. Sharp native geometry, smooth original cyan/white shading.",
+    "referenceRect": [
+      2320,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true,
+    "sharedRepairs": [
+      {
+        "rect": [
+          2080,
+          404,
+          312,
+          56
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+      },
+      {
+        "rect": [
+          2288,
+          356,
+          176,
+          176
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-crest-whole-joint-r1/assembled.png"
+      }
+    ],
+    "reuseNote": "Reuse second full native frame with complete shared cloud-crest correction"
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-4d710c75-703b-49e2-8e1e-51de85060722.png",
+    "prompt": "Use case: precise-object-edit. Complete this square312logical HD map crop. Image1 EDIT TARGET shows finished LEFT32 and BOTTOM40 cloud/grass anchors; Image2 ORIGINAL exact same square on blue sky for viewing. Almost entire canvas is EXTERIOR SKY: output TRANSPARENT alpha0, never a painted blue backdrop. Artwork exists ONLY along lowerLEFT/BOTTOM: original white/lightcyan cloudbank with original large LEFT crest partly cut by frame, one middle rounded crest, small lowerRIGHT scallops tapering out of bottom crop, and original tiny grassy island corner at bottomLEFT. Preserve exact source lobe count, cloudbank position/scale/crop and grass silhouette, matching all Image1 finished left and bottom anchors in geometry, color and shading; no added cloud, puff, grass patch, tree, plant, star or decoration elsewhere. The existing lower cloudbank remains ONE body and its solid interiors fully opaque, no pinholes or translucent white holes; native soft antialias only outside outline. Preserve clear sky above and at RIGHT. No upper cloud or cloud tail belongs here. Same square camera/frame no zoom/reframe/rescale or moving cropped art inward. Smooth white/cyan cloud volume and sharp glossy cartoon grass consistent with native neighbors; no drop shadow, aura, dark outline or broad alpha glow.",
+    "referenceRect": [
+      2320,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/generation-r2.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-0dfb425c-4779-411d-ac29-8424c6fdf1cc.png",
+    "prompt": "Use case: precise-object-edit. Image1 is this newly generated square HD map. Correct ONLY BOTTOM40logical-pixel anchors so they match Image2's existing native BOTTOM40 strip exactly in coordinates, shape, color and texture. The lower grassy island contour and lower white cloudbank shifted slightly in Image1 and therefore do not join the finished map. Restore exact Image2 BOTTOM40 grass leaf scale, grass arc endpoints, black land outline, cloud/grass occlusion edge and two existing cloud crown positions without adding/removing any lobe or object. Keep the rest of Image1 visually identical: upper-left original tapered cloud tail and its tip length/position, all open transparent sky, same lower land and cloud composition. Blend no colors in software; paint one coherent native cartoon scene at the correct existing contour. Same square frame/camera/crop, no rescaling or shifting clipped art inward. Preserve LEFT32 anchor and upper tail exactly. All exterior sky remains clear alpha0, actual white/cyan clouds and grass solid opaque with narrow native antialias, no blue backdrop, shadows, pinholes or extra decorations. Correct bottom registration/material only, retain exact original two separate cloud fragments and source shape/counts.",
+    "referenceRect": [
+      2080,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/generation-r3-reused.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-c2facf24-4dbd-4d47-a0ec-0fa692c159df.png",
+    "prompt": "Use case: precise-object-edit. Complete this square312logical Star Cat Monopoly HD map crop. Image1 EDIT TARGET contains existing LEFT32 and BOTTOM40 anchors around a missing region; Image2 ORIGINAL exact same layout on blue sky for viewing. Most of the square is EXTERIOR SKY and must remain perfectly transparent alpha0, no blue painted backdrop. At upperLEFT, extend ONLY the original single cloud's tapered tail to the RIGHT, matching Image2 exact thin tip length/position, left anchor body/shading/contour, no new lobe or second upper cloud. At BOTTOM, original grassy island edge slopes down from lowerLEFT and rises toward lowerRIGHT, with original white/lightcyan cloudbank BEHIND the grass (two main visible rounded crowns at original positions); complete same existing lower cloudbank to match BOTTOM40 native cloud and grassy contours exactly, no duplicate cloud, bush, rock or object. Maintain open transparent sky between upper-tail and lower-cloudbank. Source blue is not art. Solid grass and actual cloud interiors opaque, soft native antialias only exterior, no accidental holes. Preserve all original counts, crop and coordinates, exact anchor colors, grass leaf scale and cliff/land silhouette. No added tree, building, symbol, star or decoration. Same square camera/frame no zoom/reframe/rescale or moving clipped objects inward. Sharp glossy cartoon grass, smooth white/cyan clouds, retain original thin taper without a dark outline or drop shadow.",
+    "referenceRect": [
+      2080,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true,
+    "sharedRepairs": [
+      {
+        "rect": [
+          2080,
+          404,
+          312,
+          56
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+      }
+    ],
+    "reuseNote": "Reuse first native body; shared source-native R1/R2 bottom context keeps original crowns and existing bank"
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-c2facf24-4dbd-4d47-a0ec-0fa692c159df.png",
+    "prompt": "Use case: precise-object-edit. Complete this square312logical Star Cat Monopoly HD map crop. Image1 EDIT TARGET contains existing LEFT32 and BOTTOM40 anchors around a missing region; Image2 ORIGINAL exact same layout on blue sky for viewing. Most of the square is EXTERIOR SKY and must remain perfectly transparent alpha0, no blue painted backdrop. At upperLEFT, extend ONLY the original single cloud's tapered tail to the RIGHT, matching Image2 exact thin tip length/position, left anchor body/shading/contour, no new lobe or second upper cloud. At BOTTOM, original grassy island edge slopes down from lowerLEFT and rises toward lowerRIGHT, with original white/lightcyan cloudbank BEHIND the grass (two main visible rounded crowns at original positions); complete same existing lower cloudbank to match BOTTOM40 native cloud and grassy contours exactly, no duplicate cloud, bush, rock or object. Maintain open transparent sky between upper-tail and lower-cloudbank. Source blue is not art. Solid grass and actual cloud interiors opaque, soft native antialias only exterior, no accidental holes. Preserve all original counts, crop and coordinates, exact anchor colors, grass leaf scale and cliff/land silhouette. No added tree, building, symbol, star or decoration. Same square camera/frame no zoom/reframe/rescale or moving clipped objects inward. Sharp glossy cartoon grass, smooth white/cyan clouds, retain original thin taper without a dark outline or drop shadow.",
+    "referenceRect": [
+      2080,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-crest-whole-joint-r1/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-a1476dec-8028-41f9-973c-f9f9edc0ed54.png",
+    "prompt": "Use case: precise-object-edit. Fix ONLY the broken cloud outlines in this existing square HD map crop. Near36%across/23%down and61%across/36%down, faulty tile overlays left two DETACHED curved white/cyan cap fragments and straight rectangular cut lines. Restore ONE continuous original cloudbank behind the grassy island, with one large left rounded crest and one middle rounded crest plus existing right-edge scallops. Each original crest has one smooth intact contour and solid white/cyan body, NO floating cap, duplicated rim, spike, gap or rectangular cutoff. Join to existing cloud volume below without changing original lobe counts, positions, scale, shading or grass occlusion. Keep ALL grass/leaf contours, arc marks, colors and exact positions unchanged. ALL outer16logical-pixel anchors stay identical; same square176logical crop/camera, no reframing/rescale. BLUE is EXTERIOR SKY shown for viewing: output clear TRANSPARENT alpha0 there, retain exact land/cloud silhouette and native narrow antialias, no opaque blue backdrop, aura or broad shadow. Solid grass/cloud interiors fully opaque, no holes. Fix cloud contour continuity only; do not add any object, extra cloud lobe, plant or decoration.",
+    "rect": [
+      2288,
+      356,
+      176,
+      176
+    ]
+  }
+]

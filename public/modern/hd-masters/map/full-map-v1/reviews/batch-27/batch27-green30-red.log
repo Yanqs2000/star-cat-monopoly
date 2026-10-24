@@ -1,0 +1,13 @@
+.F
+======================================================================
+FAIL: test_whole_disc_uses_one_native_source_without_vertical_lighting_cut (__main__.Green30.test_whole_disc_uses_one_native_source_without_vertical_lighting_cut)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch27_green30.py", line 9, in test_whole_disc_uses_one_native_source_without_vertical_lighting_cut
+    self.assertTrue(np.array_equal(a[mask],b[mask]),'Whole green30, its digits and lighting must come from one source across x1152')
+AssertionError: False is not true : Whole green30, its digits and lighting must come from one source across x1152
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.012s
+
+FAILED (failures=1)

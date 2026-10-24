@@ -1,0 +1,453 @@
+[
+  {
+    "id": "r5c9",
+    "row": 5,
+    "col": 9,
+    "rect": [
+      2112,
+      1172,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9932118055555555,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c9-r1.png",
+        "masterSha256": "5d0a1421385cff49a35684bb1021ec9a8c242ee0f88480063f970ab1dd535ddb",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          2112,
+          1172,
+          246,
+          368
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nPortrait2:3. Restore upper grass region with ONE grey three-block stone pillar cropped by top edge exactly as source, original slightly worn grass path, and continuous gold cliff edge on right. Keep entire existing bottom128 logical pixels unchanged, including the already-finished two-tree crowns and blue/white fixed map gateway fragment. Same object count and positions, do not add another stone or extend cropped stone above canvas, no new buildings.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r5c9-r1.png",
+    "referenceRect": [
+      2112,
+      1172,
+      246,
+      368
+    ],
+    "nativePixelDensity": 4.162601626016261,
+    "seams": [
+      {
+        "side": "bottom",
+        "meanRgbDifference": 6.553959131545339,
+        "p95RgbDifference": 22.566666666666606,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "e997077b52b2d98d8ab94b6d393350c82973169c1ad0db8475dffd51fd51490c",
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-04/r5c9/reference.json",
+      "sha256": "4ea2ef0477d45c9683f9db9c3abcbc9b62c1c84c719fba8ea822c4b27b2715a5",
+      "inlandEvidence": {
+        "minimumSourceAlpha": 251,
+        "zeroAlphaPixels": 0,
+        "non255Pixels": 391,
+        "sourceOutlineClipping": false
+      }
+    },
+    "appliedRepairs": [
+      "gateway-ring-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "reviewedAt": "2026-10-20",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-04/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r6c9",
+    "row": 6,
+    "col": 9,
+    "rect": [
+      2112,
+      1412,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9981944444444445,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c9-r1.png",
+        "masterSha256": "755aebfd64f5faa6e39b13cfd5bd423694eafeaf5a01b3de97a713ffce785976",
+        "nativePixelSize": [
+          1534,
+          1025
+        ],
+        "referenceRect": [
+          1984,
+          1412,
+          368,
+          246
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nLandscape3:2. Complete the right half of lime green CAMERA-shaped building at lower left, its green base and small round green tree on base, and exactly two larger lobed trees on the right grass parcel matching original: one rear round-lobed crown and one front multi-lobed crown with its trunk. Keep existing CAMERA label and roof/lens/buttons unchanged. Same building base outline, no extra buildings, roads, trees, camera lenses or labels.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 12.012771392081735,
+            "p95RgbDifference": 73.18333333333324,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c9-r2.png",
+        "masterSha256": "883b310476401783be2478ad9f5bf0426d76f16d5053c89b4d4f10710da88eed",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          1412,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nSquare canvas; image1 left32 logical pixels are LOCKED. Fill only transparent missing area to right. Complete the clipped right edge of CAMERA building, green base and its small round tree, with exactly two larger lobed trees on grass. Existing left HD silhouette takes priority over low-resolution differences: extend from its cut edge without moving, rescaling or redesigning it. Do not recreate the CAMERA label or add letters beyond its existing end. Keep base and roof boundary positions exactly. Tree positions/count/trunks match image2. Preserve full canvas.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r6c9-r2.png",
+    "referenceRect": [
+      2080,
+      1412,
+      272,
+      272
+    ],
+    "nativePixelDensity": 4.610294117647059,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 4.474137931034483,
+        "p95RgbDifference": 15.616666666666635,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "02ec2f121265c161e989455f44ef90b839e845dc76353a93e8fd9011221ee359",
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-04/r6c9/reference.json",
+      "sha256": "03250636aec602c81957df4022fcf616114deb1230343d02c642b87bc25fad8e",
+      "inlandEvidence": {
+        "minimumSourceAlpha": 251,
+        "zeroAlphaPixels": 0,
+        "non255Pixels": 104,
+        "sourceOutlineClipping": false
+      }
+    },
+    "appliedRepairs": [
+      "gateway-ring-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "reviewedAt": "2026-10-20",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-04/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r7c6",
+    "row": 7,
+    "col": 6,
+    "rect": [
+      1392,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9693576388888889,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c6-r1.png",
+        "masterSha256": "6e202e804516dc151d2bc919cddb6be65b3d355528d970b0047598c9f630f2c0",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1392,
+          1596,
+          296,
+          296
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nSquare canvas. Fill the missing front/left of the existing lime-green futuristic building at top-right. Match image2 exactly: yellow/blue rear tower, orange lightning-shaped sign, the two cream round front platforms on red/orange bases, same blue/cyan top surfaces, small cone tree left, and the three existing green horizontal slabs to right. Do not invent text. Continue the right road with the original cyan10, blue30 and green20 discs and original clipped extra disc at bottom. Original grass/curb/cliff footprint unchanged; lock existing right building/road pixels.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c6-r1.png",
+    "referenceRect": [
+      1392,
+      1596,
+      296,
+      296
+    ],
+    "nativePixelDensity": 4.236486486486487,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 5.181818181818182,
+        "p95RgbDifference": 16.333333333333332,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.2293460925039876,
+        "p95RgbDifference": 6.0,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "1fda2ee974ae86c043361286c3fa1c337dbbc07cd3627d63c2a4609af93ac3f7",
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-04/r7c6/reference.json",
+      "sha256": "fb9faa94a69f7eab4dbf696772da83870edb3eba93471e8d115e56849cbf1f6b",
+      "inlandEvidence": {
+        "minimumSourceAlpha": 243,
+        "zeroAlphaPixels": 0,
+        "non255Pixels": 1765,
+        "sourceOutlineClipping": false
+      }
+    },
+    "appliedRepairs": [
+      "green-building-join-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "reviewedAt": "2026-10-20",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-04/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r8c2",
+    "row": 8,
+    "col": 2,
+    "rect": [
+      400,
+      1892,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9805034722222222,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c2-r1.png",
+        "masterSha256": "c22902c242a59c0297d65a765be498a4eae1b975725f0354e8c659fc9616fb5d",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          400,
+          1892,
+          368,
+          246
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nLandscape3:2. Restore grass ledge and golden vertical cliff on left. There are exactly TWO original lobed trees along the upper edge: the right one is existing sharp reference and the left one must be completed at the same source position and trunk; same lobe pattern as image2. Keep cliff on right at identical coordinates and phase, match facet boundaries and winding grass outline. No new tree, ivy, stones or sky.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c2-r1.png",
+    "referenceRect": [
+      400,
+      1892,
+      368,
+      246
+    ],
+    "nativePixelDensity": 4.162601626016261,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 7.138250319284802,
+        "p95RgbDifference": 18.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "35fdea6d101d7c44524f2571aa1e8b0cf59f2c45ab1d066558190f27dc904c88",
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-04/r8c2/reference.json",
+      "sha256": "ff2a28b3bb816fc54148e98f36da7c99332ff5946344d14a0cddcab7d6f0762f",
+      "inlandEvidence": {
+        "minimumSourceAlpha": 247,
+        "zeroAlphaPixels": 0,
+        "non255Pixels": 1123,
+        "sourceOutlineClipping": false
+      }
+    },
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "reviewedAt": "2026-10-20",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-04/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r8c3",
+    "row": 8,
+    "col": 3,
+    "rect": [
+      640,
+      1892,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9940592447916666,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c3-r1.png",
+        "masterSha256": "28d9d9d6ecc4f797198a25a53657c3b58a4bf80d5f91abe97ade83c42040f45b",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          640,
+          1836,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nSquare. Complete the existing tree group at upper left: source has one large three-lobed green tree below the already-finished round tree, same lobes and trunks. Grass forms an irregular narrow ledge descending to golden vertical cliff facets at bottom/left/right. Exactly match image2 cliff outline and facet boundaries, keep the finished right cliff edge stationary, no added trees, rocks or ivy. Dense grass must join existing top/right textures.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c3-r1.png",
+    "referenceRect": [
+      640,
+      1836,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 2.0268199233716473,
+        "p95RgbDifference": 7.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 4.021244763614601,
+        "p95RgbDifference": 8.333333333333334,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 67
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "d8e776dfaf1fa56fbf48c3140a1289eab09871b984f4f518a77219caed8003b6",
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-04/r8c3/reference.json",
+      "sha256": "8598c5615f3cdedc4aecc8c7cecf136bc450c470d38f250227908f7eeeccefac",
+      "inlandEvidence": {
+        "minimumSourceAlpha": 251,
+        "non255Pixels": 365,
+        "zeroAlphaPixels": 0,
+        "sourceOutlineClipping": false
+      }
+    },
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "reviewedAt": "2026-10-20",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-04/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r8c7",
+    "row": 8,
+    "col": 7,
+    "rect": [
+      1632,
+      1892,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9031597222222222,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c7-r1.png",
+        "masterSha256": "3fa5c5158c5081e741d193f3f5edbc28551e101f2c04fd4a9814289a7fdccea2",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          1632,
+          1764,
+          246,
+          368
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nPortrait2:3. Extend the grassland into the original golden cliff: identical winding grass-to-cliff outline and vertical orange/yellow facets. Preserve one irregular main ivy cluster on cliff left-of-center plus its one small detached green leaf to the left, in original positions. Keep already-finished stone pillar and right cropped round tree unchanged at top. No sky is present in the core; full canvas opaque, no clipping or added rocks.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c7-r1.png",
+    "referenceRect": [
+      1632,
+      1764,
+      246,
+      368
+    ],
+    "nativePixelDensity": 4.162601626016261,
+    "seams": [
+      {
+        "side": "top",
+        "meanRgbDifference": 2.9562579821200514,
+        "p95RgbDifference": 6.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "dbbeb43751e41a1126735daa5fc1703f25362a8fa69b25637e07655967c21003",
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-04/r8c7/reference.json",
+      "sha256": "6db20c48065358b2e3a0b97392c695c522b26c73836815bb2d5cf013b5a30ee1",
+      "inlandEvidence": {
+        "minimumSourceAlpha": 247,
+        "non255Pixels": 5578,
+        "zeroAlphaPixels": 0,
+        "sourceOutlineClipping": false
+      }
+    },
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "reviewedAt": "2026-10-20",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-04/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  }
+]

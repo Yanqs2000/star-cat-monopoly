@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-20",
+  "generator": "built-in image_gen",
+  "newCandidateCount": 5,
+  "newCandidateIds": [
+    "r3c8",
+    "r4c7",
+    "r4c8",
+    "r4c9",
+    "r4c10"
+  ],
+  "appliedLocalRepairs": [
+    "blue30-curb-r2"
+  ],
+  "approvedSourceReused": 4,
+  "selectedCandidateTotal": 30,
+  "notGenerated": 58,
+  "rework": 15,
+  "pendingVisualReview": 2,
+  "productionEnabled": false,
+  "minimumNewNativeDensity": 4.0,
+  "mapPythonTestsPassed": 16,
+  "actualMapSceneViews": 9,
+  "decodePendingAtCapture": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "browserErrors": [],
+  "reviewAtlasCount": 31,
+  "approvedRuntimeTilesLoadedDirectly": 4,
+  "opaqueApprovedReferenceAtlasesExcludedFromOverlay": true,
+  "reviewAtlasHashesVerified": true,
+  "losslessReviewAtlasPixelIdentityVerified": true,
+  "allNativeAttemptHashesVerified": true,
+  "allReadyAssemblyHashesVerified": true,
+  "referenceFilesVerified": true,
+  "localRepairExactSourcePixelSelectionVerified": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "nativeAlphaEdgeTrialRejected": [
+    "r5c10",
+    "r7c9",
+    "r8c8"
+  ],
+  "trialNativeAlphaUnmodified": true,
+  "sourceSilhouetteMaskApplied": false,
+  "staticVerifier": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "jobs": 142,
+    "complete": false
+  },
+  "mapVerifier": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "charactersImported": false
+  },
+  "unfinished": [
+    "native alpha edge quality",
+    "remaining map coverage",
+    "rework seams and wrong digits",
+    "perimeter handoff",
+    "final user art acceptance",
+    "production integration"
+  ]
+}

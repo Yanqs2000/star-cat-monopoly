@@ -1,0 +1,2181 @@
+[
+  {
+    "id": "r8c9",
+    "row": 8,
+    "col": 9,
+    "rect": [
+      2112,
+      1892,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.42171875,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c9-r1.png",
+        "masterSha256": "67c3ba27f316237d3ed53bea6471ea0bf4c917d84c7ea69b547c58059507db01",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2048,
+          1828,
+          312,
+          312
+        ],
+        "prompt": "Edit the FIRST reference into a complete seamless high-definition 2D isometric game-map cliff tile. First image contains already finished HD pixels along its TOP and LEFT bands, and the central/lower-right transparent area is the unfinished target. Preserve those colored HD bands precisely, including the gold cliff grooves at the top, grass at upper left, and the small cropped existing white/cyan cloud at the upper-right edge. Fill the missing cliff, matching the SECOND reference's original exact layout, projection counts, proportions and outer silhouette. The target is the bottom-right continuation of a floating yellow/gold island: extend the existing tall vertical golden cliff projections downward, with brown recessed grooves, the short rounded recessed projection near the center-left, and the long narrow right-hand descending finger. The gold cliff tips terminate above fully transparent empty sky. Keep the same stepped broken cliff outline as reference 2. No new objects, no extra ivy or vines, no new clouds, no text or roads. The existing cloud is only a cropped continuation at the top-right. Clean bright polished cartoon game art, dark brown contour, faceted gold shading consistent with first reference. Canvas square, orthographic/isometric fixed viewpoint, no perspective reframing. The top 20.5 percent and left 20.5 percent are fixed HD connection anchors: maintain cliff edges, groove positions, colors and cloud boundary continuously. Every opaque cliff surface must be solid without accidental holes; exterior empty sky must have genuine native transparent alpha, not white or black fill. No checkerboard. Output a single full canvas image, no border.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 752225,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0006257488000122098,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 47.15095311695003,
+            "p95RgbDifference": 139.4666666666666,
+            "visibleCutSamples": 647,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.046222222222222,
+            "p95RgbDifference": 7.666666666666667,
+            "visibleCutSamples": 750,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c9-r2.png",
+        "masterSha256": "cb4badbbfc09785f0540d7c611a900fe16758910e849242424e5c85416ced7df",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2048,
+          1828,
+          312,
+          312
+        ],
+        "prompt": "Repair a single game texture JOIN. FIRST image is the authoritative already completed HD map: its colored TOP and LEFT bands MUST stay exactly where they are, same shape, strokes and colors. SECOND image is a new candidate; its TOP connection is correct but it incorrectly replaced the LEFT band's cliff grooves and outer silhouette. Restore the FIRST image's entire left 20.5%-width colored band faithfully. In particular the small dark notch halfway down the left band and the long narrow gold outlined outer edge below it must stay at exactly the FIRST reference coordinates. Preserve all first-reference colored pixels, connect candidate's central cliff naturally to them. The missing central area should otherwise use the second image's cliff projection layout, including short golden central protrusion, recessed brown rock behind it, long narrow right protrusion ending lower, and existing cloud cropped at upper-right. Preserve first-reference top 20.5% band. Do NOT extend or redraw projections inside the fixed left band, do NOT insert extra cracks there. Transparent outside cliff/cloud remains native RGBA transparency. All cliff interiors solid, no holes. No plants, objects, text, new clouds or border. Square canvas, matching both reference coordinates exactly, no reframing. Render polished crisp gold faceted cartoon art matching first reference.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 750871,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0006117584813127498,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 44.51948717948718,
+            "p95RgbDifference": 141.33333333333334,
+            "visibleCutSamples": 650,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.9641158668396024,
+            "p95RgbDifference": 8.833333333333332,
+            "visibleCutSamples": 771,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c9-r3.png",
+        "masterSha256": "03607516d6c3a1ff7035abf29d955cb3670cef0b663a38e100d99e588f47a351",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2016,
+          1828,
+          312,
+          312
+        ],
+        "prompt": "Complete the transparent missing middle/lower-right of this floating island game-map crop. FIRST reference is authoritative HD context. Preserve its wide LEFT band (31 percent canvas width) and TOP band (20.5 percent height), keeping ALL their existing contours and shapes at exactly their current coordinates. SECOND reference is the low-resolution original layout; use its central gold cliff projection shapes only for completing the missing right area, never to change the already HD left area. Continue solid yellow/gold cliff with dark-brown grooves into the missing area. There is one short rounded golden front-face inside a darker recessed niche around canvas center, and a longer narrow golden finger to its right, both ending in the same positions as second reference. At far right/top only the existing cropped white-blue cloud continues; empty exterior sky below/right is truly transparent. Bright polished faceted 2D cartoon game art, matching first reference precisely. No additional plants, clouds, faces, rocks or decorations. No white/black fill or accidental internal transparent holes. Fixed square crop, no camera movement. Pay particular attention to the existing left outline's inward notch at 22%-width/55%-height and the slim outer gold edge descending to 19%-width/80%-height: these are fixed, do not replace with a new protrusion. Fill the absent area while retaining the first image's continuous outline and shading.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 619353,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0004254328731790328,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 5760,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 37.61218985976267,
+            "p95RgbDifference": 122.38333333333333,
+            "visibleCutSamples": 618,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 2.684824902723735,
+            "p95RgbDifference": 5.333333333333333,
+            "visibleCutSamples": 771,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c9-r4.png",
+        "masterSha256": "03607516d6c3a1ff7035abf29d955cb3670cef0b663a38e100d99e588f47a351",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2016,
+          1828,
+          312,
+          312
+        ],
+        "prompt": "Complete the transparent missing middle/lower-right of this floating island game-map crop. FIRST reference is authoritative HD context. Preserve its wide LEFT band (31 percent canvas width) and TOP band (20.5 percent height), keeping ALL their existing contours and shapes at exactly their current coordinates. SECOND reference is the low-resolution original layout; use its central gold cliff projection shapes only for completing the missing right area, never to change the already HD left area. Continue solid yellow/gold cliff with dark-brown grooves into the missing area. There is one short rounded golden front-face inside a darker recessed niche around canvas center, and a longer narrow golden finger to its right, both ending in the same positions as second reference. At far right/top only the existing cropped white-blue cloud continues; empty exterior sky below/right is truly transparent. Bright polished faceted 2D cartoon game art, matching first reference precisely. No additional plants, clouds, faces, rocks or decorations. No white/black fill or accidental internal transparent holes. Fixed square crop, no camera movement. Pay particular attention to the existing left outline's inward notch at 22%-width/55%-height and the slim outer gold edge descending to 19%-width/80%-height: these are fixed, do not replace with a new protrusion. Fill the absent area while retaining the first image's continuous outline and shading.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 724677,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0004559900764815549,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 5760,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 0.18457300275482097,
+            "p95RgbDifference": 1.6666666666666667,
+            "visibleCutSamples": 847,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 2.6744186046511627,
+            "p95RgbDifference": 5.333333333333333,
+            "visibleCutSamples": 774,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sharedRepairs": [
+          {
+            "repairId": "southeast-shared-cliff-r1",
+            "rect": [
+              1952,
+              1916,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southeast-shared-cliff-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 619353,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0004254328731790328,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c9-r3.png",
+          "masterSha256": "03607516d6c3a1ff7035abf29d955cb3670cef0b663a38e100d99e588f47a351",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c9-r4.png",
+    "referenceRect": [
+      2016,
+      1828,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 0.18457300275482097,
+        "p95RgbDifference": 1.6666666666666667,
+        "visibleCutSamples": 847,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.6744186046511627,
+        "p95RgbDifference": 5.333333333333333,
+        "visibleCutSamples": 774,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "southeast-shared-cliff-r1",
+        "rect": [
+          1952,
+          1916,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southeast-shared-cliff-r1/assembled.png"
+      }
+    ],
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 724677,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0004559900764815549,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "appliedRepairs": [
+      "southeast-shared-cliff-r1"
+    ],
+    "assembledSha256": "e8a1708f572a92cf74cd260aaa437e1214d1f6911b65a72ad60e32e4581b0ba2",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r9c3",
+    "row": 9,
+    "col": 3,
+    "rect": [
+      640,
+      2132,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.43732096354166666,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r1.png",
+        "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          640,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop at high definition. This is a CROP of a continuous golden floating-island cliff, not an isolated rock cutout. Preserve the SAME vertical cliff faces and hanging finger counts, heights, grooves and stepped outside silhouette. SOLID GOLDEN ROCK fills the entire TOP edge behind the existing ivy and continues off the LEFT edge wherever original shows rock; do not delete those flat rock planes as background. Keep the existing large forked ivy patch at upper-left and cropped climbing ivy at upper-right, same shapes and size. A small fragment of the ONE original white/cyan cloud is cropped at lower-right, with no spiral visible in this crop; retain it and no additional clouds.\nSECOND reference supplies the already finished HD TOP64 logical pixels (~20.5% height). Match all of its gold/brown plane positions, contours, leaf clusters and colors precisely, then continue those forms downward following original layout. Every opaque rock/leaf/cloud interior stays solid, no accidental holes. Only the original exterior below/between cliff tips and cloud is genuine RGBA transparent sky. Bright warm faceted yellow/amber rock, dark brown contours and dense bright HD green leaves, matching second reference. No extra pillars, plants, cracks, objects, characters or text. Square exact crop, no reframing or scaling.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 507041,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007211373365994369,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 14.900359066427288,
+            "p95RgbDifference": 67.44999999999997,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r2.png",
+        "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          640,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop at high definition. This is a CROP of a continuous golden floating-island cliff, not an isolated rock cutout. Preserve the SAME vertical cliff faces and hanging finger counts, heights, grooves and stepped outside silhouette. SOLID GOLDEN ROCK fills the entire TOP edge behind the existing ivy and continues off the LEFT edge wherever original shows rock; do not delete those flat rock planes as background. Keep the existing large forked ivy patch at upper-left and cropped climbing ivy at upper-right, same shapes and size. A small fragment of the ONE original white/cyan cloud is cropped at lower-right, with no spiral visible in this crop; retain it and no additional clouds.\nSECOND reference supplies the already finished HD TOP64 logical pixels (~20.5% height). Match all of its gold/brown plane positions, contours, leaf clusters and colors precisely, then continue those forms downward following original layout. Every opaque rock/leaf/cloud interior stays solid, no accidental holes. Only the original exterior below/between cliff tips and cloud is genuine RGBA transparent sky. Bright warm faceted yellow/amber rock, dark brown contours and dense bright HD green leaves, matching second reference. No extra pillars, plants, cracks, objects, characters or text. Square exact crop, no reframing or scaling.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 520688,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0006044628792725122,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "southwest-wall-joint-r1",
+            "rect": [
+              640,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 507041,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007211373365994369,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r1.png",
+          "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+          "newImageGenerated": false
+        }
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r3.png",
+        "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          640,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop at high definition. This is a CROP of a continuous golden floating-island cliff, not an isolated rock cutout. Preserve the SAME vertical cliff faces and hanging finger counts, heights, grooves and stepped outside silhouette. SOLID GOLDEN ROCK fills the entire TOP edge behind the existing ivy and continues off the LEFT edge wherever original shows rock; do not delete those flat rock planes as background. Keep the existing large forked ivy patch at upper-left and cropped climbing ivy at upper-right, same shapes and size. A small fragment of the ONE original white/cyan cloud is cropped at lower-right, with no spiral visible in this crop; retain it and no additional clouds.\nSECOND reference supplies the already finished HD TOP64 logical pixels (~20.5% height). Match all of its gold/brown plane positions, contours, leaf clusters and colors precisely, then continue those forms downward following original layout. Every opaque rock/leaf/cloud interior stays solid, no accidental holes. Only the original exterior below/between cliff tips and cloud is genuine RGBA transparent sky. Bright warm faceted yellow/amber rock, dark brown contours and dense bright HD green leaves, matching second reference. No extra pillars, plants, cracks, objects, characters or text. Square exact crop, no reframing or scaling.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 520585,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0006379963818210583,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "southwest-wall-joint-r1",
+            "rect": [
+              640,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+          },
+          {
+            "repairId": "southwest-top-whole-r1",
+            "rect": [
+              840,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-top-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 507041,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007211373365994369,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r1.png",
+          "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+          "newImageGenerated": false
+        }
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r4.png",
+        "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          640,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop at high definition. This is a CROP of a continuous golden floating-island cliff, not an isolated rock cutout. Preserve the SAME vertical cliff faces and hanging finger counts, heights, grooves and stepped outside silhouette. SOLID GOLDEN ROCK fills the entire TOP edge behind the existing ivy and continues off the LEFT edge wherever original shows rock; do not delete those flat rock planes as background. Keep the existing large forked ivy patch at upper-left and cropped climbing ivy at upper-right, same shapes and size. A small fragment of the ONE original white/cyan cloud is cropped at lower-right, with no spiral visible in this crop; retain it and no additional clouds.\nSECOND reference supplies the already finished HD TOP64 logical pixels (~20.5% height). Match all of its gold/brown plane positions, contours, leaf clusters and colors precisely, then continue those forms downward following original layout. Every opaque rock/leaf/cloud interior stays solid, no accidental holes. Only the original exterior below/between cliff tips and cloud is genuine RGBA transparent sky. Bright warm faceted yellow/amber rock, dark brown contours and dense bright HD green leaves, matching second reference. No extra pillars, plants, cracks, objects, characters or text. Square exact crop, no reframing or scaling.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 520585,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0006379963818210583,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 3.2897689768976894,
+            "p95RgbDifference": 23.333333333333332,
+            "visibleCutSamples": 1010,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "southwest-wall-joint-r1",
+            "rect": [
+              640,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+          },
+          {
+            "repairId": "southwest-top-whole-r1",
+            "rect": [
+              840,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-top-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 507041,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007211373365994369,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r1.png",
+          "masterSha256": "5a11f0082735518b9c5c53959e4b2dea85bbacceaa33528e4df9e7887b070710",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r4.png",
+    "referenceRect": [
+      640,
+      2068,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 3.2897689768976894,
+        "p95RgbDifference": 23.333333333333332,
+        "visibleCutSamples": 1010,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "southwest-wall-joint-r1",
+        "rect": [
+          640,
+          1988,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+      },
+      {
+        "repairId": "southwest-top-whole-r1",
+        "rect": [
+          840,
+          1988,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-top-whole-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 521919,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005511532085543105,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "pairedValidation": {
+      "status": "passed",
+      "neighbor": "r9c4",
+      "direction": "right",
+      "seams": [
+        {
+          "side": "right",
+          "meanRgbDifference": 3.2897689768976894,
+          "p95RgbDifference": 23.333333333333332,
+          "visibleCutSamples": 1010,
+          "maximumChangedPixels": 69
+        },
+        {
+          "side": "top",
+          "meanRgbDifference": 0.0,
+          "p95RgbDifference": 0.0,
+          "visibleCutSamples": 1114,
+          "maximumChangedPixels": 69
+        }
+      ],
+      "method": "Reciprocal overlap validated after the no-left-context candidate was staged first"
+    },
+    "assembledSha256": "9b12c7bf7d7ce9ebe3f394e115fae0a39ae0fa13e81145fc92214179fd980493",
+    "appliedRepairs": [
+      "southwest-cloud-full-r1",
+      "southwest-wall-joint-r1",
+      "southwest-top-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r9c4",
+    "row": 9,
+    "col": 4,
+    "rect": [
+      896,
+      2132,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.39327799479166664,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r1.png",
+        "masterSha256": "7593397cec6f7616b1979b108985e6a11d930ea37cdf0e580f18dc30c344fba4",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          896,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original floating-island map crop as HD cartoon art, preserving exact layout and object counts. Golden vertical cliff faces hang from the upper island; at upper-left the same existing cropped green ivy patch continues downward. Below the cliffs is ONE existing white/cyan cloud, broad rounded body extending in from LEFT, with its SAME single pale-cyan spiral toward center-right. A rounded golden boulder rim cropped at RIGHT partly hides that cloud. Keep all cliff finger counts, heights, groove positions, ivy size, cloud lobes and spiral position as original. The cloud's lower part is cropped by the bottom canvas wherever original shows it continuing: do not artificially shorten it.\nSECOND reference is fixed finished HD TOP64 logical pixels (~20.5% height) and RIGHT56 logical pixels (~18% width). Match their existing gold faces, brown outlines, ivy leaves and boulder/cloud fragment positions precisely. Continue those same forms into the missing central/lower area. Bright clean golden/amber faceted rock, dark brown contours, dense bright green HD leaves, soft white/cyan cloud. Genuine native transparent alpha outside island/cloud, solid interior without accidental holes. No extra pillars, ivy patches, clouds, spirals, objects, characters or text. Square exact crop, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "rejected": "Source coverage review: upper-left solid cliff behind ivy removed as exterior sky; no assembly allowed",
+        "strictAlphaAuditError": "Native map contains 73748 enclosed low-alpha pixels",
+        "sourceVoidReview": "The original has a matching enclosed sky opening; strict hole rejection is a separate QA false positive. Upper-left missing solid rock remains an independent rejection."
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r2.png",
+        "masterSha256": "bea645516df6f56268f051271e890dd6ee26c7b19e08da5bddc72bc4e11feb7d",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          896,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. FIRST image has one incorrect cutout: the UPPER-LEFT cliff plane behind the green ivy was removed as transparent background. Restore that solid golden/amber ROCK SURFACE, following THIRD original layout exactly. In the source crop the LEFT canvas edge is solid rock/ivy from top down to about61% height, with a small true sky gap below it and the existing cloud farther below. Do NOT leave transparent sky behind/left of the ivy in that upper-left area. This is a cropped continuous cliff, not an isolated cutout; the gold rock continues off the TOP and LEFT canvas edges. Match the SECOND reference's already-finished HD top64 logical pixels, including its solid gold upper-left corner and existing ivy, and its right56 logical pixels accurately.\nKeep all other current cliff fingers, gold faces, boulder rim at right, single white/cyan cloud and its ONE spiral in the same positions, size and counts. The enclosed triangular SKY OPENING between the hanging cliff and cloud is intentional and is also present in THIRD source; preserve that opening as transparent. Outside below cloud also remains transparent. Solid rock/ivy/cloud interiors, no new accidental holes. No new objects, plants, clouds or grooves. Same bright faceted gold style and dark brown contours, square crop, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "rejected": "Upper-left corner restored, but source's solid left cliff plane below ivy is still removed; not selected",
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 72696,
+          "referenceApprovedSkyPixels": 72696,
+          "referenceRegistrationOutlierPixels": 49,
+          "borderConnectedLowAlphaPixels": 189173,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007039674000137359,
+          "nativeAlphaModified": false
+        }
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r3.png",
+        "masterSha256": "bea645516df6f56268f051271e890dd6ee26c7b19e08da5bddc72bc4e11feb7d",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          896,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. FIRST image has one incorrect cutout: the UPPER-LEFT cliff plane behind the green ivy was removed as transparent background. Restore that solid golden/amber ROCK SURFACE, following THIRD original layout exactly. In the source crop the LEFT canvas edge is solid rock/ivy from top down to about61% height, with a small true sky gap below it and the existing cloud farther below. Do NOT leave transparent sky behind/left of the ivy in that upper-left area. This is a cropped continuous cliff, not an isolated cutout; the gold rock continues off the TOP and LEFT canvas edges. Match the SECOND reference's already-finished HD top64 logical pixels, including its solid gold upper-left corner and existing ivy, and its right56 logical pixels accurately.\nKeep all other current cliff fingers, gold faces, boulder rim at right, single white/cyan cloud and its ONE spiral in the same positions, size and counts. The enclosed triangular SKY OPENING between the hanging cliff and cloud is intentional and is also present in THIRD source; preserve that opening as transparent. Outside below cloud also remains transparent. Solid rock/ivy/cloud interiors, no new accidental holes. No new objects, plants, clouds or grooves. Same bright faceted gold style and dark brown contours, square crop, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 72696,
+          "referenceApprovedSkyPixels": 72696,
+          "referenceRegistrationOutlierPixels": 49,
+          "borderConnectedLowAlphaPixels": 189173,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007039674000137359,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 8.772615276311157,
+            "p95RgbDifference": 18.333333333333332,
+            "visibleCutSamples": 947,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 15.737283064033514,
+            "p95RgbDifference": 50.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large",
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r2.png",
+          "masterSha256": "bea645516df6f56268f051271e890dd6ee26c7b19e08da5bddc72bc4e11feb7d",
+          "newImageGenerated": false
+        }
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r4.png",
+        "masterSha256": "bea645516df6f56268f051271e890dd6ee26c7b19e08da5bddc72bc4e11feb7d",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          896,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. FIRST image has one incorrect cutout: the UPPER-LEFT cliff plane behind the green ivy was removed as transparent background. Restore that solid golden/amber ROCK SURFACE, following THIRD original layout exactly. In the source crop the LEFT canvas edge is solid rock/ivy from top down to about61% height, with a small true sky gap below it and the existing cloud farther below. Do NOT leave transparent sky behind/left of the ivy in that upper-left area. This is a cropped continuous cliff, not an isolated cutout; the gold rock continues off the TOP and LEFT canvas edges. Match the SECOND reference's already-finished HD top64 logical pixels, including its solid gold upper-left corner and existing ivy, and its right56 logical pixels accurately.\nKeep all other current cliff fingers, gold faces, boulder rim at right, single white/cyan cloud and its ONE spiral in the same positions, size and counts. The enclosed triangular SKY OPENING between the hanging cliff and cloud is intentional and is also present in THIRD source; preserve that opening as transparent. Outside below cloud also remains transparent. Solid rock/ivy/cloud interiors, no new accidental holes. No new objects, plants, clouds or grooves. Same bright faceted gold style and dark brown contours, square crop, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 84722,
+          "referenceApprovedSkyPixels": 84722,
+          "referenceRegistrationOutlierPixels": 39,
+          "borderConnectedLowAlphaPixels": 86625,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0008426367307070582,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 8.772615276311157,
+            "p95RgbDifference": 18.333333333333332,
+            "visibleCutSamples": 947,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": true,
+        "sharedRepairs": [
+          {
+            "repairId": "southwest-wall-joint-r1",
+            "rect": [
+              640,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+          },
+          {
+            "repairId": "southwest-top-whole-r1",
+            "rect": [
+              840,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-top-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 72696,
+          "referenceApprovedSkyPixels": 72696,
+          "referenceRegistrationOutlierPixels": 49,
+          "borderConnectedLowAlphaPixels": 189173,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007039674000137359,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r2.png",
+          "masterSha256": "bea645516df6f56268f051271e890dd6ee26c7b19e08da5bddc72bc4e11feb7d",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c4-r4.png",
+    "referenceRect": [
+      896,
+      2068,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 8.772615276311157,
+        "p95RgbDifference": 18.333333333333332,
+        "visibleCutSamples": 947,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "southwest-wall-joint-r1",
+        "rect": [
+          640,
+          1988,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+      },
+      {
+        "repairId": "southwest-top-whole-r1",
+        "rect": [
+          840,
+          1988,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-top-whole-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 83655,
+      "referenceApprovedSkyPixels": 83655,
+      "referenceRegistrationOutlierPixels": 45,
+      "borderConnectedLowAlphaPixels": 78824,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0009354987377645708,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "a34ea77802de8e1ba02dfe9786a66553b48cbc58126057031fe0a913818c2f4f",
+    "appliedRepairs": [
+      "southwest-cloud-full-r1",
+      "southwest-wall-joint-r1",
+      "southwest-top-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r9c5",
+    "row": 9,
+    "col": 5,
+    "rect": [
+      1152,
+      2132,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.7738888888888888,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c5-r1.png",
+        "masterSha256": "937297118b187e5d60a0ba90f86199fdf626fc0f53863cd7dde1d8d5267a8d17",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1152,
+          2132,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Redraw FIRST original square map crop as high-definition cartoon game art, retaining exact original layout and object counts. A curved rim of overlapping tall rounded golden boulders occupies most of the image and descends to its outer cliff tips near the lower edge. Keep the SAME number of boulders, their size, overlaps, heights and silhouette, without inventing more grooves or rocks. At TOP is a cropped shallow blue pond with grassy bank and a partial grey paving edge at the very top; retain those original fragments. There is ONE small oval stone at upper-right in the pond, already provided by SECOND HD reference, keep it in that position and do not add others. Retain the existing tiny white/cyan cloud fragment cropped at far LEFT behind the boulders; do not add new clouds.\nSECOND is fixed HD RIGHT72-logical-pixel context (~23% canvas width). Match its boulder planes, outlines, gold/orange palette, water, grass and stone precisely, making a continuous joint. Top and left forms are cropped portions of a larger scene. Rounded golden volume, bright clean faceted shading, dark brown contour, clear blue water matching the finished right reference. Exterior below/around the cliff is true native transparent RGBA, solid interiors with no holes. No characters, new props, extra vegetation, text or decorations. Fixed square crop, no reframing or scaling.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 238096,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.00028807338049342585,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 4.016602809706258,
+            "p95RgbDifference": 8.283333333333303,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c5-r1.png",
+    "referenceRect": [
+      1152,
+      2132,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 4.016602809706258,
+        "p95RgbDifference": 8.283333333333303,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 24805,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014129269975484798,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "appliedRepairs": [
+      "pond-rim-bottom-whole-r1",
+      "southwest-cloud-full-r1"
+    ],
+    "assembledSha256": "0e83686f8f6d8a8e1e8bd315cd4d8cd1fe76ec475d7d9ddcf0b8d742e823d603",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r9c6",
+    "row": 9,
+    "col": 6,
+    "rect": [
+      1392,
+      2132,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.7244791666666667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c6-r1.png",
+        "masterSha256": "38d9d583f04f2db6b5add52084916d888d3a6a387d4a770a7204431ef403c491",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1360,
+          2100,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop into crisp high-definition 2D cartoon game art, preserving the exact same composition and all objects. A curved floating-island rim made of several large rounded golden boulders sweeps diagonally from bottom-left to upper-right, with the same boulder count, size and overlapping silhouettes as original. At upper-left is a cropped shallow blue pond, grassy bank and its SAME small grey oval stone; keep the pond contour and visible stone count. At right is the cropped amber vertical cliff continuing from the boulder rim. A small portion of the ONE existing white/cyan cloud is cropped at lower-right, same original location, continuing the neighboring cloud; include it, no extra clouds. Exterior below the diagonal boulder rim is genuine transparent sky. SECOND reference supplies finished HD RIGHT40-logical-pixel context (~13% width), gold rock and cloud fragment: match its contour, shading and groove positions exactly. The TOP and LEFT rock/water are cropped and continue outside; don't invent closed borders. Warm bright yellow/orange boulders with smooth rounded volume and clean dark brown contours, detailed but same original cartoon shape; blue pond and tiny grassy bank match original. No new rocks, vegetation, props, faces or characters. Preserve exact outside silhouette and solid interior, no accidental transparent holes. Fixed square crop, no reframing or layout changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 286183,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.000288709304070674,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 10.874285714285714,
+            "p95RgbDifference": 49.71666666666662,
+            "visibleCutSamples": 700,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c6-r2.png",
+        "masterSha256": "38d9d583f04f2db6b5add52084916d888d3a6a387d4a770a7204431ef403c491",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1360,
+          2100,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop into crisp high-definition 2D cartoon game art, preserving the exact same composition and all objects. A curved floating-island rim made of several large rounded golden boulders sweeps diagonally from bottom-left to upper-right, with the same boulder count, size and overlapping silhouettes as original. At upper-left is a cropped shallow blue pond, grassy bank and its SAME small grey oval stone; keep the pond contour and visible stone count. At right is the cropped amber vertical cliff continuing from the boulder rim. A small portion of the ONE existing white/cyan cloud is cropped at lower-right, same original location, continuing the neighboring cloud; include it, no extra clouds. Exterior below the diagonal boulder rim is genuine transparent sky. SECOND reference supplies finished HD RIGHT40-logical-pixel context (~13% width), gold rock and cloud fragment: match its contour, shading and groove positions exactly. The TOP and LEFT rock/water are cropped and continue outside; don't invent closed borders. Warm bright yellow/orange boulders with smooth rounded volume and clean dark brown contours, detailed but same original cartoon shape; blue pond and tiny grassy bank match original. No new rocks, vegetation, props, faces or characters. Preserve exact outside silhouette and solid interior, no accidental transparent holes. Fixed square crop, no reframing or layout changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 166098,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00038039194119048926,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 719,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sharedRepairs": [
+          {
+            "repairId": "pond-cliff-right-r1",
+            "rect": [
+              1392,
+              2100,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-cliff-right-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 286183,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.000288709304070674,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c6-r1.png",
+          "masterSha256": "38d9d583f04f2db6b5add52084916d888d3a6a387d4a770a7204431ef403c491",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c6-r2.png",
+    "referenceRect": [
+      1360,
+      2100,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 719,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "pond-cliff-right-r1",
+        "rect": [
+          1392,
+          2100,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-cliff-right-r1/assembled.png"
+      }
+    ],
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 166052,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00039689086876019725,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "ad2c1f8f59ad2bb2a22456acf67bb2f76364c2a60aa7a682b345ba0eac8cd48f",
+    "appliedRepairs": [
+      "pond-rim-bottom-whole-r1",
+      "bottom-cloud-native-reassembly-r1",
+      "pond-cliff-right-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r9c7",
+    "row": 9,
+    "col": 7,
+    "rect": [
+      1632,
+      2132,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.8596354166666667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c7-r1.png",
+        "masterSha256": "180af1e746f5fcca3466c4180108145d37f3ff71df5796eff5a1c58e7cc4e595",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1600,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Redraw FIRST reference faithfully as a high-definition cropped 2D cartoon game-map texture. Preserve the original exact rock shapes and alpha silhouette. Several tall amber/golden vertical cliff faces with dark brown grooves fill the frame, upper-left contains only a cropped rounded gold boulder edge; tiny existing green ivy tips cropped at the top. The cliff at the right edge is cut by the canvas and continues outside. IMPORTANT at the BOTTOM edge: the broad central/right cliff faces MUST remain cropped by the bottom canvas edge, as reference1; do not shorten all projections or turn this into an isolated rock. Transparent sky appears only in the lower-left recesses, following the source's same outline. SECOND reference supplies authoritative existing HD TOP64-logical-pixel context; match those same groove positions, colors and shapes continuously. Extend each gold/brown face vertically downward without adding new grooves or objects. Bright crisp warm amber faceted rock shading and dark brown contour matching second reference. No new plants, clouds, crystals, text, buildings, characters or decorations. Solid opaque interior, native transparent alpha exterior, no white/black fill and no accidental internal holes. Fixed square crop, no camera or composition changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 184065,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00022257325203686322,
+          "nativeAlphaModified": false
+        },
+        "rejected": "Source layout review: existing cropped white/cyan cloud at lower-left missing; do not promote based on top seam alone"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c7-r2.png",
+        "masterSha256": "631e55b764dfd7be22885d85d0e717033768e0ae592f95e8cf3fff4723695a45",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1600,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Edit FIRST image only in its lower-left empty sky to restore the existing original small white/cyan cloud fragment seen at the bottom-left of SECOND source layout. This cloud is cropped by the LEFT and BOTTOM canvas edges; only its small upper rounded white cap and thin cyan rim are visible underneath/behind the left hanging rock. Match its source position, size and occlusion precisely (roughly x0-110 of312 and y280-312 of312), do not extend cloud higher up. Keep ALL existing cliff geometry, top context, rock colors, cut-off bottom/right cliff faces and transparency unchanged elsewhere. No new clouds anywhere else. Preserve exactly the same square canvas coordinates with no reframing. HD cartoon shading, solid white/cyan cloud, true transparent exterior. No holes or background fill. The rock is cropped by bottom edge; do not shorten it.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 140183,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0003147821707378494,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 12.704980842911876,
+            "p95RgbDifference": 57.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c7-r3.png",
+        "masterSha256": "631e55b764dfd7be22885d85d0e717033768e0ae592f95e8cf3fff4723695a45",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1600,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Edit FIRST image only in its lower-left empty sky to restore the existing original small white/cyan cloud fragment seen at the bottom-left of SECOND source layout. This cloud is cropped by the LEFT and BOTTOM canvas edges; only its small upper rounded white cap and thin cyan rim are visible underneath/behind the left hanging rock. Match its source position, size and occlusion precisely (roughly x0-110 of312 and y280-312 of312), do not extend cloud higher up. Keep ALL existing cliff geometry, top context, rock colors, cut-off bottom/right cliff faces and transparency unchanged elsewhere. No new clouds anywhere else. Preserve exactly the same square canvas coordinates with no reframing. HD cartoon shading, solid white/cyan cloud, true transparent exterior. No holes or background fill. The rock is cropped by bottom edge; do not shorten it.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 92080,
+          "solidAlphaMedian": 249.0,
+          "fullyOpaqueFraction": 0.0005101216952188018,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 2.8962324393358876,
+            "p95RgbDifference": 14.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sharedRepairs": [
+          {
+            "repairId": "lower-cliff-top-r1",
+            "rect": [
+              1632,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/lower-cliff-top-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 140183,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0003147821707378494,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c7-r2.png",
+          "masterSha256": "631e55b764dfd7be22885d85d0e717033768e0ae592f95e8cf3fff4723695a45",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c7-r3.png",
+    "referenceRect": [
+      1600,
+      2068,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 2.8962324393358876,
+        "p95RgbDifference": 14.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "lower-cliff-top-r1",
+        "rect": [
+          1632,
+          1988,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/lower-cliff-top-r1/assembled.png"
+      }
+    ],
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 89532,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 0.0005770981048428531,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "766de3b3aa632e18c027b1ae10d7b896d3e20f0d8937b5a39302ba7e91357cd4",
+    "appliedRepairs": [
+      "pond-cliff-right-r1",
+      "lower-rock-whole-r1",
+      "bottom-cloud-native-reassembly-r1",
+      "lower-cliff-top-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r9c8",
+    "row": 9,
+    "col": 8,
+    "rect": [
+      1872,
+      2132,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.6360243055555556,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c8-r1.png",
+        "masterSha256": "de015c37bcad2adbbe5fff864481b2bcc436fd0ad2ef1d6cb8e5176841c4a4c7",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Complete a square high-definition floating-island game texture crop. FIRST reference is the existing HD TOP anchor: preserve all its colored art and continue it downward. SECOND reference shows the exact original layout to restore in the missing lower area. Maintain gold cliff planes and deep brown vertical grooves: several slender hanging golden rock projections descend, ending along the same diagonally descending-to-left outer contour as reference 2. The large existing forked green ivy patch at the TOP extends slightly into the new area then ends in the SAME rounded shape/position as reference 2; do not add more vine patches. The left edge is cropped solid rock; the right/lower exterior is genuinely transparent empty sky. Match exact projection counts, groove positions and silhouette from original, with crisp dark brown contours, warm yellow/orange faceted shading and bright clustered HD leaves matching first reference. Keep the top 20.5% anchor unchanged in shape, position and colors, especially its vertical cliff grooves and ivy edge; fill only missing continuation below it. No new clouds, roads, signs, characters, buildings, faces or extra props. Fixed square canvas, no reframing. Every rock interior fully solid with no accidental transparent holes, exterior native RGBA transparency, no white/black fill.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 795757,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0006232051057032171,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 1.968586387434555,
+            "p95RgbDifference": 4.666666666666667,
+            "visibleCutSamples": 764,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Actual layout review: left cliff projections terminate before the bottom crop edge although source continues into r10c8",
+        "passedTopSeamButLayoutFailed": true
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c8-r2.png",
+        "masterSha256": "561e83c538734e4b1e5cc85f7a9408678b572484b30296509ffe22a29605954e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Faithfully redraw the FIRST image as a high-definition isometric cartoon game map texture. Preserve its EXACT layout, cropped cliff projections and alpha silhouette. This is a CROP OF A LARGER MAP, NOT an isolated floating rock. Critically, at the BOTTOM EDGE, the left half (x0 through about x115 of this312 logical image) is SOLID GOLD/BROWN ROCK continuing OFF CANVAS; DO NOT end these left-hand pillars inside the image, do not insert transparent sky along the lower-left edge. The central long golden rock face runs through and is CUT BY the bottom edge. Copy the original's bottom-edge occupancy exactly. The right outline descends diagonally in several small hanging rock projections, matching reference1. A large green ivy patch at top center/right ends around the upper third, same original shape. No clouds or other objects. SECOND reference gives matching HD TOP context only: retain its top64 logical pixels and extend each brown groove downward according to original first-reference geometry. Use crisp warm yellow/orange faceted rock, dark brown contour and dense bright HD leaf clusters. Improve clarity only; no new geometry and no shortened/rearranged cliff fingers. Empty sky is truly transparent RGBA; all rock surfaces solid with no accidental holes. Square fixed crop with no reframing. Preserve original source cut-off edges precisely.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 550591,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0003949085414711202,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 21.946021731510687,
+            "p95RgbDifference": 146.0,
+            "visibleCutSamples": 951,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c8-r3.png",
+        "masterSha256": "561e83c538734e4b1e5cc85f7a9408678b572484b30296509ffe22a29605954e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          2068,
+          312,
+          312
+        ],
+        "prompt": "Faithfully redraw the FIRST image as a high-definition isometric cartoon game map texture. Preserve its EXACT layout, cropped cliff projections and alpha silhouette. This is a CROP OF A LARGER MAP, NOT an isolated floating rock. Critically, at the BOTTOM EDGE, the left half (x0 through about x115 of this312 logical image) is SOLID GOLD/BROWN ROCK continuing OFF CANVAS; DO NOT end these left-hand pillars inside the image, do not insert transparent sky along the lower-left edge. The central long golden rock face runs through and is CUT BY the bottom edge. Copy the original's bottom-edge occupancy exactly. The right outline descends diagonally in several small hanging rock projections, matching reference1. A large green ivy patch at top center/right ends around the upper third, same original shape. No clouds or other objects. SECOND reference gives matching HD TOP context only: retain its top64 logical pixels and extend each brown groove downward according to original first-reference geometry. Use crisp warm yellow/orange faceted rock, dark brown contour and dense bright HD leaf clusters. Improve clarity only; no new geometry and no shortened/rearranged cliff fingers. Empty sky is truly transparent RGBA; all rock surfaces solid with no accidental holes. Square fixed crop with no reframing. Preserve original source cut-off edges precisely.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 394625,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0005517974664980109,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 4.430602319491208,
+            "p95RgbDifference": 17.666666666666668,
+            "visibleCutSamples": 891,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sharedRepairs": [
+          {
+            "repairId": "southeast-shared-cliff-r1",
+            "rect": [
+              1952,
+              1916,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southeast-shared-cliff-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 550591,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0003949085414711202,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c8-r2.png",
+          "masterSha256": "561e83c538734e4b1e5cc85f7a9408678b572484b30296509ffe22a29605954e",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "withdrawnCandidate": {
+      "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c8-r1.png",
+      "reason": "Top join passed but original cliff continuation was lost; candidate withdrawn. Its previous cut into r8c8 has been restored from r8c8 selected native master.",
+      "assembledPreviewOnly": true
+    },
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c8-r3.png",
+    "referenceRect": [
+      1840,
+      2068,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "top",
+        "meanRgbDifference": 4.430602319491208,
+        "p95RgbDifference": 17.666666666666668,
+        "visibleCutSamples": 891,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "southeast-shared-cliff-r1",
+        "rect": [
+          1952,
+          1916,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southeast-shared-cliff-r1/assembled.png"
+      }
+    ],
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 393920,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006535408531778767,
+      "nativeAlphaModified": false
+    },
+    "appliedRepairs": [
+      "lower-cliff-top-r1",
+      "lower-rock-whole-r1",
+      "southeast-shared-cliff-r1"
+    ],
+    "assembledSha256": "445ffbc1ed4c0102293f9aac09097a390c552920c8ff4bb83e29523c60b77e19",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r10c4",
+    "row": 10,
+    "col": 4,
+    "rect": [
+      896,
+      2372,
+      256,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c4-r1.png",
+        "masterSha256": "871b3e05495d3228d61280949324fa9396d937f558c24a000ce01abf3c29fcdb",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          840,
+          2160,
+          384,
+          256
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: landscape3:2 HD cartoon map crop.\nFIRST is the edit target; SECOND is original layout. Repair the ENTIRE single white/cyan cloud below the cliffs as one continuous shape. Remove its obvious vertical tile cuts at about15% and81% canvas width: the left lobe's lower outline has a step, the right cloud fragment is jagged where it meets the boulder, and the cloud shading has straight breaks. Give that same ONE cloud a smooth continuous rounded outline and continuous soft white/cyan shading, with the SAME ONE pale-cyan spiral in the same position. Keep the original lobe count, cloud size and occlusion behind both foreground cliffs. Complete its very bottom contour using SECOND source, including the small part formerly cut off by a tile boundary.\nPreserve every golden cliff finger, rock face, boulder count, green ivy fragment and brown contour in its existing position; also make the subtle vertical boulder shading seam at right read continuously. The triangular SKY WINDOW between the cloud and upper cliff is intentional: preserve its transparent shape. Solid artwork elsewhere. Outer32 logical pixels (8% width/12.5% height) are fixed connection context with matching positions/colors. Cropped rocks at top/left/right continue outside, not isolated cutouts. Genuine native RGBA transparent exterior, no accidental holes or white background. No new clouds, spirals, objects, plants, cracks or text. Exact landscape3:2 canvas matching reference, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 873117,
+          "solidAlphaMedian": 251.0,
+          "fullyOpaqueFraction": 4.1219360275528526e-05,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 34816,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0,
+            "p95RgbDifference": 0,
+            "visibleCutSamples": 0,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 516,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": true,
+        "sharedRepairs": [
+          {
+            "repairId": "southwest-cloud-full-r1",
+            "rect": [
+              840,
+              2160,
+              384,
+              256
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-cloud-full-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 70423,
+          "referenceApprovedSkyPixels": 70423,
+          "referenceRegistrationOutlierPixels": 32,
+          "borderConnectedLowAlphaPixels": 450498,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c4-r1.png",
+    "referenceRect": [
+      840,
+      2160,
+      384,
+      256
+    ],
+    "nativePixelDensity": 4.0,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0,
+        "p95RgbDifference": 0,
+        "visibleCutSamples": 0,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 516,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "southwest-cloud-full-r1",
+        "rect": [
+          840,
+          2160,
+          384,
+          256
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-cloud-full-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 873117,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 4.1219360275528526e-05,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "a2a0d696dbf0540314d647f91e7fedff09681e59fb54e05a8504dc4c6b9f3cb3",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json",
+    "appliedRepairs": [
+      "southwest-cloud-full-r1"
+    ],
+    "sourceReuse": {
+      "repairId": "southwest-cloud-full-r1",
+      "masterPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-cloud-full-r1/master.png",
+      "newImageGeneratedForThisTile": false
+    }
+  },
+  {
+    "id": "r10c5",
+    "row": 10,
+    "col": 5,
+    "rect": [
+      1152,
+      2372,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.193125,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c5-r1.png",
+        "masterSha256": "d5479959a3ecaf0f37b162ce6992e7eb74ae6c4064526097e88eb6ef7d26b1a1",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1152,
+          2240,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Complete FIRST reference's missing lower map texture according to SECOND original layout. FIRST contains finished HD TOP132 logical pixels (~42% height) and RIGHT72 logical pixels (~23% width); preserve their existing boulder shapes, grooves, colors, contours and the tiny cropped cloud at far left. Extend the same rounded overlapping golden boulders down to their exact original lower tips, including the broad central/right tip reaching about67% canvas height; do NOT terminate all rocks at the current horizontal empty boundary. Same original boulder count, relative sizes and overlaps. The leftmost cropped boulder ends higher, the broad central tip ends lower, as second reference. Empty sky below and around the tips stays genuinely transparent RGBA. No new cloud in the empty lower area, no extra rocks, plants, props, faces or text. Bright rounded gold/amber rock with crisp faceted shading and dark brown contours matching finished HD context. Solid artwork with no accidental holes. Exact square crop, no reframing or layout changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 771475,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000380282299194412,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 21.023041474654377,
+            "p95RgbDifference": 148.4,
+            "visibleCutSamples": 217,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 1.3492433061699651,
+            "p95RgbDifference": 2.6666666666666665,
+            "visibleCutSamples": 859,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c5-r2.png",
+        "masterSha256": "d5479959a3ecaf0f37b162ce6992e7eb74ae6c4064526097e88eb6ef7d26b1a1",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1152,
+          2240,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Complete FIRST reference's missing lower map texture according to SECOND original layout. FIRST contains finished HD TOP132 logical pixels (~42% height) and RIGHT72 logical pixels (~23% width); preserve their existing boulder shapes, grooves, colors, contours and the tiny cropped cloud at far left. Extend the same rounded overlapping golden boulders down to their exact original lower tips, including the broad central/right tip reaching about67% canvas height; do NOT terminate all rocks at the current horizontal empty boundary. Same original boulder count, relative sizes and overlaps. The leftmost cropped boulder ends higher, the broad central tip ends lower, as second reference. Empty sky below and around the tips stays genuinely transparent RGBA. No new cloud in the empty lower area, no extra rocks, plants, props, faces or text. Bright rounded gold/amber rock with crisp faceted shading and dark brown contours matching finished HD context. Solid artwork with no accidental holes. Exact square crop, no reframing or layout changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 677979,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0005363495973101885,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 204,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 833,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sharedRepairs": [
+          {
+            "repairId": "pond-rim-bottom-whole-r1",
+            "rect": [
+              1200,
+              2200,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-rim-bottom-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 771475,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000380282299194412,
+          "nativeAlphaModified": false
+        },
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c5-r1.png",
+          "masterSha256": "d5479959a3ecaf0f37b162ce6992e7eb74ae6c4064526097e88eb6ef7d26b1a1",
+          "newImageGenerated": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c5-r2.png",
+    "referenceRect": [
+      1152,
+      2240,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 204,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 833,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "pond-rim-bottom-whole-r1",
+        "rect": [
+          1200,
+          2200,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-rim-bottom-whole-r1/assembled.png"
+      }
+    ],
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 677979,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005363495973101885,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "9b2eb27897ee4a35a346715d57f3a050ab96b55d20c4d7ca40bc211dc160bb04",
+    "appliedRepairs": [
+      "southwest-cloud-full-r1",
+      "pond-rim-bottom-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r10c6",
+    "row": 10,
+    "col": 6,
+    "rect": [
+      1392,
+      2372,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.07543981481481482,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c6-r1.png",
+        "masterSha256": "87314d2f26267d61b6e7ff0a5a463c306419eacc7b84543ff1c20666c16879ed",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1392,
+          2240,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Complete FIRST image's missing lower-left/center map texture using SECOND original layout. FIRST contains fixed HD TOP132 logical pixels (~42% canvas height) and RIGHT72 logical pixels (~23% width); preserve those rock shapes, outlines, colors and existing white/cyan cloud exactly.\nExtend only the cropped rounded golden boulder tips at upper-left down to the SAME original endpoints (leftmost tip ends around60% canvas height), with the same boulder count, then genuine transparent sky below them. Complete the LEFT rounded lobe of the ONE existing white/cyan cloud at lower-right, matching original outside silhouette and connecting smoothly into the finished right cloud. The RIGHT context already contains its SINGLE cyan spiral; preserve it and do NOT add another spiral or another cloud. This cloud occupies only the lower-right part; keep broad empty sky between/under rocks and cloud, don't enlarge it.\nBright warm gold/orange rounded boulders with dark brown contours matching first reference, softly shaded white/cyan cloud matching existing right context. All visible interiors solid with no holes, exterior native RGBA transparent with clean antialiasing. No new rocks, plants, props, text or objects. Fixed square crop, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 710462,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0005907626208378088,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 2.419134396355353,
+            "p95RgbDifference": 7.0,
+            "visibleCutSamples": 439,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 484,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sharedRepairs": [
+          {
+            "repairId": "pond-cliff-right-r1",
+            "rect": [
+              1392,
+              2100,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-cliff-right-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 903278,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000721773260176685,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c6-r1.png",
+    "referenceRect": [
+      1392,
+      2240,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 2.419134396355353,
+        "p95RgbDifference": 7.0,
+        "visibleCutSamples": 439,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 484,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "pond-cliff-right-r1",
+        "rect": [
+          1392,
+          2100,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-cliff-right-r1/assembled.png"
+      }
+    ],
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 709183,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006102919636754223,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "888daf739686d49ba56bc7954166ae7a6738caa11428fa526aa0feaf74aaaeff",
+    "appliedRepairs": [
+      "pond-rim-bottom-whole-r1",
+      "bottom-cloud-native-reassembly-r1",
+      "pond-cliff-right-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r10c7",
+    "row": 10,
+    "col": 7,
+    "rect": [
+      1632,
+      2372,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.3608564814814815,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c7-r1.png",
+        "masterSha256": "060b43b54b3455b6580611c7dcb3b19d05f9ab02afd6e229da5cafcfd77ec846",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1632,
+          2240,
+          312,
+          312
+        ],
+        "prompt": "Faithfully redraw FIRST original map crop as HD cartoon game texture, preserving exact cliff projection counts, shapes, positions and outside alpha contour. SECOND is the already finished HD TOP and RIGHT connection context: match its top132 logical pixels (~42% height) and right72 logical pixels (~23% width) precisely, keeping the grooves and existing cloud cap aligned.\nComplete the missing lower-left/center. Several amber/golden cliff faces descend into one broad central hanging rock tip which reaches the bottom canvas edge, as reference1. Do NOT end it early, add pillars, or rearrange the grooves. Behind the rocks is ONE existing white/cyan cloud entering from the LEFT, visible in the lower-left half: complete the same existing cloud cap from reference2 into the original's softly rounded lower cloud outline, subtle cyan lower shading and a single cropped spiral detail at far left. Its right side is hidden behind the central cliff. Keep its source size, position and occlusion, no extra cloud. A tiny cloud fragment at far right belongs to existing right context and must remain unchanged.\nCrisp faceted warm gold/amber rock, dark brown contour, polished bright 2D isometric game art matching second reference. Genuine native RGBA transparent exterior sky, solid artwork, no accidental holes. Square fixed canvas, no reframing, no plants, buildings, text or extra decorations.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 399799,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0008464142813173285,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 4.631955079122002,
+            "p95RgbDifference": 10.333333333333334,
+            "visibleCutSamples": 653,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 2.222456140350877,
+            "p95RgbDifference": 9.516666666666652,
+            "visibleCutSamples": 950,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c7-r1.png",
+    "referenceRect": [
+      1632,
+      2240,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 4.631955079122002,
+        "p95RgbDifference": 10.333333333333334,
+        "visibleCutSamples": 653,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.222456140350877,
+        "p95RgbDifference": 9.516666666666652,
+        "visibleCutSamples": 950,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 285155,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000971293689889749,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "34d0cd4872261d4817e485d7babb7e7228381f3ea75658f0b83cb3f56e5f7203",
+    "appliedRepairs": [
+      "pond-cliff-right-r1",
+      "lower-rock-whole-r1",
+      "bottom-cloud-native-reassembly-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r10c8",
+    "row": 10,
+    "col": 8,
+    "rect": [
+      1872,
+      2372,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.13377314814814814,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c8-r1.png",
+        "masterSha256": "5f7adc5cd623103551ec25f3d3f07e457bef123e3ef5d7ce08386251b9518e8e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          2308,
+          248,
+          248
+        ],
+        "prompt": "Complete FIRST reference's missing lower area as an HD 2D cartoon map cliff-edge texture, using SECOND original layout for exact shapes and positions. FIRST image's TOP64 logical pixels (about26% height) is finished HD connection context; preserve its existing amber/gold cliff faces, dark brown grooves and contours precisely. Continue those same rock faces down to their lower tips in exactly the SECOND reference layout: the narrow right rock finger ends higher, the broad central/left hanging gold-brown cliff ends near the bottom-left of the square. Do not shorten these projections prematurely or add extra pillars. Include the ONE EXISTING tiny cropped white/cyan cloud fragment behind the cliff at middle-right (about x90-160,y120-145 of248 logical canvas), with its thin pointed rightward tip, same size and occlusion as source; no additional clouds. Empty exterior sky is genuine native RGBA transparency. Crisp faceted warm yellow/amber rock, dark brown outline, same bright HD style as first reference. Every rock and cloud interior solid with no accidental transparent holes. Exact square crop and same original alpha silhouette, no reframing, no foliage, no props or text.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 984228,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0004845737658631136,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 4320,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 2.5452054794520547,
+            "p95RgbDifference": 6.666666666666667,
+            "visibleCutSamples": 365,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c8-r1.png",
+    "referenceRect": [
+      1840,
+      2308,
+      248,
+      248
+    ],
+    "nativePixelDensity": 5.056451612903226,
+    "seams": [
+      {
+        "side": "top",
+        "meanRgbDifference": 2.5452054794520547,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 365,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 651442,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000816570647397715,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "af174aab060769f1888650a105305457394ec5ce2cf0f62de704646988476e23",
+    "appliedRepairs": [
+      "lower-rock-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-09/native-alpha-browser-verification.json"
+  }
+]

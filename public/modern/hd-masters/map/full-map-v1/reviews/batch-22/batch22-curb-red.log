@@ -1,0 +1,14 @@
+F
+======================================================================
+FAIL: test_curb_no_longer_steps_back_at_join (__main__.CornerOverlay.test_curb_no_longer_steps_back_at_join)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch22_corner_overlay.py", line 15, in test_curb_no_longer_steps_back_at_join
+    before=firstwhite(F/'before.png',640)-firstwhite(F/'before.png',639);candidate=F/('before.png' if os.environ.get('REPLAY_OLD_CURB') else 'assembled.png');after=firstwhite(candidate,640)-firstwhite(candidate,639);self.assertLess(before,-8);self.assertGreaterEqual(after,-2);self.assertLessEqual(after,6)
+                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.int64(-12) not greater than or equal to -2
+
+----------------------------------------------------------------------
+Ran 1 test in 0.049s
+
+FAILED (failures=1)

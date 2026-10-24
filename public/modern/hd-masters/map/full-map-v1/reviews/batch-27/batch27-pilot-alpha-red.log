@@ -1,0 +1,24 @@
+FE.
+======================================================================
+ERROR: test_native_curb_has_no_isolated_low_alpha_pixels (__main__.Curb.test_native_curb_has_no_isolated_low_alpha_pixels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch27_pilot_curb.py", line 20, in test_native_curb_has_no_isolated_low_alpha_pixels
+    self.assertEqual(native_alpha_audit(Image.open(F/'assembled-candidate.png'))['enclosedLowAlphaPixels'],0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/hd_map_seams.py", line 110, in native_alpha_audit
+    raise ValueError(f'Native map contains {enclosed} enclosed low-alpha pixels')
+ValueError: Native map contains 6 enclosed low-alpha pixels
+
+======================================================================
+FAIL: test_complete_native_white_curb_is_not_cut_by_old_sky_mask (__main__.Curb.test_complete_native_white_curb_is_not_cut_by_old_sky_mask)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch27_pilot_curb.py", line 13, in test_complete_native_white_curb_is_not_cut_by_old_sky_mask
+    self.assertGreaterEqual(int(out[:,:,3][white].min()),240,'Old source-sky masking must not erase the generated curb body')
+AssertionError: 0 not greater than or equal to 240 : Old source-sky masking must not erase the generated curb body
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.039s
+
+FAILED (failures=1, errors=1)

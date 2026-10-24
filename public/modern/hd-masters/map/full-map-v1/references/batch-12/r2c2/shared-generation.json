@@ -1,0 +1,24 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-b51a1e33-9990-4995-9ad9-51e93e109045.png",
+  "prompt": "Use case: precise-object-edit. Asset type: square transparent HD isometric game-map fragment.\nImage1 EDIT TARGET shows already completed right40 logical pixels and a small bottom-left grass anchor; all missing areas are transparent. Image2 ORIGINAL LAYOUT shows this exact312x312 crop. Reconstruct missing art at identical coordinates, scale and camera. Do not move, crop or redesign objects.\nThe right strip is an approved map tile. Preserve its tree-lobe positions, grass blades, dirt path and cropped yellow roof as exact visual anchors. The blue outside-island portion of that strip is reference background only: final outside island must be true alpha0 matching original silhouette, not painted blue.\nRestore original sloping irregular northwest grass edge from lower-left to upper-right, with two trees: one front round/flattened multi-lobe bright green tree lower-left of the other, one taller multi-lobe tree behind/right with its already-finished RIGHT portion in Image1. Match their original center, canopy footprint, trunk position, overlap and lobe count, not additional trees.\nFine dense small pointed grass leaves and subtle pebble/dirt path match the approved right-hand style (distinct tiny upright blades, not a flat smooth lawn, no large isolated decorative leaves). Gradually match the small bottom-left existing grass anchor. No scattered new rocks or props.\nVery bottom has original cropped yellow-green STAR-building roof and blue oval window; keep original roof shape and crop, exact word \"STAR\" only where source shows it, no new doors/windows/letters. The building continues BELOW this crop, don't complete or reposition it inside frame. Preserve every boundary endpoint of the right approved roof strip.\nNo clouds, vines, flowers, signs, people, extra objects or outside shadows. Opaque solid terrain/tree interiors, true transparency outside the island, no interior pinholes. Single native high-resolution square RGBA, same edge-to-edge framing.",
+  "referenceRect": [
+    368,
+    396,
+    312,
+    312
+  ],
+  "unusedContextCaution": "Roof lettering below core y676 reads incorrectly in raw context. It is outside selected core and must never be reused as completed building/text reference.",
+  "preserveApprovedNeighbors": true,
+  "sharedRepairs": [
+    {
+      "repairId": "northwest-grass-lip-joint-r1",
+      "rect": [
+        320,
+        596,
+        160,
+        160
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northwest-grass-lip-joint-r1/assembled.png"
+    }
+  ]
+}

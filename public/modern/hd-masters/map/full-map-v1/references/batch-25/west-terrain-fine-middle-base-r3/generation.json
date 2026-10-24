@@ -1,0 +1,148 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/repairs/west-terrain-fine-middle-base-r2/master.png",
+  "prompt": "Use case: precise-object-edit. Existing Star Cat Monopoly HD fine-grass map crop. The image is the EDIT TARGET. Remove ONLY the ONE large round-canopied tree in the left-center, including its brown trunk and its ground shadow, and continue the same tiny dense yellow-green grass seamlessly through its former footprint. This output is the clean terrain BACKGROUND; that same tree will be drawn separately later at its original position. Keep every other object and pixel geometry fixed: the one complete cone tree and partial cone tree at right, cropped yellow building/blue platform/purple column, diagonal white road curb and partial cyan disc, tan ground patches, cliff rim and gold rock at lower left. Do not remove those cone trees, add grass to the blue platform, move road/terrain outlines, draw a new tree or leave a stump/round empty patch. All grass remains the existing fine uniform leaf scale, including bottom strip. Preserve outer24 logical pixels on RIGHT/BOTTOM as fixed connection context; north/left grass will join later neighboring update. Native genuine RGBA transparency only outside original island; no holes inside land. Same7:8 portrait framing and native detail at least1120x1280, same lighting and sharp cartoon game style.",
+  "rect": [
+    112,
+    1552,
+    224,
+    256
+  ],
+  "context": 16,
+  "contextSides": {
+    "left": 0,
+    "right": 24,
+    "top": 0,
+    "bottom": 24
+  },
+  "protectedRects": [],
+  "pendingNeighborEdges": [
+    "left",
+    "top"
+  ],
+  "protectedPolygons": [
+    [
+      [
+        232,
+        1536
+      ],
+      [
+        352,
+        1536
+      ],
+      [
+        352,
+        1628
+      ]
+    ],
+    [
+      [
+        336,
+        1618
+      ],
+      [
+        328,
+        1622
+      ],
+      [
+        319,
+        1628
+      ],
+      [
+        309,
+        1634
+      ],
+      [
+        306,
+        1640
+      ],
+      [
+        306,
+        1648
+      ],
+      [
+        310,
+        1658
+      ],
+      [
+        316,
+        1668
+      ],
+      [
+        336,
+        1678
+      ]
+    ],
+    [
+      [
+        336,
+        1656
+      ],
+      [
+        315,
+        1666
+      ],
+      [
+        304,
+        1672
+      ],
+      [
+        294,
+        1678
+      ],
+      [
+        288,
+        1682
+      ],
+      [
+        280,
+        1688
+      ],
+      [
+        275,
+        1692
+      ],
+      [
+        271,
+        1697
+      ],
+      [
+        271,
+        1703
+      ],
+      [
+        275,
+        1709
+      ],
+      [
+        281,
+        1715
+      ],
+      [
+        290,
+        1722
+      ],
+      [
+        300,
+        1730
+      ],
+      [
+        310,
+        1738
+      ],
+      [
+        320,
+        1746
+      ],
+      [
+        330,
+        1754
+      ],
+      [
+        336,
+        1759
+      ]
+    ]
+  ],
+  "reusedNativeMaster": true,
+  "assemblyCorrection": "Protect only native road/roof/platform extent; do not retain unrelated coarse grass backing"
+}

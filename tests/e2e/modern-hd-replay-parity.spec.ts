@@ -1,5 +1,5 @@
 import { expect, test, type Browser, type Page } from '@playwright/test'
-import { readFile } from 'node:fs/promises'
+import { readFile, stat } from 'node:fs/promises'
 import { playUntil } from './modern-play'
 
 type Profile = 'original' | 'hd'
@@ -164,16 +164,19 @@ test('原版与高清同局跨月结算后完整GameState逐字段一致', async
 })
 
 test('生产高清开局记录下载量、解码内存估算及浏览器纹理尺寸上限', async ({ page }) => {
-  const hdResponses: Promise<{ path: string; status: number; bytes: number }>[] = []
+  const hdResponses: Array<{ path: string; status: number }> = []
   const pageErrors: string[] = []
   const consoleErrors: string[] = []
   page.on('pageerror', error => pageErrors.push(error.message))
   page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()) })
   page.on('response', response => {
     const path = new URL(response.url()).pathname
-    if (!path.startsWith('/assets-hd/')) return
-    hdResponses.push(response.body().then(body => ({ path, status: response.status(), bytes: body.byteLength })))
+    if (!path.startsWith('/assets-hd/') && !path.startsWith('/hd-map/full-map-v1/') && !path.startsWith('/hd-static/')) return
+    hdResponses.push({ path, status: response.status() })
   })
+  // ResourceTiming measures large textures even when Chromium evicts their
+  // response bodies from the inspector cache. Keep all startup entries.
+  await page.addInitScript(() => performance.setResourceTimingBufferSize(10_000))
   await start(page, 'hd', 123456789)
   await page.waitForLoadState('networkidle')
   const browserMetrics = await page.evaluate(() => {
@@ -187,14 +190,26 @@ test('生产高清开局记录下载量、解码内存估算及浏览器纹理�
     return {
       maxTextureSize,
       jsHeapUsedBytes: memory?.usedJSHeapSize ?? null,
+      resources: (performance.getEntriesByType('resource') as PerformanceResourceTiming[])
+        .filter(entry => /^\/(?:assets-hd|hd-map\/full-map-v1|hd-static)\//.test(new URL(entry.name).pathname))
+        .map(entry => ({ path: new URL(entry.name).pathname, encodedBodyBytes: entry.encodedBodySize, transferBytes: entry.transferSize })),
     }
   })
   const manifest = JSON.parse(await readFile('public/modern/assets-hd/hd-manifest.json', 'utf8')) as {
     files: Array<{ path: string; group: string; pixelSize: [number, number] }>
   }
-  const responses = await Promise.all(hdResponses)
+  const fullMap = JSON.parse(await readFile('public/modern/hd-map/full-map-v1/manifest.json', 'utf8')) as {
+    baseMap: { path: string; pixelSize: [number, number] }; mapRegions: Array<{ path: string; pixelSize: [number, number] }>
+  }
+  const staticArt = JSON.parse(await readFile('src/modern/data/static-hd-assets.json', 'utf8')) as {
+    assets: Array<{ url: string; pixelSize: [number, number] }>
+  }
+  const files = [...manifest.files,
+    ...[fullMap.baseMap, ...fullMap.mapRegions].map(file => ({ ...file, group: 'map-full' })),
+    ...staticArt.assets.map(file => ({ path: file.url, pixelSize: file.pixelSize, group: 'static' }))]
+  const responses = hdResponses
   const imagePaths = new Set(responses.filter(response => response.path.endsWith('.webp')).map(response => response.path))
-  const loadedFiles = manifest.files.filter(file => imagePaths.has(`/${file.path}`))
+  const loadedFiles = files.filter(file => imagePaths.has(`/${file.path}`))
   const loadedByGroup = loadedFiles.reduce<Record<string, { count: number; decodedRgbaBytes: number }>>((groups, file) => {
     const group = groups[file.group] ??= { count: 0, decodedRgbaBytes: 0 }
     group.count += 1
@@ -203,19 +218,22 @@ test('生产高清开局记录下载量、解码内存估算及浏览器纹理�
   }, {})
   const metrics = {
     ...browserMetrics,
-    maxProfileDimension: Math.max(...manifest.files.flatMap(file => file.pixelSize)),
+    maxProfileDimension: Math.max(...files.flatMap(file => file.pixelSize)),
     hdResponseCount: responses.length,
     loadedHdImageCount: imagePaths.size,
-    downloadedBytes: responses.reduce((sum, response) => sum + response.bytes, 0),
+    downloadedBytes: browserMetrics.resources.reduce((sum, resource) => sum + resource.transferBytes, 0),
+    encodedResourceBytes: browserMetrics.resources.reduce((sum, resource) => sum + resource.encodedBodyBytes, 0),
     failedResponses: responses.filter(response => response.status >= 400).map(response => `${response.status} ${response.path}`),
     estimatedDecodedRgbaBytes: loadedFiles.reduce((sum, file) => sum + file.pixelSize[0] * file.pixelSize[1] * 4, 0),
     loadedByGroup,
   }
-  console.log(`HD production resource audit ${JSON.stringify(metrics)}`)
+  console.log(`HD production resource audit ${JSON.stringify({ ...metrics, resources: undefined })}`)
   expect(metrics.maxProfileDimension).toBeLessThanOrEqual(metrics.maxTextureSize)
   expect(metrics.hdResponseCount).toBeGreaterThan(0)
   expect(metrics.loadedHdImageCount).toBeGreaterThan(0)
   expect(metrics.downloadedBytes).toBeGreaterThan(0)
+  const baseBytes = (await stat(`public/modern/${fullMap.baseMap.path}`)).size
+  expect(Math.max(...browserMetrics.resources.filter(resource => resource.path === `/${fullMap.baseMap.path}`).map(resource => resource.encodedBodyBytes))).toBe(baseBytes)
   expect(metrics.failedResponses).toEqual([])
   expect(metrics.estimatedDecodedRgbaBytes).toBeGreaterThan(0)
   expect(pageErrors).toEqual([])

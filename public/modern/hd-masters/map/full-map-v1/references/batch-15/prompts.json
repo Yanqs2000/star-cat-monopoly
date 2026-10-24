@@ -1,0 +1,158 @@
+[
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/generation-r2.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-71e52c84-326c-445a-a491-6ddcda47d37a.png",
+    "prompt": "Use case: precise-object-edit. Repair transparency defects in Image1 only, same exact square HD map scene. Image2 is original scene layout on blue sky, Image3 finished right/bottom matching anchors. Image1 has WRONG transparent cutouts inside solid art: a large ragged HOLE with black/white-speckled torn edge inside the white CLOUD near 43%across/73%down; and scalloped transparent gouges cutting into solid upper grass along top at 3–8%across, 30–57%across. Restore these missing solid regions naturally from surrounding artwork: CLOUD HOLE becomes complete white-to-light-cyan shaded cloud artwork with intact smooth outlines, no spot or pinholes; TOP GRASS GOUGES become continuous original green grass all the way to top crop wherever Image2 has grass. Image2 original has NO transparent holes in grass/clouds at those places. Preserve the little original cropped object at top unchanged, never expand it into a new object. Retain TRUE external sky transparency in the diagonal open gap at right and BELOW the cloud at bottom-left, exactly matching original exterior silhouette. No sky-filled holes within grass, cliff or cloud. Do not change cliff columns, lip shape, plants, positions, object counts or any outer RIGHT/BOTTOM finished matching anchor. Keep same crisp native density, camera and square frame, no reframe or scaling. Transparent exterior alpha0, fully painted solid grass/cliff/cloud interiors alpha255, antialias only outer artwork contours. Clean cloud and top grass solidity, no added decoration.",
+    "referenceRect": [
+      1360,
+      388,
+      312,
+      312
+    ],
+    "sourceSkyReference": true,
+    "unusedContextCaution": "Upper32 logical context remains unreviewed: native top alpha gouges are outside core; never treat that unused top margin as qualified coverage."
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-5a1a5caa-c5c0-47dd-847a-ab096f569574.png",
+    "prompt": "Use case: precise-object-edit. Native HD transparent Star Cat Monopoly map tile, exact square framing. Image1 is EDIT TARGET: existing sharp completed grass/cliff/shrub anchors at RIGHT and BOTTOM around unfinished region, transparent blank middle. Image2 is the ORIGINAL layout of this exact 312x312 logical map square, composited on blue sky ONLY for seeing the shapes. Restore original in Image1 at same exact coordinates, scale and contours: upper grassy island with golden hanging vertical cliff columns; original cropped leafy rosette at upperLEFT and cropped small ornaments along top; a narrow open SKY GORGE running diagonally between upper island cliff underside and lower grassy island; soft white/cyan CLOUD ribbon under upper cliff ending at same original places; original leafy rosettes at bottom and right. Preserve exact original shrub/ornament counts, cliff silhouette, cloud silhouette, width and winding sky gap. Match all Image1 RIGHT40 and BOTTOM24 logical-pixel anchor geometry, native leaf texture scale, color and black outlines. Do not invent any road, tree, rock, plant, building, text, bird or extra ornament. Original solid BLUE in Image2 is EXTERIOR SKY showing through: output TRANSPARENT alpha0 there, never paint opaque blue backdrop or fill the gorge with grass. Clouds are visible white/cyan artwork with their soft native translucent edges; do not confuse white cloud with missing art. Preserve intended open sky and antialiasing; no enclosed accidental pinholes, white voids, torn outlines or blurred filler in solid grass/cliff. Keep high native resolution crisp glossy cartoon style, no reframing or zoom, square exact aspect. Match completed anchors carefully, avoid any straight tile boundary.",
+    "referenceRect": [
+      1360,
+      388,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/generation-r5.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-3c257b19-a013-4a0f-8d5f-ce85f5a911da.png",
+    "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET is this current square HD map. It wrongly OMITTED original parts from the mint/turquoise platform at lowerRIGHT. Image2 is original layout of SAME full square. Image3 is a sharp identity crop of the CORRECT existing LEFT portion of this same platform, supporting object reference only, not a canvas/framing guide. Restore missing ORIGINAL objects at the precise Image2 positions/scale: ONE green-rimmed pale glowing circular ORB on its green base above ONE white layered bowl/ribbon support and green rear stand, located just right of the last leafy bush above the blue lobed body. Restore ONE small green RING at the platform FRONTLEFT, beside the existing abstract green three-lobed symbol, and ONE cyan round button near the orb support. Match Image3 exact object shapes, support layers, ring count, colors and relation to blue center. These are parts of ONE existing fixed platform, not a new object elsewhere. Keep existing upright white fin at right and far-right cropped round ornament unchanged, no extra orb/fin/ring/symbol. Retain original platform footprint and match its fixed RIGHT/BOTTOM anchor borders; do not move or resize the floor, curb, blue body or other completed objects. Everything outside that left platform area stays visually identical to Image1: FOUR gold parcels/corner stones, FOUR leaf rosettes, grass, building crop, road white dashes, fence and all outer32logical pixel anchors. Same square camera/crop, no reframe/rescale. No added decorations or omitted source parts. Sharp glossy cartoon HD map. Whole frame inland: alpha255 opaque, no pinholes or blank patches. Restore source fidelity of missing platform parts only.",
+    "referenceRect": [
+      1840,
+      1140,
+      312,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/generation-r6-reused.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-3c257b19-a013-4a0f-8d5f-ce85f5a911da.png",
+    "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET is this current square HD map. It wrongly OMITTED original parts from the mint/turquoise platform at lowerRIGHT. Image2 is original layout of SAME full square. Image3 is a sharp identity crop of the CORRECT existing LEFT portion of this same platform, supporting object reference only, not a canvas/framing guide. Restore missing ORIGINAL objects at the precise Image2 positions/scale: ONE green-rimmed pale glowing circular ORB on its green base above ONE white layered bowl/ribbon support and green rear stand, located just right of the last leafy bush above the blue lobed body. Restore ONE small green RING at the platform FRONTLEFT, beside the existing abstract green three-lobed symbol, and ONE cyan round button near the orb support. Match Image3 exact object shapes, support layers, ring count, colors and relation to blue center. These are parts of ONE existing fixed platform, not a new object elsewhere. Keep existing upright white fin at right and far-right cropped round ornament unchanged, no extra orb/fin/ring/symbol. Retain original platform footprint and match its fixed RIGHT/BOTTOM anchor borders; do not move or resize the floor, curb, blue body or other completed objects. Everything outside that left platform area stays visually identical to Image1: FOUR gold parcels/corner stones, FOUR leaf rosettes, grass, building crop, road white dashes, fence and all outer32logical pixel anchors. Same square camera/crop, no reframe/rescale. No added decorations or omitted source parts. Sharp glossy cartoon HD map. Whole frame inland: alpha255 opaque, no pinholes or blank patches. Restore source fidelity of missing platform parts only.",
+    "referenceRect": [
+      1840,
+      1140,
+      312,
+      312
+    ],
+    "sharedRepairs": [
+      {
+        "rect": [
+          1872,
+          1352,
+          312,
+          208
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/east-parcel-road-platform-joint-r2/assembled.png"
+      }
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-28f40121-dfc9-494f-a40e-a92f8c95c5d0.png",
+    "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has completed SHARP left32/top32/right40/bottom40 logical-pixel anchors surrounding missing center. Image2 is the original layout of this exact square, for positions/counts only. Complete Image1 without reframing, rescaling, shifting or redesigning the completed anchors. Restore diagonal row of FOUR visible gold/yellow spiral parcels, leftmost clipped by LEFT edge as source, same brown/cream brick spacing, original gray square corner stones, same parcel intervals and spiral phase. FOUR main leafy rosettes stand behind the row in original footprints. Preserve the cropped orange building/cream base at upperLEFT, grassy field matching exact existing small leaf scale, diagonal gray road with source-exact white dashes, white curb, lowerLEFT wooden fence fragments. Keep the far lowerRIGHT mint/turquoise fixed decorative platform, ring/abstract green symbol, blue lobed center and upright white fin/circular ornament fragments at exact Image1 coordinates: they are part of one preexisting object, never add another fin/platform/ring. Every cross-border curb, parcel post, road-mark endpoint, fence slat and platform outline must join exactly with no step, gap or doubled contour, especially the BOTTOM road/platform transition. Same sharp glossy outlined cartoon art, fine gray asphalt. Original entire square is alpha255 and wholly inside map: opaque alpha255 everywhere, no pinholes, white voids or blurred filler. Same square camera/crop; no added objects, rocks, trees, labels or road marks.",
+    "referenceRect": [
+      1840,
+      1140,
+      312,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r7c5/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-6651f484-1611-4ef3-8022-e5a62bf77b34.png",
+    "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has completed sharp TOP32/LEFT32/RIGHT40 logical-pixel anchors around missing center. Image2 is exact original layout of same square. Complete Image1 faithfully while retaining every existing anchor pixel-position, crop, outline, texture scale, color and object footprint. One preexisting gray stone pillar enters from TOP: complete its lower portion as SAME single three-block stacked pillar with unchanged width, black horizontal gaps, corners and original crack phase, not a second pillar or altered stone tower. Preserve ONE large lobed tree cropped at LEFT with same lobe silhouettes and trunk attachment as fixed left anchor. Keep the existing small gray stone fragment clipped at lowerLEFT; no extra stone or rock at pillar base. Original grass meets one winding jagged golden-yellow cliff face in lower half; keep same original grass-lip path, vertical cliff columns, inward corner and cropped lower facets, continuing exact completed right-edge facets and grass outline with no kink or rock pillar ending early. Match fine dense yellow-green grass leaf scale of anchors. No new trees, plants, pebbles, stones, symbols or decorations. Entire original frame is inland solid grass/cliff with minimum source alpha247 and no exterior sky: render fully opaque alpha255, no sky gap, transparent holes or blank patches. Same square camera and framing, no rescale/reframe or moving objects. Bright glossy outlined sharp cartoon map at native high resolution.",
+    "referenceRect": [
+      1120,
+      1620,
+      312,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c5/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-876850fb-9ece-4185-ad33-ce1dff4469a3.png",
+    "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has completed sharp TOP32/LEFT32/BOTTOM40 logical-pixel anchors surrounding missing middle. Image2 is ORIGINAL layout of exactly the same square. Fill missing area with faithful HD restoration, preserving ALL native anchor positions, silhouettes, endpoints, color/texture scale and crop. Main original scene: golden cliff alcove at top/left continues vertical facets and winding lip from TOP/LEFT exactly, no broken or prematurely ending columns. One orange-domed gray round fixed building stands on original rounded diamond gray stone-paved plinth near middle/right. Preserve same original roof footprint, ONE small white collar/chimney with dark opening at dome apex, purple front plaque with a yellow square and BLACK KEYHOLE (no text), gray ribbed cylindrical body and same source-exact rounded side vents/feet/steps count and placement. Do not invent extra pipes, doors, windows, pillars, steps or buildings. One original green lobed tree with same source crown/trunk at LEFT behind plinth; retain any original tree fragment clipped at RIGHT, never add a tree. Blue river runs around stone plinth with original bank, water width, small stones and grass edge matching finished BOTTOM river/grass anchors exactly. Blue river is ACTUAL MAP ART, not exterior sky: keep it opaque, no transparent water. Same glossy outlined cartoon object style and native bottom water/shore style, no added rocks/plants/fish/decoration or labels. Same square composition/camera, no reframing, rescaling or moving crops inward. Source frame has no zero-alpha sky; render full opaque alpha255 scene, no holes, white gaps or blurred filler. High native resolution square.",
+    "referenceRect": [
+      1120,
+      1860,
+      312,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/generation-r2.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-a9cea305-6ba5-437f-ae22-73eed05acdb3.png",
+    "prompt": "Use case: precise-object-edit. Edit Image1, the square HD river/cliff map tile. Correct ONLY its LEFT boundary context to match Image2's completed LEFT32 logical-pixel strip exactly in position, color and texture. Image2 is the same square canvas with existing top, left, right and bottom anchors around a missing middle. In Image1 the diagonal road in upper LEFT wrongly changes the fine pale gray speckled asphalt from Image2 into dark embossed circles; restore continuous PALE GRAY FINE SPECKLED ASPHALT across that road, matching the LEFT edge and white curb geometry precisely. Align all LEFT32 grass, gray stone-paved building plinth, curb and riverbank texture with Image2 so no vertical hue or contour join appears. Keep Image1's same one three-lobed tree, forked trunk, exactly three small bank stones (two pale bare stones and one grass-topped bank rock), one foreground river stone, cyan10/green20 discs, golden cliff facets/foot rock, river path, all original object counts and exact positions. Preserve Image1 TOP32/RIGHT40/BOTTOM40 context unchanged. No added/removed objects or lettering, no shifted tree/plinth/shore or road. Square exact frame, no zoom/reframe/rescale. Sharp glossy cartoon art. Entire map art opaque alpha255, no holes. Repair asphalt material and LEFT context registration only.",
+    "referenceRect": [
+      1360,
+      1860,
+      312,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-fc9b6c68-aa85-4c25-888d-485f2dc342a7.png",
+    "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has sharp finished TOP32/LEFT32/RIGHT40/BOTTOM40logical-pixel anchors around unfinished middle. Image2 is ORIGINAL layout of exactly the same square. Complete Image1 faithfully, retaining native anchor coordinates, silhouettes, color/texture scale, crack/facet phase and crop. Original scene is a blue river bend between golden cliffs, with one original lobed green tree on the LEFT riverbank and gray stone-plinth fragment of round building cut at farLEFT. Same original tree-lobe count, trunk/fork location and existing left-bank/plinth geometry; no extra tree. Restore exactly source small pale bank stones near the tree/upper-middle, and preserve the existing oval foreground river stone at BOTTOM. Do not add or remove stones. Keep the gray diagonal road/white curb at TOP and original cropped cyan10/green20 discs stationary with source-correct numerals, no new disc/number/road mark. Tall golden cliff columns and large angular foot rock at RIGHT must continue existing right/bottom facets with identical edges, no horizontal shelf, kink or prematurely closed column. River width, winding banks, shoreline highlight, actual blue water and grass strip must join finished LEFT/BOTTOM water/shore anchors naturally, no straight seam, repeated rock or detached bank. Blue is actual river MAP ART, not exterior sky: full opaque alpha255 including water, no transparent holes. Same bright polished cartoon scene, matching bottom river/shore painting style and sharp right cliff contours. No new plants, props, text, building parts or decorations. Same square camera/crop, no reframing, zoom or moving clipped objects inward. High native resolution square, no white void or blurred filler.",
+    "referenceRect": [
+      1360,
+      1860,
+      312,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r1/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-2255db1f-c986-4eaa-aaef-54c3480318b5.png",
+    "prompt": "Use case: precise-object-edit. Landscape3:2 native HD map SHARED JOINT. Image1 EDIT TARGET has a conspicuous HORIZONTAL seam about29% down through the mint decorative platform, green ring/symbol, blue lobed center and gray road/fence, plus vertical mismatch near77% across through the platform/white fin. Image2 is exact ORIGINAL layout/crop for counts and positions only. Make these existing parts one continuous coherent surface with no step, doubled contour, broken ring, body or road. Keep all original parts/counts: one shared mint rectangular platform, same blue three-lobed center/yellow middle, original upright white fin and two orb/support assemblies (upperLEFT one partly cropped by TOP, right one visible), same green ring/cyan button/abstract symbol counts and exact positions. Do not omit or add a ring, orb, fin, symbol, parcel, post or leaf. Keep original gold parcel fragment and four-leaf row crops at top, diagonal gray road, white dash, ONE white cloud-shaped painted stencil, source bent fork/turn marking near bottom, wooden fence/endpost and shrubs at LEFT. Keep original white curb line continuous and straight with stationary corner. Outer16logical pixels on ALL FOUR sides are immutable joining anchors: match endpoints, patterns, outline positions, texture scale and colors exactly, no reframe/rescale or object movement. Fine gray asphalt and same glossy sharp outlined cartoon art. Entire inland frame opaque alpha255, no holes, white voids or blur. Only correct the two quilt joins in existing objects. Native high-resolution3:2 landscape.",
+    "referenceRect": [
+      1872,
+      1352,
+      312,
+      208
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r2/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7269c65d-2c75-4b6d-ade9-b7b35db8ad5e.png",
+    "prompt": "Use case: precise-object-edit. This landscape3:2 native HD map scene is EDIT TARGET. Fix ONLY the remaining WHITE CURB dogleg near37% across and33% down, where gold parcel corner meets the mint platform frontage. The long diagonal curb must continue as ONE perfectly straight line of uniform width through that spot, from upperLEFT toward lowerRIGHT platform/road corner. Remove the small step/protruding slab/gap/grass wedge/double edge; keep identical endpoints, perspective, black outlines, brick joints and shading. Smooth only adjacent asphalt continuity if needed. Do not change any glyph, number, orb, bowl support, fin, green ring, cyan disk, abstract symbol, three-lobed blue body, parcel/corner post, wooden fence/endpost, leaf, grass, cloud-shaped white road stencil or bent arrow. Preserve exact original counts, positions and crop, especially existing complete green ring just above-right of the fault. Keep ALL outer16logical pixel anchors visually identical and stationary; same3:2 frame/camera, no reframing/rescaling. Opaque alpha255 throughout, no holes or blank patches. Bright sharp outlined glossy cartoon map. Only straighten this existing curb through its faulty joint.",
+    "referenceRect": [
+      1872,
+      1352,
+      312,
+      208
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-bottom-shore-joint-r1/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7a2ebd9b-5f40-41cb-8aa8-fe2cada79f1d.png",
+    "prompt": "Use case: precise-object-edit. Edit Image1 HD river/cliff landscape3:2 scene, Image2 original layout. Remove visible straight TILE LINES: horizontal color/texture discontinuity at about37% down through blue river, shoreline, tree-bank grass and right golden rock; vertical straight line about10%across through left bank/water. Reconstruct same continuous native painted river and faceted cliff naturally across these seams. Source scene exact same winding river, ONE oval foreground stone left of center (part of two tiny distant stones cropped at top), cropped tree trunk upperleft, paved plinth corner, same grass bank contour and original golden angular cliff rock columns continuing out bottom. Preserve every rock position/count/silhouette, shore turns, facet contours and tree/plinth geometry. Keep existing upper/lower water highlight style consistent with BOTTOM and LEFT finished areas, no horizontal stripe, color block, duplicate wave or broken ripple. Grass scale continuous, no sharp square texture change. Keep all outer16 logical-pixel anchors stationary and visually identical, same3:2frame/camera and exact object positions. Do not add/remove stones, plants, markings or details. Opaque alpha255, blue is actual river water, not exterior sky. Crisp glossy HD cartoon, no blurred overlay, fog, soft seam blending or blank holes. Only unify the native scene across old seams."
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-building-road-joint-r1/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7397c327-6c6c-4e17-ac56-0db9c6742004.png",
+    "prompt": "Use case: precise-object-edit. Edit Image1 HD landscape3:2 map scene; Image2 original exact same layout for geometry only. Fix visible tile join faults on DIAGONAL ROAD: near45%across/27%down, its UPPER WHITE CURB has a protruding extra curb ramp and notch. Replace with ONE perfectly STRAIGHT continuous white curb matching original Image2 endpoints and perspective from lowerLEFT toward upperRIGHT. No raised double line, protrusion, gap or grass wedge. Restore entire road surface as continuous fine PALE GRAY pebble-speckled asphalt, matching existing leftmost road and source, remove dark embossed circular-pattern material toward upperright. Keep cyan10 disc unchanged. Road no divider, dashes or new symbols here. Harmonize subtle ground join beside tree/plinth while keeping source contour. Preserve EVERY existing object exactly: one orange dome/white vent, one purple lock with yellow black-keyhole plaque, same 3 gray hanging weights (some cropped), same paved plinth, one main three-lobed tree and left cropped tree, existing river stones, grass/cliff/river silhouettes. Do not change object number, geometry, crop, scale, color or glyph. Preserve ALL outer16 logical pixel anchor bands, same3:2 frame no zoom. Crisp glossy cartoon HD with opaque alpha255, no holes, no painted fog/blur. Local geometry/material repair only, make road continuous through old vertical joint."
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-15/south-cliff-phantom-stone-remove-r1/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-b41d8d32-f4d4-491c-8de3-00ce961de6bc.png",
+    "prompt": "Use case: precise-object-edit / source-faithful object removal. Image1 EDIT TARGET is a sharp square HD map crop. Image2 is EXACT ORIGINAL source crop of same coordinates and proves there is NO GRAY STONE HERE. Remove the ENTIRE extra gray block, its clipped lower remnant, all gray pixels, black outline and shadow belonging to that false object. Replace only that region with continuous existing dense yellow-green grass and the original grass-to-golden-cliff lip, following Image2 terrain path and matching Image1 sharp native material. One continuous natural grass lip slopes from lower-left toward upper-right, with same golden vertical cliff column behind/below; no extra ledge, notch, hole, new pillar or stone. Preserve original cliff facet lines, grass leaf size/colors, lighting and every outer12-logical-pixel anchor in Image1 exactly in position/crop. Do not add rocks, plants, stems, props or decorations. This is a correction of an invented object, not a redesign. Same exact square canvas and camera, no reframe/rescale. Whole source square is inland solid grass/cliff: fully opaque alpha255, no pinholes or blank/white areas. Sharp outlined glossy cartoon game map.",
+    "referenceRect": [
+      1096,
+      1832,
+      96,
+      96
+    ]
+  }
+]

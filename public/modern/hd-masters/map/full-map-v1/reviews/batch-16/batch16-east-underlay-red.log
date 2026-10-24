@@ -1,0 +1,83 @@
+/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py:28: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/reviews/batch-16/native-alpha-browser-verification.json' mode='r' encoding='UTF-8'>
+  b=json.load(open(OUT/'native-alpha-browser-verification.json'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+F/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py:9: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/reviews/batch-16/regions.json' mode='r' encoding='UTF-8'>
+  regions=json.load(open(OUT/'regions.json'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FF/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py:16: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/reviews/batch-16/regions.json' mode='r' encoding='UTF-8'>
+  state=m.read();regions=json.load(open(OUT/'regions.json'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FF
+======================================================================
+FAIL: test_actual_renderer_clears_legacy_map_under_east_feather (__main__.ApprovedEastEdgeUnderlayTests.test_actual_renderer_clears_legacy_map_under_east_feather)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py", line 29, in test_actual_renderer_clears_legacy_map_under_east_feather
+    self.assertEqual(b['legacyBaseCulling'].get('eastUnderlayZeroAlphaSamples'),[0,0],'Old 2x base remains visible through the approved east fade')
+AssertionError: Lists differ: [255, 255] != [0, 0]
+
+First differing element 0:
+255
+0
+
+- [255, 255]
++ [0, 0] : Old 2x base remains visible through the approved east fade
+
+======================================================================
+FAIL: test_east_neighbors_extend_beneath_approved_feather (__main__.ApprovedEastEdgeUnderlayTests.test_east_neighbors_extend_beneath_approved_feather) (tid='r2c5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py", line 13, in test_east_neighbors_extend_beneath_approved_feather
+    self.assertEqual(r['replacementRect'],[1120,y,272,256],'The fading accepted edge must reveal native art, not the legacy map')
+AssertionError: Lists differ: [1152, 420, 240, 256] != [1120, 420, 272, 256]
+
+First differing element 0:
+1152
+1120
+
+- [1152, 420, 240, 256]
+?    -         ^^
+
++ [1120, 420, 272, 256]
+?     +        ^^
+ : The fading accepted edge must reveal native art, not the legacy map
+
+======================================================================
+FAIL: test_east_neighbors_extend_beneath_approved_feather (__main__.ApprovedEastEdgeUnderlayTests.test_east_neighbors_extend_beneath_approved_feather) (tid='r3c5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py", line 13, in test_east_neighbors_extend_beneath_approved_feather
+    self.assertEqual(r['replacementRect'],[1120,y,272,256],'The fading accepted edge must reveal native art, not the legacy map')
+AssertionError: Lists differ: [1152, 676, 240, 256] != [1120, 676, 272, 256]
+
+First differing element 0:
+1152
+1120
+
+- [1152, 676, 240, 256]
+?    -         ^^
+
++ [1120, 676, 272, 256]
+?     +        ^^
+ : The fading accepted edge must reveal native art, not the legacy map
+
+======================================================================
+FAIL: test_underlay_comes_from_unmodified_native_context (__main__.ApprovedEastEdgeUnderlayTests.test_underlay_comes_from_unmodified_native_context) (tid='r2c5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py", line 20, in test_underlay_comes_from_unmodified_native_context
+    self.assertTrue(r.get('protectedPilotEastUnderlay'),'No left-context pixels were exported')
+AssertionError: None is not true : No left-context pixels were exported
+
+======================================================================
+FAIL: test_underlay_comes_from_unmodified_native_context (__main__.ApprovedEastEdgeUnderlayTests.test_underlay_comes_from_unmodified_native_context) (tid='r3c5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch16_east_underlay.py", line 20, in test_underlay_comes_from_unmodified_native_context
+    self.assertTrue(r.get('protectedPilotEastUnderlay'),'No left-context pixels were exported')
+AssertionError: None is not true : No left-context pixels were exported
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.007s
+
+FAILED (failures=5)

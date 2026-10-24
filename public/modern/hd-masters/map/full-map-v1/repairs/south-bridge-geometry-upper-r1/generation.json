@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: style-transfer. HD game map bridge UPPER half. Image1 EDIT TARGET is original precise geometry. Image2 supplies style only, its bridge is slightly too narrow. Repaint IMAGE1 with dark fine gray asphalt, white stone curb, crisp gold cliffs and dense tiny green grass as Image2. Preserve Image1 exact straight diagonal bridge edges, original width, endpoints and all object positions. The upper-left curb must follow Image1, not Image2's inset boundary. Keep cyan10 at lower left, green20, blue30, cyan10 upper right, no extra discs or lettering, keep cropped building/grass/cliff at original frame positions. Opaque. Same 36:31 frame, same crop, no border/margin. Minimum native1254x1080. Do not add or remove scenery, bend/taper road, shift scene, or copy blurry pixels. Fine asphalt, no broad swirl or floral pattern, no pale bridge bands.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1456,
+    1680,
+    288,
+    248
+  ],
+  "status": "candidate-not-installed",
+  "generatedPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-24e968af-3def-4168-8d7f-4e3deb8078f0.png"
+}

@@ -1,0 +1,17 @@
+/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch25_building_grass_selection.py:7: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/west-terrain-fine-middle-base-r2/generation.json' mode='r' encoding='UTF-8'>
+  rid='west-terrain-fine-middle-base-r2' if os.environ.get('REPLAY_COARSE_BACKING') else 'west-terrain-fine-middle-base-r3';f=m.CACHE/rid;g=json.load(open(f/'generation.json'));a=Image.open(f/'assembled-candidate.png').convert('RGBA');b=Image.open(g['path']).convert('RGBA').resize(a.size,Image.Resampling.LANCZOS);x,y,w,h=[272,1744,16,16];box=(m.px(x)-m.px(112),m.py(y)-m.py(1552),m.px(x+w)-m.px(112),m.py(y+h)-m.py(1552));self.assertTrue(np.array_equal(np.array(a.crop(box)),np.array(b.crop(box))),'Unrelated coarse grass rectangle was retained outside the native platform')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+F
+======================================================================
+FAIL: test_old_coarse_backing_is_not_retained_outside_building (__main__.BuildingGrass.test_old_coarse_backing_is_not_retained_outside_building)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch25_building_grass_selection.py", line 7, in test_old_coarse_backing_is_not_retained_outside_building
+    rid='west-terrain-fine-middle-base-r2' if os.environ.get('REPLAY_COARSE_BACKING') else 'west-terrain-fine-middle-base-r3';f=m.CACHE/rid;g=json.load(open(f/'generation.json'));a=Image.open(f/'assembled-candidate.png').convert('RGBA');b=Image.open(g['path']).convert('RGBA').resize(a.size,Image.Resampling.LANCZOS);x,y,w,h=[272,1744,16,16];box=(m.px(x)-m.px(112),m.py(y)-m.py(1552),m.px(x+w)-m.px(112),m.py(y+h)-m.py(1552));self.assertTrue(np.array_equal(np.array(a.crop(box)),np.array(b.crop(box))),'Unrelated coarse grass rectangle was retained outside the native platform')
+                                                                                                                                                                                                                                                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Unrelated coarse grass rectangle was retained outside the native platform
+
+----------------------------------------------------------------------
+Ran 1 test in 0.066s
+
+FAILED (failures=1)

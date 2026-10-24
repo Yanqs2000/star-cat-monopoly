@@ -5567,13 +5567,12 @@
       512,
       512
     ],
-    "status": "candidate-rejected-seam",
-    "newCandidate": "public/modern/hd-static-masters/map/m02-r03.png",
+    "status": "complete",
     "existingReusableCandidates": [
       "public/modern/hd-masters/map/experiments/map-extension-m01-r01/master.png",
       "public/modern/hd-masters/map/experiments/map-extension-m01-r02/master.png"
     ],
-    "reason": "R03 improves geometry continuity but hard join still shows lot-pattern, road-marking and material texture mismatch; not installed.",
+    "reason": "All109 coverage cells and batch29/batch30 corrections installed and verified. User approved final map visuals on2026-10-24.",
     "diagnostic": "docs/modernization/evidence/static-hd-20261019/map-m02-r03-seam.png",
     "attempts": [
       {
@@ -5596,6 +5595,21 @@
         "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD map extension. Image1 is an input geometry guide, width1253,height1114. Its LEFTMOST139px strip is existing APPROVED HD neighbor artwork: copy and preserve that strip exactly, including every curb and road marking that meets x139. ONLY redraw the blurred part to its right as a seamless extension in matching glossy bright cartoon style. Image2 is original288x256 region for object identity/layout; image3 is approved neighbor for exact materials. Output same aspect288:256, native at least1253x1114. Right area contains exactly one orange/yellow rounded shop with purple glass panels, blue trim and white/yellow doorway, four cone-shaped trees, grey stone terminal behind building, patterned green land squares with brown brick borders, green grass/shrubs and grey asphalt road with original star-cat circular manhole. Keep original counts and exact original relative locations, no invented parts, characters, windows, signs or text. Restore crisp detail and smooth original toy-like gloss. Especially continue road edge, white curb bricks, patterned lot borders and asphalt texture from locked left strip without any kink, gap or double marking. All road markings meet approved neighbor EXACTLY at the seam. Do not change or repaint the approved strip. Opaque wherever map material is present; keep only original tiny exterior transparent corner. No large white holes or blotches.",
         "runtimeEnabled": false
       }
-    ]
+    ],
+    "historicalRejectedCandidate": "public/modern/hd-static-masters/map/m02-r03.png",
+    "reviewStatus": "approved",
+    "runtimeEnabled": true,
+    "runtimeManifest": "public/modern/hd-map/full-map-v1/manifest.json",
+    "runtimeManifestSha256": "1eefd5cca527e91f083509f25a56c3fe2fbace8856d52f0d4e19bddc19c79702",
+    "nativeRegionCount": 192,
+    "basePixelSize": [
+      5400,
+      5104
+    ],
+    "generationState": "public/modern/hd-masters/map/full-map-v1/generation.json",
+    "verification": "public/modern/hd-masters/map/full-map-v1/reviews/batch-30/verification.json",
+    "openVisualCorrections": [],
+    "latestReview": "public/modern/hd-masters/map/full-map-v1/reviews/batch-30/verification.json",
+    "userAcceptance": "public/modern/hd-masters/map/full-map-v1/reviews/batch-30/user-acceptance.json"
   }
 }

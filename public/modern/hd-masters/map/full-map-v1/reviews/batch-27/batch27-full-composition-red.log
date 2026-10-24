@@ -1,0 +1,39 @@
+
+Running 1 test using 1 worker
+
+(node:25362) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/e2e/modern-map-full-replacement.spec.ts:14:1 › 完整地图在分片等待时显示同源底图，准备后只绘制一次RGBA，缩小再放大不露旧图 (4.2s)
+
+
+  1) tests/e2e/modern-map-full-replacement.spec.ts:14:1 › 完整地图在分片等待时显示同源底图，准备后只绘制一次RGBA，缩小再放大不露旧图 ──
+
+    Error: partial native load must keep the complete base visible
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+    +   102,
+    +   204,
+        255,
+    -   0,
+    -   0,
+        255,
+      ]
+
+      64 |     })
+      65 |     await expect.poll(() => page.evaluate(() => (window as typeof window & { fullMapDecoded?: number }).fullMapDecoded ?? 0)).toBe(1)
+    > 66 |     expect(await pixel(page, 100, 300), 'partial native load must keep the complete base visible').toEqual([255, 0, 0, 255])
+         |                                                                                                    ^
+      67 |     release()
+      68 |     await expect.poll(() => page.evaluate(() => (window as typeof window & { fullMapDecoded?: number }).fullMapDecoded ?? 0)).toBe(2)
+      69 |     expect(await pixel(page, 100, 300), 'transparent native outline must show sky, not a second base composition').toEqual([102, 204, 255, 255])
+        at /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/tests/e2e/modern-map-full-replacement.spec.ts:66:100
+
+    Error Context: ../../../../../../../../../tmp/starcat-modern-e2e/modern-map-full-replacemen-0183e-同源底图，准备后只绘制一次RGBA，缩小再放大不露旧图/error-context.md
+
+  1 failed
+    tests/e2e/modern-map-full-replacement.spec.ts:14:1 › 完整地图在分片等待时显示同源底图，准备后只绘制一次RGBA，缩小再放大不露旧图 ───

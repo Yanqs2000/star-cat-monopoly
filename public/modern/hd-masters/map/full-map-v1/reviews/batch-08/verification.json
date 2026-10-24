@@ -1,0 +1,285 @@
+{
+  "date": "2026-10-20",
+  "generator": "built-in image_gen",
+  "imageGenerationCallsThisBatch": 12,
+  "newCandidateCount": 6,
+  "existingMasterReuses": [
+    "r5c11",
+    "r7c9",
+    "r8c8"
+  ],
+  "newCandidates": [
+    "r5c10",
+    "r5c11",
+    "r6c10",
+    "r7c9",
+    "r7c10",
+    "r8c8"
+  ],
+  "selectedTotal": 44,
+  "notGenerated": 45,
+  "rework": 13,
+  "pendingVisualReview": 3,
+  "minimumNewNativeDensity": 4.019230769230769,
+  "productionEnabled": false,
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "immutableAttemptMasterHashesVerified": 96,
+  "mapPythonTestsPassed": 22,
+  "projectDefaultUnitTestsPassed": 643,
+  "mapNpmEntryPointTestsPassed": 19,
+  "actualNativeReplacementViews": 17,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 46,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "nativeAssembledAlphaAudits": {
+    "r2c9": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 56009,
+      "solidAlphaMedian": 248.0,
+      "fullyOpaqueFraction": 6.878667189445373e-05,
+      "nativeAlphaModified": false
+    },
+    "r2c10": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 313753,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0007076428871141927,
+      "nativeAlphaModified": false
+    },
+    "r2c11": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 493142,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014324458535467359,
+      "nativeAlphaModified": false
+    },
+    "r3c11": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 203256,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004163642614309179,
+      "nativeAlphaModified": false
+    },
+    "r4c11": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 195571,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00012431727398711992,
+      "nativeAlphaModified": false
+    },
+    "r5c10": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 34725,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00019157088122605365,
+      "nativeAlphaModified": false
+    },
+    "r5c11": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 463086,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005334419220197496,
+      "nativeAlphaModified": false
+    },
+    "r6c10": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 411339,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00039451857723756255,
+      "nativeAlphaModified": false
+    },
+    "r7c9": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 53498,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004078901538066692,
+      "nativeAlphaModified": false
+    },
+    "r7c10": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 830769,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00107426350620543,
+      "nativeAlphaModified": false
+    },
+    "r8c8": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 89103,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0003776421199288713,
+      "nativeAlphaModified": false
+    }
+  },
+  "reviewAtlasCount": 46,
+  "requiredPartialRepairs": 15,
+  "newLocalRepairs": [
+    "east-cloud-whole-r1"
+  ],
+  "repairsAreExactOldOrNewPixelSelection": true,
+  "referenceInputFilesHashed": 48,
+  "modifiedPreviousAssemblies": [
+    {
+      "id": "r4c10",
+      "changedPixels": 41847,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          2352,
+          1156,
+          240,
+          16
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r4c11",
+      "changedPixels": 1082,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          2592,
+          1156,
+          40,
+          16
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r5c9",
+      "changedPixels": 36071,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          2336,
+          1172,
+          16,
+          240
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r6c9",
+      "changedPixels": 116173,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          2336,
+          1412,
+          16,
+          240
+        ],
+        [
+          2112,
+          1636,
+          240,
+          16
+        ],
+        [
+          2264,
+          1580,
+          88,
+          72
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r7c8",
+      "changedPixels": 82856,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          2096,
+          1652,
+          16,
+          240
+        ],
+        [
+          1872,
+          1876,
+          240,
+          16
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r8c7",
+      "changedPixels": 31642,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          1856,
+          1892,
+          16,
+          240
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    }
+  ],
+  "unfinishedPerimeterAndPriorCurbDebtRemain": true
+}

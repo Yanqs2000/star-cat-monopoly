@@ -1,0 +1,18 @@
+[
+  {
+    "id": "r4c9",
+    "previouslySelected": true,
+    "reason": "Source board id200 type27 is dice-game emblem (one red pip face and blue pips). Existing candidate instead has card/star and numeral10. Correct icon without changing surrounding accepted road, green30 or cyan10.",
+    "sourceIconAudit": {
+      "recordId": 200,
+      "type": 27,
+      "sourceCenter": [
+        2228,
+        1053
+      ],
+      "expected": "white dice emblem with red pip and blue pips",
+      "actual": "card/star plus numeral10",
+      "evidence": "reviews/batch-11/purple-type27-audit.png"
+    }
+  }
+]

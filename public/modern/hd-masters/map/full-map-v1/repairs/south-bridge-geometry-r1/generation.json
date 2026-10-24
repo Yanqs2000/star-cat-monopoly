@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: precise-object-edit. Asset: production HD isometric Star Cat Monopoly map correction. Image 1 is the CURRENT HD EDIT TARGET; Image 2 is the ORIGINAL LOW-RES GEOMETRY AUTHORITY at the exact same coordinates. Return Image 1, same 9:7 framing, camera and high resolution, correcting only the diagonal bridge upper-left white curb and adjacent asphalt extent to precisely match Image 2's wider straight bridge. The current upper-left curb bends/insets toward the bottom near the lower half of the bridge. Move it upward locally by about 40 pixels on this 1296x1008 reference around x468..528 (y423..381 in original); reconstruct ONE straight continuous curb on Image 2's upper-edge line. Fill the newly covered strip with identical dark fine-grain asphalt, matching Image 1. Keep the LOWER-RIGHT curb absolutely stationary. Keep the bridge endpoints, prison, tree, water, stones, gold cliffs, grass, all four circular discs and their exact center positions/size/colors/numerals unchanged. The only scene change is widening the asphalt upward to the original upper edge, naturally covering the small strip of gold ground/cliff formerly revealed. Precisely keep the outer crop border and the road contacts at top/right; no overall shift, zoom, warp or new objects. No fence or handrail. Preserve native crisp cartoon material and existing road texture, no white holes, no transparent regions, no marks/annotations. Image 2 is for boundary geometry only, NOT its blurry textures or pale road color. Output an opaque single seamless scene matching Image 1 everywhere outside the corrected upper curb strip.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1264,
+    1760,
+    432,
+    336
+  ],
+  "status": "candidate-not-installed",
+  "generatedPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-8acc4c9a-ac05-47ab-bbee-346f4f55eed6.png"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "upper-cloud-native-wide-overlap-r1",
+  "rect": [
+    1840,
+    180,
+    72,
+    176
+  ],
+  "generator": "built-in image_gen native reuse",
+  "nativePixelSize": [
+    1254,
+    1254
+  ],
+  "nativePixelDensity": 4.019230769230769,
+  "donorCanonicalFile": "donor-canonical.png",
+  "method": "72logical-pixel overlap of existing raw native masters; hard RGBA selection only;16logical-pixel end anchors unchanged",
+  "sourceNativeMasters": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/masters/r1c7-r1.png",
+      "sha256": "d7e68646bb6464a47a0b15c24b6de5d6467c90b247c71e113071be4995dbe074"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/masters/r1c8-r1.png",
+      "sha256": "c7df807291a4c3897a3abc513abf9deae889e9bb5fea2e50665f3939f8ed1ea3"
+    }
+  ],
+  "files": {
+    "master.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/upper-cloud-native-wide-overlap-r1/master.png",
+      "sha256": "c7df807291a4c3897a3abc513abf9deae889e9bb5fea2e50665f3939f8ed1ea3"
+    },
+    "before.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/upper-cloud-native-wide-overlap-r1/before.png",
+      "sha256": "bdb9e1d61ad99d744beaf7bebf0991a8887d9e501cad9e3e8ed98c631b6830a6"
+    },
+    "donor-canonical.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/upper-cloud-native-wide-overlap-r1/donor-canonical.png",
+      "sha256": "462507e7f5be7339574581b04081aa20719e1d5381fcc27f11510484911984c9"
+    },
+    "layout.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/upper-cloud-native-wide-overlap-r1/layout.png",
+      "sha256": "b81cbbd7f39aecc14ee0b359cab6a42dc8f7983937d79e5f30916791dd40d0e5"
+    },
+    "mask.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/upper-cloud-native-wide-overlap-r1/mask.png",
+      "sha256": "130056301d5821a2636bdd800cd7950397055032863e3a9494bf4fcb5e2be0ce"
+    },
+    "assembled.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/upper-cloud-native-wide-overlap-r1/assembled.png",
+      "sha256": "a567cb692add545f798834b9d63a1ef7e260b89c3020136140166e43a01ebdd1"
+    }
+  },
+  "seams": [
+    {
+      "side": "wide-overlap",
+      "meanRgbDifference": 1.787068004459309,
+      "p95RgbDifference": 5.333333333333333,
+      "visibleCutSamples": 299,
+      "maximumChangedPixels": 172
+    }
+  ],
+  "affectedTiles": [
+    "r1c7",
+    "r1c8"
+  ],
+  "reviewStatus": "native-overlap-improved-whole-cloud-review-pending"
+}

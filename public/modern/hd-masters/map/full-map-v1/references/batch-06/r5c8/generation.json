@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-49c17b92-f874-4c06-92b3-e96246754ba9.png",
+  "prompt": "Use case: style-transfer / precise map reconstruction. This is an image EDIT of a fixed crop in an isometric Star Cat Monopoly board game, NOT a redesign. Image 1 is the exact original layout: match every object position, count, silhouette, crop, road width, curb, markings, and architecture. Image 2 is the already completed HD context at exactly the same framing: retain its existing colored pixels and continue them seamlessly into the missing black/transparent areas, reconstructing those areas from Image 1. Black/transparent missing context is a guide only: final entire image must be solid fully opaque art with no holes or white gaps. Match Image 2's crisp polished bright 3D cartoon rendering, leaf clusters and grey asphalt material (no paving slab grid), white curb and markings. Keep identical isometric projection and camera, no zoom/reframing. The final canvas has the same exact aspect ratio as the input; every boundary coordinate must align. Preserve clipped objects as clipped; do not complete an object by moving it inward. No extra/missing props, no characters, no added text or signs. Only reconstruct the currently missing art. Existing boundary strips are strict stitching anchors.\nSquare304x304 logical crop. Center is the missing square of lawn, diagonal row of yellow-gold property pads with brown swirl patterns and stone borders, their individual existing green bushes, grey road with original white arrows/cat stencil, fence at lower-left, and the clipped turquoise futuristic property at lower-right. Preserve the count and intervals of each property, bush, marking and fence slat exactly. Four surrounding32logical-pixel strips are already HD and strict fixed anchors. Complete the center to join ALL FOUR boundaries, particularly the road and the turquoise object at bottom-right; do not invent extra objects.",
+  "referenceRect": [
+    1840,
+    1140,
+    304,
+    304
+  ]
+}

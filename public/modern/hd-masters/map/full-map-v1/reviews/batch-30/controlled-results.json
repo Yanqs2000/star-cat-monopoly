@@ -1,0 +1,147 @@
+{
+  "routes": [
+    {
+      "profile": "hd",
+      "name": "north-crossing-markings",
+      "points": [
+        [
+          15,
+          11
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          17,
+          13
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          17,
+          15
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/hd-controlled-north-crossing-markings-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            16,
+            12
+          ],
+          "to": [
+            17,
+            13
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/hd-controlled-north-crossing-markings-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            16,
+            12
+          ],
+          "to": [
+            17,
+            13
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/hd-controlled-north-crossing-markings-step5-arrival.png",
+          "stage": "arrival",
+          "from": [
+            17,
+            15
+          ],
+          "to": [
+            16,
+            16
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "north-crossing-markings",
+      "points": [
+        [
+          15,
+          11
+        ],
+        [
+          16,
+          12
+        ],
+        [
+          17,
+          13
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          17,
+          15
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/original-controlled-north-crossing-markings-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            16,
+            12
+          ],
+          "to": [
+            17,
+            13
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/original-controlled-north-crossing-markings-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            16,
+            12
+          ],
+          "to": [
+            17,
+            13
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/original-controlled-north-crossing-markings-step5-arrival.png",
+          "stage": "arrival",
+          "from": [
+            17,
+            15
+          ],
+          "to": [
+            16,
+            16
+          ],
+          "direction": 2
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

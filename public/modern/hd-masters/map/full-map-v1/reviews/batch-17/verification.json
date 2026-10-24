@@ -1,0 +1,512 @@
+{
+  "date": "2026-10-22",
+  "generator": "built-in image_gen",
+  "completedImageGenerationCallsThisBatch": 6,
+  "newEngineeringCandidates": [
+    "r1c9",
+    "r1c10",
+    "r0c9",
+    "r0c8"
+  ],
+  "selectedTotal": 93,
+  "notGenerated": 8,
+  "rework": 0,
+  "pendingVisualReview": 4,
+  "productionEnabled": false,
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "immutableAttemptMasterHashesVerified": 181,
+  "nativeRepairFileHashesVerified": true,
+  "repairsAreExactOldOrNewPixelSelection": true,
+  "minimumNewNativeDensity": 4.019230769230769,
+  "newLocalRepairs": [
+    "northeast-cloud-bank-native-reuse-r1",
+    "northeast-cloud-crest-whole-joint-r1"
+  ],
+  "withdrawnRepairs": [],
+  "allPreviousAssemblyChangesInsideDeclaredScopes": true,
+  "nativeAssembledAlphaAudits": {
+    "r0c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 688580,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005456010155258275,
+      "nativeAlphaModified": false
+    },
+    "r0c9": {
+      "sourceHasNoSolidArtwork": true,
+      "sourceMaxAlpha": 82,
+      "sourceNonzeroAlphaPixels": 9,
+      "nativeCoreMaxAlpha": 1,
+      "enclosedLowAlphaPixels": 0,
+      "nativeAlphaModified": false
+    },
+    "r1c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 623524,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005737960365909549,
+      "nativeAlphaModified": false
+    },
+    "r1c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1033056,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0004027759428076511,
+      "nativeAlphaModified": false
+    },
+    "r1c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1082397,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 8.349114076422836e-05,
+      "nativeAlphaModified": false
+    },
+    "r2c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9044565469492238,
+      "nativeAlphaModified": false
+    },
+    "r2c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 34341,
+      "solidAlphaMedian": 248.0,
+      "fullyOpaqueFraction": 0.000172826513134815,
+      "nativeAlphaModified": false
+    },
+    "r2c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 305615,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0006680905507748818,
+      "nativeAlphaModified": false
+    }
+  },
+  "mapPythonTestsPassed": 30,
+  "mapNpmEntryPointTestsPassed": 27,
+  "preservedExportRegressionTestsPassed": 4,
+  "completedExportRegressionWrongPixels": 0,
+  "actualNativeReplacementViews": 20,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "southUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "eastUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 98,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "nonOverlappingGridDrawCoverageVerified": true,
+  "reviewAtlasCount": 98,
+  "nativePilotUnderlayReplayedExactly": true,
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "fullMapUserAcceptance": "incomplete",
+  "newVisualCorrectionDebt": [
+    "Southwest/southeast accepted-sample corners retain native road/material phase differences; source-native whole-object review required",
+    "North approved fade remains pending r1c3/r1c4 correction; upper-cloud whole review awaits r0c7"
+  ],
+  "rejectedWholeJointCorrectionsApplied": false,
+  "r3c5Top16NativeCoverageClosed": true,
+  "projectUnitTestsPassed": 643,
+  "projectUnitTestFilesPassed": 85,
+  "candidateReviewStatus": {
+    "r1c9": "actual-render-inspected-candidate-not-final-acceptance",
+    "r1c10": "actual-render-inspected-candidate-not-final-acceptance",
+    "r0c9": "native-sky-edge-context-and-transparent-padding-verified",
+    "r0c8": "actual-render-inspected-candidate-not-final-acceptance"
+  },
+  "referenceInputFilesHashed": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r0c8/generation.json",
+      "sha256": "8aee2d9d3b87d8431d5a9624420999671a3ce45494545dfb0a2a655a280cc98e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r0c8/layout-on-sky.png",
+      "sha256": "5e78977faca0dbf1c3f610a5a657a9c2381c2d1fc90d641e525d06fc63174e48"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r0c8/reference.json",
+      "sha256": "ed11bb53a8a11dcad1550ed5fa22fe81879d66e7c9d017b86e47e27dafb26be4"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r0c8/target.png",
+      "sha256": "b3de01a79fced8699ce9725a380c1091ac50bb24ffdd894e66052d63b53ae8cb"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r0c9-native-context-on-sky.png",
+      "sha256": "1fd407fa522d83afa1619fb3a7de2a246667f4441fd2d365a9a86cbdbe06377e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/generation-r2.json",
+      "sha256": "7b228511775166ab3c1934f1c70bfce305c0550d3839255600bb20139a1a3627"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/generation-r3-reused.json",
+      "sha256": "8ede2941a22d39a76db512eaadd8d0b71d5db772b21d717019849f2757231cfd"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/generation.json",
+      "sha256": "35af9972d09c3863be4a449602b54e4595e395431ed5a06c24454226532d0694"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/layout-on-sky.png",
+      "sha256": "7165a9e19ca4f611b8e2b7c63f2f947851b1eacb6b8bb2b6a48e562a613633f3"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/reference.json",
+      "sha256": "a242699984da44507fe1862ce7ad94d89636ba9e3a4c3b836e8dba11953f24f9"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c10/target.png",
+      "sha256": "6087d09e0764860665efda15e79575d7c590cd7358a4979ef7f56656709d29eb"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/generation-r2.json",
+      "sha256": "5ed79defa9ebd95599a7ef557a6cb71b4e41b1a1b84ad4fa4c882ad5b26089fc"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/generation-r3-reused.json",
+      "sha256": "33bcbcf4fad9b32e3eee6be0a173c322eb4d556498f6494146317e68c1ec8834"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/generation.json",
+      "sha256": "b24aa6ef9d8907b833211bb4c356c6c9ec1290e5ee9f400b18394d3218014635"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/layout-on-sky.png",
+      "sha256": "701838fab22872f132fe5d9d2c834b30777a117928a806a6914cc9208800ec76"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/reference.json",
+      "sha256": "95b54e4ef27606838c4f80d16f4ea6a8c3bec8c47bcc9137433dce2a26df5efd"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r1c9/target.png",
+      "sha256": "05e97c22cfa8bd808d580047cffa335549c0b649c8ff84356d7bb45de050f90f"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/batch17-inputs/r2c9-source.png",
+      "sha256": "213dcca2f61a2e93a80b900d74518248e59dbb85b42ae7550123dbca3fc2d65a"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/native-sky-edge-reuse.json",
+      "sha256": "2deb8dad9b46c93709a56fe6f269ce5773699b468880f115697d943f31e72b39"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/assembled.png",
+      "sha256": "5d881953a0dc91e04fb0e4671da0a5d6fed5ef8debdc9598b0751b9613e7468b"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/before.png",
+      "sha256": "a31eac1550b8fb36e97021c0f96768a4c480d9c2f3abd5c8dede90b626d76f56"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/donor-canonical.png",
+      "sha256": "5afba6a086a4065f4b628ca086526db222a18655c450ade754d0d2b08db11840"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/mask.png",
+      "sha256": "765ef25b1e967ff3523795804e84f3d678bdee7384aa974a4c5128ffd1ec7357"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/proposed-full.png",
+      "sha256": "eec35b87769f8280bbf5051f7145f2e27b9cd7b9c3554d9b3d3ce1c7ca257d00"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/proposed-on-sky.png",
+      "sha256": "90183ea44ae025f1622a59472c3b82fc55a99d58bff1361f0e314e7db3ce94b2"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-bank-native-reuse-r1/seams.json",
+      "sha256": "f91d09a8568e22cf3f150fe9027886adef27f346b14490aa3ae502c8655d6de5"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-crest-whole-joint-r1/before-on-sky.png",
+      "sha256": "782cb6b7f2516f9fd44509b4b54b04b3e65aa7c4b7f98810227a935af370a01f"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-crest-whole-joint-r1/before.png",
+      "sha256": "6787ea10d52328057f423fccdd56392d0c238c06e09c184187ff3f44e8e63885"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-crest-whole-joint-r1/generation.json",
+      "sha256": "cb55e0ca2def7b71198543f16881fbf5b922fc7ec9faac376c4aa2d91f2b2a88"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-crest-whole-joint-r1/layout.png",
+      "sha256": "0242b9fc012f513fd3024fcf10ec6252c20844afec7feb51f0dac1c0c7b0ffd9"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-crest-whole-joint-r1/reference.json",
+      "sha256": "c6235245859c67470b3a60e0f827e667dd96a7b51648a4d2026705840ca6909d"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/assembled.png",
+      "sha256": "abe88e912e562d71e1501e4406d99009e7e8fe6b92c59b33206878bfcafb4553"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/before.png",
+      "sha256": "3522e5985f5a818ee20a3f0c614662c2bb0f216f154eecf791c4b4507e9f3203"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/donor-canonical.png",
+      "sha256": "1d0fa9aa0b2dacacaf442c89d98d8a21076c5c0740db0cbd64ef2009c9f97b06"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/mask.png",
+      "sha256": "aa17dba690432f243c88c826ebf007e392b3c511d8fc311f5815f617065d1280"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/proposed-on-sky.png",
+      "sha256": "d281cddde148b16087d8a3fbddfd395751d47fee34920fabbee93a96de54383d"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/seams.json",
+      "sha256": "77d82570076c4cfebe8c4c09fa0ad6e20198e2143ade9bb056090915bf1b5966"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-17/prompts.json",
+      "sha256": "e90de0763a6917eb9bc133028ff9695ec741d5dd957196fd1ab9bbe2b090c498"
+    }
+  ],
+  "eastPilotNativeUnderlayReplacementVerified": true,
+  "eastUnderlayRegressionTestsPassed": 3,
+  "southUnderlayRegressionTestsPassed": 3,
+  "southUnderlayRegressionRedSamples": [
+    255,
+    255
+  ],
+  "southUnderlayCornerOwnership": "Existing west/east own32x32 corners; two native224x32 strips fill the middle without overlap",
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "49ebf3408a75ae918660acac8438045e055ffafea05186c9b534aec90377eea6"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "ce9aea554f48d5a4685c6e25393d0b7ab4166a18b4d7ff412a9833b457138d38"
+    },
+    {
+      "view": "pilot-south-left-4x",
+      "sha256": "dbd9f15b9ebfcb9de49e56e0c0145ed23bf48bac16f6d2f4b5a592b94198bf10"
+    },
+    {
+      "view": "pilot-south-right-4x",
+      "sha256": "65dffec4a14e6feab8268f08c3a8fedf81833c5556c3525da01efe982d1fcbc2"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "9daf8a9105cd708d67112be66e7ca3111ee9565696b9d86a6ef4fe40cf4b1ca3"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "ccc0dee6b86c1e611e8a1da7766e8e2cf35fc3ebadb32d5976ac1d627f59e0b4"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "43613679b157f3c212f50b12d8c8a1c6f7ccd54b185af51b0137a4722d234a1f"
+    },
+    {
+      "view": "r0c8-whole-2x",
+      "sha256": "d935ebd36f3ede195ce81755f95009b128e921fcb41a07c0b147408230c7a9d4"
+    },
+    {
+      "view": "r0c8-bottom-4x",
+      "sha256": "c750308b02e3f4c30dc123544cf0567229bc547704aff850a652dc1eaf5759b5"
+    },
+    {
+      "view": "r0c8-right-4x",
+      "sha256": "cb28253a51ff8b3b9db3cde174cf820e8409d73dd464d303d780cae857fb7044"
+    },
+    {
+      "view": "r0c9-edge-4x",
+      "sha256": "a988fbb811336f52f83087a4b5c4bded2ecc4c4f71416c6d134c52625cd4bd90"
+    },
+    {
+      "view": "r1c9-whole-2x",
+      "sha256": "1c511529330da323665a53616f8e26f13ea308a0d5b68fa1e539e22513577ebf"
+    },
+    {
+      "view": "r1c9-left-4x",
+      "sha256": "403cb725f1318f665530f70ddbe3ee72e775eaf6c83c26a23c7445b3234005c2"
+    },
+    {
+      "view": "r1c9-bottom-4x",
+      "sha256": "25ea670e055bc13afa85aa69dcdf43d07ac6e1977a1772703e540060c3d7ae82"
+    },
+    {
+      "view": "r1c10-whole-2x",
+      "sha256": "a846c1d0db985d49b688adee499825657a89787b55d813c7b9787c61c678ae1e"
+    },
+    {
+      "view": "r1c10-left-4x",
+      "sha256": "af5260a7b4d36b1fc82afa6dee2daa95f21ed8acd0bd39b1e0b938fcc682363b"
+    },
+    {
+      "view": "r1c10-bottom-4x",
+      "sha256": "118a39783cbcba27097c059f0ef4ae9923ee3af88df21204a556915f7efac51f"
+    },
+    {
+      "view": "crest-joint-whole-4x",
+      "sha256": "6f951875fb5de1a8c423fdeaf002568727d8165cac362b4631d001c1549b2d9a"
+    },
+    {
+      "view": "lower-cloud-bank-whole-2x",
+      "sha256": "7c26fd5037b43aa7508d34c41848603bd15316d21d106c7f55e2d8bcb5a4e8e2"
+    },
+    {
+      "view": "upper-cloud-tail-4x",
+      "sha256": "b2691b3192effeeac7431035f2d9cacef00d05327bd1417c325cd1f927cbc849"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "batch": "batch-28",
+  "imageGenerationCalls": 7,
+  "installed": false,
+  "runtimeManifestUnchanged": true,
+  "runtimeBaseUnchanged": true,
+  "runtimeManifestSha256": "bbdc048589987f5ed88d4b301bcac2c9e21cc3ea1e75a58dded7a90c23671c25",
+  "runtimeBaseSha256": "0faa13483e87e203f75df4e9703c7569da4fc33acbcb418d36ac4ce2afa037b9",
+  "remainingCorrections": [
+    {
+      "id": "south-bridge-geometry",
+      "priority": "P2",
+      "status": "candidate-rejected-seams",
+      "detail": "Original upper curb is shifted inward13-15 logical y in installed map. Native donor geometry improves sampled drift to2-4px, but assembled road has boundary tears and endpoint mismatch; do not install.",
+      "next": "Repair a complete local joint including curb/terrain endpoint; avoid per-column neutral-pixel masks that select building highlights and leave curb fragments."
+    },
+    {
+      "id": "type28-red-disc-consistency",
+      "priority": "P2",
+      "status": "not-started",
+      "detail": "Original east/west type28 discs share same motif; installed west pure20 vs east motif+20 differ. Unify semantic design without inferring original intended icon from blurred raster."
+    },
+    {
+      "id": "west-grass-material-consistency",
+      "priority": "P3",
+      "status": "not-started",
+      "detail": "Checkerboard/stripe grass texture excessive relative to neighboring fine grass."
+    }
+  ],
+  "candidateStatus": "not-accepted",
+  "verification": {
+    "originalGeometryControl": "pass",
+    "installedGeometryRegression": "fails14/13/15pixels",
+    "candidateGeometry": "sampled2-4pixels; verify saved checker",
+    "newColoredFragments": "fails14pixels",
+    "visual": "upper curb still shows white teeth/endpoint mismatch, not acceptable"
+  },
+  "auditScope": {
+    "staticRoadCells": 160,
+    "naturalRoadCells": 19,
+    "naturalRollsPerProfile": 4,
+    "profiles": [
+      "original",
+      "hd"
+    ],
+    "allCharactersAndBothDirections": false
+  }
+}

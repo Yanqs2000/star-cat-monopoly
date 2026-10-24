@@ -1,0 +1,13 @@
+....F
+======================================================================
+FAIL: test_uniform_asphalt_lighting (__main__.Bridge.test_uniform_asphalt_lighting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch27_bridge.py", line 15, in test_uniform_asphalt_lighting
+    self.assertLess(delta,15,'Pale bridge end must join the same dark asphalt; no broad light/dark stripe')
+AssertionError: np.float64(80.58984374999999) not less than 15 : Pale bridge end must join the same dark asphalt; no broad light/dark stripe
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.285s
+
+FAILED (failures=1)

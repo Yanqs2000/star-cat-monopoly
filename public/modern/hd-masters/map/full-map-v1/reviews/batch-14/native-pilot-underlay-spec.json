@@ -1,0 +1,45 @@
+{
+  "status": "review-verified-candidate-not-production-enabled",
+  "regions": [
+    {
+      "tileId": "r2c2",
+      "coreRect": [
+        400,
+        420,
+        240,
+        256
+      ],
+      "replacementRect": [
+        400,
+        420,
+        272,
+        256
+      ],
+      "rawContextSha256": "5e95fcf484af48c1a1f03f2df3bd36302fd64a32f47b17dbeb69b434b5eca756",
+      "nativeRGBAReplayedExactly": true,
+      "approvedFilesChanged": false
+    },
+    {
+      "tileId": "r3c2",
+      "coreRect": [
+        400,
+        676,
+        240,
+        256
+      ],
+      "replacementRect": [
+        400,
+        676,
+        272,
+        256
+      ],
+      "rawContextSha256": "dfcc6cab90a892ca84b4317ccfaabc866266121047072257ae64b059b370c271",
+      "nativeRGBAReplayedExactly": true,
+      "approvedFilesChanged": false
+    }
+  ],
+  "drawOrder": "candidate regions first; unchanged approved pilot overlays last",
+  "cullsActualLegacyNative2xBaseForExtendedDrawRects": true,
+  "nativeRGBAUnmodified": true,
+  "productionCodeModified": false
+}

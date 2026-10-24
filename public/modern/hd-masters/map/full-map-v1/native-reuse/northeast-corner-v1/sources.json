@@ -1,0 +1,74 @@
+{
+  "rect": [
+    1120,
+    420,
+    32,
+    32
+  ],
+  "sourceOldAtlas": {
+    "path": "public/modern/hd-masters/map/full-map-v1/reviews/batch-20/r2c5.webp",
+    "sha256": "c9fca2d0b40fafdfe53fc462524a977bfae3078f234dbd7ceb4130ecada634fa",
+    "pixelCrop": [
+      0,
+      0,
+      139,
+      139
+    ]
+  },
+  "sourceNorthMaster": {
+    "path": "public/modern/hd-masters/map/full-map-v1/masters/r1c4-r2.png",
+    "sha256": "71ebc5626be825f0354a8ac89d776e38a0007a5b3a3aaa14e38f5c46c7d22bb2",
+    "referenceRect": [
+      864,
+      148,
+      312,
+      312
+    ]
+  },
+  "files": {
+    "old.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/native-reuse/northeast-corner-v1/old.png",
+      "sha256": "c00cdbd05ed096f5117e8b8737a9feb7f0f69f18fe1bd0f3a1a0727b47ac3d9c"
+    },
+    "north.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/native-reuse/northeast-corner-v1/north.png",
+      "sha256": "380c4c72bb15b727235090ff6d6c8d3124d52c3176cc6a8e3c2cb1d9cf5a03f8"
+    },
+    "mask.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/native-reuse/northeast-corner-v1/mask.png",
+      "sha256": "1b0f49fcf8cb120e3c399cf7bb50e54a1e0262e77b992f4b7732bf294fad5d7e"
+    },
+    "assembled.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/native-reuse/northeast-corner-v1/assembled.png",
+      "sha256": "aeddf95bf21fc9610fa5f6c542228642f254f615d38f2cd215e7e3e04e483ef0"
+    },
+    "cut-stats.json": {
+      "path": "public/modern/hd-masters/map/full-map-v1/native-reuse/northeast-corner-v1/cut-stats.json",
+      "sha256": "ede25dcf94b8b8bb857ad94c9f6ce94630d9157b6093ec1756a294098573487a"
+    }
+  },
+  "method": "Exact old or north native RGBA pixel selection on common opaque road/curb; no painting, blending or alpha edits",
+  "nativeAlphaModified": false,
+  "protectedGreen30Rect": [
+    1136,
+    440,
+    16,
+    12
+  ],
+  "stats": {
+    "meanRgbDifference": 0.4172661870503597,
+    "p95RgbDifference": 1.3333333333333333,
+    "cutMinY": 0,
+    "cutMaxY": 94,
+    "green30NativePixelsReplaced": 0,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1758,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.003260700791884478,
+      "nativeAlphaModified": false
+    }
+  }
+}

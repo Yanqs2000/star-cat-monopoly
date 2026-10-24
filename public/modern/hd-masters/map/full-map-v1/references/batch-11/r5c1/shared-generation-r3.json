@@ -1,0 +1,43 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-0e6833aa-604b-480c-97b7-bdeb7eebb547.png",
+  "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET is a square HD game map, keep its composition and ALL object geometry fixed. Image2 is supporting asphalt MATERIAL reference only, not a map layout or object to insert.\nFix only these material defects:\n1. The WHITE CLOUD at the top has many tiny accidental transparent pinholes in its interior highlight, especially upper50px and around its bright central lobe. Re-render its entire interior as solid OPAQUE white/pale-cyan cloud material, no see-through dots, erased speckles or faded transparency. Keep the same cloud outline, single spiral, lobe count and exact position. Sky OUTSIDE the cloud and island must remain genuine alpha0, especially the left open gap below cloud. Cloud and terrain interiors must have alpha255, smooth colors rather than transparency shading. No sky fill, no clipping of cloud.\n2. Gray road is too smooth: use the same fine dense gray asphalt/spiral-pebble texture as Image2, at a SMALL grain size suitable for this map scale, keeping existing road/curb/disc boundaries exactly stationary. Do not insert Image2's bush, lane marks or objects.\nBlue30, cyan10 discs, purple white dice emblem with red/blue pips, cropped tree, grass, ride rail/tower and all outer edge anchors stay identical. Preserve every face/pip and object count. Do not change numbers or add details. No new cracks, props, labels or shadows. Same native high-resolution square RGBA framing, no margins or reframing.",
+  "referenceRect": [
+    128,
+    1132,
+    312,
+    312
+  ],
+  "rawAlphaReplacedByDonor": true,
+  "sharedRepairs": [
+    {
+      "repairId": "r5c1-cloud-native-reuse-r1",
+      "rect": [
+        128,
+        1132,
+        312,
+        80
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/r5c1-cloud-native-reuse-r1/assembled.png"
+    },
+    {
+      "repairId": "r5c1-tree-native-reuse-r1",
+      "rect": [
+        80,
+        1280,
+        144,
+        160
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/r5c1-tree-native-reuse-r1/assembled.png"
+    },
+    {
+      "repairId": "r5c1-gap-native-reuse-r1",
+      "rect": [
+        80,
+        1200,
+        176,
+        104
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/r5c1-gap-native-reuse-r1/assembled.png"
+    }
+  ]
+}

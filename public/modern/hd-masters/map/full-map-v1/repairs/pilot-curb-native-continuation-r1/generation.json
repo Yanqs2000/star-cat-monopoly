@@ -1,0 +1,17 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/pilot-curb-native-continuation-r1/native-donor.png",
+  "rect": [
+    1008,
+    440,
+    128,
+    96
+  ],
+  "prompt": "Reuse the complete native r0c1 road curb in one continuous diagonal band. Retain old sky, plant, cyan10 and all other RGBA. No image generation, alpha repaint or original-silhouette clipping.",
+  "generator": "Native existing built-in image_gen master reuse; zero new generation calls",
+  "sourceMasterPath": "public/modern/hd-masters/map/region-11-9-v2/r0c1.png",
+  "sourceMasterSha256": "6c3947687bb974d78153025dc3da18cb1586a4a2d9cc55ac6449f39ef5716772",
+  "method": "Three native sources: existing rendered scene, unmasked accepted-master curb, accepted-file transparent sky. Exact RGBA selection; no alpha repaint or new generation.",
+  "skyDonorSource": "public/modern/hd-map/region-11-9/r0c1.webp",
+  "skyDonorSourceSha256": "67801637d661a0afc15f03d664d196a6c562623cb03e04e95a0f3c1d18037174",
+  "curveSelectionNote": "The whole curved curb and its blue-gray antialias pixels take priority over sky selection; widen the geometric band to include the native curve bow. Every output RGBA remains from declared sources."
+}

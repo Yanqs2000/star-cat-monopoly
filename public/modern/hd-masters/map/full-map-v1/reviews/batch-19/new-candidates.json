@@ -1,0 +1,366 @@
+[
+  {
+    "id": "r1c3",
+    "row": 1,
+    "col": 3,
+    "rect": [
+      640,
+      180,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0029134114583333334,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c3-r1.png",
+        "masterSha256": "fa3141f539445221e94d3ced8dc4da62e9de3db32992e86bc0de4ce86d0de1f5",
+        "nativePixelSize": [
+          1385,
+          1136
+        ],
+        "referenceRect": [
+          640,
+          180,
+          312,
+          296
+        ],
+        "prompt": "Use case: precise-object-edit / continuous HD map restoration. Image1 is a partially finished map canvas with existing HD neighbor art and empty transparent area to complete. Image2 is the original layout for exactly the SAME whole canvas. Preserve all existing context coordinates and materials. Generate only missing art, faithfully keeping every original road, curb, fence, tree, shrub, plot, portal circle, building fragment, cliff, cloud, icon and marking at its source coordinate and count; do not add/remove objects or redesign geometry. Match glossy bright Star Cat Monopoly style, fine dense grey asphalt grains, white curb brick size, green grass blade scale and patterned lot spiral phase from neighbor. At all known edges continue cut-off lines/patterns EXACTLY without kinks, extra borders or doubled marks. Entire working canvas must be OPAQUE alpha255, including blue sky outside source map; original silhouette is a separate renderer geometry mask. No holes, transparency, black voids or text invented. Do not crop or reframe.\nExact aspect312:296, target1248x1184. Preserve RIGHT56 and BOTTOM56 logical pixels. Add only original cloud fragment in UPPER LEFT, white glossy cloud with one pale blue spiral curl and long tapered tip extending right, same coordinates as original. Remaining blank is matching blue sky. Continue right-hand existing cloud and lower bushes without moving or adding clouds. Whole working canvas opaque even though original sky transparent.",
+        "generator": "built-in image_gen",
+        "rejected": "Native density below4"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c3-r2.png",
+        "masterSha256": "d99d8a24962c5be8ad60276566e01f117b65c8f04d325aead966f5b3efd449e7",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          640,
+          180,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / continuous HD map restoration. Image1 is a partially finished map canvas with existing HD neighbor art and empty transparent area to complete. Image2 is the original layout for exactly the SAME whole canvas. Preserve all existing context coordinates and materials. Generate only missing art, faithfully keeping every original road, curb, fence, tree, shrub, plot, portal circle, building fragment, cliff, cloud, icon and marking at its source coordinate and count; do not add/remove objects or redesign geometry. Match glossy bright Star Cat Monopoly style, fine dense grey asphalt grains, white curb brick size, green grass blade scale and patterned lot spiral phase from neighbor. At all known edges continue cut-off lines/patterns EXACTLY without kinks, extra borders or doubled marks. Entire working canvas must be OPAQUE alpha255, including blue sky outside source map; original silhouette is a separate renderer geometry mask. No holes, transparency, black voids or text invented. Do not crop or reframe.\nOUTPUT MUST BE SQUARE 1254x1254, same square framing as BOTH inputs. Complete only transparent area. Existing right56 and bottom72logicalpixel border is finished artwork COPY EXACTLY, never reposition or rescale it. Add cloud fragment from original UPPER LEFT with precise silhouette: cloud begins clipped by upper and left boundary, spiral curl near original logical(35,43), long very narrow pointed tail ends at logical(271,78) in this312x312canvas, lower edge of left cloud ends near y145. Sky all blue. Keep the other cloud clipped by right edge exactly and preserve bottom bushes. Do NOT shorten cloud tail or alter canvas aspect.",
+        "generator": "built-in image_gen"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c3-r3.png",
+        "masterSha256": "357d402110a8448f13b683d07e32269b41eddf86e613319c16fafbb3d0fd384e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          608,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Native HD game map restoration in exact312logical square frame. Image1 edit target has finished TOP32 and LEFT32 cloud context, bottom native greenery reference; missing middle. Image2 ORIGINAL same frame is layout authority. Complete only original missing cloud, preserving exact TOP/LEFT native cloud contour, cyan thin outline, smooth white volume/shading and crop. The original cloud has ONE pale cyan inward spiral near logical(60,75), and a long very narrow tapered point extending right to approx(303,110). Keep original intermediate top humps, lower rounded lobe and lower concave notches, no added/omitted cloud lobes or shifted outlines. Right edge has a SEPARATE clipped white cloud starting around logical y180, preserve source position. Bottom boundary has only original clipped grassy crowns, retain HD greenery reference positions/scale where source has grass; do not add bushes. Crucial: ALL blue exterior SKY, including blue shown in bottom reference, must be truly transparent alpha0, not painted blue. White/cyan clouds and green artwork opaque solid, no holes, no semitransparent white highlights or colored rings. Do not copy opaque rectangular sky background from the bottom generation reference. Match finished cloud at top/left seamlessly with no rectangular shading changes or new cutoff lines. Same camera/frame/size, no zoom/crop, no text, no invented objects. Restore exact original count, shape and positions in bright glossy outlined Star Cat Monopoly style.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 780634,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00103695907880889,
+          "nativeAlphaModified": false
+        },
+        "preservedApprovedNeighbors": [
+          {
+            "tileId": "r2c3",
+            "sha256": "6148d5e4e521d88720ff814fb1cb733e66c4289dd203b30574c8527d0a4191ec",
+            "comparisonRect": [
+              640,
+              420,
+              256,
+              32
+            ],
+            "analysisOnlySourceAlpha": true,
+            "outputMaskApplied": false
+          }
+        ],
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.6262798634812285,
+            "p95RgbDifference": 8.666666666666666,
+            "visibleCutSamples": 586,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.7871939736346515,
+            "p95RgbDifference": 4.0,
+            "visibleCutSamples": 177,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0,
+            "p95RgbDifference": 0,
+            "visibleCutSamples": 0,
+            "maximumChangedPixels": 138,
+            "protectedNeighbor": "r2c3",
+            "approvedAssemblyModified": false,
+            "sourceAlphaForAnalysisOnly": true,
+            "sharedContext": 32
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1111795,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007205014130221886,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c3-r3.png",
+    "referenceRect": [
+      608,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 1.6262798634812285,
+        "p95RgbDifference": 8.666666666666666,
+        "visibleCutSamples": 586,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.7871939736346515,
+        "p95RgbDifference": 4.0,
+        "visibleCutSamples": 177,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0,
+        "p95RgbDifference": 0,
+        "visibleCutSamples": 0,
+        "maximumChangedPixels": 138,
+        "protectedNeighbor": "r2c3",
+        "approvedAssemblyModified": false,
+        "sourceAlphaForAnalysisOnly": true,
+        "sharedContext": 32
+      }
+    ],
+    "reviewStatus": "actual-render-reviewed-engineering-candidate-full-map-art-acceptance-open",
+    "assembledSha256": "962c8d616ce74d8196b2b27f629cdfbe2c290127d01c4fc32c4966f8b4de378d",
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 780634,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00103695907880889,
+      "nativeAlphaModified": false
+    },
+    "appliedRepairs": [
+      "northwest-cloud-main-crown-whole-r2"
+    ],
+    "previousVisualIssue": "Cloud/cliff silhouette has not passed actual renderer review; excluded from finished references."
+  },
+  {
+    "id": "r1c4",
+    "row": 1,
+    "col": 4,
+    "rect": [
+      896,
+      180,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.22200520833333334,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c4-r1.png",
+        "masterSha256": "44676aec0c3a0d3b8fc433c5d645d778a09134bd5b3053d44e22b6ad136d8a14",
+        "nativePixelSize": [
+          1046,
+          1504
+        ],
+        "referenceRect": [
+          896,
+          180,
+          256,
+          368
+        ],
+        "prompt": "Use case: precise-object-edit / continuous HD map restoration. Image1 is a partially finished map canvas with existing HD neighbor art and empty transparent area to complete. Image2 is the original layout for exactly the SAME whole canvas. Preserve all existing context coordinates and materials. Generate only missing art, faithfully keeping every original road, curb, fence, tree, shrub, plot, portal circle, building fragment, cliff, cloud, icon and marking at its source coordinate and count; do not add/remove objects or redesign geometry. Match glossy bright Star Cat Monopoly style, fine dense grey asphalt grains, white curb brick size, green grass blade scale and patterned lot spiral phase from neighbor. At all known edges continue cut-off lines/patterns EXACTLY without kinks, extra borders or doubled marks. Entire working canvas must be OPAQUE alpha255, including blue sky outside source map; original silhouette is a separate renderer geometry mask. No holes, transparency, black voids or text invented. Do not crop or reframe.\nExact aspect256:368, target1024x1472. Keep BOTTOM128logical pixels fixed. Fill above: original has one long white-and-pale-blue cloud with spiral curl on left, floating grassy cliff on right, three partial tree crowns at right edge. Preserve original diagonal bridge location. Outside map silhouette use matching saturated blue sky; keep whole canvas opaque. No new bridges, roads or objects.",
+        "generator": "built-in image_gen"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c4-r2.png",
+        "masterSha256": "71ebc5626be825f0354a8ac89d776e38a0007a5b3a3aaa14e38f5c46c7d22bb2",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          864,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Native HD map continuation exact312logical square. Image1 target has finished TOP32/RIGHT24 and LEFT32 cloud/trees/island anchors, plus BOTTOM40 approved native reference; Image2 original same crop is exact layout authority. Fill missing middle only. Restore original hospital island WEST edge: original irregular grass silhouette descends from top-right, original three partly cropped tree crown groups on right, same trunks/lobes/count/positions; match right existing tree shading and fine grass scale continuously. No extra trees or orange cliff faces. Restore complete original white cloud under island: left rounded body with ONE pale cyan inward spiral at logical(83,222), two original upper crests and shallow saddle between, original lower lobes, island overlaps/hides cloud at right; no additional lobes or moving contours. Thin cyan outline/smooth white glossy volume matching LEFT native cloud crop and existing BOTTOM cloud. Keep very thin separate cloud tail at left around y110 EXACT. Preserve existing diagonal gray road/white curb at lower-right and cut green30 medallion. Bottom bushes/leaf rosette native art stays at existing positions; do not invent plant count. ALL exterior blue sky including bottom reference blue background becomes native transparent alpha0; blue is sky not water. Original opaque cloud, grass, foliage, highlights and road remain solid, no pinholes/translucent green patches. Do not move/reframe/resize any source object, add words or characters. Copy native edge anchors precisely, no doubled contours or rectangular color blocks; preserve existing accepted native objects while completing source layout.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 466109,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0005520130419529912,
+          "nativeAlphaModified": false
+        },
+        "preservedApprovedNeighbors": [
+          {
+            "tileId": "r2c4",
+            "sha256": "36114085ef7562eb2d976683d22f7cdb465cbf0ab30ee3055ca3441cd17f530c",
+            "comparisonRect": [
+              896,
+              420,
+              256,
+              32
+            ],
+            "analysisOnlySourceAlpha": true,
+            "outputMaskApplied": false
+          }
+        ],
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 9.840579710144926,
+            "p95RgbDifference": 21.16666666666666,
+            "visibleCutSamples": 23,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 2.8623882503192846,
+            "p95RgbDifference": 5.333333333333333,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 1.8580858085808583,
+            "p95RgbDifference": 3.649999999999996,
+            "visibleCutSamples": 202,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 3.6984126984126995,
+            "p95RgbDifference": 12.599999999999998,
+            "visibleCutSamples": 63,
+            "maximumChangedPixels": 138,
+            "protectedNeighbor": "r2c4",
+            "approvedAssemblyModified": false,
+            "sourceAlphaForAnalysisOnly": true,
+            "sharedContext": 32
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 724347,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0006632682910698524,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c4-r2.png",
+    "referenceRect": [
+      864,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 9.840579710144926,
+        "p95RgbDifference": 21.16666666666666,
+        "visibleCutSamples": 23,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 2.8623882503192846,
+        "p95RgbDifference": 5.333333333333333,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 68
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 1.8580858085808583,
+        "p95RgbDifference": 3.649999999999996,
+        "visibleCutSamples": 202,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 3.6984126984126995,
+        "p95RgbDifference": 12.599999999999998,
+        "visibleCutSamples": 63,
+        "maximumChangedPixels": 138,
+        "protectedNeighbor": "r2c4",
+        "approvedAssemblyModified": false,
+        "sourceAlphaForAnalysisOnly": true,
+        "sharedContext": 32
+      }
+    ],
+    "reviewStatus": "actual-render-reviewed-engineering-candidate-full-map-art-acceptance-open",
+    "assembledSha256": "c38d288773d39fd41926805a50561f0d1c00191d25189ed06226630decb0583c",
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 466109,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005520130419529912,
+      "nativeAlphaModified": false
+    },
+    "appliedRepairs": [
+      "northwest-whole-tree-shading-r1",
+      "northwest-cloud-main-crown-whole-r2"
+    ],
+    "previousVisualIssue": "Cloud/cliff silhouette has not passed actual renderer review; excluded from finished references."
+  }
+]
