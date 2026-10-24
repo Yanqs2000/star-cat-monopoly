@@ -1,0 +1,26 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r5c0-r1.png",
+  "prompt": "Reuse immutable r5c0-r1 native master for its already generated upper-left cloud segment; no new image generation. The original r4c0 source-visible bbox is[99,200,160,240], entirely within reference[0,1100,256,384]. Top padding932..1100 has no original visible art and native top edge x0..160 has alpha0, so technical transparent padding clips no native art.",
+  "referenceRect": [
+    0,
+    1100,
+    256,
+    384
+  ],
+  "verifiedTransparentPadding": true,
+  "sourceReuse": {
+    "tile": "r5c0",
+    "attempt": "r1",
+    "originalVisibleBBox": [
+      99,
+      200,
+      160,
+      240
+    ],
+    "nativeTopEdgeAlpha": [
+      0,
+      0
+    ],
+    "noRegeneration": true
+  }
+}

@@ -1,0 +1,22 @@
+FF.
+======================================================================
+FAIL: test_actual_sky_has_no_disconnected_approved_outline (__main__.ApprovedNorthSkyGhostTests.test_actual_sky_has_no_disconnected_approved_outline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch19_approved_north_ghost.py", line 10, in test_actual_sky_has_no_disconnected_approved_outline
+    self.assertLessEqual(int(np.abs(ghost-sky).max()),2,'Approved tile leaves a disconnected dark cloud outline at world1004,429 over native alpha0')
+AssertionError: 61 not less than or equal to 2 : Approved tile leaves a disconnected dark cloud outline at world1004,429 over native alpha0
+
+======================================================================
+FAIL: test_only_native_pixel_crop_replaces_approved_top_band (__main__.ApprovedNorthSkyGhostTests.test_only_native_pixel_crop_replaces_approved_top_band)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch19_approved_north_ghost.py", line 12, in test_only_native_pixel_crop_replaces_approved_top_band
+    p=OUT/'approved-review-regions.json';self.assertTrue(p.exists(),'No explicit approved-top crop provenance')
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : No explicit approved-top crop provenance
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.019s
+
+FAILED (failures=2)

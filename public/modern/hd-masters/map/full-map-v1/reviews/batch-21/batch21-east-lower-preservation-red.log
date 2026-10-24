@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_east_review_geometry_retains_lower_field (__main__.NortheastNativeReuseTests.test_east_review_geometry_retains_lower_field)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py", line 27, in test_east_review_geometry_retains_lower_field
+    self.assertEqual(len(parts),1,'Only the green30 band may lose the east feather; lower approved field must retain full width')
+AssertionError: 0 != 1 : Only the green30 band may lose the east feather; lower approved field must retain full width
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

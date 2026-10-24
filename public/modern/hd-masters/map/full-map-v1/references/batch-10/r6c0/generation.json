@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-068b766c-fdd5-4b57-a23c-e1e3ced17f35.png",
+  "prompt": "Use case: precise-object-edit. Asset: transparent square HD isometric game map crop.\nImage1 is the EDIT TARGET with finished RIGHT HALF and BOTTOM40 logical pixels. Image2 is the exact ORIGINAL LAYOUT of the same square. Fill only unfinished left/up area from original, matching all finished pixels' coordinates, materials and tiny grass leaf scale. Never move or resize the right/bottom anchors.\nRestore left island grass silhouette: outside sky is truly transparent along upper-left and middle-left concavities; grass boundary angles left/down around original x70 near top then x0 near lower third, with a small curved protrusion near bottom. Preserve this full irregular original boundary, no square trim, no painted sky or white fringe. Fine dense yellow-green grass, gently mottled terrain shading. One cropped multi-lobed round tree near upper middle-left, whose canopy goes out the TOP edge, same original trunk position and footprint. Existing separate round tree lower right stays unchanged. Existing road white diagonal curb, single-cat engraved manhole, blue30/red20/croppedcyan10 discs and all their shapes stay unchanged; no extra road marks, faces, numbers, trees, props, flowers or cracks. Do not reproduce dark scratch arc from original grass. No empty holes inside island. Single square RGBA, native high resolution, exact edge-to-edge composition.",
+  "referenceRect": [
+    0,
+    1380,
+    312,
+    312
+  ]
+}

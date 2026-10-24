@@ -1,0 +1,34 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-48616e15-cd33-49c1-8e22-a0e9525163c6.png",
+  "prompt": "Use case: text-localization / precise-object-edit. Edit this EXACT game map image; preserve canvas, camera and every object coordinate.\nFix ONLY:\n1. Roof lettering currently reads \"STRAR\" (five letters). ERASE ALL five old glyphs and render exactly \"STAR\" (four letters), left-to-right S, T, A, R, in the same brown outlined yellow embossed style and roof perspective. There must be NO R between T and A, no extra trailing R, no ghost letters, no merged characters. Clearly readable four-letter word STAR.\n2. Remove the single small starburst LEAF ROSETTE sitting on the flat GREEN BUILDING PLINTH immediately left of the building wall (near pixel573,345 on1254square). Replace only that rosette with the existing plain smooth green plinth surface. Do not remove normal grass outside the plinth.\nEverything else is fixed: building roof silhouette and blue windows, door badge, two round trees, striped stairs, plinth footprint, curb, white arrows/cloud stencil, background grass, cropped gateway ornament and all four boundary anchors. Same native high-resolution square RGBA. No new objects, no rescaling/reframing, no alpha holes.",
+  "referenceRect": [
+    368,
+    652,
+    312,
+    312
+  ],
+  "sourceGenerationPrompt": "Use case: precise-object-edit. Asset: square HD isometric Star Cat game map.\nImage1 EDIT TARGET is completed neighbor context around unfinished center. Image2 is exact ORIGINAL LAYOUT of this312x312 crop. Reconstruct missing art at identical positions, crop, scale and projection, matching approved RIGHT40 pixels and completed LEFT32 pixels/grass corner. Preserve right-side curb, building platform/tree/stairs and road markings geometry.\nIMPORTANT top roof strip contains erroneous inherited \"RR\"/wrong glyph fragments. Those letters are NOT approved anchors. Replace the ENTIRE roof word with exact \"STAR\" spelled S T A R (four letters), matching Image2; no SHRR, STARR, extra letters or ghost fragments. Keep roof geometry and blue windows stationary. Let the full correct STAR word cross the top row boundary naturally; do not preserve wrong glyph fragments.\nOriginal building: one yellow/lime futuristic STAR building on a single green/orange rounded plinth, left small roofed side extension, original blue oval roof windows, colored vertical facade strips, original purple-and-white stairways and exactly TWO small round green trees on plinth. Same footprints, counts and original colors. Building roof is cropped at TOP as original; never move it inward or enlarge it. No extra door, window, light, tree, furniture or large stone. Match finer pointed grass/dirt path to right anchor while smoothly joining existing left grass.\nDiagonal gray asphalt road, white brick curb, original arrow/chevron fragments and white cloud-shaped road stencil continue exactly through right boundary; same marking counts. Bottom-left has the original cropped round green tree and cropped blue/white/green map gateway decoration; keep original fragment positions and counts, don't complete objects by shifting them into frame.\nNo isolated boulders/rock piles, flowers, vines, text beyond STAR or new props. Original tiny outside-island sky in extreme top-left stays transparent, opaque interiors elsewhere, no white/black/transparent holes. Single native high-resolution square RGBA, exact framing.",
+  "preserveApprovedNeighbors": true,
+  "sharedRepairs": [
+    {
+      "repairId": "northwest-grass-lip-joint-r1",
+      "rect": [
+        320,
+        596,
+        160,
+        160
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northwest-grass-lip-joint-r1/assembled.png"
+    },
+    {
+      "repairId": "star-roof-native-reuse-r1",
+      "rect": [
+        480,
+        652,
+        160,
+        80
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/star-roof-native-reuse-r1/assembled.png"
+    }
+  ]
+}

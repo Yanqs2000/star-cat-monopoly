@@ -1,0 +1,11 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-f1f66df3-57b3-41d3-ac89-73e00828e928.png",
+  "prompt": "Use case: precise-object-edit. FIRST image has one incorrect cutout: the UPPER-LEFT cliff plane behind the green ivy was removed as transparent background. Restore that solid golden/amber ROCK SURFACE, following THIRD original layout exactly. In the source crop the LEFT canvas edge is solid rock/ivy from top down to about61% height, with a small true sky gap below it and the existing cloud farther below. Do NOT leave transparent sky behind/left of the ivy in that upper-left area. This is a cropped continuous cliff, not an isolated cutout; the gold rock continues off the TOP and LEFT canvas edges. Match the SECOND reference's already-finished HD top64 logical pixels, including its solid gold upper-left corner and existing ivy, and its right56 logical pixels accurately.\nKeep all other current cliff fingers, gold faces, boulder rim at right, single white/cyan cloud and its ONE spiral in the same positions, size and counts. The enclosed triangular SKY OPENING between the hanging cliff and cloud is intentional and is also present in THIRD source; preserve that opening as transparent. Outside below cloud also remains transparent. Solid rock/ivy/cloud interiors, no new accidental holes. No new objects, plants, clouds or grooves. Same bright faceted gold style and dark brown contours, square crop, no reframing.",
+  "referenceRect": [
+    896,
+    2068,
+    312,
+    312
+  ],
+  "rejected": "Upper-left corner restored, but source's solid left cliff plane below ivy is still removed; not selected"
+}

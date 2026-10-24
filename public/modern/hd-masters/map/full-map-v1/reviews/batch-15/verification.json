@@ -1,0 +1,700 @@
+{
+  "date": "2026-10-22",
+  "generator": "built-in image_gen",
+  "completedImageGenerationCallsThisBatch": 13,
+  "newEngineeringCandidates": [
+    "r5c8",
+    "r7c5",
+    "r8c5",
+    "r8c6",
+    "r2c6"
+  ],
+  "selectedTotal": 85,
+  "notGenerated": 15,
+  "rework": 1,
+  "pendingVisualReview": 4,
+  "productionEnabled": false,
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "immutableAttemptMasterHashesVerified": 168,
+  "nativeRepairFileHashesVerified": true,
+  "repairsAreExactOldOrNewPixelSelection": true,
+  "minimumNewNativeDensity": 4.019230769230769,
+  "newLocalRepairs": [
+    "south-cliff-phantom-stone-remove-r1",
+    "east-parcel-road-platform-joint-r2"
+  ],
+  "allPreviousAssemblyChangesInsideDeclaredScopes": true,
+  "nativeAssembledAlphaAudits": {
+    "r2c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 75990,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0003590664272890485,
+      "nativeAlphaModified": false
+    },
+    "r2c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 122436,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0774451942191681,
+      "nativeAlphaModified": false
+    },
+    "r3c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 36856,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00011338939809127847,
+      "nativeAlphaModified": false
+    },
+    "r4c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r5c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r5c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r5c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9669370657573925,
+      "nativeAlphaModified": false
+    },
+    "r6c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r6c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r6c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.893413007736234,
+      "nativeAlphaModified": false
+    },
+    "r7c4": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r7c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r7c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r8c4": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.495067135791769,
+      "nativeAlphaModified": false
+    },
+    "r8c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r8c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r8c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.48230263061317363,
+      "nativeAlphaModified": false
+    },
+    "r9c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 24805,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.051041529043907165,
+      "nativeAlphaModified": false
+    },
+    "r9c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 166052,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.028034427762195457,
+      "nativeAlphaModified": false
+    }
+  },
+  "mapPythonTestsPassed": 30,
+  "mapNpmEntryPointTestsPassed": 27,
+  "preservedExportRegressionTestsPassed": 4,
+  "completedExportRegressionWrongPixels": 0,
+  "actualNativeReplacementViews": 33,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 88,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "nonOverlappingGridDrawCoverageVerified": true,
+  "reviewAtlasCount": 88,
+  "nativePilotUnderlayReplayedExactly": true,
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "fullMapUserAcceptance": "incomplete",
+  "phantomStoneSourceAudit": {
+    "oldGrayPixels": 14423,
+    "newGrayPixels": 0,
+    "newPixelsFromNativeOnly": true
+  },
+  "newVisualCorrectionDebt": [
+    "r8c6 left road/curb and grass handoff",
+    "r8c6 bottom river/shore/cliff hue line",
+    "r2c6 right golden cliff lip minor step near1632,470"
+  ],
+  "rejectedWholeJointCorrectionsApplied": false,
+  "r3c5UnreviewedTop16BytesUnchanged": true,
+  "projectDefaultSuite": "not rerun this batch; no runtime code change; batch14 643 passed",
+  "candidateReviewStatus": {
+    "r2c6": "actual-render-inspected-minor-right-cliff-lip-correction-required",
+    "r5c8": "actual-render-inspected-candidate-not-final-acceptance",
+    "r7c5": "actual-render-inspected-candidate-not-final-acceptance",
+    "r8c5": "actual-render-inspected-candidate-not-final-acceptance",
+    "r8c6": "visual-correction-required"
+  },
+  "referenceInputFilesHashed": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/generation-r2.json",
+      "sha256": "485b1e315239506d3a60488c96e1e44cf87be077a17e62f2579bab8396481f77"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/generation.json",
+      "sha256": "7655d1bfa90bb17d531892f5635231d5538c81411eaa14f644ee2edeff77abf2"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/layout-on-sky.png",
+      "sha256": "4676b48f3b1c0c9380d593c8d2fcd5427950f9d2ec50234a925df2247000a93e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/reference.json",
+      "sha256": "5aeeef51ba64d1389f3b6a118974c694fa132a2135d8fedd842eb2cca8005b41"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r2c6/target.png",
+      "sha256": "ddd79bc50e32b3e0470f03b578deadd37b6529bdd49aac8cbf6d4918cbbde021"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/generation-r5.json",
+      "sha256": "18e3b86aad513190df889e52ea4c9759e70652859e54f30f1eb4e1750e15d804"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/generation-r6-reused.json",
+      "sha256": "c92dfaa8acdc367cc7c5802e1608649a1c673c351fcada82e107f3a5b187eee0"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/generation.json",
+      "sha256": "7193303316c3e02f718b79b16d5cb43ed21fe8bd034646fbbcb1dffbca8129aa"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/layout-on-sky.png",
+      "sha256": "0aaa894668f08ada1dcc6b8f40dc953d8f112601f96547a165e7954aceeedc1f"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/layout.png",
+      "sha256": "0aaa894668f08ada1dcc6b8f40dc953d8f112601f96547a165e7954aceeedc1f"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/orb-identity-native.png",
+      "sha256": "f07e0019e75bb821a7a6d02fd94e2f7224d30b4c9d31cc369c6667b8cd515d13"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/platform-left-identity-native.png",
+      "sha256": "cc5f7d0a88d8c28fc6dd046c1cc42a32f5eca7db9962dec13d841500c644e240"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/reference.json",
+      "sha256": "5aff222a3d1ca58502482e237ad926990e9c233e31c4ea495e55bdf224f281cf"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r5c8/target.png",
+      "sha256": "85b39792b9019615e0e6b284204e50132cb3ecee2622d17f63b8ffe5dcc8b677"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r7c5/generation.json",
+      "sha256": "d3e8b9299752406b1944107f49203966e603d95be9109ce078880b2152092663"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r7c5/layout-on-sky.png",
+      "sha256": "361558ffa4beabcb5c22fdb9e1f85e70d4e8f63b19710699692cb9f582e6fab8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r7c5/layout.png",
+      "sha256": "f402fd29f0c0655fd217f1e18fd0824d413bb9923371e4b5695420ff56883a03"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r7c5/reference.json",
+      "sha256": "00147681e74313849549743364e15f072d670622455da7aa02af5c3ccdde703a"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r7c5/target.png",
+      "sha256": "38148a19d53c9675251ae1e7af6c86914532a0aff54f7ae5c85ca24a1aeffce2"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c5/generation.json",
+      "sha256": "f684467099c120b6a908f79afcd445aeb23d75681db28b10748b3f2c12317607"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c5/layout-on-sky.png",
+      "sha256": "2a2de2dc9d88e876466eddfb73ec51505fabd055ca66cfc965d72f15838b1c3f"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c5/layout.png",
+      "sha256": "42e4e5aca397fe85bebb6ba26ffd1f7c56a60934581857bc1d09540e7f521dca"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c5/reference.json",
+      "sha256": "439286319b3781adce78f7a493834a4ab6d43192d9a285159189670112db15c9"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c5/target.png",
+      "sha256": "919d896ddd9fca1af7f3c3ddca4adf5eb575af1a6910b068de615f89e6b0700c"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/generation-r2.json",
+      "sha256": "a602e8a9c2554a163dc9aa121da7ce13574d82b1a72812b32d5d77b1ac5f1410"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/generation.json",
+      "sha256": "4a08abab9b34ce3ed84644e6af62778fa516a62dd3b9ea6785872bb27aa1b67d"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/layout-on-sky.png",
+      "sha256": "c3688d5dd32ea4da1310e452681fd3c9eb14785518459c0e0bc2707527469ae9"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/layout.png",
+      "sha256": "499dc6e82233ee8ee9e12ce9e7239e0fa654b68dce33ed5ed831b3f5d9cb5a22"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/reference.json",
+      "sha256": "8614f8242a0f6a5ff86da1d45a462687f1cdf4078cf1c83ebd40ffaf28fd0498"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/batch15-inputs/r8c6/target.png",
+      "sha256": "b602663b0b51b38aa07b8f8e0109c4810c5f9bf8b5fd4215465f58324bfcbaec"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/completed-prior-requests.json",
+      "sha256": "59a5ae690c753b85a0c22800ba5b34985e80b8df36d148b75bd9479bca5d16da"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r1/before.png",
+      "sha256": "9e3edf799c64d9d377ed8cfe1e96c72d54003920a436b674a84336db5a146b0e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r1/generation.json",
+      "sha256": "e650c2a2f34b194e5340b49c7d98178a35cb4cfe5a4e0d91d4212c2af0db6096"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r1/layout.png",
+      "sha256": "1430127636659f20ab0ec05b5a0a608da4567a068335a4bd4dac9fa9fe1b09ae"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r1/reference.json",
+      "sha256": "eee8771ab7baf385866addab91aa28d4f274e01edeb1f9fcf34bd067a3bf4d50"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r2/before.png",
+      "sha256": "9e3edf799c64d9d377ed8cfe1e96c72d54003920a436b674a84336db5a146b0e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r2/generation.json",
+      "sha256": "43df4b37a85abdd4c7ff373a872ff8cee4f7319dd831832ef8645e2bd812eca8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r2/layout.png",
+      "sha256": "1430127636659f20ab0ec05b5a0a608da4567a068335a4bd4dac9fa9fe1b09ae"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/east-parcel-road-platform-joint-r2/reference.json",
+      "sha256": "eee8771ab7baf385866addab91aa28d4f274e01edeb1f9fcf34bd067a3bf4d50"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/prompts.json",
+      "sha256": "7b430d5b0dd9b20de08cc3b51a383ae6342027c21ed6b0b381c9dbbf67fdbb1e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-bottom-shore-joint-r1/before.png",
+      "sha256": "44e432e14791ec47974c4851328884390a0fc47d22a86cc5d0a5af48c82e48cb"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-bottom-shore-joint-r1/generation.json",
+      "sha256": "b515675ef49cd5125f64729e0acc688525afb9db2d163f6299c6a23de50ee35e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-bottom-shore-joint-r1/layout.png",
+      "sha256": "4e22ead6093b3c36fabb95a06bb8980973f49ae7a72b82afd152a6c53dd379ae"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-bottom-shore-joint-r1/reference.json",
+      "sha256": "af7b436f23be0772b04ec86f69946c3878a76602b49eeb8fed54f080f0d54a22"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-building-road-joint-r1/before.png",
+      "sha256": "0af63f8333b66d5077c26e111836c553bfade1fad7fe940368cdebfbe5d2f399"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-building-road-joint-r1/generation.json",
+      "sha256": "f6e4d3c3f59823d321c608ad4bed74771286f3a1e0cb072112258429098bd27c"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-building-road-joint-r1/layout.png",
+      "sha256": "c82eb58afe26808e5a24d7a987cffeb96ad004d4e9e1a328a9fb1f717b65d8f9"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/river-building-road-joint-r1/reference.json",
+      "sha256": "5ee7683437961c7dcdd3988c2a395a68637eb4481a060a94d41b3cd996c666ed"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/south-cliff-phantom-stone-remove-r1/before.png",
+      "sha256": "c610ebe72c24fa7d62d37bfbb8aee84a4d08e08f15549543111c256ab377f7ad"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/south-cliff-phantom-stone-remove-r1/generation.json",
+      "sha256": "2cd8b8b325f9c3ed55581ea906067b538f7b0e78459f1421fd985a47450ef3c1"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/south-cliff-phantom-stone-remove-r1/layout.png",
+      "sha256": "41875c2852f65541b259d3e29192e1736134281a41cda3677fbc66818754bd8e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-15/south-cliff-phantom-stone-remove-r1/reference.json",
+      "sha256": "13f9647e65b690946b57f0f6c11c58970f83f83ffadc4b6f4a7bc6f94eac8852"
+    }
+  ],
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "2bf2519135a78f301a8fdebd6c264e9ace723743c8127df1dd51b0384186b46f"
+    },
+    {
+      "view": "south-cliff-whole-2x",
+      "sha256": "69265d7d89c190286f290f4b1fa9ffb06f4c78583248bafa2070f4561c1f8bb2"
+    },
+    {
+      "view": "pillar-whole-4x",
+      "sha256": "5affe6ea8ff63c6c5a203b71bd205b4ea23798455114c90d07883503bb227b6a"
+    },
+    {
+      "view": "r7c5-left-4x",
+      "sha256": "db6e81202d2b616c74d38a08efef09d075012896c3a2939832d4c3c19e44161d"
+    },
+    {
+      "view": "r7c5-right-4x",
+      "sha256": "d74f0a66f1412f58bdec517317e8fc23fa772ab4d9fa6a54435720a375c2a85e"
+    },
+    {
+      "view": "r7c5-bottom-4x",
+      "sha256": "7e4d32541cf0e2fb35b64ba88f8ba1ed09734ecfdab3041a6bb1eea7ee6712c4"
+    },
+    {
+      "view": "phantom-stone-removed-4x",
+      "sha256": "a8fc2aab70a368377a6dbebe7189cfe5de038bde1e415c351115457e5a1599b9"
+    },
+    {
+      "view": "domed-building-whole-2x",
+      "sha256": "9a71e71c69ce8fc64d00799b38305b201ee91217ec8ffc201285b0b053b705f0"
+    },
+    {
+      "view": "keyhole-building-4x",
+      "sha256": "654f8951899a31dc2f42b68083e102d7b004d2668dbe84e924e263fade2c3273"
+    },
+    {
+      "view": "r8c5-left-4x",
+      "sha256": "693c709a939b4582672259f05202f4ad1375a228914d7ab6dfeb47291f228701"
+    },
+    {
+      "view": "r8c5-top-4x",
+      "sha256": "7e4d32541cf0e2fb35b64ba88f8ba1ed09734ecfdab3041a6bb1eea7ee6712c4"
+    },
+    {
+      "view": "r8c5-bottom-4x",
+      "sha256": "b76f1992ba990f9227868fa76517350eb4074fcaeb3b9f1bd0a481ba041fef36"
+    },
+    {
+      "view": "phantom-patch-left-4x",
+      "sha256": "649d8ace875c37cf227fd4c9d426c6590c2c2741846b50717910b3108af2214a"
+    },
+    {
+      "view": "phantom-patch-right-4x",
+      "sha256": "dffd60fa03f0ab07bf389f73cd4ee4a97230419858832b4b1b5238638bf6df68"
+    },
+    {
+      "view": "phantom-patch-top-4x",
+      "sha256": "5724040b46c884b8a7c3d0a887141de48f24c8a66e43162be40aca09b5d96caa"
+    },
+    {
+      "view": "phantom-patch-bottom-4x",
+      "sha256": "d8c5c066b9c973e96c90b08f412e9a7866ca9b65e43abc90dfbf74aae2aa8308"
+    },
+    {
+      "view": "east-platform-whole-2x",
+      "sha256": "aaeebdd6f3773af515f6ff15a665b96e4af26eaf05a304fdfdfdb1c0cac0b5d7"
+    },
+    {
+      "view": "platform-curb-fixed-4x",
+      "sha256": "515d52840461b18da71fb201c697d4dcf1d84b4a0c98cfb105005c58427cc00e"
+    },
+    {
+      "view": "r5c8-left-4x",
+      "sha256": "5ed08567d18800b29f9f6b8b359b7f965ef40dba3323e8046738720c6650e902"
+    },
+    {
+      "view": "r5c8-right-4x",
+      "sha256": "808f3f37a7edae374571874d6e0bb160abeb8ae09ee4b1fe2c4b8ffa489f3b9b"
+    },
+    {
+      "view": "r5c8-top-4x",
+      "sha256": "532d8936d685bb79eb3c6a1c5509a027d863fa0f1a5817921f02572830fa3e4e"
+    },
+    {
+      "view": "r5c8-bottom-4x",
+      "sha256": "c89484172b585ec3eb6746e94666062ea22100283ee39711462b2607fed44cf0"
+    },
+    {
+      "view": "river-whole-2x",
+      "sha256": "6f9108b5239f313a5a62ed1c80f308d4913a34904afcf4e3818e442b2ea4fa17"
+    },
+    {
+      "view": "r8c6-left-4x",
+      "sha256": "988548bea42f2dcea1b76bc7913f35db0f357e274c9c84061312d0639449bf72"
+    },
+    {
+      "view": "r8c6-right-4x",
+      "sha256": "23caae61894978d0d3a1d73c91204e2793668c8141a1390a37ac376ed364bb16"
+    },
+    {
+      "view": "r8c6-top-4x",
+      "sha256": "63aadd9bcbafaffca9c82a5f9a2f319a24b7f13d616b09a01a19e90c29fc9eaa"
+    },
+    {
+      "view": "r8c6-bottom-4x",
+      "sha256": "4f789f612e7d8170fba24f91ae2a580b3d63685f33ca8b183253ff6c1c0afaec"
+    },
+    {
+      "view": "east-joint-right-4x",
+      "sha256": "727a9c2fe9c573978876dc9442b4db6c6460fe1fbdbbb1c4b31b4371e4482c17"
+    },
+    {
+      "view": "east-joint-bottom-4x",
+      "sha256": "c2ea75e470319970bdd14d01a3adb46b6d9d62400e39c03e2491d6e83b84efe4"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "36eda02c3854959a2dcda63d5545c9aaba21c86f3640113f13300e5dd95296b8"
+    },
+    {
+      "view": "r2c6-right-4x",
+      "sha256": "a859d17263a488c3947e1e7079f9810f58bddd0e8ffc5431cfe6795e20602854"
+    },
+    {
+      "view": "r2c6-bottom-4x",
+      "sha256": "bf657e639de2fb2978b58edc44f8767ea0c093216703f449a0b66bd1a9eb9295"
+    },
+    {
+      "view": "r2c6-cloud-solid-4x",
+      "sha256": "8dae0d090d648d19fb893c4791c94d2e6fe8e5f610d02b417c2a0840f153efa3"
+    }
+  ]
+}

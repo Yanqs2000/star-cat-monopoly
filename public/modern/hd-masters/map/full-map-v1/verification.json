@@ -1,0 +1,40 @@
+{
+  "checkedOn": "2026-10-19",
+  "counts": {
+    "pending": 99,
+    "pending-visual-review": 2,
+    "approved-source-reused": 4,
+    "selected-engineering": 4
+  },
+  "inlandRect": [
+    640,
+    692,
+    752,
+    480
+  ],
+  "remainingExpansionJobsIncludingVisualReview": 101,
+  "nativeDensityMinimum": 4.0,
+  "approvedInteriorPixelsPreserved": 4359744,
+  "approvedOriginalFilesModified": false,
+  "nativeMasterHashesValid": true,
+  "repairUsesOnlyOriginalOrGeneratedPixels": true,
+  "productionEnabled": false,
+  "internalSeamReviewedCandidates": [
+    "r3c5",
+    "r4c3",
+    "r4c4",
+    "r4c5"
+  ],
+  "additionalUnreviewedBand": {
+    "id": "r3c5",
+    "rect": [
+      1152,
+      676,
+      240,
+      16
+    ]
+  },
+  "outerPerimeterReview": "pending; no production enablement",
+  "batch": "01",
+  "supersededBy": "reviews/batch-02/verification.json"
+}

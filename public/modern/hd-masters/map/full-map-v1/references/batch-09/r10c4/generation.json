@@ -1,0 +1,24 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-89177876-85d8-43b0-85d8-425cd844b68f.png",
+  "prompt": "Use case: precise-object-edit. Asset: landscape3:2 HD cartoon map crop.\nFIRST is the edit target; SECOND is original layout. Repair the ENTIRE single white/cyan cloud below the cliffs as one continuous shape. Remove its obvious vertical tile cuts at about15% and81% canvas width: the left lobe's lower outline has a step, the right cloud fragment is jagged where it meets the boulder, and the cloud shading has straight breaks. Give that same ONE cloud a smooth continuous rounded outline and continuous soft white/cyan shading, with the SAME ONE pale-cyan spiral in the same position. Keep the original lobe count, cloud size and occlusion behind both foreground cliffs. Complete its very bottom contour using SECOND source, including the small part formerly cut off by a tile boundary.\nPreserve every golden cliff finger, rock face, boulder count, green ivy fragment and brown contour in its existing position; also make the subtle vertical boulder shading seam at right read continuously. The triangular SKY WINDOW between the cloud and upper cliff is intentional: preserve its transparent shape. Solid artwork elsewhere. Outer32 logical pixels (8% width/12.5% height) are fixed connection context with matching positions/colors. Cropped rocks at top/left/right continue outside, not isolated cutouts. Genuine native RGBA transparent exterior, no accidental holes or white background. No new clouds, spirals, objects, plants, cracks or text. Exact landscape3:2 canvas matching reference, no reframing.",
+  "referenceRect": [
+    840,
+    2160,
+    384,
+    256
+  ],
+  "verifiedTransparentPadding": true,
+  "sourceSkyReference": true,
+  "sharedRepairs": [
+    {
+      "repairId": "southwest-cloud-full-r1",
+      "rect": [
+        840,
+        2160,
+        384,
+        256
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-cloud-full-r1/assembled.png"
+    }
+  ]
+}

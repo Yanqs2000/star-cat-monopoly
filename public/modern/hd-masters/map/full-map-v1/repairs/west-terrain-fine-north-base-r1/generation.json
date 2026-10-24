@@ -1,0 +1,69 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-ba9a87fe-d105-4c60-a85f-f2362f6720a1.png",
+  "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD western island clean terrain background. Image1 is EDIT TARGET and sole geography authority; Image2 is the neighboring finished fine-grass style at the SAME native pixel density. Replace ALL oversized grass leaves throughout Image1 by that same tiny dense yellow-green grass, matching the fine strip already at the BOTTOM. Use uniform small individual crisp leaves, same hue and soft light, no coarse/fine rectangular phase or blurred transition stripe. Remove ONLY the ONE existing multi-lobed tree on the coast, including trunk and tree shadow, and fill its former ground with the same fine grass; that tree will be a separate foreground sprite later. Do not draw any replacement tree or stump. Preserve the exact existing outer island/grass edge, coast bends, tan bare ground patches and gravel border. Preserve every other object unchanged: all white road curbs, gray asphalt, cat manhole, blue30 disc, red20 disc, partial cyan10 discs and the clipped green leaf decoration at right. Never change a numeral, add/delete a disc, alter manhole face or move the road turn. BOTTOM24 logical pixels are fixed connection context matching the completed southern terrain. TOP grass is updated to fine grass and will be continued in the next northern neighbor; outside sky is genuine alpha transparency and all land/road/discs solid without transparent holes or faint white highlights. Same square canvas and camera, no margins, new props, rocks, flowers, paths or text. Native square image at least1254x1254, same polished bright cartoon game style.",
+  "rect": [
+    0,
+    1264,
+    312,
+    312
+  ],
+  "context": 16,
+  "contextSides": {
+    "left": 16,
+    "right": 24,
+    "top": 0,
+    "bottom": 24
+  },
+  "protectedRects": [
+    [
+      232,
+      1384,
+      72,
+      64
+    ],
+    [
+      232,
+      1480,
+      72,
+      56
+    ],
+    [
+      184,
+      1440,
+      72,
+      64
+    ],
+    [
+      288,
+      1344,
+      24,
+      64
+    ],
+    [
+      128,
+      1448,
+      24,
+      24
+    ]
+  ],
+  "protectedPolygons": [
+    [
+      [
+        336,
+        1300
+      ],
+      [
+        128,
+        1456
+      ],
+      [
+        336,
+        1616
+      ]
+    ]
+  ],
+  "pendingNeighborEdges": [
+    "top",
+    "upper-right-grass"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7032ce08-7a95-4491-9633-6ed236b62f4d.png",
+  "prompt": "Use case: precise-object-edit. Image1 is the current square HD cloudbank edge. Image2 has the authoritative completed LEFT32 and BOTTOM40 anchor bands of the same exact square. Fix Image1's LEFT32 cloud contour and white/cyan shading to match Image2 exactly at identical coordinates, especially the partly clipped large lowerLEFT cloud crest near80–90%down. Its slope/top is shifted relative to the finished left neighbor. Continue that ONE original crest naturally from the exact Image2 left curve; no spike, vertical jump, clipped white triangle, duplicated rim or extra lobe at the join. Keep Image1 BOTTOM40 identical and preserve same original middle crest and lower-right scallops, tiny grass corner, all object counts and original transparent sky. Do not copy a cropped strip as a whole new cloud or move the cloudbank up/down; correct only left registration while preserving source lobe structure. All other positions/crop/frame unchanged; square no zoom/reframe. Solid cloud interior opaque; outside sky alpha0 with narrow clean native antialias, no blue backdrop, new clouds, halos or holes. Sharp native geometry, smooth original cyan/white shading.",
+  "referenceRect": [
+    2320,
+    148,
+    312,
+    312
+  ],
+  "sourceSkyReference": true,
+  "sharedRepairs": [
+    {
+      "rect": [
+        2080,
+        404,
+        312,
+        56
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+    },
+    {
+      "rect": [
+        2288,
+        356,
+        176,
+        176
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-crest-whole-joint-r1/assembled.png"
+    }
+  ],
+  "reuseNote": "Reuse second full native frame with complete shared cloud-crest correction"
+}

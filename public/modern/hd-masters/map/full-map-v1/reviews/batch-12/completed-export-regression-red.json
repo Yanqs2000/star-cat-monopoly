@@ -1,0 +1,12 @@
+{
+  "test": "completed parcels are not overwritten by rejected neighbor preview",
+  "wrongPixelsBefore": 336577,
+  "observedFailure": true,
+  "affectedNativeRegion": [
+    440,
+    1504,
+    200,
+    148
+  ],
+  "fix": "Limit rejected preview to r6c1 plus separately validated green30 ROI"
+}

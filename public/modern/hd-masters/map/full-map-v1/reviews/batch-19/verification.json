@@ -1,0 +1,531 @@
+{
+  "date": "2026-10-22",
+  "completedImageGenerationCallsThisBatch": 6,
+  "nativeContextReusedCells": [],
+  "newEngineeringCandidates": [
+    "r1c3",
+    "r1c4"
+  ],
+  "counts": {
+    "selected-engineering": 103,
+    "pending": 0,
+    "pending-visual-review": 2,
+    "approved-source-reused": 4
+  },
+  "immutableAttemptMasterHashesVerified": 192,
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "allPreviousAssemblyChangesInsideDeclaredScopes": true,
+  "repairsAreExactOldOrNewRgbaSelection": true,
+  "nativeAlphaModified": false,
+  "newLocalRepairs": [
+    "northwest-whole-tree-shading-r1",
+    "northeast-whole-tree-shading-r1",
+    "northwest-cloud-main-crown-whole-r2"
+  ],
+  "nativeAssembledAlphaAudits": {
+    "r0c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 813554,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 4.398311048557354e-05,
+      "nativeAlphaModified": false
+    },
+    "r0c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 864200,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 9.617850730956656e-05,
+      "nativeAlphaModified": false
+    },
+    "r0c4": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 829653,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 6.297402264316857e-05,
+      "nativeAlphaModified": false
+    },
+    "r0c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 242037,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005351278442411447,
+      "nativeAlphaModified": false
+    },
+    "r0c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 203144,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00032101357289327214,
+      "nativeAlphaModified": false
+    },
+    "r0c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 711824,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00031887755102040814,
+      "nativeAlphaModified": false
+    },
+    "r1c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 772302,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000821149131692136,
+      "nativeAlphaModified": false
+    },
+    "r1c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 778302,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0009183020697909573,
+      "nativeAlphaModified": false
+    },
+    "r1c4": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 465729,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004944042042413862,
+      "nativeAlphaModified": false
+    },
+    "r1c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.15420538453633975,
+      "nativeAlphaModified": false
+    },
+    "r1c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.40926781425873987,
+      "nativeAlphaModified": false
+    },
+    "r1c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 538517,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00046516492711498657,
+      "nativeAlphaModified": false
+    }
+  },
+  "mapPythonTestsPassed": 30,
+  "preservedExportRegressionTestsPassed": 4,
+  "eastUnderlayRegressionTestsPassed": 3,
+  "southUnderlayRegressionTestsPassed": 3,
+  "actualNativeReplacementViews": 20,
+  "reviewAtlasCount": 110,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "northUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "southUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "eastUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 110,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "remainingVisualCorrectionTiles": [
+    "r3c9",
+    "r4c9"
+  ],
+  "visualCorrectionDebt": [
+    "Northeast approved corner cloud/road block and cyan20 shade phase require a whole native joint correction",
+    "Review southwest/southeast corner road phase, upper-cloud shading handoff and previous grass texture transitions"
+  ],
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "bf3ed445d1fd59e9bd3a268397dee245086808f52a145a4d60001241d24d4c2f"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "0ee72d73b216cdaddf9274e707998d418dd911284f9224be6a91547b9a2429f8"
+    },
+    {
+      "view": "pilot-north-left-4x",
+      "sha256": "df1dc03a12bc28ce5e7119a562eb9e6c4730923bf0a3daaf8ed7dee23cd54dab"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "520525c3a5493d3a658b0a7a538ae840aeb2b6c11b12fc9135e36b15cbfe24b4"
+    },
+    {
+      "view": "pilot-north-west-corner-4x",
+      "sha256": "f51ecb9211cc57efa417941a1943ffdcadd2f0d2439a19246a63d8c7ebef0c05"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "87e6582bea1230c02ac9833947336f16f53b73fc751809f4176cee5907048162"
+    },
+    {
+      "view": "west-cloud-whole-2x",
+      "sha256": "b2494302fc6c26d8b402880e12991d362aac86d1b133a439080b563fb271156d"
+    },
+    {
+      "view": "west-cloud-joint-4x",
+      "sha256": "3ba572aa514deb30b862e75324cd2408485e3cc56a95b3dc4a7308802157bacf"
+    },
+    {
+      "view": "west-cloud-tail-4x",
+      "sha256": "e8574837fedd5f516f25512e84a5adb518a1f6affc7e5cd597461032dd7764ec"
+    },
+    {
+      "view": "hospital-west-whole-2x",
+      "sha256": "7061fc6bc9333d8b3f2dea4f5743537eedd13d124779bc764cab41809cd6720c"
+    },
+    {
+      "view": "hospital-west-edge-4x",
+      "sha256": "8192228c22230e7bff5d19ee4c7fd89dc1b131f4e848bea99870c33f78f533b4"
+    },
+    {
+      "view": "northwest-trees-whole-2x",
+      "sha256": "00084ce7b4c78cbdafffdde9d9174280393ec44204f37ad9afc964356d9c299d"
+    },
+    {
+      "view": "northwest-tree-joint-4x",
+      "sha256": "b960531b42f61906923fa1237fa3aeb0765fec65b0be841195ec3e3f7ca75c7c"
+    },
+    {
+      "view": "northeast-trees-whole-2x",
+      "sha256": "da0a3ba4448be40e0e90b19ae933a42e8c48daa0c6f48d5fc0d7bf1bab3e0f61"
+    },
+    {
+      "view": "northeast-tree-joint-4x",
+      "sha256": "8d7daca2074903bdb056b2df6214110b5ad06f2de15ceab4c4c4dd4c6c6f7ecf"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e02aa5b026a80f6d9a1bea361687bc4c7f0652c4b55124af486fb2428f0cc307"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "7d9b7e0e49147c78d174a19c706ca0f8180ce8163c0290ed681ccf81f0a0cfc3"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "e20873d43da57569732f3ca36b9ddcc46f13ed91a13af21a758b3f0371fc5e49"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "4375e51ede1b0f06fef7bd6af4354e0203a6bc9d6af6bf2a11e7cb630aaf180d"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "41ff454d4c7e0c7c482aabb870c2d16f35d5161ede17e98cd533983195e8062f"
+    }
+  ],
+  "referenceInputFilesHashed": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c3/generation.json",
+      "sha256": "2fac5ec2419dab2ef4028ba13f8fe2a7c4e3fb1d420ddd1d7b1d57afa76bc8aa"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c3/layout-on-sky.png",
+      "sha256": "687c481b0a37fe0239bd8f3d9cdfc497ccf8cfc9029acae01ab49e7372fa47c7"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c3/reference.json",
+      "sha256": "2d746434fe43cfe3a14d47180aeb91602d4b46c5b16707fcbb5370799d39cdad"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c3/target.png",
+      "sha256": "a92764d958a7df11b03737f93132f15b700bbd3e818ae1664a0b9175faa074fe"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c4/generation.json",
+      "sha256": "073cc6bf7967ecc68aa50d7d5a82fe23814dd1eeedbca49d9128ccb126754b14"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c4/layout-on-sky.png",
+      "sha256": "e1d29e9bfe1ce1bd62849754c7f42caefa3776ce1b8f304d3f4c81832fbef433"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c4/reference.json",
+      "sha256": "e9e8be5c8a20bf017c82e9ce20a791b8f47a612940e818066cf861d1f134a9bd"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/batch19-inputs/r1c4/target.png",
+      "sha256": "735a8335fb929e17a2d7da4bd503c4b91f94c9ebd9e8592ff5374e25adb96f29"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northeast-whole-tree-shading-r1/before.png",
+      "sha256": "24a49a46acf8f9320d9a1d151074fa07f94eb3a1efb4f282bccb9752e6a89865"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northeast-whole-tree-shading-r1/generation.json",
+      "sha256": "8809ca7e64afd9eceba21fd2b58bb90b93d5edb7e8d0ec46a292fe2a6e91f117"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northeast-whole-tree-shading-r1/layout.png",
+      "sha256": "367d25c37f16fb9c0c0dc99fc330ce6a75c257313b5f233085fd5d62d26ba545"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northeast-whole-tree-shading-r1/reference.json",
+      "sha256": "d0822a9740594b4b9ee75612ef5e3acbfa84aae4fc1109f032ae5fa8600f1362"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r1/before.png",
+      "sha256": "73a2267d6b8e379bdea65d1296e7f0c5705f18bb398dd8d40f41fa8d0bd87232"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r1/generation.json",
+      "sha256": "1dc7418bffd2436e825ba30f92b4a2a23413091edec01bfc11ae068936cd161e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r1/layout.png",
+      "sha256": "8955d30b2aa7b57a453a1e42c4781aa5914086b13b91cbb133c41f879e95157f"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r1/native-on-sky.png",
+      "sha256": "520b0e2678735f8debb8deb1f02bb62c60e216cc23adae48abdc0e1230b8d9bf"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r1/reference.json",
+      "sha256": "a16262b41323c3f0efeb4801f0da0d02c33c4ccd2f3d5e72c8486f82eca130f1"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r1/rejected.json",
+      "sha256": "0d427deb0ea901283c4a9a9f1e09ef5ac62de4a10b027d0d116092d1974e19d3"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r2/before.png",
+      "sha256": "b460b5fb4c9dc70f735b74c45b8eca3e5f45f82c50d4c5418965419327c781d3"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r2/generation.json",
+      "sha256": "626101efb2c45d93f5f8e6d7b55e8fdce9920365b29dcdaf83423d1700a4e75a"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r2/layout.png",
+      "sha256": "c59d01a7db9727c4c395051cc270f927617d73ed9b033c8ae386db7544157057"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-cloud-main-crown-whole-r2/reference.json",
+      "sha256": "6b283da15021e6dcecbaa091ab0c9bb19e912b6c990d07f5b4a9be1fd86717eb"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-whole-tree-shading-r1/before.png",
+      "sha256": "f0be97404b46867b37806c469ef76798e595a2a99325298034acc2f22c096313"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-whole-tree-shading-r1/generation.json",
+      "sha256": "83be285e28a60887692b4250e9b99ccbc10fdd30610f2b473cad5576000e2482"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-whole-tree-shading-r1/layout.png",
+      "sha256": "937f8233153d0a5b7fe832a7f7b7f8256570e4ec8fc130d655f50802f0c3a3cf"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-19/northwest-whole-tree-shading-r1/reference.json",
+      "sha256": "5e2b5f6c8f87fd1cc55de01daade4ba8f12dc4035ad25f76c89f014ac0f7e520"
+    }
+  ],
+  "approvedTopCropReviewOnly": {
+    "removedNativeRows": 139,
+    "logicalBand": 32,
+    "replacedByExistingNativeContexts": true,
+    "sourceFilesUnchanged": true,
+    "retainedPixelsExactRgba": true,
+    "afterGhostRgb": [
+      102,
+      204,
+      255
+    ],
+    "skyRgb": [
+      102,
+      204,
+      255
+    ],
+    "beforeGhostRgb": [
+      59,
+      143,
+      213
+    ],
+    "beforeApprovedAlphaAtWorld1004_429": 139,
+    "nativeAlphaAtSamePoint": 0
+  },
+  "approvedNorthGhostRegressionTestsPassed": 3,
+  "northUnderlayRegressionTestsPassed": 3,
+  "northUnderlayRedAlphaSamples": [
+    0,
+    195
+  ],
+  "northUnderlayCornerOwnership": "West/east own32x32 corners; two224x32 native strips fill north middle without overlap"
+}

@@ -1,0 +1,61 @@
+{
+  "rect": [
+    1104,
+    816,
+    112,
+    160
+  ],
+  "pixelDensity": 4.3515625,
+  "sourceFragments": [
+    {
+      "id": "r3c5-retained-0",
+      "url": "hd-masters/map/full-map-v1/reviews/batch-27/r3c5-retained-0.webp",
+      "rect": [
+        1120.0574506283663,
+        676.0,
+        271.8563734290844,
+        192.1149012567325
+      ]
+    },
+    {
+      "id": "r1c1-retained-0",
+      "url": "hd-masters/map/full-map-v1/reviews/batch-27/r1c1-retained-0.webp",
+      "rect": [
+        894.8509874326751,
+        674.8509874326751,
+        257.149012567325,
+        193.26391382405745
+      ]
+    },
+    {
+      "id": "southeast-road-whole-joint-r1",
+      "url": "hd-masters/map/full-map-v1/reviews/batch-26/southeast-road-whole-joint-r1.webp",
+      "rect": [
+        1040.0861759425493,
+        868.1149012567325,
+        239.91382405745063,
+        239.91382405745063
+      ]
+    }
+  ],
+  "originalReference": "public/modern/assets/map.png",
+  "originalPaintStencils": "stencils.json",
+  "oldPaintComponents": [
+    [
+      1150.9628743524188,
+      859.9576191193429,
+      7414
+    ],
+    [
+      1179.4953651068552,
+      939.9108211373921,
+      7215
+    ]
+  ],
+  "changedPixels": 46495,
+  "outsidePaintRepairUnchanged": true,
+  "greenForegroundUnchanged": true,
+  "alphaUnchanged": true,
+  "method": "Trace and smooth original white paint silhouettes; restore native asphalt under misplaced generated marks; paint only the original silhouettes with matching existing white paint color.",
+  "userAuthorizedProgrammaticCorrection": true
+}

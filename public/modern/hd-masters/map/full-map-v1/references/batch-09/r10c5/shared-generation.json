@@ -1,0 +1,26 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r10c5-r1.png",
+  "prompt": "Use case: precise-object-edit. Complete FIRST reference's missing lower map texture according to SECOND original layout. FIRST contains finished HD TOP132 logical pixels (~42% height) and RIGHT72 logical pixels (~23% width); preserve their existing boulder shapes, grooves, colors, contours and the tiny cropped cloud at far left. Extend the same rounded overlapping golden boulders down to their exact original lower tips, including the broad central/right tip reaching about67% canvas height; do NOT terminate all rocks at the current horizontal empty boundary. Same original boulder count, relative sizes and overlaps. The leftmost cropped boulder ends higher, the broad central tip ends lower, as second reference. Empty sky below and around the tips stays genuinely transparent RGBA. No new cloud in the empty lower area, no extra rocks, plants, props, faces or text. Bright rounded gold/amber rock with crisp faceted shading and dark brown contours matching finished HD context. Solid artwork with no accidental holes. Exact square crop, no reframing or layout changes.",
+  "referenceRect": [
+    1152,
+    2240,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "pond-rim-bottom-whole-r1",
+      "rect": [
+        1200,
+        2200,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-rim-bottom-whole-r1/assembled.png"
+    }
+  ],
+  "sourceReuse": {
+    "rawAttemptMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c5-r1.png",
+    "newImageGenerated": false
+  }
+}

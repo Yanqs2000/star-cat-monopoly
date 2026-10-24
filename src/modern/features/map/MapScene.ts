@@ -17,7 +17,7 @@ import { decodeBitmap } from './bitmap-loader'
 import { ReactionVisibility } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
 import { profileAssetUrl, profileSpriteTransform, profileTextureResolution, type AssetProfile } from '../assets/profiles'
-import type { HdMapRegion } from '../assets/hd-map-art'
+import type { HdMapBase, HdMapRegion } from '../assets/hd-map-art'
 import { visibleMapRegions } from './map-region-visibility'
 import { HdMapRegionLoader } from './hd-map-region-loader'
 
@@ -62,6 +62,7 @@ export interface MapSceneOptions {
   onFrame: (frame: number) => void
   assetProfile?: AssetProfile
   mapRegions?: HdMapRegion[]
+  mapBase?: HdMapBase
   textureResolutions?: Readonly<Record<string, number>>
   playerManifests?: { playerId: number; characterId: number; manifest: AssetManifest; reactions: ReactionManifest }[]
   onManualCamera?: () => void
@@ -96,6 +97,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   options: MapSceneOptions): Promise<MapSceneHandle> {
   const app = new Application()
   const assetProfile = options.assetProfile ?? 'original'
+  const mapUrl = options.mapBase?.url ?? manifest.map.url
   const textures = new Map<string, Texture>()
   const textureUrls = new Map<Texture,string>()
   const bitmaps = new Map<string, ImageBitmap>()
@@ -132,7 +134,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const bitmap = await decodeBitmap(await response.blob(), controller.signal)
         bitmaps.set(url, bitmap)
         const resolution = assetProfile === 'hd'
-          ? options.textureResolutions?.[url] ?? profileTextureResolution(url, assetProfile) : 1
+          ? (url === options.mapBase?.url ? options.mapBase.pixelDensity : options.textureResolutions?.[url] ?? profileTextureResolution(url, assetProfile)) : 1
         const texture=new Texture({ source: new ImageSource({ resource: bitmap, resolution, alphaMode: 'premultiplied-alpha', scaleMode: 'linear' }) })
         textures.set(url,texture);textureUrls.set(texture,selectedUrl)
       } catch (error) {
@@ -179,7 +181,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parseCompanyAssets(await response.json())
     })() : undefined
-    const urls = [...new Set([manifest.map.url, ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+    const urls = [...new Set([mapUrl, ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
@@ -194,10 +196,22 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const markers = new Container()
     const entities = new Container()
     entities.sortableChildren = true
-    const background = new Sprite(textures.get(manifest.map.url)!)
+    const background = new Sprite(textures.get(mapUrl)!)
     background.position.set(manifest.map.offsetX, manifest.map.offsetY)
     const hdMapLayer = new Container()
+    hdMapLayer.sortableChildren = true
+    const mapRegionOrder = new Map((options.mapRegions ?? []).map((region, index) => [region.url, index]))
     const mapRegionSprites = new Map<string, Sprite>()
+    let visibleRegions: HdMapRegion[] = []
+    const updateMapLayers = () => {
+      if (!options.mapBase) return
+      const ready = visibleRegions.length > 0 && visibleRegions.every(region => mapRegionSprites.has(region.url))
+      // A complete base while loading; native RGBA alone when ready. Drawing
+      // both would darken transparent coast/cloud edges and reveal old art.
+      background.visible = !ready
+      hdMapLayer.visible = ready
+    }
+    updateMapLayers()
     world.addChild(background, hdMapLayer, markers, entities)
     for (const parcel of map.parcels) {
       const road = gridToScene(parcel.roadCell)
@@ -325,9 +339,11 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const texture = textures.get(region.url)
         if (!texture) throw new Error(`高清地图切片纹理未准备：${region.url}`)
         const sprite = new Sprite(texture)
+        sprite.zIndex = mapRegionOrder.get(region.url) ?? 0
         sprite.position.set(region.scenePosition[0], region.scenePosition[1])
         hdMapLayer.addChild(sprite)
         mapRegionSprites.set(region.url, sprite)
+        updateMapLayers()
       },
       detach: region => {
         const sprite = mapRegionSprites.get(region.url)
@@ -335,6 +351,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         hdMapLayer.removeChild(sprite)
         sprite.destroy({ children: true })
         mapRegionSprites.delete(region.url)
+        updateMapLayers()
       },
       release: region => releaseTexture(region.url),
       onError: error => { if (!destroyed) options.onAssetError?.(error) },
@@ -342,14 +359,15 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     refreshMapRegions = () => {
       if (destroyed || world.scale.x <= 0 || world.scale.y <= 0) return
       const bounds = {
-        left: -world.x / world.scale.x,
-        top: -world.y / world.scale.y,
-        right: (800 - world.x) / world.scale.x,
-        bottom: (600 - world.y) / world.scale.y,
+        left: (-viewport.x / viewportScale - world.x) / world.scale.x,
+        top: (-viewport.y / viewportScale - world.y) / world.scale.y,
+        right: ((app.screen.width - viewport.x) / viewportScale - world.x) / world.scale.x,
+        bottom: ((app.screen.height - viewport.y) / viewportScale - world.y) / world.scale.y,
       }
       const screenScale = viewportScale * world.scale.x * Math.min(devicePixelRatio || 1, 2)
-      hdMapRegionLoader?.update(visibleMapRegions(options.mapRegions ?? [], bounds,
-                                                  { screenScale, padding: 64 }))
+      visibleRegions = visibleMapRegions(options.mapRegions ?? [], bounds, { screenScale, padding: 64 })
+      hdMapRegionLoader?.update(visibleRegions)
+      updateMapLayers()
     }
     const setPlayers = (poses: PlayerPose[]) => {
       poses.forEach((pose) => {

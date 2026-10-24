@@ -1,0 +1,309 @@
+[
+  {
+    "id": "r3c9",
+    "row": 3,
+    "col": 9,
+    "rect": [
+      2112,
+      676,
+      240,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c9-r1.png",
+        "masterSha256": "5103bc279200367c229cf40b46d29c5140c728cea51cd9b784fd5f035b9ac723",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2112,
+          676,
+          288,
+          288
+        ],
+        "prompt": "Use case: precise-object-edit. Complete only missing transparent area in image1, a precise Star Cat Monopoly HD isometric map tile. Image2 is exact original layout of same canvas. All sharp neighbor context in image1 is locked at its exact coordinates. Match same dense bright yellow-green grass, grey spiral-pebble ASPHALT roads, white brick curbs, glossy cartoon3D props, brown parcel borders. Roads are continuous grey asphalt, never white paving or grid slabs. Preserve exact original object counts, values, footprints and silhouettes. No rescaling, shifting, extra objects, signs, numbers, holes or blur. Whole output opaque alpha255, same square canvas. At slight source-vs-HD differences, align to existing sharp HD boundaries.\nSquare. Restore the upper part of the turquoise amusement ride with original blue raised circular arch rail, gold/yellow central fixture, green supports, pink circular inner track, surrounding bushes and original blue/yellow train cars (including cropped bottom car). Surrounding grey road has same original green20, purple10 and cyan10 discs and cropped upper-left junction arrows. Keep bottom sharp ride/rail/car pixels exactly stationary. No additional rail loops, train cars, buildings or text.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "bottom",
+            "meanRgbDifference": 16.728288633461045,
+            "p95RgbDifference": 75.68333333333294,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "additionalVisualRejection": "Original green disc is30; generated20 is also incorrect, in addition to rejected bottom seam."
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c9-r2.png",
+        "masterSha256": "881f687627b87379739dc8100b7a660c5ddc1900dd3d780360387b55ed481845",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2056,
+          676,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer / precise map reconstruction. This is an image EDIT of a fixed crop in an isometric Star Cat Monopoly board game, NOT a redesign. Image 1 is the exact original layout: match every object position, count, silhouette, crop, road width, curb, markings, and architecture. Image 2 is the already completed HD context at exactly the same framing: retain its existing colored pixels and continue them seamlessly into the missing black/transparent areas, reconstructing those areas from Image 1. Black/transparent missing context is a guide only: final entire image must be solid fully opaque art with no holes or white gaps. Match Image 2's crisp polished bright 3D cartoon rendering, leaf clusters and grey asphalt material (no paving slab grid), white curb and markings. Keep identical isometric projection and camera, no zoom/reframing. The final canvas has the same exact aspect ratio as the input; every boundary coordinate must align. Preserve clipped objects as clipped; do not complete an object by moving it inward. No extra/missing props, no characters, no added text or signs. Only reconstruct the currently missing art. Existing boundary strips are strict stitching anchors.\nSquare312x312 logical crop. Reconstruct the exact amusement park: ONE continuous blue oval railway, exactly the source's blue-and-orange train cars at their original locations, ONE yellow/orange wheel with its original pink gondolas and support, ONE small green tower with yellow mushroom roof in the scalloped pale-blue base. Preserve silhouettes and counts. Behind the track, road has a green disc with WHITE '30' and a violet disc with WHITE '10'; copy source values correctly. Maintain clipped orange property paving on left, completed turquoise base/rail/train and pink20 disc along bottom. Do not add ride components or train cars. Pixel align the full left56 and bottom56 logical anchor context.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 6.917414721723519,
+            "p95RgbDifference": 24.116666666666635,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 66
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 10.547573435504471,
+            "p95RgbDifference": 42.94999999999997,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c9-r3.png",
+        "masterSha256": "b4cc7068480c93d447db0c7bbf4f95b544d3b353ba4fb8687840b1ee85d3fa88",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2056,
+          676,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / seamless map tile repair. Image1 is the EDIT TARGET: finished HD isometric game art with a narrow horizontal transparent missing strip near the bottom. Image2 shows the same framing with both fixed sides visible but a slight old/new join. Image3 is the exact original game layout. Fill ONLY Image1's narrow missing strip so that the two already-finished sides connect perfectly. Retain every existing visible pixel position, framing, object count, sizes, road marks, colors and materials. No new/missing objects. Output whole image fully opaque, absolutely NO blank stripe. Connect sharp shapes continuously, no doubled edges, no notches, no blurry transition; retain existing grey asphalt texture. Squarecanvas at least1250x1250. Connect ONE blue rail loop, scalloped castle base, turquoise ride platform and existing train car across the narrow stripe, precise same contour. Keep green30, violet10 and pink20 unchanged, keep exact ride structures, gondolas, clipped parcels and train counts. Everything except this narrow missing strip is finished.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r3c9-r3.png",
+    "referenceRect": [
+      2056,
+      676,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.1334530221424295,
+        "p95RgbDifference": 5.0,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 8.332694763729247,
+        "p95RgbDifference": 22.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "actual-render-local-corrections-pass-full-map-art-acceptance-open",
+    "assembledSha256": "c4a45aaf6822cba7ee4ceb3926660af89b2da9a73ed1ee00f7b8786ff616a507",
+    "appliedRepairs": [
+      "ride-platform-join-r1",
+      "north-road-dash-r1",
+      "north-curb-local-r1",
+      "blue-base-joint-r1",
+      "blue-base-fullframe-r3",
+      "r3c9-dice-emblem-r3",
+      "ride-parcel-column-whole-r1"
+    ],
+    "priorVisualIssueHistory": {
+      "visualReview": {
+        "status": "failed-curb-continuity",
+        "evidence": "reviews/batch-06/ride-parcel-4x.png",
+        "detail": "Lane dash and amusement platform improved, but local repair moved a small curb notch to its outer boundary. Excluded from ready/generation references and passed count."
+      },
+      "additionalVisualRejection": "Purple id202 type27 source is dice emblem partly occluded by blue rail, not numeral10. Keep existing rail occlusion while fixing icon."
+    },
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "sourceSkyReference": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.6411511105608177,
+      "nativeAlphaModified": false
+    },
+    "nativePromotion": {
+      "method": "Existing complete opaque native core preserved; declared generated local repairs only",
+      "wholeTileRegenerated": false,
+      "sourceOriginalCoreAlpha": [
+        255,
+        255
+      ],
+      "selectedNativeMasterAlpha": [
+        255,
+        255
+      ],
+      "evidence": "reviews/batch-20/native-alpha-browser-verification.json"
+    },
+    "sourceIconAudit": {
+      "recordId": 202,
+      "type": 27,
+      "actual": "White dice emblem, one red top pip and violet/blue side pips, matching existing id199/id201 design; no numeral/card/star",
+      "repairId": "r3c9-dice-emblem-r3",
+      "railOcclusionPreserved": true,
+      "evidence": "reviews/batch-20/dice202-4x.png"
+    }
+  },
+  {
+    "id": "r4c9",
+    "row": 4,
+    "col": 9,
+    "rect": [
+      2112,
+      932,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r4c9-r1.png",
+        "masterSha256": "5ea8f9ebb40015fdaab8cfb4e99f9840fbe54054aae50132e07280234ced3984",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          2112,
+          932,
+          246,
+          368
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 edit target contains existing sharp finished map context and transparent missing area. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill missing area with faithful HD restoration of image2. Copy all sharp context at the exact positions, without rescaling, shifting or redesigning. Match bright glossy cartoon 3D props, densely textured yellow-green grass, golden angular cliff facets and fine asphalt. Strict original object counts, silhouettes, footprints, crop positions and markings. Every cross-boundary outline must continue without a step, gap, doubled object or extra feature. Entire canvas opaque alpha255. No blur, white holes, smooth filler bands or added decoration. Preserve canvas aspect exactly.\nPortrait2:3. Complete existing grey stacked pillar upper part near lower center, ONE round tree behind it, top-left cropped turquoise amusement ride/blue rail and bush, one original circular engraved happy cat manhole, and original colored road discs in exact positions and values from image2 (including purple10, green20, red20 and clipped blue30). Preserve existing bottom128 logical pixels; pillar horizontal gaps and cracks must connect, do not add another pillar, disc or tree.",
+        "generator": "built-in image_gen",
+        "rejected": "Visual: white slab paving inconsistent with existing grey asphalt; superseded by material edit"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r4c9-r2.png",
+        "masterSha256": "cace5ce51f458e484cb42e9ed73dc3ff31d0df895fc982c01ed71e877207b90c",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          2112,
+          932,
+          246,
+          368
+        ],
+        "prompt": "Use case: precise-object-edit. Image1 is edit target: new Star Cat Monopoly HD map crop. Image2 is MATERIAL REFERENCE ONLY from an existing accepted HD map road; do not copy image2 objects/layout. In image1 change ONLY the pale white paved road surface into the SAME medium-grey asphalt with fine spiral-like pebble grain as the road in image2. Remove the paving grid lines and square slab divisions; road must be continuous grey asphalt. Preserve the silver engraved circular cat manhole as metal, all colored numeric discs and their exact values, locations, sizes, internal graphics, and glossy highlights, plus white brick curbs. Do not add any road arrows/dashes from image2. Keep grass, tree, stone pillar, amusement ride, blue rail, cliff and all footprints identically at current coordinates. Copy all non-road pixels, especially bottom third, unchanged. Same portrait1024x1536 canvas; no reframing, no new objects, full opaquealpha255.",
+        "generator": "built-in image_gen",
+        "materialEditInputs": [
+          {
+            "path": "public/modern/hd-masters/map/full-map-v1/masters/r4c9-r1.png",
+            "sha256": "5ea8f9ebb40015fdaab8cfb4e99f9840fbe54054aae50132e07280234ced3984"
+          },
+          {
+            "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r4c9/road-style.png",
+            "sha256": "fb35f8b6dc0d43cddd564f3c48132d305c58aa06d2b97405336d40b258c4d1f5"
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r4c9-r2.png",
+    "referenceRect": [
+      2112,
+      932,
+      246,
+      368
+    ],
+    "nativePixelDensity": 4.162601626016261,
+    "seams": [
+      {
+        "side": "bottom",
+        "meanRgbDifference": 5.145913154533845,
+        "p95RgbDifference": 14.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "actual-render-local-corrections-pass-full-map-art-acceptance-open",
+    "assembledSha256": "e30af62a9338fde610d4824da80db9ae68e791f040830d1e0db37af102c0c64f",
+    "appliedRepairs": [
+      "blue30-curb-r2",
+      "ride-platform-join-r1",
+      "r4c9-dice-emblem-r2"
+    ],
+    "referenceEvidence": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r4c9/reference.json",
+      "sha256": "dee475e6f0146cfcfa08d699e9214c43d79084338dea0e5ec552ecacfa0011bc"
+    },
+    "priorVisualIssueHistory": {
+      "visualReview": {
+        "renderer": "actual createMapScene/Pixi",
+        "reviewedAt": "2026-10-20",
+        "status": "internal-review-complete-pending-user-art-acceptance",
+        "evidence": "reviews/batch-05/browser-verification.json",
+        "perimeterHandoff": "unfinished"
+      },
+      "visualRejection": "Source board id200 type27 is dice-game emblem (one red pip face and blue pips). Existing candidate instead has card/star and numeral10. Correct icon without changing surrounding accepted road, green30 or cyan10.",
+      "sourceIconAudit": {
+        "recordId": 200,
+        "type": 27,
+        "sourceCenter": [
+          2228,
+          1053
+        ],
+        "expected": "white dice emblem with red pip and blue pips",
+        "actual": "card/star plus numeral10",
+        "evidence": "reviews/batch-11/purple-type27-audit.png"
+      }
+    },
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "sourceSkyReference": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "nativePromotion": {
+      "method": "Existing complete opaque native core preserved; declared generated local repairs only",
+      "wholeTileRegenerated": false,
+      "sourceOriginalCoreAlpha": [
+        255,
+        255
+      ],
+      "selectedNativeMasterAlpha": [
+        255,
+        255
+      ],
+      "evidence": "reviews/batch-20/native-alpha-browser-verification.json"
+    },
+    "sourceIconAudit": {
+      "recordId": 200,
+      "type": 27,
+      "actual": "White dice emblem, one red top pip and violet/blue side pips, matching existing id199/id201 design; no numeral/card/star",
+      "repairId": "r4c9-dice-emblem-r2",
+      "railOcclusionPreserved": false,
+      "evidence": "reviews/batch-20/dice200-4x.png"
+    }
+  }
+]

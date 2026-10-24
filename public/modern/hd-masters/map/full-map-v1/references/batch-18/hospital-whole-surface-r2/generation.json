@@ -1,0 +1,11 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-8111383e-6989-4e89-88a7-94751a15482d.png",
+  "prompt": "Use case: precise-object-edit. Image1 is the target. Preserve this exact completed hospital illustration, all colors, highlights, textures, object counts/positions/geometry, cross/heart/door/windows, trees/rosettes, road and word crops. Fix ONLY accidental transparent/partly transparent material pixels: EVERY pixel in this square crop is actual solid scenery (grass, building or road), there is NO empty sky anywhere. Output the identical square scene as a completely OPAQUE raster image with no alpha holes or transparent/translucent regions, including glossy white highlights on red heart, glass and tree leaves. Do not add a background or change any pixels visually to another color; retain the exact illustrated native color/design everywhere, no white/black fill. Keep smooth cyan wall surfaces with no rectangular seams, original frame/camera/crops/scale and ALL outer16logical-pixel anchors precisely. No redesign or geometry change. Image2 is existing surrounding HD art for exact edge match.",
+  "rect": [
+    1256,
+    196,
+    256,
+    256
+  ],
+  "context": 16
+}

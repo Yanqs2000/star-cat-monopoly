@@ -1,0 +1,22 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-37412949-0192-4252-91b2-2253ac20d7ed.png",
+  "prompt": "Use case: precise-object-edit. Complete FIRST image's missing lower-left/center map texture using SECOND original layout. FIRST contains fixed HD TOP132 logical pixels (~42% canvas height) and RIGHT72 logical pixels (~23% width); preserve those rock shapes, outlines, colors and existing white/cyan cloud exactly.\nExtend only the cropped rounded golden boulder tips at upper-left down to the SAME original endpoints (leftmost tip ends around60% canvas height), with the same boulder count, then genuine transparent sky below them. Complete the LEFT rounded lobe of the ONE existing white/cyan cloud at lower-right, matching original outside silhouette and connecting smoothly into the finished right cloud. The RIGHT context already contains its SINGLE cyan spiral; preserve it and do NOT add another spiral or another cloud. This cloud occupies only the lower-right part; keep broad empty sky between/under rocks and cloud, don't enlarge it.\nBright warm gold/orange rounded boulders with dark brown contours matching first reference, softly shaded white/cyan cloud matching existing right context. All visible interiors solid with no holes, exterior native RGBA transparent with clean antialiasing. No new rocks, plants, props, text or objects. Fixed square crop, no reframing.",
+  "referenceRect": [
+    1392,
+    2240,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "pond-cliff-right-r1",
+      "rect": [
+        1392,
+        2100,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/pond-cliff-right-r1/assembled.png"
+    }
+  ]
+}

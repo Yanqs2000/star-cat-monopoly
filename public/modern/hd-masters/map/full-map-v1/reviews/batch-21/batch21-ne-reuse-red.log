@@ -1,0 +1,39 @@
+F/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py:8: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/region-11-9-v2/masters.json' mode='r' encoding='UTF-8'>
+  meta=json.load(open(m.ROOT/'public/modern/hd-masters/map/region-11-9-v2/masters.json'));r=next(r for r in meta['tiles'] if r['tile']=='r0c1');p=m.ROOT/r['sourcePath'];assert m.sha(p)==r['sourceSha256']
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py:25: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-map/manifest.json' mode='r' encoding='UTF-8'>
+  row=next(r for r in json.load(open(m.ROOT/'public/modern/hd-map/manifest.json'))['mapRegions'] if r['tileId']=='r0c1');im=Image.open(m.ROOT/'public/modern'/row['path']).convert('RGBA');l,t,_,_=row['overlapPixels'];actual=np.array(im.crop((m.px(x)-m.px(896)+l,m.py(y)+t,m.px(x+w)-m.px(896)+l,m.py(y+h)+t)));visible=actual[:,:,3]>0
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py:12: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/reviews/batch-20/regions.json' mode='r' encoding='UTF-8'>
+  row=next(r for r in json.load(open(OUT/'regions.json')) if r['label']==label);ox,oy,_,_=row['replacementRect'];x,y,w,h=rect;im=Image.open(m.ROOT/'public/modern'/row['url']).convert('RGBA')
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+F.F
+======================================================================
+FAIL: test_actual_sky_probe_has_no_blue_rectangle (__main__.NortheastNativeReuseTests.test_actual_sky_probe_has_no_blue_rectangle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py", line 28, in test_actual_sky_probe_has_no_blue_rectangle
+    im=Image.open(OUT/'pilot-north-east-corner-4x.png').convert('RGB');rgb=np.array(im.getpixel((288,440))).astype(int);self.assertLessEqual(int(np.abs(rgb-[102,204,255]).max()),2,'World1124,430 is original sky but opaque blue context remains')
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 101 not less than or equal to 2 : World1124,430 is original sky but opaque blue context remains
+
+======================================================================
+FAIL: test_corner_is_exact_north_native_context (__main__.NortheastNativeReuseTests.test_corner_is_exact_north_native_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py", line 18, in test_corner_is_exact_north_native_context
+    self.assertTrue(np.array_equal(np.array(expected),np.array(exported('r2c5',CORNER))),'Northeast corner still uses opaque blue sky from old east context')
+AssertionError: False is not true : Northeast corner still uses opaque blue sky from old east context
+
+======================================================================
+FAIL: test_whole_cyan10_uses_exact_approved_native_pixels (__main__.NortheastNativeReuseTests.test_whole_cyan10_uses_exact_approved_native_pixels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py", line 20, in test_whole_cyan10_uses_exact_approved_native_pixels
+    self.assertTrue(np.array_equal(np.array(native_approved([1120,472,32,64])),np.array(exported('r2c5',[1120,472,32,64]))),'Cyan10 right side comes from a different lighting phase')
+AssertionError: False is not true : Cyan10 right side comes from a different lighting phase
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.289s
+
+FAILED (failures=3)

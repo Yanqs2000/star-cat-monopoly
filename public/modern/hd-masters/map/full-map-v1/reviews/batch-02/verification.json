@@ -1,0 +1,86 @@
+{
+  "checkedOn": "2026-10-19",
+  "batch": "02",
+  "generator": "built-in image_gen",
+  "newCandidateCount": 10,
+  "newCandidateIds": [
+    "r5c3",
+    "r5c5",
+    "r5c6",
+    "r5c7",
+    "r6c2",
+    "r6c3",
+    "r6c5",
+    "r6c6",
+    "r6c7",
+    "r7c3"
+  ],
+  "localRepairs": [
+    "tomorrow-city-sign-r1",
+    "tomorrow-city-curb-r1"
+  ],
+  "verifiedText": [
+    "TOMORROW",
+    "CITY"
+  ],
+  "nativeMapDensityMinimum": 4.084239130434782,
+  "nativeSignDensity": 4.011627906976744,
+  "nativeMasterHashesValid": true,
+  "allRepairsUseOnlySourcePixels": true,
+  "previousAssemblyByteIdentical": [
+    "r2c3",
+    "r2c4",
+    "r3c3",
+    "r3c4",
+    "r3c5"
+  ],
+  "previousCandidateChangesOnlyInNewNeighborTransitionOrDocumentedSignPatch": [
+    "r4c3",
+    "r4c4",
+    "r4c5"
+  ],
+  "approvedRuntimeMapTilesUnchanged": 4,
+  "protectedStaticFilesUnchanged": 81,
+  "notGeneratedCount": 85,
+  "reworkCount": 4,
+  "reworkIds": [
+    "r2c5",
+    "r3c2",
+    "r5c4",
+    "r6c4"
+  ],
+  "pendingVisualCount": 2,
+  "pendingVisualIds": [
+    "r1c3",
+    "r1c4"
+  ],
+  "productionEnabled": false,
+  "counts": {
+    "pending": 89,
+    "pending-visual-review": 2,
+    "approved-source-reused": 4,
+    "selected-engineering": 14
+  },
+  "total": 109,
+  "next": [
+    "r5c4",
+    "r7c2",
+    "r6c4",
+    "r5c2",
+    "r4c6",
+    "r2c5",
+    "r7c7",
+    "r6c8"
+  ],
+  "finalRepairAssemblyVerified": true,
+  "reviewAtlasHashesValid": true,
+  "actualRendererViews": 6,
+  "nativeBitmapPendingAtCaptures": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}

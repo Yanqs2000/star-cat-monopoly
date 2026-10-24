@@ -1,0 +1,24 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-fabafdb7-529b-4d73-afa4-c1fd86438f77.png",
+  "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET contains finished sharp outer anchors around transparent unfinished middle. Image2 is exact original layout of this SAME square, counts/geometry guide only. Complete Image1, preserving its left32/right24/top32/bottom40 logical pixel anchors at exact coordinates, crop, scale, colors and contours. No reframing, rescaling or revealing more of cropped objects. Missing middle contains original diagonal road intersection with zebra crossing near upper-left, ONE bent white arrow near upper middle, diagonal white lane dashes, wooden picket fence around grass enclosure, exactly THREE complete pale gray/white spiral parcel plots in diagonal row at upper/right of enclosure (fourth fragment at far-right if cropped by canvas). Match original brick/post counts, phase, parcel widths, curb angle and fence endpoints. Keep the TWO original visible round trees on cream building base at upper-left (one clipped at top, one lower), cropped orange/yellow building and yellow stairs, exactly as Image2 and finished anchors. Preserve corrected red sign fragment at upperRIGHT, no new letters/words. Same fine dense yellow-green grass leaf scale as finished BOTTOM border, fine gray pebble asphalt as finished LEFT/RIGHT borders. All curbs, zebra ends, fence and parcel corners must join without shifts, double lines, gaps or extra posts. Preserve exact source object counts and positions; no new plant, tree, stone, feature, road mark or decoration. Entire square inside island: opaque alpha255 throughout, no pinholes, white voids or blurred strips. Sharp outlined glossy cartoon map high native resolution.",
+  "referenceRect": [
+    864,
+    1140,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "central-white-parcels-west-r1",
+      "rect": [
+        1080,
+        1264,
+        176,
+        176
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/central-white-parcels-west-r1/assembled.png",
+      "requiredOverlay": true,
+      "scope": "Local artifact correction; preserve in later exports"
+    }
+  ]
+}

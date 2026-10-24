@@ -1,0 +1,123 @@
+{
+  "id": "bottom-cloud-native-reassembly-r1",
+  "rect": [
+    1520,
+    2280,
+    312,
+    312
+  ],
+  "newImageGenerated": false,
+  "generator": "built-in image_gen source reuse",
+  "method": "Exact native RGBA donor selection and atlas reassembly; no repainting, blending or alpha changes",
+  "donors": [
+    {
+      "tileId": "r10c6",
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/r10c6-native.png",
+      "sha256": "87314d2f26267d61b6e7ff0a5a463c306419eacc7b84543ff1c20666c16879ed",
+      "referenceRect": [
+        1392,
+        2240,
+        312,
+        312
+      ],
+      "nativePixelSize": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "tileId": "r10c7",
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/r10c7-native.png",
+      "sha256": "060b43b54b3455b6580611c7dcb3b19d05f9ab02afd6e229da5cafcfd77ec846",
+      "referenceRect": [
+        1632,
+        2240,
+        312,
+        312
+      ],
+      "nativePixelSize": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "donorOverlapRect": [
+    1632,
+    2280,
+    72,
+    272
+  ],
+  "donorSeam": {
+    "meanRgbDifference": 2.4073563218390808,
+    "p95RgbDifference": 7.0,
+    "visibleCutSamples": 725,
+    "maximumChangedPixels": 312
+  },
+  "seams": [
+    {
+      "side": "left",
+      "meanRgbDifference": 1.5562248995983934,
+      "p95RgbDifference": 2.9166666666666665,
+      "visibleCutSamples": 166,
+      "maximumChangedPixels": 138
+    },
+    {
+      "side": "right",
+      "meanRgbDifference": 0.0,
+      "p95RgbDifference": 0.0,
+      "visibleCutSamples": 1069,
+      "maximumChangedPixels": 138
+    },
+    {
+      "side": "top",
+      "meanRgbDifference": 0.6102062975027145,
+      "p95RgbDifference": 3.0,
+      "visibleCutSamples": 921,
+      "maximumChangedPixels": 138
+    },
+    {
+      "side": "bottom",
+      "meanRgbDifference": 0,
+      "p95RgbDifference": 0,
+      "visibleCutSamples": 0,
+      "maximumChangedPixels": 138
+    }
+  ],
+  "keptRepairs": [
+    "lower-cliff-top-r1",
+    "lower-rock-whole-r1"
+  ],
+  "supersededContext": "pond-cliff-right-r1 cloud area only inside this frame",
+  "alphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 1075033,
+    "solidAlphaMedian": 253.0,
+    "fullyOpaqueFraction": 0.0009673760034357032,
+    "nativeAlphaModified": false
+  },
+  "reviewStatus": "pending-actual-replacement-review",
+  "files": {
+    "before.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/before.png",
+      "sha256": "a3ad0ca68ee52e24f1e934513ac351865b1462097d914fc46c55e5b00c1d6203"
+    },
+    "donor-cut-mask.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/donor-cut-mask.png",
+      "sha256": "9ca41d30846165dce80c6ecb86640bb0f3dd1fe3928146eeb2a726ecf9faf293"
+    },
+    "proposal.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/proposal.png",
+      "sha256": "220d8f145157a1878d219e313ec68e35c32544d0dd67e9719dda5fd9520eefe4"
+    },
+    "mask.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/mask.png",
+      "sha256": "d411549e123c371cd6f1c7935644c1691999a8095df0ec14736b5c8a5ca76192"
+    },
+    "assembled.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/repairs/bottom-cloud-native-reassembly-r1/assembled.png",
+      "sha256": "758c67c85a2a228d87484e841da457ba4ab57f35e269f4cd6d0880ee9e50931d"
+    }
+  }
+}

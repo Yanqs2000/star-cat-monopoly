@@ -1,0 +1,156 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "browser": "local Chrome / SwiftShader",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "regionCount": 4,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "allTextureResolutionsRegistered": true,
+  "commonNativeGrid": true,
+  "bleedPixels": 5,
+  "waitsForNativeBitmapDecoding": true,
+  "views": [
+    {
+      "name": "overview",
+      "width": 1600,
+      "height": 1400,
+      "camera": {
+        "x": -76,
+        "y": -189.5,
+        "scale": 0.5,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 1,
+      "sourceFocus": [
+        1136,
+        1292
+      ],
+      "pending": 0,
+      "decodedCount": 13
+    },
+    {
+      "name": "east-2x",
+      "width": 1600,
+      "height": 1200,
+      "camera": {
+        "x": -928,
+        "y": -799,
+        "scale": 1,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1512,
+        1412
+      ],
+      "pending": 0,
+      "decodedCount": 13
+    },
+    {
+      "name": "west-2x",
+      "width": 1400,
+      "height": 1700,
+      "camera": {
+        "x": -130.28571428571422,
+        "y": -1093.142857142857,
+        "scale": 1.1428571428571428,
+        "following": false
+      },
+      "viewportScale": 1.75,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        648,
+        1532
+      ],
+      "pending": 0,
+      "decodedCount": 14
+    },
+    {
+      "name": "east-curb-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2821.333333333333,
+        "y": -2265.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1392,
+        1275
+      ],
+      "pending": 0,
+      "decodedCount": 17,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "west-road-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -816,
+        "y": -2913.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        640,
+        1518
+      ],
+      "pending": 0,
+      "decodedCount": 18,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "tomorrow-city-sign-2x",
+      "width": 1200,
+      "height": 1000,
+      "camera": {
+        "x": -1034.6666666666665,
+        "y": -936,
+        "scale": 1.3333333333333333,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1260,
+        1240
+      ],
+      "pending": 0,
+      "decodedCount": 21
+    }
+  ],
+  "requestedReviewAtlases": [
+    "/hd-masters/map/full-map-v1/reviews/batch-02/north.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/west.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/east.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/north.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/west.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/north.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/east.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/west.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/north.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/east.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-02/sign.webp"
+  ],
+  "errors": []
+}

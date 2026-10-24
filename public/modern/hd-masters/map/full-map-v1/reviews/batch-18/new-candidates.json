@@ -1,0 +1,910 @@
+[
+  {
+    "id": "r0c2",
+    "row": 0,
+    "col": 2,
+    "rect": [
+      400,
+      0,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c2-r1-native-reused.png",
+        "masterSha256": "ae4e233a81e7b8d3ef0b9b57a4d14f74ee4ee3e2c4e60358f017e5795e801c9e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          384,
+          148,
+          312,
+          312
+        ],
+        "generator": "built-in image_gen native context reuse",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "sourceNativeMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c2-r1.png",
+        "sourceNativeSha256": "ae4e233a81e7b8d3ef0b9b57a4d14f74ee4ee3e2c4e60358f017e5795e801c9e",
+        "nativeAlphaAuditBeforePadding": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1125074,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007402150439168823,
+          "nativeAlphaModified": false
+        },
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 813638,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00010140550473062788,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 35520,
+          "nativeAlphaModified": false
+        },
+        "neighborContextProofs": [
+          {
+            "neighbor": "r0c3",
+            "rect": [
+              640,
+              0,
+              32,
+              180
+            ],
+            "exactNativeRgbaContextMatch": true
+          },
+          {
+            "neighbor": "r1c2",
+            "rect": [
+              400,
+              180,
+              240,
+              32
+            ],
+            "exactNativeRgbaContextMatch": true
+          }
+        ],
+        "prompt": "Reuse validated r1c2 native cloud crown; transparent padding only where original map is exactly transparent. Preserve a single continuous cloud across all three cells."
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c2-r1-native-reused.png",
+    "referenceRect": [
+      384,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 813638,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00010140550473062788,
+      "nativeAlphaModified": false
+    },
+    "assembledSha256": "51a87d7db9b7cc00dd270d4b7f186f9d60cc1346cd6d1edf2f183b750ae37bb4",
+    "reviewStatus": "pending-native-cloud-cap-render-review"
+  },
+  {
+    "id": "r0c3",
+    "row": 0,
+    "col": 3,
+    "rect": [
+      640,
+      0,
+      256,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c3-r1-native-reused.png",
+        "masterSha256": "ae4e233a81e7b8d3ef0b9b57a4d14f74ee4ee3e2c4e60358f017e5795e801c9e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          384,
+          148,
+          312,
+          312
+        ],
+        "generator": "built-in image_gen native context reuse",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "sourceNativeMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c2-r1.png",
+        "sourceNativeSha256": "ae4e233a81e7b8d3ef0b9b57a4d14f74ee4ee3e2c4e60358f017e5795e801c9e",
+        "nativeAlphaAuditBeforePadding": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1125074,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007402150439168823,
+          "nativeAlphaModified": false
+        },
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 864538,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0001362528853552193,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 44288,
+          "nativeAlphaModified": false
+        },
+        "neighborContextProofs": [
+          {
+            "neighbor": "r0c3",
+            "rect": [
+              864,
+              0,
+              32,
+              180
+            ],
+            "originalAlphaExactlyZero": true,
+            "nativeMaximumAlpha": 0,
+            "nativeNonzeroAlphaPixels": 0,
+            "nativeAlphaUnmodified": true
+          },
+          {
+            "neighbor": "r0c4",
+            "rect": [
+              896,
+              0,
+              32,
+              180
+            ],
+            "originalAlphaExactlyZero": true,
+            "nativeMaximumAlpha": 1,
+            "nativeNonzeroAlphaPixels": 2,
+            "nativeAlphaUnmodified": true
+          }
+        ],
+        "prompt": "Reuse validated r1c2 native cloud crown; transparent padding only where original map is exactly transparent. Preserve a single continuous cloud across all three cells."
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c3-r1-native-reused.png",
+    "referenceRect": [
+      384,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 864538,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0001362528853552193,
+      "nativeAlphaModified": false
+    },
+    "assembledSha256": "530dca255144b3e219adacd8c39b8892314a125034826d0c229991285a4dfab9",
+    "reviewStatus": "pending-native-cloud-cap-render-review"
+  },
+  {
+    "id": "r0c4",
+    "row": 0,
+    "col": 4,
+    "rect": [
+      896,
+      0,
+      256,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.04694010416666667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c4-r1.png",
+        "masterSha256": "11b99db9c3eab9c6bb4c1c615a195d670a555e4e1e0dec9ea3ad08ee43c5a9a2",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          872,
+          0,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Native HD map continuation, same312logical square frame. Image1 edit target has existing native HD artwork in RIGHT32 logical pixel strip; keep that strip's trees and grass absolutely aligned/unchanged. Image2 ORIGINAL same frame is exact layout. Complete only missing original scenery LEFT of this strip: irregular grassy island shoreline on right, continue the clipped original tree crowns at far right, lowerLEFT two original partial white cloud lobes at bottom edge. Most of frame (top and LEFT about70percent) is empty exterior SKY: native clear transparent alpha0, no added objects. Original island boundary runs upper-right down toward lower-right as Image2; no shift or invented protrusions. Keep original tree/crown/trunk counts and cloud lobe positions/silhouettes, no added trees. Existing large oval canopy cropped lowerRIGHT must continue source shape. Sharp glossy bright lime outlined cartoon matching right native strip; grass texture scale/colors and outlines continuous at join. Opaque solid green grass/foliage/highlights, opaque white cloud body, native transparent sky only; no translucent foliage, pinholes, glows, checkerboards, extra texture in sky, added objects/text. Same exact camera/framing/crop/scale, no zoom/reframe. Preserve source subtle white cloud edge near bottomLEFT if present, no enlargement.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 829533,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00020151687245813945,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 1.8820921985815602,
+            "p95RgbDifference": 4.333333333333333,
+            "visibleCutSamples": 376,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": "Bottom clouds/tree context outside r0c4 core remains unselected; r1c4 requires visual correction",
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1251703,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0003255928715510685,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c4-r1.png",
+    "referenceRect": [
+      872,
+      0,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 1.8820921985815602,
+        "p95RgbDifference": 4.333333333333333,
+        "visibleCutSamples": 376,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 829533,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00020151687245813945,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "d6ed7e307cc8df53e5e83bcab4849c16bab1c98b944fb41961dc8beea2b3507a"
+  },
+  {
+    "id": "r0c5",
+    "row": 0,
+    "col": 5,
+    "rect": [
+      1152,
+      0,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.6938425925925926,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c5-r1.png",
+        "masterSha256": "285164f8a1e879f0309281aa906442bcbe636bcd1bde031a329c83fbcc67c6db",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1120,
+          0,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit, native map continuation. Complete Image1 missing LEFT/MIDDLE from Image2 ORIGINAL exact same312logical square. RIGHT72 logical pixels are existing native context and must stay visually identical. Preserve every original tree, visible trunk, lobe silhouette, shadow, crop and original island edge. Original upper forest row: existing large lobed tree at upperRIGHT, single-oval tree just left of it, small rounded/lobed tree left-middle, partly hidden oval crown behind the original front-left lobed tree. LowerLEFT contains the same original small round/lobed trees and clipped large oval crown; keep counts and positions exactly, no extra tree/lobe/trunk. Original lower-middle leaf rosette and cropped pink/cyan hospital/ONE red heart/ONE yellow-blue cross at lowerRIGHT stay source-exact, matching RIGHT native parts. Ground has the existing dark green cursive word 'Star': preserve exact S,t,a,r glyph shapes/positions/case and diagonal placement, extending the missing S from source to existing right-hand letters; no invented word or changed lettering. Preserve all other source ground curves exactly, no added text or emblem. Match right native grass texture/scale/colors and all cut objects without shifts, no reframing/zoom/rescale. Original blue in Image2 is exterior SKY: transparent alpha0 there, opaque grass/trees/building including green highlights; no pinholes or translucent foliage rings. Same square frame/camera. Sharp glossy outlined cartoon matching completed native art; fill missing original art only.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 242102,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0005204668074126202,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0.11780455153949129,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 747,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [
+          {
+            "rect": [
+              1216,
+              16,
+              288,
+              288
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/north-grass-star-word-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 281267,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.00015071388780781882,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c5-r1.png",
+    "referenceRect": [
+      1120,
+      0,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0.11780455153949129,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 747,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "rect": [
+          1216,
+          16,
+          288,
+          288
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/north-grass-star-word-whole-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 242102,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005204668074126202,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "bcbc75e567c1846923f603277de3a2576fed6460689b1ecb9f2ef8f045b4a6cb"
+  },
+  {
+    "id": "r0c6",
+    "row": 0,
+    "col": 6,
+    "rect": [
+      1392,
+      0,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.7427314814814815,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c6-r1.png",
+        "masterSha256": "4f2c1eec76cb6c84b3befcb11661689e80c1dd7d307fac2d6c0fc5231ea066e2",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1360,
+          0,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit, native HD map outpaint. Image1 has completed visible native art belowy148 and RIGHT40; Image2 is ORIGINAL exact same312logical square. Restore missing northern grassy island edge and its source-exact tree row, keeping exact original positions/counts/clipping. Upper row has FIVE original crown groups across scene including clipped LEFT/RIGHT trees: partial lobed tree at farLEFT, one large SINGLE OVAL crown left-middle, one smaller rounded multi-lobed tree in middle with visible trunk, one SINGLE OVAL crown right-middle, and already-made lobed crown at farRIGHT. Preserve original visible trunks/shadows and lobe silhouettes, never add a tree or expose hidden trunks. Upper island silhouette follows source curve behind trees and opens to sky above/right. Existing lowerRIGHT tree crops and hospital cross/heart crop at bottomLEFT remain at their exact positions; do not add/omit a tree, medical emblem, window or building part. Preserve completed lower grass curls/arc motifs, grass leaf scale/color and hospital/trees unchanged; fill missing left-context portions only where Image2 has actual art. Match RIGHT40 and bottom native anchors seamlessly, no shifted crown or broken island edge. Blue in Image2 is EXTERIOR SKY: clear alpha0 there, no painted blue backdrop or land fill. All tree/grass/building interiors fully opaque, including pale green highlights, no translucent highlight rings or pinholes. Same square frame/camera/crop, no zoom/reframe/rescale. Bright polished outlined cartoon style matching existing native foliage; no added props, text or decorations.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 202859,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0005382775119617225,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 1.7567099567099564,
+            "p95RgbDifference": 5.0,
+            "visibleCutSamples": 385,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 2.4893141945773523,
+            "p95RgbDifference": 4.333333333333333,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 237674,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.00023084025854108956,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c6-r1.png",
+    "referenceRect": [
+      1360,
+      0,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 1.7567099567099564,
+        "p95RgbDifference": 5.0,
+        "visibleCutSamples": 385,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 2.4893141945773523,
+        "p95RgbDifference": 4.333333333333333,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 202859,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005382775119617225,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "appliedRepairs": [
+      "north-grass-star-word-whole-r1"
+    ],
+    "assembledSha256": "c73b9305babf9d5a55c4aaa75b84af96963aa1c13cf0b0d80f72e60867716e4d"
+  },
+  {
+    "id": "r0c7",
+    "row": 0,
+    "col": 7,
+    "rect": [
+      1632,
+      0,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.08543981481481482,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c7-r1.png",
+        "masterSha256": "3b8ae851d88b5310a5cbf8c487a2bba5c7f368ebdf54cab3529eae0520bea4c8",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1600,
+          0,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit, native map outpaint. Complete Image1's missing upperLEFT TREE CROWN and narrow grassy island border from Image2 ORIGINAL exact same312logical square. Image1 already has finished native art BELOWy148 and along RIGHT40: keep those coordinates/colors/silhouettes identical. One existing tree at LEFT is cut flat at y148 because its upper crown is missing: extend only that original crown upward to the original top near y78, preserving source-visible lobe count, original LEFT clipping, fork/trunk position and grassy island silhouette. Do not move cropped tree inward or add a tree, branch, crown lobe or new shrub. The other existing lower-left tree crops remain unchanged. The white/cyan cloud and its LEFT lobe on RIGHT are ALREADY MADE: preserve whole existing cloud contour/shading and exact RIGHT40 handoff; no new cloud/lobe/curl or rescaling. Most upper/middle space is exterior SKY: keep perfectly clear transparent alpha0, no opaque blue backdrop. All tree/grass/cloud interiors opaque including bright pale-green foliage highlights; no semitransparent highlight rings or holes. Original blue in Image2 is sky for viewing only. Same square camera/frame/crop, no zoom/reframe/rescale. Bright sharp glossy cartoon foliage matching finished lower native tree/grass, original source shape and counts. Add only the missing upper crown/grass boundary; do not reillustrate completed lower/RIGHT art.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 711088,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00045815740089139104,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0.675990675990676,
+            "p95RgbDifference": 3.9000000000000057,
+            "visibleCutSamples": 143,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 1.7121212121212122,
+            "p95RgbDifference": 6.666666666666667,
+            "visibleCutSamples": 792,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 974350,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000327500642282813,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c7-r1.png",
+    "referenceRect": [
+      1600,
+      0,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0.675990675990676,
+        "p95RgbDifference": 3.9000000000000057,
+        "visibleCutSamples": 143,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 1.7121212121212122,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 792,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 711088,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00045815740089139104,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "1867421be8f85f3e8ae3e3ad2cce8de6738f0cd722c02b9eeb28fd021bb6f453"
+  },
+  {
+    "id": "r1c2",
+    "row": 1,
+    "col": 2,
+    "rect": [
+      400,
+      180,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c2-r1.png",
+        "masterSha256": "ae4e233a81e7b8d3ef0b9b57a4d14f74ee4ee3e2c4e60358f017e5795e801c9e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          384,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Native sharp HD map cloud continuation. Image1 edit target shows only existing bottomRIGHT blue water context; keep it in exact position, do not extend blue context across empty sky. Image2 ORIGINAL exact same312logical square is layout authority. Recreate ORIGINAL white cloud silhouette in upper half: round smaller left cloud lobe, small upper intermediate crest, larger right cloud body clipped by right edge with ORIGINAL inward spiral/cyan interior shading at right. Cloud leftmost position, top crest heights, lower scallops, clipped right edge all exactly from Image2, no extra lobes, no cloud/sky holes, no movement/enlargement. Whole remaining frame exterior SKY (blue in Image2) is native transparent alpha0; white/cyan cloud body opaque solid artwork with crisp dark-cyan thin outline. Match previously completed map glossy outlined white clouds; smooth white volume and soft light cyan shadow inside solid cloud, no blur/speckle/white background. Maintain source cloud shape/camera/frame/scale precisely. No added island, trees, buildings, letters or decorative objects. Existing blue lower-right context remains exact. Native transparent output with solid cloud highlights, no translucent ring/glow.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 772853,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0008651884147326082,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0,
+            "p95RgbDifference": 0,
+            "visibleCutSamples": 0,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1125074,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0007402150439168823,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c2-r1.png",
+    "referenceRect": [
+      384,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0,
+        "p95RgbDifference": 0,
+        "visibleCutSamples": 0,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 772853,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0008651884147326082,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "b84dc500d4fad2f96adfd2f5defa6bbde51c600b5c9c689eba7235efc34feb78"
+  },
+  {
+    "id": "r1c5",
+    "row": 1,
+    "col": 5,
+    "rect": [
+      1152,
+      180,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9986805555555556,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c5-r1.png",
+        "masterSha256": "df5706d86701cc932cd7fcf22d870d86f1296281ee5dc35281eb148ca4a09a83",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1120,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: native HD map continuation. Image1 edit target is existing sharp HD map with missing transparent interior/left blocks. Image2 ORIGINAL exact same 312logical square frame is layout authority. Fill ONLY missing original artwork; retain ALL existing HD shapes at same positions, especially upper band with single 'Star' grass word, right hospital cross/heart/cyan wing/pink plinth, bottom road and two rosettes. Complete the cropped hospital: one red heart, one yellow-blue medical cross behind it, central pink cylindrical entrance with one blue door, cyan left wing with original four small blue vents and low curved blue front window, existing cyan right wing untouched, original left steps and pink/cream base exact. Restore source upper-left original trees with exact crown/trunk counts and placements, including partly cropped large front oval canopy; do not add trees. Exactly four original green leaf rosettes across this crop: middle-left beside hospital, lower-left beside road end, two already-made at bottom; retain each source location and size. One small round bright green tree in front of hospital. Continuous original diagonal gray road/white curbs from bottom-left to hospital steps, source road endpoint and edge geometry exact. Source grass/island edge continuous. No added road markings, objects, letters, characters or decoration. Match existing glossy bold black-outline cartoon art, native fine grass/asphalt texture scale, no blurry enlargement. Same camera/framing/scale; do not move, zoom, recolor or redesign existing surrounding anchors. Transparent exterior sky only, opaque ground/trees/building/highlights, no holes or translucent foliage rings.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "rejected": "Native map contains 3793 unmatched enclosed low-alpha pixels"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c5-r2.png",
+        "masterSha256": "f8722f956955cb01afae352cc76e8a4079e8c927091ae2a3a56c21a3c67ac4d3",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1120,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Repair only unintended transparency of this exact HD map image (Image1). The big oval lime-green tree canopy on LEFT has an accidental partially transparent highlight patch; other lime-green foliage may also be translucent. Make ALL tree canopies, leaves, grass, tree trunks, shadows, building, glass/highlights, pavement and white curbs fully solid opaque natural colored artwork. Lime-green canopy highlights are solid colored material, never transparent holes. ONLY actual tiny exterior sky at extreme bottomLEFT outside grass and road remains transparent. Preserve exact image dimensions, camera, all object positions/counts/shapes and crop, texture scale, grass word single Star, four rosettes, hospital windows/one heart/one cross/door, every existing pixel's visual color/design as closely as possible. Absolutely no redesign, additions, omissions, reframing, zoom, blur or geometry changes. Image2 existing neighboring native map anchors is support for exact top/right/bottom alignment. Fix transparency ONLY, keep scenery and seams visually identical.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 248.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 1.7021072796934866,
+            "p95RgbDifference": 6.666666666666667,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.7503192848020434,
+            "p95RgbDifference": 2.9499999999999695,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 3.435185185185185,
+            "p95RgbDifference": 8.333333333333334,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [
+          {
+            "rect": [
+              1216,
+              16,
+              288,
+              288
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/north-grass-star-word-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 247.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c5-r2.png",
+    "referenceRect": [
+      1120,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 1.7021072796934866,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.7503192848020434,
+        "p95RgbDifference": 2.9499999999999695,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 3.435185185185185,
+        "p95RgbDifference": 8.333333333333334,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "rect": [
+          1216,
+          16,
+          288,
+          288
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/north-grass-star-word-whole-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 248.0,
+      "fullyOpaqueFraction": 0.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "8ea1a105b0ea7a480a70f750f3ddea33564a36ff0dce425e4c62611ae628d72c",
+    "appliedRepairs": [
+      "hospital-whole-surface-r2"
+    ]
+  }
+]

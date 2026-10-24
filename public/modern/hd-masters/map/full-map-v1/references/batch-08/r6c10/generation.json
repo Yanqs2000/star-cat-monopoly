@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-86ab4b94-5e82-43c2-8ffb-0850cec55fab.png",
+  "prompt": "Use case: faithful HD map continuation. Image1 is the original exact map crop; image2 same-framed finished HD TOP32 and LEFT32logical strips. Keep those existing colored pixels, shapes and alpha aligned; fill the missing area from image1. Exact square272x272logical framing, output1254x1254 or larger. This crop contains ONLY the existing golden angular cliff faces/downward projections and cropped grass rim along the left, plus transparent sky outside the right/lower contour. No cloud is present. Preserve the exact original number/positions of cliff projections, long grooves, notches and cropped edges; do not add columns, cracks, ivy, trees, rocks or objects. Continue the fixed upper cliff grooves smoothly and connect left grass/cliff contours with no step or tonal seam. Bright polished cartoon materials matching finished context. Solid cliff and grass, native RGBA transparency only outside the silhouette, no interior holes. Ignore old colored extraction fringe pixels, no white/blue background rectangle. No zoom or reframing.",
+  "referenceRect": [
+    2320,
+    1380,
+    272,
+    272
+  ]
+}

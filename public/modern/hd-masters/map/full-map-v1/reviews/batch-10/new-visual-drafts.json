@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r6c1",
+    "status": "pending-visual-review",
+    "reason": "Actual4x: right edge of shared road/ride patch breaks red spiral phase and doubles grey parcel corner posts despite numerical cuts passing. Preserve single cat and correct blue30/red20/cyan10/green30; repair whole ride/parcel joint before promotion.",
+    "sourceValueAudit": {
+      "blue": 30,
+      "red": 20,
+      "cyan": 10,
+      "green": 30,
+      "evidence": "Original source magnified and rotated for inspection; green30 corrected by native donor reuse, not raw r4/r5 numeral20"
+    }
+  }
+]

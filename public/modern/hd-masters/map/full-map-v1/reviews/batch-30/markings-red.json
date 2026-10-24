@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "name": "upper",
+      "originalPaintCoverage": 0.3114256825075834,
+      "passed": false
+    },
+    {
+      "name": "lower",
+      "originalPaintCoverage": 0.15987460815047022,
+      "passed": false
+    },
+    {
+      "name": "no-old-arrow-ghost",
+      "whitePixels": 83,
+      "passed": false
+    }
+  ],
+  "passed": false
+}

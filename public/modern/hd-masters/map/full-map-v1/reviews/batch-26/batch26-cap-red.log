@@ -1,0 +1,31 @@
+FFF.
+======================================================================
+FAIL: test_existing_road_and_cyan10_unchanged (__main__.Cap.test_existing_road_and_cyan10_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch26_cap.py", line 22, in test_existing_road_and_cyan10_unchanged
+    r=[424,1264,32,32];self.assertTrue(np.array_equal(self.roi(self.old,r),self.roi(self.new,r)))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_existing_whole_cloud_pixels_unchanged (__main__.Cap.test_existing_whole_cloud_pixels_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch26_cap.py", line 18, in test_existing_whole_cloud_pixels_unchanged
+    self.assertTrue(np.array_equal(old[tuple(cloud)],self.new[tuple(cloud)]),'Accepted cloud must retain native RGBA')
+AssertionError: False is not true : Accepted cloud must retain native RGBA
+
+======================================================================
+FAIL: test_left_cloud_and_open_sky_unchanged (__main__.Cap.test_left_cloud_and_open_sky_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch26_cap.py", line 20, in test_left_cloud_and_open_sky_unchanged
+    r=[88,1128,96,96];self.assertTrue(np.array_equal(self.roi(self.old,r),self.roi(self.new,r)))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.108s
+
+FAILED (failures=3)

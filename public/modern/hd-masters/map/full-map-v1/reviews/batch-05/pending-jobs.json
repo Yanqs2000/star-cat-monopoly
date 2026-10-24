@@ -1,0 +1,902 @@
+[
+  {
+    "id": "r0c2",
+    "rect": [
+      400,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c3",
+    "rect": [
+      640,
+      0,
+      256,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c4",
+    "rect": [
+      896,
+      0,
+      256,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c5",
+    "rect": [
+      1152,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c6",
+    "rect": [
+      1392,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c7",
+    "rect": [
+      1632,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c8",
+    "rect": [
+      1872,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c9",
+    "rect": [
+      2112,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c2",
+    "rect": [
+      400,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c3",
+    "rect": [
+      640,
+      180,
+      256,
+      240
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 2,
+    "nextAction": "visual-review"
+  },
+  {
+    "id": "r1c4",
+    "rect": [
+      896,
+      180,
+      256,
+      240
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 1,
+    "nextAction": "visual-review"
+  },
+  {
+    "id": "r1c5",
+    "rect": [
+      1152,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c6",
+    "rect": [
+      1392,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c7",
+    "rect": [
+      1632,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c8",
+    "rect": [
+      1872,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c9",
+    "rect": [
+      2112,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c10",
+    "rect": [
+      2352,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c1",
+    "rect": [
+      160,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c2",
+    "rect": [
+      400,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c5",
+    "rect": [
+      1152,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r2c6",
+    "rect": [
+      1392,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c7",
+    "rect": [
+      1632,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c8",
+    "rect": [
+      1872,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c9",
+    "rect": [
+      2112,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c10",
+    "rect": [
+      2352,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c11",
+    "rect": [
+      2592,
+      420,
+      108,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r3c1",
+    "rect": [
+      160,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r3c2",
+    "rect": [
+      400,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r3c6",
+    "rect": [
+      1392,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r3c7",
+    "rect": [
+      1632,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r3c9",
+    "rect": [
+      2112,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r3c10",
+    "rect": [
+      2352,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r3c11",
+    "rect": [
+      2592,
+      676,
+      108,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r4c0",
+    "rect": [
+      0,
+      932,
+      160,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r4c1",
+    "rect": [
+      160,
+      932,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r4c2",
+    "rect": [
+      400,
+      932,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r4c6",
+    "rect": [
+      1392,
+      932,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r4c11",
+    "rect": [
+      2592,
+      932,
+      108,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r5c0",
+    "rect": [
+      0,
+      1172,
+      160,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r5c1",
+    "rect": [
+      160,
+      1172,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r5c2",
+    "rect": [
+      400,
+      1172,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r5c4",
+    "rect": [
+      896,
+      1172,
+      256,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r5c8",
+    "rect": [
+      1872,
+      1172,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r5c10",
+    "rect": [
+      2352,
+      1172,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "native-alpha-rework"
+  },
+  {
+    "id": "r5c11",
+    "rect": [
+      2592,
+      1172,
+      108,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r6c0",
+    "rect": [
+      0,
+      1412,
+      160,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r6c1",
+    "rect": [
+      160,
+      1412,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r6c4",
+    "rect": [
+      896,
+      1412,
+      256,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r6c10",
+    "rect": [
+      2352,
+      1412,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r7c0",
+    "rect": [
+      0,
+      1652,
+      160,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r7c1",
+    "rect": [
+      160,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r7c2",
+    "rect": [
+      400,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 3,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r7c5",
+    "rect": [
+      1152,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r7c9",
+    "rect": [
+      2112,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "native-alpha-rework"
+  },
+  {
+    "id": "r7c10",
+    "rect": [
+      2352,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r8c0",
+    "rect": [
+      0,
+      1892,
+      160,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r8c1",
+    "rect": [
+      160,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r8c5",
+    "rect": [
+      1152,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r8c6",
+    "rect": [
+      1392,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r8c8",
+    "rect": [
+      1872,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "native-alpha-rework"
+  },
+  {
+    "id": "r8c9",
+    "rect": [
+      2112,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c1",
+    "rect": [
+      160,
+      2132,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c2",
+    "rect": [
+      400,
+      2132,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c3",
+    "rect": [
+      640,
+      2132,
+      256,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c4",
+    "rect": [
+      896,
+      2132,
+      256,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c5",
+    "rect": [
+      1152,
+      2132,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c6",
+    "rect": [
+      1392,
+      2132,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c7",
+    "rect": [
+      1632,
+      2132,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r9c8",
+    "rect": [
+      1872,
+      2132,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r10c2",
+    "rect": [
+      400,
+      2372,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r10c4",
+    "rect": [
+      896,
+      2372,
+      256,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r10c5",
+    "rect": [
+      1152,
+      2372,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r10c6",
+    "rect": [
+      1392,
+      2372,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r10c7",
+    "rect": [
+      1632,
+      2372,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r10c8",
+    "rect": [
+      1872,
+      2372,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  }
+]

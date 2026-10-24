@@ -1,0 +1,41 @@
+{
+  "id": "r4c9",
+  "contentRect": [
+    2112,
+    932,
+    240,
+    240
+  ],
+  "referenceRect": [
+    2112,
+    932,
+    246,
+    368
+  ],
+  "workflow": "opaque-inland",
+  "targetSize": [
+    984,
+    1472
+  ],
+  "sourceOutlineClipping": false,
+  "files": {
+    "target.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r4c9/target.png",
+      "sha256": "23309e962bd06a0dcfb154c4ce1c3f92e6c18333beb4eb9cafbe7de97c91b8e0"
+    },
+    "layout.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r4c9/layout.png",
+      "sha256": "02ec8adf908e17cacb32d5128f06e2f3df023178262fbc53629739ed17a316dd"
+    }
+  },
+  "materialEditInputs": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/masters/r4c9-r1.png",
+      "sha256": "5ea8f9ebb40015fdaab8cfb4e99f9840fbe54054aae50132e07280234ced3984"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r4c9/road-style.png",
+      "sha256": "fb35f8b6dc0d43cddd564f3c48132d305c58aa06d2b97405336d40b258c4d1f5"
+    }
+  ]
+}

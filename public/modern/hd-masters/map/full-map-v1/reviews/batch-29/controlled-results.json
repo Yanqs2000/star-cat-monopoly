@@ -1,0 +1,793 @@
+{
+  "routes": [
+    {
+      "profile": "hd",
+      "name": "south-bridge",
+      "points": [
+        [
+          25,
+          37
+        ],
+        [
+          24,
+          38
+        ],
+        [
+          23,
+          39
+        ],
+        [
+          22,
+          40
+        ],
+        [
+          21,
+          41
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-south-bridge-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            24,
+            38
+          ],
+          "to": [
+            23,
+            39
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-south-bridge-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            24,
+            38
+          ],
+          "to": [
+            23,
+            39
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-south-bridge-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            22,
+            40
+          ],
+          "to": [
+            21,
+            41
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "hd",
+      "name": "west-edge-turn",
+      "points": [
+        [
+          2,
+          26
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          0,
+          28
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          2,
+          30
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-west-edge-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            1,
+            27
+          ],
+          "to": [
+            0,
+            28
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-west-edge-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            1,
+            27
+          ],
+          "to": [
+            0,
+            28
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-west-edge-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            1,
+            29
+          ],
+          "to": [
+            2,
+            30
+          ],
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "profile": "hd",
+      "name": "east-edge-turn",
+      "points": [
+        [
+          38,
+          12
+        ],
+        [
+          39,
+          13
+        ],
+        [
+          40,
+          14
+        ],
+        [
+          39,
+          15
+        ],
+        [
+          38,
+          16
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-east-edge-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            39,
+            13
+          ],
+          "to": [
+            40,
+            14
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-east-edge-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            39,
+            13
+          ],
+          "to": [
+            40,
+            14
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-east-edge-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            39,
+            15
+          ],
+          "to": [
+            38,
+            16
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "hd",
+      "name": "north-gate",
+      "points": [
+        [
+          17,
+          3
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-north-gate-step1-moving.png",
+          "stage": "moving",
+          "from": [
+            17,
+            3
+          ],
+          "to": [
+            18,
+            2
+          ],
+          "direction": 4
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-north-gate-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            18,
+            2
+          ],
+          "to": [
+            19,
+            1
+          ],
+          "direction": 4
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-north-gate-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            18,
+            2
+          ],
+          "to": [
+            19,
+            1
+          ],
+          "direction": 4
+        }
+      ]
+    },
+    {
+      "profile": "hd",
+      "name": "north-west-turn",
+      "points": [
+        [
+          14,
+          6
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-north-west-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            13,
+            7
+          ],
+          "to": [
+            12,
+            8
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-north-west-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            13,
+            7
+          ],
+          "to": [
+            12,
+            8
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-north-west-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            11,
+            9
+          ],
+          "to": [
+            10,
+            10
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "hd",
+      "name": "south-west-turn",
+      "points": [
+        [
+          6,
+          34
+        ],
+        [
+          7,
+          35
+        ],
+        [
+          8,
+          36
+        ],
+        [
+          9,
+          35
+        ],
+        [
+          10,
+          34
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-south-west-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            7,
+            35
+          ],
+          "to": [
+            8,
+            36
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-south-west-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            7,
+            35
+          ],
+          "to": [
+            8,
+            36
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/hd-controlled-south-west-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            9,
+            35
+          ],
+          "to": [
+            10,
+            34
+          ],
+          "direction": 4
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "south-bridge",
+      "points": [
+        [
+          25,
+          37
+        ],
+        [
+          24,
+          38
+        ],
+        [
+          23,
+          39
+        ],
+        [
+          22,
+          40
+        ],
+        [
+          21,
+          41
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-south-bridge-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            24,
+            38
+          ],
+          "to": [
+            23,
+            39
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-south-bridge-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            24,
+            38
+          ],
+          "to": [
+            23,
+            39
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-south-bridge-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            22,
+            40
+          ],
+          "to": [
+            21,
+            41
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "west-edge-turn",
+      "points": [
+        [
+          2,
+          26
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          0,
+          28
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          2,
+          30
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-west-edge-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            1,
+            27
+          ],
+          "to": [
+            0,
+            28
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-west-edge-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            1,
+            27
+          ],
+          "to": [
+            0,
+            28
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-west-edge-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            1,
+            29
+          ],
+          "to": [
+            2,
+            30
+          ],
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "east-edge-turn",
+      "points": [
+        [
+          38,
+          12
+        ],
+        [
+          39,
+          13
+        ],
+        [
+          40,
+          14
+        ],
+        [
+          39,
+          15
+        ],
+        [
+          38,
+          16
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-east-edge-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            39,
+            13
+          ],
+          "to": [
+            40,
+            14
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-east-edge-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            39,
+            13
+          ],
+          "to": [
+            40,
+            14
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-east-edge-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            39,
+            15
+          ],
+          "to": [
+            38,
+            16
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "north-gate",
+      "points": [
+        [
+          17,
+          3
+        ],
+        [
+          18,
+          2
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-north-gate-step1-moving.png",
+          "stage": "moving",
+          "from": [
+            17,
+            3
+          ],
+          "to": [
+            18,
+            2
+          ],
+          "direction": 4
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-north-gate-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            18,
+            2
+          ],
+          "to": [
+            19,
+            1
+          ],
+          "direction": 4
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-north-gate-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            18,
+            2
+          ],
+          "to": [
+            19,
+            1
+          ],
+          "direction": 4
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "north-west-turn",
+      "points": [
+        [
+          14,
+          6
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          10,
+          10
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-north-west-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            13,
+            7
+          ],
+          "to": [
+            12,
+            8
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-north-west-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            13,
+            7
+          ],
+          "to": [
+            12,
+            8
+          ],
+          "direction": 2
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-north-west-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            11,
+            9
+          ],
+          "to": [
+            10,
+            10
+          ],
+          "direction": 2
+        }
+      ]
+    },
+    {
+      "profile": "original",
+      "name": "south-west-turn",
+      "points": [
+        [
+          6,
+          34
+        ],
+        [
+          7,
+          35
+        ],
+        [
+          8,
+          36
+        ],
+        [
+          9,
+          35
+        ],
+        [
+          10,
+          34
+        ]
+      ],
+      "frames": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-south-west-turn-step2-moving.png",
+          "stage": "moving",
+          "from": [
+            7,
+            35
+          ],
+          "to": [
+            8,
+            36
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-south-west-turn-step2-arrival.png",
+          "stage": "arrival",
+          "from": [
+            7,
+            35
+          ],
+          "to": [
+            8,
+            36
+          ],
+          "direction": 1
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261023-batch29/original-controlled-south-west-turn-step4-arrival.png",
+          "stage": "arrival",
+          "from": [
+            9,
+            35
+          ],
+          "to": [
+            10,
+            34
+          ],
+          "direction": 4
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

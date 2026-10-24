@@ -1,0 +1,26 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r8c1-r1.png",
+  "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop as HD cartoon terrain. It contains ONLY a continuous bright green grassy island cap and golden/brown cliff underneath, with the same sloping left outside silhouette and original groove/face counts. Grass and cliff are cropped at TOP and RIGHT and continue outside the canvas. The original island's tiny leftmost tip enters near x11 of312 at the top; retain that outline position and do not move or enlarge the island. The cliff recedes diagonally rightward toward the bottom, leaving transparent empty sky at lower-left.\nSECOND reference is fixed finished HD RIGHT56 logical pixels (~18% width) and BOTTOM72 logical pixels (~23% height). Match the existing clustered grass texture, grass/cliff edge, gold/brown planes and grooves exactly, making smooth continuous connections. Fill only the missing terrain; preserve the same rock structure as original. Bright dense game grass, warm faceted golden/amber cliff, clean dark brown contours matching second reference. Solid art with no holes, genuine native RGBA transparent exterior sky. No trees, bushes, vines, clouds, buildings, props, faces or text. Fixed square crop, no reframing or perspective change.",
+  "referenceRect": [
+    144,
+    1892,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "left-cliff-joint-r1",
+      "rect": [
+        240,
+        1988,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/left-cliff-joint-r1/assembled.png"
+    }
+  ],
+  "sourceReuse": {
+    "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c1-r1.png",
+    "newImageGenerated": false
+  }
+}

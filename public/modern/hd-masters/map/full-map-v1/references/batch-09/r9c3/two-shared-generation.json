@@ -1,0 +1,37 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r9c3-r1.png",
+  "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop at high definition. This is a CROP of a continuous golden floating-island cliff, not an isolated rock cutout. Preserve the SAME vertical cliff faces and hanging finger counts, heights, grooves and stepped outside silhouette. SOLID GOLDEN ROCK fills the entire TOP edge behind the existing ivy and continues off the LEFT edge wherever original shows rock; do not delete those flat rock planes as background. Keep the existing large forked ivy patch at upper-left and cropped climbing ivy at upper-right, same shapes and size. A small fragment of the ONE original white/cyan cloud is cropped at lower-right, with no spiral visible in this crop; retain it and no additional clouds.\nSECOND reference supplies the already finished HD TOP64 logical pixels (~20.5% height). Match all of its gold/brown plane positions, contours, leaf clusters and colors precisely, then continue those forms downward following original layout. Every opaque rock/leaf/cloud interior stays solid, no accidental holes. Only the original exterior below/between cliff tips and cloud is genuine RGBA transparent sky. Bright warm faceted yellow/amber rock, dark brown contours and dense bright HD green leaves, matching second reference. No extra pillars, plants, cracks, objects, characters or text. Square exact crop, no reframing or scaling.",
+  "referenceRect": [
+    640,
+    2068,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "southwest-wall-joint-r1",
+      "rect": [
+        640,
+        1988,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-wall-joint-r1/assembled.png"
+    },
+    {
+      "repairId": "southwest-top-whole-r1",
+      "rect": [
+        840,
+        1988,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/southwest-top-whole-r1/assembled.png"
+    }
+  ],
+  "sourceSkyReference": false,
+  "sourceReuse": {
+    "rawAttemptMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c3-r1.png",
+    "newImageGenerated": false
+  }
+}

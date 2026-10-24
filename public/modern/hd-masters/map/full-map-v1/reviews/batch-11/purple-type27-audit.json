@@ -1,0 +1,54 @@
+{
+  "sourceBoardSha256": "0c577b7a36eee635c5c32b3e1ba54e6407e2cf86c74c62ad1adf1e5f1e226986",
+  "records": [
+    {
+      "id": 199,
+      "type": 27,
+      "ordinal": 1,
+      "streetId": 0,
+      "facing": 1,
+      "position": {
+        "column": 3,
+        "row": 25
+      }
+    },
+    {
+      "id": 200,
+      "type": 27,
+      "ordinal": 1,
+      "streetId": 0,
+      "facing": 1,
+      "position": {
+        "column": 36,
+        "row": 18
+      }
+    },
+    {
+      "id": 201,
+      "type": 27,
+      "ordinal": 1,
+      "streetId": 0,
+      "facing": 2,
+      "position": {
+        "column": 6,
+        "row": 24
+      }
+    },
+    {
+      "id": 202,
+      "type": 27,
+      "ordinal": 1,
+      "streetId": 0,
+      "facing": 2,
+      "position": {
+        "column": 38,
+        "row": 12
+      }
+    }
+  ],
+  "expected": "White dice with red pip and blue pips; type27 beginsLudo",
+  "id199": "new r5c1 icon matches source",
+  "id200": "r4c9 withdrawn: card/star/numeral10 is wrong",
+  "id201": "r5c2 pending: preserve blue rail occlusion",
+  "id202": "r3c9 already visual-pending: numeral10 is wrong; preserve rail occlusion"
+}

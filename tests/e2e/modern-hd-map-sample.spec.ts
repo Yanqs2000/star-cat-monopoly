@@ -2,12 +2,33 @@ import { expect, test, type Page } from '@playwright/test'
 
 async function startGame(page: Page, profile: 'original' | 'hd') {
   await page.addInitScript(() => {
+    const mapBlobs = new WeakSet<Blob>()
+    const liveMapBitmaps = new WeakSet<ImageBitmap>()
+    const closeOriginal = ImageBitmap.prototype.close
+    ImageBitmap.prototype.close = function () {
+      if (liveMapBitmaps.delete(this)) {
+        const state = window as typeof window & { liveMapTiles?: number }
+        state.liveMapTiles = (state.liveMapTiles ?? 0) - 1
+      }
+      closeOriginal.call(this)
+    }
+    const fetchOriginal = window.fetch.bind(window)
+    window.fetch = async (...args) => {
+      const response = await fetchOriginal(...args)
+      if (/hd-map\/full-map-v1\/part-\d+\.webp/.test(String(args[0]))) {
+        const blobOriginal = response.blob.bind(response)
+        response.blob = async () => { const blob = await blobOriginal(); mapBlobs.add(blob); return blob }
+      }
+      return response
+    }
     window.createImageBitmap = new Proxy(window.createImageBitmap, {
       async apply(target, thisArg, args) {
         const bitmap = await Reflect.apply(target, thisArg, args) as ImageBitmap
-        if (bitmap.width === 1119 && bitmap.height === 1119) {
-          const state = window as typeof window & { decodedMapTiles?: number }
+        if (mapBlobs.has(args[0] as Blob)) {
+          const state = window as typeof window & { decodedMapTiles?: number; liveMapTiles?: number }
           state.decodedMapTiles = (state.decodedMapTiles ?? 0) + 1
+          state.liveMapTiles = (state.liveMapTiles ?? 0) + 1
+          liveMapBitmaps.add(bitmap)
         }
         return bitmap
       },
@@ -38,7 +59,7 @@ async function waitForMapRender(page: Page, count: number) {
   await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
 }
 
-test('高清模式显示已验收地图样本，保留人物资源和画质切换前后的完整对局状态', async ({ browser }, testInfo) => {
+test('高清模式显示完整静态地图，保留人物资源和画质切换前后的完整对局状态', async ({ browser }, testInfo) => {
   test.setTimeout(150_000)
   let originalState: string | null = null
   for (const profile of ['original', 'hd'] as const) {
@@ -48,7 +69,7 @@ test('高清模式显示已验收地图样本，保留人物资源和画质切�
     const errors: string[] = []
     page.on('request', request => {
       const path = new URL(request.url()).pathname
-      if (/^\/hd-map\/region-11-9\/r[01]c[01]\.webp$/.test(path)) tiles.push(path)
+      if (/^\/hd-map\/full-map-v1\/part-\d+\.webp$/.test(path)) tiles.push(path)
       if (path.includes('/hd-art/characters/') || path.includes('/hd-masters/characters/')) characterArt.push(path)
     })
     page.on('pageerror', error => errors.push(error.message))
@@ -63,7 +84,9 @@ test('高清模式显示已验收地图样本，保留人物资源和画质切�
         originalState = state
         expect(tiles).toEqual([])
       } else {
-        await expect.poll(() => new Set(tiles).size, { timeout: 10_000 }).toBe(4)
+        await expect.poll(() => new Set(tiles).size, { timeout: 10_000 }).toBeGreaterThan(1)
+        const initialCount = new Set(tiles).size
+        await waitForMapRender(page, initialCount)
         expect(state).toBe(originalState)
         await page.getByRole('button', { name: '暂停对局', exact: true }).click()
         await page.getByLabel('对局素材画质').selectOption('original')
@@ -71,8 +94,8 @@ test('高清模式显示已验收地图样本，保留人物资源和画质切�
         await expect(fingerprint).toHaveAttribute('data-state-json', state!)
         await page.getByLabel('对局素材画质').selectOption('hd')
         await expect(page.getByTestId('asset-profile-busy')).toHaveCount(0)
-        await expect.poll(() => tiles.length).toBeGreaterThanOrEqual(8)
-        await waitForMapRender(page, 8)
+        await expect.poll(() => tiles.length).toBeGreaterThanOrEqual(initialCount * 2)
+        await waitForMapRender(page, initialCount * 2)
         await expect(fingerprint).toHaveAttribute('data-state-json', state!)
       }
       await page.screenshot({ path: testInfo.outputPath(`${profile}-map.png`), fullPage: true })
@@ -85,10 +108,12 @@ test('高清模式显示已验收地图样本，保留人物资源和画质切�
 test('地图切片404后可以重试，且不推进对局', async ({ page }) => {
   test.setTimeout(120_000)
   let fail = true
+  let failedPath = ''
   let release!: () => void
   const gate = new Promise<void>(resolve => { release = resolve })
-  await page.route('**/hd-map/region-11-9/r0c0.webp', async route => {
-    if (fail) {
+  await page.route('**/hd-map/full-map-v1/part-*.webp', async route => {
+    failedPath ||= new URL(route.request().url()).pathname
+    if (fail && new URL(route.request().url()).pathname === failedPath) {
       await gate
       await route.fulfill({ status: 404, body: 'map tile failure' })
     } else await route.continue()
@@ -99,7 +124,7 @@ test('地图切片404后可以重试，且不推进对局', async ({ page }) => 
     expect(before).toBeTruthy()
     release()
     await expect(page.getByText('加载失败', { exact: true })).toBeVisible()
-    await expect(page.getByRole('alert')).toContainText('r0c0.webp')
+    await expect(page.getByRole('alert')).toContainText(failedPath.split('/').pop()!)
     fail = false
     await page.getByRole('button', { name: '重试载入' }).click()
     await expect(page.getByText('对局已载入', { exact: true })).toBeVisible()
@@ -111,27 +136,22 @@ test('1366桌面全图概览释放地图补片，恢复跟随后重新加载', a
   await page.setViewportSize({ width: 1366, height: 768 })
   const requests: string[] = []
   page.on('request', request => {
-    if (request.url().includes('/hd-map/region-11-9/')) requests.push(request.url())
-  })
-  await page.addInitScript(() => {
-    const close = ImageBitmap.prototype.close
-    ImageBitmap.prototype.close = function () {
-      const state = window as typeof window & { closedBitmaps?: number }
-      state.closedBitmaps = (state.closedBitmaps ?? 0) + 1
-      close.call(this)
-    }
+    if (/\/hd-map\/full-map-v1\/part-\d+\.webp/.test(request.url())) requests.push(request.url())
   })
   await startGame(page, 'hd')
-  await expect.poll(() => new Set(requests).size).toBe(4)
-  await waitForMapRender(page, 4)
-  const before = await page.evaluate(() => (window as typeof window & { closedBitmaps?: number }).closedBitmaps ?? 0)
+  await expect.poll(() => new Set(requests).size).toBeGreaterThan(1)
+  const initialCount = new Set(requests).size
+  await waitForMapRender(page, initialCount)
+  await expect.poll(() => page.evaluate(() => (window as typeof window & { liveMapTiles?: number }).liveMapTiles ?? 0)).toBeGreaterThan(0)
+  const before = await page.evaluate(() => (window as typeof window & { decodedMapTiles?: number }).decodedMapTiles ?? 0)
+  const beforeRequests = requests.length
   const state = await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')
   await page.getByRole('button', { name: '全图', exact: true }).click()
-  await expect.poll(() => page.evaluate(() => (window as typeof window & { closedBitmaps?: number }).closedBitmaps ?? 0))
-    .toBeGreaterThanOrEqual(before + 4)
+  await expect.poll(() => page.evaluate(() => (window as typeof window & { liveMapTiles?: number }).liveMapTiles ?? 0)).toBe(0)
   await page.getByRole('button', { name: '跟随当前玩家' }).click()
-  await expect.poll(() => requests.length).toBeGreaterThanOrEqual(8)
-  await waitForMapRender(page, 8)
+  await expect.poll(() => requests.length).toBeGreaterThan(beforeRequests)
+  await waitForMapRender(page, before + 1)
+  await expect.poll(() => page.evaluate(() => (window as typeof window & { liveMapTiles?: number }).liveMapTiles ?? 0)).toBeGreaterThan(0)
   await expect(page.getByTestId('game-state-fingerprint')).toHaveAttribute('data-state-json', state!)
   await page.screenshot({ path: testInfo.outputPath('hd-1366x768.png'), fullPage: true })
 })

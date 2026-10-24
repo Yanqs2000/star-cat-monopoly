@@ -28,7 +28,7 @@
     "server:modern": "tsx server/main.ts",
     "report:modern-art": "python3 scripts/report-modern-art-coverage.py",
     "check:modern-art": "python3 scripts/report-modern-art-coverage.py --check",
-    "verify:modern-map-assets": "${PYTHON:-python3} scripts/verify_hd_map_assets.py",
+    "verify:modern-map-assets": "${PYTHON:-python3} scripts/verify_hd_map_assets.py && ${PYTHON:-python3} scripts/verify_full_hd_map_assets.py",
     "test:modern-map-assets": "${PYTHON:-python3} -m unittest discover -s scripts -p \"test_hd_map_*.py\"",
     "verify:modern-static-assets": "${PYTHON:-python3} scripts/verify_static_hd_assets.py"
   },

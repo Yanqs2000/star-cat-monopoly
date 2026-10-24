@@ -1,0 +1,406 @@
+{
+  "date": "2026-10-22",
+  "completedImageGenerationCallsThisBatch": 0,
+  "newEngineeringCandidates": [],
+  "counts": {
+    "selected-engineering": 105,
+    "pending": 0,
+    "pending-visual-review": 0,
+    "approved-source-reused": 4
+  },
+  "immutableAttemptMasterHashesVerified": 192,
+  "all109WorkingAssembliesByteIdentical": true,
+  "allPriorRepairFilesUnchanged": true,
+  "originalMapUnchanged": true,
+  "approvedFourFilesUnchanged": true,
+  "nativeCornerRgbaSelectionExact": true,
+  "cornerAlphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 1758,
+    "solidAlphaMedian": 253.0,
+    "fullyOpaqueFraction": 0.003260700791884478,
+    "nativeAlphaModified": false
+  },
+  "cornerCutStats": {
+    "meanRgbDifference": 0.4172661870503597,
+    "p95RgbDifference": 1.3333333333333333,
+    "cutMinY": 0,
+    "cutMaxY": 94,
+    "green30NativePixelsReplaced": 0,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1758,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.003260700791884478,
+      "nativeAlphaModified": false
+    }
+  },
+  "nativeRoadReuseSourceAlpha": [
+    255,
+    255
+  ],
+  "nativeRoadApprovedVisibleRgbMatched": true,
+  "reviewAtlasCount": 111,
+  "actualNativeReplacementViews": 23,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "northUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "southUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "eastUnderlayZeroAlphaSamples": [
+      0,
+      0
+    ],
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 111,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "skyProbeBeforeRgb": [
+    1,
+    140,
+    252
+  ],
+  "skyProbeAfterRgb": [
+    103,
+    204,
+    255
+  ],
+  "skyReferenceRgb": [
+    102,
+    204,
+    255
+  ],
+  "numericLabelCorrection": "This is cyan10 in original and approved native art; previous cyan20 task label was wrong. No numeral changed.",
+  "green30ProtectedRects": [
+    [
+      1136,
+      440,
+      16,
+      12
+    ],
+    [
+      1136,
+      472,
+      16,
+      8
+    ]
+  ],
+  "approvedReviewGeometryCrop": {
+    "topNativeRows": 139,
+    "rightNativeColumnsForGreen30Band": 139,
+    "green30BandNativeRows": [
+      139,
+      261
+    ],
+    "lowerFieldFullWidthPreserved": true,
+    "sourceFilesUnchanged": true,
+    "retainedRgbaExact": true
+  },
+  "mapPythonTestsPassed": 30,
+  "preservedExportRegressionTestsPassed": 4,
+  "eastSouthNorthUnderlayTestsPassed": 9,
+  "approvedNorthGhostRegressionTestsPassed": 3,
+  "northeastNativeReuseRegressionTestsPassed": 8,
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "de34b8cdc54e220f77e49b7ede9d8808a69658e464527e9fd44baca0a9ef19b8"
+    },
+    {
+      "view": "northeast-whole-2x",
+      "sha256": "371f23011678bd4a67a513d92e865bdfefa6c908c23eff4312204f18f481ab49"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "e3f5a75451c610f44553834ee74f192c00da842add6fa2009a78d896c4262f08"
+    },
+    {
+      "view": "cyan10-whole-4x",
+      "sha256": "dce2b7a493ce72c5536996aeac01c5ec1996fcc71eda9f76bc5c480152f7d71a"
+    },
+    {
+      "view": "cyan10-left-4x",
+      "sha256": "42aa020856db30254a0cee788d740e1fdde378f0d8ec8aaea05dec68cab0e600"
+    },
+    {
+      "view": "cyan10-top-4x",
+      "sha256": "a3125d12f39a8e0b17914b174108f088599eb0c346c62b0861dce8a552604acc"
+    },
+    {
+      "view": "cyan10-bottom-4x",
+      "sha256": "4f744851597dafce16cbe8330327f370e7470e00f449195a31486fa9fceba754"
+    },
+    {
+      "view": "northeast-road-right-4x",
+      "sha256": "62b301431ec891fa570e61b28129b1e92a72052664a767485904bfa9bf375166"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "646e6bc4710ac92d7258097f2b74eee6e57d191691b3616a88209c882d7b0c84"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "f22b01a27d8d8edbd8cd11d7cfa18d0bdc8913446791d0cf9ef34e75ec061faf"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "679a4f0e9ef772d74f5310abcc2f504cf77f65bf3a873266aeb1352e531c61f3"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "19d1175a948222d87d24b5438211587718c2ead0d10cb467b74fec22bfcfb360"
+    },
+    {
+      "view": "southwest-whole-2x",
+      "sha256": "6d41da84f8855d54efcb10b1b59345cf17421064ebc577d0b1d6d24d99720633"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "1b8e333758e741a2f0be111cd7640e0430ce0ed161806fbade1f417d8b50d516"
+    },
+    {
+      "view": "southeast-whole-2x",
+      "sha256": "5e20a5f1e28a3f77030c6d047524c0f6b6224f40b5beae2b07a760800eebc475"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "ccc0dee6b86c1e611e8a1da7766e8e2cf35fc3ebadb32d5976ac1d627f59e0b4"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e02aa5b026a80f6d9a1bea361687bc4c7f0652c4b55124af486fb2428f0cc307"
+    },
+    {
+      "view": "ride-whole-2x",
+      "sha256": "98572e841e49f2d33274c54bbe3a1324f0ca75675436f7cef0cf93905d1c4866"
+    },
+    {
+      "view": "west-grass-whole-2x",
+      "sha256": "41b6fd41193a6b9408b622c24a126cabd38e226a74a61555a8bc5d196ac43a33"
+    },
+    {
+      "view": "west-road-whole-2x",
+      "sha256": "6d662ca9a77260ebfc9be42cc7687a84f8e0b46ecb644adb7a6243028f53e9e3"
+    },
+    {
+      "view": "green30-whole-4x",
+      "sha256": "40b6a987af9a3923ed5da234cac7000f9135fe0b4ceac6dde423a4fb0738597c"
+    },
+    {
+      "view": "approved-east-mid-4x",
+      "sha256": "fbe8743d2a7c8bb0611d81e13eccfe5ddacaeda673b914c92ab088b76e47d44e"
+    },
+    {
+      "view": "approved-east-row-joint-4x",
+      "sha256": "6ebac929154463edb20a1a42320e7ebc59d4241013b8f3fa567f773efac9f60e"
+    }
+  ],
+  "referenceInputFilesHashed": [
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/cyan10-full-native-source.png",
+      "sha256": "d27c12da68f0823b02d618fe01c1818e5759c6e42d060849a7b53eb68de413ad"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/current-native.png",
+      "sha256": "c00cdbd05ed096f5117e8b8737a9feb7f0f69f18fe1bd0f3a1a0727b47ac3d9c"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/current.png",
+      "sha256": "e60f1c87212ef17c95fc081bdf7539225490e5a490e1f92d69ef1f5f445a2dc5"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/cut-candidate.png",
+      "sha256": "aeddf95bf21fc9610fa5f6c542228642f254f615d38f2cd215e7e3e04e483ef0"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/cut-mask.png",
+      "sha256": "1b0f49fcf8cb120e3c399cf7bb50e54a1e0262e77b992f4b7732bf294fad5d7e"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/cut-on-sky.png",
+      "sha256": "7a085460fe1d3e974ce58c4026880e46c4882968d89cd95ab4d2dc0261efeb9b"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/cut-stats.json",
+      "sha256": "b56738b5fc5ce2af80b40e4d600bfa2b11b4062760946a07667686accd9522be"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/cyan20-native-road-strip.png",
+      "sha256": "cd8ac97e60fce87e4c5395b5cac561b2a7f922080b2bd119cbbf9027248a82e8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/north-donor-native.png",
+      "sha256": "380c4c72bb15b727235090ff6d6c8d3124d52c3176cc6a8e3c2cb1d9cf5a03f8"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/north-donor.png",
+      "sha256": "a4aca538509e6b06beb9414e9aaa401e1f1fadd805ac3225bf7ca346aeab0ddc"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/source.png",
+      "sha256": "b0643c776aa46ba26ce52dc976a923d261e9077a38b7affcea2c48d4edcba794"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/whole-cyan-original.png",
+      "sha256": "22acdac348218ba6d583bcc0971a8cc43decc61a4f7c61ae1f94f4fd8d67f1bb"
+    },
+    {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-21/inputs/ne-corner/whole-cyan20-native.png",
+      "sha256": "d27c12da68f0823b02d618fe01c1818e5759c6e42d060849a7b53eb68de413ad"
+    }
+  ]
+}

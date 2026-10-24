@@ -1,0 +1,22 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-bd352baa-1f5a-47f9-8764-9f04edcb6c65.png",
+  "prompt": "Use case: precise-object-edit. Asset: square transparent HD isometric map fragment.\nImage1 EDIT TARGET has completed top/left/right anchors and a completed lower-left cloud/cliff scene, center unfinished. Image2 ORIGINAL LAYOUT is the same exact312x312 crop. Fill missing art faithfully at original coordinates; preserve ALL finished anchor shapes/colors/scale and boundary endpoints.\nTOP: continue the existing cropped blue/green/white fixed decorative platform from Image1. Same central blue globe with white wing-like shapes, green/white standing ornament, green ring discs (each with one hole), and pale rectangular platform. Upper parts are cropped by TOP edge as original; do not add another ring/stem/figure or move objects inward. Visible rings: a left ring partly behind the cropped tree near upper-left, one near upper-right edge of platform, one near its bottom corner. Other ring farther above this crop must stay outside. Keep their original positions and counts. Same cropped round tree at extreme top-left.\nMIDDLE: green grass ledge and one continuous brown/golden cliff face running horizontally/down-right; match exact existing left cliff panel, outside silhouette, facet scale and lower end. No new rock fingers, caves, vines or isolated boulders. Preserve existing white cloud at far lower-left, do not add another cloud/curl.\nLOWER RIGHT: two original trees below cliff: one multi-lobed bright green tree newly completed left of the existing right-hand round tree. Existing right tree canopy/trunk stay stationary and unchanged; total TWO trees here, no extras. Fill fine grass around them, matching existing left and right grass texture without rectangular material changes. Source grass scratches/arcs are artifacts: omit them.\nRIGHT edge: same cropped green spiral properties, brown brick borders, gray corner posts and leafy bush fragments; copy finished right anchor geometry exactly, same spiral phase.\nNo extra props, rings, clouds, trees, rocks, flowers, labels, buildings or shadows. Only source exterior sky remains alpha0; terrain/cloud/tree interiors opaque and hole-free. Single native high-resolution square RGBA, exact crop and projection.",
+  "referenceRect": [
+    368,
+    900,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "west-cloud-whole-r1",
+      "rect": [
+        80,
+        1044,
+        384,
+        256
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-cloud-whole-r1/assembled.png"
+    }
+  ]
+}

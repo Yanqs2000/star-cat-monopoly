@@ -1,0 +1,24 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-40266e9c-c126-4b97-bc96-062169a73eec.png",
+  "prompt": "Use case: precise-object-edit, native map continuation. Complete Image1 missing LEFT/MIDDLE from Image2 ORIGINAL exact same312logical square. RIGHT72 logical pixels are existing native context and must stay visually identical. Preserve every original tree, visible trunk, lobe silhouette, shadow, crop and original island edge. Original upper forest row: existing large lobed tree at upperRIGHT, single-oval tree just left of it, small rounded/lobed tree left-middle, partly hidden oval crown behind the original front-left lobed tree. LowerLEFT contains the same original small round/lobed trees and clipped large oval crown; keep counts and positions exactly, no extra tree/lobe/trunk. Original lower-middle leaf rosette and cropped pink/cyan hospital/ONE red heart/ONE yellow-blue cross at lowerRIGHT stay source-exact, matching RIGHT native parts. Ground has the existing dark green cursive word 'Star': preserve exact S,t,a,r glyph shapes/positions/case and diagonal placement, extending the missing S from source to existing right-hand letters; no invented word or changed lettering. Preserve all other source ground curves exactly, no added text or emblem. Match right native grass texture/scale/colors and all cut objects without shifts, no reframing/zoom/rescale. Original blue in Image2 is exterior SKY: transparent alpha0 there, opaque grass/trees/building including green highlights; no pinholes or translucent foliage rings. Same square frame/camera. Sharp glossy outlined cartoon matching completed native art; fill missing original art only.",
+  "referenceRect": [
+    1120,
+    0,
+    312,
+    312
+  ],
+  "sourceSkyReference": true,
+  "sourceFidelityIssue": "Duplicated S and incorrect word placement; never select without whole-word correction",
+  "sharedRepairs": [
+    {
+      "rect": [
+        1216,
+        16,
+        288,
+        288
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/north-grass-star-word-whole-r1/assembled.png"
+    }
+  ],
+  "sourceFidelityResolution": "Whole-word native repair replaces duplicated S in selected candidate and every shared neighbor"
+}

@@ -1,0 +1,14 @@
+
+Running 7 tests using 1 worker
+
+(node:35842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/e2e/modern-hd-map-sample.spec.ts:62:1 › 高清模式显示完整静态地图，保留人物资源和画质切换前后的完整对局状态 (18.5s)
+  ✓  2 tests/e2e/modern-hd-map-sample.spec.ts:108:1 › 地图切片404后可以重试，且不推进对局 (4.4s)
+  ✓  3 tests/e2e/modern-hd-map-sample.spec.ts:135:1 › 1366桌面全图概览释放地图补片，恢复跟随后重新加载 (3.2s)
+  ✓  4 tests/e2e/modern-map-full-replacement.spec.ts:14:1 › 完整地图在分片等待时显示同源底图，准备后只绘制一次RGBA，缩小再放大不露旧图 (1.6s)
+  ✓  5 tests/e2e/modern-map-layer-order.spec.ts:3:1 › 地图前景在底座较晚载入和镜头往返后仍显示在上层 (2.4s)
+  ✓  6 tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 高窗口上下扩展区域内的可见地图小切片仍会载入 (1.3s)
+  ✓  7 tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 宽窗口左右扩展区域内的可见地图小切片仍会载入 (1.4s)
+
+  7 passed (34.2s)

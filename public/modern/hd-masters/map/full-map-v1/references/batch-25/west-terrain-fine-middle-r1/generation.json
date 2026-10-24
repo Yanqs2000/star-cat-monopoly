@@ -1,0 +1,41 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-b5434268-591d-4cb2-b10b-fafd78dd5814.png",
+  "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD terrain material continuation. Image1 is EDIT TARGET with the southern BOTTOM32 logical pixels already changed to fine dense grass. Image2 is the matching fine-grass style sample at the SAME native pixel density as the target. Replace all remaining oversized grass leaves ABOVE that bottom join with the same much smaller dense yellow-green leaves as Image2 and the bottom strip. Make a single consistent fine grassy surface from bottom to TOP, not a gradient into the old big-leaf pattern and not a blurred band. Match existing hue, density, individual crisp tiny leaves and light. Retain EXACTLY the ONE round-canopied tree with its existing scalloped leaf mass, dark outline, trunk and shadow, same size/position. Also preserve every cropped building/blue platform, the one complete cone tree and partial cone tree at right, yellow roof/purple column, upper diagonal white road curb, partial cyan disc and small tan ground patches. No added/missing/moved tree or prop. The full existing round tree and all existing building parts are protected; do not redesign them. Keep BOTTOM24 and RIGHT24 logical pixels as fixed connection context, preserve lower-left grass/cliff silhouette and golden rock surface. Top grass is intentionally updated to fine grass for a next northern continuation. No straight rectangle seams, extra plants, stones, paths, words or holes. Native transparent RGBA only where original cliff exterior is sky; solid terrain. Exact7:8 portrait framing, native output at least1120x1280.",
+  "rect": [
+    112,
+    1552,
+    224,
+    256
+  ],
+  "context": 16,
+  "contextSides": {
+    "left": 0,
+    "right": 24,
+    "top": 0,
+    "bottom": 24
+  },
+  "protectedRects": [
+    [
+      156,
+      1600,
+      84,
+      88
+    ],
+    [
+      304,
+      1552,
+      32,
+      256
+    ],
+    [
+      264,
+      1668,
+      72,
+      140
+    ]
+  ],
+  "pendingNeighborEdges": [
+    "top",
+    "left"
+  ]
+}

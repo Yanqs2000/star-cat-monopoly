@@ -1,0 +1,15 @@
+{
+  "tool": "GPT built-in image_gen",
+  "completedGenerationCalls": 1,
+  "calls": [
+    {
+      "id": "south-bridge-material-r1",
+      "prompt": "Use case: precise-object-edit. Asset: existing Star Cat Monopoly HD map bridge, exact48:31 framing. Image1 is the edit target and composition authority; Image2 is the ORIGINAL low-resolution same-frame layout for object counts and geometry only. Fix ONLY the road surface material and lighting: the LOWER-LEFT portion of this diagonal bridge is wrongly almost white/light concrete and abruptly changes to dark asphalt beside the cyan10/green20 discs. Continue the SAME medium-dark neutral-gray fine-pebble asphalt of the existing UPPER-RIGHT bridge down its WHOLE visible length to the prison entrance at lower-left. Continuous uniform material, no pale concrete stripe, horizontal/vertical rectangular bands, rosettes/flower patterns, zebra markings or added lane marks. Keep exact road width, angle, curb edges, curb segment count and all foreground objects: one complete CYAN10 disc, one complete GREEN20 disc, one partially cropped BLUE30 at top, unchanged positions, sizes, colors, correct white digits. Keep the same yellow prison dome with purple padlock and chimney at bottom-left, gray floor tiles, same three-lobed tree and trunk at lower center, exactly TWO visible river stones at lower-right, blue river/ripples, golden faceted cliffs, grass and grass sprigs. Do not add/remove/move/reveal objects or alter crop/perspective. Preserve the outer16logical-pixel frame (right24) and ALL non-road scene pixels as fixed connection context. This frame is wholly INSIDE the island: fully opaque with no white/transparent holes. Original crisp glossy outlined isometric cartoon look, native output at least1536x992.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/repairs/south-bridge-material-r1/master.png"
+    }
+  ],
+  "nativeReuseWithoutNewGeneration": [
+    "pilot-curb-native-continuation-r1",
+    "green30-whole-native-r1"
+  ]
+}
