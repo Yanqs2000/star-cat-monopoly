@@ -73,3 +73,14 @@ it('地图普通查询回调展示真实地点信息，不改变对局', async (
   await nextTick()
   expect(wrapper.getComponent(MapInfoPanel).props('info')).toMatchObject({ kind: 'property', name: '金星大道', price: 1500 })
 })
+
+it('从暂停对局返回选人后，帮助不会把旧暂停状态恢复给选人音乐', async () => {
+  const state = await loaded(true)
+  wrapper.getComponent({ name: 'GamePanel' }).vm.$emit('restart')
+  await nextTick()
+  expect(state.mode).toBe('selection')
+  await wrapper.get('[data-testid="open-help"]').trigger('click')
+  wrapper.getComponent(GameReferencePanel).vm.$emit('close')
+  await nextTick()
+  expect(state.paused).toBe(false)
+})
