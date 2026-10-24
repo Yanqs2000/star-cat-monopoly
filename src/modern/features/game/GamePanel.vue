@@ -8,6 +8,7 @@ import { getPropertySummary } from './property'
 import { stockMarketValue } from './stock-trading'
 import type { GameState } from './types'
 import type { AssetProfile } from '../assets/profiles'
+import type { ReferenceTab } from './GameReferencePanel.vue'
 
 const props = withDefaults(defineProps<{
   game: GameState
@@ -29,6 +30,7 @@ const emit = defineEmits<{
   'begin-card': [index: number]
   'asset-error': [error: Error, cardId: number]
   control: [playerId:number,control:'human'|'autoplay']
+  reference: [tab: ReferenceTab]
 }>()
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
@@ -92,6 +94,12 @@ function restriction(playerId: number): string {
       <button @click="emit('overview')">全图</button>
       <button @click="emit('fullscreen')">全屏</button>
       <button @click="emit('restart')">返回选人</button>
+    </div>
+    <div class="camera-actions" aria-label="查询与帮助">
+      <button data-testid="open-assets" @click="emit('reference', 'assets')">资产与排名</button>
+      <button data-testid="open-stocks" @click="emit('reference', 'stocks')">股票行情</button>
+      <button data-testid="open-holdings" @click="emit('reference', 'holdings')">全员持股</button>
+      <button data-testid="open-game-help" @click="emit('reference', 'help')">游戏帮助</button>
     </div>
     <ol class="players" data-testid="player-list">
       <li v-for="(player, index) in game.players" :key="player.id" :class="{ active: index === game.activePlayerIndex }">

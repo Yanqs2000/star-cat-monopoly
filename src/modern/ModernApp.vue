@@ -11,6 +11,9 @@ import { parseAssetManifest, type AssetManifest } from './features/characters/as
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
 import type { GameController, GameControllerOptions } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
+import GameReferencePanel, { type ReferenceTab } from './features/game/GameReferencePanel.vue'
+import MapInfoPanel from './features/game/MapInfoPanel.vue'
+import { inspectMapCell } from './features/game/queries'
 import InteractionPanel from './features/game/InteractionPanel.vue'
 import { parseInteractionAssets, type InteractionAssetsManifest } from './features/game/interaction-assets'
 import { parseActivityAssets, type ActivityManifest, type NativeOverlay } from './features/game/activity-assets'
@@ -25,7 +28,7 @@ import { createGame } from './features/game/setup'
 import type { GameState } from './features/game/types'
 import { createMapScene, type MapCameraState, type MapSceneHandle } from './features/map/MapScene'
 import SceneInspector from './features/map/SceneInspector.vue'
-import type { MapData } from './features/map/types'
+import type { GridPoint, MapData } from './features/map/types'
 import { loadHdMapArtwork } from './features/assets/hd-map-art'
 import { isCompleteHdProfileIndex, mapAssetProfile, profileAssetUrl, type AssetProfile } from './features/assets/profiles'
 
@@ -61,6 +64,10 @@ const loadState = ref<'idle' | 'loading' | 'ready' | 'error'>('idle')
 const loadError = ref('')
 const history = ref<string[]>([])
 const paused = ref(false)
+const referenceTab = ref<ReferenceTab | null>(null)
+let pauseBeforeReference = false
+const mapInspectionPosition = ref<GridPoint>()
+const mapInspection = computed(() => game.value && mapInspectionPosition.value ? inspectMapCell(game.value, mapInspectionPosition.value) : null)
 const savesOpen=ref(false), savesBusy=ref(false), savesError=ref(''), savesMessage=ref('')
 const saveSlots=ref<SaveSlot[]>([])
 const saveClient=new SaveClient()
@@ -96,10 +103,10 @@ let latestNoticeVisual: InteractionVisualPlan | undefined
 
 const selectedCharacters = computed(() => selected.value.map(id => characters.value.find(item => item.id === id)!).filter(Boolean))
 const humanSummary = computed(() => `人类 ${selected.value.length} · AI ${4 - selected.value.length}`)
-const canSwitchAssetProfile=computed(()=>mode.value==='selection'||(
+const canSwitchAssetProfile=computed(()=>referenceTab.value === null && (mode.value==='selection'||(
   mode.value==='game'&&paused.value&&loadState.value==='ready'&&controllerReady.value&&
   gameController!==undefined&&game.value!==undefined&&canSaveGame(gameController.state)
-))
+)))
 function thumbnail(item: CharacterIndexItem): string {
   const path=item.manifestUrl.replace(/manifest\.json$/, 'walk/down-right/1.png')
   return `${import.meta.env.BASE_URL}${profileAssetUrl(path,assetProfile.value)}`
@@ -273,8 +280,11 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
       mapBase:mapArtwork?.baseMap,
       textureResolutions,
       onFrame: () => {},
-      onManualCamera: () => { following.value = false },
+      onManualCamera: () => { following.value = false; mapInspectionPosition.value = undefined },
       onTargetCell: position => gameController?.chooseCard({ kind: 'cell', position }),
+      onInspectCell: position => {
+        if ((!staged || prepared?.committed) && !savesOpen.value && referenceTab.value === null && !assetProfileBusy.value && game.value?.interaction?.kind !== 'target-choice') mapInspectionPosition.value = position
+      },
       onAssetError: error=>{if(!staged||prepared?.committed)failRuntimeAsset(error)},
       requiredTextureUrls:[...entries.flatMap(entry=>{
         const godId=state.world.statuses[entry.playerId]?.godId
@@ -521,7 +531,7 @@ function confirmWagers(){gameController?.confirmWagers()}
 function roll() { gameController?.roll() }
 function decideProperty(choice: 'accept' | 'decline') { gameController?.decideProperty(choice) }
 function acknowledgeProperty() { gameController?.acknowledgeProperty() }
-function beginCard(index: number) { if(gameController?.beginCard(index))audio.effect('sn_7') }
+function beginCard(index: number) { mapInspectionPosition.value=undefined; if(gameController?.beginCard(index))audio.effect('sn_7') }
 function confirmInteraction() { gameController?.confirmCard() }
 function cancelInteraction() { gameController?.cancelInteraction() }
 function chooseInteraction(choice: import('./features/game/direct-cards').DirectCardChoice) { gameController?.chooseCard(choice) }
@@ -578,6 +588,7 @@ async function toggleFullscreen() {
   } catch { fullscreenError.value = '当前浏览器未能进入全屏。' }
 }
 function returnToSelection() {
+  referenceTab.value=null;mapInspectionPosition.value=undefined
   if (document.fullscreenElement === stage.value) void document.exitFullscreen()
   fullscreenError.value = ''
   cleanupGame()
@@ -592,8 +603,21 @@ function returnToSelection() {
   mode.value = 'selection'
 }
 function pauseForSaves(value:boolean){gameController?.setPaused(value);scene?.setPaused(value);audio.setPaused(value)}
+function openReference(tab: ReferenceTab) {
+  if (savesOpen.value || assetProfileBusy.value || referenceTab.value !== null) return
+  pauseBeforeReference = paused.value
+  referenceTab.value = tab
+  mapInspectionPosition.value = undefined
+  paused.value = true
+  pauseForSaves(true)
+}
+function closeReference() {
+  referenceTab.value = null
+  paused.value = pauseBeforeReference
+  pauseForSaves(paused.value)
+}
 async function openSaves(){
- if(savesOpen.value||assetProfileBusy.value)return
+ if(savesOpen.value||assetProfileBusy.value||referenceTab.value!==null)return
  pauseBeforeSaves=paused.value;savesOpen.value=true;paused.value=true;pauseForSaves(true)
  savesMessage.value='';savesError.value='';retrySave=undefined;retryableSave.value=false
  await refreshSaveSlots()
@@ -657,6 +681,10 @@ async function loadFromSlot(slot:number){
 }
 function fullscreenChanged() { fullscreen.value = document.fullscreenElement === stage.value }
 function keydown(event: KeyboardEvent) {
+  if (referenceTab.value !== null) {
+    if (event.key === 'Escape') { event.preventDefault(); closeReference() }
+    return
+  }
   if (event.key === 'Escape' && document.fullscreenElement === stage.value) {
     void document.exitFullscreen().catch(() => { fullscreenError.value = '当前浏览器未能退出全屏。' })
     return
@@ -699,8 +727,8 @@ onBeforeUnmount(() => {
 
 <template>
   <SceneInspector v-if="mode === 'inspection'" @back="mode = 'selection'" />
-  <main v-else-if="mode === 'selection'" :inert="savesOpen" class="selection-shell">
-    <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><div class="selection-actions"><label>素材画质 <select aria-label="素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label><span v-if="assetProfileBusy" data-testid="asset-profile-busy" role="status">{{ assetProfileBusyLabel }}</span><button @click="openSaves">读取存档</button><button @click="mode = 'inspection'">场景检查</button></div></header>
+  <main v-else-if="mode === 'selection'" :inert="savesOpen || referenceTab !== null" class="selection-shell">
+    <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><div class="selection-actions"><label>素材画质 <select aria-label="素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label><span v-if="assetProfileBusy" data-testid="asset-profile-busy" role="status">{{ assetProfileBusyLabel }}</span><button data-testid="open-help" @click="openReference('help')">游戏帮助</button><button @click="openSaves">读取存档</button><button @click="mode = 'inspection'">场景检查</button></div></header>
     <p v-if="assetProfileNotice" class="asset-profile-error" role="alert">{{ assetProfileNotice }}；当前已保留原版素材模式。</p>
     <section class="selection-card">
       <div class="selection-title"><div><h2>选择参赛角色</h2><p>按选择顺序加入 1–4 名人类玩家，不足四人由 AI 随机补位；第五次选择会滚出最早选择。</p></div><strong data-testid="human-count">{{ humanSummary }}</strong></div>
@@ -719,7 +747,7 @@ onBeforeUnmount(() => {
     </section>
     <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
-  <main v-else :inert="savesOpen && !fullscreen" class="game-shell">
+  <main v-else :inert="(savesOpen || referenceTab !== null) && !fullscreen" class="game-shell">
     <Teleport :to="fullscreenToolbar ?? 'body'" :disabled="!fullscreen || !fullscreenToolbar">
     <div class="audio-controls" aria-label="声音设置">
       <button data-testid="open-saves" :disabled="assetProfileBusy" @click="openSaves">手动存读档</button>
@@ -736,13 +764,14 @@ onBeforeUnmount(() => {
     <p v-if="assetProfileNotice" class="asset-profile-error" role="alert">{{ assetProfileNotice }}；当前画质与对局均已保留。</p>
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
-      <div ref="fullscreenToolbar" v-show="fullscreen" class="fullscreen-toolbar" :inert="savesOpen" />
-      <div class="stage-content" :inert="assetProfileBusy || (savesOpen && fullscreen)">
+      <div ref="fullscreenToolbar" v-show="fullscreen" class="fullscreen-toolbar" :inert="savesOpen || referenceTab !== null" />
+      <div class="stage-content" :inert="assetProfileBusy || ((savesOpen || referenceTab !== null) && fullscreen)">
       <div class="board-area"><div ref="host" class="canvas-host" /></div>
       <div v-if="game && paused && !controllerReady && loadState === 'ready'" class="overlay">
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
-      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :asset-profile="assetProfile" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :asset-profile="assetProfile" @reference="openReference" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+      <MapInfoPanel v-if="mapInspection && referenceTab === null && loadState === 'ready'" :info="mapInspection" @close="mapInspectionPosition=undefined" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" :asset-profile="assetProfile" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
       <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" :asset-profile="assetProfile" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
@@ -758,6 +787,7 @@ onBeforeUnmount(() => {
     </section>
   </main>
   <Teleport :to="stage ?? 'body'" :disabled="!fullscreen">
+  <GameReferencePanel v-if="referenceTab !== null" :game="mode === 'game' ? game : undefined" :tab="referenceTab" @tab="referenceTab=$event" @close="closeReference" />
   <SavePanel v-if="savesOpen" :slots="saveSlots" :can-save="saveAllowed" :busy="savesBusy" :error="savesError" :message="savesMessage" :has-game="!!game" :retryable="retryableSave" @save="saveToSlot" @load="loadFromSlot" @refresh="refreshSaveSlots" @retry="submitRetrySave" @close="closeSaves" />
   </Teleport>
 </template>
