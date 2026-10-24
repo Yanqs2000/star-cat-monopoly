@@ -10,7 +10,7 @@ import type { PropertyLedger } from '../game/property'
 import { gridToScene } from './coordinates'
 import { parsePropertyAssets } from './property-assets'
 import { companyPlacement, parseCompanyAssets, type CompanyAssetsManifest } from './company-assets'
-import { pickTargetAfterPointer } from './target-selection'
+import { pickMapPointerAction } from './target-selection'
 import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
 import { decodeBitmap } from './bitmap-loader'
@@ -67,6 +67,7 @@ export interface MapSceneOptions {
   playerManifests?: { playerId: number; characterId: number; manifest: AssetManifest; reactions: ReactionManifest }[]
   onManualCamera?: () => void
   onTargetCell?: (position: GridPoint) => void
+  onInspectCell?: (position: GridPoint) => void
   onAssetError?: (error: Error) => void
   requiredTextureUrls?: string[]
 }
@@ -615,15 +616,16 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       const start = { x: drag.startX, y: drag.startY }
       const cameraMoved = drag.cameraMoved
       drag = undefined
-      if (!targeting || cameraMoved) return
+      if (cameraMoved) return
       const bounds = canvas.getBoundingClientRect()
       const screen = new Point(
         (event.clientX - bounds.left) * app.screen.width / bounds.width,
         (event.clientY - bounds.top) * app.screen.height / bounds.height,
       )
       const local = world.toLocal(screen)
-      const target = pickTargetAfterPointer(start, { x: event.clientX, y: event.clientY }, local)
-      if (target) options.onTargetCell?.(target)
+      const action = pickMapPointerAction(start, { x: event.clientX, y: event.clientY }, local, targeting, cameraMoved)
+      if (action?.kind === 'target') options.onTargetCell?.(action.position)
+      else if (action?.kind === 'inspect') options.onInspectCell?.(action.position)
     }
     const cancelPointer = () => { drag = undefined }
     canvas.addEventListener('pointerdown', down)

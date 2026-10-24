@@ -4,8 +4,23 @@ import { describe, expect, it } from 'vitest'
 import InteractionPanel from '../../src/modern/features/game/InteractionPanel.vue'
 import GamePanel from '../../src/modern/features/game/GamePanel.vue'
 import { createGame } from '../../src/modern/features/game/setup'
+import { settleMonth } from '../../src/modern/features/game/bank-settlement'
 
 describe('3B 银行和月结面板', () => {
+  it('月结的实际账户变化后显示同一资产排名，不再次结算或消费随机', () => {
+    const source = createGame([1, 2, 3, 4], 1)
+    source.world.day = 1
+    source.players[1]!.deposit = 200000
+    const result = settleMonth(source), game = result.state
+    game.phase = 'interaction'
+    game.interaction = { kind: 'monthly-settlement', playerId: 1, entries: result.entries }
+    const before = structuredClone(game)
+    const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
+    const rows = panel.get('[data-testid="monthly-standings"]').findAll('li')
+    expect(rows).toHaveLength(4)
+    expect(rows[0]!.text()).toContain('阿牛')
+    expect(game).toEqual(before)
+  })
   it('银行只提交业务和整数金额，显示贷款、现金和存款', async () => {
     const game = createGame([1, 2, 3, 4], 1)
     game.phase = 'interaction'

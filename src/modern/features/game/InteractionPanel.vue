@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getAssetStandings } from './queries'
 import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
 import type { BankOperation } from './bank-operations'
@@ -381,6 +382,7 @@ watch(stockId, () => { stockShares.value = 1 })
         <small>{{ entry.kind === 'company-undistributed-profit' ? `来源金额 ${entry.sourceAmount}` : actualChanges(entry) }}</small>
       </li></ol>
       <p v-if="interaction.entries.length === 0">本月没有资金变化</p>
+      <h3>本月资产排名</h3><ol data-testid="monthly-standings"><li v-for="row in getAssetStandings(game)" :key="row.playerId">{{ row.rank ?? '出局' }} · {{ row.name }} · 净资产 {{ row.netWorth }}</li></ol>
       <button data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
     </template>
 
