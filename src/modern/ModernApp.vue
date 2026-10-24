@@ -592,6 +592,7 @@ function returnToSelection() {
   if (document.fullscreenElement === stage.value) void document.exitFullscreen()
   fullscreenError.value = ''
   cleanupGame()
+  paused.value = false
   audio.stop();audio.setPaused(false);audio.setTracks('startmusic1',null)
   pending.value = undefined
   latestNoticeVisual = undefined
