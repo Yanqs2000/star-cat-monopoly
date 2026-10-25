@@ -129,6 +129,15 @@ describe('3A 手牌面板', () => {
 })
 
 describe('3A 对局状态面板', () => {
+  it('外层拒绝速度变更时，菜单恢复实际速度', async () => {
+    const wrapper = mount(GamePanel, { props: { game: gameWithCards([5]), paused: false, speed: 1, history: [] } })
+    const speed = wrapper.get<HTMLSelectElement>('select[aria-label="速度"]')
+    await speed.setValue('2')
+    expect(speed.element.value).toBe('1')
+    await wrapper.setProps({ speed: 2 })
+    expect(speed.element.value).toBe('2')
+  })
+
   it('显示四名玩家的真实奖券、信用、住院或拘留及神灵剩余天数', () => {
     const game = gameWithCards([5])
     game.tickets[1] = -30

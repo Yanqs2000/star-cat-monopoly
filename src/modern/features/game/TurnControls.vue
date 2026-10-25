@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import HandPanel from './HandPanel.vue'
+import UiIcon from './UiIcon.vue'
+import { profileAssetUrl } from '../assets/profiles'
 import type { GameState } from './types'
 import type { InteractionAsset } from './interaction-assets'
 import type { AssetProfile } from '../assets/profiles'
@@ -15,6 +17,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   roll: []; pause: []; 'begin-card': [index: number]; 'asset-error': [error: Error, cardId: number]
 }>()
+const assetBase = import.meta.env.BASE_URL
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
 const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' && props.game.lastRoll !== null)
@@ -23,12 +26,13 @@ const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' 
 <template>
   <section class="turn-controls" aria-label="回合操作">
     <div class="roll-controls">
+      <div class="turn-portrait" aria-hidden="true"><img :src="`${assetBase}${profileAssetUrl(`assets/activities/face-${active.characterId}/1.png`,assetProfile ?? 'original')}`" alt=""></div>
       <strong data-testid="current-player">{{ active.name }} · {{ active.controller === 'human' ? '人类' : active.controller === 'autoplay' ? '托管' : 'AI' }}</strong>
       <span data-testid="last-roll">骰子 {{ game.lastRoll ?? '—' }}{{ showingPreviousTurn ? '（上一回合）' : '' }}</span>
       <span data-testid="remaining-steps">剩余 {{ game.remainingSteps }} 步</span>
       <div class="actions">
-        <button class="roll" :disabled="!canRoll" @click="emit('roll')">掷骰</button>
-        <button @click="emit('pause')">{{ paused ? '继续对局' : '暂停对局' }}</button>
+        <button class="roll" :disabled="!canRoll" @click="emit('roll')"><UiIcon name="dice"/><span>掷骰</span></button>
+        <button class="pause" :aria-label="paused ? '继续对局' : '暂停对局'" @click="emit('pause')"><UiIcon :name="paused ? 'play' : 'pause'"/><span>{{ paused ? '继续' : '暂停' }}</span></button>
       </div>
     </div>
     <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" :prepared-images="preparedImages" :asset-profile="assetProfile" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />

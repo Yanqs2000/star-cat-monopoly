@@ -12,6 +12,7 @@ import { parseReactionManifest, type ReactionManifest } from './features/charact
 import type { GameController, GameControllerOptions } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
 import TurnControls from './features/game/TurnControls.vue'
+import GameToolbar from './features/game/GameToolbar.vue'
 import GameReferencePanel, { type ReferenceTab } from './features/game/GameReferencePanel.vue'
 import MapInfoPanel from './features/game/MapInfoPanel.vue'
 import { inspectMapCell } from './features/game/queries'
@@ -732,7 +733,7 @@ onBeforeUnmount(() => {
 
 <template>
   <SceneInspector v-if="mode === 'inspection'" @back="mode = 'selection'" />
-  <main v-else-if="mode === 'selection'" :inert="savesOpen || referenceTab !== null" class="selection-shell">
+  <main v-else-if="mode === 'selection'" :inert="savesOpen || referenceTab !== null" class="selection-shell original-ui">
     <header><div><span class="eyebrow">原素材 · 独立现代回合</span><h1>星猫大富翁</h1></div><div class="selection-actions"><label>素材画质 <select aria-label="素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label><span v-if="assetProfileBusy" data-testid="asset-profile-busy" role="status">{{ assetProfileBusyLabel }}</span><button data-testid="open-help" @click="openReference('help')">游戏帮助</button><button @click="openSaves">读取存档</button><button @click="mode = 'inspection'">场景检查</button></div></header>
     <p v-if="assetProfileNotice" class="asset-profile-error" role="alert">{{ assetProfileNotice }}；当前已保留原版素材模式。</p>
     <section class="selection-card">
@@ -752,10 +753,10 @@ onBeforeUnmount(() => {
     </section>
     <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
-  <main v-else class="game-shell">
+  <main v-else class="game-shell original-ui">
     <Teleport :to="fullscreenToolbar ?? 'body'" :disabled="!fullscreen || !fullscreenToolbar">
-    <div class="audio-controls" aria-label="声音设置" :inert="savesOpen || referenceTab !== null">
-      <button data-testid="open-saves" :disabled="assetProfileBusy" @click="openSaves">手动存读档</button>
+    <GameToolbar :game="game" :details-open="detailsOpen" :blocked="savesOpen || referenceTab !== null" :fullscreen="fullscreen" :busy="assetProfileBusy" :status="loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…'" @saves="openSaves" @details="detailsOpen=!detailsOpen" @fullscreen="toggleFullscreen">
+    <div class="audio-controls" aria-label="声音设置">
       <button @click="audio.unlock();audio.retry()">开启声音</button>
       <label>素材画质 <select aria-label="对局素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label>
       <label>音乐 <input aria-label="音乐音量" type="range" min="0" max="1" step="0.1" v-model.number="musicVolume" @input="audio.setVolumes(musicVolume,effectsVolume)"></label>
@@ -763,11 +764,10 @@ onBeforeUnmount(() => {
       <label><input type="checkbox" v-model="muted" @change="audio.setMuted(muted)">静音</label>
       <span v-if="audioError" role="status">{{ audioError }} <button @click="audio.unlock();audio.retry()">重试声音</button></span>
       <span v-if="assetProfileBusy" data-testid="asset-profile-busy" role="status">{{ assetProfileBusyLabel }}</span>
-      <button v-if="fullscreen" @click="toggleFullscreen">退出全屏</button>
     </div>
+    </GameToolbar>
     </Teleport>
     <p v-if="assetProfileNotice" class="asset-profile-error" role="alert">{{ assetProfileNotice }}；当前画质与对局均已保留。</p>
-    <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="fullscreenToolbar" v-show="fullscreen" class="fullscreen-toolbar" :inert="savesOpen || referenceTab !== null" />
       <div class="stage-content" :inert="assetProfileBusy">
@@ -775,7 +775,6 @@ onBeforeUnmount(() => {
       <div ref="boardArea" class="board-area">
       <div class="board-surface" :inert="savesOpen || referenceTab !== null">
       <div ref="host" class="canvas-host" />
-      <button v-if="game && interactionAssets && controllerReady && loadState === 'ready'" class="details-toggle" data-testid="toggle-game-details" aria-controls="game-details" :aria-expanded="detailsOpen" @click="detailsOpen=!detailsOpen">{{ detailsOpen ? '收起侧栏' : '对局面板' }}</button>
       <div v-if="game && paused && !controllerReady && loadState === 'ready'" class="overlay">
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
@@ -826,3 +825,5 @@ button,select{font:inherit;background:#294b58;color:#edf6f3;border:1px solid #55
 <style scoped>
 @media(max-height:600px){.game-shell{padding:8px;gap:6px}.game-shell header h1{font-size:18px}.game-shell header .eyebrow{display:none}.audio-controls{gap:6px;font-size:12px}.audio-controls button,.audio-controls select{padding:5px 8px}.game-shell header{margin:0}}
 </style>
+
+<style src="./styles/original-ui.css"></style>

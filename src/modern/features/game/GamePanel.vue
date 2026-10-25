@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, nextTick } from 'vue'
 import mapJson from '../../data/map.json'
 import type { Parcel } from '../map/types'
 import { getPropertySummary } from './property'
@@ -23,7 +23,14 @@ const emit = defineEmits<{
   control: [playerId:number,control:'human'|'autoplay']
   reference: [tab: ReferenceTab]
 }>()
+const assetBase = import.meta.env.BASE_URL
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
+async function requestSpeed(event: Event) {
+  const select = event.target as HTMLSelectElement
+  emit('speed', Number(select.value))
+  await nextTick()
+  select.value = String(props.speed)
+}
 const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' && props.game.lastRoll !== null)
 const serializedGameState = computed(() => JSON.stringify(props.game))
 const gameStateFingerprint = computed(() => {
@@ -66,7 +73,7 @@ function restriction(playerId: number): string {
     </div>
     <div class="primary-actions">
       <label>速度
-        <select :value="String(speed)" aria-label="速度" @change="emit('speed', Number(($event.target as HTMLSelectElement).value))">
+        <select :value="String(speed)" aria-label="速度" @change="requestSpeed">
           <option value="1">标准速度</option><option value="2">快速（2倍）</option>
         </select>
       </label>
@@ -85,7 +92,7 @@ function restriction(playerId: number): string {
     </div>
     <ol class="players" data-testid="player-list">
       <li v-for="(player, index) in game.players" :key="player.id" :class="{ active: index === game.activePlayerIndex }">
-        <span class="token">{{ index + 1 }}</span>
+        <span class="token"><img :src="`${assetBase}assets/activities/face-${player.characterId}/1.png`" alt=""></span>
         <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : player.controller==='autoplay'?'托管':'AI' }} · {{ player.position.column }},{{ player.position.row }}</small><small>现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</small><small>信用 {{ game.credit[player.id]?.available }} / 已用 {{ game.credit[player.id]?.used }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</small><small>股票市值 {{ stockMarketValue(game.finance, player.id) }}</small><small>{{ restriction(player.id) }}</small><small>地 {{ getPropertySummary(game.properties, player.id).landCount }} · 建筑 {{ getPropertySummary(game.properties, player.id).buildingCount }}</small></span>
       </li>
     </ol>
