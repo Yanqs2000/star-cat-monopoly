@@ -51,3 +51,9 @@ export async function playUntil(page: Page, target: () => Promise<boolean>, limi
   }
   throw new Error(`未到达目标入口：${await page.getByTestId('current-player').textContent()} / ${await page.getByTestId('round').textContent()}`)
 }
+
+/** Auxiliary controls now live in the optional sidebar. */
+export async function revealGameDetails(page: Page) {
+  const toggle = page.getByTestId('toggle-game-details')
+  if (await toggle.count() && await toggle.getAttribute('aria-expanded') === 'false') await toggle.click()
+}

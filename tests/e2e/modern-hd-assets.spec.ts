@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 interface ReplayResult {
   profile: string
@@ -172,7 +172,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
   await page.getByTestId('character-1').click()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByRole('button', { name: '全图' }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全图' }).click()
   await page.getByRole('button', { name: '暂停对局', exact: true }).click()
   const before = {
     players: await page.getByTestId('player-list').innerText(),
@@ -210,7 +210,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
   await selector.selectOption('hd')
   await expect(page.locator('.profile-switch-overlay')).toBeVisible()
   await expect.poll(()=>candidateRequestHeld).toBe(true)
-  await page.getByLabel('速度').selectOption('2',{force:true})
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2',{force:true})
   await page.getByRole('button',{name:'继续对局',exact:true}).dispatchEvent('click')
   expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-fingerprint')).toBe(before.stateFingerprint)
   releaseCandidate();holdCandidate=false
@@ -288,7 +288,7 @@ test('游乐场Pixi图集在原版/高清模式下保持同一逻辑画布与玩
     await page.getByTestId('character-1').click()
     await page.getByRole('button', { name: '开始对局' }).click()
     await expect(page.getByRole('status')).toContainText('对局已载入')
-    await page.getByLabel('速度').selectOption('2')
+    await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
     await playUntil(page, () => page.getByTestId('carnival-original').count().then(Boolean), 3500)
     const stage = page.getByTestId('carnival-original')
     const canvas = stage.locator('canvas')

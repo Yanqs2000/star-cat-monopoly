@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 const evidenceDir = '.analysis-cache/acceptance-3b'
 
@@ -20,7 +20,7 @@ async function start(page: Page, seed: number, characters = [1], date = { year: 
   for (const id of characters) await page.getByTestId(`character-${id}`).click()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 
 async function wallet(page: Page) {
@@ -76,7 +76,7 @@ test('自然开局 seed17 在第2轮银行完成存取、借还、授信与信�
   await expect(hand.locator('[data-card-id="1"]')).toHaveCount(1)
   await page.getByTestId('interaction-acknowledge').click()
   await page.setViewportSize({ width: 1920, height: 1080 })
-  await page.getByRole('button', { name: '全屏', exact: true }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全屏', exact: true }).click()
   await expect.poll(() => page.evaluate(() => document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
   const board = (await page.locator('canvas').boundingBox())!
   expect(board.width / board.height).toBeCloseTo(4 / 3, 2)

@@ -1,6 +1,6 @@
 import { expect, test, type Browser, type Page } from '@playwright/test'
 import { readFile, stat } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 type Profile = 'original' | 'hd'
 type StateSnapshot = Record<string, unknown> & { rngState: number }
@@ -27,7 +27,7 @@ async function start(page: Page, profile: Profile, seed: number, options: {
   for (const id of options.characters ?? [1]) await page.getByTestId(`character-${id}`).click()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 
 async function serializedGameState(page: Page): Promise<StateSnapshot> {

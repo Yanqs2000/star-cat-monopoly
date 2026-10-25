@@ -1,6 +1,6 @@
 import { expect,test,type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 const evidenceDir='.analysis-cache/acceptance-3c'
 async function start(page:Page,seed:number) {
   await page.addInitScript(seed=>{
@@ -10,7 +10,7 @@ async function start(page:Page,seed:number) {
   },seed)
   await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000})
   await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click()
-  await expect(page.getByRole('status')).toContainText('对局已载入');await page.getByLabel('速度').selectOption('2')
+  await expect(page.getByRole('status')).toContainText('对局已载入');await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 test('自然seed4首轮魔法门原分布图、头像、飞行暂停和东站到达',async({page})=>{
   test.setTimeout(120_000);const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message))

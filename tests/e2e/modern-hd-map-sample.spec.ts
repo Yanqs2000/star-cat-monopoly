@@ -1,3 +1,4 @@
+import { revealGameDetails } from './modern-play'
 import { expect, test, type Page } from '@playwright/test'
 
 async function startGame(page: Page, profile: 'original' | 'hd') {
@@ -146,9 +147,9 @@ test('1366桌面全图概览释放地图补片，恢复跟随后重新加载', a
   const before = await page.evaluate(() => (window as typeof window & { decodedMapTiles?: number }).decodedMapTiles ?? 0)
   const beforeRequests = requests.length
   const state = await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')
-  await page.getByRole('button', { name: '全图', exact: true }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全图', exact: true }).click()
   await expect.poll(() => page.evaluate(() => (window as typeof window & { liveMapTiles?: number }).liveMapTiles ?? 0)).toBe(0)
-  await page.getByRole('button', { name: '跟随当前玩家' }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '跟随当前玩家' }).click()
   await expect.poll(() => requests.length).toBeGreaterThan(beforeRequests)
   await waitForMapRender(page, before + 1)
   await expect.poll(() => page.evaluate(() => (window as typeof window & { liveMapTiles?: number }).liveMapTiles ?? 0)).toBeGreaterThan(0)

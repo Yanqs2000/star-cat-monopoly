@@ -11,6 +11,7 @@ import { parseAssetManifest, type AssetManifest } from './features/characters/as
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
 import type { GameController, GameControllerOptions } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
+import TurnControls from './features/game/TurnControls.vue'
 import GameReferencePanel, { type ReferenceTab } from './features/game/GameReferencePanel.vue'
 import MapInfoPanel from './features/game/MapInfoPanel.vue'
 import { inspectMapCell } from './features/game/queries'
@@ -88,6 +89,8 @@ const fullscreenError = ref('')
 const host = ref<HTMLElement>()
 const stage = ref<HTMLElement>()
 const fullscreenToolbar = ref<HTMLElement>()
+const boardArea = ref<HTMLElement>()
+const detailsOpen = ref(false)
 const preparedImages=ref<Record<string,string>>({})
 let ownedUiAssets:PreparedUiAssets|undefined
 let scene: MapSceneHandle | undefined
@@ -506,6 +509,7 @@ async function switchPausedGameAssetProfile(target:AssetProfile,request:number,s
   }
 }
 async function startGame() {
+  detailsOpen.value = false
   if (selected.value.length === 0 || assetProfileBusy.value) return
   cleanupGame()
   audio.startMatch()
@@ -748,9 +752,9 @@ onBeforeUnmount(() => {
     </section>
     <p class="scope">现代对局：17种可达卡、特殊格、卡片屋、信用与世界状态。</p>
   </main>
-  <main v-else :inert="(savesOpen || referenceTab !== null) && !fullscreen" class="game-shell">
+  <main v-else class="game-shell">
     <Teleport :to="fullscreenToolbar ?? 'body'" :disabled="!fullscreen || !fullscreenToolbar">
-    <div class="audio-controls" aria-label="声音设置">
+    <div class="audio-controls" aria-label="声音设置" :inert="savesOpen || referenceTab !== null">
       <button data-testid="open-saves" :disabled="assetProfileBusy" @click="openSaves">手动存读档</button>
       <button @click="audio.unlock();audio.retry()">开启声音</button>
       <label>素材画质 <select aria-label="对局素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label>
@@ -766,12 +770,16 @@ onBeforeUnmount(() => {
     <header><div><span class="eyebrow">原版地图与角色</span><h1>星猫大富翁 · 现代对局</h1></div><span role="status">{{ loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…' }}</span></header>
     <section ref="stage" class="game-stage">
       <div ref="fullscreenToolbar" v-show="fullscreen" class="fullscreen-toolbar" :inert="savesOpen || referenceTab !== null" />
-      <div class="stage-content" :inert="assetProfileBusy || ((savesOpen || referenceTab !== null) && fullscreen)">
-      <div class="board-area"><div ref="host" class="canvas-host" /></div>
+      <div class="stage-content" :inert="assetProfileBusy">
+      <div class="play-area">
+      <div ref="boardArea" class="board-area">
+      <div class="board-surface" :inert="savesOpen || referenceTab !== null">
+      <div ref="host" class="canvas-host" />
+      <button v-if="game && interactionAssets && controllerReady && loadState === 'ready'" class="details-toggle" data-testid="toggle-game-details" aria-controls="game-details" :aria-expanded="detailsOpen" @click="detailsOpen=!detailsOpen">{{ detailsOpen ? '收起侧栏' : '对局面板' }}</button>
       <div v-if="game && paused && !controllerReady && loadState === 'ready'" class="overlay">
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
-      <GamePanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :asset-profile="assetProfile" @reference="openReference" @control="(id,control)=>gameController?.requestControl(id,control)" @roll="roll" @pause="togglePause" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" @begin-card="beginCard" @asset-error="failHandAsset" />
+
       <MapInfoPanel v-if="mapInspection && referenceTab === null && loadState === 'ready'" :info="mapInspection" @close="mapInspectionPosition=undefined" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" :asset-profile="assetProfile" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
@@ -785,9 +793,14 @@ onBeforeUnmount(() => {
         <div><p>{{ assetProfileBusyLabel }}</p><small>正在准备候选素材；可从上方画质菜单取消。</small></div>
       </div>
       </div>
+      </div>
+        <TurnControls v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :inert="savesOpen || referenceTab !== null" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :asset-profile="assetProfile" @roll="roll" @pause="togglePause" @begin-card="beginCard" @asset-error="failHandAsset" />
+      </div>
+      <GamePanel id="game-details" :open="detailsOpen" :inert="savesOpen || referenceTab !== null" v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" @reference="openReference" @control="(id,control)=>gameController?.requestControl(id,control)" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" />
+      </div>
     </section>
   </main>
-  <Teleport :to="stage ?? 'body'" :disabled="!fullscreen">
+  <Teleport :to="boardArea ?? 'body'" :disabled="mode !== 'game' || !boardArea">
   <GameReferencePanel v-if="referenceTab !== null" :game="mode === 'game' ? game : undefined" :tab="referenceTab" @tab="referenceTab=$event" @close="closeReference" />
   <SavePanel v-if="savesOpen" :slots="saveSlots" :can-save="saveAllowed" :busy="savesBusy" :error="savesError" :message="savesMessage" :has-game="!!game" :retryable="retryableSave" @save="saveToSlot" @load="loadFromSlot" @refresh="refreshSaveSlots" @retry="submitRetrySave" @close="closeSaves" />
   </Teleport>
@@ -800,7 +813,16 @@ button,select{font:inherit;background:#294b58;color:#edf6f3;border:1px solid #55
 .game-shell{display:flex;flex-direction:column}.game-stage{position:relative;width:min(1400px,100%);height:calc(100dvh - 104px);min-height:570px;margin:0 auto;display:flex;overflow:hidden;background:#66ccff;border:1px solid #486a75;border-radius:12px;box-shadow:0 12px 45px #0006}.canvas-host{flex:1;min-width:0;height:100%;cursor:grab}.canvas-host:active{cursor:grabbing}.canvas-host :deep(canvas){display:block;width:100%;height:100%}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#17323df2;text-align:center;padding:28px}.overlay p{max-width:720px;overflow-wrap:anywhere}.error-actions{display:flex;justify-content:center;gap:10px}.exit-fullscreen{position:absolute;right:334px;top:14px;z-index:4}.fullscreen-error{position:absolute;z-index:4;left:16px;top:16px;margin:0;padding:9px 12px;border:1px solid #ffb19a;border-radius:8px;background:#5b2925;color:#fff}.game-stage:fullscreen{width:100vw;height:100vh;max-width:none;border:0;border-radius:0}
 .profile-switch-overlay{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:#132f39b8;color:#eff7f5;text-align:center;pointer-events:all}.profile-switch-overlay p{margin:0 0 6px;font-size:18px;font-weight:700}.profile-switch-overlay small{color:#c4d8dc}
 .insolvent{position:absolute;z-index:3;left:18px;bottom:18px;width:min(470px,calc(100% - 370px));padding:18px;border:1px solid #ffb19a;border-radius:12px;background:#572d2be8;color:#fff}.insolvent h2{margin:0 0 8px}.insolvent p{margin:0 0 12px}
-.game-shell{height:100dvh;min-height:0;padding:16px 24px;gap:10px}.game-shell header{width:100%;margin:0 auto;flex-shrink:0}.game-shell>.audio-controls{flex-shrink:0}.audio-controls{font-size:14px}.game-stage{--game-sidebar-width:340px;width:100%;height:auto;min-height:0;flex:1;display:flex;flex-direction:column;background:#173744}.stage-content{position:relative;display:flex;flex:1;min-height:0;width:100%;container-type:size}.board-area{flex:1;min-width:0;height:100%;display:grid;place-items:center;container-type:size;background:radial-gradient(ellipse at center,#285968,#173744)}.canvas-host{flex:none;width:min(100cqw,calc(100cqh * 4 / 3));height:auto;aspect-ratio:4/3;min-height:0}.fullscreen-toolbar{flex-shrink:0;padding:10px 16px;background:#183744;border-bottom:1px solid #4f6c76}.game-stage:fullscreen{height:100dvh;background:#173744}.game-stage:fullscreen .fullscreen-toolbar .audio-controls{width:100%;justify-content:center}.game-stage:fullscreen .stage-content{min-height:0}.asset-profile-error{flex-shrink:0;margin-bottom:0}@media(min-width:1600px){.game-stage{--game-sidebar-width:360px}}
-@media(max-width:900px){.game-stage{--game-sidebar-width:0px}.characters{grid-template-columns:repeat(4,1fr)}.game-stage{height:calc(100dvh - 90px);flex-direction:column}.canvas-host{min-height:58vh}.insolvent{left:12px;right:12px;bottom:42vh;width:auto;max-height:45vh;overflow:auto;box-sizing:border-box}.exit-fullscreen{right:14px}.game-shell{height:auto;min-height:100dvh;padding:12px}.game-shell header{margin-bottom:8px}.stage-content{flex-direction:column}.board-area{min-height:58vh}.canvas-host{min-height:0}}
+.game-shell{height:100dvh;min-height:0;padding:16px 24px;gap:10px}.game-shell header{width:100%;margin:0 auto;flex-shrink:0}.game-shell>.audio-controls{flex-shrink:0}.audio-controls{font-size:14px}.game-stage{--game-sidebar-width:0px;width:100%;height:auto;min-height:0;flex:1;display:flex;flex-direction:column;background:#173744}.stage-content{position:relative;display:flex;flex:1;min-height:0;width:100%;container-type:size}.board-area{flex:1;min-width:0;height:100%;display:grid;place-items:center;container-type:size;background:radial-gradient(ellipse at center,#285968,#173744)}.canvas-host{flex:none;width:min(100cqw,calc(100cqh * 4 / 3));height:auto;aspect-ratio:4/3;min-height:0}.fullscreen-toolbar{flex-shrink:0;padding:10px 16px;background:#183744;border-bottom:1px solid #4f6c76}.game-stage:fullscreen{height:100dvh;background:#173744}.game-stage:fullscreen .fullscreen-toolbar .audio-controls{width:100%;justify-content:center}.game-stage:fullscreen .stage-content{min-height:0}.asset-profile-error{flex-shrink:0;margin-bottom:0}
+@media(max-width:900px){.game-stage{--game-sidebar-width:0px}.characters{grid-template-columns:repeat(4,1fr)}.game-stage{height:calc(100dvh - 90px);flex-direction:column}.canvas-host{min-height:58vh}.insolvent{left:12px;right:12px;bottom:42vh;width:auto;max-height:45vh;overflow:auto;box-sizing:border-box}.exit-fullscreen{right:14px}.game-shell{height:auto;min-height:100dvh;padding:12px}.game-shell header{margin-bottom:8px}.stage-content{flex-direction:row}.board-area{min-height:58vh}.canvas-host{min-height:0}}
 @media(max-width:600px){.selection-shell{padding:14px}.selection-card{padding:15px;margin-top:2vh}.characters{grid-template-columns:repeat(3,1fr);gap:7px}.portrait{width:60px;height:66px}.selection-title,.selection-footer{align-items:stretch;flex-direction:column}}
+</style>
+
+<style scoped>
+.play-area{position:relative;flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;container-type:size}.board-area{position:relative;height:auto;min-height:0}.board-surface{position:absolute;inset:0;display:grid;place-items:center;container-type:size}.details-toggle{position:absolute;z-index:4;right:12px;top:12px;background:#173744ed;box-shadow:0 4px 16px #001b2955}.play-area :deep(.reference-backdrop){position:absolute}.play-area :deep(.reference-panel){max-height:calc(100% - 24px)}.play-area :deep(.save-panel){position:absolute;width:min(600px,calc(100% - 24px));max-height:calc(100% - 24px);box-shadow:0 12px 48px #001b2988}
+@media(max-width:900px){.game-shell{height:100dvh;min-height:0}.game-stage{height:auto}.board-area{min-height:0}}
+</style>
+
+<style scoped>
+@media(max-height:600px){.game-shell{padding:8px;gap:6px}.game-shell header h1{font-size:18px}.game-shell header .eyebrow{display:none}.audio-controls{gap:6px;font-size:12px}.audio-controls button,.audio-controls select{padding:5px 8px}.game-shell header{margin:0}}
 </style>

@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test'
 import { readFileSync } from 'node:fs'
 const cardRecords = JSON.parse(readFileSync(new URL('../../src/modern/data/card-board.json', import.meta.url), 'utf8')).records as Record<number, { position: { column: number; row: number } }>
 import type { GameState } from '../../src/modern/features/game/types'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 async function state(page: Page): Promise<GameState> {
   return JSON.parse((await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json'))!)
@@ -31,7 +31,7 @@ for (const profile of ['original', 'hd']) test(`${profile}实际对局可查询�
   page.on('pageerror', error => errors.push(error.message))
   await start(page, profile)
   const before = await state(page)
-  await page.getByTestId('open-assets').click()
+  await revealGameDetails(page); await page.getByTestId('open-assets').click()
   await expect(page.getByTestId('asset-standings').locator('tbody tr')).toHaveCount(4)
   await expect(page.getByTestId('assets-player-1')).toContainText('260000')
   await page.keyboard.press('ArrowUp')
@@ -63,10 +63,10 @@ test('选人前帮助、全屏内查询、原暂停状态和Escape关闭后保�
   await expect(page.getByTestId('selected-order')).toContainText('吉吉&米米')
   await start(page)
   await page.getByRole('button', { name: '暂停对局', exact: true }).click()
-  await page.getByRole('button', { name: '全屏', exact: true }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全屏', exact: true }).click()
   await expect.poll(() => page.evaluate(() => !!document.fullscreenElement)).toBe(true)
   const before = await state(page)
-  await page.getByTestId('open-assets').click()
+  await revealGameDetails(page); await page.getByTestId('open-assets').click()
   await page.screenshot({ path: '/tmp/starcat-functions-assets-fullscreen.png' })
   await expect(page.getByRole('dialog', { name: '对局查询与帮助' })).toBeVisible()
   expect(await page.getByTestId('reference-close').evaluate(element => !!element.closest(':fullscreen'))).toBe(true)
@@ -80,7 +80,7 @@ test('选人前帮助、全屏内查询、原暂停状态和Escape关闭后保�
 test('实际地图住宅道路与建筑、当前公司和失物招领查询，拖动不触发', async ({ page }) => {
   await start(page)
   const before = await state(page)
-  await page.getByRole('button', { name: '全图', exact: true }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全图', exact: true }).click()
   const canvas = page.locator('canvas'), box = (await canvas.boundingBox())!
   const scale = Math.min(760 / 2700, 560 / 2552)
   const point = (column: number, row: number) => ({
@@ -113,7 +113,7 @@ test('实际地图住宅道路与建筑、当前公司和失物招领查询，�
 test('查询在逐格移动中冻结完整状态，关闭后继续原移动', async ({ page }) => {
   await start(page)
   await page.getByRole('button', { name: '掷骰', exact: true }).click()
-  await page.getByTestId('open-assets').click()
+  await revealGameDetails(page); await page.getByTestId('open-assets').click()
   const before = await state(page)
   await page.waitForTimeout(300)
   expect(await state(page)).toEqual(before)
@@ -124,11 +124,11 @@ test('查询在逐格移动中冻结完整状态，关闭后继续原移动', as
 test('月结在账户结算后提供完整资产排名，查询关闭不会二次月结', async ({ page }) => {
   test.setTimeout(180000)
   await start(page, 'original', [1, 2, 3, 4], 30)
-  await page.getByLabel('速度', { exact: true }).selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度', { exact: true }).selectOption('2')
   await playUntil(page, () => page.getByTestId('monthly-standings').count().then(Boolean), 1200)
   await expect(page.getByTestId('monthly-standings').locator('li')).toHaveCount(4)
   const before = await state(page)
-  await page.getByTestId('open-assets').click()
+  await revealGameDetails(page); await page.getByTestId('open-assets').click()
   await expect(page.getByTestId('asset-standings')).toBeVisible()
   await page.getByTestId('reference-close').click()
   expect(await state(page)).toEqual(before)
@@ -136,7 +136,7 @@ test('月结在账户结算后提供完整资产排名，查询关闭不会二�
 
 test('真实后端保存查询后的对局，刷新页面读回完整状态与随机数', async ({ page }) => {
   await start(page)
-  await page.getByTestId('open-holdings').click()
+  await revealGameDetails(page); await page.getByTestId('open-holdings').click()
   await page.getByTestId('reference-close').click()
   const before = await state(page)
   await page.getByTestId('open-saves').click()
@@ -149,7 +149,7 @@ test('真实后端保存查询后的对局，刷新页面读回完整状态与�
   await page.getByTestId('load-slot-1').click()
   await expect(page.getByTestId('current-player')).toContainText('卷毛')
   expect(await state(page)).toEqual(before)
-  await page.getByTestId('open-assets').click()
+  await revealGameDetails(page); await page.getByTestId('open-assets').click()
   await expect(page.getByTestId('assets-player-1')).toContainText('260000')
   await page.screenshot({ path: '/tmp/starcat-functions-saved-assets.png' })
 })

@@ -13,5 +13,5 @@ const emit = defineEmits<{ close: [] }>()
   </aside>
 </template>
 <style scoped>
-.map-info{position:absolute;z-index:4;top:12px;left:12px;width:min(285px,calc(100% - var(--game-sidebar-width,340px) - 24px));padding:12px 14px;border:1px solid #ffe18a;border-radius:10px;background:#173744f2;color:#edf8f8;font:14px/1.5 system-ui;box-shadow:0 8px 24px #001b2955}.map-info header{display:flex;justify-content:space-between;gap:12px;align-items:center}.map-info p{margin:5px 0}.map-info small{color:#b5cdd2}.map-info button{border:1px solid #7094a0;border-radius:4px;background:#284e5d;color:white;font:18px system-ui;cursor:pointer}.map-info button:focus-visible{outline:2px solid #ffe18a}
+.map-info{position:absolute;z-index:4;top:50%;left:50%;transform:translate(-50%,-50%);width:min(285px,calc(100% - var(--game-sidebar-width,0px) - 24px));padding:12px 14px;border:1px solid #ffe18a;border-radius:10px;background:#173744f2;color:#edf8f8;font:14px/1.5 system-ui;box-shadow:0 8px 24px #001b2955}.map-info header{display:flex;justify-content:space-between;gap:12px;align-items:center}.map-info p{margin:5px 0}.map-info small{color:#b5cdd2}.map-info button{border:1px solid #7094a0;border-radius:4px;background:#284e5d;color:white;font:18px system-ui;cursor:pointer}.map-info button:focus-visible{outline:2px solid #ffe18a}
 </style>

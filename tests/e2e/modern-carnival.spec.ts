@@ -1,9 +1,9 @@
 import { test,expect,type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 async function start(page:Page){
  await page.addInitScript(()=>{const original=crypto.getRandomValues.bind(crypto);crypto.getRandomValues=a=>{if(a instanceof Uint32Array&&a.length===1){a[0]=104;return a}return original(a)};Date.prototype.getDay=()=>1;Date.prototype.getFullYear=()=>2026;Date.prototype.getMonth=()=>8;Date.prototype.getDate=()=>28})
- await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await page.getByLabel('速度').selectOption('2')
+ await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 const humanEntry=async(page:Page)=>{const who=await page.getByTestId('current-player').textContent();return !!who&&!who.includes('AI')&&await page.getByTestId('carnival-original').count()>0}
 test('自然seed104第1轮真20秒接物：原Pixi素材、键鼠、暂停、发券与释放输入',async({page})=>{
