@@ -8,6 +8,7 @@ import type { Direction, PlayerState } from '../game/types'
 import type { WorldState } from '../game/world-cards'
 import type { PropertyLedger } from '../game/property'
 import { gridToScene } from './coordinates'
+import { propertyMarkerOffset } from './property-marker-placement'
 import { parsePropertyAssets } from './property-assets'
 import { companyPlacement, parseCompanyAssets, type CompanyAssetsManifest } from './company-assets'
 import { pickMapPointerAction } from './target-selection'
@@ -436,7 +437,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         image.texture = textures.get(asset.url)!
         const transform = profileSpriteTransform(asset.url, assetProfile)
         image.scale.set(transform.scaleX, transform.scaleY)
-        image.position.set(asset.offsetX + transform.x, asset.offsetY + transform.y)
+        const markerOffset = propertyMarkerOffset(parcel.id, state, assetProfile)
+        image.position.set(asset.offsetX + transform.x + markerOffset.x, asset.offsetY + transform.y + markerOffset.y)
         badge.text = state.ownerId === null ? (state.level === 0 ? '' : `中立 · ${state.level}级`) : `P${state.ownerId} · ${state.level}级`
       }
     }
