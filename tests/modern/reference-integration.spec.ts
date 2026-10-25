@@ -84,3 +84,12 @@ it('从暂停对局返回选人后，帮助不会把旧暂停状态恢复给选�
   await nextTick()
   expect(state.paused).toBe(false)
 })
+
+it('存档窗口打开时，底层终局操作同样被隔离', async () => {
+  await loaded()
+  await wrapper.get('[data-testid="open-saves"]').trigger('click')
+  await flushPromises()
+  const endgame = wrapper.getComponent({ name: 'EndgamePanel' })
+  expect(endgame.element.closest('[inert]:not([inert="false"])'), '终局按钮不能在存档窗口下面通过键盘触发').not.toBeNull()
+  expect(wrapper.getComponent({ name: 'SavePanel' }).element.closest('[inert]:not([inert="false"])')).toBeNull()
+})

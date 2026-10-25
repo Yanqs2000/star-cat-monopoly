@@ -1,3 +1,4 @@
+import { revealGameDetails } from './modern-play'
 import { test, expect } from '@playwright/test'
 
 async function choose(page: import('@playwright/test').Page, ids: number[]): Promise<void> {
@@ -39,7 +40,7 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
   await expect(page.locator('.path strong')).toHaveText('本回合路径')
   await expect(page.locator('.path span')).toHaveText('尚未掷骰')
 
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
   await page.getByRole('button', { name: '掷骰' }).click()
   await expect(page.getByTestId('last-roll')).not.toHaveText('骰子 —')
   await expect(page.getByTestId('turn-history')).toContainText('卷毛 掷出')
@@ -82,7 +83,7 @@ test('开始后掷骰逐格移动、AI自动接续并可返回选人重开', asy
     return [style.backgroundColor, style.color]
   })).toEqual(['rgb(255, 225, 138)', 'rgb(35, 55, 60)'])
 
-  await page.getByRole('button', { name: '返回选人' }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '返回选人' }).click()
   await expect(page.getByRole('heading', { name: '选择参赛角色' })).toBeVisible()
   await expect(page.getByTestId('selected-order')).toContainText('卷毛')
 })
@@ -144,6 +145,6 @@ test('浏览器拒绝全屏时在已载入对局中显示错误', async ({ page 
   await choose(page, [1, 2, 3, 4])
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByRole('button', { name: '全屏', exact: true }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全屏', exact: true }).click()
   await expect(page.getByRole('alert')).toHaveText('当前浏览器未能进入全屏。')
 })

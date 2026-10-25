@@ -5,6 +5,7 @@ import { createGame } from '../../src/modern/features/game/setup'
 import { settleBankruptcy } from '../../src/modern/features/game/lifecycle'
 import EndgamePanel from '../../src/modern/features/game/EndgamePanel.vue'
 import GamePanel from '../../src/modern/features/game/GamePanel.vue'
+import TurnControls from '../../src/modern/features/game/TurnControls.vue'
 
 it('破产原图和清算收据可见，暂停不允许确认',async()=>{
  let game=createGame([1,2,3,4],1);game.players[0]!.cash=0;game.players[0]!.deposit=-300;game=settleBankruptcy(game,1)
@@ -30,6 +31,8 @@ it('托管按钮提交控制请求，淘汰者不显示可接管入口',async()=
  await panel.get('[data-testid="control-all"]').trigger('click');expect(panel.emitted('control')).toHaveLength(4)
  expect(panel.find('[data-testid="control-4"]').exists()).toBe(false)
  await panel.setProps({game:{...game,players:game.players.map(p=>p.id===1?{...p,controller:'autoplay' as const}:p)}})
- expect(panel.get('[data-testid="current-player"]').text()).toContain('托管')
+ const controls=mount(TurnControls,{props:{game:panel.props('game'),paused:false,cardAssets:[]}})
+ expect(controls.get('[data-testid="current-player"]').text()).toContain('托管')
+ expect(controls.get('button.roll').attributes()).toHaveProperty('disabled')
  expect(panel.get('[data-testid="player-list"]').text()).toContain('托管')
 })

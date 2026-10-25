@@ -2,38 +2,28 @@
 import { computed } from 'vue'
 import mapJson from '../../data/map.json'
 import type { Parcel } from '../map/types'
-import HandPanel from './HandPanel.vue'
-import type { InteractionAsset } from './interaction-assets'
 import { getPropertySummary } from './property'
 import { stockMarketValue } from './stock-trading'
 import type { GameState } from './types'
-import type { AssetProfile } from '../assets/profiles'
 import type { ReferenceTab } from './GameReferencePanel.vue'
 
 const props = withDefaults(defineProps<{
   game: GameState
+  open?: boolean
   paused: boolean
   speed: number
   history: string[]
-  cardAssets?: InteractionAsset[]
-  preparedImages?:Record<string,string>
-  assetProfile?:AssetProfile
-}>(), { cardAssets: () => [], assetProfile:'original' })
+}>(), { open: false })
 const emit = defineEmits<{
-  roll: []
-  pause: []
   speed: [value: number]
   overview: []
   follow: []
   fullscreen: []
   restart: []
-  'begin-card': [index: number]
-  'asset-error': [error: Error, cardId: number]
   control: [playerId:number,control:'human'|'autoplay']
   reference: [tab: ReferenceTab]
 }>()
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
-const canRoll = computed(() => !props.paused && props.game.phase === 'awaiting-roll' && active.value.controller === 'human')
 const showingPreviousTurn = computed(() => props.game.phase === 'awaiting-roll' && props.game.lastRoll !== null)
 const serializedGameState = computed(() => JSON.stringify(props.game))
 const gameStateFingerprint = computed(() => {
@@ -68,21 +58,13 @@ function restriction(playerId: number): string {
 </script>
 
 <template>
-  <aside class="panel" aria-label="对局控制" :data-speed="String(speed)">
+  <aside v-show="open" class="panel" aria-label="对局控制" :data-speed="String(speed)">
     <span data-testid="game-state-fingerprint" :data-fingerprint="gameStateFingerprint" :data-state-json="serializedGameState" hidden aria-hidden="true" />
     <div class="panel-head">
       <div><span class="eyebrow">当前对局</span><h2 data-testid="round">第 {{ game.round }} 轮</h2></div>
       <span class="phase">{{ phaseText }}</span>
     </div>
-    <div class="turn-card">
-      <strong data-testid="current-player">{{ active.name }} · {{ active.controller === 'human' ? '人类' : active.controller==='autoplay'?'托管':'AI' }}</strong>
-      <span data-testid="last-roll">骰子 {{ game.lastRoll ?? '—' }}{{ showingPreviousTurn ? '（上一回合）' : '' }}</span>
-      <span data-testid="remaining-steps">剩余 {{ game.remainingSteps }} 步</span>
-      <span>位置 {{ active.position.column }}, {{ active.position.row }}</span>
-    </div>
     <div class="primary-actions">
-      <button class="roll" :disabled="!canRoll" @click="emit('roll')">掷骰</button>
-      <button @click="emit('pause')">{{ paused ? '继续对局' : '暂停对局' }}</button>
       <label>速度
         <select :value="String(speed)" aria-label="速度" @change="emit('speed', Number(($event.target as HTMLSelectElement).value))">
           <option value="1">标准速度</option><option value="2">快速（2倍）</option>
@@ -119,16 +101,15 @@ function restriction(playerId: number): string {
     <div class="path"><strong>{{ showingPreviousTurn ? '上一回合路径' : '本回合路径' }}</strong><span>{{ game.turnPath.length ? game.turnPath.map(point => `${point.column},${point.row}`).join(' → ') : '尚未掷骰' }}</span></div>
     <div class="history" data-testid="turn-history"><strong>已发生的回合与交易</strong><ol><li v-for="(item, index) in history" :key="index">{{ item }}</li></ol></div>
     <p class="funds">失物招领 {{ game.lostAndFoundFunds[0] }} / {{ game.lostAndFoundFunds[1] }} · {{ game.world.year }}年{{ game.world.month }}月{{ game.world.day }}日 · 星期 {{ game.world.weekday }} · 已过 {{ game.world.elapsedDays }}天</p>
-    <HandPanel :game="game" :paused="paused" :card-assets="cardAssets" :prepared-images="preparedImages" :asset-profile="assetProfile" @begin-card="emit('begin-card', $event)" @asset-error="(error, cardId) => emit('asset-error', error, cardId)" />
     <p class="scope">银行、股市、公司、普通 NPC 和奖券兑换已开放。</p>
   </aside>
 </template>
 
 <style scoped>
-.panel{flex:0 0 var(--game-sidebar-width,320px);width:var(--game-sidebar-width,320px);min-width:0;height:100%;overflow:auto;background:#162d38f2;color:#eaf4f1;border-left:1px solid #4f6c76;padding:16px;display:flex;flex-direction:column;gap:12px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}
-.panel-head,.turn-card,.primary-actions,.camera-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.panel-head{justify-content:space-between}.eyebrow{color:#a9c3c8;font-size:10px;letter-spacing:.12em}h2{font-size:20px;margin:2px 0}.phase{color:#ffe18a;font-size:12px}.turn-card{display:grid;grid-template-columns:1fr 1fr;background:#234652;border-radius:10px;padding:12px}.turn-card strong{grid-column:1/-1;font-size:16px}
-button,select{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #5d7d87;border-radius:7px;padding:7px 9px;cursor:pointer}button:hover,select:hover{background:#376979}button:focus-visible,select:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}button:disabled{opacity:.4;cursor:default}.roll,.roll:hover{background:#ffe18a;color:#23373c;border-color:#ffe18a;font-weight:700}.primary-actions label{display:flex;gap:5px;align-items:center}.camera-actions button{font-size:12px}
+.panel{flex:0 0 340px;width:340px;min-width:0;height:100%;overflow:auto;background:#162d38f2;color:#eaf4f1;border-left:1px solid #4f6c76;padding:16px;display:flex;flex-direction:column;gap:12px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}
+.panel-head,.primary-actions,.camera-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.panel-head{justify-content:space-between}.eyebrow{color:#a9c3c8;font-size:10px;letter-spacing:.12em}h2{font-size:20px;margin:2px 0}.phase{color:#ffe18a;font-size:12px}
+button,select{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #5d7d87;border-radius:7px;padding:7px 9px;cursor:pointer}button:hover,select:hover{background:#376979}button:focus-visible,select:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}button:disabled{opacity:.4;cursor:default}.primary-actions label{display:flex;gap:5px;align-items:center}.camera-actions button{font-size:12px}
 .players{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:7px}.players li{display:flex;align-items:center;gap:7px;padding:7px;border:1px solid #46636c;border-radius:8px}.players li.active{border-color:#ffe18a;background:#304d50}.token{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#c96f55;font-weight:700}.players small{font-size:12px;display:block;color:#a9c3c8}.path,.history{display:flex;flex-direction:column;gap:4px;color:#bfd0d3}.path span{font-size:12px;max-height:44px;overflow:auto}.history ol{margin:0;padding-left:20px;max-height:84px;overflow:auto}.scope{margin:auto 0 0;color:#96adb3;font-size:12px}
 .property-list{display:flex;flex-direction:column;gap:4px;color:#bfd0d3;border-top:1px solid #486673;padding-top:8px}.property-list ol{margin:0;padding-left:20px;max-height:84px;overflow:auto}.funds{margin:0;color:#bfd0d3;font-size:12px}
-@media(max-width:900px){.panel{flex:none;width:100%;height:auto;max-height:42vh;border-left:0;border-top:1px solid #4f6c76}.players{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.panel{position:absolute;z-index:3;right:0;top:0;bottom:0;flex:none;width:min(340px,100%);height:100%;max-height:none;padding-top:58px;box-shadow:-12px 0 32px #07151d88}.players{grid-template-columns:1fr 1fr}}
 </style>

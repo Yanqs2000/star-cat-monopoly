@@ -1,3 +1,4 @@
+import { revealGameDetails } from './modern-play'
 import { expect, test, type Page } from '@playwright/test'
 
 async function seedGame(page: Page, seed = 235): Promise<void> {
@@ -19,7 +20,7 @@ async function seedGame(page: Page, seed = 235): Promise<void> {
   await page.getByTestId('character-1').click()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 
 async function humanRoll(page: Page, round: number): Promise<void> {
@@ -109,11 +110,11 @@ test('地产决定可暂停、键盘放弃，返回选人重开后可键盘购�
   await expect(panel).toContainText('产权：无人')
   await panel.getByTestId('property-acknowledge').click()
   await expect(page.getByTestId('round')).toContainText('第 2 轮', { timeout: 45_000 })
-  await page.getByRole('button', { name: '返回选人' }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '返回选人' }).click()
   await expect(page.getByRole('heading', { name: '选择参赛角色' })).toBeVisible()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
   await humanRoll(page, 1)
   await expect(panel).toContainText('地块 9', { timeout: 15_000 })
   await page.locator('h1').click()

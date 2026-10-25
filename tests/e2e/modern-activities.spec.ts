@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 const evidenceDir = '.analysis-cache/acceptance-3c'
 async function start(page: Page, seed: number) {
@@ -21,7 +21,7 @@ async function start(page: Page, seed: number) {
   await page.getByTestId('character-1').click()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 async function human(page: Page) {
   const [who] = await page.getByTestId('current-player').allTextContents()

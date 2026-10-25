@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 const evidenceDir = '.analysis-cache/acceptance-3a'
 
@@ -23,7 +23,7 @@ async function seedMondayGame(page: Page, seed: number): Promise<void> {
   await page.getByTestId('character-1').click()
   await page.getByRole('button', { name: '开始对局' }).click()
   await expect(page.getByRole('status')).toContainText('对局已载入')
-  await page.getByLabel('速度').selectOption('2')
+  await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 
 test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不重复消费', async ({ page }) => {
@@ -123,7 +123,7 @@ test('生产入口用地图点击放置障碍并用真实玩家位置发射飞�
   await expect(hand.getByTestId('hand-card')).toHaveCount(4)
   await page.getByTestId('interaction-acknowledge').click()
 
-  await page.getByRole('button', { name: '全图' }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全图' }).click()
   await hand.locator('[data-card-id="9"]').click()
   await page.getByTestId('interaction-confirm').click()
   await page.getByTestId('target-player-4').click()
@@ -166,7 +166,7 @@ test('seed153 玩家飞弹在目标处产生实际画面反馈并送医', async 
   test.setTimeout(90_000)
   await mkdir(evidenceDir, { recursive: true })
   await seedMondayGame(page, 153)
-  await page.getByRole('button', { name: '全图' }).click()
+  await revealGameDetails(page); await page.getByRole('button', { name: '全图' }).click()
   const before = await page.locator('canvas').screenshot()
   const hand = page.getByTestId('hand-panel')
   await hand.locator('[data-card-id="9"]').click()

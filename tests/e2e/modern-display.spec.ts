@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 
 const evidence='/tmp/starcat-5c-evidence'
 async function start(page: Page, profile: 'original' | 'hd', seed=123456789, characters=[1,2,3,4], pause=true) {
@@ -42,7 +42,7 @@ test('1080p全屏保留画质/声音/存档工具栏，关闭存档和退出全�
   await page.route('**/api/**',route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:{code:'unavailable',message:'测试服务不可用'}})}))
   await start(page,'hd')
   const before=await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')
-  await page.getByRole('button',{name:'全屏',exact:true}).click()
+  await revealGameDetails(page); await page.getByRole('button',{name:'全屏',exact:true}).click()
   await expect.poll(()=>page.evaluate(()=>document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
   await expect(page.locator('.game-stage').getByLabel('对局素材画质')).toBeVisible()
   await expect(page.locator('.game-stage').getByLabel('音乐音量')).toBeVisible()
@@ -70,7 +70,7 @@ test('1080p全屏保留画质/声音/存档工具栏，关闭存档和退出全�
   await expect.poll(()=>page.evaluate(()=>document.fullscreenElement===null)).toBe(true)
   expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')).toBe(before)
   await expect(page.getByRole('button',{name:'继续对局',exact:true})).toBeVisible()
-  await page.getByRole('button',{name:'全屏',exact:true}).click()
+  await revealGameDetails(page); await page.getByRole('button',{name:'全屏',exact:true}).click()
   await expect.poll(()=>page.evaluate(()=>!!document.fullscreenElement)).toBe(true)
   await page.keyboard.press('Escape')
   await expect.poll(()=>page.evaluate(()=>document.fullscreenElement===null)).toBe(true)
@@ -82,7 +82,7 @@ test('1366×768高清魔法门的原图文字/选择区完整可见',async({brow
   const page=await context.newPage()
   try {
     await start(page,'hd',4,[1],false)
-    await page.getByLabel('速度').selectOption('2')
+    await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
     await playUntil(page,()=>page.getByTestId('portal-1').count().then(Boolean),700)
     await expect(page.getByTestId('portal-1')).toBeEnabled()
     await page.getByRole('button',{name:'暂停对局',exact:true}).click()
@@ -102,7 +102,7 @@ test('高清游乐场DPR2使用1600×1200物理画布，保留800×600逻辑玩�
   const page=await context.newPage()
   try {
     await start(page,'hd',104,[1],false)
-    await page.getByLabel('速度').selectOption('2')
+    await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
     await playUntil(page,()=>page.getByTestId('carnival-original').count().then(Boolean),3500)
     const canvas=page.getByTestId('carnival-original').locator('canvas')
     await expect(canvas).toBeVisible()

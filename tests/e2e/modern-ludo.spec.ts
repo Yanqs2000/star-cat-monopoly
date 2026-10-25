@@ -1,10 +1,10 @@
 import { test,expect } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { playUntil } from './modern-play'
+import { revealGameDetails, playUntil } from './modern-play'
 test('自然seed145第一轮原36格下注、暂停、三骰与唯一结算后继续日期',async({page})=>{
  test.setTimeout(180_000);await mkdir('.analysis-cache/acceptance-3c',{recursive:true})
  await page.addInitScript(()=>{const original=crypto.getRandomValues.bind(crypto);crypto.getRandomValues=a=>{if(a instanceof Uint32Array&&a.length===1){a[0]=145;return a}return original(a)};Date.prototype.getDay=()=>1;Date.prototype.getFullYear=()=>2026;Date.prototype.getMonth=()=>8;Date.prototype.getDate=()=>28})
- await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await page.getByLabel('速度').selectOption('2')
+ await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
  await playUntil(page,async()=>{const who=await page.getByTestId('current-player').textContent();return !!who&&!who.includes('AI')&&await page.getByTestId('ludo-cell-7').count()>0},2500)
  await expect(page.getByTestId('ludo-cell-7')).toBeEnabled();await expect(page.locator('[data-testid^="ludo-cell-"]')).toHaveCount(36)
  await page.getByRole('button',{name:'暂停对局',exact:true}).click();await expect(page.getByTestId('ludo-cell-7')).toBeDisabled();await page.getByRole('button',{name:'继续对局',exact:true}).click()
@@ -22,7 +22,7 @@ test('自然投注确认后原素材404恢复保留已扣券和下注，重复�
  test.setTimeout(180_000);let broken=false
  await page.route('**/assets/activities/ludo-game/1.png',route=>broken?route.fulfill({status:404,body:''}):route.continue())
  await page.addInitScript(()=>{const original=crypto.getRandomValues.bind(crypto);crypto.getRandomValues=a=>{if(a instanceof Uint32Array&&a.length===1){a[0]=145;return a}return original(a)};Date.prototype.getDay=()=>1;Date.prototype.getFullYear=()=>2026;Date.prototype.getMonth=()=>8;Date.prototype.getDate=()=>28})
- await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await page.getByLabel('速度').selectOption('2')
+ await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
  await playUntil(page,async()=>{const who=await page.getByTestId('current-player').textContent();return !!who&&!who.includes('AI')&&await page.getByTestId('ludo-cell-7').count()>0},2500)
  await expect(page.getByTestId('ludo-cell-7')).toBeEnabled();await page.getByTestId('ludo-cell-7').click();broken=true
  await page.getByTestId('ludo-confirm').click();await expect(page.getByRole('alert')).toContainText('ludo-game/1.png')
@@ -35,7 +35,7 @@ test('暂停期间确认后素材失败，重试仍暂停原骰阶段与2倍速'
  test.setTimeout(180_000);let broken=false
  await page.route('**/assets/activities/ludo-game/1.png',async route=>{if(broken){await new Promise(r=>setTimeout(r,600));await route.fulfill({status:404,body:''})}else await route.continue()})
  await page.addInitScript(()=>{const original=crypto.getRandomValues.bind(crypto);crypto.getRandomValues=a=>{if(a instanceof Uint32Array&&a.length===1){a[0]=145;return a}return original(a)};Date.prototype.getDay=()=>1;Date.prototype.getFullYear=()=>2026;Date.prototype.getMonth=()=>8;Date.prototype.getDate=()=>28})
- await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await page.getByLabel('速度').selectOption('2')
+ await page.goto('/modern.html');await page.setViewportSize({width:1440,height:1000});await page.getByTestId('character-1').click();await page.getByRole('button',{name:'开始对局'}).click();await expect(page.getByRole('status')).toContainText('对局已载入');await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
  await playUntil(page,async()=>{const who=await page.getByTestId('current-player').textContent();return !!who&&!who.includes('AI')&&await page.getByTestId('ludo-cell-7').count()>0},2500)
  await expect(page.getByTestId('ludo-cell-7')).toBeEnabled();await page.getByTestId('ludo-cell-7').click();broken=true
  await page.getByTestId('ludo-confirm').click();await page.getByRole('button',{name:'暂停对局',exact:true}).click()
