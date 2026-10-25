@@ -79,10 +79,11 @@ test('原版与高清同局公司认购后完整GameState逐字段一致', async
   await compareReplay(browser, async (page, profile) => {
     await start(page, profile, 16, { date: { year: 2026, month: 9, day: 27 } })
     const snapshots = [await serializedGameState(page)]
-    await playUntil(page, () => page.getByTestId('company-shares').count().then(Boolean), 700)
+    await playUntil(page, () => page.getByTestId('company-subscribe').count().then(Boolean), 700)
     await expect(page.getByTestId('interaction-panel')).toContainText('电力公司')
-    await page.getByTestId('company-shares').fill('1000')
     await page.getByTestId('company-subscribe').click()
+    await page.getByRole('button', { name: '最大', exact: true }).click()
+    await page.getByRole('button', { name: '确定认购', exact: true }).click()
     await expect(page.getByTestId('interaction-panel')).toContainText('持股 +1000')
     snapshots.push(await serializedGameState(page))
     await page.getByTestId('interaction-acknowledge').click()

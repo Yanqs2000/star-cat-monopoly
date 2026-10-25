@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import CompanyCalculator from './CompanyCalculator.vue'
 import { getAssetStandings } from './queries'
-import { computed, defineAsyncComponent, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
 import type { BankOperation } from './bank-operations'
 import type { FinanceEntry } from './finance-types'
@@ -76,7 +77,12 @@ const bankAmount = ref(0)
 const bankAction = ref<Exclude<BankOperation, 'apply-credit'>>('withdraw')
 const stockId = ref(1)
 const stockShares = ref(1)
-const companyShares = ref(1)
+const companyCalculatorOpen = ref(false)
+const companySubscribeButton = ref<HTMLButtonElement>()
+function closeCompanyCalculator() {
+  companyCalculatorOpen.value = false
+  void nextTick(() => companySubscribeButton.value?.focus())
+}
 const companyDialogUrl = computed(() => `${import.meta.env.BASE_URL}${profileAssetUrl('assets/companies/dialog.png',props.assetProfile)}`)
 const interaction = computed(() => props.game.interaction)
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
@@ -257,7 +263,7 @@ watch(() => interaction.value?.kind, kind => {
   if (kind === 'credit-choice') creditAmount.value = props.game.credit[player.value.id]?.available ?? 0
   if (kind === 'bank') bankAmount.value = 0
   if (kind === 'stock') { stockId.value = 1; stockShares.value = 1 }
-  if (kind === 'company') companyShares.value = 1
+  companyCalculatorOpen.value = false
   if (kind === 'ticket-exchange') { exchangeQuantity.value = 0; exchangeLoaded.value = false }
 })
 watch(bankAction, () => { bankAmount.value = 0 })
@@ -408,7 +414,7 @@ watch(stockId, () => { stockShares.value = 1 })
 
     <template v-else-if="interaction.kind === 'company' && landedCompany">
       <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }}</p>
-      <div class="company-original">
+      <div v-if="!companyCalculatorOpen" class="company-original">
         <img data-testid="company-original-frame" :src="companyDialogUrl" alt="" @error="reportImageError">
         <h2>{{ landedCompany.name }}</h2>
         <div class="company-summary">
@@ -420,11 +426,12 @@ watch(stockId, () => { stockShares.value = 1 })
         </div>
       </div>
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
-      <div class="choice"><label>认购股数
-        <input v-model.number="companyShares" data-testid="company-shares" type="number" min="1" step="1" :max="companyMaximum" :disabled="!canAct">
-      </label><p>成交额 {{ landedCompany.basePrice * companyShares }} · 现金 -{{ landedCompany.basePrice * companyShares }}</p>
-      <small>本次最多认购 {{ companyMaximum }} 股</small>
-      <div class="actions"><button data-testid="company-subscribe" :disabled="!canAct || !Number.isInteger(companyShares) || companyShares < 1 || companyShares > companyMaximum" @click="emit('subscribe-company', companyShares)">认购</button><button :disabled="!canAct" @click="emit('leave-company')">离开公司</button></div></div>
+      <h2 v-if="companyCalculatorOpen">{{ landedCompany.name }} · 承销价 {{ landedCompany.basePrice }}</h2>
+      <CompanyCalculator v-if="companyCalculatorOpen" :maximum="companyMaximum" :price="landedCompany.basePrice" :disabled="!canAct" @confirm="$event === 0 ? emit('leave-company') : emit('subscribe-company', $event)" @cancel="closeCompanyCalculator" @asset-error="emit('asset-error', $event)" />
+      <template v-else>
+        <small>本次最多认购 {{ companyMaximum }} 股</small>
+        <div class="actions"><button ref="companySubscribeButton" data-testid="company-subscribe" :disabled="!canAct || companyMaximum < 1" @click="companyCalculatorOpen = true">认购</button><button data-testid="company-leave" :disabled="!canAct" @click="emit('leave-company')">离开公司</button></div>
+      </template>
     </template>
 
     <template v-else-if="interaction.kind === 'notice'">
