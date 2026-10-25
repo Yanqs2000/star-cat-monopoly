@@ -117,3 +117,23 @@ test('700×400横屏仍显示地图，掷骰与手牌完整留在窗口内', asy
     expect(box!.y + box!.height).toBeLessThanOrEqual(400)
   }
 })
+
+test('原版风格HUD显示真实资金，设置默认收起且声音设置不改变对局', async ({ page }) => {
+  await page.setViewportSize({ width: 1366, height: 768 })
+  await start(page, 2)
+  await expect(page.getByTestId('hud-cash')).toHaveText('100000', { timeout: 2000 })
+  await expect(page.getByTestId('hud-deposit')).toHaveText('100000')
+  await expect(page.getByTestId('hud-tickets')).toHaveText('200')
+  await expect(page.getByLabel('音乐音量')).toBeHidden()
+  const before = await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')
+  await page.getByTestId('game-settings').click()
+  await expect(page.getByLabel('音乐音量')).toBeVisible()
+  await page.getByLabel('静音', { exact: true }).check()
+  await page.getByTestId('game-settings').click()
+  await expect(page.getByLabel('音乐音量')).toBeHidden()
+  expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')).toBe(before)
+  await page.getByRole('button', { name: '掷骰', exact: true }).click()
+  await page.getByTestId('property-accept').click()
+  await expect(page.getByTestId('hud-cash')).toHaveText('98800')
+  await expect(page.getByTestId('hud-deposit')).toHaveText('100000')
+})

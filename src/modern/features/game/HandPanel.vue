@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import UiIcon from './UiIcon.vue'
 import { getCardDefinition } from './card-economy'
 import type { InteractionAsset } from './interaction-assets'
 import type { GameState } from './types'
@@ -37,9 +38,9 @@ watch([inventory, pages], () => { if (page.value >= pages.value) page.value = pa
     <header>
       <div><strong>{{ active.name }}的手牌</strong><span>{{ inventory.length }}/24</span></div>
       <div class="pager">
-        <button data-testid="hand-prev" aria-label="上一页手牌" :disabled="page === 0" @click="page--">‹</button>
+        <button data-testid="hand-prev" aria-label="上一页手牌" :disabled="page === 0" @click="page--"><UiIcon name="left"/></button>
         <span data-testid="hand-page">{{ page + 1 }} / {{ pages }}</span>
-        <button data-testid="hand-next" aria-label="下一页手牌" :disabled="page + 1 >= pages" @click="page++">›</button>
+        <button data-testid="hand-next" aria-label="下一页手牌" :disabled="page + 1 >= pages" @click="page++"><UiIcon name="right"/></button>
       </div>
     </header>
     <div v-if="visibleCards.length" class="cards">
@@ -50,6 +51,7 @@ watch([inventory, pages], () => { if (page.value >= pages.value) page.value = pa
         <span>{{ card.definition.name }}</span>
         <small>{{ card.definition.price }}券</small>
       </button>
+      <span v-for="slot in 8-visibleCards.length" :key="`empty-${slot}`" class="empty-card-slot" aria-hidden="true"/>
     </div>
     <p v-else class="empty">暂无手牌</p>
     <p v-if="!canUse" class="hint">{{ paused ? '暂停时不能用卡' : '轮到人类掷骰前才可用卡' }}</p>

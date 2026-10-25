@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { revealGameDetails, playUntil } from './modern-play'
+import { revealGameSettings, revealGameDetails, playUntil } from './modern-play'
 
 interface ReplayResult {
   profile: string
@@ -179,7 +179,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
     round: await page.getByTestId('round').innerText(),
     stateFingerprint:await page.getByTestId('game-state-fingerprint').getAttribute('data-fingerprint'),
   }
-  const evidenceDir='docs/modernization/evidence/phase-5b'
+  const evidenceDir='/tmp/starcat-hd-profile-switch'
   await mkdir(evidenceDir,{recursive:true})
   const initialCanvas = await page.locator('canvas').elementHandle()
   expect(initialCanvas).not.toBeNull()
@@ -193,6 +193,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
     else if(holdCandidate){candidateRequestHeld=true;void new Promise<void>(resolve=>{releaseCandidate=resolve}).then(()=>route.continue())}
     else void route.continue()
   })
+  await revealGameSettings(page)
   const selector = page.getByLabel('对局素材画质')
   await expect(selector).toBeEnabled()
   await selector.selectOption('hd')
@@ -214,6 +215,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
   await page.getByRole('button',{name:'继续对局',exact:true}).dispatchEvent('click')
   expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-fingerprint')).toBe(before.stateFingerprint)
   releaseCandidate();holdCandidate=false
+  await revealGameSettings(page)
   await expect(selector).toHaveValue('hd', { timeout: 120_000 })
   await expect.poll(() => page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBe('hd')
   await expect(page.getByTestId('asset-profile-busy')).toHaveCount(0)

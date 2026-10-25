@@ -57,3 +57,8 @@ export async function revealGameDetails(page: Page) {
   const toggle = page.getByTestId('toggle-game-details')
   if (await toggle.count() && await toggle.getAttribute('aria-expanded') === 'false') await toggle.click()
 }
+
+export async function revealGameSettings(page: Page) {
+  const toggle = page.getByTestId('game-settings')
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click()
+}

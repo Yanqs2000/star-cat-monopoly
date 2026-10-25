@@ -1,4 +1,4 @@
-import { revealGameDetails } from './modern-play'
+import { revealGameSettings, revealGameDetails } from './modern-play'
 import { expect, test, type Page } from '@playwright/test'
 
 async function startGame(page: Page, profile: 'original' | 'hd') {
@@ -90,6 +90,7 @@ test('高清模式显示完整静态地图，保留人物资源和画质切换�
         await waitForMapRender(page, initialCount)
         expect(state).toBe(originalState)
         await page.getByRole('button', { name: '暂停对局', exact: true }).click()
+        await revealGameSettings(page)
         await page.getByLabel('对局素材画质').selectOption('original')
         await expect(page.getByTestId('asset-profile-busy')).toHaveCount(0)
         await expect(fingerprint).toHaveAttribute('data-state-json', state!)

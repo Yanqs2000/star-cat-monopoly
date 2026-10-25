@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
-import { revealGameDetails, playUntil } from './modern-play'
+import { revealGameSettings, revealGameDetails, playUntil } from './modern-play'
 
 const evidence='/tmp/starcat-5c-evidence'
 async function start(page: Page, profile: 'original' | 'hd', seed=123456789, characters=[1,2,3,4], pause=true) {
@@ -44,6 +44,7 @@ test('1080p全屏保留画质/声音/存档工具栏，关闭存档和退出全�
   const before=await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')
   await revealGameDetails(page); await page.getByRole('button',{name:'全屏',exact:true}).click()
   await expect.poll(()=>page.evaluate(()=>document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
+  await revealGameSettings(page)
   await expect(page.locator('.game-stage').getByLabel('对局素材画质')).toBeVisible()
   await expect(page.locator('.game-stage').getByLabel('音乐音量')).toBeVisible()
   await page.locator('.game-stage').getByLabel('对局素材画质').selectOption('original')
