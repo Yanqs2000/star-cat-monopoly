@@ -106,20 +106,20 @@ export function findParcelAt(point: GridPoint): Parcel | undefined {
   return parcels.find(parcel => parcel.roadCell.column === point.column && parcel.roadCell.row === point.row)
 }
 
-export function calculateStreetRent(
-  properties: PropertyLedger,
-  ownerId: number,
-  streetId: number,
-  prices: PropertyPrices = createPropertyPrices(),
-): number {
+export interface StreetRentItem { parcelId: number; amount: number }
+
+export function streetRentItems(properties: PropertyLedger, ownerId: number, streetId: number,
+  prices: PropertyPrices = createPropertyPrices()): StreetRentItem[] {
   assertLedger(properties)
   assertPrices(prices)
   if (!Number.isInteger(ownerId) || ownerId <= 0 || !streetIds.has(streetId)) throw new Error('无效地主或街道')
-  return parcels.reduce((total, parcel) => {
-    const state = properties[parcel.id]!
-    if (parcel.streetId !== streetId || state.ownerId !== ownerId) return total
-    return total + prices[parcel.id]! * rentTenths[state.level] / 10
-  }, 0)
+  return parcels.filter(parcel => parcel.streetId === streetId && properties[parcel.id]!.ownerId === ownerId)
+    .map(parcel => ({ parcelId: parcel.id, amount: prices[parcel.id]! * rentTenths[properties[parcel.id]!.level] / 10 }))
+}
+
+export function calculateStreetRent(properties: PropertyLedger, ownerId: number, streetId: number,
+  prices: PropertyPrices = createPropertyPrices()): number {
+  return streetRentItems(properties, ownerId, streetId, prices).reduce((sum, item) => sum + item.amount, 0)
 }
 
 export function getPropertyOffer(snapshot: EconomySnapshot, playerId: number, parcelId: number): PropertyOffer {

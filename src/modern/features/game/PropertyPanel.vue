@@ -2,9 +2,10 @@
 import { computed } from 'vue'
 import mapJson from '../../data/map.json'
 import type { Parcel } from '../map/types'
+import { streetRentItems } from './property'
 import type { GameState } from './types'
 
-const props = defineProps<{ game: GameState; paused: boolean }>()
+const props = defineProps<{ game: GameState; paused: boolean; previewing?: boolean }>()
 const emit = defineEmits<{ decide: [choice: 'accept' | 'decline']; acknowledge: [] }>()
 const offer = computed(() => props.game.propertyOffer)
 const parcel = computed(() => (mapJson.parcels as Parcel[]).find(item => item.id === offer.value?.parcelId))
@@ -13,6 +14,7 @@ const owner = computed(() => props.game.players.find(item => item.id === props.g
 const level = computed(() => props.game.properties[offer.value?.parcelId ?? -1]?.level ?? 0)
 const event = computed(() => props.game.lastPropertyEvent)
 const title = computed(() => ({ purchase: '购买住宅地', upgrade: '升级建筑', rent: '支付租金', 'max-level': '建筑已满级' })[offer.value?.kind ?? 'purchase'])
+const rentItems = computed(() => offer.value?.kind === 'rent' && parcel.value ? streetRentItems(props.game.properties, offer.value.ownerId!, parcel.value.streetId, props.game.prices).map(item => ({ ...item, amount: item.amount * (props.game.world.statuses[player.value.id]?.godId === 2 ? 0 : props.game.world.statuses[player.value.id]?.godId === 3 ? 2 : 1) })) : [])
 const result = computed(() => {
   const current = event.value
   if (!current) return ''
@@ -29,27 +31,32 @@ const result = computed(() => {
 </script>
 
 <template>
-  <section v-if="offer && parcel && player.controller === 'human'" class="property-panel" role="dialog" aria-label="地产交易" data-testid="property-panel">
+  <section v-if="offer && parcel && (player.controller === 'human' || offer.kind === 'rent')" class="property-panel" :class="{ 'rent-panel': offer.kind === 'rent' }" role="dialog" aria-label="地产交易" data-testid="property-panel">
     <span class="eyebrow">当前地块 · {{ parcel.streetName }}</span>
     <h2>{{ title }}</h2>
     <p class="location">地块 {{ parcel.id }} · 道路 {{ parcel.roadCell.column }},{{ parcel.roadCell.row }} · 地价 {{ parcel.basePrice }}</p>
     <p>产权：{{ owner?.name ?? '无人' }} · 建筑等级 {{ level }}/5</p>
     <p class="balances">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }}</p>
+    <template v-if="offer.kind === 'rent'">
+      <p>{{ previewing ? '正在标出收费房屋…' : game.phase === 'property-result' ? '本次收费已结算' : '下列亮起的房屋共同计费' }}</p>
+      <ul class="rent-items"><li v-for="item in rentItems" :key="item.parcelId">#{{ item.parcelId }} · {{ game.properties[item.parcelId]!.level }}级 <strong>{{ item.amount }} 元</strong></li></ul>
+    </template>
     <template v-if="game.phase === 'property-decision'">
       <p v-if="offer.kind === 'rent'" class="amount">必须支付租金 {{ offer.amount }}；先扣现金，不足部分扣存款。</p>
       <p v-else class="amount">{{ offer.kind === 'purchase' ? '买价' : '升级费用' }} {{ offer.amount }} · 仅使用现金</p>
-      <div class="actions">
-        <button data-testid="property-accept" :disabled="paused" @click="emit('decide', 'accept')">{{ offer.kind === 'rent' ? '确认付款' : offer.kind === 'purchase' ? '购买' : '升级' }}</button>
-        <button v-if="offer.kind !== 'rent'" data-testid="property-decline" :disabled="paused" @click="emit('decide', 'decline')">放弃</button>
+      <div v-if="player.controller === 'human'" class="actions">
+        <button data-testid="property-accept" :disabled="paused || previewing" @click="emit('decide', 'accept')">{{ offer.kind === 'rent' ? '确认付款' : offer.kind === 'purchase' ? '购买' : '升级' }}</button>
+        <button v-if="offer.kind !== 'rent'" data-testid="property-decline" :disabled="paused || previewing" @click="emit('decide', 'decline')">放弃</button>
       </div>
     </template>
     <template v-else-if="game.phase === 'property-result'">
       <p class="result" data-testid="property-result">{{ result }}</p>
-      <button data-testid="property-acknowledge" :disabled="paused" @click="emit('acknowledge')">知道了，继续</button>
+      <button v-if="player.controller === 'human'" data-testid="property-acknowledge" :disabled="paused" @click="emit('acknowledge')">知道了，继续</button>
     </template>
   </section>
 </template>
 
 <style scoped>
 .property-panel{position:absolute;left:calc((100% - var(--game-sidebar-width,0px)) / 2);top:50%;bottom:auto;transform:translate(-50%,-50%);z-index:2;width:min(440px,calc(100% - var(--game-sidebar-width,0px) - 36px));max-height:calc(100% - 36px);overflow:auto;background:#132e39f2;color:#f2f8f4;border:1px solid #ffe18a;border-radius:14px;box-shadow:0 15px 35px #07151dab;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.09em}h2{margin:5px 0 10px;font-size:22px}p{margin:7px 0}.location{color:#b9d1d5}.balances{font-weight:700}.amount,.result{padding:10px;border-radius:8px;background:#265160}.actions{display:flex;gap:9px;margin-top:12px}button{font:inherit;border:1px solid #ffe18a;border-radius:8px;background:#ffe18a;color:#263d3b;font-weight:700;padding:9px 18px;cursor:pointer}button:disabled{opacity:.45;cursor:default}button:focus-visible{outline:2px solid white;outline-offset:2px}.actions button+button{background:#294b58;color:#f2f8f4;border-color:#728a90}@media(max-width:900px){.property-panel{width:calc(100% - 24px);max-height:calc(100% - 24px)}}
+.rent-panel{top:auto;bottom:12px;transform:translateX(-50%);padding:10px 16px;max-height:48%;font-size:12px}.rent-panel h2{font-size:18px;margin:2px 0}.rent-panel .location,.rent-panel .balances{display:none}.rent-panel p{margin:3px 0}.rent-panel .amount{padding:5px}.rent-items{display:flex;flex-wrap:wrap;gap:4px 14px;padding:0;list-style:none;margin:6px 0}.rent-items li{color:inherit}.rent-panel button{padding:6px 14px}
 </style>

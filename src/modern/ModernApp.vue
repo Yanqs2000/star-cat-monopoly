@@ -22,6 +22,7 @@ import { parseInteractionAssets, type InteractionAssetsManifest } from './featur
 import { parseActivityAssets, type ActivityManifest, type NativeOverlay } from './features/game/activity-assets'
 import { activityChanges } from './features/game/activity-text'
 import PropertyPanel from './features/game/PropertyPanel.vue'
+import { streetRentItems } from './features/game/property'
 import EndgamePanel from './features/game/EndgamePanel.vue'
 import { AudioSession, sceneTrack, soundForEvent } from './features/game/audio'
 import { activityCameraTarget, buildPlayerPoses, buildWorldVisual, worldVisualKey, interactionVisualPlan, reactionManifestUrl, VisualRecoveryTracker, visualForHandAssetFailure, type InteractionVisualPlan } from './features/game/game-visuals'
@@ -40,6 +41,7 @@ interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsMa
 interface PendingGame { state: GameState; lineup: string; assetProfile:AssetProfile; visual?: InteractionVisualPlan }
 
 const diceRoll = ref<RollPresentation | null>(null)
+const rentPreviewing = ref(false)
 const map = mapJson as MapData
 const mode = ref<'selection' | 'game' | 'inspection'>('selection')
 function storedAssetProfile():AssetProfile {
@@ -196,6 +198,7 @@ function seed(): number {
 }
 function cleanupGame() {
   diceRoll.value = null
+  rentPreviewing.value = false
   ownedUiAssets?.release();ownedUiAssets=undefined
   audio.setPaused(true)
   controllerReady.value=false
@@ -367,6 +370,8 @@ async function loadPendingGame(prepared?:PreparedGame) {
     const controllerOptions: GameControllerOptions = {
       awaitActivityAssets: true,
       rollDurationMs: 900,
+      propertyPreviewDurationMs: 1500,
+      onPropertyPreview: preview => { rentPreviewing.value = preview !== null },
       onRoll: roll => { diceRoll.value = roll },
       onTransition: transition => scene?.transitionPlayer(transition),
       onState: state => {
@@ -398,6 +403,13 @@ async function loadPendingGame(prepared?:PreparedGame) {
         previous = state
         game.value = state
         scene?.setPlayers(buildPlayerPoses(state))
+        const rentOffer = state.propertyOffer?.kind === 'rent' ? state.propertyOffer : null
+        const rentParcel = rentOffer ? map.parcels.find(item => item.id === rentOffer.parcelId) : null
+        const payerId = state.players[state.activePlayerIndex]!.id
+        const godId = state.world.statuses[payerId]?.godId
+        const multiplier = godId === 2 ? 0 : godId === 3 ? 2 : 1
+        scene?.setRentHighlight(rentOffer && rentParcel && state.phase === 'property-decision'
+          ? streetRentItems(state.properties, rentOffer.ownerId!, rentParcel.streetId, state.prices).map(item => ({ ...item, amount: item.amount * multiplier })) : [])
         if (propertiesChanged) scene?.setProperties(state.properties)
         if (worldChanged) scene?.setWorld(buildWorldVisual(state))
         scene?.setTargeting(!paused.value && state.interaction?.kind === 'target-choice')
@@ -786,7 +798,7 @@ onBeforeUnmount(() => {
 
       <DiceRoll :roll="diceRoll" :player-name="game?.players.find(player => player.id === diceRoll?.playerId)?.name ?? ''" :paused="paused" :speed="speed" :asset-profile="assetProfile" :prepared-images="preparedImages" @complete="diceRoll = null" @asset-error="failRuntimeAsset" />
       <MapInfoPanel v-if="mapInspection && referenceTab === null && loadState === 'ready'" :info="mapInspection" @close="mapInspectionPosition=undefined" />
-      <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
+      <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" :previewing="rentPreviewing" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" :asset-profile="assetProfile" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
       <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" :asset-profile="assetProfile" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>

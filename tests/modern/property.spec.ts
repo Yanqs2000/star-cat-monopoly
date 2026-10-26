@@ -275,3 +275,14 @@ describe('纯财产结算', () => {
     expect(getPropertySummary(properties, 1)).toEqual({ landCount: 2, buildingCount: 1 })
   })
 })
+
+import { createGame } from '../../src/modern/features/game/setup'
+import { streetRentItems } from '../../src/modern/features/game/property'
+it('收费明细只列出同一地主同街道的房屋并使用实际地价及等级', () => {
+  const game = createGame([1, 2, 3, 4], 1)
+  game.properties[47] = { ownerId: 2, level: 0 }
+  game.properties[43] = { ownerId: 2, level: 2 }
+  game.properties[45] = { ownerId: 3, level: 5 }
+  game.properties[1] = { ownerId: 2, level: 5 }
+  expect(streetRentItems(game.properties, 2, 7)).toEqual([{ parcelId: 43, amount: 3000 }, { parcelId: 47, amount: 800 }])
+})

@@ -6,7 +6,7 @@ import type { PlayerTransition } from '../game/controller'
 import { getCardRecord } from '../game/direct-cards'
 import type { Direction, PlayerState } from '../game/types'
 import type { WorldState } from '../game/world-cards'
-import type { PropertyLedger } from '../game/property'
+import type { PropertyLedger, StreetRentItem } from '../game/property'
 import { gridToScene } from './coordinates'
 import { propertyMarkerOffset } from './property-marker-placement'
 import mapCollectibles from '../../data/map-collectibles.json'
@@ -41,6 +41,7 @@ export interface MapSceneHandle {
   setPlayers(players: PlayerPose[]): void
   setCompanies(players: PlayerState[]): void
   setProperties(properties: PropertyLedger): void
+  setRentHighlight(items: StreetRentItem[]): void
   setWorld(world: WorldState): void
   setTargeting(targeting: boolean): void
   playReaction(playerId: number, reaction: ReactionName): Promise<void>
@@ -101,7 +102,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   const app = new Application()
   const assetProfile = options.assetProfile ?? 'original'
   const mapUrl = options.mapBase?.url ?? manifest.map.url
-  const crystal = mapCollectibles[assetProfile]
+  const collectibles = [mapCollectibles, mapCollectibles.wand].map(item => ({ positions: item.positions, sprite: item[assetProfile] }))
   const textures = new Map<string, Texture>()
   const textureUrls = new Map<Texture,string>()
   const bitmaps = new Map<string, ImageBitmap>()
@@ -185,7 +186,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parseCompanyAssets(await response.json())
     })() : undefined
-    const urls = [...new Set([mapUrl, crystal.url, ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+    const urls = [...new Set([mapUrl, ...collectibles.map(item => item.sprite.url), ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
@@ -217,7 +218,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     }
     updateMapLayers()
     world.addChild(background, hdMapLayer, markers, entities)
-    for (const position of mapCollectibles.positions) {
+    for (const collectible of collectibles) for (const position of collectible.positions) {
+      const crystal = collectible.sprite
       const view = new Container(), sprite = new Sprite(textures.get(crystal.url)!)
       const point = gridToScene(position)
       view.position.set(point.x, point.y)
@@ -453,6 +455,32 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         badge.text = state.ownerId === null ? (state.level === 0 ? '' : `中立 · ${state.level}级`) : `P${state.ownerId} · ${state.level}级`
       }
     }
+    const rentHighlights = new Map<number, { view: Container; beam: Graphics; label: Text }>()
+    let rentElapsedMs = 0
+    const setRentHighlight = (items: StreetRentItem[]) => {
+      const selected = new Set(items.map(item => item.parcelId))
+      for (const [id, item] of rentHighlights) if (!selected.has(id)) {
+        item.view.destroy({ children: true }); rentHighlights.delete(id)
+      }
+      for (const item of items) {
+        const existing = rentHighlights.get(item.parcelId)
+        if (existing) { existing.label.text = `#${item.parcelId} · ${item.amount}元`; continue }
+        const parcel = map.parcels.find(parcel => parcel.id === item.parcelId)
+        if (!parcel) continue
+        const point = gridToScene(parcel.buildingCell), view = new Container()
+        view.position.set(point.x + 28, point.y + 20)
+        view.zIndex = parcel.buildingCell.row * 100 + parcel.buildingCell.column + 0.5
+        // Original end_pg marks every billed house with a blinking ray before charging.
+        const beam = new Graphics().poly([-32,0,0,18,32,0,32,-132,0,-150,-32,-132]).fill({ color: '#fff3a0', alpha: 0.24 })
+          .poly([-32,0,0,18,32,0,0,-18]).stroke({ color: '#ffef68', width: 3 })
+          .moveTo(-32,0).lineTo(-32,-132).moveTo(32,0).lineTo(32,-132).stroke({ color: '#fffad8', alpha: 0.8, width: 2 })
+        const label = new Text({ text: `#${item.parcelId} · ${item.amount}元`, style: { fontSize: 13, fill: '#fff3a0', fontFamily: 'system-ui', fontWeight: 'bold', stroke: { color: '#152e42', width: 4 } } })
+        label.anchor.set(0.5, 1); label.position.set(0, -104)
+        view.addChild(beam, label); entities.addChild(view)
+        rentHighlights.set(item.parcelId, { view, beam, label })
+      }
+      if (rentHighlights.size === 0) rentElapsedMs = 0
+    }
     const getPortalDecorations = (): NativeOverlay[] => {
       return [...properties.map(item=>({image:item.image,view:item.image.parent!,symbol:3401})),
         ...companyViews.map(item=>({image:item.image,view:item.view,symbol:0}))].map(({image,view,symbol})=> {
@@ -549,6 +577,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     let previousFrame = -1
     const tick = (ticker: Ticker) => {
       const deltaMs = paused ? 0 : ticker.deltaMS * speed
+      rentElapsedMs += deltaMs
+      for (const { beam } of rentHighlights.values()) beam.alpha = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(rentElapsedMs / 130))
       if (inspectionWalker) {
         const frame = inspectionWalker.update(deltaMs)
         if (frame !== previousFrame) { previousFrame = frame; options.onFrame(frame) }
@@ -651,7 +681,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, getCameraState, restoreCameraState, setPlayers, setCompanies, setProperties, setWorld, playReaction, playEffect, setActivity, getPortalDecorations,
+      focus, follow, resize, getCameraState, restoreCameraState, setPlayers, setCompanies, setProperties, setRentHighlight, setWorld, playReaction, playEffect, setActivity, getPortalDecorations,
       setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },
