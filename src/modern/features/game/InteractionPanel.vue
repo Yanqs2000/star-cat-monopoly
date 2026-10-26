@@ -220,14 +220,24 @@ const reportImageError = (event: Event) => {
   emit('asset-error', new Error(`界面素材加载失败：${source}`))
 }
 const targetPlayers = computed(() => props.game.players.filter(item => item.id !== player.value.id))
+const godNames: Record<number, string> = { 2: '财神', 3: '穷神', 4: '福神', 5: '衰神', 10: '天使', 11: '恶魔' }
 const statusText = computed(() => {
   const status = props.game.world.statuses[player.value.id]
   if (!status) return '正常'
   const restriction = status.state === 2 ? `拘留 ${status.days}天` : status.state === 3 ? `住院 ${status.days}天` : status.state === 9 ? `受伤 ${status.days}天` : '正常'
-  return status.godId === null ? restriction : `${restriction} · 神灵 ${status.godId}（${status.godDays}天）`
+  return status.godId === null ? restriction : `${restriction} · ${godNames[status.godId]}（${status.godDays}天）`
+})
+const receivedCards = computed(() => {
+  const notice = interaction.value?.kind === 'notice' ? interaction.value.notice : undefined
+  if (!notice) return []
+  if (notice.eventKind === 'god-encountered' && notice.npcId === 4) return notice.cardIds ?? []
+  if ((notice.kind === 'card-draw' || notice.kind === 'card' && notice.message === 'received') && notice.cardId !== undefined) return [notice.cardId]
+  return []
 })
 const noticeText = (value: Extract<GameInteraction, { kind: 'notice' }>) => {
   const notice = value.notice
+  if (notice.eventKind === 'god-encountered' && notice.npcId === 2) return (notice.amount ?? 0) > 0 ? '遇见财神，获得现金奖励' : '遇见财神'
+  if (notice.eventKind === 'god-encountered' && notice.npcId === 4) return notice.cardIds?.length ? `遇见福神，获得 ${notice.cardIds.length} 张卡片` : '遇见福神，手牌已满，未获得新卡'
   if (notice.eventKind === 'npc-encountered') return ({ 9: '路遇恶犬，已送往医院', 12: '路遇警察', 13: '路遇流氓', 14: '路遇小偷', 15: '路遇乞丐' } as Record<number,string>)[notice.npcId!] ?? 'NPC遭遇'
   if (notice.message === 'lost-found') return '失物招领'
   if (notice.message === 'ticket-buy') return '购券完成'
@@ -272,7 +282,7 @@ watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
-  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'targeting-panel': interaction.kind === 'target-choice', 'minigame-panel': ['ludo','carnival'].includes(interaction.kind), 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
+  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'targeting-panel': interaction.kind === 'target-choice', 'monthly-panel': interaction.kind === 'monthly-settlement', 'notice-panel': interaction.kind === 'notice' && !presentationBlocking, 'minigame-panel': ['ludo','carnival'].includes(interaction.kind), 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
     <CarnivalStage v-if="interaction.kind==='carnival' && activityAssets" :game="interaction.game" :paused="paused" :human="player.controller==='human'" :assets="activityAssets" @input="emit('carnival-input',$event)" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <LudoActivity v-else-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" :asset-profile="assetProfile" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <template v-else-if="interaction.kind === 'portal'">
@@ -382,15 +392,17 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'monthly-settlement'">
-      <span class="eyebrow">银行月结</span><h2>{{ game.world.year }}年{{ game.world.month }}月结算</h2>
-      <p v-if="game.finance.monthlyQuoteIndex !== null">排名台词：{{ monthlyQuotes[game.finance.monthlyQuoteIndex] }}</p>
-      <ol class="finance-lines"><li v-for="(entry, index) in interaction.entries" :key="index">
+      <header class="settlement-header"><span class="eyebrow">银行月结</span><h2>{{ game.world.year }}年{{ game.world.month }}月结算</h2>
+        <p v-if="game.finance.monthlyQuoteIndex !== null">排名台词：{{ monthlyQuotes[game.finance.monthlyQuoteIndex] }}</p>
+      </header>
+      <div class="monthly-summary"><h3>本月资产排名</h3><ol data-testid="monthly-standings"><li v-for="row in getAssetStandings(game)" :key="row.playerId">{{ row.rank ?? '出局' }} · {{ row.name }} · 净资产 {{ row.netWorth }}</li></ol></div>
+      <h3 class="monthly-detail-title">资金明细</h3>
+      <ol v-if="interaction.entries.length" class="finance-lines" tabindex="0" aria-label="月结资金明细"><li v-for="(entry, index) in interaction.entries" :key="index">
         {{ game.players.find(value => value.id === entry.playerId)?.name ?? '全局' }} · {{ financeLabels[entry.kind] ?? entry.kind }}<span v-if="entry.companyId"> · {{ game.finance.stocks[entry.companyId]?.name }}</span>
         <small>{{ entry.kind === 'company-undistributed-profit' ? `来源金额 ${entry.sourceAmount}` : actualChanges(entry) }}</small>
       </li></ol>
-      <p v-if="interaction.entries.length === 0">本月没有资金变化</p>
-      <h3>本月资产排名</h3><ol data-testid="monthly-standings"><li v-for="row in getAssetStandings(game)" :key="row.playerId">{{ row.rank ?? '出局' }} · {{ row.name }} · 净资产 {{ row.netWorth }}</li></ol>
-      <button data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
+      <p v-else>本月没有资金变化</p>
+      <button class="result-continue" data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
     </template>
 
     <template v-else-if="interaction.kind === 'stock'">
@@ -436,14 +448,20 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'notice'">
-      <span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2>
+      <header><span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2></header>
+      <div class="notice-body" tabindex="0" aria-label="结算详情">
+      <div v-if="receivedCards.length" class="reward-cards"><figure v-for="(cardId,index) in receivedCards" :key="index">
+        <img class="reward-card" :src="cardAssetUrl(cardId)" :alt="getCardDefinition(cardId).name" @error="reportImageError">
+        <figcaption>{{ getCardDefinition(cardId).name }}</figcaption>
+      </figure></div>
       <img v-if="interaction.notice.luckEvent" data-testid="luck-image" class="luck" :src="luckAssetUrl(interaction.notice.luckEvent.id)" :alt="`运气事件 ${interaction.notice.luckEvent.id}`" @error="reportImageError">
       <p v-if="interaction.notice.financeEntry" class="amount">{{ actualChanges(interaction.notice.financeEntry) || '账户无变化' }}</p>
       <p v-else-if="interaction.notice.receipt" data-testid="activity-receipt" class="amount">{{ activityChanges(interaction.notice.receipt) }}</p>
-      <p v-else-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && interaction.notice.npcId === 3 ? '现金' : interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
+      <p v-else-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && [2,3].includes(interaction.notice.npcId ?? 0) ? '现金' : interaction.notice.luckEvent?.kind === 'tickets' || interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
       <p>{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
       <p>状态：{{ statusText }}</p>
-      <button data-testid="interaction-acknowledge" :disabled="!canAct" @click="emit('acknowledge')">知道了，继续</button>
+      </div>
+      <button class="result-continue" data-testid="interaction-acknowledge" :disabled="!canAct" @click="emit('acknowledge')">知道了，继续</button>
     </template>
   </section>
 </template>
@@ -455,4 +473,11 @@ watch(stockId, () => { stockShares.value = 1 })
 .company-original{position:relative;width:408px;max-width:100%;aspect-ratio:408/356;margin:8px auto}.company-original>img{display:block;width:100%;height:100%}.company-original>h2{position:absolute;left:24%;top:10%;margin:0;color:white;font-size:21px}.company-summary{position:absolute;left:9%;top:27%;width:82%;height:55%;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:6px;color:#153043}.company-summary p{margin:0;font-size:14px}
 .interaction{position:absolute;z-index:5;left:calc((100% - var(--game-sidebar-width,0px)) / 2);top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(510px,calc(100% - var(--game-sidebar-width,0px) - 36px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input,.choice select{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.finance-lines{max-height:260px;overflow:auto;padding-left:20px}.finance-lines li{margin:6px 0}.finance-lines small{display:block;color:#bfd0d3}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{width:calc(100% - 24px);max-height:calc(100% - 24px)}.shop-grid{grid-template-columns:repeat(4,1fr)}}
 .interaction.targeting-panel{top:12px;transform:translateX(-50%);width:min(620px,calc(100% - 24px));padding:10px 12px;pointer-events:none}.targeting-panel .card-head,.targeting-panel .balance{display:none}.targeting-panel .target-choice{gap:4px}.targeting-panel .target-choice p{margin:0;font-size:12px}.targeting-panel .target-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}.targeting-panel .target-actions button{pointer-events:auto}.targeting-panel .targets button{font-size:12px;padding:5px 7px}
+.interaction.monthly-panel,.interaction.notice-panel{display:flex;flex-direction:column;overflow:hidden;gap:8px}
+.monthly-panel{height:calc(100% - 36px)}.settlement-header,.monthly-summary,.monthly-detail-title,.result-continue,.notice-panel>header{flex:none}
+.monthly-panel h3{font-size:15px;margin:0}.monthly-summary ol{list-style:none;padding:0;margin:6px 0 0}.monthly-summary li{padding:2px 0}
+.monthly-panel .finance-lines{flex:1;min-height:0;max-height:none;overflow:auto;margin:0;padding-right:8px;padding-left:32px;overscroll-behavior:contain}
+.result-continue{align-self:stretch;margin-top:2px}.notice-body{min-height:0;overflow:auto;overscroll-behavior:contain}.notice-body .luck{width:min(300px,100%);max-height:35cqh;object-fit:contain;margin:0 auto 8px}
+.reward-cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}.reward-cards figure{margin:0;text-align:center}.reward-cards figcaption{margin-bottom:8px;font-weight:600}
+.reward-card{display:block;width:96px;height:100px;object-fit:contain;margin:4px auto 12px}
 </style>

@@ -50,7 +50,7 @@ onMounted(async()=>{
   }
   const candidate=new Application();await candidate.init({width:800,height:600,resolution:Math.min(devicePixelRatio || 1,2),autoDensity:true,backgroundAlpha:0,autoStart:false})
   if(abort.signal.aborted){candidate.destroy({removeView:true});releaseResources();return}
-  app=candidate;host.value!.append(app.canvas);app.stage.addChild(background,objects,labels,intro)
+  app=candidate;app.canvas.style.width='100%';app.canvas.style.height='100%';host.value!.append(app.canvas);app.stage.addChild(background,objects,labels,intro)
   loaded.value=true;draw();removeInputs=listenCarnivalInputs(host.value!,()=>playing.value,input=>emit('input',input))
   // Key state belongs to the active listener and cannot remain held through a rebuild.
   if(props.game.input.kind==='key'&&props.game.input.direction!==0)emit('input',{kind:'key',direction:0})
@@ -63,9 +63,11 @@ onBeforeUnmount(()=>{loaded.value=false;const current=app;app=undefined;abort.ab
 <template>
  <div class="carnival-stage" data-testid="carnival-original" :data-stage="game.stage" :data-frame="game.frame" :data-x="game.x" :data-score="game.score" :data-boy-frame="game.boyFrame" :data-boy-pose="game.pose">
   <div ref="host" class="canvas" role="application" aria-label="游乐场接物：左右方向键、A/D或鼠标移动" tabindex="0" />
-  <p class="status" aria-live="polite">{{ game.stage==='intro'?'准备接物，3秒倒数':game.stage==='play'?`剩余 ${(game.remainingTenths/10).toFixed(1)} 秒 · 左右键 / A、D / 鼠标移动`:`计分中 · ${game.score} 张奖券` }}{{ paused?' · 已暂停':'' }}</p>
+  <div v-if="!loaded" class="loading" role="status" aria-label="活动素材加载">正在准备游乐场画面…</div>
+  <p v-else class="status" aria-live="polite">{{ game.stage==='intro'?'准备接物，3秒倒数':game.stage==='play'?`剩余 ${(game.remainingTenths/10).toFixed(1)} 秒 · 左右键 / A、D / 鼠标移动`:`计分中 · ${game.score} 张奖券` }}{{ paused?' · 已暂停':'' }}</p>
  </div>
 </template>
 <style scoped>
 .carnival-stage{width:100%;aspect-ratio:4/3;position:relative}.canvas{width:100%;height:100%;touch-action:none}.canvas:deep(canvas){width:100%;height:100%;display:block}.status{position:absolute;left:1%;right:1%;top:1%;margin:0;padding:5px 8px;background:#123a46dd;color:white;font-size:12px;pointer-events:none}
+.loading{position:absolute;inset:0;display:grid;place-items:center;background:#173c49;color:#f8fbff;border-radius:12px;font:20px/1.5 system-ui,"PingFang SC",sans-serif;text-align:center;padding:24px;box-sizing:border-box}
 </style>
