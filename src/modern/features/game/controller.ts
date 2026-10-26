@@ -523,7 +523,7 @@ export function createGameController(initialState: GameState, options: GameContr
       continuation: null,
     }
     notify()
-    if (!isHuman()) schedule(acknowledgePropertyResult, aiThinkDurationMs)
+    if (offer.kind === 'rent' || !isHuman()) schedule(acknowledgePropertyResult, aiThinkDurationMs)
   }
 
   acknowledgePropertyResult = () => {
@@ -535,17 +535,20 @@ export function createGameController(initialState: GameState, options: GameContr
   const previewProperty = () => {
     const offer = current.propertyOffer
     const durationMs = options.propertyPreviewDurationMs ?? 0
-    if (offer?.kind !== 'rent' || durationMs <= 0) {
+    if (offer?.kind !== 'rent') {
       if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
       return
     }
+    const chargeAfterNotice = () => {
+      options.onPropertyPreview?.(null)
+      // Keep the mandatory-charge amount readable for one real second, even at fast speed.
+      schedule(() => settleProperty('accept'), 1000, false)
+    }
+    if (durationMs <= 0) { chargeAfterNotice(); return }
     const parcel = mapData.parcels.find(item => item.id === offer.parcelId)!
     const parcelIds = streetRentItems(current.properties, offer.ownerId!, parcel.streetId, current.prices).map(item => item.parcelId)
     options.onPropertyPreview?.({ parcelIds, durationMs })
-    schedule(() => {
-      options.onPropertyPreview?.(null)
-      if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
-    }, durationMs)
+    schedule(chargeAfterNotice, durationMs)
   }
 
   continueTerrain = () => {
@@ -1056,6 +1059,7 @@ export function createGameController(initialState: GameState, options: GameContr
       return
     }
     if (current.phase === 'property-decision') { previewProperty(); return }
+    if (current.phase === 'property-result' && current.propertyOffer?.kind === 'rent') { schedule(acknowledgePropertyResult, aiThinkDurationMs); return }
     if (isHuman()) return
     else if (current.phase === 'property-result') schedule(acknowledgePropertyResult, aiThinkDurationMs)
     else if (current.phase === 'interaction' && current.interaction?.kind === 'notice') {
@@ -1416,12 +1420,12 @@ export function createGameController(initialState: GameState, options: GameContr
     decideProperty(choice) {
       if (!canCommand() || current.phase !== 'property-decision' ||
           (choice !== 'accept' && choice !== 'decline') ||
-          (choice === 'decline' && current.propertyOffer?.kind === 'rent')) return false
+          current.propertyOffer?.kind === 'rent') return false
       settleProperty(choice)
       return true
     },
     acknowledgeProperty() {
-      if (!canCommand() || current.phase !== 'property-result') return false
+      if (!canCommand() || current.phase !== 'property-result' || current.propertyOffer?.kind === 'rent') return false
       acknowledgePropertyResult()
       return true
     },
