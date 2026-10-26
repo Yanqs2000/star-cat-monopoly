@@ -147,13 +147,14 @@ test('自然开局 seed16 遇到公司只认购一次，确认结算后结束回
   page.on('pageerror', error => errors.push(error.message))
   await mkdir(evidenceDir, { recursive: true })
   await start(page, 16)
-  await playUntil(page, () => page.getByTestId('company-shares').count().then(Boolean))
+  await playUntil(page, () => page.getByTestId('company-subscribe').count().then(Boolean))
   const company = page.getByTestId('interaction-panel')
   await expect(company).toContainText('电力公司')
   await expect(company).toContainText('董事：暂无')
   const before = await wallet(page)
-  await page.getByTestId('company-shares').fill('1000')
-  await page.getByTestId('company-subscribe').evaluate((button: HTMLButtonElement) => { button.click(); button.click() })
+  await page.getByTestId('company-subscribe').click()
+  await page.getByRole('button', { name: '最大', exact: true }).click()
+  await page.getByRole('button', { name: '确定认购', exact: true }).evaluate((button: HTMLButtonElement) => { button.click(); button.click() })
   await expect(company).toContainText('现金 -5000')
   await expect(company).toContainText('持股 +1000')
   await expect.poll(() => wallet(page)).toEqual({ ...before, cash: before.cash - 5000 })
@@ -180,7 +181,7 @@ test('公司收费后原版界面素材404，重试不重复收费并可继续�
   })
   await start(page, 96)
   await playUntil(page, async () =>
-    (await page.getByTestId('company-shares').count()) > 0 ||
+    (await page.getByTestId('company-subscribe').count()) > 0 ||
     (await page.getByRole('alert').allTextContents()).some(value => value.includes('companies/dialog.png')), 700)
   await expect(page.getByRole('alert')).toContainText('companies/dialog.png')
   failed = false
@@ -199,11 +200,13 @@ test('公司收费后原版界面素材404，重试不重复收费并可继续�
   const charged = { cash: 103300, deposit: 100000, loan: 0 }
   await expect.poll(() => wallet(page)).toEqual(charged)
   await page.screenshot({ path: `${evidenceDir}/company-once-seed96-fee-retry.png` })
-  await page.getByTestId('company-shares').fill('10')
-  const description = await page.getByTestId('interaction-panel').textContent() ?? ''
+  await page.getByTestId('company-subscribe').click()
+  await page.getByRole('button', { name: '数字 1', exact: true }).click()
+  await page.getByRole('button', { name: '数字 0', exact: true }).click()
+  const description = await page.getByTestId('interaction-panel').getByRole('heading').textContent() ?? ''
   const price = Number(description.match(/承销价 ([\d.]+)/)?.[1])
   expect(price).toBeGreaterThan(0)
-  await page.getByTestId('company-subscribe').click()
+  await page.getByRole('button', { name: '确定认购', exact: true }).click()
   await expect.poll(() => wallet(page)).toEqual({ ...charged, cash: charged.cash - price * 10 })
   await expect(page.getByTestId('interaction-panel')).toContainText('持股 +10')
   await page.getByTestId('interaction-acknowledge').click()
