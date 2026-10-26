@@ -154,6 +154,18 @@ describe('3A 对局状态面板', () => {
 })
 
 describe('3A 真实控制器交互面板', () => {
+  it.each(['original', 'hd'] as const)('%s 卡片弹窗复用已解码卡面，不再次请求图片', profile => {
+    const controller = createGameController(gameWithCards([5]))
+    controller.beginCard(0)
+    const url = profile === 'hd' ? 'hd-static/interactions/cards/5.webp' : 'assets/interactions/cards/5.png'
+    const wrapper = mount(InteractionPanel, { props: {
+      game: controller.state, paused: false, cardAssets: assets, assetProfile: profile,
+      preparedImages: { [url]: 'blob:prepared-dice-card' },
+    } })
+    expect(wrapper.get('.card-head img').attributes('src')).toBe('blob:prepared-dice-card')
+    controller.dispose()
+  })
+
   it.each(CARD_IDS)('卡 %i 使用真实控制器打开原卡面，取消后保留原手牌', async cardId => {
     const controller = createGameController(gameWithCards([cardId]))
     expect(controller.beginCard(0)).toBe(true)

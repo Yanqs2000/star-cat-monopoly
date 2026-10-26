@@ -27,6 +27,7 @@ const props = withDefaults(defineProps<{
   game: GameState
   paused: boolean
   cardAssets: InteractionAsset[]
+  preparedImages?: Record<string, string>
   luckAssets?: InteractionAsset[]
   activityAssets?: ActivityManifest
   portalDecorations?: NativeOverlay[]
@@ -207,7 +208,7 @@ const actualChanges = (entry: FinanceEntry) => [
   .map(([label, amount]) => `${label} ${amount > 0 ? '+' : ''}${amount}`).join(' · ')
 const cardAssetUrl = (id: number) => {
   const url = profileAssetUrl(props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`,props.assetProfile)
-  return `${import.meta.env.BASE_URL}${url}`
+  return props.preparedImages?.[url] ?? `${import.meta.env.BASE_URL}${url}`
 }
 const luckAssetUrl = (id: number) => {
   const url = profileAssetUrl(props.luckAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/luck/${id}.png`,props.assetProfile)
