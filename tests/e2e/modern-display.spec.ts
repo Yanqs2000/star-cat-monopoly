@@ -18,7 +18,7 @@ async function start(page: Page, profile: 'original' | 'hd', seed=123456789, cha
 }
 
 for (const profile of ['original','hd'] as const) for (const viewport of [{width:1920,height:1080},{width:1366,height:768}]) {
-  test(`${profile} ${viewport.width}×${viewport.height}桌面画布4:3且页面完整显示`,async({browser})=>{
+  test(`${profile} ${viewport.width}×${viewport.height}地图铺满可用矩形区域且页面完整显示`,async({browser})=>{
     const context=await browser.newContext({viewport,deviceScaleFactor:viewport.width===1920?2:1})
     const page=await context.newPage()
     try {
@@ -26,7 +26,13 @@ for (const profile of ['original','hd'] as const) for (const viewport of [{width
       expect(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight)).toBe(true)
       expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
       const canvas=await page.locator('canvas').boundingBox()
-      expect(canvas!.width/canvas!.height).toBeCloseTo(4/3,2)
+      const surface=await page.locator('.board-surface').boundingBox()
+      expect(Math.abs(canvas!.x-surface!.x)).toBeLessThan(1)
+      expect(Math.abs(canvas!.y-surface!.y)).toBeLessThan(1)
+      expect(Math.abs(canvas!.width-surface!.width)).toBeLessThan(1)
+      expect(Math.abs(canvas!.height-surface!.height)).toBeLessThan(1)
+      // Renderer dimensions follow the rectangle: CSS must not stretch an 800×600 bitmap.
+      await expect.poll(()=>page.locator('canvas').evaluate((el:HTMLCanvasElement)=>Math.abs(el.width/el.clientWidth-el.height/el.clientHeight))).toBeLessThan(.01)
       expect(canvas!.y+canvas!.height).toBeLessThanOrEqual(viewport.height)
       await expect.poll(()=>page.locator('canvas').evaluate((el:HTMLCanvasElement)=>el.width/el.clientWidth)).toBeGreaterThanOrEqual(viewport.width===1920?1.99:.99)
       expect(await page.locator('.panel').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14)
@@ -75,6 +81,25 @@ test('1080p全屏保留画质/声音/存档工具栏，关闭存档和退出全�
   await expect.poll(()=>page.evaluate(()=>!!document.fullscreenElement)).toBe(true)
   await page.keyboard.press('Escape')
   await expect.poll(()=>page.evaluate(()=>document.fullscreenElement===null)).toBe(true)
+  expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')).toBe(before)
+})
+
+test('矩形地图随窗口和侧栏伸缩，保持暂停的同一局且不拉伸像素', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1080 })
+  await start(page, 'hd', 153, [1])
+  const before = await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')
+  for (const viewport of [{ width: 1920, height: 1080 }, { width: 1100, height: 720 }, { width: 390, height: 844 }]) {
+    await page.setViewportSize(viewport)
+    await expect.poll(() => page.locator('canvas').evaluate(canvas => {
+      const bounds = canvas.getBoundingClientRect(), surface = canvas.closest('.board-surface')!.getBoundingClientRect()
+      return Math.max(Math.abs(bounds.width-surface.width),Math.abs(bounds.height-surface.height))
+    })).toBeLessThan(1)
+    await expect.poll(() => page.locator('canvas').evaluate((canvas: HTMLCanvasElement) => Math.abs(canvas.width/canvas.clientWidth-canvas.height/canvas.clientHeight))).toBeLessThan(.01)
+    expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')).toBe(before)
+  }
+  await page.setViewportSize({ width: 1366, height: 768 })
+  await revealGameDetails(page)
+  await expect.poll(() => page.locator('canvas').evaluate(canvas => Math.abs(canvas.getBoundingClientRect().width-canvas.closest('.board-surface')!.getBoundingClientRect().width))).toBeLessThan(1)
   expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-state-json')).toBe(before)
 })
 
