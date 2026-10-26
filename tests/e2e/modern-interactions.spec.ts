@@ -283,7 +283,7 @@ test('自然运气事件8图片404后保留已扣款结果并恢复原图', asyn
     if (failed) void route.fulfill({ status: 404, body: '' })
     else void route.continue()
   })
-  await seedMondayGame(page, 2)
+  await seedMondayGame(page, 1459)
   await playUntil(page, async () =>
     (await page.locator('[data-testid="luck-image"][alt="运气事件 8"]').count()) > 0 ||
     (await page.getByRole('alert').count()) > 0, 450)
