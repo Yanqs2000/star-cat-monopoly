@@ -27,14 +27,14 @@ describe('2C 地产操作面板', () => {
     expect(wrapper.emitted('acknowledge')).toHaveLength(1)
   })
 
-  it('租金只有付款确认；暂停时全部交易键不可用', () => {
+  it('租金为强制自动扣款提示，暂停时不提供交易按钮', () => {
     const game = createGame([1], 1)
     game.phase = 'property-decision'
     game.propertyOffer = { kind: 'rent', parcelId: 47, amount: 800, ownerId: 2 }
     const wrapper = mount(PropertyPanel, { props: { game, paused: true } })
     expect(wrapper.text()).toContain('必须支付')
     expect(wrapper.find('[data-testid="property-decline"]').exists()).toBe(false)
-    expect((wrapper.get('[data-testid="property-accept"]').element as HTMLButtonElement).disabled).toBe(true)
+    expect(wrapper.find('button').exists()).toBe(false)
   })
 })
 
@@ -52,12 +52,16 @@ it('AI 租金预览可见并列出同街实际收费房屋，播放时付款按�
   expect(wrapper.text()).not.toContain('#45')
   expect(wrapper.find('button').exists()).toBe(false)
 })
-it('人类在收费预览播完前不能确认付款', async () => {
+it('人类收费前显示一秒自动扣款提示，结算后自动继续无需确认', async () => {
   const game = createGame([1, 2, 3, 4], 1)
   game.phase = 'property-decision'; game.propertyOffer = { kind: 'rent', parcelId: 47, amount: 800, ownerId: 2 }
   game.properties[47] = { ownerId: 2, level: 0 }
   const wrapper = mount(PropertyPanel, { props: { game, paused: false, previewing: true } })
-  expect(wrapper.get('button').attributes('disabled')).toBeDefined()
+  expect(wrapper.find('button').exists()).toBe(false)
   await wrapper.setProps({ previewing: false })
-  expect(wrapper.get('button').attributes('disabled')).toBeUndefined()
+  expect(wrapper.text()).toContain('1 秒后自动扣款')
+  expect(wrapper.find('button').exists()).toBe(false)
+  await wrapper.setProps({ game: { ...game, phase: 'property-result', lastPropertyEvent: { kind: 'rent-paid', playerId: 1, parcelId: 47, amount: 800, recipientId: 2 } } })
+  expect(wrapper.text()).toContain('已支付租金 800')
+  expect(wrapper.find('button').exists()).toBe(false)
 })

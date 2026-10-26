@@ -38,20 +38,20 @@ const result = computed(() => {
     <p>产权：{{ owner?.name ?? '无人' }} · 建筑等级 {{ level }}/5</p>
     <p class="balances">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }}</p>
     <template v-if="offer.kind === 'rent'">
-      <p>{{ previewing ? '正在标出收费房屋…' : game.phase === 'property-result' ? '本次收费已结算' : '下列亮起的房屋共同计费' }}</p>
+      <p>{{ previewing ? '正在标出收费房屋…' : game.phase === 'property-result' ? '本次收费已结算' : paused ? '已暂停，继续后自动扣款' : '1 秒后自动扣款，无需操作' }}</p>
       <ul class="rent-items"><li v-for="item in rentItems" :key="item.parcelId">#{{ item.parcelId }} · {{ game.properties[item.parcelId]!.level }}级 <strong>{{ item.amount }} 元</strong></li></ul>
     </template>
     <template v-if="game.phase === 'property-decision'">
       <p v-if="offer.kind === 'rent'" class="amount">必须支付租金 {{ offer.amount }}；先扣现金，不足部分扣存款。</p>
       <p v-else class="amount">{{ offer.kind === 'purchase' ? '买价' : '升级费用' }} {{ offer.amount }} · 仅使用现金</p>
-      <div v-if="player.controller === 'human'" class="actions">
-        <button data-testid="property-accept" :disabled="paused || previewing" @click="emit('decide', 'accept')">{{ offer.kind === 'rent' ? '确认付款' : offer.kind === 'purchase' ? '购买' : '升级' }}</button>
-        <button v-if="offer.kind !== 'rent'" data-testid="property-decline" :disabled="paused || previewing" @click="emit('decide', 'decline')">放弃</button>
+      <div v-if="player.controller === 'human' && offer.kind !== 'rent'" class="actions">
+        <button data-testid="property-accept" :disabled="paused || previewing" @click="emit('decide', 'accept')">{{ offer.kind === 'purchase' ? '购买' : '升级' }}</button>
+        <button data-testid="property-decline" :disabled="paused || previewing" @click="emit('decide', 'decline')">放弃</button>
       </div>
     </template>
     <template v-else-if="game.phase === 'property-result'">
       <p class="result" data-testid="property-result">{{ result }}</p>
-      <button v-if="player.controller === 'human'" data-testid="property-acknowledge" :disabled="paused" @click="emit('acknowledge')">知道了，继续</button>
+      <button v-if="player.controller === 'human' && offer.kind !== 'rent'" data-testid="property-acknowledge" :disabled="paused" @click="emit('acknowledge')">知道了，继续</button>
     </template>
   </section>
 </template>

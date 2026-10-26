@@ -280,48 +280,57 @@ describe('2C 地产控制器', () => {
     }
   })
 
-  it('AI 付款前完整播放收费房屋预览，暂停不会跳过或重复扣费', () => {
-    const scheduler = new FakeScheduler()
-    const game = arrivingAt(47)
-    game.players[0]!.controller = 'ai'
+  for (const control of ['human', 'ai', 'autoplay'] as const) it(`${control} 房屋动画后展示金额一秒再强制扣款，暂停和倍速不缩短停留`, () => {
+    const scheduler = new FakeScheduler(), game = arrivingAt(47)
+    game.players[0]!.controller = control
     game.phase = 'property-decision'
     game.propertyOffer = { kind: 'rent', parcelId: 47, amount: 800, ownerId: 2 }
     game.properties[47] = { ownerId: 2, level: 0 }
     const previews: (number[] | null)[] = []
     const controller = createGameController(game, { ...options(scheduler), propertyPreviewDurationMs: 1200,
       onPropertyPreview: preview => previews.push(preview?.parcelIds ?? null) })
+    controller.setSpeed(2)
+    scheduler.advance(599)
     expect(previews).toEqual([[47]])
-    scheduler.advance(1199)
-    expect(controller.state.players[0]!.cash).toBe(100000)
-    controller.setPaused(true); scheduler.advance(5000)
-    expect(controller.state.phase).toBe('property-decision')
-    controller.setPaused(false); scheduler.advance(1)
+    scheduler.advance(1)
     expect(previews).toEqual([[47], null])
-    scheduler.advance(10)
+    expect(controller.decideProperty('accept')).toBe(false)
+    scheduler.advance(500)
+    controller.setPaused(true); scheduler.advance(5000)
+    expect(controller.state.players[0]!.cash).toBe(100000)
+    controller.setSpeed(4); controller.setPaused(false)
+    scheduler.advance(499)
+    expect(controller.state.players[0]!.cash).toBe(100000)
+    scheduler.advance(1)
     expect(controller.state.players[0]!.cash).toBe(99200)
     expect(controller.state.players[1]!.deposit).toBe(100800)
+    expect(controller.decideProperty('accept')).toBe(false)
+    expect(controller.acknowledgeProperty()).toBe(false)
+    scheduler.advance(6)
+    expect(controller.state.activePlayerIndex).toBe(1)
+    expect(controller.state.players[0]!.cash).toBe(99200)
     controller.dispose()
   })
 
-  it('人类租金预览挡住重复付款命令，重建重播后只允许扣费一次', () => {
+  it('重建未付租金会重播提示后自动结算，已扣款的结果恢复后直接继续不再扣钱', () => {
     const scheduler = new FakeScheduler(), game = arrivingAt(47)
     game.properties[47] = { ownerId: 2, level: 0 }
     const config = { ...options(scheduler), propertyPreviewDurationMs: 1200 }
     const controller = createGameController(game, config)
-    land(controller, scheduler)
-    expect(controller.decideProperty('accept')).toBe(false)
-    scheduler.advance(600)
-    const saved = structuredClone(controller.state)
-    controller.dispose()
+    land(controller, scheduler); scheduler.advance(1800)
+    const saved = structuredClone(controller.state); controller.dispose()
     const resumed = createGameController(saved, config)
-    scheduler.advance(1199)
-    expect(resumed.decideProperty('accept')).toBe(false)
+    scheduler.advance(2199)
     expect(resumed.state.players[0]!.cash).toBe(100000)
     scheduler.advance(1)
-    expect(resumed.decideProperty('accept')).toBe(true)
-    expect(resumed.decideProperty('accept')).toBe(false)
     expect(resumed.state.players[0]!.cash).toBe(99200)
-    resumed.dispose()
+    const paid = structuredClone(resumed.state); resumed.dispose()
+    const restored = createGameController(paid, config)
+    scheduler.advance(20)
+    expect(restored.state.activePlayerIndex).toBe(1)
+    expect(restored.state.players[0]!.cash).toBe(99200)
+    expect(restored.state.players[1]!.deposit).toBe(100800)
+    restored.dispose()
   })
 
   it('租金先扣现金后扣存款，地主收到完整存款；耗尽时确认破产后继续剩余玩家', () => {
@@ -335,18 +344,19 @@ describe('2C 地产控制器', () => {
       land(controller, scheduler)
       expect(controller.state).toMatchObject({ phase: 'property-decision', propertyOffer: { kind: 'rent', amount: 800 } })
       expect(controller.decideProperty('decline')).toBe(false)
-      expect(controller.decideProperty('accept')).toBe(true)
+      expect(controller.decideProperty('accept')).toBe(false)
+      scheduler.advance(1000)
       expect(controller.state.players[0]).toMatchObject({ cash: 0, deposit: remainingDeposit })
       expect(controller.state.players[1]!.deposit).toBe(100800)
       expect(controller.state.lastPropertyEvent).toMatchObject({ kind: 'rent-paid', amount: 800, recipientId: 2 })
-      expect(controller.acknowledgeProperty()).toBe(true)
+      expect(controller.acknowledgeProperty()).toBe(false)
       if (insolvent) {
-        scheduler.advance(10)
+        scheduler.advance(20)
         expect(controller.state.interaction?.kind).toBe('bankruptcy')
         expect(controller.acknowledgeBankruptcy()).toBe(true)
         expect(controller.state.eliminatedPlayerIds).toEqual([1])
       } else {
-        scheduler.advance(10)
+        scheduler.advance(20)
         expect(controller.state.activePlayerIndex).toBe(1)
       }
     }
