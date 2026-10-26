@@ -34,6 +34,30 @@ const options = (clock: Clock) => ({ scheduler: clock, stepDurationMs: 10,
   landingDurationMs: 10, aiThinkDurationMs: 10 })
 
 describe('3B 银行与日期控制器', () => {
+  it.each(['ai', 'autoplay'] as const)('月结末位玩家为%s时仍等待用户确认，暂停与恢复不自动关闭', control => {
+    const game = createGame([1], 1, 1, { year: 2026, month: 9, day: 1 })
+    game.activePlayerIndex = 3; game.players[3]!.controller = control
+    game.phase = 'landed'; game.continuation = 'finish-turn'
+    const clock = new Clock(), controller = createGameController(game, options(clock))
+    clock.advance(10)
+    expect(controller.state.interaction?.kind).toBe('monthly-settlement')
+    const settled = structuredClone(controller.state)
+    clock.advance(30_000)
+    expect(controller.state).toEqual(settled)
+    controller.setPaused(true); controller.setSpeed(2); controller.setPaused(false)
+    clock.advance(30_000)
+    expect(controller.state).toEqual(settled)
+    controller.dispose()
+    const restoredClock = new Clock(), restored = createGameController(settled, options(restoredClock))
+    restoredClock.advance(30_000)
+    expect(restored.state).toEqual(settled)
+    expect(restored.acknowledgeMonthly()).toBe(true)
+    expect(restored.acknowledgeMonthly()).toBe(false)
+    restoredClock.advance(10)
+    expect(restored.state.world.day).toBe(2)
+    expect(restored.state.finance.entries.filter(entry => entry.kind === 'stock-price')).toHaveLength(12)
+    restored.dispose()
+  })
   it('银行途中命令只提交一次，提示确认后回菜单并继续原剩余路径', () => {
     const game = createGame([1, 2, 3, 4], 1)
     game.world.markers = {}

@@ -61,6 +61,30 @@ function driveToHumanTurn(controller: ReturnType<typeof createGameController>, s
 }
 
 describe('现代对局控制器', () => {
+  it('骰子展示期间结果只抽取一次，展示结束后才开始走步，暂停冻结倒数', () => {
+    const scheduler = new FakeScheduler(), rolls: unknown[] = []
+    const game = createGame([1], 153)
+    game.world.markers = {}
+    const position = { ...game.players[0]!.position }
+    const controller = createGameController(game, { scheduler, stepDurationMs: 100, rollDurationMs: 900, onRoll: roll => rolls.push(roll) })
+    expect(controller.roll(6)).toBe(true)
+    expect(controller.roll(1)).toBe(false)
+    expect(rolls).toEqual([{ playerId: 1, value: 6, durationMs: 900 }])
+    const rng = controller.state.rngState
+    scheduler.advance(500)
+    expect(controller.state.players[0]!.position).toEqual(position)
+    controller.setPaused(true); scheduler.advance(5000)
+    expect(controller.state.players[0]!.position).toEqual(position)
+    controller.setPaused(false); scheduler.advance(399)
+    expect(controller.state.players[0]!.position).toEqual(position)
+    scheduler.advance(1)
+    expect(controller.state.rngState).toBe(rng)
+    expect(controller.state.players[0]!.position).toEqual(position)
+    scheduler.advance(100)
+    expect(controller.state.players[0]!.position).not.toEqual(position)
+    expect(controller.state.lastRoll).toBe(6)
+    controller.dispose()
+  })
   it('默认逐格时长对应原逻辑16次30fps更新', () => {
     const scheduler = new FakeScheduler()
     const controller = createGameController(createGame([1, 2, 3, 4], 1), { scheduler })

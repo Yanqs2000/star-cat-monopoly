@@ -9,6 +9,7 @@ import type { WorldState } from '../game/world-cards'
 import type { PropertyLedger } from '../game/property'
 import { gridToScene } from './coordinates'
 import { propertyMarkerOffset } from './property-marker-placement'
+import mapCollectibles from '../../data/map-collectibles.json'
 import { parsePropertyAssets } from './property-assets'
 import { companyPlacement, parseCompanyAssets, type CompanyAssetsManifest } from './company-assets'
 import { pickMapPointerAction } from './target-selection'
@@ -100,6 +101,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   const app = new Application()
   const assetProfile = options.assetProfile ?? 'original'
   const mapUrl = options.mapBase?.url ?? manifest.map.url
+  const crystal = mapCollectibles[assetProfile]
   const textures = new Map<string, Texture>()
   const textureUrls = new Map<Texture,string>()
   const bitmaps = new Map<string, ImageBitmap>()
@@ -183,7 +185,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parseCompanyAssets(await response.json())
     })() : undefined
-    const urls = [...new Set([mapUrl, ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+    const urls = [...new Set([mapUrl, crystal.url, ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
@@ -215,6 +217,15 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     }
     updateMapLayers()
     world.addChild(background, hdMapLayer, markers, entities)
+    for (const position of mapCollectibles.positions) {
+      const view = new Container(), sprite = new Sprite(textures.get(crystal.url)!)
+      const point = gridToScene(position)
+      view.position.set(point.x, point.y)
+      view.zIndex = position.row * 100 + position.column + 1
+      sprite.position.set(crystal.offsetX, crystal.offsetY)
+      sprite.width = crystal.width; sprite.height = crystal.height
+      view.addChild(sprite); entities.addChild(view)
+    }
     for (const parcel of map.parcels) {
       const road = gridToScene(parcel.roadCell)
       const building = gridToScene(parcel.buildingCell)

@@ -50,6 +50,8 @@ export interface PlayerTransition {
   durationMs: number
 }
 
+export interface RollPresentation { playerId: number; value: number; durationMs: number }
+
 export interface GameControllerOptions {
   /** Browser renderer loads a native clip before acknowledging it is ready. */
   awaitActivityAssets?: boolean
@@ -57,6 +59,8 @@ export interface GameControllerOptions {
   stepDurationMs?: number
   landingDurationMs?: number
   aiThinkDurationMs?: number
+  rollDurationMs?: number
+  onRoll?: (roll: RollPresentation) => void
   onState?: (state: GameState) => void
   onTransition?: (transition: PlayerTransition | null) => void
   onInteractionEvent?: (event: InteractionEvent) => void
@@ -837,11 +841,17 @@ export function createGameController(initialState: GameState, options: GameContr
         continuation: 'handle-landing',
       }
       notify()
-      handleLanding()
+      if (options.rollDurationMs) {
+        options.onRoll?.({ playerId: player.id, value: current.lastRoll!, durationMs: options.rollDurationMs })
+        schedule(handleLanding, options.rollDurationMs)
+      } else handleLanding()
       return
     }
     notify()
-    startStep()
+    if (options.rollDurationMs) {
+      options.onRoll?.({ playerId: player.id, value: current.lastRoll!, durationMs: options.rollDurationMs })
+      schedule(startStep, options.rollDurationMs)
+    } else startStep()
   }
 
   finishTurn = (skipSolvency = false) => {
@@ -863,7 +873,6 @@ export function createGameController(initialState: GameState, options: GameContr
           interaction: { kind: 'monthly-settlement', playerId: activePlayer().id, entries: settlement.entries },
           continuation: null }
         notify()
-        if (!isHuman()) schedule(acknowledgeMonthlyResult, aiThinkDurationMs)
         return
       }
     }
@@ -1032,9 +1041,6 @@ export function createGameController(initialState: GameState, options: GameContr
     else if (current.phase === 'property-result') schedule(acknowledgePropertyResult, aiThinkDurationMs)
     else if (current.phase === 'interaction' && current.interaction?.kind === 'notice') {
       schedule(acknowledgeNotice, aiThinkDurationMs)
-    }
-    else if (current.phase === 'interaction' && current.interaction?.kind === 'monthly-settlement') {
-      schedule(acknowledgeMonthlyResult, aiThinkDurationMs)
     }
   }
 
@@ -1372,7 +1378,7 @@ export function createGameController(initialState: GameState, options: GameContr
       return true
     },
     acknowledgeMonthly() {
-      if (!canCommand() || current.phase !== 'interaction' || current.interaction?.kind !== 'monthly-settlement') return false
+      if (disposed || paused || current.phase !== 'interaction' || current.interaction?.kind !== 'monthly-settlement') return false
       acknowledgeMonthlyResult()
       return true
     },

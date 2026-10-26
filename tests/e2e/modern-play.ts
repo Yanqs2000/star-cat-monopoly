@@ -15,6 +15,11 @@ export async function playUntil(page: Page, target: () => Promise<boolean>, limi
       continue
     }
     if (currentPlayer.includes('AI')) {
+      const monthly = page.getByTestId('monthly-acknowledge')
+      if (await monthly.count() && await monthly.isEnabled()) {
+        if (await target()) return
+        await monthly.click(); continue
+      }
       await page.waitForTimeout(80)
       continue
     }

@@ -10,9 +10,11 @@ it('所有玩家/翻页手牌和终局图片先准备为本地资源，离开时
  const game=createGame([1],102);game.inventories={1:Array(9).fill(9).concat(1),2:[1],3:[],4:[]};game.outcome={kind:'defeat',winnerId:null}
  const urls:string[]=[];let released=0
  const result=await prepareGameUiAssets(game,assets,signal,async url=>{urls.push(url);return {url:`blob:${url}`,release:()=>released++}})
- expect(urls).toEqual(['assets/interactions/cards/9.png','assets/interactions/cards/1.png','assets/activities/gameover/1.png'])
+ expect(urls).toEqual(['assets/interactions/cards/9.png','assets/interactions/cards/1.png',
+  'assets/activities/ludo-face-1/1.png','assets/activities/ludo-face-2/1.png','assets/activities/ludo-face-3/1.png',
+  'assets/activities/ludo-face-4/1.png','assets/activities/ludo-face-5/1.png','assets/activities/ludo-face-6/1.png','assets/activities/gameover/1.png'])
  expect(result.urls['assets/interactions/cards/1.png']).toBe('blob:assets/interactions/cards/1.png')
- result.release();result.release();expect(released).toBe(3)
+ result.release();result.release();expect(released).toBe(9)
 })
 it('手牌素材失败发生在提交前，旧局不销毁，已加载候选资源释放',async()=>{
  const game=createGame([1],102);game.inventories={1:[1,9],2:[],3:[],4:[]}
