@@ -1,3 +1,4 @@
+import mapData from '../../data/map.json'
 import { advanceSourceMoodRandom } from './source-mood'
 import { buyShopCard, createCardShop, drawCard, sellInventoryCard } from './card-economy'
 import worldRules from '../../data/world-rules.json'
@@ -12,7 +13,7 @@ import { claimLostFunds, exchangeTickets as applyTicketExchange } from './ticket
 import { applyDirectCard, getCardCell, type DirectCardChoice } from './direct-cards'
 import { applyLuckEvent, applyTicketLanding, drawLuckEvent, findSpecialLanding } from './events'
 import type { GameInteraction, InteractionEvent, InteractionNotice, InteractionResume } from './interaction-types'
-import { applyPropertyOffer, findParcelAt, getPropertyOffer } from './property'
+import { applyPropertyOffer, findParcelAt, getPropertyOffer, streetRentItems } from './property'
 import { nextTurn, roll as rollState, step } from './turns'
 import type { Direction, GameContinuation, GameState } from './types'
 import {
@@ -59,6 +60,8 @@ export interface GameControllerOptions {
   stepDurationMs?: number
   landingDurationMs?: number
   aiThinkDurationMs?: number
+  propertyPreviewDurationMs?: number
+  onPropertyPreview?: (preview: { parcelIds: number[]; durationMs: number } | null) => void
   rollDurationMs?: number
   onRoll?: (roll: RollPresentation) => void
   onState?: (state: GameState) => void
@@ -529,6 +532,22 @@ export function createGameController(initialState: GameState, options: GameContr
     schedule(finishTurn, landingDurationMs)
   }
 
+  const previewProperty = () => {
+    const offer = current.propertyOffer
+    const durationMs = options.propertyPreviewDurationMs ?? 0
+    if (offer?.kind !== 'rent' || durationMs <= 0) {
+      if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
+      return
+    }
+    const parcel = mapData.parcels.find(item => item.id === offer.parcelId)!
+    const parcelIds = streetRentItems(current.properties, offer.ownerId!, parcel.streetId, current.prices).map(item => item.parcelId)
+    options.onPropertyPreview?.({ parcelIds, durationMs })
+    schedule(() => {
+      options.onPropertyPreview?.(null)
+      if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
+    }, durationMs)
+  }
+
   continueTerrain = () => {
     const player = activePlayer()
     const parcel = findParcelAt(player.position)
@@ -537,7 +556,7 @@ export function createGameController(initialState: GameState, options: GameContr
       current = { ...current, phase: 'property-decision', propertyOffer: offer, continuation: null }
       notify()
       if (offer.kind === 'max-level') settleProperty('accept')
-      else if (!isHuman()) schedule(() => settleProperty('accept'), aiThinkDurationMs)
+      else previewProperty()
       return
     }
 
@@ -1036,8 +1055,8 @@ export function createGameController(initialState: GameState, options: GameContr
       beginTurn()
       return
     }
+    if (current.phase === 'property-decision') { previewProperty(); return }
     if (isHuman()) return
-    if (current.phase === 'property-decision') schedule(() => settleProperty('accept'), aiThinkDurationMs)
     else if (current.phase === 'property-result') schedule(acknowledgePropertyResult, aiThinkDurationMs)
     else if (current.phase === 'interaction' && current.interaction?.kind === 'notice') {
       schedule(acknowledgeNotice, aiThinkDurationMs)
@@ -1422,6 +1441,7 @@ export function createGameController(initialState: GameState, options: GameContr
       generation += 1
       cancelPending()
       options.onTransition?.(null)
+      options.onPropertyPreview?.(null)
       current = state
       paused = false
       notify()
@@ -1432,6 +1452,7 @@ export function createGameController(initialState: GameState, options: GameContr
       generation += 1
       cancelPending()
       options.onTransition?.(null)
+      options.onPropertyPreview?.(null)
     },
   }
   notify()

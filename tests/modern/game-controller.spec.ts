@@ -280,6 +280,50 @@ describe('2C 地产控制器', () => {
     }
   })
 
+  it('AI 付款前完整播放收费房屋预览，暂停不会跳过或重复扣费', () => {
+    const scheduler = new FakeScheduler()
+    const game = arrivingAt(47)
+    game.players[0]!.controller = 'ai'
+    game.phase = 'property-decision'
+    game.propertyOffer = { kind: 'rent', parcelId: 47, amount: 800, ownerId: 2 }
+    game.properties[47] = { ownerId: 2, level: 0 }
+    const previews: (number[] | null)[] = []
+    const controller = createGameController(game, { ...options(scheduler), propertyPreviewDurationMs: 1200,
+      onPropertyPreview: preview => previews.push(preview?.parcelIds ?? null) })
+    expect(previews).toEqual([[47]])
+    scheduler.advance(1199)
+    expect(controller.state.players[0]!.cash).toBe(100000)
+    controller.setPaused(true); scheduler.advance(5000)
+    expect(controller.state.phase).toBe('property-decision')
+    controller.setPaused(false); scheduler.advance(1)
+    expect(previews).toEqual([[47], null])
+    scheduler.advance(10)
+    expect(controller.state.players[0]!.cash).toBe(99200)
+    expect(controller.state.players[1]!.deposit).toBe(100800)
+    controller.dispose()
+  })
+
+  it('人类租金预览挡住重复付款命令，重建重播后只允许扣费一次', () => {
+    const scheduler = new FakeScheduler(), game = arrivingAt(47)
+    game.properties[47] = { ownerId: 2, level: 0 }
+    const config = { ...options(scheduler), propertyPreviewDurationMs: 1200 }
+    const controller = createGameController(game, config)
+    land(controller, scheduler)
+    expect(controller.decideProperty('accept')).toBe(false)
+    scheduler.advance(600)
+    const saved = structuredClone(controller.state)
+    controller.dispose()
+    const resumed = createGameController(saved, config)
+    scheduler.advance(1199)
+    expect(resumed.decideProperty('accept')).toBe(false)
+    expect(resumed.state.players[0]!.cash).toBe(100000)
+    scheduler.advance(1)
+    expect(resumed.decideProperty('accept')).toBe(true)
+    expect(resumed.decideProperty('accept')).toBe(false)
+    expect(resumed.state.players[0]!.cash).toBe(99200)
+    resumed.dispose()
+  })
+
   it('租金先扣现金后扣存款，地主收到完整存款；耗尽时确认破产后继续剩余玩家', () => {
     for (const [cash, deposit, remainingDeposit, insolvent] of [[100, 2000, 1300, false], [100, 400, -300, true]] as const) {
       const scheduler = new FakeScheduler()

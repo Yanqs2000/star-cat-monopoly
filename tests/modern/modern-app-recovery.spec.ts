@@ -9,7 +9,7 @@ import type { GameState } from '../../src/modern/features/game/types'
 import type { InteractionVisualPlan } from '../../src/modern/features/game/game-visuals'
 
 const scene = vi.hoisted(() => ({
-  transitionPlayer: vi.fn(), setPlayers: vi.fn(), setCompanies: vi.fn(), setProperties: vi.fn(), setWorld: vi.fn(),
+  transitionPlayer: vi.fn(), setPlayers: vi.fn(), setCompanies: vi.fn(), setProperties: vi.fn(), setRentHighlight: vi.fn(), setWorld: vi.fn(),
   setTargeting: vi.fn(), showMarkers: vi.fn(), setSpeed: vi.fn(), follow: vi.fn(),
   setPaused: vi.fn(), destroy: vi.fn(), resize: vi.fn(), getPortalDecorations: vi.fn(() => []),
   setActivity: vi.fn(async () => {}), playEffect: vi.fn(), playReaction: vi.fn(async () => {}),

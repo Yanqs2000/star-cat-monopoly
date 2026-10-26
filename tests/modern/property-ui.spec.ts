@@ -37,3 +37,27 @@ describe('2C 地产操作面板', () => {
     expect((wrapper.get('[data-testid="property-accept"]').element as HTMLButtonElement).disabled).toBe(true)
   })
 })
+
+it('AI 租金预览可见并列出同街实际收费房屋，播放时付款按钮禁用', () => {
+  const game = createGame([1, 2, 3, 4], 1)
+  game.players[0]!.controller = 'ai'
+  game.phase = 'property-decision'
+  game.propertyOffer = { kind: 'rent', parcelId: 47, amount: 3800, ownerId: 2 }
+  game.properties[43] = { ownerId: 2, level: 2 }; game.properties[47] = { ownerId: 2, level: 0 }
+  game.properties[45] = { ownerId: 3, level: 5 }
+  const wrapper = mount(PropertyPanel, { props: { game, paused: false, previewing: true } })
+  expect(wrapper.text()).toContain('#43')
+  expect(wrapper.text()).toContain('3000')
+  expect(wrapper.text()).toContain('#47')
+  expect(wrapper.text()).not.toContain('#45')
+  expect(wrapper.find('button').exists()).toBe(false)
+})
+it('人类在收费预览播完前不能确认付款', async () => {
+  const game = createGame([1, 2, 3, 4], 1)
+  game.phase = 'property-decision'; game.propertyOffer = { kind: 'rent', parcelId: 47, amount: 800, ownerId: 2 }
+  game.properties[47] = { ownerId: 2, level: 0 }
+  const wrapper = mount(PropertyPanel, { props: { game, paused: false, previewing: true } })
+  expect(wrapper.get('button').attributes('disabled')).toBeDefined()
+  await wrapper.setProps({ previewing: false })
+  expect(wrapper.get('button').attributes('disabled')).toBeUndefined()
+})
