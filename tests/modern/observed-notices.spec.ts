@@ -7,6 +7,20 @@ import { getLuckEvent } from '../../src/modern/features/game/events'
 import { createGameController } from '../../src/modern/features/game/controller'
 import { getCardCell } from '../../src/modern/features/game/direct-cards'
 
+it('末位AI玩家的月结确认按钮允许观察者点击，暂停时禁用', async () => {
+  const game = createGame([1], 1)
+  game.activePlayerIndex = 3
+  game.interaction = { kind: 'monthly-settlement', playerId: 4, entries: [] }
+  const panel = mount(InteractionPanel, { props: { game, paused: false, cardAssets: [] } })
+  const button = panel.get<HTMLButtonElement>('[data-testid="monthly-acknowledge"]')
+  expect(button.element.disabled).toBe(false)
+  await button.trigger('click')
+  expect(panel.emitted('acknowledge-monthly')).toEqual([[]])
+  await panel.setProps({ paused: true })
+  expect(button.element.disabled).toBe(true)
+  panel.unmount()
+})
+
 it.each([[41, '奖券 +150'], [21, '奖券 +100'], [28, '现金 -1000']] as const)('运气事件%i显示实际资金单位', (id, label) => {
   const game = createGame([1], 0, 1)
   const luckEvent = getLuckEvent(id)

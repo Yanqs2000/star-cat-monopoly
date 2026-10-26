@@ -9,8 +9,9 @@ import { prepareGameUiAssets, type PreparedUiAssets } from './features/saves/ui-
 import type { SaveSlot, SaveSnapshot } from './features/saves/snapshot-types'
 import { parseAssetManifest, type AssetManifest } from './features/characters/assets'
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
-import type { GameController, GameControllerOptions } from './features/game/controller'
+import type { GameController, GameControllerOptions, RollPresentation } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
+import DiceRoll from './features/game/DiceRoll.vue'
 import TurnControls from './features/game/TurnControls.vue'
 import GameToolbar from './features/game/GameToolbar.vue'
 import GameReferencePanel, { type ReferenceTab } from './features/game/GameReferencePanel.vue'
@@ -38,6 +39,7 @@ interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
 interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; assetProfile:AssetProfile; stagingHost?:HTMLElement; committed?:boolean }
 interface PendingGame { state: GameState; lineup: string; assetProfile:AssetProfile; visual?: InteractionVisualPlan }
 
+const diceRoll = ref<RollPresentation | null>(null)
 const map = mapJson as MapData
 const mode = ref<'selection' | 'game' | 'inspection'>('selection')
 function storedAssetProfile():AssetProfile {
@@ -193,6 +195,7 @@ function seed(): number {
   return value[0]!
 }
 function cleanupGame() {
+  diceRoll.value = null
   ownedUiAssets?.release();ownedUiAssets=undefined
   audio.setPaused(true)
   controllerReady.value=false
@@ -363,6 +366,8 @@ async function loadPendingGame(prepared?:PreparedGame) {
     }
     const controllerOptions: GameControllerOptions = {
       awaitActivityAssets: true,
+      rollDurationMs: 900,
+      onRoll: roll => { diceRoll.value = roll },
       onTransition: transition => scene?.transitionPlayer(transition),
       onState: state => {
         audio.setScene(sceneTrack(state))
@@ -779,6 +784,7 @@ onBeforeUnmount(() => {
         <div><p>反馈素材已准备，继续对局后恢复。</p><button @click="togglePause">继续对局</button></div>
       </div>
 
+      <DiceRoll :roll="diceRoll" :player-name="game?.players.find(player => player.id === diceRoll?.playerId)?.name ?? ''" :paused="paused" :speed="speed" :asset-profile="assetProfile" :prepared-images="preparedImages" @complete="diceRoll = null" @asset-error="failRuntimeAsset" />
       <MapInfoPanel v-if="mapInspection && referenceTab === null && loadState === 'ready'" :info="mapInspection" @close="mapInspectionPosition=undefined" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" :asset-profile="assetProfile" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />

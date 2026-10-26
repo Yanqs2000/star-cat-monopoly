@@ -402,7 +402,7 @@ watch(stockId, () => { stockShares.value = 1 })
         <small>{{ entry.kind === 'company-undistributed-profit' ? `来源金额 ${entry.sourceAmount}` : actualChanges(entry) }}</small>
       </li></ol>
       <p v-else>本月没有资金变化</p>
-      <button class="result-continue" data-testid="monthly-acknowledge" :disabled="!canAct" @click="emit('acknowledge-monthly')">确认月结，继续</button>
+      <button class="result-continue" data-testid="monthly-acknowledge" :disabled="paused" @click="emit('acknowledge-monthly')">确认月结，继续</button>
     </template>
 
     <template v-else-if="interaction.kind === 'stock'">

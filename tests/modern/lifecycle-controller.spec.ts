@@ -33,6 +33,9 @@ it('单一托管幸存者判赢，月初仍先月结再判赢',()=>{
  game.phase='landed';game.continuation='finish-turn'
  const c=createGameController(game,options);vi.advanceTimersByTime(10)
  expect(c.state.interaction?.kind).toBe('monthly-settlement')
+ vi.advanceTimersByTime(30000)
+ expect(c.state.interaction?.kind).toBe('monthly-settlement')
+ expect(c.acknowledgeMonthly()).toBe(true)
  vi.advanceTimersByTime(20)
  expect(c.state).toMatchObject({phase:'ended',outcome:{kind:'victory',winnerId:4}})
  expect(c.state.world.day).toBe(1);c.dispose()
