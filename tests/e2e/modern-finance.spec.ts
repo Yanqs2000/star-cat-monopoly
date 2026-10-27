@@ -87,7 +87,7 @@ test('自然开局 seed17 在第2轮银行完成存取、借还、授信与信�
   expect(board.y + board.height).toBeLessThanOrEqual(1080)
 })
 
-test('授信已入账后反馈素材404，重试不重复发卡或增加额度', async ({ page }) => {
+test('授信反馈复用开局准备素材，断网不影响入账且不重复发卡或增加额度', async ({ page }) => {
   test.setTimeout(120_000)
   let failed = false
   let reactionRequests = 0
@@ -98,14 +98,12 @@ test('授信已入账后反馈素材404，重试不重复发卡或增加额度',
   })
   await start(page, 17)
   await playUntil(page, () => page.getByTestId('bank-form').count().then(Boolean))
+  const preparedRequests=reactionRequests
   failed = true
   await page.getByRole('button', { name: '申请信用卡' }).click()
-  await expect(page.getByRole('alert')).toContainText('characters/1/reactions/happy/', { timeout: 15_000 })
-  failed = false
-  await page.getByRole('button', { name: '重试载入' }).click()
-  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  expect(reactionRequests).toBe(preparedRequests)
   await expect(page.getByLabel('速度')).toHaveValue('2')
-  await expect.poll(() => reactionRequests).toBeGreaterThanOrEqual(2)
   await expect(page.getByTestId('interaction-panel')).toContainText('信用申请通过')
   await expect(page.getByTestId('hand-panel').locator('[data-card-id="1"]')).toHaveCount(1)
   await expect(page.getByTestId('player-list').locator('li').first()).toContainText('信用 100000 / 已用 0')

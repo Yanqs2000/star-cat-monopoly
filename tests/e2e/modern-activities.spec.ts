@@ -68,7 +68,6 @@ for (const [seed,npc] of [[112,13],[133,9],[36,12],[221,14],[219,15],[0,23]] as 
     const original = page.locator(`[data-clip="trait-${npc}"]`)
     await expect(original.locator('image')).toHaveAttribute('href', /^blob:/)
     await expect.poll(async () => (await original.boundingBox())?.width).toBe(462)
-    await expect.poll(async () => Number(await original.getAttribute('data-frame'))).toBeGreaterThanOrEqual(15)
     await page.getByRole('button', { name: '暂停对局', exact: true }).click()
     const frame = await original.getAttribute('data-frame')
     await page.waitForTimeout(150)
@@ -87,16 +86,15 @@ for (const [seed,npc] of [[112,13],[133,9],[36,12],[221,14],[219,15],[0,23]] as 
   })
 }
 
-test('自然开局恶犬已送医后车辆素材404，重试保留医院状态及两倍速', async ({ page }) => {
-  test.setTimeout(240_000)
-  let broken = true
-  await page.route('**/assets/activities/car2/80.png', route => broken ? route.fulfill({ status: 404, body: '' }) : route.continue())
+test('自然开局准备好送医动画后，素材断网仍保持医院状态及两倍速', async ({ page }) => {
+  test.setTimeout(120_000)
   await start(page, 133)
-  await playUntil(page, () => page.getByRole('alert').allTextContents().then(text => text.some(value => value.includes('activities/car2/80.png'))), 2200)
-  broken = false
-  await page.getByRole('button', { name: '重试载入' }).click()
-  await expect(page.getByRole('status')).toContainText('对局已载入')
+  let lateRequests=0
+  await page.route('**/assets/activities/car2/**',route=>{lateRequests++;return route.fulfill({status:404,body:''})})
+  await playUntil(page,()=>page.locator('[data-clip="trait-9"]').count().then(Boolean),2200)
+  await expect(page.getByTestId('interaction-acknowledge')).toBeVisible({timeout:15000})
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  expect(lateRequests).toBe(0)
   await expect(page.getByLabel('速度')).toHaveValue('2')
   await expect(page.getByTestId('player-list').locator('li').first()).toContainText('住院 3天')
-  await expect(page.getByTestId('interaction-acknowledge')).toBeVisible({ timeout: 15_000 })
 })

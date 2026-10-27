@@ -1,3 +1,4 @@
+import type { PreparedAnimations } from '../game/animation-preload'
 import { Application, Container, Graphics, ImageSource, Point, Sprite, Text, Texture, type Ticker } from 'pixi.js'
 import { WalkPreview } from '../characters/WalkPreview'
 import type { AssetManifest, Facing } from '../characters/assets'
@@ -73,6 +74,7 @@ export interface MapSceneOptions {
   onInspectCell?: (position: GridPoint) => void
   onAssetError?: (error: Error) => void
   requiredTextureUrls?: string[]
+  animationFrames?: PreparedAnimations
 }
 
 const FACING_BY_DIRECTION: Record<Direction, Facing> = {
@@ -105,6 +107,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
   const collectibles = [mapCollectibles, mapCollectibles.wand].map(item => ({ positions: item.positions, sprite: item[assetProfile] }))
   const textures = new Map<string, Texture>()
   const textureUrls = new Map<Texture,string>()
+  const animationTextures = new Map<string,Texture>()
   const bitmaps = new Map<string, ImageBitmap>()
   const inflightTextures = new Map<string, Promise<void>>()
   let hdMapRegionLoader: HdMapRegionLoader<HdMapRegion> | undefined
@@ -123,9 +126,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     hdMapRegionLoader?.dispose()
     hdMapRegionLoader = undefined
     if (initialized) app.destroy({ removeView: true }, { children: true })
-    for (const texture of textures.values()) texture.destroy(true)
+    for (const texture of new Set(textures.values())) texture.destroy(true)
     for (const bitmap of bitmaps.values()) bitmap.close()
-    textures.clear(); textureUrls.clear(); bitmaps.clear()
+    textures.clear(); textureUrls.clear(); bitmaps.clear(); animationTextures.clear()
   }
   const loadTexture = (url: string): Promise<void> => {
     if (textures.has(url)) return Promise.resolve()
@@ -134,6 +137,12 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     const loading = (async () => {
       const selectedUrl = profileAssetUrl(url, assetProfile)
       try {
+        const prepared=options.animationFrames?.get(selectedUrl)
+        if(prepared){
+          let texture=animationTextures.get(prepared.url)
+          if(!texture){texture=new Texture({source:new ImageSource({resource:prepared.image,resolution:assetProfile==='hd'?profileTextureResolution(url,assetProfile):1,alphaMode:'premultiply-alpha-on-upload',scaleMode:'linear'})});animationTextures.set(prepared.url,texture)}
+          textures.set(url,texture);textureUrls.set(texture,selectedUrl);return
+        }
         const response = await fetch(`${import.meta.env.BASE_URL}${selectedUrl}`, { signal: controller.signal })
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         const bitmap = await decodeBitmap(await response.blob(), controller.signal)

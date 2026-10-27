@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, shallowRef } from 'vue'
 import mapJson from './data/map.json'
 import SavePanel from './features/saves/SavePanel.vue'
 import { SaveClient, SaveClientError } from './features/saves/client'
@@ -11,6 +11,9 @@ import { parseAssetManifest, type AssetManifest } from './features/characters/as
 import { parseReactionManifest, type ReactionManifest } from './features/characters/reactions'
 import type { GameController, GameControllerOptions, RollPresentation } from './features/game/controller'
 import GamePanel from './features/game/GamePanel.vue'
+import GameLoading from './features/game/GameLoading.vue'
+import { gameActivityClips, prepareAnimationFrames, type PreparedAnimations, type AnimationProgress } from './features/game/animation-preload'
+import { animationFramesKey } from './features/game/animation-context'
 import DiceRoll from './features/game/DiceRoll.vue'
 import TurnControls from './features/game/TurnControls.vue'
 import GameToolbar from './features/game/GameToolbar.vue'
@@ -37,7 +40,7 @@ import { loadHdMapArtwork } from './features/assets/hd-map-art'
 import { isCompleteHdProfileIndex, mapAssetProfile, profileAssetUrl, type AssetProfile } from './features/assets/profiles'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
-interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; assetProfile:AssetProfile; stagingHost?:HTMLElement; committed?:boolean }
+interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; animations:PreparedAnimations; assetProfile:AssetProfile; stagingHost?:HTMLElement; committed?:boolean }
 interface PendingGame { state: GameState; lineup: string; assetProfile:AssetProfile; visual?: InteractionVisualPlan }
 
 const diceRoll = ref<RollPresentation | null>(null)
@@ -98,6 +101,10 @@ const boardArea = ref<HTMLElement>()
 const detailsOpen = ref(false)
 const preparedImages=ref<Record<string,string>>({})
 let ownedUiAssets:PreparedUiAssets|undefined
+const ownedAnimations=shallowRef<PreparedAnimations>()
+provide(animationFramesKey,ownedAnimations)
+const animationProgress=ref<AnimationProgress>({completed:0,total:0})
+const loadingStage=ref('读取本局素材清单')
 let scene: MapSceneHandle | undefined
 let gameController: GameController | undefined
 let sceneActivityAssets:ActivityManifest|undefined
@@ -207,6 +214,7 @@ function cleanupGame() {
   observer?.disconnect(); observer = undefined
   gameController?.dispose(); gameController = undefined
   scene?.destroy(); scene = undefined
+  ownedAnimations.value?.release();ownedAnimations.value=undefined
   sceneActivityAssets=undefined
 }
 async function fetchInteractionManifest(signal: AbortSignal): Promise<InteractionAssetsManifest> {
@@ -269,6 +277,7 @@ function failHandAsset(error: Error, cardId: number) {
 }
 async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortSignal,profile:AssetProfile,staged=false):Promise<PreparedGame> {
   let prepared:PreparedGame|undefined
+  animationProgress.value={completed:0,total:0};loadingStage.value='读取本局素材清单'
     const [entries, loadedInteractionAssets, loadedActivityAssets] = await Promise.all([Promise.all(state.players.map(async player => {
       const item = characters.value.find(character => character.id === player.characterId)
       if(!item)throw new Error('角色索引尚未准备，请返回选人重试索引后读取')
@@ -281,10 +290,17 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
     const displayInteractions=mapAssetProfile(loadedInteractionAssets,profile)
     const displayActivities=mapAssetProfile(loadedActivityAssets,profile)
     const ui=await prepareGameUiAssets(state,displayInteractions,signal,undefined,profile)
+    let animations:PreparedAnimations|undefined
     try{
+    loadingStage.value='准备场景与角色动画'
+    const clips=gameActivityClips(displayActivities,state.players.map(player=>player.characterId))
+    animations=await prepareAnimationFrames([...clips.flatMap(clip=>clip.frames),...entries.flatMap(entry=>[...entry.reactions.clips.flatMap(clip=>clip.frames),...entry.reactions.godOverlays])],signal,profile,progress=>{if(!signal.aborted)animationProgress.value=progress})
+    loadingStage.value='装配地图与角色'
+    await import('./features/game/CarnivalStage.vue')
     const loaded = await createMapScene(target, map, entries[0]!.manifest, {
       signal,
       assetProfile:profile,
+      animationFrames:animations,
       playerManifests: entries,
       mapRegions,
       mapBase:mapArtwork?.baseMap,
@@ -296,15 +312,11 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
         if ((!staged || prepared?.committed) && !savesOpen.value && referenceTab.value === null && !assetProfileBusy.value && game.value?.interaction?.kind !== 'target-choice') mapInspectionPosition.value = position
       },
       onAssetError: error=>{if(!staged||prepared?.committed)failRuntimeAsset(error)},
-      requiredTextureUrls:[...entries.flatMap(entry=>{
-        const godId=state.world.statuses[entry.playerId]?.godId
-        const god=entry.reactions.godOverlays.find(g=>g.godId===godId)
-        return god?[god.url]:[]
-      })],
+      requiredTextureUrls:entries.flatMap(entry=>[...entry.reactions.clips.flatMap(clip=>clip.frames.map(frame=>frame.url)),...entry.reactions.godOverlays.map(frame=>frame.url)]),
     })
-  prepared={loaded,interactions:displayInteractions,activities:displayActivities,ui,assetProfile:profile}
+  prepared={loaded,interactions:displayInteractions,activities:displayActivities,ui,animations,assetProfile:profile}
   return prepared
-  }catch(error){ui.release();throw error}
+  }catch(error){animations?.release();ui.release();throw error}
 }
 async function loadPendingGame(prepared?:PreparedGame) {
   if (!pending.value) return
@@ -312,18 +324,20 @@ async function loadPendingGame(prepared?:PreparedGame) {
   abort?.abort(); observer?.disconnect(); gameController?.dispose(); scene?.destroy()
   gameController = undefined; scene = undefined
   ownedUiAssets?.release();ownedUiAssets=undefined
+  ownedAnimations.value?.release();ownedAnimations.value=undefined
   abort = new AbortController()
   const signal = abort.signal
   loadState.value = 'loading'; loadError.value = ''; following.value = true
   try {
     const resources=prepared??await prepareGameScene(pending.value.state,host.value!,signal,pending.value.assetProfile)
     const {loaded,interactions:loadedInteractionAssets,activities:loadedActivityAssets}=resources
-    if (current !== generation) {loaded.destroy();resources.ui.release();resources.stagingHost?.remove();return}
+    if (current !== generation) {loaded.destroy();resources.ui.release();resources.animations.release();resources.stagingHost?.remove();return}
     resources.committed=true
     assetProfile.value=resources.assetProfile
     assetProfileSelection.value=resources.assetProfile
     sceneActivityAssets=loadedActivityAssets
     ownedUiAssets=resources.ui;preparedImages.value=resources.ui.urls
+    ownedAnimations.value=resources.animations
     if(resources.stagingHost){host.value!.replaceChildren(...resources.stagingHost.childNodes);resources.stagingHost.remove();loaded.resize(host.value!.clientWidth,host.value!.clientHeight)}
     scene = loaded
     interactionAssets.value = loadedInteractionAssets
@@ -495,6 +509,7 @@ async function switchPausedGameAssetProfile(target:AssetProfile,request:number,s
 
     const previousScene=scene
     const previousUi=ownedUiAssets
+    const previousAnimations=ownedAnimations.value
     const oldCanvas=host.value.firstChild
     host.value.replaceChildren(...targetHost.childNodes)
     targetHost.remove()
@@ -505,6 +520,7 @@ async function switchPausedGameAssetProfile(target:AssetProfile,request:number,s
     interactionAssets.value=prepared.interactions
     activityAssets.value=prepared.activities
     ownedUiAssets=prepared.ui
+    ownedAnimations.value=prepared.animations
     preparedImages.value=prepared.ui.urls
     portalDecorations.value=[]
     following.value=camera.following
@@ -516,11 +532,13 @@ async function switchPausedGameAssetProfile(target:AssetProfile,request:number,s
     await nextTick()
     previousScene.destroy()
     previousUi?.release()
+    previousAnimations?.release()
     if(oldCanvas?.parentNode)oldCanvas.parentNode.removeChild(oldCanvas)
   }catch(error){
     if(!committed){
       prepared?.loaded.destroy()
       prepared?.ui.release()
+      prepared?.animations.release()
       targetHost.remove()
     }
     throw error
@@ -697,7 +715,7 @@ async function loadFromSlot(slot:number){
    latestNoticeVisual=undefined;history.value=[];audio.startMatch();mode.value='game'
    await nextTick();await loadPendingGame(prepared)
    if(loadState.value!=='ready')throw new Error(loadError.value)
-  },prepared=>{prepared.loaded.destroy();prepared.ui.release();prepared.stagingHost?.remove()})
+  },prepared=>{prepared.loaded.destroy();prepared.ui.release();prepared.animations.release();prepared.stagingHost?.remove()})
   if(epoch===savesEpoch){savesMessage.value=`槽位${slot}读取成功`;savesOpen.value=false;paused.value=pauseBeforeSaves;pauseForSaves(paused.value)}
  }catch(error){if(epoch===savesEpoch)savesError.value=`${error instanceof Error?error.message:String(error)}；当前对局保留`}
  finally{if(epoch===savesEpoch){savesBusy.value=false;saveAbort=undefined}}
@@ -803,7 +821,7 @@ onBeforeUnmount(() => {
       <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" :asset-profile="assetProfile" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
       <p v-if="fullscreenError" class="fullscreen-error" role="alert">{{ fullscreenError }}</p>
       <div v-if="loadState !== 'ready'" class="overlay">
-        <div v-if="loadState === 'loading'"><p>正在载入地图、本局角色动作与完整交互素材…</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p></div>
+        <div v-if="loadState === 'loading'" class="game-loading-screen"><GameLoading :progress="animationProgress" :stage="loadingStage" :players="pending?.state.players ?? []" :profile="pending?.assetProfile ?? assetProfile" /><span class="sr-only" data-testid="pending-lineup">{{ pending?.lineup }}</span></div>
         <div v-else role="alert"><p>{{ loadError }}</p><p data-testid="pending-lineup">{{ pending?.lineup }}</p><div class="error-actions"><button @click="loadPendingGame()">重试载入</button><button @click="returnToSelection">返回选人</button></div></div>
       </div>
       <div v-if="assetProfileBusy&&mode==='game'" class="profile-switch-overlay" role="status">
@@ -827,7 +845,7 @@ onBeforeUnmount(() => {
 .audio-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:#d6e8eb;font:13px system-ui}.audio-controls label{display:flex;align-items:center;gap:5px}.audio-controls input[type=range]{width:90px}
 button,select{font:inherit;background:#294b58;color:#edf6f3;border:1px solid #55717a;border-radius:8px;padding:8px 12px;cursor:pointer}button:hover,select:hover{background:#376271}button:disabled{opacity:.42;cursor:default}button:focus-visible,select:focus-visible{outline:2px solid #ffe18a;outline-offset:3px}.eyebrow{font-size:11px;color:#a9c3c8;letter-spacing:.13em}
 .selection-shell,.game-shell{min-height:100dvh;background:radial-gradient(circle at 50% 0,#28505f,#132a35 55%);color:#ebf4f2;font:14px/1.5 system-ui,"PingFang SC",sans-serif;padding:20px 28px}.selection-shell header,.game-shell header{width:min(1260px,100%);margin:0 auto 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}.selection-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.selection-actions label{display:flex;align-items:center;gap:6px;color:#c4d5da}h1{margin:2px 0;font-size:24px}.asset-profile-error{width:min(1260px,100%);margin:0 auto 12px;color:#ffe18a}.selection-card{width:min(1120px,100%);margin:5vh auto 0;background:#183542e8;border:1px solid #466775;border-radius:18px;padding:24px;box-shadow:0 24px 70px #07151d88}.selection-title{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.selection-title h2{margin:0;font-size:25px}.selection-title p{margin:5px 0 18px;color:#abc1c5}.selection-title strong{white-space:nowrap;color:#ffe18a}.characters{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.characters button{padding:10px;display:flex;flex-direction:column;gap:6px;align-items:center;background:#20424f}.characters button[aria-pressed=true]{background:#40594f;border-color:#ffe18a;box-shadow:0 0 0 1px #ffe18a}.portrait{position:relative;width:72px;height:82px;display:grid;place-items:center;background:#68cef4;border-radius:11px;overflow:hidden}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:auto}.portrait b{position:absolute;top:5px;right:5px;z-index:1;width:22px;height:22px;display:grid;place-items:center;background:#ffe18a;color:#273733;border-radius:50%}.selection-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:22px}.selection-footer small{color:#9cb4b9}.selection-footer p{margin:2px 0;font-size:16px}.start{background:#ffe18a;color:#263d3b;border-color:#ffe18a;font-weight:800;padding:11px 24px}.selection-state{min-height:380px;display:grid;place-items:center;text-align:center}.scope{text-align:center;color:#91aab0;font-size:12px;margin:18px auto 0}
-.game-shell{display:flex;flex-direction:column}.game-stage{position:relative;width:min(1400px,100%);height:calc(100dvh - 104px);min-height:570px;margin:0 auto;display:flex;overflow:hidden;background:#66ccff;border:1px solid #486a75;border-radius:12px;box-shadow:0 12px 45px #0006}.canvas-host{flex:1;min-width:0;height:100%;cursor:grab}.canvas-host:active{cursor:grabbing}.canvas-host :deep(canvas){display:block;width:100%;height:100%}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#17323df2;text-align:center;padding:28px}.overlay p{max-width:720px;overflow-wrap:anywhere}.error-actions{display:flex;justify-content:center;gap:10px}.exit-fullscreen{position:absolute;right:334px;top:14px;z-index:4}.fullscreen-error{position:absolute;z-index:4;left:16px;top:16px;margin:0;padding:9px 12px;border:1px solid #ffb19a;border-radius:8px;background:#5b2925;color:#fff}.game-stage:fullscreen{width:100vw;height:100vh;max-width:none;border:0;border-radius:0}
+.game-shell{display:flex;flex-direction:column}.game-stage{position:relative;width:min(1400px,100%);height:calc(100dvh - 104px);min-height:570px;margin:0 auto;display:flex;overflow:hidden;background:#66ccff;border:1px solid #486a75;border-radius:12px;box-shadow:0 12px 45px #0006}.canvas-host{flex:1;min-width:0;height:100%;cursor:grab}.canvas-host:active{cursor:grabbing}.canvas-host :deep(canvas){display:block;width:100%;height:100%}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#17323df2;text-align:center;padding:28px}.game-loading-screen{width:min(560px,100%)}.overlay:has(.game-loading-screen){background:radial-gradient(ellipse at 50% 30%,#d6f2ff,#78bdec);padding:20px}.overlay p{max-width:720px;overflow-wrap:anywhere}.error-actions{display:flex;justify-content:center;gap:10px}.exit-fullscreen{position:absolute;right:334px;top:14px;z-index:4}.fullscreen-error{position:absolute;z-index:4;left:16px;top:16px;margin:0;padding:9px 12px;border:1px solid #ffb19a;border-radius:8px;background:#5b2925;color:#fff}.game-stage:fullscreen{width:100vw;height:100vh;max-width:none;border:0;border-radius:0}
 .profile-switch-overlay{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:#132f39b8;color:#eff7f5;text-align:center;pointer-events:all}.profile-switch-overlay p{margin:0 0 6px;font-size:18px;font-weight:700}.profile-switch-overlay small{color:#c4d8dc}
 .insolvent{position:absolute;z-index:3;left:18px;bottom:18px;width:min(470px,calc(100% - 370px));padding:18px;border:1px solid #ffb19a;border-radius:12px;background:#572d2be8;color:#fff}.insolvent h2{margin:0 0 8px}.insolvent p{margin:0 0 12px}
 .game-shell{height:100dvh;min-height:0;padding:16px 24px;gap:10px}.game-shell header{width:100%;margin:0 auto;flex-shrink:0}.game-shell>.audio-controls{flex-shrink:0}.audio-controls{font-size:14px}.game-stage{--game-sidebar-width:0px;width:100%;height:auto;min-height:0;flex:1;display:flex;flex-direction:column;background:#173744}.stage-content{position:relative;display:flex;flex:1;min-height:0;width:100%;container-type:size}.board-area{flex:1;min-width:0;height:100%;display:grid;place-items:center;container-type:size;background:radial-gradient(ellipse at center,#285968,#173744)}.canvas-host{flex:none;width:100%;height:100%;min-height:0}.fullscreen-toolbar{flex-shrink:0;padding:10px 16px;background:#183744;border-bottom:1px solid #4f6c76}.game-stage:fullscreen{height:100dvh;background:#173744}.game-stage:fullscreen .fullscreen-toolbar .audio-controls{width:100%;justify-content:center}.game-stage:fullscreen .stage-content{min-height:0}.asset-profile-error{flex-shrink:0;margin-bottom:0}

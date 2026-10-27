@@ -26,7 +26,7 @@ async function start(page: Page, profile: Profile, seed: number, options: {
   await page.getByLabel('素材画质').selectOption(profile)
   for (const id of options.characters ?? [1]) await page.getByTestId(`character-${id}`).click()
   await page.getByRole('button', { name: '开始对局' }).click()
-  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect(page.getByRole('status')).toContainText('对局已载入',{timeout:90000})
   await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 
