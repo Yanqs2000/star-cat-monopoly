@@ -1,0 +1,16 @@
+
+> star-cat-monopoly@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.0 /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/modern-map-foundation
+
+
+ Test Files  78 passed (78)
+      Tests  616 passed (616)
+   Start at  19:01:42
+   Duration  10.29s (tests 61%, environment 18%, transform 10%, import 10%, worker 1%)
+
+    Isolate  78 workers spawned · ~136ms startup each (spawn + environment, per file)
+             at least ~1.05s faster with isolate: false — reuses workers across files instead of one per file
+

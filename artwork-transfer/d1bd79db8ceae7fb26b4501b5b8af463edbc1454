@@ -1,0 +1,621 @@
+{
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "events": [
+    {
+      "id": 1,
+      "kind": "cash",
+      "description": "公共场所随地吐痰，被罚款500元",
+      "sourceAmount": -500,
+      "amount": -500
+    },
+    {
+      "id": 2,
+      "kind": "cash",
+      "description": "喧哗闹事噪音超过200分贝，被罚款2000元",
+      "sourceAmount": -2000,
+      "amount": -2000
+    },
+    {
+      "id": 3,
+      "kind": "cash",
+      "description": "遭遇抢劫，被抢走现金1888元",
+      "sourceAmount": -1888,
+      "amount": -1888
+    },
+    {
+      "id": 4,
+      "kind": "cash",
+      "description": "朋友聚餐，共花费1000",
+      "sourceAmount": -1000,
+      "amount": -1000
+    },
+    {
+      "id": 5,
+      "kind": "cash",
+      "description": "遭人陷害，损失3000元",
+      "sourceAmount": -3000,
+      "amount": -3000
+    },
+    {
+      "id": 6,
+      "kind": "cash",
+      "description": "闯红灯被逮到，罚款1500元",
+      "sourceAmount": -1500,
+      "amount": -1500
+    },
+    {
+      "id": 7,
+      "kind": "cash",
+      "description": "为希望小学捐款1000元",
+      "sourceAmount": -1000,
+      "amount": -1000
+    },
+    {
+      "id": 8,
+      "kind": "cash",
+      "description": "海外投资失败，损失12000元",
+      "sourceAmount": -12000,
+      "amount": -12000
+    },
+    {
+      "id": 9,
+      "kind": "cash",
+      "description": "虐待动物，被罚款8000元",
+      "sourceAmount": -8000,
+      "amount": -8000
+    },
+    {
+      "id": 10,
+      "kind": "cash",
+      "description": "缴纳养老保险金4500元",
+      "sourceAmount": -4500,
+      "amount": -4500
+    },
+    {
+      "id": 11,
+      "kind": "cash",
+      "description": "海外投资成功，赢利20000元",
+      "sourceAmount": 20000,
+      "amount": 20000
+    },
+    {
+      "id": 12,
+      "kind": "cash",
+      "description": "福利彩票中奖，获得6000元",
+      "sourceAmount": 6000,
+      "amount": 6000
+    },
+    {
+      "id": 13,
+      "kind": "cash",
+      "description": "受伤领取保险金8000元",
+      "sourceAmount": 8000,
+      "amount": 8000
+    },
+    {
+      "id": 14,
+      "kind": "cash",
+      "description": "举报别人贪污，获奖励10000",
+      "sourceAmount": 10000,
+      "amount": 10000
+    },
+    {
+      "id": 15,
+      "kind": "cash",
+      "description": "变卖家中古董获得8000元",
+      "sourceAmount": 8000,
+      "amount": 8000
+    },
+    {
+      "id": 16,
+      "kind": "cash",
+      "description": "扮乞丐体验生活一天，收入700元",
+      "sourceAmount": 700,
+      "amount": 700
+    },
+    {
+      "id": 17,
+      "kind": "cash",
+      "description": "心地善良，获当地政府褒奖，计2500",
+      "sourceAmount": 2500,
+      "amount": 2500
+    },
+    {
+      "id": 18,
+      "kind": "cash",
+      "description": "拾金不昧，得到失主谢礼3000",
+      "sourceAmount": 3000,
+      "amount": 3000
+    },
+    {
+      "id": 19,
+      "kind": "cash",
+      "description": "长期遵守交通规则获得奖励1600元",
+      "sourceAmount": 1600,
+      "amount": 1600
+    },
+    {
+      "id": 20,
+      "kind": "cash",
+      "description": "向电台哭穷，获得募捐800元",
+      "sourceAmount": 800,
+      "amount": 800
+    },
+    {
+      "id": 21,
+      "kind": "tickets",
+      "description": "翻阅明日便利书，获赠奖券100点",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 22,
+      "kind": "tickets",
+      "description": "拣到明日便利书，内含奖券100点",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 23,
+      "kind": "tickets",
+      "description": "参与明日便利书销售活动，获奖励100奖券",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 24,
+      "kind": "tickets",
+      "description": "从明日便利书中参悟星座，获奖励100奖券",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 25,
+      "kind": "tickets",
+      "description": "参加明日便利书知识问答，获100奖券奖励",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 26,
+      "kind": "tickets",
+      "description": "书中自有黄金屋，读明日便利书，获100奖券",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 27,
+      "kind": "cash",
+      "description": "存折被人冒领，损失3000元",
+      "sourceAmount": -3000,
+      "amount": -3000
+    },
+    {
+      "id": 28,
+      "kind": "cash",
+      "description": "在慈善活动中献爱心，捐款1000元",
+      "sourceAmount": 1000,
+      "amount": -1000,
+      "correction": "B-01"
+    },
+    {
+      "id": 29,
+      "kind": "cash",
+      "description": "倒卖文物被查封，损失10000元",
+      "sourceAmount": -10000,
+      "amount": -10000
+    },
+    {
+      "id": 30,
+      "kind": "cash",
+      "description": "宠物随地小便，赔偿损失500元",
+      "sourceAmount": -500,
+      "amount": -500
+    },
+    {
+      "id": 31,
+      "kind": "cash",
+      "description": "酒后大闹警局，被罚8000元",
+      "sourceAmount": -8000,
+      "amount": -8000
+    },
+    {
+      "id": 32,
+      "kind": "cash",
+      "description": "半夜打麻将被人投诉，遭罚款1000元",
+      "sourceAmount": -1000,
+      "amount": -1000
+    },
+    {
+      "id": 33,
+      "kind": "cash",
+      "description": "旗下工厂偷排污水，被罚10000元",
+      "sourceAmount": -10000,
+      "amount": -10000
+    },
+    {
+      "id": 34,
+      "kind": "cash",
+      "description": "在公园摘花被抓现行，罚款500元",
+      "sourceAmount": -500,
+      "amount": -500
+    },
+    {
+      "id": 35,
+      "kind": "cash",
+      "description": "拖欠税款，被罚9000元",
+      "sourceAmount": -9000,
+      "amount": -9000
+    },
+    {
+      "id": 36,
+      "kind": "cash",
+      "description": "意外继承到远房亲戚的遗产，有33333元",
+      "sourceAmount": 33333,
+      "amount": 33333
+    },
+    {
+      "id": 37,
+      "kind": "tickets",
+      "description": "遇到小偷，损失奖券100",
+      "sourceAmount": -100,
+      "amount": -100
+    },
+    {
+      "id": 38,
+      "kind": "tickets",
+      "description": "保护大熊猫，获奖励200奖券",
+      "sourceAmount": 200,
+      "amount": 200
+    },
+    {
+      "id": 39,
+      "kind": "tickets",
+      "description": "参加宠物比赛获头奖，获增100奖券",
+      "sourceAmount": 100,
+      "amount": 100
+    },
+    {
+      "id": 40,
+      "kind": "tickets",
+      "description": "挖到传说中的宝藏，获得300奖券",
+      "sourceAmount": 300,
+      "amount": 300
+    },
+    {
+      "id": 41,
+      "kind": "tickets",
+      "description": "协助警察办案，获得奖励150奖券",
+      "sourceAmount": 150,
+      "amount": 150
+    }
+  ],
+  "landings": [
+    {
+      "id": 149,
+      "position": {
+        "column": 8,
+        "row": 12
+      },
+      "kind": "shop"
+    },
+    {
+      "id": 150,
+      "position": {
+        "column": 9,
+        "row": 11
+      },
+      "kind": "shop"
+    },
+    {
+      "id": 151,
+      "position": {
+        "column": 31,
+        "row": 31
+      },
+      "kind": "shop"
+    },
+    {
+      "id": 152,
+      "position": {
+        "column": 32,
+        "row": 30
+      },
+      "kind": "shop"
+    },
+    {
+      "id": 165,
+      "position": {
+        "column": 18,
+        "row": 2
+      },
+      "kind": "card"
+    },
+    {
+      "id": 166,
+      "position": {
+        "column": 19,
+        "row": 17
+      },
+      "kind": "card"
+    },
+    {
+      "id": 167,
+      "position": {
+        "column": 27,
+        "row": 19
+      },
+      "kind": "card"
+    },
+    {
+      "id": 168,
+      "position": {
+        "column": 13,
+        "row": 23
+      },
+      "kind": "card"
+    },
+    {
+      "id": 169,
+      "position": {
+        "column": 21,
+        "row": 25
+      },
+      "kind": "card"
+    },
+    {
+      "id": 170,
+      "position": {
+        "column": 27,
+        "row": 35
+      },
+      "kind": "card"
+    },
+    {
+      "id": 171,
+      "position": {
+        "column": 13,
+        "row": 7
+      },
+      "kind": "luck"
+    },
+    {
+      "id": 172,
+      "position": {
+        "column": 22,
+        "row": 14
+      },
+      "kind": "luck"
+    },
+    {
+      "id": 173,
+      "position": {
+        "column": 16,
+        "row": 20
+      },
+      "kind": "luck"
+    },
+    {
+      "id": 174,
+      "position": {
+        "column": 24,
+        "row": 22
+      },
+      "kind": "luck"
+    },
+    {
+      "id": 175,
+      "position": {
+        "column": 22,
+        "row": 40
+      },
+      "kind": "luck"
+    },
+    {
+      "id": 176,
+      "position": {
+        "column": 18,
+        "row": 28
+      },
+      "kind": "luck"
+    },
+    {
+      "id": 177,
+      "position": {
+        "column": 14,
+        "row": 6
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 178,
+      "position": {
+        "column": 16,
+        "row": 4
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 179,
+      "position": {
+        "column": 23,
+        "row": 39
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 180,
+      "position": {
+        "column": 26,
+        "row": 36
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 181,
+      "position": {
+        "column": 4,
+        "row": 24
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 182,
+      "position": {
+        "column": 2,
+        "row": 26
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 183,
+      "position": {
+        "column": 39,
+        "row": 15
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 184,
+      "position": {
+        "column": 2,
+        "row": 30
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 185,
+      "position": {
+        "column": 8,
+        "row": 26
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 186,
+      "position": {
+        "column": 33,
+        "row": 17
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 187,
+      "position": {
+        "column": 39,
+        "row": 13
+      },
+      "kind": "tickets",
+      "ticketAmount": 10
+    },
+    {
+      "id": 188,
+      "position": {
+        "column": 17,
+        "row": 3
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 189,
+      "position": {
+        "column": 24,
+        "row": 38
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 190,
+      "position": {
+        "column": 37,
+        "row": 17
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 191,
+      "position": {
+        "column": 3,
+        "row": 31
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 192,
+      "position": {
+        "column": 7,
+        "row": 25
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 193,
+      "position": {
+        "column": 32,
+        "row": 16
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 194,
+      "position": {
+        "column": 37,
+        "row": 11
+      },
+      "kind": "tickets",
+      "ticketAmount": 30
+    },
+    {
+      "id": 195,
+      "position": {
+        "column": 15,
+        "row": 5
+      },
+      "kind": "tickets",
+      "ticketAmount": 50
+    },
+    {
+      "id": 196,
+      "position": {
+        "column": 25,
+        "row": 37
+      },
+      "kind": "tickets",
+      "ticketAmount": 50
+    },
+    {
+      "id": 197,
+      "position": {
+        "column": 1,
+        "row": 27
+      },
+      "kind": "tickets",
+      "ticketAmount": 50
+    },
+    {
+      "id": 198,
+      "position": {
+        "column": 34,
+        "row": 18
+      },
+      "kind": "tickets",
+      "ticketAmount": 50
+    }
+  ]
+}

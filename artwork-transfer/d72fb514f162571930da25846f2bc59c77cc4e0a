@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-2e52440e-59fb-40f0-9e45-a830063800c8.png",
+  "prompt": "Use case: faithful HD map-edge continuation. Image1 original layout; image2 same-framed completed TOP32 and LEFT32logical strips. Keep all their existing colored pixels and native alpha fixed. Reconstruct the missing area exactly from image1. Exact1:2 portrait144x288logical crop, output887x1774 or larger. Only existing grassy hill/outer edge above and ONE continuous yellow-gold cliff face below, meeting at the same irregular grassy lip as original. Preserve the original cliff planes and long vertical groove count/positions, the clipped existing tree trunk at upper-left, and the transparent outside sky on the right. Join the top green silhouette and left gold cliff continuously without a step, extra crack, rock, tree, cloud or vegetation. No new objects or decorative details. Match established crisp cartoon grass/cliff materials, shadows, contour widths and camera. Native RGBA outside contour only, no internal transparent holes; don't copy old extraction magenta/cyan fringes. Preserve full frame; no zoom.",
+  "referenceRect": [
+    2560,
+    900,
+    144,
+    288
+  ]
+}
