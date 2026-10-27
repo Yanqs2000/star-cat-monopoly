@@ -26,9 +26,9 @@ async function seedMondayGame(page: Page, seed: number): Promise<void> {
   await revealGameDetails(page); await page.getByLabel('速度').selectOption('2')
 }
 
-test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不重复消费', async ({ page }) => {
+test('开局准备的控骰反馈在后续素材断网时仍播放且不重复消费', async ({ page }) => {
   test.setTimeout(120_000)
-  let failed = true
+  let failed = false
   let frameRequests = 0
   await page.route('**/assets/characters/1/reactions/happy/*/1.png', route => {
     frameRequests += 1
@@ -37,6 +37,8 @@ test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不�
   })
   await seedMondayGame(page, 153)
 
+  failed = true
+  const preparedRequests=frameRequests
   const hand = page.getByTestId('hand-panel')
   const beforeReaction = await page.locator('canvas').screenshot()
   const lineup = (await page.getByTestId('player-list').locator('li strong').allTextContents()).join(' · ')
@@ -44,14 +46,10 @@ test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不�
   await hand.locator('[data-card-id="5"]').click()
   await page.getByTestId('interaction-confirm').click()
   await page.getByTestId('dice-2').click()
-  await expect(page.getByRole('alert')).toContainText('characters/1/reactions/happy/')
-  await expect(page.getByTestId('pending-lineup')).toHaveText(lineup)
-
-  failed = false
-  await page.getByRole('button', { name: '重试载入' }).click()
-  await expect(page.getByRole('status')).toContainText('对局已载入')
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  expect(frameRequests).toBe(preparedRequests)
+  expect((await page.getByTestId('player-list').locator('li strong').allTextContents()).join(' · ')).toBe(lineup)
   await expect(page.getByLabel('速度')).toHaveValue('2')
-  await expect.poll(() => frameRequests).toBeGreaterThanOrEqual(2)
   await expect(page.getByTestId('interaction-panel')).toContainText('控骰卡')
   await expect(page.getByTestId('hand-panel').getByTestId('hand-card')).toHaveCount(4)
   await page.waitForTimeout(500)

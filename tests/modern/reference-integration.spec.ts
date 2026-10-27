@@ -9,6 +9,12 @@ import MapInfoPanel from '../../src/modern/features/game/MapInfoPanel.vue'
 import { createGame } from '../../src/modern/features/game/setup'
 import type { MapSceneOptions } from '../../src/modern/features/map/MapScene'
 
+// These state/lifecycle tests replace browser rendering; real decoding is covered by animation-preload and browser tests.
+vi.mock('../../src/modern/features/game/animation-preload', async importOriginal => ({
+  ...await importOriginal<typeof import('../../src/modern/features/game/animation-preload')>(),
+  prepareAnimationFrames: async () => ({ get: () => undefined, clip: () => undefined, release() {} }),
+}))
+vi.mock('../../src/modern/features/game/CarnivalStage.vue', () => ({default:{name:'CarnivalStage',template:'<div />'}}))
 const scene = vi.hoisted(() => ({
   transitionPlayer: vi.fn(), setPlayers: vi.fn(), setCompanies: vi.fn(), setProperties: vi.fn(), setRentHighlight: vi.fn(), setWorld: vi.fn(),
   setTargeting: vi.fn(), showMarkers: vi.fn(), setSpeed: vi.fn(), follow: vi.fn(),

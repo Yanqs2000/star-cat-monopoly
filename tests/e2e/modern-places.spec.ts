@@ -32,13 +32,12 @@ test('自然seed4首轮魔法门原分布图、头像、飞行暂停和东站到
   await expect(page.getByTestId('player-list').locator('li').first()).toContainText('31,7')
   expect(errors).toEqual([])
 })
-test('自然seed4飞行原图404后重试继续同一目的地并保留两倍速',async({page})=>{
-  test.setTimeout(150_000);let broken=true
+test('自然seed4飞行预加载后断网仍到达同一目的地并保留两倍速',async({page})=>{
+  test.setTimeout(150_000);let broken=false
   await page.route('**/assets/activities/fly-1-4/1.png',route=>broken?route.fulfill({status:404,body:''}):route.continue())
   await start(page,4);await playUntil(page,()=>page.getByTestId('portal-1').count().then(Boolean))
-  await expect(page.getByTestId('portal-1')).toBeEnabled();await page.getByTestId('portal-1').click()
-  await expect(page.getByRole('alert')).toContainText('fly-1-4/1.png')
-  broken=false;await page.getByRole('button',{name:'重试载入'}).click()
+  await expect(page.getByTestId('portal-1')).toBeEnabled();broken=true;await page.getByTestId('portal-1').click()
+  await expect(page.getByRole('alert')).toHaveCount(0)
   await expect(page.getByRole('status')).toContainText('对局已载入')
   await expect(page.getByLabel('速度')).toHaveValue('2')
   await expect(page.getByTestId('interaction-panel')).toContainText('已抵达目的地',{timeout:15_000})
@@ -73,7 +72,7 @@ test('自然seed4当前北站和保持原地均不飞行',async({page})=>{
   }
 })
 
-test('自然seed446法院胜诉转运素材失败恢复，拘留2天后重新入场',async({page})=>{
+test('自然seed446法院与转运预加载后断网仍胜诉，拘留2天后重新入场',async({page})=>{
   test.setTimeout(360_000)
   let brokenCase=false,brokenCar=false
   await page.route('**/assets/activities/court-case/1.png',route=>brokenCase?route.fulfill({status:404,body:''}):route.continue())
@@ -86,12 +85,10 @@ test('自然seed446法院胜诉转运素材失败恢复，拘留2天后重新入
   const target=page.locator('[data-testid^="court-target-"]').first()
   const targetId=Number((await target.getAttribute('data-testid'))?.replace('court-target-',''))
   await expect(target).toBeEnabled();brokenCase=true;await target.click()
-  await expect(page.getByRole('alert')).toContainText('court-case/1.png')
-  brokenCase=false;brokenCar=true
-  await page.getByRole('button',{name:'重试载入'}).click()
+  await expect(page.getByRole('alert')).toHaveCount(0)
+  brokenCar=true
   await expect(page.getByTestId('court-case-0')).toBeEnabled();await page.getByTestId('court-case-0').click()
-  await expect(page.getByRole('alert')).toContainText('car1/80.png',{timeout:20_000})
-  brokenCar=false;await page.getByRole('button',{name:'重试载入'}).click()
+  await expect(page.getByRole('alert')).toHaveCount(0)
   await expect(page.getByTestId('interaction-panel')).toContainText('原告胜诉',{timeout:20_000})
   await expect(page.getByLabel('速度')).toHaveValue('2')
   const defendant=page.getByTestId('player-list').locator('li').nth(targetId-1)
