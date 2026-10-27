@@ -1,0 +1,292 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "browser": "local Chrome / SwiftShader",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "regionCount": 30,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "allTextureResolutionsRegistered": true,
+  "commonNativeGrid": true,
+  "bleedPixels": 5,
+  "waitsForNativeBitmapDecoding": true,
+  "views": [
+    {
+      "name": "overview",
+      "width": 1800,
+      "height": 1600,
+      "camera": {
+        "x": -26.400000000000034,
+        "y": -154.8,
+        "scale": 0.4,
+        "following": false
+      },
+      "viewportScale": 2.25,
+      "actualScreenScale": 0.9,
+      "sourceFocus": [
+        1250,
+        1450
+      ],
+      "pending": 0,
+      "decodedCount": 44
+    },
+    {
+      "name": "southwest-2x",
+      "width": 1800,
+      "height": 1200,
+      "camera": {
+        "x": -116,
+        "y": -1327,
+        "scale": 1,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        700,
+        1940
+      ],
+      "pending": 0,
+      "decodedCount": 44
+    },
+    {
+      "name": "west-cliff-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -816,
+        "y": -4252,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        640,
+        2020
+      ],
+      "pending": 0,
+      "decodedCount": 44,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "south-cliff-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -1498.6666666666665,
+        "y": -4252,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        896,
+        2020
+      ],
+      "pending": 0,
+      "decodedCount": 46,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "south-building-2x",
+      "width": 1400,
+      "height": 1200,
+      "camera": {
+        "x": -1117.7142857142856,
+        "y": -1353.7142857142856,
+        "scale": 1.1428571428571428,
+        "following": false
+      },
+      "viewportScale": 1.75,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1512,
+        1760
+      ],
+      "pending": 0,
+      "decodedCount": 54
+    },
+    {
+      "name": "south-road-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3461.333333333333,
+        "y": -3585.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1632,
+        1770
+      ],
+      "pending": 0,
+      "decodedCount": 54,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "camera-2x",
+      "width": 1400,
+      "height": 1200,
+      "camera": {
+        "x": -1881.1428571428569,
+        "y": -1068,
+        "scale": 1.1428571428571428,
+        "following": false
+      },
+      "viewportScale": 1.75,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        2180,
+        1510
+      ],
+      "pending": 0,
+      "decodedCount": 59
+    },
+    {
+      "name": "camera-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4741.333333333333,
+        "y": -2945.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2112,
+        1530
+      ],
+      "pending": 0,
+      "decodedCount": 59,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "east-grass-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5029.333333333333,
+        "y": -2630.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2220,
+        1412
+      ],
+      "pending": 0,
+      "decodedCount": 59,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "east-cliff-2x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -1690.6666666666665,
+        "y": -1965.333333333333,
+        "scale": 1.3333333333333333,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1752,
+        2012
+      ],
+      "pending": 0,
+      "decodedCount": 63
+    }
+  ],
+  "requestedReviewAtlases": [
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r2c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r2c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r3c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r3c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r2c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r2c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r3c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r3c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-04/r8c7.webp"
+  ],
+  "errors": []
+}

@@ -1,0 +1,63 @@
+{
+  "name": "star-cat-monopoly",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "星猫大富翁原版兼容运行 · Vue + TypeScript + Ruffle",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "predev": "node scripts/prepare-runtime.mjs",
+    "prebuild": "node scripts/prepare-runtime.mjs",
+    "test:e2e": "playwright test",
+    "dev:modern": "vite --mode modern --host 127.0.0.1",
+    "build:modern": "vue-tsc --noEmit && vite build --mode modern",
+    "build:modern:hd": "npm run verify:modern-hd-assets && npm run verify:modern-map-assets && npm run build:modern",
+    "assets:modern-hd": "${PYTHON:-python3} scripts/build-modern-hd-assets.py",
+    "verify:modern-hd-assets": "${PYTHON:-python3} scripts/verify-modern-hd-assets.py",
+    "test:modern-hd-assets": "${PYTHON:-python3} scripts/test_modern_hd_assets.py",
+    "preview:modern": "vite preview --mode modern --host 127.0.0.1 --port 4184",
+    "data:modern": "node scripts/build-modern-map.mjs",
+    "test:e2e:modern": "playwright test --config playwright.modern.config.ts",
+    "schema:saves": "node scripts/build-save-schema.mjs",
+    "check:saves": "node scripts/build-save-schema.mjs --check",
+    "server:modern": "tsx server/main.ts",
+    "report:modern-art": "python3 scripts/report-modern-art-coverage.py",
+    "check:modern-art": "python3 scripts/report-modern-art-coverage.py --check",
+    "verify:modern-map-assets": "${PYTHON:-python3} scripts/verify_hd_map_assets.py",
+    "test:modern-map-assets": "${PYTHON:-python3} -m unittest discover -s scripts -p \"test_hd_map_*.py\"",
+    "verify:modern-static-assets": "${PYTHON:-python3} scripts/verify_static_hd_assets.py"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.1.2",
+    "@fastify/static": "10.1.5",
+    "@ruffle-rs/ruffle": "0.6.0",
+    "ajv": "8.20.0",
+    "fastify": "5.12.5",
+    "pinia": "^4.0.3",
+    "pixi.js": "8.20.1",
+    "three": "^0.186.0",
+    "vue": "^3.5.42"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "^26.5.0",
+    "@types/three": "^0.185.4",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/test-utils": "^2.5.0",
+    "jsdom": "^30.0.1",
+    "ts-json-schema-generator": "2.9.0",
+    "tsx": "4.23.15",
+    "typescript": "~5.9.3",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0",
+    "vue-tsc": "^3.3.11"
+  },
+  "engines": {
+    "node": ">=24.19.0 <25"
+  }
+}

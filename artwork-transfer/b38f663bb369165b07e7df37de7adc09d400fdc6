@@ -1,0 +1,236 @@
+{
+  "date": "2026-10-23",
+  "phase": "installed-awaiting-final-user-confirmation",
+  "builtInGenerationCalls": 1,
+  "nativeReuseCorrections": 2,
+  "all109WorkingAssembliesUnchanged": true,
+  "all192TileMastersUnchanged": true,
+  "allPriorRepairAndPropFilesUnchanged": true,
+  "prior126ReviewAtlasesUnchanged": true,
+  "approvedFourFilesUnchanged": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtection": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": true
+  },
+  "runtimeManifest": "public/modern/hd-map/full-map-v1/manifest.json",
+  "runtimeManifestSha256": "bbdc048589987f5ed88d4b301bcac2c9e21cc3ea1e75a58dded7a90c23671c25",
+  "installedNativeRegions": 178,
+  "nativeForegroundSprites": 4,
+  "retainedExactRgbaCrops": 94,
+  "overviewReplay": {
+    "nativeRegions": 178,
+    "nativeRegionFilesByteIdentical": 178,
+    "nativeForegroundSprites": 4,
+    "basePixelSize": [
+      5400,
+      5104
+    ],
+    "overviewLayerReplay": [
+      {
+        "worldSample": [
+          640,
+          500,
+          32,
+          32
+        ],
+        "maximumRgbaDifference": 0
+      },
+      {
+        "worldSample": [
+          1120,
+          500,
+          32,
+          32
+        ],
+        "maximumRgbaDifference": 0
+      },
+      {
+        "worldSample": [
+          768,
+          900,
+          32,
+          32
+        ],
+        "maximumRgbaDifference": 0
+      },
+      {
+        "worldSample": [
+          1000,
+          420,
+          32,
+          32
+        ],
+        "maximumRgbaDifference": 0
+      },
+      {
+        "worldSample": [
+          416,
+          1710,
+          32,
+          32
+        ],
+        "maximumRgbaDifference": 0
+      }
+    ],
+    "originalApprovedFilesModified": false
+  },
+  "repairAlphaAudits": {
+    "south-bridge-material-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9967030166012811,
+      "nativeAlphaModified": false
+    },
+    "pilot-curb-native-continuation-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 16089,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.8550591428792317,
+      "nativeAlphaModified": false
+    },
+    "green30-whole-native-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 3825,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.09151114406954229,
+      "nativeAlphaModified": false
+    }
+  },
+  "projectUnitTests": 648,
+  "mapPythonTests": 32,
+  "newArtifactTests": 10,
+  "relatedE2eTests": 9,
+  "buildModernPassed": true,
+  "globalReviewViews": 13,
+  "bridgeViews": 5,
+  "installedRuntimeViews": 14,
+  "browserErrors": [],
+  "usesOldMapBehindNativeArt": false,
+  "noFetchOrAlphaOverridesInInstalledReview": true,
+  "productionEnabled": true,
+  "userFinalConfirmation": "pending",
+  "remainingGeneration": 0,
+  "knownVisualCorrectionTasks": 0,
+  "remaining": [
+    "Final user visual confirmation required by the user-provided AGENTS.md"
+  ],
+  "resourceMeasurement": {
+    "maxTextureSize": 8192,
+    "jsHeapUsedBytes": 35817344,
+    "maxProfileDimension": 5400,
+    "hdResponseCount": 1385,
+    "loadedHdImageCount": 1314,
+    "downloadedBytes": 130304878,
+    "encodedResourceBytes": 137702134,
+    "failedResponses": [],
+    "estimatedDecodedRgbaBytes": 845840496,
+    "loadedByGroup": {
+      "characters": {
+        "count": 360,
+        "decodedRgbaBytes": 45017808
+      },
+      "companies": {
+        "count": 11,
+        "decodedRgbaBytes": 6767792
+      },
+      "world": {
+        "count": 790,
+        "decodedRgbaBytes": 221277952
+      },
+      "map-full": {
+        "count": 91,
+        "decodedRgbaBytes": 349634832
+      },
+      "static": {
+        "count": 126,
+        "decodedRgbaBytes": 223142112
+      }
+    }
+  },
+  "resourceMeasurementNote": "ResourceTiming wire bytes and encoded body bytes; decoded dimensions sum includes images released during startup, not actual resident memory.",
+  "sourceCodeSha256": {
+    "src/modern/ModernApp.vue": "1b6ce377d6a6f66a6300af2cb0f79f1e532ec469455f3d918fff77074aef9708",
+    "src/modern/features/assets/hd-map-art.ts": "b64a7d9727c98e7a7cc1929885142be129a1eea33a93f6a3468f3d8180d0e54d",
+    "src/modern/features/map/MapScene.ts": "32fffa1ae507a464292a3d9dc16384ada2160064a9c14436045679890416e6e3",
+    "scripts/package_full_hd_map.py": "2f20e80d2a83b030136a658807c9332ef7baa95cfcfcec78d9f86690a7e2c966",
+    "scripts/verify_full_hd_map_assets.py": "738f32a56908313d91b8829b86c1e6b5221e0232c2aaac68c3453195dd2c9307"
+  },
+  "installedScreenshotHashes": [
+    {
+      "name": "native-bridge-2x",
+      "sha256": "318e729809b8ebc045a9b053949d9a87e0d496435c09e04b31da6f50f0541d2e"
+    },
+    {
+      "name": "native-west-cap-2x",
+      "sha256": "5f892f20b20ad7a3f8fa4d627300cae2aa67a2ae11cc4ace78f0245e369d6acf"
+    },
+    {
+      "name": "native-five-trees-4x",
+      "sha256": "2ae1462f54cf279cac2282a66a99994c1f0734db6b47ef86f3538f52418dcee4"
+    },
+    {
+      "name": "native-cyan10-4x",
+      "sha256": "26c5456ee0b482af6870c7b0ae453dc1feac60e224ebd1407b5adccaff758b4a"
+    },
+    {
+      "name": "native-whole-map-080",
+      "sha256": "28697c4e8102c3295ef92d2339aa339bf58da74c17fdd46401f5da0430c0124a"
+    },
+    {
+      "name": "native-overview-065",
+      "sha256": "39a3a7ba8f5812b7994485ce3d7f6bf27758292d07c4fcf5bb56599b82241bf5"
+    },
+    {
+      "name": "native-top-boundary-4x",
+      "sha256": "e8497707fe685b61893f31b21b6de6bd0dd68c6abc40427cdbad3d278805eb35"
+    },
+    {
+      "name": "base-bridge-2x",
+      "sha256": "fd8b5bf684537502739bf2c7e47fdcc4a7feab3f5cfcb5d1deeefdf5909b8df7"
+    },
+    {
+      "name": "base-west-cap-2x",
+      "sha256": "119210bfd0ef720515846e03b1783e516daf9aacfce902f4c29f73b380b156d8"
+    },
+    {
+      "name": "base-five-trees-4x",
+      "sha256": "ad24e286dc73a25963e98f15b223ef3cd5d67b9b5a6bccfa2c2d1f1354bd2e95"
+    },
+    {
+      "name": "base-cyan10-4x",
+      "sha256": "303451de6fb2cc00ff088e36370d7cebb4bc5493a617695be6129a066bdc3039"
+    },
+    {
+      "name": "base-whole-map-080",
+      "sha256": "b220b60e31cd3d1d92e5a7ca58485ebf1e3cab917586deb03dccfb76041b43fb"
+    },
+    {
+      "name": "base-overview-065",
+      "sha256": "39a3a7ba8f5812b7994485ce3d7f6bf27758292d07c4fcf5bb56599b82241bf5"
+    },
+    {
+      "name": "base-top-boundary-4x",
+      "sha256": "2e5b1bd2b9df235755e2a95efd2d38a6d7418d35d2e6921bba48db9319f5da1e"
+    }
+  ]
+}

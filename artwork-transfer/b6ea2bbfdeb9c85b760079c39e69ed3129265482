@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-ff7381a3-f354-4010-ad42-4480135f2e6f.png",
+  "prompt": "Use case: style-transfer. Asset type: transparent HD isometric game map crop, portrait2:3.\nImage1 EDIT TARGET contains completed lower-left grass edge and lower tree trunk plus a tiny diagonal curb corner. Empty transparent regions are unfinished. Image2 is the ORIGINAL LAYOUT of exactly this same256x384 logical crop. Reconstruct missing art from Image2, retaining the finished target coordinates, palette, scale and grass texture.\nPrecisely preserve original island silhouette and sky gaps. Top has ONE white cloud entering from the TOP and continuing beyond the RIGHT boundary, with big rounded left lobe near x100,y70 and the same narrower lower lobes. This is a cropped segment of one longer cloud, NOT a new closed small cloud: keep it cropped at top/right. Cloud pale cyan shading, glossy white smooth surface, crisp outline, no new spiral visible in this crop (main spiral is farther right outside crop). Below cloud, one irregular grass rim descends down the left edge from x~110 at y150 to x~65 near bottom. Outside cloud/island is genuine transparency, never solid sky or white fill. Keep the thin original open sky slit between left cloud underside and grassy ledge.\nExactly ONE multi-lobed green tree below midheight, same canopy footprint and trunk position as original; complete its upper canopy and preserve the finished lower trunk in Image1. Same leaf canopy lobes, not additional trees. Bottom-right has the original cropped diagonal asphalt/white-curb corner, small cropped blue30 disc and part of ONE engraved cat face at right edge, same coordinates/crops; do not shift these inward or duplicate any face.\nFine dense bright yellow-green grass leaves and dirt shading match Image1. No dark original scratch arcs on lawn. No new flowers, rocks, vines, objects, numerals, labels, clouds or external shadows. No internal transparent holes. No reframing or margins. Native high-resolution1024x1536 portrait RGBA, same2:3 framing.",
+  "referenceRect": [
+    0,
+    1100,
+    256,
+    384
+  ]
+}

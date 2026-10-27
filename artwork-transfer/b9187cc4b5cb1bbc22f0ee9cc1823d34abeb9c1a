@@ -1,0 +1,30 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r3c1-r1.png",
+  "prompt": "Reuse existing r3c1-r1 native parent for upper boundary coverage r2c1. Original source-visible bbox[210,247,240,256] lies inside parent reference[160,612,256,384]; source above612 is entirely transparent. Native parent top edge across core x160..400 has alpha0. Parent outline moves the small grass lip below676 into adjacent r3c1; core alpha0..1 is transparent coverage, not a newly drawn independent visible object. No new generation, no alpha changes, no source-outline clipping.",
+  "referenceRect": [
+    160,
+    612,
+    256,
+    384
+  ],
+  "verifiedTransparentPadding": true,
+  "sourceReuse": {
+    "tile": "r3c1",
+    "attempt": "r1",
+    "originalVisibleBBox": [
+      210,
+      247,
+      240,
+      256
+    ],
+    "nativeTopEdgeAlpha": [
+      0,
+      0
+    ],
+    "nativeUpperFragmentAlpha": [
+      0,
+      1
+    ],
+    "noRegeneration": true
+  }
+}

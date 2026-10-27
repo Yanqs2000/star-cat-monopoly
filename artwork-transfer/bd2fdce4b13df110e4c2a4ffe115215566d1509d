@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-0694fdb7-0c2d-4ce8-80fb-95d25df641f3.png",
+  "prompt": "Use case: faithful map-edge continuation. Image1 original layout for this narrow mostly-empty crop; Image2 existing HD LEFT32 and BOTTOM32 logical strips at exactly same framing. Preserve those fixed colored pixels and transparency. Output the same1:2 portrait144x288logical crop, at least887x1774. MOST of the image is genuinely transparent sky. Only the LOWER-LEFT/LOWER area contains the existing continuous green grassy island/hill edge, connecting both fixed HD strips. Follow the original silhouette and existing anchor positions precisely. Do NOT fill the empty upper area with landscape. Do not zoom the grass to fill the canvas. No new cloud, tree, bush, flower, building, cliff, object or markings. Ignore tiny black or magenta/cyan extraction defects in old sky. Existing hill has subtle dark-green contour; keep its source placement and match grass texture to both anchors. Solid native grass pixels, no interior holes; native RGBA transparency only outside island edge. Same camera and crop.",
+  "referenceRect": [
+    2560,
+    420,
+    144,
+    288
+  ]
+}

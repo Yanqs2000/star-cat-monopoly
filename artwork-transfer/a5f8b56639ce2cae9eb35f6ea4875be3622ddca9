@@ -1,0 +1,28 @@
+{
+  "image": "public/modern/hd-map/full-map-v1/base.webp",
+  "allowance": 4,
+  "samples": [
+    {
+      "x": 1420,
+      "expectedOriginalUpperY": 1901,
+      "observedUpperY": 1915,
+      "error": 14,
+      "passed": false
+    },
+    {
+      "x": 1430,
+      "expectedOriginalUpperY": 1895,
+      "observedUpperY": 1908,
+      "error": 13,
+      "passed": false
+    },
+    {
+      "x": 1440,
+      "expectedOriginalUpperY": 1887,
+      "observedUpperY": 1902,
+      "error": 15,
+      "passed": false
+    }
+  ],
+  "passed": false
+}

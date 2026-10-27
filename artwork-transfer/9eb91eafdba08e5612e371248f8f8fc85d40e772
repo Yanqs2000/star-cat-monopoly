@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5198/modern.html
+Call log:
+[2m  - navigating to "http://127.0.0.1:5198/modern.html", waiting until "load"[22m
+
+    at /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261024-batch30/runtime-review.mjs:10:12 {
+  log: [
+    '  - navigating to "http://127.0.0.1:5198/modern.html", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.22.1

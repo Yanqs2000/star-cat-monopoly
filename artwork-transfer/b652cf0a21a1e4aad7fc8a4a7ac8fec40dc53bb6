@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "status": "unreviewed",
+  "method": "imagegen map reference redraw",
+  "sourceMap": "public/modern/assets/map.png",
+  "sourceMapSha256": "e95bc2626fa2b1b89cdb8d52e84fbb69153aa97aebaeb2cedf5b5f3a34556653",
+  "mapRect": [
+    640,
+    420,
+    512,
+    512
+  ],
+  "gameWorldOffset": [
+    -184,
+    -313
+  ],
+  "logicalSize": [
+    512,
+    512
+  ],
+  "tileGrid": [
+    2,
+    2
+  ],
+  "paddingUsedForReference": 16,
+  "tiles": [
+    {
+      "tile": "r0c0",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9/r0c0.png",
+      "sourceSha256": "37698686b0e891e6b5e93b1557d5424dcba7956c71d8b0f488e93a9159a8037f",
+      "logicalPosition": [
+        640,
+        420
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/references/r0c0-reference.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated sample; align/fit verification required",
+      "originalInputReference": ".analysis-cache/hd-rework/map-tiles/r0c0-reference.png"
+    },
+    {
+      "tile": "r0c1",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9/r0c1.png",
+      "sourceSha256": "31c3e6f3ce4dc635ea73ee4e609a4e39afe69f45db3c7454797d2a4dd89d6883",
+      "logicalPosition": [
+        896,
+        420
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/references/r0c1-reference.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated sample; align/fit verification required",
+      "originalInputReference": ".analysis-cache/hd-rework/map-tiles/r0c1-reference.png"
+    },
+    {
+      "tile": "r1c0",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9/r1c0.png",
+      "sourceSha256": "9e30ec58b75a2f6cf511e1486bb32c3558b42d0fb7778abbe809ad243e140705",
+      "logicalPosition": [
+        640,
+        676
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/references/r1c0-reference.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated sample; align/fit verification required",
+      "originalInputReference": ".analysis-cache/hd-rework/map-tiles/r1c0-reference.png"
+    },
+    {
+      "tile": "r1c1",
+      "sourcePath": "public/modern/hd-masters/map/region-11-9/r1c1.png",
+      "sourceSha256": "5d9c91bc37ea14d485fb7d1f0e36c706d1ea442d053ec199e9334099d5e97f87",
+      "logicalPosition": [
+        896,
+        676
+      ],
+      "logicalSize": [
+        256,
+        256
+      ],
+      "inputReference": "public/modern/hd-masters/map/region-11-9/references/r1c1-reference.png",
+      "generationResultPixels": [
+        1254,
+        1254
+      ],
+      "sourceAlphaRange": [
+        255,
+        255
+      ],
+      "pixelDetailStatus": "generated sample; align/fit verification required",
+      "originalInputReference": ".analysis-cache/hd-rework/map-tiles/r1c1-reference.png"
+    }
+  ]
+}

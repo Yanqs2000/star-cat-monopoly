@@ -1,0 +1,6759 @@
+{
+  "version": 1,
+  "kind": "full-map",
+  "reviewStatus": "approved",
+  "scope": "Complete static main map; character and Blender work excluded.",
+  "logicalSize": [
+    2700,
+    2552
+  ],
+  "regionCount": 192,
+  "sourceMapSha256": "e95bc2626fa2b1b89cdb8d52e84fbb69153aa97aebaeb2cedf5b5f3a34556653",
+  "baseMap": {
+    "path": "hd-map/full-map-v1/base.webp",
+    "pixelDensity": 2,
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "outputSha256": "75f69e05f791507fdc77c76f812515139a05099438ed84f7650b0a38c64157b9"
+  },
+  "mapRegions": [
+    {
+      "id": "r0c2",
+      "path": "hd-map/full-map-v1/part-000.webp",
+      "logicalRect": [
+        400.0861759425494,
+        -0.07899461400359087,
+        239.91382405745063,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1044,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7c6e0b907e440806b718a67fd407f666f5554923b8b2158167c77dad617b0d08",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c3",
+      "path": "hd-map/full-map-v1/part-001.webp",
+      "logicalRect": [
+        640.0,
+        -0.07899461400359087,
+        256.0,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        456.0,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1114,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "eda1b6c2c6b63d18c1865027871c25b31622da7a28aa67d903e611b521d7c483",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c4",
+      "path": "hd-map/full-map-v1/part-002.webp",
+      "logicalRect": [
+        896.0,
+        -0.07899461400359087,
+        256.0,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        712.0,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1114,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "96185b84473f7919a9bbc548fa12505238aec3fae4746b263c55ed497422e7b8",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c5",
+      "path": "hd-map/full-map-v1/part-003.webp",
+      "logicalRect": [
+        1152.0,
+        -0.07899461400359087,
+        239.91382405745063,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        968.0,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1044,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "bbb0c8e894098ef4928b15507ba1429d533d4cc1e9c540ec215d15107c820bad",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c6",
+      "path": "hd-map/full-map-v1/part-004.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        -0.07899461400359087,
+        240.14362657091561,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1045,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "eed56068d3f98300fb5f0aded85fb20d8d3313a14430d5fa79a77f3d707a7656",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c7-retained-0",
+      "path": "hd-map/full-map-v1/part-005.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        -0.07899461400359087,
+        239.91382405745063,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1044,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "c2e36322684c46ba7b93387d8e6eca184f3d6d166fb7f0f1990dca65128734f4",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c7-retained-1",
+      "path": "hd-map/full-map-v1/part-006.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        115.97127468581687,
+        119.95691202872531,
+        64.1149012567325
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        -197.02872531418313
+      ],
+      "pixelSize": [
+        522,
+        279
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "543f49d529ac98bea72641b0cf314aa8080833618ee256d33994e731a02fc06e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c8-retained-0",
+      "path": "hd-map/full-map-v1/part-007.webp",
+      "logicalRect": [
+        1871.971274685817,
+        -0.07899461400359087,
+        240.14362657091561,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1045,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "20fb007c7c2f281bc0d6933c345144d901b106bc54bb86c0e2a4a01e74eebc0f",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c9-retained-0",
+      "path": "hd-map/full-map-v1/part-008.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        -0.07899461400359087,
+        239.91382405745063,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        -313.0789946140036
+      ],
+      "pixelSize": [
+        1044,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "275f0e0468c481b1417815195b1edcae4f14669c0da3bd5ac73149ad45d6e4df",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c9-retained-1",
+      "path": "hd-map/full-map-v1/part-009.webp",
+      "logicalRect": [
+        2207.9425493716335,
+        115.97127468581687,
+        144.08617594254937,
+        64.1149012567325
+      ],
+      "scenePosition": [
+        2023.9425493716335,
+        -197.02872531418313
+      ],
+      "pixelSize": [
+        627,
+        279
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "92964fc6390f77a936a9045e683f4d78ce0f6fe8437997585381f7fce4b3f179",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c2",
+      "path": "hd-map/full-map-v1/part-010.webp",
+      "logicalRect": [
+        400.0861759425494,
+        180.08617594254937,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "c45fe401ce3102ba1e585d9b2dfb7e7ae96d256bba80e5d1c9663fa97d6501a3",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c3",
+      "path": "hd-map/full-map-v1/part-011.webp",
+      "logicalRect": [
+        640.0,
+        180.08617594254937,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        456.0,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f240a3714b761b61871beb2467fb84e8fdd540c3a1f17d7b097f3f8cf4a366ec",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c4",
+      "path": "hd-map/full-map-v1/part-012.webp",
+      "logicalRect": [
+        896.0,
+        180.08617594254937,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        712.0,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "59d56dc4862bafa1e1d766f7e619d0f65a4a69f73dc03b941696e6ca29c5607c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c5",
+      "path": "hd-map/full-map-v1/part-013.webp",
+      "logicalRect": [
+        1152.0,
+        180.08617594254937,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        968.0,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0623d71fe65bebdd933d81593e36620fa7133af1d2ad46e8b8e6c0b3900be187",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c6",
+      "path": "hd-map/full-map-v1/part-014.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        180.08617594254937,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "1f0130c1431b1686cb82afcef84f4283052457cd11b61f1f3f2fb38490e42660",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c7-retained-0",
+      "path": "hd-map/full-map-v1/part-015.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        300.0430879712747,
+        239.91382405745063,
+        119.95691202872531
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        -12.956912028725299
+      ],
+      "pixelSize": [
+        1044,
+        522
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "487fd84a51fb30e13e270602fffe2071dc766e82556fc7ad38fba4c71d87438c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c7-retained-1",
+      "path": "hd-map/full-map-v1/part-016.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        180.08617594254937,
+        119.95691202872531,
+        119.95691202872531
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        522,
+        522
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "9ad0c33c5e4e74c0fd7d31b1c031be97ddc6c74c4155c5df24780b7291c6bfe1",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c8-retained-0",
+      "path": "hd-map/full-map-v1/part-017.webp",
+      "logicalRect": [
+        1871.971274685817,
+        300.0430879712747,
+        240.14362657091561,
+        119.95691202872531
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        -12.956912028725299
+      ],
+      "pixelSize": [
+        1045,
+        522
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f3630c7b1c2f3b1bddadc1beeea558abbb283c512b41d9f98628e34c0ca0368c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c9-retained-0",
+      "path": "hd-map/full-map-v1/part-018.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        300.0430879712747,
+        239.91382405745063,
+        119.95691202872531
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        -12.956912028725299
+      ],
+      "pixelSize": [
+        1044,
+        522
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "e60bbcd1ffc6f39af64eadfdec6956ac74c4450a8239bf99e720669e08296979",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c9-retained-1",
+      "path": "hd-map/full-map-v1/part-019.webp",
+      "logicalRect": [
+        2207.9425493716335,
+        180.08617594254937,
+        144.08617594254937,
+        119.95691202872531
+      ],
+      "scenePosition": [
+        2023.9425493716335,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        627,
+        522
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "691d04fd4a1b3b6afdae3526688d831f325d67d1428c2780780a4f780b3f56c2",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c10",
+      "path": "hd-map/full-map-v1/part-020.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        180.08617594254937,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        -132.91382405745063
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "85328322783abf5ea66bc4a4733806d3d9a7febc3e580212b0b24a6b3d97ebb6",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c1",
+      "path": "hd-map/full-map-v1/part-021.webp",
+      "logicalRect": [
+        159.94254937163373,
+        420.0,
+        240.14362657091561,
+        256.0
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        107.0
+      ],
+      "pixelSize": [
+        1045,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "25fc6e645d0ec5ce7722870a5a23a671117d0779fc895c64b49371d3edecdeac",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c2",
+      "path": "hd-map/full-map-v1/part-022.webp",
+      "logicalRect": [
+        400.0861759425494,
+        420.0,
+        271.8563734290844,
+        256.0
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        107.0
+      ],
+      "pixelSize": [
+        1183,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "aacf42b774b27ad2c877b90e8d40426bf841c2aa13696541e449a57b64251486",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c5-retained-0",
+      "path": "hd-map/full-map-v1/part-023.webp",
+      "logicalRect": [
+        1120.0574506283663,
+        420.0,
+        271.8563734290844,
+        11.949730700179533
+      ],
+      "scenePosition": [
+        936.0574506283663,
+        107.0
+      ],
+      "pixelSize": [
+        1183,
+        52
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "44665d5b543ec93dc2c5fece8e823b7274063e7e37e8840fd88f37de19225996",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c5-retained-1",
+      "path": "hd-map/full-map-v1/part-024.webp",
+      "logicalRect": [
+        1120.0574506283663,
+        431.94973070017954,
+        8.043087971274685,
+        8.043087971274685
+      ],
+      "scenePosition": [
+        936.0574506283663,
+        118.94973070017954
+      ],
+      "pixelSize": [
+        35,
+        35
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2dc2ae468f4619b81c07e4df03864a285632bb6c5550d54fdb6a13c97e485fe6",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c5-retained-2",
+      "path": "hd-map/full-map-v1/part-025.webp",
+      "logicalRect": [
+        1208.0718132854577,
+        431.94973070017954,
+        183.84201077199282,
+        8.043087971274685
+      ],
+      "scenePosition": [
+        1024.0718132854577,
+        118.94973070017954
+      ],
+      "pixelSize": [
+        800,
+        35
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7d4bf5648ca5b1c832b332efd9dc072e84970e2577599fc2a722019a27f4867a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c5-retained-3",
+      "path": "hd-map/full-map-v1/part-026.webp",
+      "logicalRect": [
+        1120.0574506283663,
+        536.0502692998205,
+        271.8563734290844,
+        139.94973070017954
+      ],
+      "scenePosition": [
+        936.0574506283663,
+        223.05026929982046
+      ],
+      "pixelSize": [
+        1183,
+        609
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b91fac1051ecd57bda9e4b1606388661d6b9d39952554ec038d92812673067fc",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c5-retained-4",
+      "path": "hd-map/full-map-v1/part-027.webp",
+      "logicalRect": [
+        1135.9138240574507,
+        496.064631956912,
+        256.0,
+        39.98563734290844
+      ],
+      "scenePosition": [
+        951.9138240574507,
+        183.06463195691202
+      ],
+      "pixelSize": [
+        1114,
+        174
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "29143e255699e84c591bdf83270e5d9f65ba29fca1496f63001c18670ea150d7",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c5-retained-5",
+      "path": "hd-map/full-map-v1/part-028.webp",
+      "logicalRect": [
+        1208.0718132854577,
+        439.99281867145424,
+        183.84201077199282,
+        56.07181328545781
+      ],
+      "scenePosition": [
+        1024.0718132854577,
+        126.99281867145424
+      ],
+      "pixelSize": [
+        800,
+        244
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "6be877f19b995016e13857b1c9ee11dd1ff6b8543557f2c9cbb82c2f1d4e6559",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c6",
+      "path": "hd-map/full-map-v1/part-029.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        420.0,
+        240.14362657091561,
+        256.0
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        107.0
+      ],
+      "pixelSize": [
+        1045,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "375e23b5b214242db7bab84ba4ebfd447d5e5652abc60f8cf2b02bafd398d8a8",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c7",
+      "path": "hd-map/full-map-v1/part-030.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        420.0,
+        239.91382405745063,
+        256.0
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        107.0
+      ],
+      "pixelSize": [
+        1044,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "fb5e37bb6988bba233258a98715dc8c41140396da3760099f1acdab9430cbc01",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c8",
+      "path": "hd-map/full-map-v1/part-031.webp",
+      "logicalRect": [
+        1871.971274685817,
+        420.0,
+        240.14362657091561,
+        256.0
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        107.0
+      ],
+      "pixelSize": [
+        1045,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ac9a300b189f3dc7da59a25f11d83b1f0b8d702fb6c1615b5e978b96cc44a26d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c9",
+      "path": "hd-map/full-map-v1/part-032.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        420.0,
+        239.91382405745063,
+        256.0
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        107.0
+      ],
+      "pixelSize": [
+        1044,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7e043da0bf026d1ee7aa774965445840886cc0916ae43dc1ea9ee77e16ffaf44",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c10",
+      "path": "hd-map/full-map-v1/part-033.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        420.0,
+        239.91382405745063,
+        256.0
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        107.0
+      ],
+      "pixelSize": [
+        1044,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "dfe19e81f10481376b20f49182def756e517ec4129c35eab2ae65d8c442b4bb9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r2c11",
+      "path": "hd-map/full-map-v1/part-034.webp",
+      "logicalRect": [
+        2591.9425493716335,
+        420.0,
+        108.00718132854578,
+        256.0
+      ],
+      "scenePosition": [
+        2407.9425493716335,
+        107.0
+      ],
+      "pixelSize": [
+        470,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "063b0bccbfaad2db31dbd6324cb91cb39d23486822fce391bd13a9759ef034ec",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c1-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-035.webp",
+      "logicalRect": [
+        159.94254937163373,
+        676.0,
+        240.14362657091561,
+        11.949730700179533
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        363.0
+      ],
+      "pixelSize": [
+        1045,
+        52
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "19feb6e6d228d45f44d4ba05c22318bce979a32db18cad3389eba97da80650a2",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c1-grass-retained-1",
+      "path": "hd-map/full-map-v1/part-036.webp",
+      "logicalRect": [
+        159.94254937163373,
+        687.9497307001795,
+        128.0,
+        244.05026929982046
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        374.94973070017954
+      ],
+      "pixelSize": [
+        557,
+        1062
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "173c5c6d161a4019dbaff63e8a4f5f25c67488cba7b482544e549c88e6a1111d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c2-retained-0-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-037.webp",
+      "logicalRect": [
+        400.0861759425494,
+        676.0,
+        271.8563734290844,
+        11.949730700179533
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        363.0
+      ],
+      "pixelSize": [
+        1183,
+        52
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "4f22d806cbe7da3f695e65ed0e747e011743f8af05fb031416a99158afc5adb1",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c5-retained-0-b30-retained-0",
+      "path": "hd-map/full-map-v1/part-038.webp",
+      "logicalRect": [
+        1120.0574506283663,
+        676.0,
+        271.8563734290844,
+        139.94973070017954
+      ],
+      "scenePosition": [
+        936.0574506283663,
+        363.0
+      ],
+      "pixelSize": [
+        1183,
+        609
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "6a28782f2145657cc41bd40688b2e4774b780c1f00c0ea28438f506e6a03b1d8",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c5-retained-0-b30-retained-1",
+      "path": "hd-map/full-map-v1/part-039.webp",
+      "logicalRect": [
+        1215.8850987432675,
+        815.9497307001795,
+        176.02872531418313,
+        52.165170556552965
+      ],
+      "scenePosition": [
+        1031.8850987432675,
+        502.94973070017954
+      ],
+      "pixelSize": [
+        766,
+        227
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "4fe03499faa4caee041639c97248cd0a6aaec9d109977b106ec89a363ed5e5b2",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c5-retained-1",
+      "path": "hd-map/full-map-v1/part-040.webp",
+      "logicalRect": [
+        1280.0,
+        868.1149012567325,
+        111.91382405745063,
+        63.885098743267505
+      ],
+      "scenePosition": [
+        1096.0,
+        555.1149012567325
+      ],
+      "pixelSize": [
+        487,
+        278
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "21b04330a9f5c7049d7883d9986c80be360bbf6932de57d3185140c10cddb578",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c6",
+      "path": "hd-map/full-map-v1/part-041.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        676.0,
+        240.14362657091561,
+        256.0
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        363.0
+      ],
+      "pixelSize": [
+        1045,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5550593aeacc907fb6a6c47a775e9ed0db6e1b6d3b182b2b664b585cc6963324",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c7",
+      "path": "hd-map/full-map-v1/part-042.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        676.0,
+        239.91382405745063,
+        256.0
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        363.0
+      ],
+      "pixelSize": [
+        1044,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a507af714d88e32148507dd6aad51d0630df19a445071f279e33fb6c35174667",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c8",
+      "path": "hd-map/full-map-v1/part-043.webp",
+      "logicalRect": [
+        1871.971274685817,
+        676.0,
+        240.14362657091561,
+        256.0
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        363.0
+      ],
+      "pixelSize": [
+        1045,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "64c26b48c68277d1a0aecc424a057f8573b92699a9547734a2beaa9457570648",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c9",
+      "path": "hd-map/full-map-v1/part-044.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        676.0,
+        239.91382405745063,
+        256.0
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        363.0
+      ],
+      "pixelSize": [
+        1044,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "c42e7e1652a18603b6112dbbbbb2035c20957511d239956a67b24ee5b2c552c7",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c10",
+      "path": "hd-map/full-map-v1/part-045.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        676.0,
+        239.91382405745063,
+        256.0
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        363.0
+      ],
+      "pixelSize": [
+        1044,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "4ac1309d8a7b56e12fe724622ddf05d5b53df211b06ae0d504ac237997311131",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r3c11",
+      "path": "hd-map/full-map-v1/part-046.webp",
+      "logicalRect": [
+        2591.9425493716335,
+        676.0,
+        108.00718132854578,
+        256.0
+      ],
+      "scenePosition": [
+        2407.9425493716335,
+        363.0
+      ],
+      "pixelSize": [
+        470,
+        1114
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7aa0433afb10c483015b5e66ce6f91e08898c63e768f4f97799956519de57222",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c0-retained-0",
+      "path": "hd-map/full-map-v1/part-047.webp",
+      "logicalRect": [
+        0.0,
+        932.0,
+        159.94254937163376,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        -184.0,
+        619.0
+      ],
+      "pixelSize": [
+        696,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "518aba76c7bbc9cadc7a5cbba5df0fe332209db465d418ea421a9a9dcd36b587",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c0-retained-1",
+      "path": "hd-map/full-map-v1/part-048.webp",
+      "logicalRect": [
+        0.0,
+        1048.0502692998205,
+        71.92818671454219,
+        123.86355475763015
+      ],
+      "scenePosition": [
+        -184.0,
+        735.0502692998205
+      ],
+      "pixelSize": [
+        313,
+        539
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "65fea6375250e37415cbe062ae849986f055965e9e580b294779d4de83368e98",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c1-retained-0-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-049.webp",
+      "logicalRect": [
+        159.94254937163373,
+        932.0,
+        128.0,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        619.0
+      ],
+      "pixelSize": [
+        557,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "6acb2e49512c0ab995d086849280cb507f658f3ac525aa1c9e9076cf83b90bc6",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c2-retained-0-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-050.webp",
+      "logicalRect": [
+        455.9281867145422,
+        1119.9784560143626,
+        184.0718132854578,
+        51.93536804308797
+      ],
+      "scenePosition": [
+        271.9281867145422,
+        806.9784560143626
+      ],
+      "pixelSize": [
+        801,
+        226
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "bfcdca219563c463d70fda1f1e2999081b6cbdfcdd1135638b89ad84f09f3660",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c3-retained-0-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-051.webp",
+      "logicalRect": [
+        640.0,
+        1119.9784560143626,
+        256.0,
+        51.93536804308797
+      ],
+      "scenePosition": [
+        456.0,
+        806.9784560143626
+      ],
+      "pixelSize": [
+        1114,
+        226
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0beaecb9260ee7e0110d4285a60b9e9fcce24fe3353731793a67295ffb6ce493",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c3-retained-0-grass-retained-1",
+      "path": "hd-map/full-map-v1/part-052.webp",
+      "logicalRect": [
+        671.9425493716337,
+        1063.906642728905,
+        224.05745062836624,
+        56.07181328545781
+      ],
+      "scenePosition": [
+        487.94254937163373,
+        750.9066427289049
+      ],
+      "pixelSize": [
+        975,
+        244
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "af147da29dfe11c50fa22885b7a55a3cff99e83dd0ec7fddbad1846b93e49765",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c3-retained-1",
+      "path": "hd-map/full-map-v1/part-053.webp",
+      "logicalRect": [
+        776.0430879712746,
+        932.0,
+        119.95691202872531,
+        131.90664272890484
+      ],
+      "scenePosition": [
+        592.0430879712746,
+        619.0
+      ],
+      "pixelSize": [
+        522,
+        574
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ad5199e987ed8356d788d2418ebc6d42776e04dcb48c9668eb5dd0b246fd7e38",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c4-retained-0",
+      "path": "hd-map/full-map-v1/part-054.webp",
+      "logicalRect": [
+        896.0,
+        1108.0287253141832,
+        256.0,
+        63.885098743267505
+      ],
+      "scenePosition": [
+        712.0,
+        795.0287253141832
+      ],
+      "pixelSize": [
+        1114,
+        278
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "3680a07c0b2c7dfe27a629215b2c5ea1c238540880a4fb63dbedca15b2d8a489",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c4-retained-1",
+      "path": "hd-map/full-map-v1/part-055.webp",
+      "logicalRect": [
+        896.0,
+        932.0,
+        144.08617594254937,
+        176.02872531418313
+      ],
+      "scenePosition": [
+        712.0,
+        619.0
+      ],
+      "pixelSize": [
+        627,
+        766
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "9b0e33a9f48bc43ea13c3f0809020473208ac7f1a2c8f324b4186cf77727ef63",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c5-retained-0",
+      "path": "hd-map/full-map-v1/part-056.webp",
+      "logicalRect": [
+        1152.0,
+        1108.0287253141832,
+        239.91382405745063,
+        63.885098743267505
+      ],
+      "scenePosition": [
+        968.0,
+        795.0287253141832
+      ],
+      "pixelSize": [
+        1044,
+        278
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0d1d0d6eaeaae5e196dbbf554b91b16e45cb7ecb3a067de8436da98b7b0c866f",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c5-retained-1",
+      "path": "hd-map/full-map-v1/part-057.webp",
+      "logicalRect": [
+        1280.0,
+        932.0,
+        111.91382405745063,
+        176.02872531418313
+      ],
+      "scenePosition": [
+        1096.0,
+        619.0
+      ],
+      "pixelSize": [
+        487,
+        766
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "55792af7ffe4bb6127f846a153af94987df5966704b18656b687d2ed9dbaa83b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c6",
+      "path": "hd-map/full-map-v1/part-058.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        932.0,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        619.0
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "23cd8f6369b17727fd18901e9864148487815c37d0e7a4b00fad872b3b099cbc",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c7",
+      "path": "hd-map/full-map-v1/part-059.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        932.0,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        619.0
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "8d2217e83d09463c52cf61341f0bd0096003fadefed690e48647e891c2f44fd8",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c8",
+      "path": "hd-map/full-map-v1/part-060.webp",
+      "logicalRect": [
+        1871.971274685817,
+        932.0,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        619.0
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "4d94e285f410fb494754c177b28a4710247dc453625b6f2662d659279897ec01",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c9",
+      "path": "hd-map/full-map-v1/part-061.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        932.0,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        619.0
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "52557af288f292d397a1ccd59482665d3ff5a21b5df9f206b3dc8fb9e28062d4",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c10",
+      "path": "hd-map/full-map-v1/part-062.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        932.0,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        619.0
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "c242bacd24cee08bd754f3dc22477385af90e688aeb83f5d7b305926f154d70f",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c11",
+      "path": "hd-map/full-map-v1/part-063.webp",
+      "logicalRect": [
+        2591.9425493716335,
+        932.0,
+        108.00718132854578,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        2407.9425493716335,
+        619.0
+      ],
+      "pixelSize": [
+        470,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "e4765d2f61311371240dd39263157e820fc3b9a09f19528239de45faded261f7",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c0-retained-0",
+      "path": "hd-map/full-map-v1/part-064.webp",
+      "logicalRect": [
+        0.0,
+        1171.9138240574507,
+        71.92818671454219,
+        92.1508078994614
+      ],
+      "scenePosition": [
+        -184.0,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        313,
+        401
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "eca75691af220566bdfba5b057d88e746551545f949a17e8fd2bfc8cd5564dab",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c1-retained-0",
+      "path": "hd-map/full-map-v1/part-065.webp",
+      "logicalRect": [
+        312.07181328545784,
+        1296.0071813285458,
+        88.01436265709157,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        128.07181328545784,
+        983.0071813285458
+      ],
+      "pixelSize": [
+        383,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b110ac2ac79eb3c5037dfdf2878735ac7dcf9676340b6fddedf9245623b1840d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c2-retained-0",
+      "path": "hd-map/full-map-v1/part-066.webp",
+      "logicalRect": [
+        400.0861759425494,
+        1296.0071813285458,
+        239.91382405745063,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        983.0071813285458
+      ],
+      "pixelSize": [
+        1044,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "400df7143706152f978f7d0585af0823c65b086a4c760c9f5f2f4935af3ba0f9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c2-retained-1",
+      "path": "hd-map/full-map-v1/part-067.webp",
+      "logicalRect": [
+        455.9281867145422,
+        1171.9138240574507,
+        184.0718132854578,
+        124.09335727109516
+      ],
+      "scenePosition": [
+        271.9281867145422,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        801,
+        540
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5f826df4bd1a2d8b1ecbbefe7512fdb8562cce917633a91b30d22b698469279c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c3",
+      "path": "hd-map/full-map-v1/part-068.webp",
+      "logicalRect": [
+        640.0,
+        1171.9138240574507,
+        256.0,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        456.0,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1114,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "239ee50f13c9f91932b26bcdd315af6b8fa442a2ca5d69c7153adfd709759824",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c4",
+      "path": "hd-map/full-map-v1/part-069.webp",
+      "logicalRect": [
+        896.0,
+        1171.9138240574507,
+        256.0,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        712.0,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1114,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "38ff8e40a52861f4781f5671fd85381c5d02ae873f65ceabf5e30dc36ef1331c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c5",
+      "path": "hd-map/full-map-v1/part-070.webp",
+      "logicalRect": [
+        1152.0,
+        1171.9138240574507,
+        239.91382405745063,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        968.0,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1044,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "1a82708d3d7ecb9e09ec47557968fbee290269b6ea4c7a1de27b7c5fbbed5cf9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c6",
+      "path": "hd-map/full-map-v1/part-071.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        1171.9138240574507,
+        240.14362657091561,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1045,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "82768d62fcc096df9bcfbeefd241bb6d980ed90b994ed36cd468001f7d5f3249",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c7",
+      "path": "hd-map/full-map-v1/part-072.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        1171.9138240574507,
+        239.91382405745063,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1044,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "8d22811c5423814f556200ebc610bf7d093088e699674b0d7bb2ba5bee708eaf",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c8",
+      "path": "hd-map/full-map-v1/part-073.webp",
+      "logicalRect": [
+        1871.971274685817,
+        1171.9138240574507,
+        240.14362657091561,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1045,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2c634fb2bbb5ee2b506c757096f5fa3a50f0bcf98a51c01bcf5140cd42eba1cd",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c9",
+      "path": "hd-map/full-map-v1/part-074.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        1171.9138240574507,
+        239.91382405745063,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1044,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "89d11529dffbfad64b80158023407cd8ffddd989e5c724aab3c109ae68e876bc",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c10",
+      "path": "hd-map/full-map-v1/part-075.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        1171.9138240574507,
+        239.91382405745063,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        1044,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "9ef4d82320a75ef3370e00512ad5317d9e7709aa4d5ea8e47c73060a3c9abd5e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r5c11",
+      "path": "hd-map/full-map-v1/part-076.webp",
+      "logicalRect": [
+        2591.9425493716335,
+        1171.9138240574507,
+        108.00718132854578,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        2407.9425493716335,
+        858.9138240574507
+      ],
+      "pixelSize": [
+        470,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "702d989fc83d2bcc80a2e54f17f53897eca100ac7ad378fb52687ff36358da14",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c0-retained-0",
+      "path": "hd-map/full-map-v1/part-077.webp",
+      "logicalRect": [
+        0.0,
+        1575.906642728905,
+        31.942549371633753,
+        76.06463195691202
+      ],
+      "scenePosition": [
+        -184.0,
+        1262.906642728905
+      ],
+      "pixelSize": [
+        139,
+        331
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "60fcec67828f83966328645f6affb85d6f465b49211d67cbd0f5ae9cc285b73b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c1-retained-1-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-078.webp",
+      "logicalRect": [
+        335.97127468581687,
+        1608.0789946140035,
+        64.1149012567325,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        151.97127468581687,
+        1295.0789946140035
+      ],
+      "pixelSize": [
+        279,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b9c4f8967d1957c49fb3cb425b81863b56b4fd6328e71545ebab6d0416e155bf",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c1-retained-2",
+      "path": "hd-map/full-map-v1/part-079.webp",
+      "logicalRect": [
+        335.97127468581687,
+        1640.0215439856374,
+        56.07181328545781,
+        11.949730700179533
+      ],
+      "scenePosition": [
+        151.97127468581687,
+        1327.0215439856374
+      ],
+      "pixelSize": [
+        244,
+        52
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "aa64e87c6f46a1ba521f7dcbc8ab0e4c510592d01e1e1850b6ee326daa62f98b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c1-retained-3-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-080.webp",
+      "logicalRect": [
+        312.07181328545784,
+        1412.0574506283663,
+        88.01436265709157,
+        99.9640933572711
+      ],
+      "scenePosition": [
+        128.07181328545784,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        383,
+        435
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ac23e7d639dedc36dc4c5dfa74f476c28347eab1550f416d1b783433620b0142",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c2-retained-0",
+      "path": "hd-map/full-map-v1/part-081.webp",
+      "logicalRect": [
+        400.0861759425494,
+        1412.0574506283663,
+        239.91382405745063,
+        227.96409335727108
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1044,
+        992
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "00b9ce9f850deb94fbcb6e112348a1e5c463674310da7cf2d4fe234b495b9737",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c2-retained-1",
+      "path": "hd-map/full-map-v1/part-082.webp",
+      "logicalRect": [
+        520.0430879712746,
+        1640.0215439856374,
+        119.95691202872531,
+        11.949730700179533
+      ],
+      "scenePosition": [
+        336.04308797127464,
+        1327.0215439856374
+      ],
+      "pixelSize": [
+        522,
+        52
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "1cace65c3a92de07619b3edbda2bd5fd4f655f2247bd406b679e45b401db7830",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c3",
+      "path": "hd-map/full-map-v1/part-083.webp",
+      "logicalRect": [
+        640.0,
+        1412.0574506283663,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        456.0,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "278d2443a7d3767053a8cfa30142c91a6796231f86ead89f2ebc8b58d95fe9da",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c4",
+      "path": "hd-map/full-map-v1/part-084.webp",
+      "logicalRect": [
+        896.0,
+        1412.0574506283663,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        712.0,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "1edc483512faee76bae8bb66bb5648849dd0022624507254b6de862abb3ce142",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c5",
+      "path": "hd-map/full-map-v1/part-085.webp",
+      "logicalRect": [
+        1152.0,
+        1412.0574506283663,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        968.0,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "063b08b042ccd153e277fed284a79a1f0362223513fc7600fffd1d52d271e8f4",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c6",
+      "path": "hd-map/full-map-v1/part-086.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        1412.0574506283663,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7cbb8019b24fac55f9eb3318ccdc4557ae347e6c1d03efa61e9175fbef1d0b19",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c7",
+      "path": "hd-map/full-map-v1/part-087.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        1412.0574506283663,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "24cbb7409f285b5b3cb86842d430f9011b293e58896f7209caba8c19c9d466f1",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c8",
+      "path": "hd-map/full-map-v1/part-088.webp",
+      "logicalRect": [
+        1871.971274685817,
+        1412.0574506283663,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "736de7b313a8a68f32a8706b60b7e67c83292d4ce6cc96b33cf0c05bb1470533",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c9",
+      "path": "hd-map/full-map-v1/part-089.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        1412.0574506283663,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "c2baeef34e4c030900510692a353373e4703f0c2030da29bc651d23e67e9aee4",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r6c10",
+      "path": "hd-map/full-map-v1/part-090.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        1412.0574506283663,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        1099.0574506283663
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a80c72155991870be73b003fc6297c804132ca83f811b92a86d0aa3531b49c11",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c0-retained-0",
+      "path": "hd-map/full-map-v1/part-091.webp",
+      "logicalRect": [
+        0.0,
+        1651.971274685817,
+        31.942549371633753,
+        124.09335727109516
+      ],
+      "scenePosition": [
+        -184.0,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        139,
+        540
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "15eef67288ae0ff29655e68ce09c216778280d8c33813fe6ebb909022b08ab11",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c0-retained-1",
+      "path": "hd-map/full-map-v1/part-092.webp",
+      "logicalRect": [
+        0.0,
+        1808.0071813285458,
+        144.08617594254937,
+        84.10771992818671
+      ],
+      "scenePosition": [
+        -184.0,
+        1495.0071813285458
+      ],
+      "pixelSize": [
+        627,
+        366
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "abe6aea024ad16ff58b2f06765d8c6c54ede3065e0f881db9c047c53a4c5ebba",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c0-retained-2",
+      "path": "hd-map/full-map-v1/part-093.webp",
+      "logicalRect": [
+        0.0,
+        1776.064631956912,
+        31.942549371633753,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        -184.0,
+        1463.064631956912
+      ],
+      "pixelSize": [
+        139,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "00524c0fd8ca285cd9278b2ef4d69792b85011160eef20e33e806ff8c98ccbd2",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c1-retained-0",
+      "path": "hd-map/full-map-v1/part-094.webp",
+      "logicalRect": [
+        335.97127468581687,
+        1651.971274685817,
+        56.07181328545781,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        151.97127468581687,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        244,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "16a962f187f621b7c649d0d22af76eb64747a9eafce3276c67293e9bc8e38c74",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c2-retained-0",
+      "path": "hd-map/full-map-v1/part-095.webp",
+      "logicalRect": [
+        520.0430879712746,
+        1651.971274685817,
+        119.95691202872531,
+        116.05026929982047
+      ],
+      "scenePosition": [
+        336.04308797127464,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        522,
+        505
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "83f259bdacf9bfe354b30e31acba62579e95e55804bd6d514d1800ab6c11e631",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c2-retained-1",
+      "path": "hd-map/full-map-v1/part-096.webp",
+      "logicalRect": [
+        543.9425493716337,
+        1768.0215439856374,
+        96.05745062836625,
+        124.09335727109516
+      ],
+      "scenePosition": [
+        359.94254937163373,
+        1455.0215439856374
+      ],
+      "pixelSize": [
+        418,
+        540
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0b8fc67e73e6b1bd45793e30879551d5546360e0e50ea8e21bb03e39be92b907",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c3",
+      "path": "hd-map/full-map-v1/part-097.webp",
+      "logicalRect": [
+        640.0,
+        1651.971274685817,
+        256.0,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        456.0,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1114,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "1567670f480fe953b7453d82f1a222f9a683a403016ef56cff4064c88a293317",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c4",
+      "path": "hd-map/full-map-v1/part-098.webp",
+      "logicalRect": [
+        896.0,
+        1651.971274685817,
+        256.0,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        712.0,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1114,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "99dbad1c0c42b27ba9298f4a4160528ae7a2547c9f42d2ee4380ac76400f09e1",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c5-retained-0-b29-retained-0",
+      "path": "hd-map/full-map-v1/part-099.webp",
+      "logicalRect": [
+        1152.0,
+        1651.971274685817,
+        239.91382405745063,
+        28.035906642728904
+      ],
+      "scenePosition": [
+        968.0,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1044,
+        122
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "21c891e4ca19032d4e93267f5355380bb349c9096d92300a63e89c2acfb99617",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c5-retained-0-b29-retained-1",
+      "path": "hd-map/full-map-v1/part-100.webp",
+      "logicalRect": [
+        1152.0,
+        1680.0071813285458,
+        128.0,
+        151.89946140035906
+      ],
+      "scenePosition": [
+        968.0,
+        1367.0071813285458
+      ],
+      "pixelSize": [
+        557,
+        661
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b6f210e356a9aeafa7a094ca95bd9e5393dc7cb798e393e9f91583225cbe9674",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c5-retained-1",
+      "path": "hd-map/full-map-v1/part-101.webp",
+      "logicalRect": [
+        1152.0,
+        1831.906642728905,
+        128.0,
+        60.208258527827645
+      ],
+      "scenePosition": [
+        968.0,
+        1518.906642728905
+      ],
+      "pixelSize": [
+        557,
+        262
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2406a5b007ee4a11fdba8d8248ef70bb8b969ee426e6b28207690bed4bfc19b6",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c6-retained-0-b29-retained-0",
+      "path": "hd-map/full-map-v1/part-102.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        1651.971274685817,
+        240.14362657091561,
+        28.035906642728904
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1045,
+        122
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "d8b89817c493bca78337f84789669209b3b9bf728a26798a2cd14ccde5c26791",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c7-retained-0-b29-retained-0",
+      "path": "hd-map/full-map-v1/part-103.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        1651.971274685817,
+        239.91382405745063,
+        28.035906642728904
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1044,
+        122
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "feae7a0e5285ced006c72f54b7077cd3407509862ec1e9ab9137e33fa74403ed",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c7-retained-0-b29-retained-1",
+      "path": "hd-map/full-map-v1/part-104.webp",
+      "logicalRect": [
+        1743.971274685817,
+        1680.0071813285458,
+        128.0,
+        151.89946140035906
+      ],
+      "scenePosition": [
+        1559.971274685817,
+        1367.0071813285458
+      ],
+      "pixelSize": [
+        557,
+        661
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "da3f3e4140dff019b7483b951d608adcec78dcd12542720668eb547165984461",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c7-retained-1-b29-retained-0",
+      "path": "hd-map/full-map-v1/part-105.webp",
+      "logicalRect": [
+        1743.971274685817,
+        1831.906642728905,
+        128.0,
+        60.208258527827645
+      ],
+      "scenePosition": [
+        1559.971274685817,
+        1518.906642728905
+      ],
+      "pixelSize": [
+        557,
+        262
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "42563d49a0ad6ddd8fec949015527962f10e61b648d69311d24f8741281baf5a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c8",
+      "path": "hd-map/full-map-v1/part-106.webp",
+      "logicalRect": [
+        1871.971274685817,
+        1651.971274685817,
+        240.14362657091561,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1045,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b32c998b2d634bf053e143180972d01adbf273c36c22f6afde820b2396d7e3e0",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c9",
+      "path": "hd-map/full-map-v1/part-107.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        1651.971274685817,
+        239.91382405745063,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1044,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "76c1387557d2369d075b1350f5cd743cd98ee200bab0ac04d8b890841629cfc9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r7c10",
+      "path": "hd-map/full-map-v1/part-108.webp",
+      "logicalRect": [
+        2352.0287253141832,
+        1651.971274685817,
+        239.91382405745063,
+        240.14362657091561
+      ],
+      "scenePosition": [
+        2168.0287253141832,
+        1338.971274685817
+      ],
+      "pixelSize": [
+        1044,
+        1045
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a187fb4683ca02ad69d570ec98d9996e49129a36980ef16a53d6c4d3b0174406",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c0-retained-0",
+      "path": "hd-map/full-map-v1/part-109.webp",
+      "logicalRect": [
+        0.0,
+        1999.8922800718133,
+        159.94254937163376,
+        132.13644524236983
+      ],
+      "scenePosition": [
+        -184.0,
+        1686.8922800718133
+      ],
+      "pixelSize": [
+        696,
+        575
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "42dd594138300b9c4bedf5eb416a0a5993f1179f47e2b55f8439828dbfb21cf3",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c0-retained-1",
+      "path": "hd-map/full-map-v1/part-110.webp",
+      "logicalRect": [
+        0.0,
+        1892.1149012567325,
+        144.08617594254937,
+        107.7773788150808
+      ],
+      "scenePosition": [
+        -184.0,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        627,
+        469
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "601926a952d4d66c04591dbb549c942cd6910ce86567d27d6de1a534e580d415",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c1-retained-0",
+      "path": "hd-map/full-map-v1/part-111.webp",
+      "logicalRect": [
+        159.94254937163373,
+        2007.935368043088,
+        240.14362657091561,
+        124.09335727109516
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        1694.935368043088
+      ],
+      "pixelSize": [
+        1045,
+        540
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2696b79a2800a278d0fa8fd8b84cc068a90cbdd8dcae20443fba8cdbdbb07f2e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c1-retained-1",
+      "path": "hd-map/full-map-v1/part-112.webp",
+      "logicalRect": [
+        159.94254937163373,
+        1999.8922800718133,
+        160.17235188509875,
+        8.043087971274685
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        1686.8922800718133
+      ],
+      "pixelSize": [
+        697,
+        35
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2f838c5c4440cd998853725c1dd062aa71582960a5125870a1feaeb09c9db0f0",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c2-retained-0",
+      "path": "hd-map/full-map-v1/part-113.webp",
+      "logicalRect": [
+        400.0861759425494,
+        2007.935368043088,
+        239.91382405745063,
+        124.09335727109516
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        1694.935368043088
+      ],
+      "pixelSize": [
+        1044,
+        540
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "6d3171fe718357ceaf5844befe2ad870a24470a3a0bd70d7fc48d64dbcf11f5b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c2-retained-1",
+      "path": "hd-map/full-map-v1/part-114.webp",
+      "logicalRect": [
+        543.9425493716337,
+        1892.1149012567325,
+        96.05745062836625,
+        115.82046678635548
+      ],
+      "scenePosition": [
+        359.94254937163373,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        418,
+        504
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "61440b67ce07bd2b993eb24b12e43f56b444bc10a4ad2c8654acd0b33385a8da",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c3",
+      "path": "hd-map/full-map-v1/part-115.webp",
+      "logicalRect": [
+        640.0,
+        1892.1149012567325,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        456.0,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "e351f505928bb00ac766eb51d9450c6b5ef5444f3a127679064e83276fcbbcb5",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c4",
+      "path": "hd-map/full-map-v1/part-116.webp",
+      "logicalRect": [
+        896.0,
+        1892.1149012567325,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        712.0,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0f80283a5f79f7578bf7eb3794fbaeba347606dd678cefe4a2dd2b4c2e01fe0e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c5-retained-0",
+      "path": "hd-map/full-map-v1/part-117.webp",
+      "logicalRect": [
+        1152.0,
+        2080.093357271095,
+        239.91382405745063,
+        51.93536804308797
+      ],
+      "scenePosition": [
+        968.0,
+        1767.093357271095
+      ],
+      "pixelSize": [
+        1044,
+        226
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "e2a002d0927890092e0fd11e18580bd016c1d35951e8f73b5907018b306510ed",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c5-retained-1",
+      "path": "hd-map/full-map-v1/part-118.webp",
+      "logicalRect": [
+        1152.0,
+        1892.1149012567325,
+        128.0,
+        187.97845601436265
+      ],
+      "scenePosition": [
+        968.0,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        557,
+        818
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "4ec2a1c3c31a04972d6b142e9a18fd406d3c0fd3bc20746aec786af302b621eb",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c6-retained-0",
+      "path": "hd-map/full-map-v1/part-119.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        2080.093357271095,
+        240.14362657091561,
+        51.93536804308797
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        1767.093357271095
+      ],
+      "pixelSize": [
+        1045,
+        226
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2792b2fe82454ff99c78740445983ba5e230a5030b6b74864799fb19b7875fa9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c7-retained-0",
+      "path": "hd-map/full-map-v1/part-120.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        2080.093357271095,
+        239.91382405745063,
+        51.93536804308797
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        1767.093357271095
+      ],
+      "pixelSize": [
+        1044,
+        226
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ad1b1dea54dae83e07bef9297ecce29e1226125b9389be37e4725dea4391c6a0",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c7-retained-1-b29-retained-0",
+      "path": "hd-map/full-map-v1/part-121.webp",
+      "logicalRect": [
+        1743.971274685817,
+        1892.1149012567325,
+        128.0,
+        187.97845601436265
+      ],
+      "scenePosition": [
+        1559.971274685817,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        557,
+        818
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5c76c6df666a2223ce06663ac33851e5a5c26ceb342bf86bfc8eb1cc6bd40e99",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c8",
+      "path": "hd-map/full-map-v1/part-122.webp",
+      "logicalRect": [
+        1871.971274685817,
+        1892.1149012567325,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "462dae11fcdce4b37cb223edc5bf2216b2b2efcfbc3475716ffed41e76ff8998",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r8c9",
+      "path": "hd-map/full-map-v1/part-123.webp",
+      "logicalRect": [
+        2112.1149012567325,
+        1892.1149012567325,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1928.1149012567325,
+        1579.1149012567325
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "19b90ee9dbaaabba76f38b81a06400ab325cdcfb9751561d4d2cb2db88c39e1e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c1",
+      "path": "hd-map/full-map-v1/part-124.webp",
+      "logicalRect": [
+        159.94254937163373,
+        2132.0287253141832,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        -24.05745062836627,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "404ed982d210eee12ab0b623845bc3e427bca331c78aa20c402519be621f9601",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c2",
+      "path": "hd-map/full-map-v1/part-125.webp",
+      "logicalRect": [
+        400.0861759425494,
+        2132.0287253141832,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f8d2efee2593889c78a2a9bb26690ffc4aef10e2568373736cb5a938cfaf0604",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c3",
+      "path": "hd-map/full-map-v1/part-126.webp",
+      "logicalRect": [
+        640.0,
+        2132.0287253141832,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        456.0,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "18a9a80e7842faf87ba03e2e9709545e8c9952b217e127888f44dc5520d05b7d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c4",
+      "path": "hd-map/full-map-v1/part-127.webp",
+      "logicalRect": [
+        896.0,
+        2132.0287253141832,
+        256.0,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        712.0,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1114,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5d86977422aa9369ba6b395ce9808229e263d0a7f5af9583f98dc621f656b5a9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c5",
+      "path": "hd-map/full-map-v1/part-128.webp",
+      "logicalRect": [
+        1152.0,
+        2132.0287253141832,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        968.0,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7748ad1900f1cea6c50b65d6d3a67b1398fe1c3344e136bc9ea1980fb04b27e7",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c6",
+      "path": "hd-map/full-map-v1/part-129.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        2132.0287253141832,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "df5c6f32eb8560dd9f03b60e7939db03176ff4865170147ef55a456ee7106b4d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c7",
+      "path": "hd-map/full-map-v1/part-130.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        2132.0287253141832,
+        239.91382405745063,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1044,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "4bac09fe780973ceffb2d4ff27d0fa49d39c726522cd4b6cab1876e3eca83602",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r9c8",
+      "path": "hd-map/full-map-v1/part-131.webp",
+      "logicalRect": [
+        1871.971274685817,
+        2132.0287253141832,
+        240.14362657091561,
+        239.91382405745063
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        1819.0287253141832
+      ],
+      "pixelSize": [
+        1045,
+        1044
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "573db004739282a7b40f58e67f8321bca73ae643bd87b83a0189a7113d97c8fc",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r10c2",
+      "path": "hd-map/full-map-v1/part-132.webp",
+      "logicalRect": [
+        400.0861759425494,
+        2371.9425493716335,
+        239.91382405745063,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        216.0861759425494,
+        2058.9425493716335
+      ],
+      "pixelSize": [
+        1044,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "9b69bc8acb8d45988beea361b7ee48a55b86caf8ee294db5b09efe9d7d105e0b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r10c4",
+      "path": "hd-map/full-map-v1/part-133.webp",
+      "logicalRect": [
+        896.0,
+        2371.9425493716335,
+        256.0,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        712.0,
+        2058.9425493716335
+      ],
+      "pixelSize": [
+        1114,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a962e7d7ace2df4f801ed6d91d45f088502ac1d870069fa0fd556534850b2d48",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r10c5",
+      "path": "hd-map/full-map-v1/part-134.webp",
+      "logicalRect": [
+        1152.0,
+        2371.9425493716335,
+        239.91382405745063,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        968.0,
+        2058.9425493716335
+      ],
+      "pixelSize": [
+        1044,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "831c924c9cc6a659cc7bd2c339ed736d63a1b2e09154732d5e92cdadc6f323ac",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r10c6",
+      "path": "hd-map/full-map-v1/part-135.webp",
+      "logicalRect": [
+        1391.9138240574507,
+        2371.9425493716335,
+        240.14362657091561,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        1207.9138240574507,
+        2058.9425493716335
+      ],
+      "pixelSize": [
+        1045,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "56be2b0b54e04f19de7946a437f4c976e13672ee6fca9ef6e6179d9ede5a58af",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r10c7",
+      "path": "hd-map/full-map-v1/part-136.webp",
+      "logicalRect": [
+        1632.0574506283663,
+        2371.9425493716335,
+        239.91382405745063,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        1448.0574506283663,
+        2058.9425493716335
+      ],
+      "pixelSize": [
+        1044,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0bbcc6ebef26bd367f50720f49d213ee094ac517d21095f2c1643a1d6af2014a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r10c8",
+      "path": "hd-map/full-map-v1/part-137.webp",
+      "logicalRect": [
+        1871.971274685817,
+        2371.9425493716335,
+        240.14362657091561,
+        180.16517055655297
+      ],
+      "scenePosition": [
+        1687.971274685817,
+        2058.9425493716335
+      ],
+      "pixelSize": [
+        1045,
+        784
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7750e651504e97bf2154d2fe7a138dba7246428018e8f63fff540854e09fc97f",
+      "spriteOnBase": false
+    },
+    {
+      "id": "sign-retained-0",
+      "path": "hd-map/full-map-v1/part-138.webp",
+      "logicalRect": [
+        1088.1149012567325,
+        1108.0287253141832,
+        343.78456014362655,
+        273.9245960502693
+      ],
+      "scenePosition": [
+        904.1149012567325,
+        795.0287253141832
+      ],
+      "pixelSize": [
+        1496,
+        1192
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "d5f79262cf1860753c81679ac11f931ba00f7fc07e28f27b143d9f621b3c175c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "sign-retained-1",
+      "path": "hd-map/full-map-v1/part-139.webp",
+      "logicalRect": [
+        1280.0,
+        1097.9174147217236,
+        151.89946140035906,
+        10.111310592459605
+      ],
+      "scenePosition": [
+        1096.0,
+        784.9174147217236
+      ],
+      "pixelSize": [
+        661,
+        44
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2236b357a3c6760d6082965fc27ca6434c8687a3518fd2e28993f1f3d9992fc4",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c3-south-underlay-retained-0",
+      "path": "hd-map/full-map-v1/part-140.webp",
+      "logicalRect": [
+        776.0430879712746,
+        900.0574506283663,
+        119.95691202872531,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        592.0430879712746,
+        587.0574506283663
+      ],
+      "pixelSize": [
+        522,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "6a4a991ff53d4f2f97111092228665f2fbdbab0bee9113e0b1672c41b66c6817",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r4c4-south-underlay-retained-0",
+      "path": "hd-map/full-map-v1/part-141.webp",
+      "logicalRect": [
+        896.0,
+        900.0574506283663,
+        144.08617594254937,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        712.0,
+        587.0574506283663
+      ],
+      "pixelSize": [
+        627,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b7e87fe2b5a336a6ba5367582491567987c11f78e9171a3d3fc2bbf7266efb98",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c3-north-underlay",
+      "path": "hd-map/full-map-v1/part-142.webp",
+      "logicalRect": [
+        671.9425493716337,
+        420.0,
+        224.05745062836624,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        487.94254937163373,
+        107.0
+      ],
+      "pixelSize": [
+        975,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "9c1203846ac10f49fb1b376ecf381fb031d19dc3b8df8866e876013272597c07",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c4-north-underlay-retained-0",
+      "path": "hd-map/full-map-v1/part-143.webp",
+      "logicalRect": [
+        896.0,
+        420.0,
+        224.05745062836624,
+        19.99281867145422
+      ],
+      "scenePosition": [
+        712.0,
+        107.0
+      ],
+      "pixelSize": [
+        975,
+        87
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "edaa12c2421b2e38e5c6ca30fae54118336a060ca4478f21bdfdd6c67a37dd1c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c4-north-underlay-retained-1",
+      "path": "hd-map/full-map-v1/part-144.webp",
+      "logicalRect": [
+        896.0,
+        439.99281867145424,
+        111.91382405745063,
+        11.949730700179533
+      ],
+      "scenePosition": [
+        712.0,
+        126.99281867145424
+      ],
+      "pixelSize": [
+        487,
+        52
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "258a3100b3f48d0c313424226c26fb6a7a57e14775eb2618680ddf2fc5eb3ad8",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c0",
+      "path": "hd-map/full-map-v1/part-145.webp",
+      "logicalRect": [
+        640.0,
+        451.94254937163373,
+        257.149012567325,
+        225.2064631956912
+      ],
+      "scenePosition": [
+        456.0,
+        138.94254937163376
+      ],
+      "pixelSize": [
+        1119,
+        980
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "d1b86194ce7f5c5bf0e629fedfac87a2331bfef007a3b7aa5a041d72f5776eb3",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c1-retained-0",
+      "path": "hd-map/full-map-v1/part-146.webp",
+      "logicalRect": [
+        894.8509874326751,
+        451.94254937163373,
+        113.06283662477558,
+        28.035906642728904
+      ],
+      "scenePosition": [
+        710.8509874326751,
+        138.94254937163373
+      ],
+      "pixelSize": [
+        492,
+        122
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "385a24f93fb6655d66885118d3e815f290809b2d711408541c53f85cc0bd398a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c1-retained-retained-0",
+      "path": "hd-map/full-map-v1/part-147.webp",
+      "logicalRect": [
+        894.8509874326751,
+        536.0502692998205,
+        257.149012567325,
+        141.0987432675045
+      ],
+      "scenePosition": [
+        710.8509874326751,
+        223.05026929982046
+      ],
+      "pixelSize": [
+        1119,
+        614
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "324098dbb7b097e8ad4d9f6b129c6fa37b3d6336a4141afa06c8a03aa7ca658c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c1-retained-retained-1",
+      "path": "hd-map/full-map-v1/part-148.webp",
+      "logicalRect": [
+        894.8509874326751,
+        479.9784560143627,
+        113.06283662477558,
+        56.07181328545781
+      ],
+      "scenePosition": [
+        710.8509874326751,
+        166.97845601436268
+      ],
+      "pixelSize": [
+        492,
+        244
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2d66335870d7a60d788f6c5ce2279a7db738de746fe63ace9722e073826aabcc",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r0c1-retained-retained-2",
+      "path": "hd-map/full-map-v1/part-149.webp",
+      "logicalRect": [
+        1135.9138240574507,
+        496.064631956912,
+        16.08617594254937,
+        39.98563734290844
+      ],
+      "scenePosition": [
+        951.9138240574507,
+        183.06463195691202
+      ],
+      "pixelSize": [
+        70,
+        174
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "00d9194131b6d337d9773a178371b1a4a62ce7971386b9f6a88272a9f0bb5d14",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c0-retained-0-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-150.webp",
+      "logicalRect": [
+        640.0,
+        674.8509874326751,
+        257.149012567325,
+        13.098743267504489
+      ],
+      "scenePosition": [
+        456.0,
+        361.8509874326751
+      ],
+      "pixelSize": [
+        1119,
+        57
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ef6e71ce128dba775d57301ddce3b720daaa46c8ee02f2802ad4c8a6e25b54d6",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c0-retained-0-grass-retained-1",
+      "path": "hd-map/full-map-v1/part-151.webp",
+      "logicalRect": [
+        671.9425493716337,
+        687.9497307001795,
+        225.2064631956912,
+        184.0718132854578
+      ],
+      "scenePosition": [
+        487.94254937163373,
+        374.94973070017954
+      ],
+      "pixelSize": [
+        980,
+        801
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "0b804e033268046c738a586825b538702c84d920865643f6ae54d6b9029148af",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c0-retained-1",
+      "path": "hd-map/full-map-v1/part-152.webp",
+      "logicalRect": [
+        776.0430879712746,
+        872.0215439856373,
+        121.10592459605027,
+        59.978456014362656
+      ],
+      "scenePosition": [
+        592.0430879712746,
+        559.0215439856373
+      ],
+      "pixelSize": [
+        527,
+        261
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7b5f2688b800cafd36ada045fd1d7a9b5b430cc2985df2cd996e6e0296c13d48",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c1-retained-0-b30-retained-0",
+      "path": "hd-map/full-map-v1/part-153.webp",
+      "logicalRect": [
+        894.8509874326751,
+        674.8509874326751,
+        257.149012567325,
+        141.0987432675045
+      ],
+      "scenePosition": [
+        710.8509874326751,
+        361.8509874326751
+      ],
+      "pixelSize": [
+        1119,
+        614
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "3a376cf463e64f3fcbe82634f7e6f1e0f872f66ca3cc13ce2bd40a494589a79c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c1-retained-0-b30-retained-1",
+      "path": "hd-map/full-map-v1/part-154.webp",
+      "logicalRect": [
+        894.8509874326751,
+        815.9497307001795,
+        209.12028725314184,
+        52.165170556552965
+      ],
+      "scenePosition": [
+        710.8509874326751,
+        502.94973070017954
+      ],
+      "pixelSize": [
+        910,
+        227
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b44ecc277d7d4f07efd0df0dd5963818034253cebfbaec48f88bb9608d3f7871",
+      "spriteOnBase": false
+    },
+    {
+      "id": "r1c1-retained-1",
+      "path": "hd-map/full-map-v1/part-155.webp",
+      "logicalRect": [
+        894.8509874326751,
+        868.1149012567325,
+        145.23518850987432,
+        63.885098743267505
+      ],
+      "scenePosition": [
+        710.8509874326751,
+        555.1149012567325
+      ],
+      "pixelSize": [
+        632,
+        278
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2a1233b47a920a571f33c458d6d10073f203f0eb8bf192924aa3da986d91349a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "southwest-curb-whole-joint-r1-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-156.webp",
+      "logicalRect": [
+        671.9425493716337,
+        872.0215439856373,
+        104.10053859964093,
+        191.8850987432675
+      ],
+      "scenePosition": [
+        487.94254937163373,
+        559.0215439856373
+      ],
+      "pixelSize": [
+        453,
+        835
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f5ea5112ff09fae62ef9cc8cc65713fb95dddce6869b6dbda31ba515280f6a00",
+      "spriteOnBase": false
+    },
+    {
+      "id": "southeast-road-whole-joint-r1-b30-retained-0",
+      "path": "hd-map/full-map-v1/part-157.webp",
+      "logicalRect": [
+        1040.0861759425493,
+        975.8922800718133,
+        239.91382405745063,
+        132.13644524236983
+      ],
+      "scenePosition": [
+        856.0861759425493,
+        662.8922800718133
+      ],
+      "pixelSize": [
+        1044,
+        575
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "d19d96ef7b1ac0ac081d84bfde34adaeeff9a1ab2ca003f8affa30542e1d690b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "southeast-road-whole-joint-r1-b30-retained-1",
+      "path": "hd-map/full-map-v1/part-158.webp",
+      "logicalRect": [
+        1040.0861759425493,
+        868.1149012567325,
+        63.885098743267505,
+        107.7773788150808
+      ],
+      "scenePosition": [
+        856.0861759425493,
+        555.1149012567325
+      ],
+      "pixelSize": [
+        278,
+        469
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5ddb800dfd3193b37c3c472eb3941398c7b77500515f5eed5306ca0e12948d16",
+      "spriteOnBase": false
+    },
+    {
+      "id": "southeast-road-whole-joint-r1-b30-retained-2",
+      "path": "hd-map/full-map-v1/part-159.webp",
+      "logicalRect": [
+        1215.8850987432675,
+        868.1149012567325,
+        64.1149012567325,
+        107.7773788150808
+      ],
+      "scenePosition": [
+        1031.8850987432675,
+        555.1149012567325
+      ],
+      "pixelSize": [
+        279,
+        469
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "7dafed2d200dd8fd6d36963b641671b54f3ef8c81d8e0b8535f12daafb14a952",
+      "spriteOnBase": false
+    },
+    {
+      "id": "upper-cloud-complete-r2",
+      "path": "hd-map/full-map-v1/part-160.webp",
+      "logicalRect": [
+        1752.0143626570916,
+        115.97127468581687,
+        455.92818671454216,
+        184.0718132854578
+      ],
+      "scenePosition": [
+        1568.0143626570916,
+        -197.02872531418313
+      ],
+      "pixelSize": [
+        1984,
+        801
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ad3ff574a2030809779c210494c02e9939d2b089486f89d135d319783374360a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-0",
+      "path": "hd-map/full-map-v1/part-161.webp",
+      "logicalRect": [
+        320.1149012567325,
+        1999.8922800718133,
+        223.82764811490125,
+        8.043087971274685
+      ],
+      "scenePosition": [
+        136.11490125673248,
+        1686.8922800718133
+      ],
+      "pixelSize": [
+        974,
+        35
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "aacfad65f30023146bfaf1b149a34cbab9fdcbff62234b722dd723ff01d7c077",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-1",
+      "path": "hd-map/full-map-v1/part-162.webp",
+      "logicalRect": [
+        432.02872531418313,
+        1799.9640933572712,
+        111.91382405745063,
+        199.9281867145422
+      ],
+      "scenePosition": [
+        248.02872531418313,
+        1486.9640933572712
+      ],
+      "pixelSize": [
+        487,
+        870
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b6aaee1f13676b3dd5837cf11074950e28f275f56b39254e9c52d558f5f93727",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-2",
+      "path": "hd-map/full-map-v1/part-163.webp",
+      "logicalRect": [
+        335.97127468581687,
+        1768.0215439856374,
+        56.07181328545781,
+        8.043087971274685
+      ],
+      "scenePosition": [
+        151.97127468581687,
+        1455.0215439856374
+      ],
+      "pixelSize": [
+        244,
+        35
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "2a794761a46d45c6cab24487e35218b752bf50110d5a4d0b947bac42d4b5236e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-3",
+      "path": "hd-map/full-map-v1/part-164.webp",
+      "logicalRect": [
+        520.0430879712746,
+        1768.0215439856374,
+        23.899461400359066,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        336.04308797127464,
+        1455.0215439856374
+      ],
+      "pixelSize": [
+        104,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "e41cea947f4f6cad83246566dc1c53b7ed3b9aad0ef23ef5fff62b655be1930d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "yellow-building-empty-base-r3-retained-0",
+      "path": "hd-map/full-map-v1/part-165.webp",
+      "logicalRect": [
+        392.04308797127464,
+        1640.0215439856374,
+        128.0,
+        136.04308797127467
+      ],
+      "scenePosition": [
+        208.04308797127464,
+        1327.0215439856374
+      ],
+      "pixelSize": [
+        557,
+        592
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "73cccdcaf01c8b780c04e719eb1c71f2f2feb34f9c1ccc68497c1c4cb542e0d4",
+      "spriteOnBase": false
+    },
+    {
+      "id": "yellow-building-empty-base-r3-retained-1",
+      "path": "hd-map/full-map-v1/part-166.webp",
+      "logicalRect": [
+        432.02872531418313,
+        1776.064631956912,
+        88.01436265709157,
+        23.899461400359066
+      ],
+      "scenePosition": [
+        248.02872531418313,
+        1463.064631956912
+      ],
+      "pixelSize": [
+        383,
+        104
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f3f9a2506c8d7804725ab02dd0f055bf2ac70d11b4c2bee38ae7f098f9a95f0e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-south-r1-retained-0",
+      "path": "hd-map/full-map-v1/part-167.webp",
+      "logicalRect": [
+        144.08617594254935,
+        1808.0071813285458,
+        287.94254937163373,
+        191.8850987432675
+      ],
+      "scenePosition": [
+        -39.913824057450654,
+        1495.0071813285458
+      ],
+      "pixelSize": [
+        1253,
+        835
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a098b6c7fc1b803654bc16210e47cbdbe40e2e2c060330ade45acd2c52dae074",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-south-r1-retained-1",
+      "path": "hd-map/full-map-v1/part-168.webp",
+      "logicalRect": [
+        335.97127468581687,
+        1776.064631956912,
+        96.05745062836625,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        151.97127468581687,
+        1463.064631956912
+      ],
+      "pixelSize": [
+        418,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "9cdfb025014c7e778a23fa219629bde31b7ee1994093da5f1df480f6947ce553",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-middle-base-r3-retained-0-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-169.webp",
+      "logicalRect": [
+        191.88509874326752,
+        1608.0789946140035,
+        144.08617594254937,
+        199.9281867145422
+      ],
+      "scenePosition": [
+        7.88509874326752,
+        1295.0789946140035
+      ],
+      "pixelSize": [
+        627,
+        870
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "15738274f702fcd21e5bd23cca2de713fafb4cf1dcaa1550c2308792fd1f7e7a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-coast-r1-retained-0-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-170.webp",
+      "logicalRect": [
+        31.94254937163373,
+        1608.0789946140035,
+        159.94254937163376,
+        199.9281867145422
+      ],
+      "scenePosition": [
+        -152.05745062836627,
+        1295.0789946140035
+      ],
+      "pixelSize": [
+        696,
+        870
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f73ed80b9a37127d44b8406a157252b5933ea9ed1d2d35178fc3dd8babd86a01",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-coast-r1-retained-0-cyan-retained-1",
+      "path": "hd-map/full-map-v1/part-171.webp",
+      "logicalRect": [
+        31.94254937163373,
+        1575.906642728905,
+        112.14362657091561,
+        32.17235188509874
+      ],
+      "scenePosition": [
+        -152.05745062836627,
+        1262.906642728905
+      ],
+      "pixelSize": [
+        488,
+        140
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f176ef87c689476d4cbda1eabe338eeefa5d3c9a94197c07239d699e1b45fa32",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-0",
+      "path": "hd-map/full-map-v1/part-172.webp",
+      "logicalRect": [
+        0.0,
+        1296.0071813285458,
+        312.07181328545784,
+        176.02872531418313
+      ],
+      "scenePosition": [
+        -184.0,
+        983.0071813285458
+      ],
+      "pixelSize": [
+        1358,
+        766
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "52f51eb138b8da6af94b36db48632aecacea55a916d3ba82fe9d09ef33c64a35",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-1-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-173.webp",
+      "logicalRect": [
+        0.0,
+        1532.0143626570916,
+        144.08617594254937,
+        43.89228007181328
+      ],
+      "scenePosition": [
+        -184.0,
+        1219.0143626570916
+      ],
+      "pixelSize": [
+        627,
+        191
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "bcf222ff64c459e24a136051fdadbb2bd0e5de86afeb20c1f062361d7b90cfc9",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-2-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-174.webp",
+      "logicalRect": [
+        0.0,
+        1472.0359066427288,
+        232.10053859964094,
+        39.98563734290844
+      ],
+      "scenePosition": [
+        -184.0,
+        1159.0359066427288
+      ],
+      "pixelSize": [
+        1010,
+        174
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "ac8eb1ca10a30b19a1f914516ef47c92e55dad42eb6587f6851d2c510a455d1a",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-2-cyan-retained-1",
+      "path": "hd-map/full-map-v1/part-175.webp",
+      "logicalRect": [
+        0.0,
+        1512.0215439856374,
+        144.08617594254937,
+        19.99281867145422
+      ],
+      "scenePosition": [
+        -184.0,
+        1199.0215439856374
+      ],
+      "pixelSize": [
+        627,
+        87
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f696fcd55a46c86c451200bf71ece7d7ba4b2edb38f005d7294339e44efcf047",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-3-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-176.webp",
+      "logicalRect": [
+        304.02872531418313,
+        1472.0359066427288,
+        8.043087971274685,
+        39.98563734290844
+      ],
+      "scenePosition": [
+        120.02872531418313,
+        1159.0359066427288
+      ],
+      "pixelSize": [
+        35,
+        174
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f7ebfea2c516c32f494eb03a7fd86fcdaf7cf1eb8357edc65970690a6d96ee10",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-1",
+      "path": "hd-map/full-map-v1/part-177.webp",
+      "logicalRect": [
+        0.0,
+        1264.064631956912,
+        71.92818671454219,
+        31.942549371633753
+      ],
+      "scenePosition": [
+        -184.0,
+        951.0646319569121
+      ],
+      "pixelSize": [
+        313,
+        139
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5420179bf203b800ce5791d85f5063daeb94e41609664ce5e5ca77e167e074a1",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-upper-terrain-cap-r2-grass-retained-0",
+      "path": "hd-map/full-map-v1/part-178.webp",
+      "logicalRect": [
+        71.92818671454222,
+        1119.9784560143626,
+        384.0,
+        176.02872531418313
+      ],
+      "scenePosition": [
+        -112.07181328545778,
+        806.9784560143626
+      ],
+      "pixelSize": [
+        1671,
+        766
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "497a6de42976e9690ce21bf66d84bfba455bdffbcdd1fa0dfbc4d9d4a2c58af5",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-upper-terrain-cap-r2-grass-retained-1",
+      "path": "hd-map/full-map-v1/part-179.webp",
+      "logicalRect": [
+        71.92818671454222,
+        1048.0502692998205,
+        216.01436265709157,
+        71.92818671454219
+      ],
+      "scenePosition": [
+        -112.07181328545778,
+        735.0502692998205
+      ],
+      "pixelSize": [
+        940,
+        313
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "5543d716377b72ffe81a78da92a15813af14661487e479757dc33fc472dfd23c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "pilot-curb-native-continuation-r1-retained-0",
+      "path": "hd-map/full-map-v1/part-180.webp",
+      "logicalRect": [
+        1007.9138240574507,
+        496.064631956912,
+        128.0,
+        39.98563734290844
+      ],
+      "scenePosition": [
+        823.9138240574507,
+        183.06463195691202
+      ],
+      "pixelSize": [
+        557,
+        174
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "92e94de4aadaa16eadd3dfe5cf7ef5f45f369b20ea850c5212aef5b7b70f3c50",
+      "spriteOnBase": false
+    },
+    {
+      "id": "pilot-curb-native-continuation-r1-retained-1",
+      "path": "hd-map/full-map-v1/part-181.webp",
+      "logicalRect": [
+        1007.9138240574507,
+        439.99281867145424,
+        120.1867145421903,
+        56.07181328545781
+      ],
+      "scenePosition": [
+        823.9138240574507,
+        126.99281867145424
+      ],
+      "pixelSize": [
+        523,
+        244
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "454e3a1886c33fe953e5ed522e84e559902fbf28433df0af1529a6abb963517d",
+      "spriteOnBase": false
+    },
+    {
+      "id": "green30-whole-native-r1",
+      "path": "hd-map/full-map-v1/part-182.webp",
+      "logicalRect": [
+        1128.100538599641,
+        431.94973070017954,
+        79.97127468581688,
+        64.1149012567325
+      ],
+      "scenePosition": [
+        944.1005385996409,
+        118.94973070017954
+      ],
+      "pixelSize": [
+        348,
+        279
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "b585da5fbd6e4c6da57f3b00c9cc16a62148e0c0d3fe5cf5a6540e217446bb43",
+      "spriteOnBase": false
+    },
+    {
+      "id": "south-bridge-registered-b29",
+      "path": "hd-map/full-map-v1/part-183.webp",
+      "logicalRect": [
+        1280.0,
+        1680.0071813285458,
+        463.97127468581687,
+        400.08617594254935
+      ],
+      "scenePosition": [
+        1096.0,
+        1367.0071813285458
+      ],
+      "pixelSize": [
+        2019,
+        1741
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a266cfc95ef08c66f0bedfd6682e5322146b363a8e7afb91cf3be20e474fff28",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-type28-shared-design-b29-cyan-retained-0",
+      "path": "hd-map/full-map-v1/part-184.webp",
+      "logicalRect": [
+        232.1005385996409,
+        1472.0359066427288,
+        71.92818671454219,
+        39.98563734290844
+      ],
+      "scenePosition": [
+        48.10053859964091,
+        1159.0359066427288
+      ],
+      "pixelSize": [
+        313,
+        174
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "769825cfff59a36aa4133547949a7104998ac8d82463bf9233e3aa10301c356b",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-grass-native-normalized-b29",
+      "path": "hd-map/full-map-v1/part-185.webp",
+      "logicalRect": [
+        287.94254937163373,
+        687.9497307001795,
+        384.0,
+        432.02872531418313
+      ],
+      "scenePosition": [
+        103.94254937163373,
+        374.94973070017954
+      ],
+      "pixelSize": [
+        1671,
+        1880
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a50b79e66fcbbd88346a71b83e84d335c6244ec8018c08d80dc83005384b0fc2",
+      "spriteOnBase": false
+    },
+    {
+      "id": "west-cyan-coherent-joint-b29",
+      "path": "hd-map/full-map-v1/part-186.webp",
+      "logicalRect": [
+        144.08617594254935,
+        1512.0215439856374,
+        256.0,
+        96.05745062836625
+      ],
+      "scenePosition": [
+        -39.913824057450654,
+        1199.0215439856374
+      ],
+      "pixelSize": [
+        1114,
+        418
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "a5ffc2935195b661bf78cf03797d902c8a1b80a3138b705169180fbd3ce21c9e",
+      "spriteOnBase": false
+    },
+    {
+      "id": "north-road-original-markings-b30",
+      "path": "hd-map/full-map-v1/part-187.webp",
+      "logicalRect": [
+        1103.9712746858168,
+        815.9497307001795,
+        111.91382405745063,
+        159.94254937163376
+      ],
+      "scenePosition": [
+        919.9712746858168,
+        502.94973070017954
+      ],
+      "pixelSize": [
+        487,
+        696
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f9bd1cfe3243ce5e1cf67311b3c9afbdc6698b70c7f0d160d5d4ab224dd67a0c",
+      "spriteOnBase": false
+    },
+    {
+      "id": "yellow-building-cone-rear",
+      "path": "hd-map/full-map-v1/part-188.webp",
+      "logicalRect": [
+        445.8168761220826,
+        1685.9820466786355,
+        23.210053859964095,
+        31.02333931777379
+      ],
+      "scenePosition": [
+        261.8168761220826,
+        1372.9820466786355
+      ],
+      "pixelSize": [
+        101,
+        135
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "f0184ccb57ac861442f9a5dd85a3508f9aa50c4882a15875b5d591d2c55ea875",
+      "spriteOnBase": true
+    },
+    {
+      "id": "yellow-building-cone-near",
+      "path": "hd-map/full-map-v1/part-189.webp",
+      "logicalRect": [
+        413.87432675044886,
+        1709.1921005385996,
+        21.831238779174146,
+        37.22800718132854
+      ],
+      "scenePosition": [
+        229.87432675044886,
+        1396.1921005385996
+      ],
+      "pixelSize": [
+        95,
+        162
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "bfe8bbeaeb3d2c1b1ffef6d9678e37333956bb9caa70997162a1aa62b9c4fa06",
+      "spriteOnBase": true
+    },
+    {
+      "id": "west-round-tree-original-placement",
+      "path": "hd-map/full-map-v1/part-190.webp",
+      "logicalRect": [
+        155.34649910233395,
+        1590.6140035906642,
+        82.72890484739676,
+        104.33034111310593
+      ],
+      "scenePosition": [
+        -28.65350089766605,
+        1277.6140035906642
+      ],
+      "pixelSize": [
+        360,
+        454
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "bc7ad791725df1149344f3f16ae9d7bc1742ffe3d2078c37aa1884dc41b2bfab",
+      "spriteOnBase": true
+    },
+    {
+      "id": "west-coast-tree-original-placement",
+      "path": "hd-map/full-map-v1/part-191.webp",
+      "logicalRect": [
+        93.52962298025136,
+        1317.149012567325,
+        93.75942549371634,
+        113.75224416517055
+      ],
+      "scenePosition": [
+        -90.47037701974864,
+        1004.1490125673249
+      ],
+      "pixelSize": [
+        408,
+        495
+      ],
+      "pixelDensity": 4.3515625,
+      "reviewStatus": "approved",
+      "outputSha256": "aa6463e04951ef5c73670ddb2120c9febb4ff611e66212e6df1de970ccd76c35",
+      "spriteOnBase": true
+    }
+  ],
+  "recipe": {
+    "sourceDrawGraph": "public/modern/hd-masters/map/full-map-v1/reviews/batch-30/draw-regions.json",
+    "sourceDrawGraphSha256": "db201506aa8dffd878179512a4dd2c66aeb87e11d94ff1fc638c4ca0508c4b7d",
+    "sourceGraphRows": 192,
+    "nativeForegroundSprites": 4,
+    "script": "scripts/package_full_hd_map.py",
+    "scriptSha256": "2f20e80d2a83b030136a658807c9332ef7baa95cfcfcec78d9f86690a7e2c966",
+    "overviewNativeOrigin": [
+      0.0,
+      -0.07899461400359087
+    ],
+    "nativeBoundsRoundingAllowance": 0.22980251346499103,
+    "overviewMethod": "Replay native source-over layers, including approved fade underlays and foreground; one fractional-box LANCZOS resize to2x."
+  },
+  "provenance": [
+    {
+      "id": "r0c2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r0c2.webp",
+      "sourceSha256": "7c6e0b907e440806b718a67fd407f666f5554923b8b2158167c77dad617b0d08",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        784
+      ],
+      "outputSha256": "7c6e0b907e440806b718a67fd407f666f5554923b8b2158167c77dad617b0d08",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r0c3.webp",
+      "sourceSha256": "eda1b6c2c6b63d18c1865027871c25b31622da7a28aa67d903e611b521d7c483",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        784
+      ],
+      "outputSha256": "eda1b6c2c6b63d18c1865027871c25b31622da7a28aa67d903e611b521d7c483",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r0c4.webp",
+      "sourceSha256": "96185b84473f7919a9bbc548fa12505238aec3fae4746b263c55ed497422e7b8",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        784
+      ],
+      "outputSha256": "96185b84473f7919a9bbc548fa12505238aec3fae4746b263c55ed497422e7b8",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r0c5.webp",
+      "sourceSha256": "bbb0c8e894098ef4928b15507ba1429d533d4cc1e9c540ec215d15107c820bad",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        784
+      ],
+      "outputSha256": "bbb0c8e894098ef4928b15507ba1429d533d4cc1e9c540ec215d15107c820bad",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r0c6.webp",
+      "sourceSha256": "eed56068d3f98300fb5f0aded85fb20d8d3313a14430d5fa79a77f3d707a7656",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        784
+      ],
+      "outputSha256": "eed56068d3f98300fb5f0aded85fb20d8d3313a14430d5fa79a77f3d707a7656",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c7-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c7-retained-0.webp",
+      "sourceSha256": "c2e36322684c46ba7b93387d8e6eca184f3d6d166fb7f0f1990dca65128734f4",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        505
+      ],
+      "outputSha256": "c2e36322684c46ba7b93387d8e6eca184f3d6d166fb7f0f1990dca65128734f4",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c7-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c7-retained-1.webp",
+      "sourceSha256": "543f49d529ac98bea72641b0cf314aa8080833618ee256d33994e731a02fc06e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        522,
+        279
+      ],
+      "outputSha256": "543f49d529ac98bea72641b0cf314aa8080833618ee256d33994e731a02fc06e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c8-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c8-retained-0.webp",
+      "sourceSha256": "20fb007c7c2f281bc0d6933c345144d901b106bc54bb86c0e2a4a01e74eebc0f",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        505
+      ],
+      "outputSha256": "20fb007c7c2f281bc0d6933c345144d901b106bc54bb86c0e2a4a01e74eebc0f",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c9-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c9-retained-0.webp",
+      "sourceSha256": "275f0e0468c481b1417815195b1edcae4f14669c0da3bd5ac73149ad45d6e4df",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        505
+      ],
+      "outputSha256": "275f0e0468c481b1417815195b1edcae4f14669c0da3bd5ac73149ad45d6e4df",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c9-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c9-retained-1.webp",
+      "sourceSha256": "92964fc6390f77a936a9045e683f4d78ce0f6fe8437997585381f7fce4b3f179",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        279
+      ],
+      "outputSha256": "92964fc6390f77a936a9045e683f4d78ce0f6fe8437997585381f7fce4b3f179",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c2.webp",
+      "sourceSha256": "c45fe401ce3102ba1e585d9b2dfb7e7ae96d256bba80e5d1c9663fa97d6501a3",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "c45fe401ce3102ba1e585d9b2dfb7e7ae96d256bba80e5d1c9663fa97d6501a3",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c3.webp",
+      "sourceSha256": "f240a3714b761b61871beb2467fb84e8fdd540c3a1f17d7b097f3f8cf4a366ec",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "f240a3714b761b61871beb2467fb84e8fdd540c3a1f17d7b097f3f8cf4a366ec",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c4.webp",
+      "sourceSha256": "59d56dc4862bafa1e1d766f7e619d0f65a4a69f73dc03b941696e6ca29c5607c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "59d56dc4862bafa1e1d766f7e619d0f65a4a69f73dc03b941696e6ca29c5607c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c5.webp",
+      "sourceSha256": "0623d71fe65bebdd933d81593e36620fa7133af1d2ad46e8b8e6c0b3900be187",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "0623d71fe65bebdd933d81593e36620fa7133af1d2ad46e8b8e6c0b3900be187",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c6.webp",
+      "sourceSha256": "1f0130c1431b1686cb82afcef84f4283052457cd11b61f1f3f2fb38490e42660",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "1f0130c1431b1686cb82afcef84f4283052457cd11b61f1f3f2fb38490e42660",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c7-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c7-retained-0.webp",
+      "sourceSha256": "487fd84a51fb30e13e270602fffe2071dc766e82556fc7ad38fba4c71d87438c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        522
+      ],
+      "outputSha256": "487fd84a51fb30e13e270602fffe2071dc766e82556fc7ad38fba4c71d87438c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c7-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c7-retained-1.webp",
+      "sourceSha256": "9ad0c33c5e4e74c0fd7d31b1c031be97ddc6c74c4155c5df24780b7291c6bfe1",
+      "sourcePixelCrop": [
+        0,
+        0,
+        522,
+        522
+      ],
+      "outputSha256": "9ad0c33c5e4e74c0fd7d31b1c031be97ddc6c74c4155c5df24780b7291c6bfe1",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c8-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c8-retained-0.webp",
+      "sourceSha256": "f3630c7b1c2f3b1bddadc1beeea558abbb283c512b41d9f98628e34c0ca0368c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        522
+      ],
+      "outputSha256": "f3630c7b1c2f3b1bddadc1beeea558abbb283c512b41d9f98628e34c0ca0368c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c9-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c9-retained-0.webp",
+      "sourceSha256": "e60bbcd1ffc6f39af64eadfdec6956ac74c4450a8239bf99e720669e08296979",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        522
+      ],
+      "outputSha256": "e60bbcd1ffc6f39af64eadfdec6956ac74c4450a8239bf99e720669e08296979",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c9-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c9-retained-1.webp",
+      "sourceSha256": "691d04fd4a1b3b6afdae3526688d831f325d67d1428c2780780a4f780b3f56c2",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        522
+      ],
+      "outputSha256": "691d04fd4a1b3b6afdae3526688d831f325d67d1428c2780780a4f780b3f56c2",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c10.webp",
+      "sourceSha256": "85328322783abf5ea66bc4a4733806d3d9a7febc3e580212b0b24a6b3d97ebb6",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "85328322783abf5ea66bc4a4733806d3d9a7febc3e580212b0b24a6b3d97ebb6",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c1.webp",
+      "sourceSha256": "25fc6e645d0ec5ce7722870a5a23a671117d0779fc895c64b49371d3edecdeac",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1114
+      ],
+      "outputSha256": "25fc6e645d0ec5ce7722870a5a23a671117d0779fc895c64b49371d3edecdeac",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c2.webp",
+      "sourceSha256": "aacf42b774b27ad2c877b90e8d40426bf841c2aa13696541e449a57b64251486",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1183,
+        1114
+      ],
+      "outputSha256": "aacf42b774b27ad2c877b90e8d40426bf841c2aa13696541e449a57b64251486",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c5-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r2c5-retained-0.webp",
+      "sourceSha256": "44665d5b543ec93dc2c5fece8e823b7274063e7e37e8840fd88f37de19225996",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1183,
+        52
+      ],
+      "outputSha256": "44665d5b543ec93dc2c5fece8e823b7274063e7e37e8840fd88f37de19225996",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c5-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r2c5-retained-1.webp",
+      "sourceSha256": "2dc2ae468f4619b81c07e4df03864a285632bb6c5550d54fdb6a13c97e485fe6",
+      "sourcePixelCrop": [
+        0,
+        0,
+        35,
+        35
+      ],
+      "outputSha256": "2dc2ae468f4619b81c07e4df03864a285632bb6c5550d54fdb6a13c97e485fe6",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c5-retained-2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r2c5-retained-2.webp",
+      "sourceSha256": "7d4bf5648ca5b1c832b332efd9dc072e84970e2577599fc2a722019a27f4867a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        800,
+        35
+      ],
+      "outputSha256": "7d4bf5648ca5b1c832b332efd9dc072e84970e2577599fc2a722019a27f4867a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c5-retained-3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r2c5-retained-3.webp",
+      "sourceSha256": "b91fac1051ecd57bda9e4b1606388661d6b9d39952554ec038d92812673067fc",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1183,
+        609
+      ],
+      "outputSha256": "b91fac1051ecd57bda9e4b1606388661d6b9d39952554ec038d92812673067fc",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c5-retained-4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r2c5-retained-4.webp",
+      "sourceSha256": "29143e255699e84c591bdf83270e5d9f65ba29fca1496f63001c18670ea150d7",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        174
+      ],
+      "outputSha256": "29143e255699e84c591bdf83270e5d9f65ba29fca1496f63001c18670ea150d7",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c5-retained-5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r2c5-retained-5.webp",
+      "sourceSha256": "6be877f19b995016e13857b1c9ee11dd1ff6b8543557f2c9cbb82c2f1d4e6559",
+      "sourcePixelCrop": [
+        0,
+        0,
+        800,
+        244
+      ],
+      "outputSha256": "6be877f19b995016e13857b1c9ee11dd1ff6b8543557f2c9cbb82c2f1d4e6559",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c6.webp",
+      "sourceSha256": "375e23b5b214242db7bab84ba4ebfd447d5e5652abc60f8cf2b02bafd398d8a8",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1114
+      ],
+      "outputSha256": "375e23b5b214242db7bab84ba4ebfd447d5e5652abc60f8cf2b02bafd398d8a8",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c7.webp",
+      "sourceSha256": "fb5e37bb6988bba233258a98715dc8c41140396da3760099f1acdab9430cbc01",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1114
+      ],
+      "outputSha256": "fb5e37bb6988bba233258a98715dc8c41140396da3760099f1acdab9430cbc01",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c8.webp",
+      "sourceSha256": "ac9a300b189f3dc7da59a25f11d83b1f0b8d702fb6c1615b5e978b96cc44a26d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1114
+      ],
+      "outputSha256": "ac9a300b189f3dc7da59a25f11d83b1f0b8d702fb6c1615b5e978b96cc44a26d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c9.webp",
+      "sourceSha256": "7e043da0bf026d1ee7aa774965445840886cc0916ae43dc1ea9ee77e16ffaf44",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1114
+      ],
+      "outputSha256": "7e043da0bf026d1ee7aa774965445840886cc0916ae43dc1ea9ee77e16ffaf44",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c10.webp",
+      "sourceSha256": "dfe19e81f10481376b20f49182def756e517ec4129c35eab2ae65d8c442b4bb9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1114
+      ],
+      "outputSha256": "dfe19e81f10481376b20f49182def756e517ec4129c35eab2ae65d8c442b4bb9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r2c11",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r2c11.webp",
+      "sourceSha256": "063b0bccbfaad2db31dbd6324cb91cb39d23486822fce391bd13a9759ef034ec",
+      "sourcePixelCrop": [
+        0,
+        0,
+        470,
+        1114
+      ],
+      "outputSha256": "063b0bccbfaad2db31dbd6324cb91cb39d23486822fce391bd13a9759ef034ec",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c1-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r3c1-grass-retained-0.webp",
+      "sourceSha256": "19feb6e6d228d45f44d4ba05c22318bce979a32db18cad3389eba97da80650a2",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        52
+      ],
+      "outputSha256": "19feb6e6d228d45f44d4ba05c22318bce979a32db18cad3389eba97da80650a2",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c1-grass-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r3c1-grass-retained-1.webp",
+      "sourceSha256": "173c5c6d161a4019dbaff63e8a4f5f25c67488cba7b482544e549c88e6a1111d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        1062
+      ],
+      "outputSha256": "173c5c6d161a4019dbaff63e8a4f5f25c67488cba7b482544e549c88e6a1111d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c2-retained-0-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r3c2-retained-0-grass-retained-0.webp",
+      "sourceSha256": "4f22d806cbe7da3f695e65ed0e747e011743f8af05fb031416a99158afc5adb1",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1183,
+        52
+      ],
+      "outputSha256": "4f22d806cbe7da3f695e65ed0e747e011743f8af05fb031416a99158afc5adb1",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c5-retained-0-b30-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/r3c5-retained-0-b30-retained-0.webp",
+      "sourceSha256": "6a28782f2145657cc41bd40688b2e4774b780c1f00c0ea28438f506e6a03b1d8",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1183,
+        609
+      ],
+      "outputSha256": "6a28782f2145657cc41bd40688b2e4774b780c1f00c0ea28438f506e6a03b1d8",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c5-retained-0-b30-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/r3c5-retained-0-b30-retained-1.webp",
+      "sourceSha256": "4fe03499faa4caee041639c97248cd0a6aaec9d109977b106ec89a363ed5e5b2",
+      "sourcePixelCrop": [
+        0,
+        0,
+        766,
+        227
+      ],
+      "outputSha256": "4fe03499faa4caee041639c97248cd0a6aaec9d109977b106ec89a363ed5e5b2",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c5-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r3c5-retained-1.webp",
+      "sourceSha256": "21b04330a9f5c7049d7883d9986c80be360bbf6932de57d3185140c10cddb578",
+      "sourcePixelCrop": [
+        0,
+        0,
+        487,
+        278
+      ],
+      "outputSha256": "21b04330a9f5c7049d7883d9986c80be360bbf6932de57d3185140c10cddb578",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r3c6.webp",
+      "sourceSha256": "5550593aeacc907fb6a6c47a775e9ed0db6e1b6d3b182b2b664b585cc6963324",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1114
+      ],
+      "outputSha256": "5550593aeacc907fb6a6c47a775e9ed0db6e1b6d3b182b2b664b585cc6963324",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r3c7.webp",
+      "sourceSha256": "a507af714d88e32148507dd6aad51d0630df19a445071f279e33fb6c35174667",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1114
+      ],
+      "outputSha256": "a507af714d88e32148507dd6aad51d0630df19a445071f279e33fb6c35174667",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r3c8.webp",
+      "sourceSha256": "64c26b48c68277d1a0aecc424a057f8573b92699a9547734a2beaa9457570648",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1114
+      ],
+      "outputSha256": "64c26b48c68277d1a0aecc424a057f8573b92699a9547734a2beaa9457570648",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r3c9.webp",
+      "sourceSha256": "c42e7e1652a18603b6112dbbbbb2035c20957511d239956a67b24ee5b2c552c7",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1114
+      ],
+      "outputSha256": "c42e7e1652a18603b6112dbbbbb2035c20957511d239956a67b24ee5b2c552c7",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r3c10.webp",
+      "sourceSha256": "4ac1309d8a7b56e12fe724622ddf05d5b53df211b06ae0d504ac237997311131",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1114
+      ],
+      "outputSha256": "4ac1309d8a7b56e12fe724622ddf05d5b53df211b06ae0d504ac237997311131",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r3c11",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r3c11.webp",
+      "sourceSha256": "7aa0433afb10c483015b5e66ce6f91e08898c63e768f4f97799956519de57222",
+      "sourcePixelCrop": [
+        0,
+        0,
+        470,
+        1114
+      ],
+      "outputSha256": "7aa0433afb10c483015b5e66ce6f91e08898c63e768f4f97799956519de57222",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c0-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c0-retained-0.webp",
+      "sourceSha256": "518aba76c7bbc9cadc7a5cbba5df0fe332209db465d418ea421a9a9dcd36b587",
+      "sourcePixelCrop": [
+        0,
+        0,
+        696,
+        505
+      ],
+      "outputSha256": "518aba76c7bbc9cadc7a5cbba5df0fe332209db465d418ea421a9a9dcd36b587",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c0-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c0-retained-1.webp",
+      "sourceSha256": "65fea6375250e37415cbe062ae849986f055965e9e580b294779d4de83368e98",
+      "sourcePixelCrop": [
+        0,
+        0,
+        313,
+        539
+      ],
+      "outputSha256": "65fea6375250e37415cbe062ae849986f055965e9e580b294779d4de83368e98",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c1-retained-0-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r4c1-retained-0-grass-retained-0.webp",
+      "sourceSha256": "6acb2e49512c0ab995d086849280cb507f658f3ac525aa1c9e9076cf83b90bc6",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        505
+      ],
+      "outputSha256": "6acb2e49512c0ab995d086849280cb507f658f3ac525aa1c9e9076cf83b90bc6",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c2-retained-0-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r4c2-retained-0-grass-retained-0.webp",
+      "sourceSha256": "bfcdca219563c463d70fda1f1e2999081b6cbdfcdd1135638b89ad84f09f3660",
+      "sourcePixelCrop": [
+        0,
+        0,
+        801,
+        226
+      ],
+      "outputSha256": "bfcdca219563c463d70fda1f1e2999081b6cbdfcdd1135638b89ad84f09f3660",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c3-retained-0-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r4c3-retained-0-grass-retained-0.webp",
+      "sourceSha256": "0beaecb9260ee7e0110d4285a60b9e9fcce24fe3353731793a67295ffb6ce493",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        226
+      ],
+      "outputSha256": "0beaecb9260ee7e0110d4285a60b9e9fcce24fe3353731793a67295ffb6ce493",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c3-retained-0-grass-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r4c3-retained-0-grass-retained-1.webp",
+      "sourceSha256": "af147da29dfe11c50fa22885b7a55a3cff99e83dd0ec7fddbad1846b93e49765",
+      "sourcePixelCrop": [
+        0,
+        0,
+        975,
+        244
+      ],
+      "outputSha256": "af147da29dfe11c50fa22885b7a55a3cff99e83dd0ec7fddbad1846b93e49765",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c3-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c3-retained-1.webp",
+      "sourceSha256": "ad5199e987ed8356d788d2418ebc6d42776e04dcb48c9668eb5dd0b246fd7e38",
+      "sourcePixelCrop": [
+        0,
+        0,
+        522,
+        574
+      ],
+      "outputSha256": "ad5199e987ed8356d788d2418ebc6d42776e04dcb48c9668eb5dd0b246fd7e38",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c4-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c4-retained-0.webp",
+      "sourceSha256": "3680a07c0b2c7dfe27a629215b2c5ea1c238540880a4fb63dbedca15b2d8a489",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        278
+      ],
+      "outputSha256": "3680a07c0b2c7dfe27a629215b2c5ea1c238540880a4fb63dbedca15b2d8a489",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c4-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c4-retained-1.webp",
+      "sourceSha256": "9b0e33a9f48bc43ea13c3f0809020473208ac7f1a2c8f324b4186cf77727ef63",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        766
+      ],
+      "outputSha256": "9b0e33a9f48bc43ea13c3f0809020473208ac7f1a2c8f324b4186cf77727ef63",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c5-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c5-retained-0.webp",
+      "sourceSha256": "0d1d0d6eaeaae5e196dbbf554b91b16e45cb7ecb3a067de8436da98b7b0c866f",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        278
+      ],
+      "outputSha256": "0d1d0d6eaeaae5e196dbbf554b91b16e45cb7ecb3a067de8436da98b7b0c866f",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c5-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c5-retained-1.webp",
+      "sourceSha256": "55792af7ffe4bb6127f846a153af94987df5966704b18656b687d2ed9dbaa83b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        487,
+        766
+      ],
+      "outputSha256": "55792af7ffe4bb6127f846a153af94987df5966704b18656b687d2ed9dbaa83b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r4c6.webp",
+      "sourceSha256": "23cd8f6369b17727fd18901e9864148487815c37d0e7a4b00fad872b3b099cbc",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "23cd8f6369b17727fd18901e9864148487815c37d0e7a4b00fad872b3b099cbc",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r4c7.webp",
+      "sourceSha256": "8d2217e83d09463c52cf61341f0bd0096003fadefed690e48647e891c2f44fd8",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "8d2217e83d09463c52cf61341f0bd0096003fadefed690e48647e891c2f44fd8",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r4c8.webp",
+      "sourceSha256": "4d94e285f410fb494754c177b28a4710247dc453625b6f2662d659279897ec01",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "4d94e285f410fb494754c177b28a4710247dc453625b6f2662d659279897ec01",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r4c9.webp",
+      "sourceSha256": "52557af288f292d397a1ccd59482665d3ff5a21b5df9f206b3dc8fb9e28062d4",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "52557af288f292d397a1ccd59482665d3ff5a21b5df9f206b3dc8fb9e28062d4",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r4c10.webp",
+      "sourceSha256": "c242bacd24cee08bd754f3dc22477385af90e688aeb83f5d7b305926f154d70f",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "c242bacd24cee08bd754f3dc22477385af90e688aeb83f5d7b305926f154d70f",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c11",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r4c11.webp",
+      "sourceSha256": "e4765d2f61311371240dd39263157e820fc3b9a09f19528239de45faded261f7",
+      "sourcePixelCrop": [
+        0,
+        0,
+        470,
+        1044
+      ],
+      "outputSha256": "e4765d2f61311371240dd39263157e820fc3b9a09f19528239de45faded261f7",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c0-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r5c0-retained-0.webp",
+      "sourceSha256": "eca75691af220566bdfba5b057d88e746551545f949a17e8fd2bfc8cd5564dab",
+      "sourcePixelCrop": [
+        0,
+        0,
+        313,
+        401
+      ],
+      "outputSha256": "eca75691af220566bdfba5b057d88e746551545f949a17e8fd2bfc8cd5564dab",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r5c1-retained-0.webp",
+      "sourceSha256": "b110ac2ac79eb3c5037dfdf2878735ac7dcf9676340b6fddedf9245623b1840d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        383,
+        505
+      ],
+      "outputSha256": "b110ac2ac79eb3c5037dfdf2878735ac7dcf9676340b6fddedf9245623b1840d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c2-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r5c2-retained-0.webp",
+      "sourceSha256": "400df7143706152f978f7d0585af0823c65b086a4c760c9f5f2f4935af3ba0f9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        505
+      ],
+      "outputSha256": "400df7143706152f978f7d0585af0823c65b086a4c760c9f5f2f4935af3ba0f9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c2-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r5c2-retained-1.webp",
+      "sourceSha256": "5f826df4bd1a2d8b1ecbbefe7512fdb8562cce917633a91b30d22b698469279c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        801,
+        540
+      ],
+      "outputSha256": "5f826df4bd1a2d8b1ecbbefe7512fdb8562cce917633a91b30d22b698469279c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c3.webp",
+      "sourceSha256": "239ee50f13c9f91932b26bcdd315af6b8fa442a2ca5d69c7153adfd709759824",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1045
+      ],
+      "outputSha256": "239ee50f13c9f91932b26bcdd315af6b8fa442a2ca5d69c7153adfd709759824",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c4.webp",
+      "sourceSha256": "38ff8e40a52861f4781f5671fd85381c5d02ae873f65ceabf5e30dc36ef1331c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1045
+      ],
+      "outputSha256": "38ff8e40a52861f4781f5671fd85381c5d02ae873f65ceabf5e30dc36ef1331c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c5.webp",
+      "sourceSha256": "1a82708d3d7ecb9e09ec47557968fbee290269b6ea4c7a1de27b7c5fbbed5cf9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1045
+      ],
+      "outputSha256": "1a82708d3d7ecb9e09ec47557968fbee290269b6ea4c7a1de27b7c5fbbed5cf9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c6.webp",
+      "sourceSha256": "82768d62fcc096df9bcfbeefd241bb6d980ed90b994ed36cd468001f7d5f3249",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1045
+      ],
+      "outputSha256": "82768d62fcc096df9bcfbeefd241bb6d980ed90b994ed36cd468001f7d5f3249",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c7.webp",
+      "sourceSha256": "8d22811c5423814f556200ebc610bf7d093088e699674b0d7bb2ba5bee708eaf",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1045
+      ],
+      "outputSha256": "8d22811c5423814f556200ebc610bf7d093088e699674b0d7bb2ba5bee708eaf",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c8.webp",
+      "sourceSha256": "2c634fb2bbb5ee2b506c757096f5fa3a50f0bcf98a51c01bcf5140cd42eba1cd",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1045
+      ],
+      "outputSha256": "2c634fb2bbb5ee2b506c757096f5fa3a50f0bcf98a51c01bcf5140cd42eba1cd",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c9.webp",
+      "sourceSha256": "89d11529dffbfad64b80158023407cd8ffddd989e5c724aab3c109ae68e876bc",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1045
+      ],
+      "outputSha256": "89d11529dffbfad64b80158023407cd8ffddd989e5c724aab3c109ae68e876bc",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c10.webp",
+      "sourceSha256": "9ef4d82320a75ef3370e00512ad5317d9e7709aa4d5ea8e47c73060a3c9abd5e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1045
+      ],
+      "outputSha256": "9ef4d82320a75ef3370e00512ad5317d9e7709aa4d5ea8e47c73060a3c9abd5e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r5c11",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r5c11.webp",
+      "sourceSha256": "702d989fc83d2bcc80a2e54f17f53897eca100ac7ad378fb52687ff36358da14",
+      "sourcePixelCrop": [
+        0,
+        0,
+        470,
+        1045
+      ],
+      "outputSha256": "702d989fc83d2bcc80a2e54f17f53897eca100ac7ad378fb52687ff36358da14",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c0-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r6c0-retained-0.webp",
+      "sourceSha256": "60fcec67828f83966328645f6affb85d6f465b49211d67cbd0f5ae9cc285b73b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        139,
+        331
+      ],
+      "outputSha256": "60fcec67828f83966328645f6affb85d6f465b49211d67cbd0f5ae9cc285b73b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c1-retained-1-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r6c1-retained-1-cyan-retained-0.webp",
+      "sourceSha256": "b9c4f8967d1957c49fb3cb425b81863b56b4fd6328e71545ebab6d0416e155bf",
+      "sourcePixelCrop": [
+        0,
+        0,
+        279,
+        139
+      ],
+      "outputSha256": "b9c4f8967d1957c49fb3cb425b81863b56b4fd6328e71545ebab6d0416e155bf",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c1-retained-2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r6c1-retained-2.webp",
+      "sourceSha256": "aa64e87c6f46a1ba521f7dcbc8ab0e4c510592d01e1e1850b6ee326daa62f98b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        244,
+        52
+      ],
+      "outputSha256": "aa64e87c6f46a1ba521f7dcbc8ab0e4c510592d01e1e1850b6ee326daa62f98b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c1-retained-3-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r6c1-retained-3-cyan-retained-0.webp",
+      "sourceSha256": "ac23e7d639dedc36dc4c5dfa74f476c28347eab1550f416d1b783433620b0142",
+      "sourcePixelCrop": [
+        0,
+        0,
+        383,
+        435
+      ],
+      "outputSha256": "ac23e7d639dedc36dc4c5dfa74f476c28347eab1550f416d1b783433620b0142",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c2-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r6c2-retained-0.webp",
+      "sourceSha256": "00b9ce9f850deb94fbcb6e112348a1e5c463674310da7cf2d4fe234b495b9737",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        992
+      ],
+      "outputSha256": "00b9ce9f850deb94fbcb6e112348a1e5c463674310da7cf2d4fe234b495b9737",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c2-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r6c2-retained-1.webp",
+      "sourceSha256": "1cace65c3a92de07619b3edbda2bd5fd4f655f2247bd406b679e45b401db7830",
+      "sourcePixelCrop": [
+        0,
+        0,
+        522,
+        52
+      ],
+      "outputSha256": "1cace65c3a92de07619b3edbda2bd5fd4f655f2247bd406b679e45b401db7830",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c3.webp",
+      "sourceSha256": "278d2443a7d3767053a8cfa30142c91a6796231f86ead89f2ebc8b58d95fe9da",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "278d2443a7d3767053a8cfa30142c91a6796231f86ead89f2ebc8b58d95fe9da",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c4.webp",
+      "sourceSha256": "1edc483512faee76bae8bb66bb5648849dd0022624507254b6de862abb3ce142",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "1edc483512faee76bae8bb66bb5648849dd0022624507254b6de862abb3ce142",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c5.webp",
+      "sourceSha256": "063b08b042ccd153e277fed284a79a1f0362223513fc7600fffd1d52d271e8f4",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "063b08b042ccd153e277fed284a79a1f0362223513fc7600fffd1d52d271e8f4",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c6.webp",
+      "sourceSha256": "7cbb8019b24fac55f9eb3318ccdc4557ae347e6c1d03efa61e9175fbef1d0b19",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "7cbb8019b24fac55f9eb3318ccdc4557ae347e6c1d03efa61e9175fbef1d0b19",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c7.webp",
+      "sourceSha256": "24cbb7409f285b5b3cb86842d430f9011b293e58896f7209caba8c19c9d466f1",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "24cbb7409f285b5b3cb86842d430f9011b293e58896f7209caba8c19c9d466f1",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c8.webp",
+      "sourceSha256": "736de7b313a8a68f32a8706b60b7e67c83292d4ce6cc96b33cf0c05bb1470533",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "736de7b313a8a68f32a8706b60b7e67c83292d4ce6cc96b33cf0c05bb1470533",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c9.webp",
+      "sourceSha256": "c2baeef34e4c030900510692a353373e4703f0c2030da29bc651d23e67e9aee4",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "c2baeef34e4c030900510692a353373e4703f0c2030da29bc651d23e67e9aee4",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r6c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r6c10.webp",
+      "sourceSha256": "a80c72155991870be73b003fc6297c804132ca83f811b92a86d0aa3531b49c11",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "a80c72155991870be73b003fc6297c804132ca83f811b92a86d0aa3531b49c11",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c0-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c0-retained-0.webp",
+      "sourceSha256": "15eef67288ae0ff29655e68ce09c216778280d8c33813fe6ebb909022b08ab11",
+      "sourcePixelCrop": [
+        0,
+        0,
+        139,
+        540
+      ],
+      "outputSha256": "15eef67288ae0ff29655e68ce09c216778280d8c33813fe6ebb909022b08ab11",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c0-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c0-retained-1.webp",
+      "sourceSha256": "abe6aea024ad16ff58b2f06765d8c6c54ede3065e0f881db9c047c53a4c5ebba",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        366
+      ],
+      "outputSha256": "abe6aea024ad16ff58b2f06765d8c6c54ede3065e0f881db9c047c53a4c5ebba",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c0-retained-2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c0-retained-2.webp",
+      "sourceSha256": "00524c0fd8ca285cd9278b2ef4d69792b85011160eef20e33e806ff8c98ccbd2",
+      "sourcePixelCrop": [
+        0,
+        0,
+        139,
+        139
+      ],
+      "outputSha256": "00524c0fd8ca285cd9278b2ef4d69792b85011160eef20e33e806ff8c98ccbd2",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c1-retained-0.webp",
+      "sourceSha256": "16a962f187f621b7c649d0d22af76eb64747a9eafce3276c67293e9bc8e38c74",
+      "sourcePixelCrop": [
+        0,
+        0,
+        244,
+        505
+      ],
+      "outputSha256": "16a962f187f621b7c649d0d22af76eb64747a9eafce3276c67293e9bc8e38c74",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c2-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c2-retained-0.webp",
+      "sourceSha256": "83f259bdacf9bfe354b30e31acba62579e95e55804bd6d514d1800ab6c11e631",
+      "sourcePixelCrop": [
+        0,
+        0,
+        522,
+        505
+      ],
+      "outputSha256": "83f259bdacf9bfe354b30e31acba62579e95e55804bd6d514d1800ab6c11e631",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c2-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c2-retained-1.webp",
+      "sourceSha256": "0b8fc67e73e6b1bd45793e30879551d5546360e0e50ea8e21bb03e39be92b907",
+      "sourcePixelCrop": [
+        0,
+        0,
+        418,
+        540
+      ],
+      "outputSha256": "0b8fc67e73e6b1bd45793e30879551d5546360e0e50ea8e21bb03e39be92b907",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r7c3.webp",
+      "sourceSha256": "1567670f480fe953b7453d82f1a222f9a683a403016ef56cff4064c88a293317",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1045
+      ],
+      "outputSha256": "1567670f480fe953b7453d82f1a222f9a683a403016ef56cff4064c88a293317",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r7c4.webp",
+      "sourceSha256": "99dbad1c0c42b27ba9298f4a4160528ae7a2547c9f42d2ee4380ac76400f09e1",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1045
+      ],
+      "outputSha256": "99dbad1c0c42b27ba9298f4a4160528ae7a2547c9f42d2ee4380ac76400f09e1",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c5-retained-0-b29-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r7c5-retained-0-b29-retained-0.webp",
+      "sourceSha256": "21c891e4ca19032d4e93267f5355380bb349c9096d92300a63e89c2acfb99617",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        122
+      ],
+      "outputSha256": "21c891e4ca19032d4e93267f5355380bb349c9096d92300a63e89c2acfb99617",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c5-retained-0-b29-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r7c5-retained-0-b29-retained-1.webp",
+      "sourceSha256": "b6f210e356a9aeafa7a094ca95bd9e5393dc7cb798e393e9f91583225cbe9674",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        661
+      ],
+      "outputSha256": "b6f210e356a9aeafa7a094ca95bd9e5393dc7cb798e393e9f91583225cbe9674",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c5-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r7c5-retained-1.webp",
+      "sourceSha256": "2406a5b007ee4a11fdba8d8248ef70bb8b969ee426e6b28207690bed4bfc19b6",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        262
+      ],
+      "outputSha256": "2406a5b007ee4a11fdba8d8248ef70bb8b969ee426e6b28207690bed4bfc19b6",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c6-retained-0-b29-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r7c6-retained-0-b29-retained-0.webp",
+      "sourceSha256": "d8b89817c493bca78337f84789669209b3b9bf728a26798a2cd14ccde5c26791",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        122
+      ],
+      "outputSha256": "d8b89817c493bca78337f84789669209b3b9bf728a26798a2cd14ccde5c26791",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c7-retained-0-b29-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r7c7-retained-0-b29-retained-0.webp",
+      "sourceSha256": "feae7a0e5285ced006c72f54b7077cd3407509862ec1e9ab9137e33fa74403ed",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        122
+      ],
+      "outputSha256": "feae7a0e5285ced006c72f54b7077cd3407509862ec1e9ab9137e33fa74403ed",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c7-retained-0-b29-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r7c7-retained-0-b29-retained-1.webp",
+      "sourceSha256": "da3f3e4140dff019b7483b951d608adcec78dcd12542720668eb547165984461",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        661
+      ],
+      "outputSha256": "da3f3e4140dff019b7483b951d608adcec78dcd12542720668eb547165984461",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c7-retained-1-b29-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r7c7-retained-1-b29-retained-0.webp",
+      "sourceSha256": "42563d49a0ad6ddd8fec949015527962f10e61b648d69311d24f8741281baf5a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        262
+      ],
+      "outputSha256": "42563d49a0ad6ddd8fec949015527962f10e61b648d69311d24f8741281baf5a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r7c8.webp",
+      "sourceSha256": "b32c998b2d634bf053e143180972d01adbf273c36c22f6afde820b2396d7e3e0",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1045
+      ],
+      "outputSha256": "b32c998b2d634bf053e143180972d01adbf273c36c22f6afde820b2396d7e3e0",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r7c9.webp",
+      "sourceSha256": "76c1387557d2369d075b1350f5cd743cd98ee200bab0ac04d8b890841629cfc9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1045
+      ],
+      "outputSha256": "76c1387557d2369d075b1350f5cd743cd98ee200bab0ac04d8b890841629cfc9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r7c10",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r7c10.webp",
+      "sourceSha256": "a187fb4683ca02ad69d570ec98d9996e49129a36980ef16a53d6c4d3b0174406",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1045
+      ],
+      "outputSha256": "a187fb4683ca02ad69d570ec98d9996e49129a36980ef16a53d6c4d3b0174406",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c0-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c0-retained-0.webp",
+      "sourceSha256": "42dd594138300b9c4bedf5eb416a0a5993f1179f47e2b55f8439828dbfb21cf3",
+      "sourcePixelCrop": [
+        0,
+        0,
+        696,
+        575
+      ],
+      "outputSha256": "42dd594138300b9c4bedf5eb416a0a5993f1179f47e2b55f8439828dbfb21cf3",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c0-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c0-retained-1.webp",
+      "sourceSha256": "601926a952d4d66c04591dbb549c942cd6910ce86567d27d6de1a534e580d415",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        469
+      ],
+      "outputSha256": "601926a952d4d66c04591dbb549c942cd6910ce86567d27d6de1a534e580d415",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c1-retained-0.webp",
+      "sourceSha256": "2696b79a2800a278d0fa8fd8b84cc068a90cbdd8dcae20443fba8cdbdbb07f2e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        540
+      ],
+      "outputSha256": "2696b79a2800a278d0fa8fd8b84cc068a90cbdd8dcae20443fba8cdbdbb07f2e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c1-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c1-retained-1.webp",
+      "sourceSha256": "2f838c5c4440cd998853725c1dd062aa71582960a5125870a1feaeb09c9db0f0",
+      "sourcePixelCrop": [
+        0,
+        0,
+        697,
+        35
+      ],
+      "outputSha256": "2f838c5c4440cd998853725c1dd062aa71582960a5125870a1feaeb09c9db0f0",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c2-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c2-retained-0.webp",
+      "sourceSha256": "6d3171fe718357ceaf5844befe2ad870a24470a3a0bd70d7fc48d64dbcf11f5b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        540
+      ],
+      "outputSha256": "6d3171fe718357ceaf5844befe2ad870a24470a3a0bd70d7fc48d64dbcf11f5b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c2-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c2-retained-1.webp",
+      "sourceSha256": "61440b67ce07bd2b993eb24b12e43f56b444bc10a4ad2c8654acd0b33385a8da",
+      "sourcePixelCrop": [
+        0,
+        0,
+        418,
+        504
+      ],
+      "outputSha256": "61440b67ce07bd2b993eb24b12e43f56b444bc10a4ad2c8654acd0b33385a8da",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r8c3.webp",
+      "sourceSha256": "e351f505928bb00ac766eb51d9450c6b5ef5444f3a127679064e83276fcbbcb5",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "e351f505928bb00ac766eb51d9450c6b5ef5444f3a127679064e83276fcbbcb5",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r8c4.webp",
+      "sourceSha256": "0f80283a5f79f7578bf7eb3794fbaeba347606dd678cefe4a2dd2b4c2e01fe0e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "0f80283a5f79f7578bf7eb3794fbaeba347606dd678cefe4a2dd2b4c2e01fe0e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c5-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c5-retained-0.webp",
+      "sourceSha256": "e2a002d0927890092e0fd11e18580bd016c1d35951e8f73b5907018b306510ed",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        226
+      ],
+      "outputSha256": "e2a002d0927890092e0fd11e18580bd016c1d35951e8f73b5907018b306510ed",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c5-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c5-retained-1.webp",
+      "sourceSha256": "4ec2a1c3c31a04972d6b142e9a18fd406d3c0fd3bc20746aec786af302b621eb",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        818
+      ],
+      "outputSha256": "4ec2a1c3c31a04972d6b142e9a18fd406d3c0fd3bc20746aec786af302b621eb",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c6-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c6-retained-0.webp",
+      "sourceSha256": "2792b2fe82454ff99c78740445983ba5e230a5030b6b74864799fb19b7875fa9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        226
+      ],
+      "outputSha256": "2792b2fe82454ff99c78740445983ba5e230a5030b6b74864799fb19b7875fa9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c7-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r8c7-retained-0.webp",
+      "sourceSha256": "ad1b1dea54dae83e07bef9297ecce29e1226125b9389be37e4725dea4391c6a0",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        226
+      ],
+      "outputSha256": "ad1b1dea54dae83e07bef9297ecce29e1226125b9389be37e4725dea4391c6a0",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c7-retained-1-b29-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r8c7-retained-1-b29-retained-0.webp",
+      "sourceSha256": "5c76c6df666a2223ce06663ac33851e5a5c26ceb342bf86bfc8eb1cc6bd40e99",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        818
+      ],
+      "outputSha256": "5c76c6df666a2223ce06663ac33851e5a5c26ceb342bf86bfc8eb1cc6bd40e99",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r8c8.webp",
+      "sourceSha256": "462dae11fcdce4b37cb223edc5bf2216b2b2efcfbc3475716ffed41e76ff8998",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "462dae11fcdce4b37cb223edc5bf2216b2b2efcfbc3475716ffed41e76ff8998",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r8c9",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r8c9.webp",
+      "sourceSha256": "19b90ee9dbaaabba76f38b81a06400ab325cdcfb9751561d4d2cb2db88c39e1e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "19b90ee9dbaaabba76f38b81a06400ab325cdcfb9751561d4d2cb2db88c39e1e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c1.webp",
+      "sourceSha256": "404ed982d210eee12ab0b623845bc3e427bca331c78aa20c402519be621f9601",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "404ed982d210eee12ab0b623845bc3e427bca331c78aa20c402519be621f9601",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c2.webp",
+      "sourceSha256": "f8d2efee2593889c78a2a9bb26690ffc4aef10e2568373736cb5a938cfaf0604",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "f8d2efee2593889c78a2a9bb26690ffc4aef10e2568373736cb5a938cfaf0604",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c3.webp",
+      "sourceSha256": "18a9a80e7842faf87ba03e2e9709545e8c9952b217e127888f44dc5520d05b7d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "18a9a80e7842faf87ba03e2e9709545e8c9952b217e127888f44dc5520d05b7d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c4.webp",
+      "sourceSha256": "5d86977422aa9369ba6b395ce9808229e263d0a7f5af9583f98dc621f656b5a9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        1044
+      ],
+      "outputSha256": "5d86977422aa9369ba6b395ce9808229e263d0a7f5af9583f98dc621f656b5a9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c5.webp",
+      "sourceSha256": "7748ad1900f1cea6c50b65d6d3a67b1398fe1c3344e136bc9ea1980fb04b27e7",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "7748ad1900f1cea6c50b65d6d3a67b1398fe1c3344e136bc9ea1980fb04b27e7",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c6.webp",
+      "sourceSha256": "df5c6f32eb8560dd9f03b60e7939db03176ff4865170147ef55a456ee7106b4d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "df5c6f32eb8560dd9f03b60e7939db03176ff4865170147ef55a456ee7106b4d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c7.webp",
+      "sourceSha256": "4bac09fe780973ceffb2d4ff27d0fa49d39c726522cd4b6cab1876e3eca83602",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        1044
+      ],
+      "outputSha256": "4bac09fe780973ceffb2d4ff27d0fa49d39c726522cd4b6cab1876e3eca83602",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r9c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r9c8.webp",
+      "sourceSha256": "573db004739282a7b40f58e67f8321bca73ae643bd87b83a0189a7113d97c8fc",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        1044
+      ],
+      "outputSha256": "573db004739282a7b40f58e67f8321bca73ae643bd87b83a0189a7113d97c8fc",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r10c2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r10c2.webp",
+      "sourceSha256": "9b69bc8acb8d45988beea361b7ee48a55b86caf8ee294db5b09efe9d7d105e0b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        784
+      ],
+      "outputSha256": "9b69bc8acb8d45988beea361b7ee48a55b86caf8ee294db5b09efe9d7d105e0b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r10c4",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r10c4.webp",
+      "sourceSha256": "a962e7d7ace2df4f801ed6d91d45f088502ac1d870069fa0fd556534850b2d48",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        784
+      ],
+      "outputSha256": "a962e7d7ace2df4f801ed6d91d45f088502ac1d870069fa0fd556534850b2d48",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r10c5",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r10c5.webp",
+      "sourceSha256": "831c924c9cc6a659cc7bd2c339ed736d63a1b2e09154732d5e92cdadc6f323ac",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        784
+      ],
+      "outputSha256": "831c924c9cc6a659cc7bd2c339ed736d63a1b2e09154732d5e92cdadc6f323ac",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r10c6",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r10c6.webp",
+      "sourceSha256": "56be2b0b54e04f19de7946a437f4c976e13672ee6fca9ef6e6179d9ede5a58af",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        784
+      ],
+      "outputSha256": "56be2b0b54e04f19de7946a437f4c976e13672ee6fca9ef6e6179d9ede5a58af",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r10c7",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r10c7.webp",
+      "sourceSha256": "0bbcc6ebef26bd367f50720f49d213ee094ac517d21095f2c1643a1d6af2014a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        784
+      ],
+      "outputSha256": "0bbcc6ebef26bd367f50720f49d213ee094ac517d21095f2c1643a1d6af2014a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r10c8",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r10c8.webp",
+      "sourceSha256": "7750e651504e97bf2154d2fe7a138dba7246428018e8f63fff540854e09fc97f",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1045,
+        784
+      ],
+      "outputSha256": "7750e651504e97bf2154d2fe7a138dba7246428018e8f63fff540854e09fc97f",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "sign-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/sign-retained-0.webp",
+      "sourceSha256": "d5f79262cf1860753c81679ac11f931ba00f7fc07e28f27b143d9f621b3c175c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1496,
+        1192
+      ],
+      "outputSha256": "d5f79262cf1860753c81679ac11f931ba00f7fc07e28f27b143d9f621b3c175c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "sign-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/sign-retained-1.webp",
+      "sourceSha256": "2236b357a3c6760d6082965fc27ca6434c8687a3518fd2e28993f1f3d9992fc4",
+      "sourcePixelCrop": [
+        0,
+        0,
+        661,
+        44
+      ],
+      "outputSha256": "2236b357a3c6760d6082965fc27ca6434c8687a3518fd2e28993f1f3d9992fc4",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c3-south-underlay-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c3-south-underlay-retained-0.webp",
+      "sourceSha256": "6a4a991ff53d4f2f97111092228665f2fbdbab0bee9113e0b1672c41b66c6817",
+      "sourcePixelCrop": [
+        0,
+        0,
+        522,
+        139
+      ],
+      "outputSha256": "6a4a991ff53d4f2f97111092228665f2fbdbab0bee9113e0b1672c41b66c6817",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r4c4-south-underlay-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r4c4-south-underlay-retained-0.webp",
+      "sourceSha256": "b7e87fe2b5a336a6ba5367582491567987c11f78e9171a3d3fc2bbf7266efb98",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        139
+      ],
+      "outputSha256": "b7e87fe2b5a336a6ba5367582491567987c11f78e9171a3d3fc2bbf7266efb98",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c3-north-underlay",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/r1c3-north-underlay.webp",
+      "sourceSha256": "9c1203846ac10f49fb1b376ecf381fb031d19dc3b8df8866e876013272597c07",
+      "sourcePixelCrop": [
+        0,
+        0,
+        975,
+        139
+      ],
+      "outputSha256": "9c1203846ac10f49fb1b376ecf381fb031d19dc3b8df8866e876013272597c07",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c4-north-underlay-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c4-north-underlay-retained-0.webp",
+      "sourceSha256": "edaa12c2421b2e38e5c6ca30fae54118336a060ca4478f21bdfdd6c67a37dd1c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        975,
+        87
+      ],
+      "outputSha256": "edaa12c2421b2e38e5c6ca30fae54118336a060ca4478f21bdfdd6c67a37dd1c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c4-north-underlay-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c4-north-underlay-retained-1.webp",
+      "sourceSha256": "258a3100b3f48d0c313424226c26fb6a7a57e14775eb2618680ddf2fc5eb3ad8",
+      "sourcePixelCrop": [
+        0,
+        0,
+        487,
+        52
+      ],
+      "outputSha256": "258a3100b3f48d0c313424226c26fb6a7a57e14775eb2618680ddf2fc5eb3ad8",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/approved-r0c0-north-retained.webp",
+      "sourceSha256": "d1b86194ce7f5c5bf0e629fedfac87a2331bfef007a3b7aa5a041d72f5776eb3",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1119,
+        980
+      ],
+      "outputSha256": "d1b86194ce7f5c5bf0e629fedfac87a2331bfef007a3b7aa5a041d72f5776eb3",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c1-retained-0.webp",
+      "sourceSha256": "385a24f93fb6655d66885118d3e815f290809b2d711408541c53f85cc0bd398a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        492,
+        122
+      ],
+      "outputSha256": "385a24f93fb6655d66885118d3e815f290809b2d711408541c53f85cc0bd398a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c1-retained-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c1-retained-retained-0.webp",
+      "sourceSha256": "324098dbb7b097e8ad4d9f6b129c6fa37b3d6336a4141afa06c8a03aa7ca658c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1119,
+        614
+      ],
+      "outputSha256": "324098dbb7b097e8ad4d9f6b129c6fa37b3d6336a4141afa06c8a03aa7ca658c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c1-retained-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c1-retained-retained-1.webp",
+      "sourceSha256": "2d66335870d7a60d788f6c5ce2279a7db738de746fe63ace9722e073826aabcc",
+      "sourcePixelCrop": [
+        0,
+        0,
+        492,
+        244
+      ],
+      "outputSha256": "2d66335870d7a60d788f6c5ce2279a7db738de746fe63ace9722e073826aabcc",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r0c1-retained-retained-2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r0c1-retained-retained-2.webp",
+      "sourceSha256": "00d9194131b6d337d9773a178371b1a4a62ce7971386b9f6a88272a9f0bb5d14",
+      "sourcePixelCrop": [
+        0,
+        0,
+        70,
+        174
+      ],
+      "outputSha256": "00d9194131b6d337d9773a178371b1a4a62ce7971386b9f6a88272a9f0bb5d14",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c0-retained-0-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r1c0-retained-0-grass-retained-0.webp",
+      "sourceSha256": "ef6e71ce128dba775d57301ddce3b720daaa46c8ee02f2802ad4c8a6e25b54d6",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1119,
+        57
+      ],
+      "outputSha256": "ef6e71ce128dba775d57301ddce3b720daaa46c8ee02f2802ad4c8a6e25b54d6",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c0-retained-0-grass-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/r1c0-retained-0-grass-retained-1.webp",
+      "sourceSha256": "0b804e033268046c738a586825b538702c84d920865643f6ae54d6b9029148af",
+      "sourcePixelCrop": [
+        0,
+        0,
+        980,
+        801
+      ],
+      "outputSha256": "0b804e033268046c738a586825b538702c84d920865643f6ae54d6b9029148af",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c0-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c0-retained-1.webp",
+      "sourceSha256": "7b5f2688b800cafd36ada045fd1d7a9b5b430cc2985df2cd996e6e0296c13d48",
+      "sourcePixelCrop": [
+        0,
+        0,
+        527,
+        261
+      ],
+      "outputSha256": "7b5f2688b800cafd36ada045fd1d7a9b5b430cc2985df2cd996e6e0296c13d48",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c1-retained-0-b30-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/r1c1-retained-0-b30-retained-0.webp",
+      "sourceSha256": "3a376cf463e64f3fcbe82634f7e6f1e0f872f66ca3cc13ce2bd40a494589a79c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1119,
+        614
+      ],
+      "outputSha256": "3a376cf463e64f3fcbe82634f7e6f1e0f872f66ca3cc13ce2bd40a494589a79c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c1-retained-0-b30-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/r1c1-retained-0-b30-retained-1.webp",
+      "sourceSha256": "b44ecc277d7d4f07efd0df0dd5963818034253cebfbaec48f88bb9608d3f7871",
+      "sourcePixelCrop": [
+        0,
+        0,
+        910,
+        227
+      ],
+      "outputSha256": "b44ecc277d7d4f07efd0df0dd5963818034253cebfbaec48f88bb9608d3f7871",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "r1c1-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/r1c1-retained-1.webp",
+      "sourceSha256": "2a1233b47a920a571f33c458d6d10073f203f0eb8bf192924aa3da986d91349a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        632,
+        278
+      ],
+      "outputSha256": "2a1233b47a920a571f33c458d6d10073f203f0eb8bf192924aa3da986d91349a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "southwest-curb-whole-joint-r1-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/southwest-curb-whole-joint-r1-grass-retained-0.webp",
+      "sourceSha256": "f5ea5112ff09fae62ef9cc8cc65713fb95dddce6869b6dbda31ba515280f6a00",
+      "sourcePixelCrop": [
+        0,
+        0,
+        453,
+        835
+      ],
+      "outputSha256": "f5ea5112ff09fae62ef9cc8cc65713fb95dddce6869b6dbda31ba515280f6a00",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "southeast-road-whole-joint-r1-b30-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/southeast-road-whole-joint-r1-b30-retained-0.webp",
+      "sourceSha256": "d19d96ef7b1ac0ac081d84bfde34adaeeff9a1ab2ca003f8affa30542e1d690b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1044,
+        575
+      ],
+      "outputSha256": "d19d96ef7b1ac0ac081d84bfde34adaeeff9a1ab2ca003f8affa30542e1d690b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "southeast-road-whole-joint-r1-b30-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/southeast-road-whole-joint-r1-b30-retained-1.webp",
+      "sourceSha256": "5ddb800dfd3193b37c3c472eb3941398c7b77500515f5eed5306ca0e12948d16",
+      "sourcePixelCrop": [
+        0,
+        0,
+        278,
+        469
+      ],
+      "outputSha256": "5ddb800dfd3193b37c3c472eb3941398c7b77500515f5eed5306ca0e12948d16",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "southeast-road-whole-joint-r1-b30-retained-2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/southeast-road-whole-joint-r1-b30-retained-2.webp",
+      "sourceSha256": "7dafed2d200dd8fd6d36963b641671b54f3ef8c81d8e0b8535f12daafb14a952",
+      "sourcePixelCrop": [
+        0,
+        0,
+        279,
+        469
+      ],
+      "outputSha256": "7dafed2d200dd8fd6d36963b641671b54f3ef8c81d8e0b8535f12daafb14a952",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "upper-cloud-complete-r2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/upper-cloud-complete-r2.webp",
+      "sourceSha256": "ad3ff574a2030809779c210494c02e9939d2b089486f89d135d319783374360a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1984,
+        801
+      ],
+      "outputSha256": "ad3ff574a2030809779c210494c02e9939d2b089486f89d135d319783374360a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-grass-scale-transition-r1-retained-0.webp",
+      "sourceSha256": "aacfad65f30023146bfaf1b149a34cbab9fdcbff62234b722dd723ff01d7c077",
+      "sourcePixelCrop": [
+        0,
+        0,
+        974,
+        35
+      ],
+      "outputSha256": "aacfad65f30023146bfaf1b149a34cbab9fdcbff62234b722dd723ff01d7c077",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-grass-scale-transition-r1-retained-1.webp",
+      "sourceSha256": "b6aaee1f13676b3dd5837cf11074950e28f275f56b39254e9c52d558f5f93727",
+      "sourcePixelCrop": [
+        0,
+        0,
+        487,
+        870
+      ],
+      "outputSha256": "b6aaee1f13676b3dd5837cf11074950e28f275f56b39254e9c52d558f5f93727",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-2",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-grass-scale-transition-r1-retained-2.webp",
+      "sourceSha256": "2a794761a46d45c6cab24487e35218b752bf50110d5a4d0b947bac42d4b5236e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        244,
+        35
+      ],
+      "outputSha256": "2a794761a46d45c6cab24487e35218b752bf50110d5a4d0b947bac42d4b5236e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-grass-scale-transition-r1-retained-3",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-grass-scale-transition-r1-retained-3.webp",
+      "sourceSha256": "e41cea947f4f6cad83246566dc1c53b7ed3b9aad0ef23ef5fff62b655be1930d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        104,
+        139
+      ],
+      "outputSha256": "e41cea947f4f6cad83246566dc1c53b7ed3b9aad0ef23ef5fff62b655be1930d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "yellow-building-empty-base-r3-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/yellow-building-empty-base-r3-retained-0.webp",
+      "sourceSha256": "73cccdcaf01c8b780c04e719eb1c71f2f2feb34f9c1ccc68497c1c4cb542e0d4",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        592
+      ],
+      "outputSha256": "73cccdcaf01c8b780c04e719eb1c71f2f2feb34f9c1ccc68497c1c4cb542e0d4",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "yellow-building-empty-base-r3-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/yellow-building-empty-base-r3-retained-1.webp",
+      "sourceSha256": "f3f9a2506c8d7804725ab02dd0f055bf2ac70d11b4c2bee38ae7f098f9a95f0e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        383,
+        104
+      ],
+      "outputSha256": "f3f9a2506c8d7804725ab02dd0f055bf2ac70d11b4c2bee38ae7f098f9a95f0e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-south-r1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-terrain-fine-south-r1-retained-0.webp",
+      "sourceSha256": "a098b6c7fc1b803654bc16210e47cbdbe40e2e2c060330ade45acd2c52dae074",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1253,
+        835
+      ],
+      "outputSha256": "a098b6c7fc1b803654bc16210e47cbdbe40e2e2c060330ade45acd2c52dae074",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-south-r1-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-terrain-fine-south-r1-retained-1.webp",
+      "sourceSha256": "9cdfb025014c7e778a23fa219629bde31b7ee1994093da5f1df480f6947ce553",
+      "sourcePixelCrop": [
+        0,
+        0,
+        418,
+        139
+      ],
+      "outputSha256": "9cdfb025014c7e778a23fa219629bde31b7ee1994093da5f1df480f6947ce553",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-middle-base-r3-retained-0-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-middle-base-r3-retained-0-cyan-retained-0.webp",
+      "sourceSha256": "15738274f702fcd21e5bd23cca2de713fafb4cf1dcaa1550c2308792fd1f7e7a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        870
+      ],
+      "outputSha256": "15738274f702fcd21e5bd23cca2de713fafb4cf1dcaa1550c2308792fd1f7e7a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-coast-r1-retained-0-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-coast-r1-retained-0-cyan-retained-0.webp",
+      "sourceSha256": "f73ed80b9a37127d44b8406a157252b5933ea9ed1d2d35178fc3dd8babd86a01",
+      "sourcePixelCrop": [
+        0,
+        0,
+        696,
+        870
+      ],
+      "outputSha256": "f73ed80b9a37127d44b8406a157252b5933ea9ed1d2d35178fc3dd8babd86a01",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-coast-r1-retained-0-cyan-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-coast-r1-retained-0-cyan-retained-1.webp",
+      "sourceSha256": "f176ef87c689476d4cbda1eabe338eeefa5d3c9a94197c07239d699e1b45fa32",
+      "sourcePixelCrop": [
+        0,
+        0,
+        488,
+        140
+      ],
+      "outputSha256": "f176ef87c689476d4cbda1eabe338eeefa5d3c9a94197c07239d699e1b45fa32",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-north-base-r1-retained-0-red-retained-0.webp",
+      "sourceSha256": "52f51eb138b8da6af94b36db48632aecacea55a916d3ba82fe9d09ef33c64a35",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1358,
+        766
+      ],
+      "outputSha256": "52f51eb138b8da6af94b36db48632aecacea55a916d3ba82fe9d09ef33c64a35",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-1-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-north-base-r1-retained-0-red-retained-1-cyan-retained-0.webp",
+      "sourceSha256": "bcf222ff64c459e24a136051fdadbb2bd0e5de86afeb20c1f062361d7b90cfc9",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        191
+      ],
+      "outputSha256": "bcf222ff64c459e24a136051fdadbb2bd0e5de86afeb20c1f062361d7b90cfc9",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-2-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-north-base-r1-retained-0-red-retained-2-cyan-retained-0.webp",
+      "sourceSha256": "ac8eb1ca10a30b19a1f914516ef47c92e55dad42eb6587f6851d2c510a455d1a",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1010,
+        174
+      ],
+      "outputSha256": "ac8eb1ca10a30b19a1f914516ef47c92e55dad42eb6587f6851d2c510a455d1a",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-2-cyan-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-north-base-r1-retained-0-red-retained-2-cyan-retained-1.webp",
+      "sourceSha256": "f696fcd55a46c86c451200bf71ece7d7ba4b2edb38f005d7294339e44efcf047",
+      "sourcePixelCrop": [
+        0,
+        0,
+        627,
+        87
+      ],
+      "outputSha256": "f696fcd55a46c86c451200bf71ece7d7ba4b2edb38f005d7294339e44efcf047",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-0-red-retained-3-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-terrain-fine-north-base-r1-retained-0-red-retained-3-cyan-retained-0.webp",
+      "sourceSha256": "f7ebfea2c516c32f494eb03a7fd86fcdaf7cf1eb8357edc65970690a6d96ee10",
+      "sourcePixelCrop": [
+        0,
+        0,
+        35,
+        174
+      ],
+      "outputSha256": "f7ebfea2c516c32f494eb03a7fd86fcdaf7cf1eb8357edc65970690a6d96ee10",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/west-terrain-fine-north-base-r1-retained-1.webp",
+      "sourceSha256": "5420179bf203b800ce5791d85f5063daeb94e41609664ce5e5ca77e167e074a1",
+      "sourcePixelCrop": [
+        0,
+        0,
+        313,
+        139
+      ],
+      "outputSha256": "5420179bf203b800ce5791d85f5063daeb94e41609664ce5e5ca77e167e074a1",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-upper-terrain-cap-r2-grass-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-upper-terrain-cap-r2-grass-retained-0.webp",
+      "sourceSha256": "497a6de42976e9690ce21bf66d84bfba455bdffbcdd1fa0dfbc4d9d4a2c58af5",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1671,
+        766
+      ],
+      "outputSha256": "497a6de42976e9690ce21bf66d84bfba455bdffbcdd1fa0dfbc4d9d4a2c58af5",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-upper-terrain-cap-r2-grass-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-upper-terrain-cap-r2-grass-retained-1.webp",
+      "sourceSha256": "5543d716377b72ffe81a78da92a15813af14661487e479757dc33fc472dfd23c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        940,
+        313
+      ],
+      "outputSha256": "5543d716377b72ffe81a78da92a15813af14661487e479757dc33fc472dfd23c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "pilot-curb-native-continuation-r1-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/pilot-curb-native-continuation-r1-retained-0.webp",
+      "sourceSha256": "92e94de4aadaa16eadd3dfe5cf7ef5f45f369b20ea850c5212aef5b7b70f3c50",
+      "sourcePixelCrop": [
+        0,
+        0,
+        557,
+        174
+      ],
+      "outputSha256": "92e94de4aadaa16eadd3dfe5cf7ef5f45f369b20ea850c5212aef5b7b70f3c50",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "pilot-curb-native-continuation-r1-retained-1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/pilot-curb-native-continuation-r1-retained-1.webp",
+      "sourceSha256": "454e3a1886c33fe953e5ed522e84e559902fbf28433df0af1529a6abb963517d",
+      "sourcePixelCrop": [
+        0,
+        0,
+        523,
+        244
+      ],
+      "outputSha256": "454e3a1886c33fe953e5ed522e84e559902fbf28433df0af1529a6abb963517d",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "green30-whole-native-r1",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-27/green30-whole-native-r1.webp",
+      "sourceSha256": "b585da5fbd6e4c6da57f3b00c9cc16a62148e0c0d3fe5cf5a6540e217446bb43",
+      "sourcePixelCrop": [
+        0,
+        0,
+        348,
+        279
+      ],
+      "outputSha256": "b585da5fbd6e4c6da57f3b00c9cc16a62148e0c0d3fe5cf5a6540e217446bb43",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "south-bridge-registered-b29",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/bridge-registered.webp",
+      "sourceSha256": "a266cfc95ef08c66f0bedfd6682e5322146b363a8e7afb91cf3be20e474fff28",
+      "sourcePixelCrop": [
+        0,
+        0,
+        2019,
+        1741
+      ],
+      "outputSha256": "a266cfc95ef08c66f0bedfd6682e5322146b363a8e7afb91cf3be20e474fff28",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-type28-shared-design-b29-cyan-retained-0",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-type28-shared-design-b29-cyan-retained-0.webp",
+      "sourceSha256": "769825cfff59a36aa4133547949a7104998ac8d82463bf9233e3aa10301c356b",
+      "sourcePixelCrop": [
+        0,
+        0,
+        313,
+        174
+      ],
+      "outputSha256": "769825cfff59a36aa4133547949a7104998ac8d82463bf9233e3aa10301c356b",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-grass-native-normalized-b29",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-grass-normalized.webp",
+      "sourceSha256": "a50b79e66fcbbd88346a71b83e84d335c6244ec8018c08d80dc83005384b0fc2",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1671,
+        1880
+      ],
+      "outputSha256": "a50b79e66fcbbd88346a71b83e84d335c6244ec8018c08d80dc83005384b0fc2",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-cyan-coherent-joint-b29",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-29/west-cyan-joint.webp",
+      "sourceSha256": "a5ffc2935195b661bf78cf03797d902c8a1b80a3138b705169180fbd3ce21c9e",
+      "sourcePixelCrop": [
+        0,
+        0,
+        1114,
+        418
+      ],
+      "outputSha256": "a5ffc2935195b661bf78cf03797d902c8a1b80a3138b705169180fbd3ce21c9e",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "north-road-original-markings-b30",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-30/north-road-markings.webp",
+      "sourceSha256": "f9bd1cfe3243ce5e1cf67311b3c9afbdc6698b70c7f0d160d5d4ab224dd67a0c",
+      "sourcePixelCrop": [
+        0,
+        0,
+        487,
+        696
+      ],
+      "outputSha256": "f9bd1cfe3243ce5e1cf67311b3c9afbdc6698b70c7f0d160d5d4ab224dd67a0c",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "yellow-building-cone-rear",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/yellow-building-cone-rear.webp",
+      "sourceSha256": "f0184ccb57ac861442f9a5dd85a3508f9aa50c4882a15875b5d591d2c55ea875",
+      "sourcePixelCrop": [
+        0,
+        0,
+        101,
+        135
+      ],
+      "outputSha256": "f0184ccb57ac861442f9a5dd85a3508f9aa50c4882a15875b5d591d2c55ea875",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "yellow-building-cone-near",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/yellow-building-cone-near.webp",
+      "sourceSha256": "bfe8bbeaeb3d2c1b1ffef6d9678e37333956bb9caa70997162a1aa62b9c4fa06",
+      "sourcePixelCrop": [
+        0,
+        0,
+        95,
+        162
+      ],
+      "outputSha256": "bfe8bbeaeb3d2c1b1ffef6d9678e37333956bb9caa70997162a1aa62b9c4fa06",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-round-tree-original-placement",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/west-round-tree-original-placement.webp",
+      "sourceSha256": "bc7ad791725df1149344f3f16ae9d7bc1742ffe3d2078c37aa1884dc41b2bfab",
+      "sourcePixelCrop": [
+        0,
+        0,
+        360,
+        454
+      ],
+      "outputSha256": "bc7ad791725df1149344f3f16ae9d7bc1742ffe3d2078c37aa1884dc41b2bfab",
+      "nativeRgbaUnchanged": true
+    },
+    {
+      "id": "west-coast-tree-original-placement",
+      "sourceUrl": "hd-masters/map/full-map-v1/reviews/batch-26/west-coast-tree-original-placement.webp",
+      "sourceSha256": "aa6463e04951ef5c73670ddb2120c9febb4ff611e66212e6df1de970ccd76c35",
+      "sourcePixelCrop": [
+        0,
+        0,
+        408,
+        495
+      ],
+      "outputSha256": "aa6463e04951ef5c73670ddb2120c9febb4ff611e66212e6df1de970ccd76c35",
+      "nativeRgbaUnchanged": true
+    }
+  ]
+}

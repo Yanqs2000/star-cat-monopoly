@@ -1,0 +1,193 @@
+[
+  {
+    "profile": "hd",
+    "rolls": [
+      {
+        "roll": 1,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 10,
+            "row": 10
+          },
+          {
+            "column": 7,
+            "row": 35
+          },
+          {
+            "column": 30,
+            "row": 32
+          }
+        ],
+        "movingSamples": 29
+      },
+      {
+        "roll": 2,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 7,
+            "row": 13
+          },
+          {
+            "column": 7,
+            "row": 35
+          },
+          {
+            "column": 30,
+            "row": 32
+          }
+        ],
+        "movingSamples": 19
+      },
+      {
+        "roll": 3,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 7,
+            "row": 13
+          },
+          {
+            "column": 12,
+            "row": 32
+          },
+          {
+            "column": 30,
+            "row": 32
+          }
+        ],
+        "movingSamples": 38
+      },
+      {
+        "roll": 4,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 7,
+            "row": 13
+          },
+          {
+            "column": 12,
+            "row": 32
+          },
+          {
+            "column": 33,
+            "row": 29
+          }
+        ],
+        "movingSamples": 21
+      }
+    ],
+    "errors": [
+      "warning: [.WebGL-0x104000e3400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "warning: [.WebGL-0x104000d6800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    ]
+  },
+  {
+    "profile": "original",
+    "rolls": [
+      {
+        "roll": 1,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 10,
+            "row": 10
+          },
+          {
+            "column": 7,
+            "row": 35
+          },
+          {
+            "column": 30,
+            "row": 32
+          }
+        ],
+        "movingSamples": 30
+      },
+      {
+        "roll": 2,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 7,
+            "row": 13
+          },
+          {
+            "column": 7,
+            "row": 35
+          },
+          {
+            "column": 30,
+            "row": 32
+          }
+        ],
+        "movingSamples": 21
+      },
+      {
+        "roll": 3,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 7,
+            "row": 13
+          },
+          {
+            "column": 12,
+            "row": 32
+          },
+          {
+            "column": 30,
+            "row": 32
+          }
+        ],
+        "movingSamples": 37
+      },
+      {
+        "roll": 4,
+        "position": [
+          {
+            "column": 29,
+            "row": 9
+          },
+          {
+            "column": 7,
+            "row": 13
+          },
+          {
+            "column": 12,
+            "row": 32
+          },
+          {
+            "column": 33,
+            "row": 29
+          }
+        ],
+        "movingSamples": 21
+      }
+    ],
+    "errors": []
+  }
+]

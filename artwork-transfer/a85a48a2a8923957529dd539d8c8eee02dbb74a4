@@ -1,0 +1,12 @@
+{
+  "method": "Unmodified original root frame4/5 functions invoked by scratch frame1 in Ruffle0.6.0, UI fixture original-endgame.html; finance/render handlers stubbed only for goback seat/date isolation",
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "probeSha256": "d9037247c2329b4f7f58b116c3f4e8c6c2c4df6d6d3094bc409944e3443f18ee",
+  "originalActionSha256": {
+    "4": "5225ecdbb161d922d963ef4304638cd3fee1d418b83b3898c1713dc33354eb2c",
+    "5": "596cc67a9d0b7bd1fa42e775ecd441d85a582cb0fefa177f32b1c63d65653b69"
+  },
+  "observed": "clear:9,3,0,0,2,5000,1100,0,1077,2099,0,2,0;seats:4;leap:1,2028,3,1,2;load-call:undefined;price:1",
+  "b05Pcode": "rootframe5 loc3e17: StoreRegister24; Push register24,length; GetMember; RandomNumber; Push 1,register24,undefined; CallMethod; StoreRegister2; this is an attempted array call, not indexing",
+  "limitation": "Controlled original function test, not a natural original match; B05 primitive reproduces expression, not a legacy SharedObject save load"
+}
