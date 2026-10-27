@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>手动存读档 · 受控界面夹具</title><style>html,body,#app{margin:0;min-height:100%;font-family:system-ui}body{background:linear-gradient(135deg,#aedbfb,#e8f7ff)}.fixture-note{padding:16px;color:#36698c;font-size:12px}</style></head><body><div id="app"></div><script type="module">
+import { createApp, h } from 'vue'
+import SavePanel from '/src/modern/features/saves/SavePanel.vue'
+import '/src/modern/styles/original-ui.css'
+const mode = new URLSearchParams(location.search).get('state')
+window.fixtureEvents = []
+const record = (kind,slot) => window.fixtureEvents.push({kind,slot})
+createApp({render:()=>h('main',{class:'original-ui'},[
+ h('p',{class:'fixture-note'},'真实 SavePanel 组件 · 受控摘要数据 · 不连接存档服务'),
+ h(SavePanel,{slots:[{slot:1,revision:4,savedAt:'2026-10-27T07:08:00.000Z',summary:{round:17,date:'2026年10月27日',players:['妮妮','阿牛','卷毛','自定义玩家']}},{slot:2,revision:0,savedAt:null,summary:null},{slot:3,revision:2,savedAt:null,summary:null}],canSave:true,busy:mode==='busy',error:mode==='error'?'存档服务暂时不可用，当前对局保留。请稍后重试。':'',retryable:mode==='error',hasGame:true,onSave:slot=>record('save',slot),onLoad:slot=>record('load',slot),onRefresh:()=>record('refresh'),onRetry:()=>record('retry'),onClose:()=>record('close')})
+])}).mount('#app')
+</script></body></html>

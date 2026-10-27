@@ -83,9 +83,11 @@ test('实际地图住宅道路与建筑、当前公司和失物招领查询，�
   await revealGameDetails(page); await page.getByRole('button', { name: '全图', exact: true }).click()
   const canvas = page.locator('canvas'), box = (await canvas.boundingBox())!
   const scale = Math.min(760 / 2700, 560 / 2552)
+  // MapScene.resize uniformly fits the 800×600 viewport, then centers the letterbox.
+  const viewportScale = Math.min(box.width / 800, box.height / 600)
   const point = (column: number, row: number) => ({
-    x: ((400 - (-184 + 1350) * scale) + (column * 56 + 28) * scale) * box.width / 800,
-    y: ((300 - (-313 + 1276) * scale) + (row * 40 + 20) * scale) * box.height / 600,
+    x: (box.width - 800 * viewportScale) / 2 + ((400 - (-184 + 1350) * scale) + (column * 56 + 28) * scale) * viewportScale,
+    y: (box.height - 600 * viewportScale) / 2 + ((300 - (-313 + 1276) * scale) + (row * 40 + 20) * scale) * viewportScale,
   })
   for (const position of [{ column: 6, row: 32 }, { column: 7, row: 31 }]) {
     await canvas.click({ position: point(position.column, position.row) })
