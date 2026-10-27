@@ -1,0 +1,766 @@
+{
+  "date": "2026-10-21",
+  "generator": "built-in image_gen",
+  "completedImageGenerationCallsThisBatch": 9,
+  "newCandidateCount": 4,
+  "newCandidates": [
+    "r2c2",
+    "r3c2",
+    "r4c2",
+    "r5c2"
+  ],
+  "selectedTotal": 73,
+  "notGenerated": 20,
+  "rework": 7,
+  "pendingVisualReview": 5,
+  "minimumNewNativeDensity": 4.019230769230769,
+  "productionEnabled": false,
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "immutableAttemptMasterHashesVerified": 148,
+  "mapPythonTestsPassed": 30,
+  "mapNpmEntryPointTestsPassed": 27,
+  "projectUnitTestsPassed": 643,
+  "projectUnitTestFilesPassed": 85,
+  "completedExportRegressionRedWrongPixels": 336577,
+  "completedExportRegressionGreenWrongPixels": 0,
+  "actualNativeReplacementViews": 31,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 77,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "nativeAssembledAlphaAudits": {
+    "r2c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1163830,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 4.295052958002972e-06,
+      "nativeAlphaModified": false
+    },
+    "r2c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 628271,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0001332741767955041,
+      "nativeAlphaModified": false
+    },
+    "r2c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 56009,
+      "solidAlphaMedian": 248.0,
+      "fullyOpaqueFraction": 6.878667189445373e-05,
+      "nativeAlphaModified": false
+    },
+    "r2c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 313753,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0007076428871141927,
+      "nativeAlphaModified": false
+    },
+    "r2c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 493142,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014324458535467359,
+      "nativeAlphaModified": false
+    },
+    "r3c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 629444,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00034875830018984137,
+      "nativeAlphaModified": false
+    },
+    "r3c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0,
+      "nativeAlphaModified": false
+    },
+    "r3c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 203256,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004163642614309179,
+      "nativeAlphaModified": false
+    },
+    "r4c0": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 691250,
+      "solidAlphaMedian": 254.0,
+      "fullyOpaqueFraction": 0.00013624653190646055,
+      "nativeAlphaModified": false
+    },
+    "r4c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 747251,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005719628224165429,
+      "nativeAlphaModified": false
+    },
+    "r4c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 9071,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.031038519692899398,
+      "nativeAlphaModified": false
+    },
+    "r4c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.966360737943416,
+      "nativeAlphaModified": false
+    },
+    "r4c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 195571,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00012431727398711992,
+      "nativeAlphaModified": false
+    },
+    "r5c0": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 502425,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00034647747896386736,
+      "nativeAlphaModified": false
+    },
+    "r5c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 30092,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.030857352166845996,
+      "nativeAlphaModified": false
+    },
+    "r5c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r5c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r5c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 34725,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00019157088122605365,
+      "nativeAlphaModified": false
+    },
+    "r5c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 463086,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005334419220197496,
+      "nativeAlphaModified": false
+    },
+    "r6c0": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 145578,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00016101862861672613,
+      "nativeAlphaModified": false
+    },
+    "r6c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9705237492896295,
+      "nativeAlphaModified": false
+    },
+    "r6c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r6c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "r6c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 411339,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00039451857723756255,
+      "nativeAlphaModified": false
+    },
+    "r7c0": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 416337,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005595886267392619,
+      "nativeAlphaModified": false
+    },
+    "r7c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 69,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.029824408781850234,
+      "nativeAlphaModified": false
+    },
+    "r7c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 53503,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004188894388531412,
+      "nativeAlphaModified": false
+    },
+    "r7c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 830769,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00107426350620543,
+      "nativeAlphaModified": false
+    },
+    "r8c0": {
+      "transparentCore": true,
+      "maximumAlpha": 1,
+      "wholeNativeParentAudit": {
+        "enclosedLowAlphaPixels": 0,
+        "referenceApprovedSkyPixels": 0,
+        "referenceRegistrationOutlierPixels": 0,
+        "borderConnectedLowAlphaPixels": 416647,
+        "solidAlphaMedian": 253.0,
+        "fullyOpaqueFraction": 0.0003103307056971121,
+        "nativeAlphaModified": false
+      },
+      "tinySourceBoundaryInAdjacentNativeCore": true,
+      "nativeAlphaModified": false
+    },
+    "r8c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 283061,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006187097838640488,
+      "nativeAlphaModified": false
+    },
+    "r8c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 34972,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00016498927569707968,
+      "nativeAlphaModified": false
+    },
+    "r8c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 724677,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0004559900764815549,
+      "nativeAlphaModified": false
+    },
+    "r9c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 995060,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0003098131954756274,
+      "nativeAlphaModified": false
+    },
+    "r9c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 204126,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005725106795261373,
+      "nativeAlphaModified": false
+    },
+    "r9c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 521912,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005434147079661845,
+      "nativeAlphaModified": false
+    },
+    "r9c4": {
+      "enclosedLowAlphaPixels": 83655,
+      "referenceApprovedSkyPixels": 83655,
+      "referenceRegistrationOutlierPixels": 45,
+      "borderConnectedLowAlphaPixels": 78824,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0009354987377645708,
+      "nativeAlphaModified": false
+    },
+    "r9c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 24805,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014129269975484798,
+      "nativeAlphaModified": false
+    },
+    "r9c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 166052,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00039689086876019725,
+      "nativeAlphaModified": false
+    },
+    "r9c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 89532,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 0.0005770981048428531,
+      "nativeAlphaModified": false
+    },
+    "r9c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 393920,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006535408531778767,
+      "nativeAlphaModified": false
+    },
+    "r10c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 794455,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00017959770114942528,
+      "nativeAlphaModified": false
+    },
+    "r10c4": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 873117,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 4.1219360275528526e-05,
+      "nativeAlphaModified": false
+    },
+    "r10c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 677979,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005363495973101885,
+      "nativeAlphaModified": false
+    },
+    "r10c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 709183,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006102919636754223,
+      "nativeAlphaModified": false
+    },
+    "r10c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 285155,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000971293689889749,
+      "nativeAlphaModified": false
+    },
+    "r10c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 651442,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000816570647397715,
+      "nativeAlphaModified": false
+    }
+  },
+  "reviewAtlasCount": 77,
+  "requiredPartialRepairs": 35,
+  "newLocalRepairs": [
+    "northwest-grass-lip-joint-r1",
+    "star-roof-native-reuse-r1",
+    "west-ride-horizontal-joint-r1",
+    "west-cyan10-whole-r1"
+  ],
+  "nonOverlappingGridDrawCoverageVerified": true,
+  "intentionalOverlapOnlyWithUnchangedApprovedPilotOverlay": true,
+  "nativePilotUnderlayPixelProofs": [
+    {
+      "tileId": "r2c2",
+      "coreRect": [
+        400,
+        420,
+        240,
+        256
+      ],
+      "replacementRect": [
+        400,
+        420,
+        272,
+        256
+      ],
+      "rawContextSha256": "5e95fcf484af48c1a1f03f2df3bd36302fd64a32f47b17dbeb69b434b5eca756",
+      "nativeRGBAReplayedExactly": true,
+      "approvedFilesChanged": false
+    },
+    {
+      "tileId": "r3c2",
+      "coreRect": [
+        400,
+        676,
+        240,
+        256
+      ],
+      "replacementRect": [
+        400,
+        676,
+        272,
+        256
+      ],
+      "rawContextSha256": "dfcc6cab90a892ca84b4317ccfaabc866266121047072257ae64b059b370c271",
+      "nativeRGBAReplayedExactly": true,
+      "approvedFilesChanged": false
+    }
+  ],
+  "reviewBleedPixels": 0,
+  "repairsAreExactOldOrNewPixelSelection": true,
+  "wholeSTARWordFromOneCorrectedNativeScene": true,
+  "wholeCyan10FromOneNativeScene": true,
+  "wrong20InJointUnusedContextExcluded": true,
+  "referenceInputFilesHashed": 24,
+  "modifiedPreviousAssemblies": [
+    {
+      "id": "r2c1",
+      "changedPixels": 3756,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          384,
+          420,
+          16,
+          256
+        ],
+        [
+          320,
+          596,
+          80,
+          80
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r3c1",
+      "changedPixels": 82317,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          320,
+          676,
+          80,
+          80
+        ],
+        [
+          384,
+          676,
+          16,
+          256
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r4c1",
+      "changedPixels": 16104,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          384,
+          932,
+          16,
+          240
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r4c3",
+      "changedPixels": 39123,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          640,
+          932,
+          16,
+          240
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r5c1",
+      "changedPixels": 33554,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          384,
+          1172,
+          16,
+          240
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r5c3",
+      "changedPixels": 112494,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          640,
+          1172,
+          16,
+          240
+        ],
+        [
+          640,
+          1325,
+          68,
+          87
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r6c2",
+      "changedPixels": 422059,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          400,
+          1412,
+          240,
+          92
+        ],
+        [
+          400,
+          1536,
+          40,
+          88
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r6c3",
+      "changedPixels": 7475,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          640,
+          1412,
+          68,
+          9
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    }
+  ],
+  "remainingVisualDebt": [
+    "r6c1 west road curb and blue30",
+    "r3c9 curb and dice icon",
+    "r4c9 dice icon",
+    "r1c3/r1c4",
+    "grass scale/hue transition near r5c0/r6c0 and r8c1/r8c2",
+    "r3c5 uncovered top16"
+  ],
+  "visualAcceptance": "Incomplete full-map/user acceptance. This checkpoint verifies local candidate artwork and native underlay review, not production integration or complete gameplay E2E."
+}

@@ -1,0 +1,61 @@
+{
+  "tool": "GPT built-in image generation",
+  "calls": [
+    {
+      "id": "west-terrain-fine-south-r1",
+      "tool": "GPT built-in image_gen",
+      "selected": true,
+      "prompt": "Use case: precise-object-edit. Existing Star Cat Monopoly HD map western island terrain. Image1 is EDIT TARGET, exact geography/shape authority. Image2 is a48x48 logical sample of the ALREADY FINISHED neighboring fine grass at the SAME4.35 native pixel density as Image1; match its tiny dense leaf size and tone. Replace ALL oversized broad grass leaves in Image1 with that same fine dense small yellow-green grass, approximately one-third the current big leaf diameter. This is a whole-surface material harmonization, not a blurred stripe or a diagonal transition: grass should have consistent fine scale across the visible field, including its TOP edge which will connect to a subsequent northern terrain update. Keep crisp individual tiny leaves, same gentle isometric lighting and irregular small color variation, no geometric rows or sharp rectangular bands. Retain EXACTLY the original island's dark scalloped main contour, the golden/brown cliff lip, faces, grooves and projections, transparent sky outside the cliff, the small cropped blue building platform at the top and the small tan ground patch at upper right. Do not move or redraw those non-grass features. Keep outer16 logical pixels along RIGHT/BOTTOM matching existing fine grass/cliff connection geometry and colors; left outer sky/cliff remains identical. Top grass is intentionally being replaced to fine grass, not anchored to old coarse leaves. Preserve the blue platform fragment at top pixel-for-pixel. Do not add/delete/move any object, tree, shrub, flower, rock, path or marking. No holes inside the island. Native RGBA transparency outside island only, exact9:7 wide framing, native output at least1296x1008.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/repairs/west-terrain-fine-south-r1/master.png",
+      "note": ""
+    },
+    {
+      "id": "west-terrain-fine-middle-r1",
+      "tool": "GPT built-in image_gen",
+      "selected": false,
+      "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD terrain material continuation. Image1 is EDIT TARGET with the southern BOTTOM32 logical pixels already changed to fine dense grass. Image2 is the matching fine-grass style sample at the SAME native pixel density as the target. Replace all remaining oversized grass leaves ABOVE that bottom join with the same much smaller dense yellow-green leaves as Image2 and the bottom strip. Make a single consistent fine grassy surface from bottom to TOP, not a gradient into the old big-leaf pattern and not a blurred band. Match existing hue, density, individual crisp tiny leaves and light. Retain EXACTLY the ONE round-canopied tree with its existing scalloped leaf mass, dark outline, trunk and shadow, same size/position. Also preserve every cropped building/blue platform, the one complete cone tree and partial cone tree at right, yellow roof/purple column, upper diagonal white road curb, partial cyan disc and small tan ground patches. No added/missing/moved tree or prop. The full existing round tree and all existing building parts are protected; do not redesign them. Keep BOTTOM24 and RIGHT24 logical pixels as fixed connection context, preserve lower-left grass/cliff silhouette and golden rock surface. Top grass is intentionally updated to fine grass for a next northern continuation. No straight rectangle seams, extra plants, stones, paths, words or holes. Native transparent RGBA only where original cliff exterior is sky; solid terrain. Exact7:8 portrait framing, native output at least1120x1280.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/repairs/west-terrain-fine-middle-r1/master.png",
+      "note": "Intermediate source, final scene replaced by clean ground plus foreground tree"
+    },
+    {
+      "id": "west-round-tree-cutout-r1",
+      "tool": "GPT built-in image_gen",
+      "selected": true,
+      "prompt": "Use case: background-extraction. Isolate the ONE existing round-canopied Star Cat game tree in the attached reference as a transparent RGBA foreground sprite. Preserve its exact original rounded/scalloped canopy silhouette, same number and arrangement of existing leaf lobes, dark green/black outline, lime yellow-green highlights at upper left, darker green lower shading, short brown trunk and roots. Keep its identity, proportions and exact pose, no redesign. Remove ALL surrounding grass and the rectangular grass patch plus any ground/cast shadow; tree canopy and trunk only on genuine transparent exterior. Entire tree visible with small transparent margins, solid opaque tree body, no accidental transparent holes, no glow or white matte. Do not add or remove canopy lobes, branches, fruit, flowers, face or other objects. Same crisp cartoon game rendering as reference, exact12:13 portrait framing, native image at least1152x1248.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/native-props/west-round-tree-v1/master.png",
+      "note": ""
+    },
+    {
+      "id": "west-terrain-fine-middle-base-r2",
+      "tool": "GPT built-in image_gen",
+      "selected": true,
+      "prompt": "Use case: precise-object-edit. Existing Star Cat Monopoly HD fine-grass map crop. The image is the EDIT TARGET. Remove ONLY the ONE large round-canopied tree in the left-center, including its brown trunk and its ground shadow, and continue the same tiny dense yellow-green grass seamlessly through its former footprint. This output is the clean terrain BACKGROUND; that same tree will be drawn separately later at its original position. Keep every other object and pixel geometry fixed: the one complete cone tree and partial cone tree at right, cropped yellow building/blue platform/purple column, diagonal white road curb and partial cyan disc, tan ground patches, cliff rim and gold rock at lower left. Do not remove those cone trees, add grass to the blue platform, move road/terrain outlines, draw a new tree or leave a stump/round empty patch. All grass remains the existing fine uniform leaf scale, including bottom strip. Preserve outer24 logical pixels on RIGHT/BOTTOM as fixed connection context; north/left grass will join later neighboring update. Native genuine RGBA transparency only outside original island; no holes inside land. Same7:8 portrait framing and native detail at least1120x1280, same lighting and sharp cartoon game style.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/repairs/west-terrain-fine-middle-base-r3/master.png",
+      "note": "r2 native master reused in r3 assembly without another generation"
+    },
+    {
+      "id": "west-terrain-fine-coast-r1",
+      "tool": "GPT built-in image_gen",
+      "selected": true,
+      "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD west coastline grass continuation. The image is EDIT TARGET: right half already has finished fine tiny yellow-green grass, left half is old oversized coarse leaves separated by a vertical line. Replace ALL coarse leaves on the left with the exact SAME fine dense grass scale, hue, tiny crisp leaves and soft lighting already on the right, so there is ONE continuous field with no straight seam. Do not blur or make a narrow transition stripe; use fine grass throughout including the top, which joins a later northern update. Keep the outer24 logical pixels along RIGHT and BOTTOM as fixed fine-grass/cliff connection context. Preserve the EXACT existing irregular dark island outline and every golden/brown cliff face, lip, groove and projection at lower left/bottom; sky exterior genuinely transparent. Preserve any small original tan ground patch at top. This is empty terrain: do NOT add trees, shrubs, stumps, leaves as decorative props, flowers, rocks, paths, symbols or any objects. No holes inside land, no new outline notch, camera change or padding. Same5:8 portrait framing, native output at least1000x1600, original crisp colorful isometric game style.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/repairs/west-terrain-fine-coast-r1/master.png",
+      "note": ""
+    },
+    {
+      "id": "west-coast-tree-cutout-r1",
+      "tool": "GPT built-in image_gen",
+      "selected": true,
+      "prompt": "Use case: background-extraction. Extract the ONE existing multi-lobed green tree from the attached Star Cat HD map crop as a genuine transparent RGBA foreground sprite. Preserve exactly its FIVE existing rounded crown volumes: large central/front lobe, upper/back lobe, upper-left lobe, lower-left lobe, and right lobe. Keep their arrangement, overlaps, dark green/black contours, lime highlights above, brown-green lower shading, and single brown trunk with roots. Same identity, pose and proportions; do not invent or remove a lobe, branch or other detail. Remove ALL surrounding yellow-green grass, coast edge, sky, tan ground, road curb and ground shadow. Only the complete existing tree on transparent exterior, with small transparent margins on all sides; solid opaque canopy and trunk, no holes, glow, white matte, extra tree, foliage props, face or text. Exact7:8 portrait framing matching reference and native output at least1120x1280. Faithful sharp colorful isometric game appearance.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/native-props/west-coast-tree-v1/master.png",
+      "note": ""
+    },
+    {
+      "id": "west-terrain-fine-north-base-r1",
+      "tool": "GPT built-in image_gen",
+      "selected": true,
+      "prompt": "Use case: precise-object-edit. Star Cat Monopoly HD western island clean terrain background. Image1 is EDIT TARGET and sole geography authority; Image2 is the neighboring finished fine-grass style at the SAME native pixel density. Replace ALL oversized grass leaves throughout Image1 by that same tiny dense yellow-green grass, matching the fine strip already at the BOTTOM. Use uniform small individual crisp leaves, same hue and soft light, no coarse/fine rectangular phase or blurred transition stripe. Remove ONLY the ONE existing multi-lobed tree on the coast, including trunk and tree shadow, and fill its former ground with the same fine grass; that tree will be a separate foreground sprite later. Do not draw any replacement tree or stump. Preserve the exact existing outer island/grass edge, coast bends, tan bare ground patches and gravel border. Preserve every other object unchanged: all white road curbs, gray asphalt, cat manhole, blue30 disc, red20 disc, partial cyan10 discs and the clipped green leaf decoration at right. Never change a numeral, add/delete a disc, alter manhole face or move the road turn. BOTTOM24 logical pixels are fixed connection context matching the completed southern terrain. TOP grass is updated to fine grass and will be continued in the next northern neighbor; outside sky is genuine alpha transparency and all land/road/discs solid without transparent holes or faint white highlights. Same square canvas and camera, no margins, new props, rocks, flowers, paths or text. Native square image at least1254x1254, same polished bright cartoon game style.",
+      "savedNativeMaster": "public/modern/hd-masters/map/full-map-v1/repairs/west-terrain-fine-north-base-r1/master.png",
+      "note": ""
+    }
+  ]
+}

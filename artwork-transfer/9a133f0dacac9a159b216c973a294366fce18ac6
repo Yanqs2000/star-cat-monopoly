@@ -1,0 +1,30 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-a8ca1126-3315-48f3-b3f5-6788760b85fd.png",
+  "prompt": "Use case: precise-object-edit. Asset: completely OPAQUE square HD game-map texture, not a cutout.\nImage1 EDIT TARGET is the correct composition, but has accidental transparent pinholes/low-alpha speckles. Image2 shows finished boundary anchors at exactly the SAME crop coordinates. Image3 is original layout of that same272x272 logical square.\nRe-render Image1 as solid opaque artwork throughout: every pixel alpha255, including bright white dice faces, cyan disc highlights, pale gray manhole, grass and all borders. This entire crop lies INSIDE the island; there is NO exterior sky or area to remove. Do not perform background removal or treat white highlights as transparent. Preserve colors using opaque shading, not opacity. No white/black blank patches.\nKeep ALL object geometry and positions from Image1 unchanged and match Image2's outer16 logical-pixel frame closely. Exactly one cat manhole face (two ears, two closed eyes, one nose/mouth, two paws), original blue arch overlaid IN FRONT of the purple dice emblem, green30 disc partly behind arch, cyan10 discs, cropped left purple dice emblem, same Ferris-wheel seats/supports, bushes, tree trunks, castle/tower fragments and blue/yellow car. Do not add or move any object, duplicate features, replace dice by10, or change numbers/pips/rail occlusion. The black area in Image2 is an unfinished guide only; do not copy black into artwork.\nSame square framing/projection, no zoom/reframe, no extra props/text/shadows. Preserve original camera and all anchors; opaque native high resolution.",
+  "referenceRect": [
+    384,
+    1156,
+    272,
+    272
+  ],
+  "opaqueSourceProof": {
+    "sourceCoreAlphaMin": 253,
+    "sourceReferenceAlphaMin": 247,
+    "sourceCoreBelow240": 0,
+    "sourceReferenceBelow240": 0,
+    "nativeAlphaNormalization": false
+  },
+  "nativeForegroundRendering": "Built-in imagegen requested opaque map texture because full reference is inside island; prior transparent-background raw has155 enclosed low-alpha pixels and clean technical crop still has27, including16 in core. No software filling/alpha normalization.",
+  "sharedRepairs": [
+    {
+      "repairId": "west-ride-horizontal-joint-r1",
+      "rect": [
+        400,
+        1368,
+        240,
+        136
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-ride-horizontal-joint-r1/assembled.png"
+    }
+  ]
+}

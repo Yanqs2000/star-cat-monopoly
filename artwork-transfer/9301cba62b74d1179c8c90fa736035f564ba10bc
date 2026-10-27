@@ -1,0 +1,434 @@
+[
+  {
+    "id": "r0c2",
+    "rect": [
+      400,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c3",
+    "rect": [
+      640,
+      0,
+      256,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c4",
+    "rect": [
+      896,
+      0,
+      256,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c5",
+    "rect": [
+      1152,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c6",
+    "rect": [
+      1392,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c7",
+    "rect": [
+      1632,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c8",
+    "rect": [
+      1872,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r0c9",
+    "rect": [
+      2112,
+      0,
+      240,
+      180
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c2",
+    "rect": [
+      400,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c3",
+    "rect": [
+      640,
+      180,
+      256,
+      240
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r1c4",
+    "rect": [
+      896,
+      180,
+      256,
+      240
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r1c5",
+    "rect": [
+      1152,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c6",
+    "rect": [
+      1392,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c7",
+    "rect": [
+      1632,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c8",
+    "rect": [
+      1872,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c9",
+    "rect": [
+      2112,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r1c10",
+    "rect": [
+      2352,
+      180,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c2",
+    "rect": [
+      400,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c5",
+    "rect": [
+      1152,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r2c6",
+    "rect": [
+      1392,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r2c7",
+    "rect": [
+      1632,
+      420,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r3c2",
+    "rect": [
+      400,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r3c6",
+    "rect": [
+      1392,
+      676,
+      240,
+      256
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r3c9",
+    "rect": [
+      2112,
+      676,
+      240,
+      256
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 3,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r4c2",
+    "rect": [
+      400,
+      932,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r4c6",
+    "rect": [
+      1392,
+      932,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r4c9",
+    "rect": [
+      2112,
+      932,
+      240,
+      240
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r5c2",
+    "rect": [
+      400,
+      1172,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r5c4",
+    "rect": [
+      896,
+      1172,
+      256,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r5c8",
+    "rect": [
+      1872,
+      1172,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 3,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r6c1",
+    "rect": [
+      160,
+      1412,
+      240,
+      240
+    ],
+    "status": "pending-visual-review",
+    "attemptCount": 5,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r6c4",
+    "rect": [
+      896,
+      1412,
+      256,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 1,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r7c2",
+    "rect": [
+      400,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 3,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r7c5",
+    "rect": [
+      1152,
+      1652,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 2,
+    "nextAction": "rework"
+  },
+  {
+    "id": "r8c5",
+    "rect": [
+      1152,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  },
+  {
+    "id": "r8c6",
+    "rect": [
+      1392,
+      1892,
+      240,
+      240
+    ],
+    "status": "pending",
+    "attemptCount": 0,
+    "nextAction": "generate"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r8c8-r1.png",
+  "prompt": "Use case: precise-object-edit. Asset: cropped Star Cat Monopoly isometric map edge tile with NATIVE TRANSPARENCY. Image1 edit target shows sharp finished neighbor context; its empty area is unfinished artwork, NOT all exterior. Image2 original same-canvas crop defines the exact grass/cliff/ivy/cloud silhouettes and exterior. Restore missing mapped artwork in crisp HD cartoon style matching image1: densely textured bright yellow-green grass, angular golden cliff faces, original ivy. Existing opaque neighbor pixels must stay aligned exactly. Preserve original object/ivy/cloud counts, footprints and clipped shapes. Generate real alpha transparency ONLY outside the original map silhouette near far-right/lower edge. Most of this canvas is solid opaque map: do NOT cut out grass, terrain, cliff, cloud or background within the map; no internal white/transparent holes. Ignore old magenta/cyan/yellow pixel fringe outside the source silhouette, it is an extraction artifact. No painted blue sky or solid background, no white rectangle. Do not isolate props from terrain. No extra rocks, trees, buildings, ivy or clouds. Same square framing and exact context contours; seamless to finished borders.\nSquare. Restore golden cliff behind the large original ivy patch, matching its forked irregular silhouette, plus cropped grass cap at top. Ivy continues from left neighbor: preserve exact boundary, no duplicated separate leaf group. Only original exterior sliver near bottom-right is transparent. No sky colors or extra cloud.",
+  "referenceRect": [
+    1840,
+    1860,
+    272,
+    272
+  ],
+  "sourceReuse": {
+    "masterSha256": "61fea637451ccf03d2bcd2df7aa8e1106876c8a38cea31be5b09aea9e143639e",
+    "attempt": 1
+  }
+}
