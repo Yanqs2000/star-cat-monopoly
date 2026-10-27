@@ -1,0 +1,13 @@
+...F
+======================================================================
+FAIL: test_west_cyan_disc_outline_has_no_horizontal_join_step (test_hd_map_full_package.FullMapPackage.test_west_cyan_disc_outline_has_no_horizontal_join_step)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/test_hd_map_full_package.py", line 18, in test_west_cyan_disc_outline_has_no_horizontal_join_step
+    self.assertLessEqual(max(np.diff(edges)),.9,
+AssertionError: np.float64(1.0) not less than or equal to 0.9 : Cyan disc rim jumps across the previous y=1552 atlas join
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.517s
+
+FAILED (failures=1)

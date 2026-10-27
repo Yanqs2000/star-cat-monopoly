@@ -1,0 +1,11 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-cd805995-e386-4cda-8124-5afeacff071b.png",
+  "prompt": "Use case: faithful HD map contour reconstruction. Image1 original exact square crop; image2 same-framed fixed HD LEFT32 and BOTTOM32logical-pixel strips. Reconstruct only the missing center from image1, connecting both fixed edges EXACTLY. Square144x144logical framing, output1254x1254 or larger. Only green grassy island edge in lower-left/lower section, and genuine transparent sky above/right. Preserve both anchors' outline positions and their transparency, especially the entire bottom32logical strip and its smooth curved slope. Form one uninterrupted island silhouette with no horizontal ledge, no sudden notch at either joining border. No new trees, clouds, objects or markings. Match the existing grass texture, green hill shading and subtle dark contour. Same crop and camera, no zoom/reframing. Ignore old colorful edge extraction fringes. Solid map art, native transparent RGBA outside its contour, no internal holes.",
+  "referenceRect": [
+    2560,
+    564,
+    144,
+    144
+  ],
+  "verifiedTransparentPadding": true
+}

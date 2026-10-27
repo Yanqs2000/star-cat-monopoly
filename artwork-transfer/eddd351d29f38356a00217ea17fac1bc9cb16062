@@ -1,0 +1,21 @@
+FF
+======================================================================
+FAIL: test_green30_surface_stays_from_existing_east_scene (__main__.NortheastNativeReuseTests.test_green30_surface_stays_from_existing_east_scene)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py", line 19, in test_green30_surface_stays_from_existing_east_scene
+    self.assertTrue(np.array_equal(np.array(expected),np.array(exported('r2c5',rect))),'Native reuse introduced a new rectangular lighting phase in green30')
+AssertionError: False is not true : Native reuse introduced a new rectangular lighting phase in green30
+
+======================================================================
+FAIL: test_green30_actual_render_uses_one_scene (__main__.NortheastNativeReuseTests.test_green30_actual_render_uses_one_scene)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch21_ne_reuse.py", line 24, in test_green30_actual_render_uses_one_scene
+    self.assertLessEqual(int(np.abs(actual-expected).max()),3,'Faded approved edge mixes a second lighting phase into green30')
+AssertionError: 6 not less than or equal to 3 : Faded approved edge mixes a second lighting phase into green30
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.095s
+
+FAILED (failures=2)

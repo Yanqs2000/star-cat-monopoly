@@ -1,0 +1,44 @@
+FFFF
+======================================================================
+FAIL: test_renderer_clears_base_under_south_feather (__main__.ApprovedSouthEdgeUnderlayTests.test_renderer_clears_base_under_south_feather)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch17_south_underlay.py", line 29, in test_renderer_clears_base_under_south_feather
+    self.assertEqual(b['legacyBaseCulling']['southUnderlayZeroAlphaSamples'],[0,0])
+AssertionError: Lists differ: [255, 255] != [0, 0]
+
+First differing element 0:
+255
+0
+
+- [255, 255]
++ [0, 0]
+
+======================================================================
+FAIL: test_south_strip_rgba_comes_from_its_native_master (__main__.ApprovedSouthEdgeUnderlayTests.test_south_strip_rgba_comes_from_its_native_master) (tile='r4c3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch17_south_underlay.py", line 20, in test_south_strip_rgba_comes_from_its_native_master
+    self.assertEqual(len(candidates),1,'No native south strip was exported')
+AssertionError: 0 != 1 : No native south strip was exported
+
+======================================================================
+FAIL: test_south_strip_rgba_comes_from_its_native_master (__main__.ApprovedSouthEdgeUnderlayTests.test_south_strip_rgba_comes_from_its_native_master) (tile='r4c4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch17_south_underlay.py", line 20, in test_south_strip_rgba_comes_from_its_native_master
+    self.assertEqual(len(candidates),1,'No native south strip was exported')
+AssertionError: 0 != 1 : No native south strip was exported
+
+======================================================================
+FAIL: test_whole_south_feather_has_native_coverage (__main__.ApprovedSouthEdgeUnderlayTests.test_whole_south_feather_has_native_coverage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch17_south_underlay.py", line 14, in test_whole_south_feather_has_native_coverage
+    self.assertTrue(covers,f'Legacy art is exposed at{x},{y} beneath the accepted south fade')
+AssertionError: [] is not true : Legacy art is exposed at680,904 beneath the accepted south fade
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+FAILED (failures=4)
