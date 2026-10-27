@@ -1,0 +1,556 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "browser": "local Chrome / SwiftShader",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "legacyBaseCulledForReviewCoreReplacement": true,
+  "nativeRgbaFilesUnmodified": true,
+  "regionCount": 46,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "allTextureResolutionsRegistered": true,
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 46,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "commonNativeGrid": true,
+  "bleedPixels": 5,
+  "waitsForNativeBitmapDecoding": true,
+  "views": [
+    {
+      "name": "overview",
+      "width": 1800,
+      "height": 1600,
+      "camera": {
+        "x": -78.26666666666665,
+        "y": -65.31111111111107,
+        "scale": 0.37777777777777777,
+        "following": false
+      },
+      "viewportScale": 2.25,
+      "actualScreenScale": 0.85,
+      "sourceFocus": [
+        1450,
+        1280
+      ],
+      "pending": 0,
+      "decodedCount": 56
+    },
+    {
+      "name": "right-outline-2x",
+      "width": 1600,
+      "height": 1600,
+      "camera": {
+        "x": -1786,
+        "y": -927,
+        "scale": 1,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        2370,
+        1540
+      ],
+      "pending": 0,
+      "decodedCount": 56
+    },
+    {
+      "name": "ivy-three-groups-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5701.333333333333,
+        "y": -2305.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2472,
+        1290
+      ],
+      "pending": 0,
+      "decodedCount": 58,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r5-top-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5696,
+        "y": -1990.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2470,
+        1172
+      ],
+      "pending": 0,
+      "decodedCount": 58,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r5-outer-edge-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -6021.333333333333,
+        "y": -2278.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2592,
+        1280
+      ],
+      "pending": 0,
+      "decodedCount": 59,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r6-top-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5696,
+        "y": -2630.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2470,
+        1412
+      ],
+      "pending": 0,
+      "decodedCount": 61,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r6-left-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5381.333333333333,
+        "y": -2950.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2352,
+        1532
+      ],
+      "pending": 0,
+      "decodedCount": 63,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "camera-cliff-2x",
+      "width": 1600,
+      "height": 1400,
+      "camera": {
+        "x": -1626,
+        "y": -1127,
+        "scale": 1,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        2210,
+        1740
+      ],
+      "pending": 0,
+      "decodedCount": 71
+    },
+    {
+      "name": "cloud-left-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5381.333333333333,
+        "y": -3612,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2352,
+        1780
+      ],
+      "pending": 0,
+      "decodedCount": 71,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "cloud-top-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5642.666666666666,
+        "y": -3270.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2450,
+        1652
+      ],
+      "pending": 0,
+      "decodedCount": 71,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r8-ivy-2x",
+      "width": 1600,
+      "height": 1400,
+      "camera": {
+        "x": -1356,
+        "y": -1357,
+        "scale": 1,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1940,
+        1970
+      ],
+      "pending": 0,
+      "decodedCount": 79
+    },
+    {
+      "name": "r8-left-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4101.333333333333,
+        "y": -4230.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1872,
+        2012
+      ],
+      "pending": 0,
+      "decodedCount": 79,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r8-top-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4416,
+        "y": -3910.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1990,
+        1892
+      ],
+      "pending": 0,
+      "decodedCount": 80,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "cloud-full-repaired-2x",
+      "width": 1200,
+      "height": 1100,
+      "camera": {
+        "x": -2581.333333333333,
+        "y": -1597.3333333333333,
+        "scale": 1.3333333333333333,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        2420,
+        1736
+      ],
+      "pending": 0,
+      "decodedCount": 84
+    },
+    {
+      "name": "cloud-patch-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5146.666666666666,
+        "y": -3494.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2264,
+        1736
+      ],
+      "pending": 0,
+      "decodedCount": 84,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "cloud-patch-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5482.666666666666,
+        "y": -3078.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2390,
+        1580
+      ],
+      "pending": 0,
+      "decodedCount": 87,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "cloud-patch-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5216,
+        "y": -3910.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2290,
+        1892
+      ],
+      "pending": 0,
+      "decodedCount": 89,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    }
+  ],
+  "requestedReviewAtlases": [
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r2c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r2c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r2c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r3c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r3c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r3c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r4c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r6c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r5c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-08/r8c8.webp"
+  ],
+  "errors": []
+}

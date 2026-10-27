@@ -1,0 +1,70 @@
+{
+  "baseNativeReference": [
+    128,
+    1132,
+    312,
+    312
+  ],
+  "donorNativeReference": [
+    128,
+    900,
+    312,
+    312
+  ],
+  "rect": [
+    128,
+    1132,
+    312,
+    80
+  ],
+  "canonicalNativeCrop": [
+    0,
+    1009,
+    1358,
+    1357
+  ],
+  "readyContext": [
+    {
+      "id": "r4c0",
+      "sha256": "0308feb5965e49e19bf2b0c377dffa69929110d9f162e1303c24db2060399b13",
+      "rect": [
+        128,
+        1132,
+        32,
+        40
+      ]
+    },
+    {
+      "id": "r4c1",
+      "sha256": "2ca231a0bbd4b8c6697c2184e79da0b7b4a431269fbee37de6a87b3adeb9cfb3",
+      "rect": [
+        160,
+        1132,
+        240,
+        40
+      ]
+    },
+    {
+      "id": "r5c0",
+      "sha256": "9b0dc9cd1aae3c0b33f4c948e0c81c67da49b752c18f21629a4a6606c1ee5b8f",
+      "rect": [
+        128,
+        1172,
+        32,
+        40
+      ]
+    }
+  ],
+  "rawEnclosedLowAlphaPixelsReplaced": 1441,
+  "allRawEnclosedDefectsInsideReplacementRect": true,
+  "fullReferenceAlphaAuditAfterReplacement": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 4667,
+    "solidAlphaMedian": 250.0,
+    "fullyOpaqueFraction": 2.277454716608718e-05,
+    "nativeAlphaModified": false
+  },
+  "method": "Native donor reuse and exact old/new RGBA pixel selection. No paint, fill, blend, alpha normalization or source-outline mask."
+}
