@@ -1,0 +1,128 @@
+{
+  "originalGreenRects": [
+    [
+      448,
+      1687,
+      20,
+      23
+    ],
+    [
+      416,
+      1710,
+      19,
+      28
+    ]
+  ],
+  "sourceNativePixelSize": [
+    958,
+    1642
+  ],
+  "sourceNativeGreenBox": [
+    89,
+    43,
+    925,
+    1270
+  ],
+  "nativeAlphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 663350,
+    "solidAlphaMedian": 252.0,
+    "fullyOpaqueFraction": 0.00043800650461909326,
+    "nativeAlphaModified": false
+  },
+  "instances": [
+    {
+      "id": "yellow-building-cone-rear",
+      "targetGreenRect": [
+        448,
+        1687,
+        20,
+        23
+      ],
+      "sourceGreenPixelBox": [
+        89,
+        43,
+        925,
+        1270
+      ],
+      "technicalResize": [
+        101,
+        135
+      ],
+      "compiledGreenPixelBox": [
+        9,
+        4,
+        98,
+        104
+      ],
+      "logicalRect": [
+        445.8168761220826,
+        1685.9820466786355,
+        23.210053859964095,
+        31.02333931777379
+      ],
+      "scenePosition": [
+        261.8168761220826,
+        1372.9820466786355
+      ],
+      "pixelDensity": 4.3515625,
+      "pixelSize": [
+        101,
+        135
+      ],
+      "path": "public/modern/hd-masters/map/full-map-v1/native-props/yellow-building-cone-v1/rear.png",
+      "sha256": "6e244e0ee72116c4476d224eae31c49f8bcd7ab837d92a6895618d15258907e0",
+      "spriteOnBase": true,
+      "replacement": false,
+      "nativeSourceDensity": 41.275216584158414
+    },
+    {
+      "id": "yellow-building-cone-near",
+      "targetGreenRect": [
+        416,
+        1710,
+        19,
+        28
+      ],
+      "sourceGreenPixelBox": [
+        89,
+        43,
+        925,
+        1270
+      ],
+      "technicalResize": [
+        95,
+        162
+      ],
+      "compiledGreenPixelBox": [
+        9,
+        4,
+        92,
+        125
+      ],
+      "logicalRect": [
+        413.87432675044886,
+        1709.1921005385996,
+        21.831238779174146,
+        37.22800718132854
+      ],
+      "scenePosition": [
+        229.87432675044886,
+        1396.1921005385996
+      ],
+      "pixelDensity": 4.3515625,
+      "pixelSize": [
+        95,
+        162
+      ],
+      "path": "public/modern/hd-masters/map/full-map-v1/native-props/yellow-building-cone-v1/near.png",
+      "sha256": "f04c8f9d06e5d038cf8154c348f2d8521ffda7cf254f30f2ab0d2046c027ffe9",
+      "spriteOnBase": true,
+      "replacement": false,
+      "nativeSourceDensity": 43.882072368421056
+    }
+  ],
+  "method": "Technical resize and world placement of one native transparent prop; alpha unchanged except normal resize; no cutout masks, repaint or bitmap compositing"
+}

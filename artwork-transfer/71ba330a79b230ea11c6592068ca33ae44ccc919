@@ -1,0 +1,490 @@
+{
+  "date": "2026-10-21",
+  "generator": "built-in image_gen",
+  "completedImageGenerationCallsThisBatch": 12,
+  "newCandidateCount": 8,
+  "newCandidates": [
+    "r6c0",
+    "r7c0",
+    "r7c1",
+    "r8c0",
+    "r8c1",
+    "r9c1",
+    "r9c2",
+    "r10c2"
+  ],
+  "newVisualReworkDrafts": [
+    "r6c1"
+  ],
+  "selectedTotal": 64,
+  "notGenerated": 28,
+  "rework": 9,
+  "pendingVisualReview": 4,
+  "minimumNewNativeDensity": 4.0,
+  "productionEnabled": false,
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "originalMapUnchanged": true,
+  "approvedFourAssembliesByteIdentical": true,
+  "rejectedJointNeighborR6c2AssemblyRestoredByteIdentical": true,
+  "immutableAttemptMasterHashesVerified": 129,
+  "mapPythonTestsPassed": 30,
+  "mapNpmEntryPointTestsPassed": 27,
+  "defaultUnitTestsRerunThisBatch": false,
+  "actualNativeReplacementViews": 29,
+  "browserErrors": [],
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 67,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "nativeAssembledAlphaAudits": {
+    "r2c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 56009,
+      "solidAlphaMedian": 248.0,
+      "fullyOpaqueFraction": 6.878667189445373e-05,
+      "nativeAlphaModified": false
+    },
+    "r2c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 313753,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0007076428871141927,
+      "nativeAlphaModified": false
+    },
+    "r2c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 493142,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014324458535467359,
+      "nativeAlphaModified": false
+    },
+    "r3c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 203256,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004163642614309179,
+      "nativeAlphaModified": false
+    },
+    "r4c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 195571,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00012431727398711992,
+      "nativeAlphaModified": false
+    },
+    "r5c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 34725,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00019157088122605365,
+      "nativeAlphaModified": false
+    },
+    "r5c11": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 463086,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005334419220197496,
+      "nativeAlphaModified": false
+    },
+    "r6c0": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 144600,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00016514731140177037,
+      "nativeAlphaModified": false
+    },
+    "r6c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 0.9705237492896295,
+      "nativeAlphaModified": false
+    },
+    "r6c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 411339,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00039451857723756255,
+      "nativeAlphaModified": false
+    },
+    "r7c0": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 416337,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005595886267392619,
+      "nativeAlphaModified": false
+    },
+    "r7c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 69,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.029824408781850234,
+      "nativeAlphaModified": false
+    },
+    "r7c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 53503,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004188894388531412,
+      "nativeAlphaModified": false
+    },
+    "r7c10": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 830769,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00107426350620543,
+      "nativeAlphaModified": false
+    },
+    "r8c0": {
+      "transparentCore": true,
+      "maximumAlpha": 1,
+      "wholeNativeParentAudit": {
+        "enclosedLowAlphaPixels": 0,
+        "referenceApprovedSkyPixels": 0,
+        "referenceRegistrationOutlierPixels": 0,
+        "borderConnectedLowAlphaPixels": 416647,
+        "solidAlphaMedian": 253.0,
+        "fullyOpaqueFraction": 0.0003103307056971121,
+        "nativeAlphaModified": false
+      },
+      "originalTinyBoundaryMovesIntoAdjacentNativeCore": true,
+      "nativeAlphaModified": false
+    },
+    "r8c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 283061,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006187097838640488,
+      "nativeAlphaModified": false
+    },
+    "r8c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 34972,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00016498927569707968,
+      "nativeAlphaModified": false
+    },
+    "r8c9": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 724677,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0004559900764815549,
+      "nativeAlphaModified": false
+    },
+    "r9c1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 995060,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0003098131954756274,
+      "nativeAlphaModified": false
+    },
+    "r9c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 204126,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005725106795261373,
+      "nativeAlphaModified": false
+    },
+    "r9c3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 521912,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005434147079661845,
+      "nativeAlphaModified": false
+    },
+    "r9c4": {
+      "enclosedLowAlphaPixels": 83655,
+      "referenceApprovedSkyPixels": 83655,
+      "referenceRegistrationOutlierPixels": 45,
+      "borderConnectedLowAlphaPixels": 78824,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0009354987377645708,
+      "nativeAlphaModified": false
+    },
+    "r9c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 24805,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014129269975484798,
+      "nativeAlphaModified": false
+    },
+    "r9c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 166052,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00039689086876019725,
+      "nativeAlphaModified": false
+    },
+    "r9c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 89532,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 0.0005770981048428531,
+      "nativeAlphaModified": false
+    },
+    "r9c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 393920,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006535408531778767,
+      "nativeAlphaModified": false
+    },
+    "r10c2": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 794455,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00017959770114942528,
+      "nativeAlphaModified": false
+    },
+    "r10c4": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 873117,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 4.1219360275528526e-05,
+      "nativeAlphaModified": false
+    },
+    "r10c5": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 677979,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005363495973101885,
+      "nativeAlphaModified": false
+    },
+    "r10c6": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 709183,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006102919636754223,
+      "nativeAlphaModified": false
+    },
+    "r10c7": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 285155,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000971293689889749,
+      "nativeAlphaModified": false
+    },
+    "r10c8": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 651442,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000816570647397715,
+      "nativeAlphaModified": false
+    }
+  },
+  "reviewAtlasCount": 67,
+  "requiredPartialRepairs": 27,
+  "newLocalRepairs": [
+    "left-cliff-joint-r1",
+    "left-upper-outline-joint-r1",
+    "west-road-ride-native-reassembly-r1"
+  ],
+  "nonOverlappingGridDrawCoverageVerified": true,
+  "reviewBleedPixels": 0,
+  "repairsAreExactOldOrNewPixelSelection": true,
+  "roadGreen30NativeDonorReplayed": true,
+  "referenceInputFilesHashed": 33,
+  "modifiedPreviousAssemblies": [
+    {
+      "id": "r8c2",
+      "changedPixels": 325295,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          400,
+          2116,
+          240,
+          16
+        ],
+        [
+          400,
+          1892,
+          16,
+          240
+        ],
+        [
+          400,
+          1988,
+          152,
+          144
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    },
+    {
+      "id": "r9c3",
+      "changedPixels": 35935,
+      "byteIdentical": false,
+      "allowedSourceRects": [
+        [
+          640,
+          2132,
+          16,
+          240
+        ]
+      ],
+      "allChangesInsideDeclaredScope": true
+    }
+  ],
+  "unfinishedPerimeterAndPriorCurbDebtRemain": true,
+  "newVisualDebt": [
+    "r6c1 right parcel spirals and gray corner posts",
+    "r8c1/r8c2 grass leaf scale transition"
+  ],
+  "visualAcceptance": "Incomplete. Numerical seam passes do not establish visual acceptance. Rejected road/ride joint is preview-only and excluded from selected candidates."
+}

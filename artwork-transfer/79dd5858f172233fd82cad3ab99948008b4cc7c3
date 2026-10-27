@@ -1,0 +1,26 @@
+
+> star-cat-monopoly@0.1.0 test:e2e:modern
+> playwright test --config playwright.modern.config.ts tests/e2e/modern-hd-map-sample.spec.ts tests/e2e/modern-map-full-replacement.spec.ts tests/e2e/modern-map-layer-order.spec.ts tests/e2e/modern-map-visible-bounds.spec.ts tests/e2e/modern-hd-replay-parity.spec.ts --workers=1
+
+
+Running 14 tests using 1 worker
+
+(node:58245) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/e2e/modern-hd-map-sample.spec.ts:62:1 › 高清模式显示完整静态地图，保留人物资源和画质切换前后的完整对局状态 (19.8s)
+  ✓   2 tests/e2e/modern-hd-map-sample.spec.ts:108:1 › 地图切片404后可以重试，且不推进对局 (3.9s)
+  ✓   3 tests/e2e/modern-hd-map-sample.spec.ts:135:1 › 1366桌面全图概览释放地图补片，恢复跟随后重新加载 (3.0s)
+  ✓   4 tests/e2e/modern-hd-replay-parity.spec.ts:67:1 › 原版与高清同种子开局、选人、掷骰后完整GameState逐字段一致 (5.1s)
+  ✓   5 tests/e2e/modern-hd-replay-parity.spec.ts:77:1 › 原版与高清同局公司认购后完整GameState逐字段一致 (14.7s)
+  ✓   6 tests/e2e/modern-hd-replay-parity.spec.ts:95:1 › 原版与高清同局NPC遭遇及结算后完整GameState逐字段一致 (9.3s)
+  ✓   7 tests/e2e/modern-hd-replay-parity.spec.ts:111:1 › 原版与高清同局魔法门转运后完整GameState逐字段一致 (19.8s)
+  ✓   8 tests/e2e/modern-hd-replay-parity.spec.ts:127:1 › 原版与高清同局彩票小游戏开奖结算后完整GameState逐字段一致 (50.2s)
+  ✓   9 tests/e2e/modern-hd-replay-parity.spec.ts:148:1 › 原版与高清同局跨月结算后完整GameState逐字段一致 (25.3s)
+HD production resource audit {"maxTextureSize":8192,"jsHeapUsedBytes":35888549,"maxProfileDimension":5400,"hdResponseCount":1391,"loadedHdImageCount":1320,"downloadedBytes":130885157,"encodedResourceBytes":138280613,"failedResponses":[],"estimatedDecodedRgbaBytes":846577060,"loadedByGroup":{"characters":{"count":360,"decodedRgbaBytes":45017808},"companies":{"count":11,"decodedRgbaBytes":6767792},"world":{"count":790,"decodedRgbaBytes":221277952},"map-full":{"count":97,"decodedRgbaBytes":350371396},"static":{"count":126,"decodedRgbaBytes":223142112}}}
+  ✓  10 tests/e2e/modern-hd-replay-parity.spec.ts:166:1 › 生产高清开局记录下载量、解码内存估算及浏览器纹理尺寸上限 (2.5s)
+  ✓  11 tests/e2e/modern-map-full-replacement.spec.ts:14:1 › 完整地图在分片等待时显示同源底图，准备后只绘制一次RGBA，缩小再放大不露旧图 (1.7s)
+  ✓  12 tests/e2e/modern-map-layer-order.spec.ts:3:1 › 地图前景在底座较晚载入和镜头往返后仍显示在上层 (2.6s)
+  ✓  13 tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 高窗口上下扩展区域内的可见地图小切片仍会载入 (1.3s)
+  ✓  14 tests/e2e/modern-map-visible-bounds.spec.ts:9:3 › 宽窗口左右扩展区域内的可见地图小切片仍会载入 (1.4s)
+
+  14 passed (2.7m)

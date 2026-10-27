@@ -1,0 +1,748 @@
+[
+  {
+    "id": "r5c10",
+    "row": 5,
+    "col": 10,
+    "rect": [
+      2352,
+      1172,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9677430555555555,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c10-r1.png",
+        "masterSha256": "0873dc20951da212511defc95d9effc8e972e40318aeaeaf7e36ffd78059106c",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          1172,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: cropped Star Cat Monopoly isometric map edge tile with NATIVE TRANSPARENCY. Image1 edit target shows sharp finished neighbor context; its empty area is unfinished artwork, NOT all exterior. Image2 original same-canvas crop defines the exact grass/cliff/ivy/cloud silhouettes and exterior. Restore missing mapped artwork in crisp HD cartoon style matching image1: densely textured bright yellow-green grass, angular golden cliff faces, original ivy. Existing opaque neighbor pixels must stay aligned exactly. Preserve original object/ivy/cloud counts, footprints and clipped shapes. Generate real alpha transparency ONLY outside the original map silhouette near far-right/lower edge. Most of this canvas is solid opaque map: do NOT cut out grass, terrain, cliff, cloud or background within the map; no internal white/transparent holes. Ignore old magenta/cyan/yellow pixel fringe outside the source silhouette, it is an extraction artifact. No painted blue sky or solid background, no white rectangle. Do not isolate props from terrain. No extra rocks, trees, buildings, ivy or clouds. Same square framing and exact context contours; seamless to finished borders.\nSquare. This crop is mainly golden vertical cliff, with narrow grass strip on left and exactly three original ivy groups: one small left, one larger center, and one small upper-right. Only tiny far-right/bottom-right exterior is transparent; match original cliff boundary. No cloud is visible here.",
+        "generator": "built-in image_gen",
+        "workflow": "native-alpha-edge",
+        "alphaAudit": {
+          "nativeAlphaExtrema": [
+            0,
+            255
+          ],
+          "nativeOpaqueFraction": 6.3592357724818065e-06,
+          "nativeZeroFraction": 0.040351258747128804,
+          "deepInteriorPixelsBelowAlpha200": 183,
+          "leftSharedContextAlphaExtrema": [
+            247,
+            254
+          ],
+          "sourceAlphaNeverApplied": true
+        },
+        "rejected": "Native transparency leaks into solid ground/shared finished context; preserved without alpha modification, not assembled"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c10-r2.png",
+        "masterSha256": "66a3b27fcb28431e231e2880a4cbac258c140f5f43751d07be3f50e96ba421f6",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          1108,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / HD map stitch. Image1 is EDIT TARGET: almost entirely completed HD map art with one narrow horizontal missing strip near the top and an unfinished narrow right side. Image2 shows the two fixed sides; image3 original layout defines the right outside silhouette. Fill the missing top strip so the fixed upper GOLD CLIFF grooves connect naturally into the fixed lower grooves, no horizontal ledge, doubled groove, new crack or abrupt tonal band. Reconstruct the narrow right strip in the same HD style using original shape; genuine transparent sky outside the cliff. Preserve every existing colored pixel position and all three original ivy groups: one small left, one large connected central forked patch, one small upper-right. Do not split the large ivy into additional separate objects. Keep grass ledge, cliff planes, contour and crop aligned. Native transparent RGBA only outside cliff, solid art with no internal holes. Ignore original colored extraction fringes. No cloud, new tree, rock, bush, building or extra ivy. Exact square312x312logical framing, at least1254x1254. No zoom/reframing. This is continuation of the existing artwork, not a redesign.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 175333,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000242922806508805,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.2035087719298243,
+            "p95RgbDifference": 4.666666666666667,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.814176245210728,
+            "p95RgbDifference": 6.666666666666667,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r5c10-r2.png",
+    "referenceRect": [
+      2320,
+      1108,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.2035087719298243,
+        "p95RgbDifference": 4.666666666666667,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 3.814176245210728,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 175333,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000242922806508805,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "b711932529c5c985592fb510da86f2f675ebc6a1ce586bc27de94f964e9fa322",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-08/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r5c11",
+    "row": 5,
+    "col": 11,
+    "rect": [
+      2592,
+      1172,
+      108,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.06809413580246913,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c11-r1.png",
+        "masterSha256": "66a3b27fcb28431e231e2880a4cbac258c140f5f43751d07be3f50e96ba421f6",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          1108,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / HD map stitch. Image1 is EDIT TARGET: almost entirely completed HD map art with one narrow horizontal missing strip near the top and an unfinished narrow right side. Image2 shows the two fixed sides; image3 original layout defines the right outside silhouette. Fill the missing top strip so the fixed upper GOLD CLIFF grooves connect naturally into the fixed lower grooves, no horizontal ledge, doubled groove, new crack or abrupt tonal band. Reconstruct the narrow right strip in the same HD style using original shape; genuine transparent sky outside the cliff. Preserve every existing colored pixel position and all three original ivy groups: one small left, one large connected central forked patch, one small upper-right. Do not split the large ivy into additional separate objects. Keep grass ledge, cliff planes, contour and crop aligned. Native transparent RGBA only outside cliff, solid art with no internal holes. Ignore original colored extraction fringes. No cloud, new tree, rock, bush, building or extra ivy. Exact square312x312logical framing, at least1254x1254. No zoom/reframing. This is continuation of the existing artwork, not a redesign.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 175333,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000242922806508805,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 16320,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 831,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 3.106194690265487,
+            "p95RgbDifference": 5.933333333333327,
+            "visibleCutSamples": 113,
+            "maximumChangedPixels": 57
+          }
+        ],
+        "sourceReuse": {
+          "tileId": "r5c10",
+          "masterSha256": "66a3b27fcb28431e231e2880a4cbac258c140f5f43751d07be3f50e96ba421f6",
+          "nativeRightBoundaryOutsideArt": true
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r5c11-r1.png",
+    "referenceRect": [
+      2320,
+      1108,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 831,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 3.106194690265487,
+        "p95RgbDifference": 5.933333333333327,
+        "visibleCutSamples": 113,
+        "maximumChangedPixels": 57
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 175333,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000242922806508805,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "sourceReuse": {
+      "tileId": "r5c10",
+      "masterSha256": "66a3b27fcb28431e231e2880a4cbac258c140f5f43751d07be3f50e96ba421f6",
+      "nativeRightBoundaryOutsideArt": true
+    },
+    "selectionMethod": "Reuse same native frame as r5c10; transparent padding verified from original source and native frame border",
+    "assembledSha256": "9a29e51b911b6381b0714536a85eb113b2bf29753bdf454064a64b127d52fbac",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-08/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r6c10",
+    "row": 6,
+    "col": 10,
+    "rect": [
+      2352,
+      1412,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.620625,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c10-r1.png",
+        "masterSha256": "098c5fa27d639844c4afbcc5bda512829e7406ca31d2fcd94ab24d6f064b8784",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          1380,
+          272,
+          272
+        ],
+        "prompt": "Use case: faithful HD map continuation. Image1 is the original exact map crop; image2 same-framed finished HD TOP32 and LEFT32logical strips. Keep those existing colored pixels, shapes and alpha aligned; fill the missing area from image1. Exact square272x272logical framing, output1254x1254 or larger. This crop contains ONLY the existing golden angular cliff faces/downward projections and cropped grass rim along the left, plus transparent sky outside the right/lower contour. No cloud is present. Preserve the exact original number/positions of cliff projections, long grooves, notches and cropped edges; do not add columns, cracks, ivy, trees, rocks or objects. Continue the fixed upper cliff grooves smoothly and connect left grass/cliff contours with no step or tonal seam. Bright polished cartoon materials matching finished context. Solid cliff and grass, native RGBA transparency only outside the silhouette, no interior holes. Ignore old colored extraction fringe pixels, no white/blue background rectangle. No zoom or reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 476300,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.00044514650407372644,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 7.647828863346105,
+            "p95RgbDifference": 24.23333333333327,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 19.6981884057971,
+            "p95RgbDifference": 77.0333333333333,
+            "visibleCutSamples": 920,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c10-r2.png",
+        "masterSha256": "853a02bd0317967b050c3e1b5be031a9e971e116d98f4a22a673e624723fab68",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          1348,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / cliff joint correction. Image1 EDIT TARGET has a narrow horizontal missing band near the top; image2 shows its fixed existing upper and lower HD artwork. Fill ONLY that band so every existing golden cliff groove and rock plane continues naturally between the fixed endpoints. Remove horizontal seam/step and tonal band without adding another crack or rock projection. Keep all other pixels and positions fixed, including the original left grassy lip and right/lower transparent silhouette, the existing two main downward cliff projections and cropped cliff at left. No cloud, ivy, tree, building or new object. Match established gold/orange angular planes, highlights and dark grooves. Native RGBA outside cliff remains transparent; solid art, no internal holes. Same exact square312x312logical crop, at least1254x1254. No reframing or redesign. Do not move the fixed endpoints to a different original outline; smoothly join the two existing HD sides.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 598973,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00011955363252265796,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.518199233716475,
+            "p95RgbDifference": 4.666666666666667,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 1.8706959706959707,
+            "p95RgbDifference": 4.666666666666667,
+            "visibleCutSamples": 910,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r6c10-r2.png",
+    "referenceRect": [
+      2320,
+      1348,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.518199233716475,
+        "p95RgbDifference": 4.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 68
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 1.8706959706959707,
+        "p95RgbDifference": 4.666666666666667,
+        "visibleCutSamples": 910,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 598973,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00011955363252265796,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "73b4084dfeb6774af6cbf22d759d05193a63a43dc0ccc1870357c82f57607bce",
+    "appliedRepairs": [
+      "east-cloud-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-08/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r7c9",
+    "row": 7,
+    "col": 9,
+    "rect": [
+      2112,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.8923263888888889,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c9-r1.png",
+        "masterSha256": "f85df944d9957cae2176d4a3f40304b41d122068101ffda0adf82fb9a5b44804",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          1620,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: cropped Star Cat Monopoly isometric map edge tile with NATIVE TRANSPARENCY. Image1 edit target shows sharp finished neighbor context; its empty area is unfinished artwork, NOT all exterior. Image2 original same-canvas crop defines the exact grass/cliff/ivy/cloud silhouettes and exterior. Restore missing mapped artwork in crisp HD cartoon style matching image1: densely textured bright yellow-green grass, angular golden cliff faces, original ivy. Existing opaque neighbor pixels must stay aligned exactly. Preserve original object/ivy/cloud counts, footprints and clipped shapes. Generate real alpha transparency ONLY outside the original map silhouette near far-right/lower edge. Most of this canvas is solid opaque map: do NOT cut out grass, terrain, cliff, cloud or background within the map; no internal white/transparent holes. Ignore old magenta/cyan/yellow pixel fringe outside the source silhouette, it is an extraction artifact. No painted blue sky or solid background, no white rectangle. Do not isolate props from terrain. No extra rocks, trees, buildings, ivy or clouds. Same square framing and exact context contours; seamless to finished borders.\nSquare. Restore grass ledge meeting golden cliff down right, with the original cropped CAMERA base at upper-left and ONE original white/cyan cloud fragment at lower-right edge. Keep map silhouette and that cloud's curved outline exactly as source. No ivy, stones, new trees or additional clouds.",
+        "generator": "built-in image_gen",
+        "workflow": "native-alpha-edge",
+        "alphaAudit": {
+          "nativeAlphaExtrema": [
+            0,
+            255
+          ],
+          "nativeOpaqueFraction": 8.139821788776712e-05,
+          "nativeZeroFraction": 0.05031300158472155,
+          "deepInteriorPixelsBelowAlpha200": 746,
+          "leftSharedContextAlphaExtrema": [
+            244,
+            253
+          ],
+          "sourceAlphaNeverApplied": true
+        },
+        "rejected": "Native transparency leaks into solid ground/shared finished context; preserved without alpha modification, not assembled"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c9-r2.png",
+        "masterSha256": "f85df944d9957cae2176d4a3f40304b41d122068101ffda0adf82fb9a5b44804",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          1620,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: cropped Star Cat Monopoly isometric map edge tile with NATIVE TRANSPARENCY. Image1 edit target shows sharp finished neighbor context; its empty area is unfinished artwork, NOT all exterior. Image2 original same-canvas crop defines the exact grass/cliff/ivy/cloud silhouettes and exterior. Restore missing mapped artwork in crisp HD cartoon style matching image1: densely textured bright yellow-green grass, angular golden cliff faces, original ivy. Existing opaque neighbor pixels must stay aligned exactly. Preserve original object/ivy/cloud counts, footprints and clipped shapes. Generate real alpha transparency ONLY outside the original map silhouette near far-right/lower edge. Most of this canvas is solid opaque map: do NOT cut out grass, terrain, cliff, cloud or background within the map; no internal white/transparent holes. Ignore old magenta/cyan/yellow pixel fringe outside the source silhouette, it is an extraction artifact. No painted blue sky or solid background, no white rectangle. Do not isolate props from terrain. No extra rocks, trees, buildings, ivy or clouds. Same square framing and exact context contours; seamless to finished borders.\nSquare. Restore grass ledge meeting golden cliff down right, with the original cropped CAMERA base at upper-left and ONE original white/cyan cloud fragment at lower-right edge. Keep map silhouette and that cloud's curved outline exactly as source. No ivy, stones, new trees or additional clouds.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 84770,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 8.139821788776712e-05,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 8.00701754385965,
+            "p95RgbDifference": 14.933333333333318,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 4.706257982120051,
+            "p95RgbDifference": 10.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 65
+          }
+        ],
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c9-r1.png",
+          "masterSha256": "f85df944d9957cae2176d4a3f40304b41d122068101ffda0adf82fb9a5b44804",
+          "newImageGenerated": false,
+          "reason": "existing native RGBA master passes current joins; preserve completed artwork"
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c9-r2.png",
+    "referenceRect": [
+      2080,
+      1620,
+      272,
+      272
+    ],
+    "nativePixelDensity": 4.610294117647059,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 8.00701754385965,
+        "p95RgbDifference": 14.933333333333318,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 4.706257982120051,
+        "p95RgbDifference": 10.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 65
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 84770,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 8.139821788776712e-05,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "sourceReuse": {
+      "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c9-r1.png",
+      "masterSha256": "f85df944d9957cae2176d4a3f40304b41d122068101ffda0adf82fb9a5b44804",
+      "newImageGenerated": false,
+      "reason": "existing native RGBA master passes current joins; preserve completed artwork"
+    },
+    "assembledSha256": "08b90fece285bd119c4ec27b2d5c222c2fa68a01d4fe2c0bc3c2d80979ea184d",
+    "appliedRepairs": [
+      "east-cloud-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-08/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r7c10",
+    "row": 7,
+    "col": 10,
+    "rect": [
+      2352,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.08204861111111111,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c10-r1.png",
+        "masterSha256": "a6f9884e6ca320db9315bb3d8964cf518cfa8fcfc0ca61ecb2ff0f576d3143cb",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          1620,
+          272,
+          272
+        ],
+        "prompt": "Use case: faithful HD map-edge continuation. Image1 original exact crop; image2 same-framed completed HD TOP32 and LEFT32logical strips. Preserve their existing colored pixels/alpha and reconstruct the missing art to join them. Exact square272x272logical crop, at least1254x1254. Contents: cropped existing GOLD CLIFF projections at upper-left, and the RIGHT continuation of the ONE existing white/cyan cloud along lower-left with its thin original rightward tail. The cloud already enters from the fixed left strip: form ONE continuous cloud, never a duplicate separate puff/object. Match original silhouette, cliff tip count, proportions, cloud position, and cropped framing; transparent sky is most of the right/background. No added cloud, tree, rock, ivy, building or crack. Continue upper cliff planes and left cloud outlines seamlessly, no ledge, notch or straight clipping line. Solid cliff/cloud artwork, native RGBA antialias at outside only, no internal holes or blue/white background rectangle. Ignore old colored extraction fringes. No zoom/reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 1091287,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0008820260016432265,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 8.049581839904421,
+            "p95RgbDifference": 29.666666666666668,
+            "visibleCutSamples": 558,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 8.075453677172874,
+            "p95RgbDifference": 16.19999999999999,
+            "visibleCutSamples": 349,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c10-r1.png",
+    "referenceRect": [
+      2320,
+      1620,
+      272,
+      272
+    ],
+    "nativePixelDensity": 4.610294117647059,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 8.049581839904421,
+        "p95RgbDifference": 29.666666666666668,
+        "visibleCutSamples": 558,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 8.075453677172874,
+        "p95RgbDifference": 16.19999999999999,
+        "visibleCutSamples": 349,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 1091287,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0008820260016432265,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "assembledSha256": "ec9663a2efabd689c4aa342b90e6c2cefc2bbe2fd6b4ffa70a4dda743c77f949",
+    "appliedRepairs": [
+      "east-cloud-whole-r1"
+    ],
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-08/native-alpha-browser-verification.json"
+  },
+  {
+    "id": "r8c8",
+    "row": 8,
+    "col": 8,
+    "rect": [
+      1872,
+      1892,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9816840277777777,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c8-r1.png",
+        "masterSha256": "61fea637451ccf03d2bcd2df7aa8e1106876c8a38cea31be5b09aea9e143639e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          1860,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: cropped Star Cat Monopoly isometric map edge tile with NATIVE TRANSPARENCY. Image1 edit target shows sharp finished neighbor context; its empty area is unfinished artwork, NOT all exterior. Image2 original same-canvas crop defines the exact grass/cliff/ivy/cloud silhouettes and exterior. Restore missing mapped artwork in crisp HD cartoon style matching image1: densely textured bright yellow-green grass, angular golden cliff faces, original ivy. Existing opaque neighbor pixels must stay aligned exactly. Preserve original object/ivy/cloud counts, footprints and clipped shapes. Generate real alpha transparency ONLY outside the original map silhouette near far-right/lower edge. Most of this canvas is solid opaque map: do NOT cut out grass, terrain, cliff, cloud or background within the map; no internal white/transparent holes. Ignore old magenta/cyan/yellow pixel fringe outside the source silhouette, it is an extraction artifact. No painted blue sky or solid background, no white rectangle. Do not isolate props from terrain. No extra rocks, trees, buildings, ivy or clouds. Same square framing and exact context contours; seamless to finished borders.\nSquare. Restore golden cliff behind the large original ivy patch, matching its forked irregular silhouette, plus cropped grass cap at top. Ivy continues from left neighbor: preserve exact boundary, no duplicated separate leaf group. Only original exterior sliver near bottom-right is transparent. No sky colors or extra cloud.",
+        "generator": "built-in image_gen",
+        "workflow": "native-alpha-edge",
+        "alphaAudit": {
+          "nativeAlphaExtrema": [
+            0,
+            255
+          ],
+          "nativeOpaqueFraction": 0.0002461024243950459,
+          "nativeZeroFraction": 0.06186328151828026,
+          "deepInteriorPixelsBelowAlpha200": 3609,
+          "leftSharedContextAlphaExtrema": [
+            246,
+            254
+          ],
+          "sourceAlphaNeverApplied": true
+        },
+        "rejected": "Native transparency leaks into solid ground/shared finished context; preserved without alpha modification, not assembled"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c8-r2.png",
+        "masterSha256": "61fea637451ccf03d2bcd2df7aa8e1106876c8a38cea31be5b09aea9e143639e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          1860,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: cropped Star Cat Monopoly isometric map edge tile with NATIVE TRANSPARENCY. Image1 edit target shows sharp finished neighbor context; its empty area is unfinished artwork, NOT all exterior. Image2 original same-canvas crop defines the exact grass/cliff/ivy/cloud silhouettes and exterior. Restore missing mapped artwork in crisp HD cartoon style matching image1: densely textured bright yellow-green grass, angular golden cliff faces, original ivy. Existing opaque neighbor pixels must stay aligned exactly. Preserve original object/ivy/cloud counts, footprints and clipped shapes. Generate real alpha transparency ONLY outside the original map silhouette near far-right/lower edge. Most of this canvas is solid opaque map: do NOT cut out grass, terrain, cliff, cloud or background within the map; no internal white/transparent holes. Ignore old magenta/cyan/yellow pixel fringe outside the source silhouette, it is an extraction artifact. No painted blue sky or solid background, no white rectangle. Do not isolate props from terrain. No extra rocks, trees, buildings, ivy or clouds. Same square framing and exact context contours; seamless to finished borders.\nSquare. Restore golden cliff behind the large original ivy patch, matching its forked irregular silhouette, plus cropped grass cap at top. Ivy continues from left neighbor: preserve exact boundary, no duplicated separate leaf group. Only original exterior sliver near bottom-right is transparent. No sky colors or extra cloud.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 100169,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0002461024243950459,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.484035759897829,
+            "p95RgbDifference": 5.333333333333333,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 65
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 4.379904306220095,
+            "p95RgbDifference": 9.333333333333334,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceReuse": {
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c8-r1.png",
+          "masterSha256": "61fea637451ccf03d2bcd2df7aa8e1106876c8a38cea31be5b09aea9e143639e",
+          "newImageGenerated": false,
+          "reason": "existing native RGBA master passes current joins; preserve completed artwork"
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c8-r2.png",
+    "referenceRect": [
+      1840,
+      1860,
+      272,
+      272
+    ],
+    "nativePixelDensity": 4.610294117647059,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.484035759897829,
+        "p95RgbDifference": 5.333333333333333,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 65
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 4.379904306220095,
+        "p95RgbDifference": 9.333333333333334,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 100169,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0002461024243950459,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "engineering-reviewed-actual-native-replacement-pending-user-art-acceptance",
+    "sourceReuse": {
+      "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c8-r1.png",
+      "masterSha256": "61fea637451ccf03d2bcd2df7aa8e1106876c8a38cea31be5b09aea9e143639e",
+      "newImageGenerated": false,
+      "reason": "existing native RGBA master passes current joins; preserve completed artwork"
+    },
+    "assembledSha256": "b871bd1fadc4d700ba57f4704c99a342b8b6ca8fb5d4e5bf1dda276da35056b6",
+    "reviewEvidence": "public/modern/hd-masters/map/full-map-v1/reviews/batch-08/native-alpha-browser-verification.json"
+  }
+]

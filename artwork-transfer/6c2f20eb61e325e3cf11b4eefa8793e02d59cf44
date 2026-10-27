@@ -1,0 +1,14 @@
+F.
+======================================================================
+FAIL: test_restored_tree_position_and_size_in_actual_scene (__main__.OriginalTreeLayout.test_restored_tree_position_and_size_in_actual_scene)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch24_original_tree_layout.py", line 13, in test_restored_tree_position_and_size_in_actual_scene
+    target=np.array(target);actual=min(boxes,key=lambda p:np.linalg.norm(p-target));self.assertLessEqual(float(np.abs(actual-target).max()),1.25,f'Original tree geometry differs: {actual} versus {target}')
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 14.75 not less than or equal to 1.25 : Original tree geometry differs: [ 438.25 1672.25  454.5  1696.5 ] versus [ 448 1687  468 1710]
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.220s
+
+FAILED (failures=1)

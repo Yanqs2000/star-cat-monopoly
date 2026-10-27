@@ -1,0 +1,23 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-4ff332e3-a0a1-4393-b4c8-149de92c13b1.png",
+  "prompt": "Use case: precise-object-edit. This exact square image is the EDIT TARGET. Correct ONLY two engraved numerals on circular road discs. The glossy RED/PINK disc immediately below the cat manhole must read \"20\", numeral TWO followed by ZERO, NOT 30 or 10. The glossy GREEN disc near lower right above yellow-roof building must also read \"20\", TWO followed by ZERO, NOT 30. Replace the wrong first character with an unmistakable standard numeral 2 with curved upper stroke, diagonal descent and flat lower bar, rotated to exactly the road-disc perspective. Retain the same disc centers, diameter, rim, highlights, vivid colors and embossed lettering style. No ghost or duplicated strokes from old numbers. The BLUE disc stays \"30\". Both CYAN discs stay \"10\". Keep the SINGLE cat face, every tree, ride, platform, road, curb, grass and building visually identical, especially all outer32-logical-pixel anchors. No reframing or rescaling. Same square opaque HD image, no holes, native high resolution.",
+  "referenceRect": [
+    128,
+    1380,
+    312,
+    312
+  ],
+  "sourceGenerationPrompt": "Use case: style-transfer. Asset type: sharp HD square isometric game map fragment.\nImage 1 is EDIT TARGET: completed right and bottom edge anchors with unfinished transparent middle. Image 2 is ORIGINAL LAYOUT of exactly this square. Fill unfinished area faithfully in the same crisp outlined glossy cartoon style as finished anchors. Image 3 is supporting identity reference for a SINGLE engraved cat emblem only; do not copy its grass/road texture scale or its large framing.\nSame square coordinates, no reframing, movement or magnification. Preserve all finished right and bottom anchor shapes, colors and texture scale, including curved blue ride rail, colorful cropped ride, leafy bushes, fine gray spiral asphalt, white curb, lower round tree and lower yellow-roof building. Complete their cropped upper halves without changing their positions.\nPreserve original diagonal gray road and its complete objects in exact original positions: one blue circular disc marked \"30\" near upper middle, one red/pink disc marked \"20\" below the manhole, one cyan disc marked \"10\" diagonally lower-right, one green disc marked \"20\" near right lower-middle (part crosses into finished right edge). Exactly these discs, correct numerals and colors, same size and perspective. One circular gray cat manhole left of blue30 and above red20. It has exactly ONE cheerful cat head engraving: two triangular ears, one top hair tuft, two closed happy eyes, ONE round central nose, single mouth/muzzle, whiskers, two small paws at bottom. Never duplicated/overlapping faces, extra nose, ghost lines or multiple heads. Gray engraving only, no colored cat. Fine asphalt texture scale must match completed right edge, not Image3.\nGrass dense small yellow-green leaves with subtle dirt path shading as original. Keep original cropped upper-left trees and round tree at lower left; no added trees, props, cracks, lane marks, flowers, shadows or labels. Original square is entirely inside island: finished image must be solid opaque artwork throughout, no black/white gaps or transparent holes. Use exactly the same crop and positions as Image2, native high resolution square.",
+  "sharedRepairs": [
+    {
+      "repairId": "west-road-ride-native-reassembly-r1",
+      "rect": [
+        280,
+        1412,
+        320,
+        240
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-road-ride-native-reassembly-r1/assembled.png"
+    }
+  ]
+}
