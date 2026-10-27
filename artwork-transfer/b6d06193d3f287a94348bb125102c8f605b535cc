@@ -1,0 +1,47 @@
+{
+  "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c9-r1-native-reused.png",
+  "masterSha256": "0c14949d26ce119b7d721e76bdf2f512f176d9dcb3fff056972d89275bbbdd09",
+  "nativePixelSize": [
+    1254,
+    1254
+  ],
+  "referenceRect": [
+    2080,
+    148,
+    312,
+    312
+  ],
+  "generator": "built-in image_gen native context reuse",
+  "workflow": "native-rgba-coverage-preserved",
+  "sourceMaskApplied": false,
+  "sourceNativeMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c9-r3.png",
+  "sourceNativeSha256": "0c14949d26ce119b7d721e76bdf2f512f176d9dcb3fff056972d89275bbbdd09",
+  "nativeAlphaAuditBeforePadding": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 1311230,
+    "solidAlphaMedian": 253.0,
+    "fullyOpaqueFraction": 0.00024419465366330137,
+    "nativeAlphaModified": false
+  },
+  "alphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 818496,
+    "solidAlphaMedian": null,
+    "fullyOpaqueFraction": 0.0,
+    "nativeAlphaModified": false,
+    "sourceHasNoSolidArtwork": true,
+    "sourceMaxAlpha": 82,
+    "sourceNonzeroAlphaPixels": 9,
+    "nativeCoreMaxAlpha": 1
+  },
+  "transparentCanvasPadding": {
+    "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+    "logicalPixelsPadded": 35520,
+    "nativeAlphaModified": false
+  },
+  "prompt": "Reuse validated r1c9 native top context for this sky-edge-only cell; transparent padding only where the original map is exactly transparent."
+}

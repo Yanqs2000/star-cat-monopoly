@@ -1,0 +1,1131 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "browser": "local Chrome / SwiftShader",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "legacyBaseCulledForReviewCoreReplacement": true,
+  "nativeRgbaFilesUnmodified": true,
+  "regionCount": 83,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "allTextureResolutionsRegistered": true,
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 83,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "underlayZeroAlphaSamples": [
+      0,
+      0
+    ]
+  },
+  "protectedPilotDrawnAboveNativeContextUnderlay": true,
+  "protectedPilotUnderlayLabels": [
+    "r2c2",
+    "r3c2"
+  ],
+  "commonNativeGrid": true,
+  "bleedPixels": 0,
+  "nonOverlappingGridDrawRects": true,
+  "waitsForNativeBitmapDecoding": true,
+  "views": [
+    {
+      "name": "overview",
+      "width": 1800,
+      "height": 1600,
+      "camera": {
+        "x": -78.26666666666665,
+        "y": -65.31111111111107,
+        "scale": 0.37777777777777777,
+        "following": false
+      },
+      "viewportScale": 2.25,
+      "actualScreenScale": 0.85,
+      "sourceFocus": [
+        1450,
+        1280
+      ],
+      "pending": 0,
+      "decodedCount": 99
+    },
+    {
+      "name": "central-west-whole-2x",
+      "width": 1500,
+      "height": 1300,
+      "camera": {
+        "x": -577.0666666666666,
+        "y": -710.1333333333333,
+        "scale": 1.0666666666666667,
+        "following": false
+      },
+      "viewportScale": 1.875,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1100,
+        1260
+      ],
+      "pending": 0,
+      "decodedCount": 117
+    },
+    {
+      "name": "TOMORROW-CITY-whole-2x",
+      "width": 1500,
+      "height": 1300,
+      "camera": {
+        "x": -747.7333333333333,
+        "y": -667.4666666666667,
+        "scale": 1.0666666666666667,
+        "following": false
+      },
+      "viewportScale": 1.875,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1260,
+        1220
+      ],
+      "pending": 0,
+      "decodedCount": 121
+    },
+    {
+      "name": "TOMORROW-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2202.6666666666665,
+        "y": -1958.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1160,
+        1160
+      ],
+      "pending": 0,
+      "decodedCount": 121,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "TOMORROW-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2682.6666666666665,
+        "y": -2278.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1340,
+        1280
+      ],
+      "pending": 0,
+      "decodedCount": 126,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "sign-old-west-context-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2096,
+        "y": -2385.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1120,
+        1320
+      ],
+      "pending": 0,
+      "decodedCount": 126,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "sign-old-east-context-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2882.6666666666665,
+        "y": -1892,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1415,
+        1135
+      ],
+      "pending": 0,
+      "decodedCount": 128,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r5c4-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -1498.6666666666665,
+        "y": -2305.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        896,
+        1290
+      ],
+      "pending": 0,
+      "decodedCount": 134,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r5c4-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2181.333333333333,
+        "y": -2305.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1152,
+        1290
+      ],
+      "pending": 0,
+      "decodedCount": 137,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r5c4-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -1840,
+        "y": -1990.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1024,
+        1172
+      ],
+      "pending": 0,
+      "decodedCount": 139,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r5c4-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -1840,
+        "y": -2630.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1024,
+        1412
+      ],
+      "pending": 0,
+      "decodedCount": 142,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "white-parcels-west-whole-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2224,
+        "y": -2465.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1168,
+        1350
+      ],
+      "pending": 0,
+      "decodedCount": 142,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "white-parcels-patch-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -1989.333333333333,
+        "y": -2470.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1080,
+        1352
+      ],
+      "pending": 0,
+      "decodedCount": 144,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "white-parcels-patch-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2458.6666666666665,
+        "y": -2470.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1256,
+        1352
+      ],
+      "pending": 0,
+      "decodedCount": 146,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "white-parcels-patch-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2224,
+        "y": -2236,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1168,
+        1264
+      ],
+      "pending": 0,
+      "decodedCount": 148,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "white-parcels-patch-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2224,
+        "y": -2705.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1168,
+        1440
+      ],
+      "pending": 0,
+      "decodedCount": 148,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r4c6-whole-2x",
+      "width": 1500,
+      "height": 1300,
+      "camera": {
+        "x": -1016.5333333333333,
+        "y": -486.1333333333333,
+        "scale": 1.0666666666666667,
+        "following": false
+      },
+      "viewportScale": 1.875,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1512,
+        1050
+      ],
+      "pending": 0,
+      "decodedCount": 160
+    },
+    {
+      "name": "r4c6-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2821.333333333333,
+        "y": -1665.3333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1392,
+        1050
+      ],
+      "pending": 0,
+      "decodedCount": 160,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r4c6-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3461.333333333333,
+        "y": -1665.3333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1632,
+        1050
+      ],
+      "pending": 0,
+      "decodedCount": 163,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r4c6-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3141.333333333333,
+        "y": -1990.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1512,
+        1172
+      ],
+      "pending": 0,
+      "decodedCount": 165,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r4c6-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3141.333333333333,
+        "y": -1350.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1512,
+        932
+      ],
+      "pending": 0,
+      "decodedCount": 168,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r3c6-whole-2x",
+      "width": 1500,
+      "height": 1300,
+      "camera": {
+        "x": -1016.5333333333333,
+        "y": -230.13333333333333,
+        "scale": 1.0666666666666667,
+        "following": false
+      },
+      "viewportScale": 1.875,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1512,
+        810
+      ],
+      "pending": 0,
+      "decodedCount": 175
+    },
+    {
+      "name": "r3c6-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2821.333333333333,
+        "y": -1025.3333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1392,
+        810
+      ],
+      "pending": 0,
+      "decodedCount": 175,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r3c6-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3461.333333333333,
+        "y": -1025.3333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1632,
+        810
+      ],
+      "pending": 0,
+      "decodedCount": 178,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r3c6-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3141.333333333333,
+        "y": -1350.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1512,
+        932
+      ],
+      "pending": 0,
+      "decodedCount": 181,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r3c6-sky-inlet-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2949.333333333333,
+        "y": -678.6666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1440,
+        680
+      ],
+      "pending": 0,
+      "decodedCount": 182,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r3c5-unfinished-top16-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2789.333333333333,
+        "y": -678.6666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1380,
+        680
+      ],
+      "pending": 0,
+      "decodedCount": 182,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r2c7-whole-2x",
+      "width": 1500,
+      "height": 1300,
+      "camera": {
+        "x": -1272.5333333333333,
+        "y": 49.33333333333334,
+        "scale": 1.0666666666666667,
+        "following": false
+      },
+      "viewportScale": 1.875,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1752,
+        548
+      ],
+      "pending": 0,
+      "decodedCount": 188
+    },
+    {
+      "name": "r2c7-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4101.333333333333,
+        "y": -326.66666666666663,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1872,
+        548
+      ],
+      "pending": 0,
+      "decodedCount": 188,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r2c7-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3781.333333333333,
+        "y": -668,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1752,
+        676
+      ],
+      "pending": 0,
+      "decodedCount": 189,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r2c7-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3781.333333333333,
+        "y": 14.666666666666686,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1752,
+        420
+      ],
+      "pending": 0,
+      "decodedCount": 189,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r2c7-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3461.333333333333,
+        "y": -326.66666666666663,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1632,
+        548
+      ],
+      "pending": 0,
+      "decodedCount": 191,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "gateway-whole-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4149.333333333333,
+        "y": -358.66666666666663,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1890,
+        560
+      ],
+      "pending": 0,
+      "decodedCount": 193,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "long-lane-complete-whole-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -2309.333333333333,
+        "y": -2332,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1200,
+        1300
+      ],
+      "pending": 0,
+      "decodedCount": 203,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    }
+  ],
+  "requestedReviewAtlases": [
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c0.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c0.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c0.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c0.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c0.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r8c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r9c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r10c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r10c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r10c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r10c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r10c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r10c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c1.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r4c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-14/sign.webp"
+  ],
+  "errors": []
+}

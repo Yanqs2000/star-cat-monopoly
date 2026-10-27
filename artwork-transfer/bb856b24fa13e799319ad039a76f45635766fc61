@@ -1,0 +1,63 @@
+{
+  "sourceNativePixelSize": [
+    1122,
+    1402
+  ],
+  "nativeAlphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 730500,
+    "solidAlphaMedian": 252.0,
+    "fullyOpaqueFraction": 0.0005816747656136764,
+    "nativeAlphaModified": false
+  },
+  "instances": [
+    {
+      "id": "west-coast-tree-original-placement",
+      "targetWholeTreeRect": [
+        95,
+        1321,
+        92,
+        106
+      ],
+      "sourceBodyPixelBox": [
+        16,
+        47,
+        1118,
+        1352
+      ],
+      "compiledBodyPixelBox": [
+        6,
+        17,
+        406,
+        477
+      ],
+      "technicalResize": [
+        408,
+        495
+      ],
+      "logicalRect": [
+        93.52962298025136,
+        1317.149012567325,
+        93.75942549371634,
+        113.75224416517055
+      ],
+      "scenePosition": [
+        -90.47037701974864,
+        1004.1490125673249
+      ],
+      "pixelDensity": 4.3515625,
+      "pixelSize": [
+        408,
+        495
+      ],
+      "path": "public/modern/hd-masters/map/full-map-v1/native-props/west-coast-tree-v1/tree.png",
+      "sha256": "612dec04ad6d9b1ede42a9aca901c475d650dc367570b099e62072e6b25a33de",
+      "spriteOnBase": true,
+      "replacement": false,
+      "nativeSourceDensity": 11.966796875
+    }
+  ],
+  "method": "Native imagegen extraction, technical resize and original world placement only"
+}

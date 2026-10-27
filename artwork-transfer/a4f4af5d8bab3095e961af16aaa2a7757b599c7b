@@ -1,0 +1,13 @@
+..F
+======================================================================
+FAIL: test_south_bridge_upper_curb_preserves_original_width (test_hd_map_full_package.FullMapPackage.test_south_bridge_upper_curb_preserves_original_width)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/test_hd_map_full_package.py", line 17, in test_south_bridge_upper_curb_preserves_original_width
+    self.assertLessEqual(abs(edge[0]-expected_y),4,
+AssertionError: 14 not less than or equal to 4 : Bridge upper edge at x=1420 moved from 1901 to 1915
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.176s
+
+FAILED (failures=1)

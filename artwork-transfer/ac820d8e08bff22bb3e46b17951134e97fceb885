@@ -1,0 +1,17 @@
+/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch24_draw_replacement.py:9: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/reviews/batch-24/draw-regions.json' mode='r' encoding='UTF-8'>
+  cls.rows=(json.load(open(OUT/'regions.json'))+json.load(open(OUT/'approved-review-regions.json'))) if os.environ.get('REPLAY_UNCARVED') else json.load(open(OUT/'draw-regions.json'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+F
+======================================================================
+FAIL: test_no_prior_pixels_under_replacement (__main__.DrawReplacement.test_no_prior_pixels_under_replacement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch24_draw_replacement.py", line 21, in test_no_prior_pixels_under_replacement
+    a,b,e,f=box(r);self.assertFalse(min(c,e)>max(x,a) and min(d,f)>max(y,b),r.get('label',r.get('tileId')))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false : west-grass-scale-transition-r1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

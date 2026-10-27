@@ -1,0 +1,574 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "browser": "local Chrome / SwiftShader",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "legacyBaseCulledForReviewCoreReplacement": true,
+  "nativeRgbaFilesUnmodified": true,
+  "regionCount": 49,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "allTextureResolutionsRegistered": true,
+  "legacyBaseCulling": {
+    "calls": 1,
+    "url": "/assets-hd/map.webp",
+    "pixelSize": [
+      5400,
+      5104
+    ],
+    "logicalScale": [
+      2,
+      2
+    ],
+    "rectCount": 49,
+    "zeroAlphaSamples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "commonNativeGrid": true,
+  "bleedPixels": 5,
+  "waitsForNativeBitmapDecoding": true,
+  "views": [
+    {
+      "name": "overview",
+      "width": 1800,
+      "height": 1600,
+      "camera": {
+        "x": -78.26666666666665,
+        "y": -65.31111111111107,
+        "scale": 0.37777777777777777,
+        "following": false
+      },
+      "viewportScale": 2.25,
+      "actualScreenScale": 0.85,
+      "sourceFocus": [
+        1450,
+        1280
+      ],
+      "pending": 0,
+      "decodedCount": 59
+    },
+    {
+      "name": "southeast-whole-2x",
+      "width": 1500,
+      "height": 1500,
+      "camera": {
+        "x": -1579.7333333333333,
+        "y": -1542.1333333333332,
+        "scale": 1.0666666666666667,
+        "following": false
+      },
+      "viewportScale": 1.875,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        2040,
+        2040
+      ],
+      "pending": 0,
+      "decodedCount": 69
+    },
+    {
+      "name": "southeast-closed-slit-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4741.333333333333,
+        "y": -4252,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2112,
+        2020
+      ],
+      "pending": 0,
+      "decodedCount": 69,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "ivy-horizontal-joint-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4469.333333333333,
+        "y": -4550.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2010,
+        2132
+      ],
+      "pending": 0,
+      "decodedCount": 71,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r8c9-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5056,
+        "y": -3910.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2230,
+        1892
+      ],
+      "pending": 0,
+      "decodedCount": 74,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r8c9-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4741.333333333333,
+        "y": -4230.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2112,
+        2012
+      ],
+      "pending": 0,
+      "decodedCount": 75,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "shared-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4314.666666666666,
+        "y": -4390.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1952,
+        2072
+      ],
+      "pending": 0,
+      "decodedCount": 77,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "shared-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4736,
+        "y": -3974.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2110,
+        1916
+      ],
+      "pending": 0,
+      "decodedCount": 79,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "shared-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4709.333333333333,
+        "y": -4806.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2100,
+        2228
+      ],
+      "pending": 0,
+      "decodedCount": 80,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "shared-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5146.666666666666,
+        "y": -4332,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2264,
+        2050
+      ],
+      "pending": 0,
+      "decodedCount": 83,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r9c7-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3776,
+        "y": -4550.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1750,
+        2132
+      ],
+      "pending": 0,
+      "decodedCount": 85,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "r9c7-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4101.333333333333,
+        "y": -4865.333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1872,
+        2250
+      ],
+      "pending": 0,
+      "decodedCount": 85,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "lower-cropped-2x",
+      "width": 1400,
+      "height": 1200,
+      "camera": {
+        "x": -1458.2857142857142,
+        "y": -2005.1428571428569,
+        "scale": 1.1428571428571428,
+        "following": false
+      },
+      "viewportScale": 1.75,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1810,
+        2330
+      ],
+      "pending": 0,
+      "decodedCount": 86
+    },
+    {
+      "name": "lower-patch-left-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3461.333333333333,
+        "y": -4678.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1632,
+        2180
+      ],
+      "pending": 0,
+      "decodedCount": 86,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "lower-patch-top-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3882.666666666666,
+        "y": -4166.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1790,
+        1988
+      ],
+      "pending": 0,
+      "decodedCount": 91,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "lower-patch-bottom-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -3882.666666666666,
+        "y": -4998.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1790,
+        2300
+      ],
+      "pending": 0,
+      "decodedCount": 91,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "lower-patch-right-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4293.333333333333,
+        "y": -4678.666666666666,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1944,
+        2180
+      ],
+      "pending": 0,
+      "decodedCount": 92,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    }
+  ],
+  "requestedReviewAtlases": [
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r2c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r2c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r2c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r3c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r3c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r5c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r6c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r3c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r9c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-09/r8c9.webp"
+  ],
+  "errors": []
+}

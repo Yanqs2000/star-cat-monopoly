@@ -1,0 +1,754 @@
+{
+  "version": 1,
+  "tool": "JPEXS 26.2.1",
+  "sourceHashes": {
+    "play.swf": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+    "star8.swf": "3d25d19b558af55c36b38cfc6e31f75b2920a1a0453e3ac6e1627f3d06cf9da7"
+  },
+  "map": {
+    "url": "assets/map.png",
+    "sourceId": 20,
+    "width": 2700,
+    "height": 2552,
+    "offsetX": -184,
+    "offsetY": -313
+  },
+  "clips": [
+    {
+      "facing": "down-right",
+      "sourceSpriteId": 122,
+      "sourceBoundsTwips": [
+        1800,
+        3580,
+        1340,
+        2860
+      ],
+      "sourcePlacementTwips": [
+        -2143,
+        -2153
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "url": "assets/characters/8/walk/down-right/1.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 2,
+          "url": "assets/characters/8/walk/down-right/2.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 3,
+          "url": "assets/characters/8/walk/down-right/3.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 4,
+          "url": "assets/characters/8/walk/down-right/4.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 5,
+          "url": "assets/characters/8/walk/down-right/5.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 6,
+          "url": "assets/characters/8/walk/down-right/6.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 7,
+          "url": "assets/characters/8/walk/down-right/7.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 8,
+          "url": "assets/characters/8/walk/down-right/8.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 9,
+          "url": "assets/characters/8/walk/down-right/9.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 10,
+          "url": "assets/characters/8/walk/down-right/10.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 11,
+          "url": "assets/characters/8/walk/down-right/11.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 12,
+          "url": "assets/characters/8/walk/down-right/12.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 13,
+          "url": "assets/characters/8/walk/down-right/13.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 14,
+          "url": "assets/characters/8/walk/down-right/14.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 15,
+          "url": "assets/characters/8/walk/down-right/15.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 16,
+          "url": "assets/characters/8/walk/down-right/16.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 17,
+          "url": "assets/characters/8/walk/down-right/17.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 18,
+          "url": "assets/characters/8/walk/down-right/18.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 19,
+          "url": "assets/characters/8/walk/down-right/19.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 20,
+          "url": "assets/characters/8/walk/down-right/20.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 21,
+          "url": "assets/characters/8/walk/down-right/21.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 22,
+          "url": "assets/characters/8/walk/down-right/22.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 23,
+          "url": "assets/characters/8/walk/down-right/23.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        },
+        {
+          "sourceFrame": 24,
+          "url": "assets/characters/8/walk/down-right/24.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -17.15,
+          "offsetY": -40.65
+        }
+      ]
+    },
+    {
+      "facing": "down-left",
+      "sourceSpriteId": 290,
+      "sourceBoundsTwips": [
+        1840,
+        3940,
+        1360,
+        3000
+      ],
+      "sourcePlacementTwips": [
+        -2063,
+        -2053
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "url": "assets/characters/8/walk/down-left/1.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 2,
+          "url": "assets/characters/8/walk/down-left/2.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 3,
+          "url": "assets/characters/8/walk/down-left/3.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 4,
+          "url": "assets/characters/8/walk/down-left/4.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 5,
+          "url": "assets/characters/8/walk/down-left/5.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 6,
+          "url": "assets/characters/8/walk/down-left/6.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 7,
+          "url": "assets/characters/8/walk/down-left/7.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 8,
+          "url": "assets/characters/8/walk/down-left/8.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 9,
+          "url": "assets/characters/8/walk/down-left/9.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 10,
+          "url": "assets/characters/8/walk/down-left/10.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 11,
+          "url": "assets/characters/8/walk/down-left/11.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 12,
+          "url": "assets/characters/8/walk/down-left/12.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 13,
+          "url": "assets/characters/8/walk/down-left/13.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 14,
+          "url": "assets/characters/8/walk/down-left/14.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 15,
+          "url": "assets/characters/8/walk/down-left/15.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 16,
+          "url": "assets/characters/8/walk/down-left/16.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 17,
+          "url": "assets/characters/8/walk/down-left/17.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 18,
+          "url": "assets/characters/8/walk/down-left/18.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 19,
+          "url": "assets/characters/8/walk/down-left/19.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 20,
+          "url": "assets/characters/8/walk/down-left/20.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 21,
+          "url": "assets/characters/8/walk/down-left/21.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 22,
+          "url": "assets/characters/8/walk/down-left/22.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 23,
+          "url": "assets/characters/8/walk/down-left/23.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        },
+        {
+          "sourceFrame": 24,
+          "url": "assets/characters/8/walk/down-left/24.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -11.15,
+          "offsetY": -34.65
+        }
+      ]
+    },
+    {
+      "facing": "up-left",
+      "sourceSpriteId": 459,
+      "sourceBoundsTwips": [
+        1900,
+        3860,
+        1360,
+        3420
+      ],
+      "sourcePlacementTwips": [
+        -2100,
+        -2003
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "url": "assets/characters/8/walk/up-left/1.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 2,
+          "url": "assets/characters/8/walk/up-left/2.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 3,
+          "url": "assets/characters/8/walk/up-left/3.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 4,
+          "url": "assets/characters/8/walk/up-left/4.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 5,
+          "url": "assets/characters/8/walk/up-left/5.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 6,
+          "url": "assets/characters/8/walk/up-left/6.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 7,
+          "url": "assets/characters/8/walk/up-left/7.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 8,
+          "url": "assets/characters/8/walk/up-left/8.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 9,
+          "url": "assets/characters/8/walk/up-left/9.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 10,
+          "url": "assets/characters/8/walk/up-left/10.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 11,
+          "url": "assets/characters/8/walk/up-left/11.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 12,
+          "url": "assets/characters/8/walk/up-left/12.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 13,
+          "url": "assets/characters/8/walk/up-left/13.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 14,
+          "url": "assets/characters/8/walk/up-left/14.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 15,
+          "url": "assets/characters/8/walk/up-left/15.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 16,
+          "url": "assets/characters/8/walk/up-left/16.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 17,
+          "url": "assets/characters/8/walk/up-left/17.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 18,
+          "url": "assets/characters/8/walk/up-left/18.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 19,
+          "url": "assets/characters/8/walk/up-left/19.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 20,
+          "url": "assets/characters/8/walk/up-left/20.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 21,
+          "url": "assets/characters/8/walk/up-left/21.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 22,
+          "url": "assets/characters/8/walk/up-left/22.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 23,
+          "url": "assets/characters/8/walk/up-left/23.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        },
+        {
+          "sourceFrame": 24,
+          "url": "assets/characters/8/walk/up-left/24.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -10.0,
+          "offsetY": -32.15
+        }
+      ]
+    },
+    {
+      "facing": "up-right",
+      "sourceSpriteId": 627,
+      "sourceBoundsTwips": [
+        1320,
+        3680,
+        1400,
+        3180
+      ],
+      "sourcePlacementTwips": [
+        -2163,
+        -1983
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "url": "assets/characters/8/walk/up-right/1.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 2,
+          "url": "assets/characters/8/walk/up-right/2.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 3,
+          "url": "assets/characters/8/walk/up-right/3.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 4,
+          "url": "assets/characters/8/walk/up-right/4.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 5,
+          "url": "assets/characters/8/walk/up-right/5.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 6,
+          "url": "assets/characters/8/walk/up-right/6.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 7,
+          "url": "assets/characters/8/walk/up-right/7.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 8,
+          "url": "assets/characters/8/walk/up-right/8.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 9,
+          "url": "assets/characters/8/walk/up-right/9.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 10,
+          "url": "assets/characters/8/walk/up-right/10.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 11,
+          "url": "assets/characters/8/walk/up-right/11.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 12,
+          "url": "assets/characters/8/walk/up-right/12.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 13,
+          "url": "assets/characters/8/walk/up-right/13.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 14,
+          "url": "assets/characters/8/walk/up-right/14.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 15,
+          "url": "assets/characters/8/walk/up-right/15.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 16,
+          "url": "assets/characters/8/walk/up-right/16.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 17,
+          "url": "assets/characters/8/walk/up-right/17.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 18,
+          "url": "assets/characters/8/walk/up-right/18.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 19,
+          "url": "assets/characters/8/walk/up-right/19.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 20,
+          "url": "assets/characters/8/walk/up-right/20.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 21,
+          "url": "assets/characters/8/walk/up-right/21.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 22,
+          "url": "assets/characters/8/walk/up-right/22.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 23,
+          "url": "assets/characters/8/walk/up-right/23.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        },
+        {
+          "sourceFrame": 24,
+          "url": "assets/characters/8/walk/up-right/24.png",
+          "durationMs": 33.333333333333336,
+          "offsetX": -42.15,
+          "offsetY": -29.15
+        }
+      ]
+    }
+  ]
+}
