@@ -1,0 +1,880 @@
+[
+  {
+    "id": "r2c2",
+    "row": 2,
+    "col": 2,
+    "rect": [
+      400,
+      420,
+      240,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.4747233072916667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c2-r1.png",
+        "masterSha256": "5e95fcf484af48c1a1f03f2df3bd36302fd64a32f47b17dbeb69b434b5eca756",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          396,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset type: square transparent HD isometric game-map fragment.\nImage1 EDIT TARGET shows already completed right40 logical pixels and a small bottom-left grass anchor; all missing areas are transparent. Image2 ORIGINAL LAYOUT shows this exact312x312 crop. Reconstruct missing art at identical coordinates, scale and camera. Do not move, crop or redesign objects.\nThe right strip is an approved map tile. Preserve its tree-lobe positions, grass blades, dirt path and cropped yellow roof as exact visual anchors. The blue outside-island portion of that strip is reference background only: final outside island must be true alpha0 matching original silhouette, not painted blue.\nRestore original sloping irregular northwest grass edge from lower-left to upper-right, with two trees: one front round/flattened multi-lobe bright green tree lower-left of the other, one taller multi-lobe tree behind/right with its already-finished RIGHT portion in Image1. Match their original center, canopy footprint, trunk position, overlap and lobe count, not additional trees.\nFine dense small pointed grass leaves and subtle pebble/dirt path match the approved right-hand style (distinct tiny upright blades, not a flat smooth lawn, no large isolated decorative leaves). Gradually match the small bottom-left existing grass anchor. No scattered new rocks or props.\nVery bottom has original cropped yellow-green STAR-building roof and blue oval window; keep original roof shape and crop, exact word \"STAR\" only where source shows it, no new doors/windows/letters. The building continues BELOW this crop, don't complete or reposition it inside frame. Preserve every boundary endpoint of the right approved roof strip.\nNo clouds, vines, flowers, signs, people, extra objects or outside shadows. Opaque solid terrain/tree interiors, true transparency outside the island, no interior pinholes. Single native high-resolution square RGBA, same edge-to-edge framing.",
+        "generator": "built-in image_gen",
+        "rejected": "Connected northwest grass lip differs from previous transparent r2c1 and r3c1 outline; needs shared boundary correction. Protected right comparison full32 has mean11.93/p9529.33; old approved assembly must remain byte-identical.",
+        "unusedContextCaution": "Raw roof word SHRR crosses y676 and is superseded by star-roof-native-reuse-r1. Never reuse uncorrected raw glyph pixels."
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c2-r2.png",
+        "masterSha256": "5e95fcf484af48c1a1f03f2df3bd36302fd64a32f47b17dbeb69b434b5eca756",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          396,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset type: square transparent HD isometric game-map fragment.\nImage1 EDIT TARGET shows already completed right40 logical pixels and a small bottom-left grass anchor; all missing areas are transparent. Image2 ORIGINAL LAYOUT shows this exact312x312 crop. Reconstruct missing art at identical coordinates, scale and camera. Do not move, crop or redesign objects.\nThe right strip is an approved map tile. Preserve its tree-lobe positions, grass blades, dirt path and cropped yellow roof as exact visual anchors. The blue outside-island portion of that strip is reference background only: final outside island must be true alpha0 matching original silhouette, not painted blue.\nRestore original sloping irregular northwest grass edge from lower-left to upper-right, with two trees: one front round/flattened multi-lobe bright green tree lower-left of the other, one taller multi-lobe tree behind/right with its already-finished RIGHT portion in Image1. Match their original center, canopy footprint, trunk position, overlap and lobe count, not additional trees.\nFine dense small pointed grass leaves and subtle pebble/dirt path match the approved right-hand style (distinct tiny upright blades, not a flat smooth lawn, no large isolated decorative leaves). Gradually match the small bottom-left existing grass anchor. No scattered new rocks or props.\nVery bottom has original cropped yellow-green STAR-building roof and blue oval window; keep original roof shape and crop, exact word \"STAR\" only where source shows it, no new doors/windows/letters. The building continues BELOW this crop, don't complete or reposition it inside frame. Preserve every boundary endpoint of the right approved roof strip.\nNo clouds, vines, flowers, signs, people, extra objects or outside shadows. Opaque solid terrain/tree interiors, true transparency outside the island, no interior pinholes. Single native high-resolution square RGBA, same edge-to-edge framing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 628271,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0001332741767955041,
+          "nativeAlphaModified": false
+        },
+        "preservedApprovedNeighbors": [
+          {
+            "tileId": "r2c3",
+            "sha256": "6148d5e4e521d88720ff814fb1cb733e66c4289dd203b30574c8527d0a4191ec",
+            "comparisonRect": [
+              640,
+              420,
+              32,
+              256
+            ],
+            "analysisOnlySourceAlpha": true,
+            "outputMaskApplied": false
+          }
+        ],
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 9,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 11.925320886814468,
+            "p95RgbDifference": 29.333333333333332,
+            "visibleCutSamples": 857,
+            "maximumChangedPixels": 138,
+            "protectedNeighbor": "r2c3",
+            "approvedAssemblyModified": false,
+            "sourceAlphaForAnalysisOnly": true,
+            "sharedContext": 32
+          }
+        ],
+        "unusedContextCaution": "Raw roof word SHRR crosses y676 and is superseded by star-roof-native-reuse-r1. Never reuse uncorrected raw glyph pixels.",
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "northwest-grass-lip-joint-r1",
+            "rect": [
+              320,
+              596,
+              160,
+              160
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northwest-grass-lip-joint-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 825471,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 8.330598861951166e-05,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r2c2-r2.png",
+    "referenceRect": [
+      368,
+      396,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 9,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 11.925320886814468,
+        "p95RgbDifference": 29.333333333333332,
+        "visibleCutSamples": 857,
+        "maximumChangedPixels": 138,
+        "protectedNeighbor": "r2c3",
+        "approvedAssemblyModified": false,
+        "sourceAlphaForAnalysisOnly": true,
+        "sharedContext": 32
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "northwest-grass-lip-joint-r1",
+        "rect": [
+          320,
+          596,
+          160,
+          160
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northwest-grass-lip-joint-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 628271,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0001332741767955041,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "unusedContextCaution": "Raw roof word SHRR crosses y676 and is superseded by star-roof-native-reuse-r1. Never reuse uncorrected raw glyph pixels.",
+    "appliedRepairs": [
+      "star-roof-native-reuse-r1"
+    ],
+    "assembledSha256": "d21cf72fad46deb7a189d50e6e882495cf3201b983f0ca00c1283b99bb94cb32",
+    "sourceTextAudit": {
+      "expected": "STAR",
+      "rawMasterWrongWord": "SHRR",
+      "wrongRawGlyphCrossesRow676": true,
+      "correctedBy": "star-roof-native-reuse-r1",
+      "wholeWordFromOneNativeScene": true
+    }
+  },
+  {
+    "id": "r3c2",
+    "row": 3,
+    "col": 2,
+    "rect": [
+      400,
+      676,
+      240,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c2-r1.png",
+        "masterSha256": "c0474e4f4b64178c377d508b09cd057616f0253b775fc333a18e41608408b385",
+        "nativePixelSize": [
+          1504,
+          1046
+        ],
+        "referenceRect": [
+          400,
+          676,
+          368,
+          256
+        ],
+        "prompt": "Use case: precise-object-edit / continuous HD map restoration. Image1 is a partially finished map canvas with existing HD neighbor art and empty transparent area to complete. Image2 is the original layout for exactly the SAME whole canvas. Preserve all existing context coordinates and materials. Generate only missing art, faithfully keeping every original road, curb, fence, tree, shrub, plot, portal circle, building fragment, cliff, cloud, icon and marking at its source coordinate and count; do not add/remove objects or redesign geometry. Match glossy bright Star Cat Monopoly style, fine dense grey asphalt grains, white curb brick size, green grass blade scale and patterned lot spiral phase from neighbor. At all known edges continue cut-off lines/patterns EXACTLY without kinks, extra borders or doubled marks. Entire working canvas must be OPAQUE alpha255, including blue sky outside source map; original silhouette is a separate renderer geometry mask. No holes, transparency, black voids or text invented. Do not crop or reframe.\nExact aspect368:256,target1472x1024. Preserve RIGHT128logical pixels. Fill LEFT240 from exact original: green/yellow futuristic STAR building on yellow-green plinth upper middle-left, two short round green trees at its front, purple-white stairs, blue oval roof window, three little colored lights; building partly cropped by top boundary. Grey diagonal road leading to intersection with original white chevrons, white cloud icon, end of fence joins existing right. Bottom edge has original blue-and-white decorative map gateway/sign fragment plus large round green tree at lower-left. Match glossy bright Star Cat design, no new objects, don't change geometry.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 18.26421304608019,
+            "p95RgbDifference": 78.89999999999993,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c2-r2.png",
+        "masterSha256": "a06684586e598b05dcd0191d34e6328a86ca20380f54ddb93d6ab8bfb5132518",
+        "nativePixelSize": [
+          1504,
+          1046
+        ],
+        "referenceRect": [
+          400,
+          676,
+          368,
+          256
+        ],
+        "prompt": "Use case: precise-object-edit / continuous HD map restoration. Image1 is a partially finished map canvas with existing HD neighbor art and empty transparent area to complete. Image2 is the original layout for exactly the SAME whole canvas. Preserve all existing context coordinates and materials. Generate only missing art, faithfully keeping every original road, curb, fence, tree, shrub, plot, portal circle, building fragment, cliff, cloud, icon and marking at its source coordinate and count; do not add/remove objects or redesign geometry. Match glossy bright Star Cat Monopoly style, fine dense grey asphalt grains, white curb brick size, green grass blade scale and patterned lot spiral phase from neighbor. At all known edges continue cut-off lines/patterns EXACTLY without kinks, extra borders or doubled marks. Entire working canvas must be OPAQUE alpha255, including blue sky outside source map; original silhouette is a separate renderer geometry mask. No holes, transparency, black voids or text invented. Do not crop or reframe.\nOUTPUT canvas exact368:256 aspect (e.g.1504x1046). Primary task: fill LEFT transparent area ONLY; finished RIGHT128logicalpixels are immutable, COPY EXACTLY with zero shift/rescale/repaint. Road white arrows, diagonal white curb and wooden fence MUST retain exact pixel positions. New art: source green/yellow building partly cropped at TOP, exact roof word 'STAR' S T A R, two round trees, purple stairs, blue roof windows; lower-left decorative blue/white gateway/sign and green tree cropped exactly like source. No additional trees. Preserve road width and connect curb at x240 with same angle, not a shifted parallel line.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 9.66756433273489,
+            "p95RgbDifference": 41.89999999999994,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c2-r3.png",
+        "masterSha256": "d4aa2286145e5809f684f420e90abf4ac52d3fba76a17c4261f678fba1e68098",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          652,
+          312,
+          312
+        ],
+        "generator": "built-in image_gen",
+        "prompt": "Use case: precise-object-edit. Asset: square HD isometric Star Cat game map.\nImage1 EDIT TARGET is completed neighbor context around unfinished center. Image2 is exact ORIGINAL LAYOUT of this312x312 crop. Reconstruct missing art at identical positions, crop, scale and projection, matching approved RIGHT40 pixels and completed LEFT32 pixels/grass corner. Preserve right-side curb, building platform/tree/stairs and road markings geometry.\nIMPORTANT top roof strip contains erroneous inherited \"RR\"/wrong glyph fragments. Those letters are NOT approved anchors. Replace the ENTIRE roof word with exact \"STAR\" spelled S T A R (four letters), matching Image2; no SHRR, STARR, extra letters or ghost fragments. Keep roof geometry and blue windows stationary. Let the full correct STAR word cross the top row boundary naturally; do not preserve wrong glyph fragments.\nOriginal building: one yellow/lime futuristic STAR building on a single green/orange rounded plinth, left small roofed side extension, original blue oval roof windows, colored vertical facade strips, original purple-and-white stairways and exactly TWO small round green trees on plinth. Same footprints, counts and original colors. Building roof is cropped at TOP as original; never move it inward or enlarge it. No extra door, window, light, tree, furniture or large stone. Match finer pointed grass/dirt path to right anchor while smoothly joining existing left grass.\nDiagonal gray asphalt road, white brick curb, original arrow/chevron fragments and white cloud-shaped road stencil continue exactly through right boundary; same marking counts. Bottom-left has the original cropped round green tree and cropped blue/white/green map gateway decoration; keep original fragment positions and counts, don't complete objects by shifting them into frame.\nNo isolated boulders/rock piles, flowers, vines, text beyond STAR or new props. Original tiny outside-island sky in extreme top-left stays transparent, opaque interiors elsewhere, no white/black/transparent holes. Single native high-resolution square RGBA, exact framing.",
+        "rejected": "Visual: roof reads STRAR (5 letters) instead of STAR (4), plus unwanted leaf rosette on flat green plinth. Never assembled."
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c2-r4.png",
+        "masterSha256": "dfcc6cab90a892ca84b4317ccfaabc866266121047072257ae64b059b370c271",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          652,
+          312,
+          312
+        ],
+        "prompt": "Use case: text-localization / precise-object-edit. Edit this EXACT game map image; preserve canvas, camera and every object coordinate.\nFix ONLY:\n1. Roof lettering currently reads \"STRAR\" (five letters). ERASE ALL five old glyphs and render exactly \"STAR\" (four letters), left-to-right S, T, A, R, in the same brown outlined yellow embossed style and roof perspective. There must be NO R between T and A, no extra trailing R, no ghost letters, no merged characters. Clearly readable four-letter word STAR.\n2. Remove the single small starburst LEAF ROSETTE sitting on the flat GREEN BUILDING PLINTH immediately left of the building wall (near pixel573,345 on1254square). Replace only that rosette with the existing plain smooth green plinth surface. Do not remove normal grass outside the plinth.\nEverything else is fixed: building roof silhouette and blue windows, door badge, two round trees, striped stairs, plinth footprint, curb, white arrows/cloud stencil, background grass, cropped gateway ornament and all four boundary anchors. Same native high-resolution square RGBA. No new objects, no rescaling/reframing, no alpha holes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        },
+        "preservedApprovedNeighbors": [
+          {
+            "tileId": "r3c3",
+            "sha256": "914648cea38b19b4e84969b238d780a2b33b76ba72758b64491163b28a0f57ea",
+            "comparisonRect": [
+              640,
+              676,
+              32,
+              256
+            ],
+            "analysisOnlySourceAlpha": true,
+            "outputMaskApplied": false
+          }
+        ],
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.7330939557151408,
+            "p95RgbDifference": 4.333333333333333,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 4.2504488330341115,
+            "p95RgbDifference": 11.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 138,
+            "protectedNeighbor": "r3c3",
+            "approvedAssemblyModified": false,
+            "sourceAlphaForAnalysisOnly": true,
+            "sharedContext": 32
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1022,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "northwest-grass-lip-joint-r1",
+            "rect": [
+              320,
+              596,
+              160,
+              160
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northwest-grass-lip-joint-r1/assembled.png"
+          },
+          {
+            "repairId": "star-roof-native-reuse-r1",
+            "rect": [
+              480,
+              652,
+              160,
+              80
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/star-roof-native-reuse-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 20428,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r3c2-r4.png",
+    "referenceRect": [
+      368,
+      652,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 1.7330939557151408,
+        "p95RgbDifference": 4.333333333333333,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 4.2504488330341115,
+        "p95RgbDifference": 11.0,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 138,
+        "protectedNeighbor": "r3c3",
+        "approvedAssemblyModified": false,
+        "sourceAlphaForAnalysisOnly": true,
+        "sharedContext": 32
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 1022,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "northwest-grass-lip-joint-r1",
+        "rect": [
+          320,
+          596,
+          160,
+          160
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northwest-grass-lip-joint-r1/assembled.png"
+      },
+      {
+        "repairId": "star-roof-native-reuse-r1",
+        "rect": [
+          480,
+          652,
+          160,
+          80
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/star-roof-native-reuse-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "6de602c746fe1d1d4f805b6f8d04a3d6eda2c47c8ebef6ccda545b18d96a5110",
+    "appliedRepairs": [
+      "star-roof-native-reuse-r1"
+    ]
+  },
+  {
+    "id": "r4c2",
+    "row": 4,
+    "col": 2,
+    "rect": [
+      400,
+      932,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.8320833333333333,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r4c2-r1.png",
+        "masterSha256": "4ac807ea4ff59f0b76eecdc52487bc20281f99f6a696e73656101f87305a103d",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          900,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: square transparent HD isometric map fragment.\nImage1 EDIT TARGET has completed top/left/right anchors and a completed lower-left cloud/cliff scene, center unfinished. Image2 ORIGINAL LAYOUT is the same exact312x312 crop. Fill missing art faithfully at original coordinates; preserve ALL finished anchor shapes/colors/scale and boundary endpoints.\nTOP: continue the existing cropped blue/green/white fixed decorative platform from Image1. Same central blue globe with white wing-like shapes, green/white standing ornament, green ring discs (each with one hole), and pale rectangular platform. Upper parts are cropped by TOP edge as original; do not add another ring/stem/figure or move objects inward. Visible rings: a left ring partly behind the cropped tree near upper-left, one near upper-right edge of platform, one near its bottom corner. Other ring farther above this crop must stay outside. Keep their original positions and counts. Same cropped round tree at extreme top-left.\nMIDDLE: green grass ledge and one continuous brown/golden cliff face running horizontally/down-right; match exact existing left cliff panel, outside silhouette, facet scale and lower end. No new rock fingers, caves, vines or isolated boulders. Preserve existing white cloud at far lower-left, do not add another cloud/curl.\nLOWER RIGHT: two original trees below cliff: one multi-lobed bright green tree newly completed left of the existing right-hand round tree. Existing right tree canopy/trunk stay stationary and unchanged; total TWO trees here, no extras. Fill fine grass around them, matching existing left and right grass texture without rectangular material changes. Source grass scratches/arcs are artifacts: omit them.\nRIGHT edge: same cropped green spiral properties, brown brick borders, gray corner posts and leafy bush fragments; copy finished right anchor geometry exactly, same spiral phase.\nNo extra props, rings, clouds, trees, rocks, flowers, labels, buildings or shadows. Only source exterior sky remains alpha0; terrain/cloud/tree interiors opaque and hole-free. Single native high-resolution square RGBA, exact crop and projection.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 9071,
+          "solidAlphaMedian": 251.0,
+          "fullyOpaqueFraction": 0.00010642826734780758,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.1811713191023534,
+            "p95RgbDifference": 3.3333333333333335,
+            "visibleCutSamples": 609,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 3.110472541507024,
+            "p95RgbDifference": 6.666666666666667,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 1.627713920817369,
+            "p95RgbDifference": 4.283333333333303,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "west-cloud-whole-r1",
+            "rect": [
+              80,
+              1044,
+              384,
+              256
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-cloud-whole-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 58306,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 6.486420487931442e-05,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r4c2-r1.png",
+    "referenceRect": [
+      368,
+      900,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 1.1811713191023534,
+        "p95RgbDifference": 3.3333333333333335,
+        "visibleCutSamples": 609,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 3.110472541507024,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 1.627713920817369,
+        "p95RgbDifference": 4.283333333333303,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 68
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "west-cloud-whole-r1",
+        "rect": [
+          80,
+          1044,
+          384,
+          256
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-cloud-whole-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 9071,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 0.00010642826734780758,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "c7b6142bcbe0a7bb2ecac7751583923ac01c33b67b3c628bb09beb1dd3b7b81d"
+  },
+  {
+    "id": "r5c2",
+    "row": 5,
+    "col": 2,
+    "rect": [
+      400,
+      1172,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9999826388888889,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c2-r1.png",
+        "masterSha256": "d777e4a665b799f4b9152f03138441d52915de18c1c55671aa68099c205df838",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          400,
+          1172,
+          296,
+          296
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nSquare canvas. Complete the upper half of existing turquoise amusement ride with its curved blue overhead rail, original yellow/gold central fixture, the surrounding road with four cyan/purple/green/cyan discs in original positions and one circular engraved cat-face manhole near top. Preserve cropped tree at top and both red lots at bottom right. The ride is a fixed map illustration, no animation.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 9.630622009569377,
+            "p95RgbDifference": 47.666666666666664,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 61
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 12.762132822477652,
+            "p95RgbDifference": 46.61666666666663,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c2-r2.png",
+        "masterSha256": "b01eb9bbb4a8365ee5a5f08d2d0e7dbe304ea9e7945eb7cc44f71bb2ca4f5173",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          368,
+          1140,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: square HD isometric game-map fragment.\nImage1 EDIT TARGET contains completed top32, left32, right40 and bottom40 logical pixels. Image2 ORIGINAL LAYOUT is exactly the same312square crop; reconstruct unfinished center at original coordinates, camera, scale and crop. Copy all finished boundary geometry/colors/texture faithfully so curbs, rails, ride surface, trees, bushes, marks and parcels join without steps.\nImage3 is DICE EMBLEM identity reference only. Image4 is SINGLE CAT MANHOLE identity reference only, don't copy their magnified material scale/geometry.\nScene: original diagonal gray asphalt roads around a turquoise amusement ride, curved BLUE overhead arch/rail rising from lower-left then curving right down, original yellow/gold Ferris-wheel fixture with the same visible pink seats and green supports, existing castle/tower parts cropped along lower-left/bottom. Preserve original arch center/width, rail ties, fixture position and support count; no extra car, rail loop, tower, seat or bush.\nOne circular gray engraved CAT MANHOLE on upper road: exactly ONE cat head with two ears, two closed eyes, ONE central nose, ONE muzzle/mouth and two little paws, no duplicate/overlapping face or ghost features, matching Image4 identity and original orientation.\nColored road discs: cyan10 on upper-left road, green30 partly hidden by blue arch, cyan10 on lower-right road; original PURPLE disc behind upper blue arch is a WHITE DICE EMBLEM with red upper-face pip and blue side pips like Image3, NOT numeral10/cards/question mark. Preserve arch occlusion exactly; don't move disc or draw in front of rail. Far-left cropped purple dice disc from finished target stays unchanged. Correct numbers/colors, no extra discs.\nUpper cropped trees must continue original finished top canopy/trunk without shifting or adding trees. Right red spiral parcels, brown bricks, gray corner posts, bush counts and pattern phase match target. Fine dense gray asphalt grain matches all boundaries, no smooth/coarse switches. Grass matches existing anchors, no black scratch arcs or isolated new stones/flowers.\nNo new props, people, labels, shadows, white gaps or alpha pinholes. Original exterior sky at extreme upper-left stays transparent if visible; solid opaque terrain/objects elsewhere. Same native high-resolution square RGBA, exact framing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "rejected": "Native map contains 155 enclosed low-alpha pixels"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c2-r3.png",
+        "masterSha256": "e8267a8c7ac52e27f92dca7776c6d227771ab96f0ef30eff25f1b3c2f9bd2ccf",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          384,
+          1156,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: completely OPAQUE square HD game-map texture, not a cutout.\nImage1 EDIT TARGET is the correct composition, but has accidental transparent pinholes/low-alpha speckles. Image2 shows finished boundary anchors at exactly the SAME crop coordinates. Image3 is original layout of that same272x272 logical square.\nRe-render Image1 as solid opaque artwork throughout: every pixel alpha255, including bright white dice faces, cyan disc highlights, pale gray manhole, grass and all borders. This entire crop lies INSIDE the island; there is NO exterior sky or area to remove. Do not perform background removal or treat white highlights as transparent. Preserve colors using opaque shading, not opacity. No white/black blank patches.\nKeep ALL object geometry and positions from Image1 unchanged and match Image2's outer16 logical-pixel frame closely. Exactly one cat manhole face (two ears, two closed eyes, one nose/mouth, two paws), original blue arch overlaid IN FRONT of the purple dice emblem, green30 disc partly behind arch, cyan10 discs, cropped left purple dice emblem, same Ferris-wheel seats/supports, bushes, tree trunks, castle/tower fragments and blue/yellow car. Do not add or move any object, duplicate features, replace dice by10, or change numbers/pips/rail occlusion. The black area in Image2 is an unfinished guide only; do not copy black into artwork.\nSame square framing/projection, no zoom/reframe, no extra props/text/shadows. Preserve original camera and all anchors; opaque native high resolution.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 6.251355661881977,
+            "p95RgbDifference": 22.199999999999967,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 6.231259968102074,
+            "p95RgbDifference": 13.933333333333318,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 63
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 4.581098339719029,
+            "p95RgbDifference": 10.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 11.295338441890165,
+            "p95RgbDifference": 46.59999999999976,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r5c2-r4.png",
+        "masterSha256": "e8267a8c7ac52e27f92dca7776c6d227771ab96f0ef30eff25f1b3c2f9bd2ccf",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          384,
+          1156,
+          272,
+          272
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: completely OPAQUE square HD game-map texture, not a cutout.\nImage1 EDIT TARGET is the correct composition, but has accidental transparent pinholes/low-alpha speckles. Image2 shows finished boundary anchors at exactly the SAME crop coordinates. Image3 is original layout of that same272x272 logical square.\nRe-render Image1 as solid opaque artwork throughout: every pixel alpha255, including bright white dice faces, cyan disc highlights, pale gray manhole, grass and all borders. This entire crop lies INSIDE the island; there is NO exterior sky or area to remove. Do not perform background removal or treat white highlights as transparent. Preserve colors using opaque shading, not opacity. No white/black blank patches.\nKeep ALL object geometry and positions from Image1 unchanged and match Image2's outer16 logical-pixel frame closely. Exactly one cat manhole face (two ears, two closed eyes, one nose/mouth, two paws), original blue arch overlaid IN FRONT of the purple dice emblem, green30 disc partly behind arch, cyan10 discs, cropped left purple dice emblem, same Ferris-wheel seats/supports, bushes, tree trunks, castle/tower fragments and blue/yellow car. Do not add or move any object, duplicate features, replace dice by10, or change numbers/pips/rail occlusion. The black area in Image2 is an unfinished guide only; do not copy black into artwork.\nSame square framing/projection, no zoom/reframe, no extra props/text/shadows. Preserve original camera and all anchors; opaque native high resolution.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 6.251355661881977,
+            "p95RgbDifference": 22.199999999999967,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 6.231259968102074,
+            "p95RgbDifference": 13.933333333333318,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 63
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 4.581098339719029,
+            "p95RgbDifference": 10.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 68
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "west-ride-horizontal-joint-r1",
+            "rect": [
+              400,
+              1368,
+              240,
+              136
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-ride-horizontal-joint-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 0,
+          "solidAlphaMedian": 255.0,
+          "fullyOpaqueFraction": 1.0,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r5c2-r4.png",
+    "referenceRect": [
+      384,
+      1156,
+      272,
+      272
+    ],
+    "nativePixelDensity": 4.610294117647059,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 6.251355661881977,
+        "p95RgbDifference": 22.199999999999967,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 6.231259968102074,
+        "p95RgbDifference": 13.933333333333318,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 63
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 4.581098339719029,
+        "p95RgbDifference": 10.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 68
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 68
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "west-ride-horizontal-joint-r1",
+        "rect": [
+          400,
+          1368,
+          240,
+          136
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/west-ride-horizontal-joint-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 0,
+      "solidAlphaMedian": 255.0,
+      "fullyOpaqueFraction": 1.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "appliedRepairs": [
+      "west-ride-horizontal-joint-r1",
+      "west-cyan10-whole-r1"
+    ],
+    "sourceIconAudit": {
+      "recordId": 201,
+      "type": 27,
+      "expected": "white dice with red upper pip and blue side pips, behind blue rail",
+      "greenDisc": 30,
+      "cyanDiscs": 10,
+      "catFaces": 1
+    },
+    "opaqueSourceProof": {
+      "sourceCoreAlphaMin": 253,
+      "sourceReferenceAlphaMin": 247,
+      "sourceReferenceBelow240": 0,
+      "generatorTransparentBackground": false,
+      "nativeAlphaNormalization": false
+    },
+    "assembledSha256": "4606015a454f38dcf31d7c900a36c06b60db098fc7f3ea6f8e40dbf04a905cd8"
+  }
+]

@@ -1,0 +1,1673 @@
+{
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "initialFunds": {
+    "cash": 100000,
+    "deposit": 100000
+  },
+  "spawnRegions": [
+    {
+      "id": 1,
+      "variants": [
+        {
+          "direction": 1,
+          "position": {
+            "column": 34,
+            "row": 8
+          }
+        },
+        {
+          "direction": 3,
+          "position": {
+            "column": 33,
+            "row": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "variants": [
+        {
+          "direction": 2,
+          "position": {
+            "column": 29,
+            "row": 33
+          }
+        },
+        {
+          "direction": 4,
+          "position": {
+            "column": 30,
+            "row": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "variants": [
+        {
+          "direction": 1,
+          "position": {
+            "column": 7,
+            "row": 35
+          }
+        },
+        {
+          "direction": 3,
+          "position": {
+            "column": 6,
+            "row": 34
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "variants": [
+        {
+          "direction": 2,
+          "position": {
+            "column": 10,
+            "row": 10
+          }
+        },
+        {
+          "direction": 4,
+          "position": {
+            "column": 11,
+            "row": 9
+          }
+        }
+      ]
+    }
+  ],
+  "reentryOrigins": {
+    "hospital": {
+      "direction": 2,
+      "position": {
+        "column": 19,
+        "row": 1
+      }
+    },
+    "jail": {
+      "direction": 4,
+      "position": {
+        "column": 21,
+        "row": 41
+      }
+    }
+  },
+  "junctions": {
+    "205": [
+      1,
+      2
+    ],
+    "206": [
+      1,
+      4
+    ],
+    "207": [
+      1,
+      2
+    ],
+    "208": [
+      1,
+      4
+    ],
+    "209": [
+      2,
+      3
+    ],
+    "210": [
+      3,
+      4
+    ],
+    "211": [
+      2,
+      1
+    ],
+    "212": [
+      3,
+      4
+    ],
+    "213": [
+      3,
+      4
+    ],
+    "214": [
+      2,
+      3
+    ],
+    "215": [
+      3,
+      4
+    ],
+    "216": [
+      2,
+      3
+    ],
+    "217": [
+      4,
+      1
+    ],
+    "218": [
+      2,
+      1
+    ],
+    "219": [
+      3,
+      4
+    ],
+    "220": [
+      2,
+      1
+    ],
+    "221": [
+      1,
+      2,
+      3
+    ],
+    "222": [
+      1,
+      2,
+      3
+    ],
+    "223": [
+      1,
+      2,
+      3
+    ],
+    "224": [
+      1,
+      2,
+      3
+    ],
+    "225": [
+      1,
+      3,
+      4
+    ],
+    "226": [
+      1,
+      4,
+      3
+    ],
+    "227": [
+      1,
+      4,
+      3
+    ],
+    "228": [
+      1,
+      3,
+      4
+    ],
+    "229": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "230": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "231": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "232": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "roadCells": [
+    {
+      "id": 161,
+      "coordinate": {
+        "column": 19,
+        "row": 1
+      },
+      "kind": 31,
+      "name": "回归门"
+    },
+    {
+      "id": 165,
+      "coordinate": {
+        "column": 18,
+        "row": 2
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 188,
+      "coordinate": {
+        "column": 17,
+        "row": 3
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 178,
+      "coordinate": {
+        "column": 16,
+        "row": 4
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 195,
+      "coordinate": {
+        "column": 15,
+        "row": 5
+      },
+      "kind": 26,
+      "name": "奖券50点"
+    },
+    {
+      "id": 177,
+      "coordinate": {
+        "column": 14,
+        "row": 6
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 218,
+      "coordinate": {
+        "column": 32,
+        "row": 6
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 171,
+      "coordinate": {
+        "column": 13,
+        "row": 7
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 134,
+      "coordinate": {
+        "column": 31,
+        "row": 7
+      },
+      "kind": 17,
+      "name": "魔法门"
+    },
+    {
+      "id": 122,
+      "coordinate": {
+        "column": 33,
+        "row": 7
+      },
+      "kind": 1,
+      "name": "先锋物流"
+    },
+    {
+      "id": 205,
+      "coordinate": {
+        "column": 12,
+        "row": 8
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 103,
+      "coordinate": {
+        "column": 30,
+        "row": 8
+      },
+      "kind": 16,
+      "name": "冥王星路"
+    },
+    {
+      "id": 123,
+      "coordinate": {
+        "column": 34,
+        "row": 8
+      },
+      "kind": 1,
+      "name": "先锋物流"
+    },
+    {
+      "id": 132,
+      "coordinate": {
+        "column": 11,
+        "row": 9
+      },
+      "kind": 6,
+      "name": "本草药业"
+    },
+    {
+      "id": 116,
+      "coordinate": {
+        "column": 13,
+        "row": 9
+      },
+      "kind": 14,
+      "name": "供水公司"
+    },
+    {
+      "id": 101,
+      "coordinate": {
+        "column": 29,
+        "row": 9
+      },
+      "kind": 16,
+      "name": "冥王星路"
+    },
+    {
+      "id": 221,
+      "coordinate": {
+        "column": 35,
+        "row": 9
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 131,
+      "coordinate": {
+        "column": 10,
+        "row": 10
+      },
+      "kind": 6,
+      "name": "本草药业"
+    },
+    {
+      "id": 117,
+      "coordinate": {
+        "column": 14,
+        "row": 10
+      },
+      "kind": 14,
+      "name": "供水公司"
+    },
+    {
+      "id": 220,
+      "coordinate": {
+        "column": 26,
+        "row": 10
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 99,
+      "coordinate": {
+        "column": 28,
+        "row": 10
+      },
+      "kind": 16,
+      "name": "冥王星路"
+    },
+    {
+      "id": 111,
+      "coordinate": {
+        "column": 34,
+        "row": 10
+      },
+      "kind": 16,
+      "name": "仙鹤街"
+    },
+    {
+      "id": 157,
+      "coordinate": {
+        "column": 36,
+        "row": 10
+      },
+      "kind": 22,
+      "name": "法　院"
+    },
+    {
+      "id": 150,
+      "coordinate": {
+        "column": 9,
+        "row": 11
+      },
+      "kind": 20,
+      "name": "卡片商店"
+    },
+    {
+      "id": 65,
+      "coordinate": {
+        "column": 15,
+        "row": 11
+      },
+      "kind": 16,
+      "name": "地球村"
+    },
+    {
+      "id": 91,
+      "coordinate": {
+        "column": 25,
+        "row": 11
+      },
+      "kind": 16,
+      "name": "天王星街"
+    },
+    {
+      "id": 219,
+      "coordinate": {
+        "column": 27,
+        "row": 11
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 109,
+      "coordinate": {
+        "column": 33,
+        "row": 11
+      },
+      "kind": 16,
+      "name": "仙鹤街"
+    },
+    {
+      "id": 194,
+      "coordinate": {
+        "column": 37,
+        "row": 11
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 149,
+      "coordinate": {
+        "column": 8,
+        "row": 12
+      },
+      "kind": 20,
+      "name": "卡片商店"
+    },
+    {
+      "id": 67,
+      "coordinate": {
+        "column": 16,
+        "row": 12
+      },
+      "kind": 16,
+      "name": "地球村"
+    },
+    {
+      "id": 89,
+      "coordinate": {
+        "column": 24,
+        "row": 12
+      },
+      "kind": 16,
+      "name": "天王星街"
+    },
+    {
+      "id": 107,
+      "coordinate": {
+        "column": 32,
+        "row": 12
+      },
+      "kind": 16,
+      "name": "仙鹤街"
+    },
+    {
+      "id": 202,
+      "coordinate": {
+        "column": 38,
+        "row": 12
+      },
+      "kind": 27,
+      "name": "彩票投注"
+    },
+    {
+      "id": 206,
+      "coordinate": {
+        "column": 7,
+        "row": 13
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 69,
+      "coordinate": {
+        "column": 17,
+        "row": 13
+      },
+      "kind": 16,
+      "name": "地球村"
+    },
+    {
+      "id": 87,
+      "coordinate": {
+        "column": 23,
+        "row": 13
+      },
+      "kind": 16,
+      "name": "天王星街"
+    },
+    {
+      "id": 105,
+      "coordinate": {
+        "column": 31,
+        "row": 13
+      },
+      "kind": 16,
+      "name": "仙鹤街"
+    },
+    {
+      "id": 187,
+      "coordinate": {
+        "column": 39,
+        "row": 13
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 137,
+      "coordinate": {
+        "column": 8,
+        "row": 14
+      },
+      "kind": 17,
+      "name": "魔法门"
+    },
+    {
+      "id": 224,
+      "coordinate": {
+        "column": 18,
+        "row": 14
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 172,
+      "coordinate": {
+        "column": 22,
+        "row": 14
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 217,
+      "coordinate": {
+        "column": 30,
+        "row": 14
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 216,
+      "coordinate": {
+        "column": 40,
+        "row": 14
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 27,
+      "coordinate": {
+        "column": 9,
+        "row": 15
+      },
+      "kind": 16,
+      "name": "太阳村"
+    },
+    {
+      "id": 55,
+      "coordinate": {
+        "column": 17,
+        "row": 15
+      },
+      "kind": 16,
+      "name": "共想大道"
+    },
+    {
+      "id": 142,
+      "coordinate": {
+        "column": 19,
+        "row": 15
+      },
+      "kind": 18,
+      "name": "银　行"
+    },
+    {
+      "id": 141,
+      "coordinate": {
+        "column": 21,
+        "row": 15
+      },
+      "kind": 18,
+      "name": "银　行"
+    },
+    {
+      "id": 222,
+      "coordinate": {
+        "column": 31,
+        "row": 15
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 183,
+      "coordinate": {
+        "column": 39,
+        "row": 15
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 29,
+      "coordinate": {
+        "column": 10,
+        "row": 16
+      },
+      "kind": 16,
+      "name": "太阳村"
+    },
+    {
+      "id": 53,
+      "coordinate": {
+        "column": 16,
+        "row": 16
+      },
+      "kind": 16,
+      "name": "共想大道"
+    },
+    {
+      "id": 229,
+      "coordinate": {
+        "column": 20,
+        "row": 16
+      },
+      "kind": 29,
+      "name": "十字路口"
+    },
+    {
+      "id": 97,
+      "coordinate": {
+        "column": 30,
+        "row": 16
+      },
+      "kind": 16,
+      "name": "海王星巷"
+    },
+    {
+      "id": 193,
+      "coordinate": {
+        "column": 32,
+        "row": 16
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 203,
+      "coordinate": {
+        "column": 38,
+        "row": 16
+      },
+      "kind": 28,
+      "name": "游 乐 场"
+    },
+    {
+      "id": 31,
+      "coordinate": {
+        "column": 11,
+        "row": 17
+      },
+      "kind": 16,
+      "name": "太阳村"
+    },
+    {
+      "id": 51,
+      "coordinate": {
+        "column": 15,
+        "row": 17
+      },
+      "kind": 16,
+      "name": "共想大道"
+    },
+    {
+      "id": 166,
+      "coordinate": {
+        "column": 19,
+        "row": 17
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 71,
+      "coordinate": {
+        "column": 21,
+        "row": 17
+      },
+      "kind": 16,
+      "name": "五星大道"
+    },
+    {
+      "id": 95,
+      "coordinate": {
+        "column": 29,
+        "row": 17
+      },
+      "kind": 16,
+      "name": "海王星巷"
+    },
+    {
+      "id": 186,
+      "coordinate": {
+        "column": 33,
+        "row": 17
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 190,
+      "coordinate": {
+        "column": 37,
+        "row": 17
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 33,
+      "coordinate": {
+        "column": 12,
+        "row": 18
+      },
+      "kind": 16,
+      "name": "太阳村"
+    },
+    {
+      "id": 49,
+      "coordinate": {
+        "column": 14,
+        "row": 18
+      },
+      "kind": 16,
+      "name": "共想大道"
+    },
+    {
+      "id": 155,
+      "coordinate": {
+        "column": 18,
+        "row": 18
+      },
+      "kind": 21,
+      "name": "彩票公司"
+    },
+    {
+      "id": 73,
+      "coordinate": {
+        "column": 22,
+        "row": 18
+      },
+      "kind": 16,
+      "name": "五星大道"
+    },
+    {
+      "id": 93,
+      "coordinate": {
+        "column": 28,
+        "row": 18
+      },
+      "kind": 16,
+      "name": "海王星巷"
+    },
+    {
+      "id": 198,
+      "coordinate": {
+        "column": 34,
+        "row": 18
+      },
+      "kind": 26,
+      "name": "奖券50点"
+    },
+    {
+      "id": 200,
+      "coordinate": {
+        "column": 36,
+        "row": 18
+      },
+      "kind": 27,
+      "name": "彩票投注"
+    },
+    {
+      "id": 227,
+      "coordinate": {
+        "column": 13,
+        "row": 19
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 154,
+      "coordinate": {
+        "column": 17,
+        "row": 19
+      },
+      "kind": 21,
+      "name": "彩票公司"
+    },
+    {
+      "id": 75,
+      "coordinate": {
+        "column": 23,
+        "row": 19
+      },
+      "kind": 16,
+      "name": "五星大道"
+    },
+    {
+      "id": 167,
+      "coordinate": {
+        "column": 27,
+        "row": 19
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 215,
+      "coordinate": {
+        "column": 35,
+        "row": 19
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 145,
+      "coordinate": {
+        "column": 14,
+        "row": 20
+      },
+      "kind": 19,
+      "name": "股　市"
+    },
+    {
+      "id": 173,
+      "coordinate": {
+        "column": 16,
+        "row": 20
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 77,
+      "coordinate": {
+        "column": 24,
+        "row": 20
+      },
+      "kind": 16,
+      "name": "五星大道"
+    },
+    {
+      "id": 144,
+      "coordinate": {
+        "column": 26,
+        "row": 20
+      },
+      "kind": 19,
+      "name": "股　市"
+    },
+    {
+      "id": 232,
+      "coordinate": {
+        "column": 15,
+        "row": 21
+      },
+      "kind": 29,
+      "name": "十字路口"
+    },
+    {
+      "id": 230,
+      "coordinate": {
+        "column": 25,
+        "row": 21
+      },
+      "kind": 29,
+      "name": "十字路口"
+    },
+    {
+      "id": 146,
+      "coordinate": {
+        "column": 14,
+        "row": 22
+      },
+      "kind": 19,
+      "name": "股　市"
+    },
+    {
+      "id": 35,
+      "coordinate": {
+        "column": 16,
+        "row": 22
+      },
+      "kind": 16,
+      "name": "银河街"
+    },
+    {
+      "id": 174,
+      "coordinate": {
+        "column": 24,
+        "row": 22
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 147,
+      "coordinate": {
+        "column": 26,
+        "row": 22
+      },
+      "kind": 19,
+      "name": "股　市"
+    },
+    {
+      "id": 207,
+      "coordinate": {
+        "column": 5,
+        "row": 23
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 168,
+      "coordinate": {
+        "column": 13,
+        "row": 23
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 37,
+      "coordinate": {
+        "column": 17,
+        "row": 23
+      },
+      "kind": 16,
+      "name": "银河街"
+    },
+    {
+      "id": 120,
+      "coordinate": {
+        "column": 23,
+        "row": 23
+      },
+      "kind": 15,
+      "name": "明日电视"
+    },
+    {
+      "id": 223,
+      "coordinate": {
+        "column": 27,
+        "row": 23
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 181,
+      "coordinate": {
+        "column": 4,
+        "row": 24
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 201,
+      "coordinate": {
+        "column": 6,
+        "row": 24
+      },
+      "kind": 27,
+      "name": "彩票投注"
+    },
+    {
+      "id": 19,
+      "coordinate": {
+        "column": 12,
+        "row": 24
+      },
+      "kind": 16,
+      "name": "水星街"
+    },
+    {
+      "id": 39,
+      "coordinate": {
+        "column": 18,
+        "row": 24
+      },
+      "kind": 16,
+      "name": "银河街"
+    },
+    {
+      "id": 119,
+      "coordinate": {
+        "column": 22,
+        "row": 24
+      },
+      "kind": 15,
+      "name": "明日电视"
+    },
+    {
+      "id": 63,
+      "coordinate": {
+        "column": 26,
+        "row": 24
+      },
+      "kind": 16,
+      "name": "明日广场"
+    },
+    {
+      "id": 79,
+      "coordinate": {
+        "column": 28,
+        "row": 24
+      },
+      "kind": 16,
+      "name": "土星北路"
+    },
+    {
+      "id": 199,
+      "coordinate": {
+        "column": 3,
+        "row": 25
+      },
+      "kind": 27,
+      "name": "彩票投注"
+    },
+    {
+      "id": 192,
+      "coordinate": {
+        "column": 7,
+        "row": 25
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 17,
+      "coordinate": {
+        "column": 11,
+        "row": 25
+      },
+      "kind": 16,
+      "name": "水星街"
+    },
+    {
+      "id": 41,
+      "coordinate": {
+        "column": 19,
+        "row": 25
+      },
+      "kind": 16,
+      "name": "银河街"
+    },
+    {
+      "id": 169,
+      "coordinate": {
+        "column": 21,
+        "row": 25
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 61,
+      "coordinate": {
+        "column": 25,
+        "row": 25
+      },
+      "kind": 16,
+      "name": "明日广场"
+    },
+    {
+      "id": 81,
+      "coordinate": {
+        "column": 29,
+        "row": 25
+      },
+      "kind": 16,
+      "name": "土星北路"
+    },
+    {
+      "id": 182,
+      "coordinate": {
+        "column": 2,
+        "row": 26
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 185,
+      "coordinate": {
+        "column": 8,
+        "row": 26
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 15,
+      "coordinate": {
+        "column": 10,
+        "row": 26
+      },
+      "kind": 16,
+      "name": "水星街"
+    },
+    {
+      "id": 231,
+      "coordinate": {
+        "column": 20,
+        "row": 26
+      },
+      "kind": 29,
+      "name": "十字路口"
+    },
+    {
+      "id": 59,
+      "coordinate": {
+        "column": 24,
+        "row": 26
+      },
+      "kind": 16,
+      "name": "明日广场"
+    },
+    {
+      "id": 83,
+      "coordinate": {
+        "column": 30,
+        "row": 26
+      },
+      "kind": 16,
+      "name": "土星北路"
+    },
+    {
+      "id": 197,
+      "coordinate": {
+        "column": 1,
+        "row": 27
+      },
+      "kind": 26,
+      "name": "奖券50点"
+    },
+    {
+      "id": 226,
+      "coordinate": {
+        "column": 9,
+        "row": 27
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 139,
+      "coordinate": {
+        "column": 19,
+        "row": 27
+      },
+      "kind": 18,
+      "name": "银　行"
+    },
+    {
+      "id": 140,
+      "coordinate": {
+        "column": 21,
+        "row": 27
+      },
+      "kind": 18,
+      "name": "银　行"
+    },
+    {
+      "id": 57,
+      "coordinate": {
+        "column": 23,
+        "row": 27
+      },
+      "kind": 16,
+      "name": "明日广场"
+    },
+    {
+      "id": 85,
+      "coordinate": {
+        "column": 31,
+        "row": 27
+      },
+      "kind": 16,
+      "name": "土星北路"
+    },
+    {
+      "id": 208,
+      "coordinate": {
+        "column": 0,
+        "row": 28
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 209,
+      "coordinate": {
+        "column": 10,
+        "row": 28
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 176,
+      "coordinate": {
+        "column": 18,
+        "row": 28
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 228,
+      "coordinate": {
+        "column": 22,
+        "row": 28
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 135,
+      "coordinate": {
+        "column": 32,
+        "row": 28
+      },
+      "kind": 17,
+      "name": "魔法门"
+    },
+    {
+      "id": 204,
+      "coordinate": {
+        "column": 1,
+        "row": 29
+      },
+      "kind": 28,
+      "name": "游 乐 场"
+    },
+    {
+      "id": 7,
+      "coordinate": {
+        "column": 9,
+        "row": 29
+      },
+      "kind": 16,
+      "name": "金星大道"
+    },
+    {
+      "id": 25,
+      "coordinate": {
+        "column": 17,
+        "row": 29
+      },
+      "kind": 16,
+      "name": "火星环线"
+    },
+    {
+      "id": 43,
+      "coordinate": {
+        "column": 23,
+        "row": 29
+      },
+      "kind": 16,
+      "name": "新月街"
+    },
+    {
+      "id": 214,
+      "coordinate": {
+        "column": 33,
+        "row": 29
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 184,
+      "coordinate": {
+        "column": 2,
+        "row": 30
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 5,
+      "coordinate": {
+        "column": 8,
+        "row": 30
+      },
+      "kind": 16,
+      "name": "金星大道"
+    },
+    {
+      "id": 23,
+      "coordinate": {
+        "column": 16,
+        "row": 30
+      },
+      "kind": 16,
+      "name": "火星环线"
+    },
+    {
+      "id": 45,
+      "coordinate": {
+        "column": 24,
+        "row": 30
+      },
+      "kind": 16,
+      "name": "新月街"
+    },
+    {
+      "id": 152,
+      "coordinate": {
+        "column": 32,
+        "row": 30
+      },
+      "kind": 20,
+      "name": "卡片商店"
+    },
+    {
+      "id": 191,
+      "coordinate": {
+        "column": 3,
+        "row": 31
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 3,
+      "coordinate": {
+        "column": 7,
+        "row": 31
+      },
+      "kind": 16,
+      "name": "金星大道"
+    },
+    {
+      "id": 211,
+      "coordinate": {
+        "column": 13,
+        "row": 31
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 21,
+      "coordinate": {
+        "column": 15,
+        "row": 31
+      },
+      "kind": 16,
+      "name": "火星环线"
+    },
+    {
+      "id": 47,
+      "coordinate": {
+        "column": 25,
+        "row": 31
+      },
+      "kind": 16,
+      "name": "新月街"
+    },
+    {
+      "id": 151,
+      "coordinate": {
+        "column": 31,
+        "row": 31
+      },
+      "kind": 20,
+      "name": "卡片商店"
+    },
+    {
+      "id": 159,
+      "coordinate": {
+        "column": 4,
+        "row": 32
+      },
+      "kind": 23,
+      "name": "失物招领"
+    },
+    {
+      "id": 1,
+      "coordinate": {
+        "column": 6,
+        "row": 32
+      },
+      "kind": 16,
+      "name": "金星大道"
+    },
+    {
+      "id": 13,
+      "coordinate": {
+        "column": 12,
+        "row": 32
+      },
+      "kind": 16,
+      "name": "木星路"
+    },
+    {
+      "id": 212,
+      "coordinate": {
+        "column": 14,
+        "row": 32
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 113,
+      "coordinate": {
+        "column": 26,
+        "row": 32
+      },
+      "kind": 13,
+      "name": "电力公司"
+    },
+    {
+      "id": 126,
+      "coordinate": {
+        "column": 30,
+        "row": 32
+      },
+      "kind": 2,
+      "name": "中华饭店"
+    },
+    {
+      "id": 225,
+      "coordinate": {
+        "column": 5,
+        "row": 33
+      },
+      "kind": 29,
+      "name": "三岔路口"
+    },
+    {
+      "id": 11,
+      "coordinate": {
+        "column": 11,
+        "row": 33
+      },
+      "kind": 16,
+      "name": "木星路"
+    },
+    {
+      "id": 114,
+      "coordinate": {
+        "column": 27,
+        "row": 33
+      },
+      "kind": 13,
+      "name": "电力公司"
+    },
+    {
+      "id": 125,
+      "coordinate": {
+        "column": 29,
+        "row": 33
+      },
+      "kind": 2,
+      "name": "中华饭店"
+    },
+    {
+      "id": 129,
+      "coordinate": {
+        "column": 6,
+        "row": 34
+      },
+      "kind": 5,
+      "name": "金璧影视"
+    },
+    {
+      "id": 9,
+      "coordinate": {
+        "column": 10,
+        "row": 34
+      },
+      "kind": 16,
+      "name": "木星路"
+    },
+    {
+      "id": 213,
+      "coordinate": {
+        "column": 28,
+        "row": 34
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 128,
+      "coordinate": {
+        "column": 7,
+        "row": 35
+      },
+      "kind": 5,
+      "name": "金壁影视"
+    },
+    {
+      "id": 136,
+      "coordinate": {
+        "column": 9,
+        "row": 35
+      },
+      "kind": 17,
+      "name": "魔法门"
+    },
+    {
+      "id": 170,
+      "coordinate": {
+        "column": 27,
+        "row": 35
+      },
+      "kind": 24,
+      "name": "卡　片"
+    },
+    {
+      "id": 210,
+      "coordinate": {
+        "column": 8,
+        "row": 36
+      },
+      "kind": 29,
+      "name": "街道转角"
+    },
+    {
+      "id": 180,
+      "coordinate": {
+        "column": 26,
+        "row": 36
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 196,
+      "coordinate": {
+        "column": 25,
+        "row": 37
+      },
+      "kind": 26,
+      "name": "奖券50点"
+    },
+    {
+      "id": 189,
+      "coordinate": {
+        "column": 24,
+        "row": 38
+      },
+      "kind": 26,
+      "name": "奖券30点"
+    },
+    {
+      "id": 179,
+      "coordinate": {
+        "column": 23,
+        "row": 39
+      },
+      "kind": 26,
+      "name": "奖券10点"
+    },
+    {
+      "id": 175,
+      "coordinate": {
+        "column": 22,
+        "row": 40
+      },
+      "kind": 25,
+      "name": "运气事件"
+    },
+    {
+      "id": 163,
+      "coordinate": {
+        "column": 21,
+        "row": 41
+      },
+      "kind": 32,
+      "name": "重生门"
+    }
+  ]
+}

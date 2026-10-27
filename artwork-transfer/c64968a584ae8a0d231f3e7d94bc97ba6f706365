@@ -1,0 +1,42 @@
+
+> star-cat-monopoly@0.1.0 test:e2e:modern
+> playwright test --config playwright.modern.config.ts tests/e2e/modern-map-layer-order.spec.ts
+
+
+Running 1 test using 1 worker
+
+(node:22207) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/e2e/modern-map-layer-order.spec.ts:3:1 › 地图前景在底座较晚载入和镜头往返后仍显示在上层 (4.3s)
+
+
+  1) tests/e2e/modern-map-layer-order.spec.ts:3:1 › 地图前景在底座较晚载入和镜头往返后仍显示在上层 ────────────────────────
+
+    Error: visit 0: delayed base must not hide the foreground
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Array [
+    -   255,
+        0,
+        0,
+    +   255,
+        255,
+      ]
+
+      68 |       return [...context.getImageData(400, 300, 1, 1).data]
+      69 |     }, shot.toString('base64'))
+    > 70 |     expect(pixel, `visit ${visit}: delayed base must not hide the foreground`).toEqual([255, 0, 0, 255])
+         |                                                                                ^
+      71 |   }
+      72 | })
+      73 |
+        at /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/tests/e2e/modern-map-layer-order.spec.ts:70:80
+
+    Error Context: ../../../../../../../../../tmp/starcat-modern-e2e/modern-map-layer-order-地图前景在底座较晚载入和镜头往返后仍显示在上层/error-context.md
+
+  1 failed
+    tests/e2e/modern-map-layer-order.spec.ts:3:1 › 地图前景在底座较晚载入和镜头往返后仍显示在上层 ─────────────────────────

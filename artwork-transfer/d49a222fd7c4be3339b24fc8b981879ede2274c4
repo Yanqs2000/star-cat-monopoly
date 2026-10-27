@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><link rel="icon" href="data:,"><title>星猫大富翁 · 静态素材实际组件检查</title>
+<style>body{margin:0;padding:20px;background:#173540;color:#effaf8;font:16px sans-serif}#board{width:800px;height:600px}#cards{width:500px}button{color:#effaf8}main{display:flex;gap:24px}</style></head>
+<body><h1>公司建筑与手牌 · 实际游戏组件</h1><main><div id="board"></div><div><div id="cards"></div><p id="result">正在加载</p></div></main>
+<script type="module" src="./modern-static-art.ts"></script></body></html>
