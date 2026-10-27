@@ -1,0 +1,11 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-34514f01-a35b-4fab-9621-955867a24007.png",
+  "prompt": "Use case: precise-object-edit. Fix ALPHA/TRANSPARENCY defects only in this exact existing HD map scene. The bright pale-green highlights INSIDE TREE CROWNS incorrectly have semitransparent pixels, causing blue rings to show when on sky. All tree foliage and its highlights must be completely SOLID OPAQUE painted green with alpha255, including upperRIGHT oval crown highlight (near89%across/18%down), lowerMIDDLE crown highlight (near41%across/67%down), and lowerRIGHT small tree highlight (near71%across/60%down). Restore original smooth yellow-green light/shadow gradients and exact existing black shapes with NO transparency anywhere inside tree lobes. Retain exact same tree geometry, all lobe counts/positions, grass, hospital/cross/heart/vents/plinth, round ornamental trees, grass line motifs and leaf rosette. Do not add/remove/redesign anything or move any pixel geometry at anchor edges. Almost entire scene must be opaque alpha255, including green highlights, pale glass reflections, every solid object. Preserve ONLY actual exterior transparent SKY wedge at the extreme BOTTOMRIGHT edge, identical silhouette. No transparent highlights, white voids, holes, color spots or new rings. Exact same square crop and camera, no rescaling/reframing; correct solid opacity while retaining existing visual colors/structure.",
+  "referenceRect": [
+    1360,
+    148,
+    312,
+    312
+  ],
+  "sourceSkyReference": true
+}

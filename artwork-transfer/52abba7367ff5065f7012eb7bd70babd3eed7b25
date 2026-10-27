@@ -1,0 +1,9 @@
+
+> star-cat-monopoly@0.1.0 test:modern-map-assets
+> ${PYTHON:-python3} -m unittest discover -s scripts -p "test_hd_map_*.py"
+
+...........................
+----------------------------------------------------------------------
+Ran 27 tests in 1.598s
+
+OK

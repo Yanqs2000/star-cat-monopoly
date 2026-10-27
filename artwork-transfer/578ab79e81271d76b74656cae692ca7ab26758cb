@@ -1,0 +1,11 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-0dfb425c-4779-411d-ac29-8424c6fdf1cc.png",
+  "prompt": "Use case: precise-object-edit. Image1 is this newly generated square HD map. Correct ONLY BOTTOM40logical-pixel anchors so they match Image2's existing native BOTTOM40 strip exactly in coordinates, shape, color and texture. The lower grassy island contour and lower white cloudbank shifted slightly in Image1 and therefore do not join the finished map. Restore exact Image2 BOTTOM40 grass leaf scale, grass arc endpoints, black land outline, cloud/grass occlusion edge and two existing cloud crown positions without adding/removing any lobe or object. Keep the rest of Image1 visually identical: upper-left original tapered cloud tail and its tip length/position, all open transparent sky, same lower land and cloud composition. Blend no colors in software; paint one coherent native cartoon scene at the correct existing contour. Same square frame/camera/crop, no rescaling or shifting clipped art inward. Preserve LEFT32 anchor and upper tail exactly. All exterior sky remains clear alpha0, actual white/cyan clouds and grass solid opaque with narrow native antialias, no blue backdrop, shadows, pinholes or extra decorations. Correct bottom registration/material only, retain exact original two separate cloud fragments and source shape/counts.",
+  "referenceRect": [
+    2080,
+    148,
+    312,
+    312
+  ],
+  "sourceSkyReference": true
+}
