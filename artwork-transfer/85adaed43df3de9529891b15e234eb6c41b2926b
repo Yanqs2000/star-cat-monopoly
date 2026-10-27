@@ -1,0 +1,22 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-12adb60f-2ddf-46f1-84fa-7ce0e91b367f.png",
+  "prompt": "Use case: precise-object-edit / game tile stitch correction. Image1 is EDIT TARGET, an HD tile with a narrow missing horizontal strip near the lower edge. Image2 complete same-framed before-image; image3 original game layout. Fill only the missing strip to connect fixed grass texture, grey asphalt and white curb into the lower existing reference. Keep upper image and left reference fixed, no reframing/zoom. Additionally clean the engraved CAT on the round manhole cover: exactly ONE single cat head with exactly TWO ears, TWO eyes, ONE nose and TWO paws, matching original image3; remove any extra triangular ear/overlapped outline behind the head. All other art stays fixed, including precisely TWO cyan discs reading '10' each, the existing violet10 at left, pink20 at bottom, the two clipped round trees, terrain shapes and blue rail. Grey road surface, no paving grid. No new objects, no holes or seams. Entire square canvas1254x1254 or larger, fully opaque alpha255.",
+  "referenceRect": [
+    2296,
+    676,
+    312,
+    312
+  ],
+  "verifiedNeighborSubregions": [
+    {
+      "tileId": "r3c9",
+      "rect": [
+        2296,
+        676,
+        56,
+        256
+      ],
+      "side": "left"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: precise-object-edit. Produce a high resolution 2048x1592 pixel version of IMAGE1 (same 9:7 composition); preserve its exact corrected wide bridge silhouette and original upper-left straight curb. Image1 EDIT TARGET already has correct bridge geometry. Correct only the GREEN disc numeral from the incorrect30 to exact white \"20\", using the green20 in Image2 as reference. Image2 supplies fine asphalt texture and foreground appearance only, do NOT use its incorrect narrower bridge boundary. Maintain cyan10 / green20 / blue30 / cyan10 sequence. Preserve ALL scene positions, crop boundaries, tree, prison, stones and cliff contours from Image1, no extra objects, no added paint strokes, no shift/zoom, no transparency. High native detail, output at least 1800 pixels wide; do not simply blur or upscale, repaint native crisp fine HD detail. Bridge upper curb must remain precisely on Image1 line, absolutely no return to Image2's narrower span.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1264,
+    1760,
+    432,
+    336
+  ],
+  "status": "candidate-not-installed",
+  "generatedPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-41c402ce-b9fd-41f9-9392-b3b2247b28b4.png"
+}

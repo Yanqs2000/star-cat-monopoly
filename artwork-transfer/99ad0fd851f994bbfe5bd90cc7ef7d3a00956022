@@ -1,0 +1,62 @@
+{
+  "newCandidateCount": 5,
+  "newCandidateIds": [
+    "r6c8",
+    "r7c4",
+    "r7c7",
+    "r7c8",
+    "r8c4"
+  ],
+  "newAppliedLocalRepairs": [
+    "east-road-chevron-r1"
+  ],
+  "selectedCandidateTotal": 19,
+  "approvedSourceReused": 4,
+  "notGenerated": 74,
+  "rework": 10,
+  "pendingVisualReview": 2,
+  "productionEnabled": false,
+  "minimumNewNativeDensity": 4.0,
+  "mapPythonTestsPassed": 16,
+  "actualMapSceneViews": 8,
+  "decodePendingAtCapture": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "browserErrors": [],
+  "losslessReviewAtlasPixelIdentityVerified": true,
+  "reviewAtlasHashesVerified": true,
+  "allNativeAttemptHashesVerified": true,
+  "selectedAssemblyHashesVerified": true,
+  "repairExactSourcePixelSelectionVerified": true,
+  "approvedFourAssembliesMatchBeforeSnapshot": true,
+  "oldAssemblyChangesLimitedTo": [
+    "r6c7: right/bottom 16-pixel bands and documented local chevron repair",
+    "r7c3: right 16-pixel band"
+  ],
+  "formalMapVerifier": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "charactersImported": false
+  },
+  "staticVerifier": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctJobs": 142,
+    "complete": false
+  },
+  "unfinished": [
+    "map coverage",
+    "cloud silhouettes",
+    "perimeter handoff",
+    "rejected candidate seams",
+    "final user art acceptance",
+    "production integration"
+  ]
+}

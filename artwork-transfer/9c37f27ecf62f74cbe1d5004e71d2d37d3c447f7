@@ -1,0 +1,10 @@
+
+Running 2 tests using 1 worker
+
+(node:35968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/e2e/modern-hd-replay-parity.spec.ts:67:1 › 原版与高清同种子开局、选人、掷骰后完整GameState逐字段一致 (7.1s)
+HD production resource audit {"maxTextureSize":8192,"jsHeapUsedBytes":35817344,"maxProfileDimension":5400,"hdResponseCount":1385,"loadedHdImageCount":1314,"downloadedBytes":130304878,"encodedResourceBytes":137702134,"failedResponses":[],"estimatedDecodedRgbaBytes":845840496,"loadedByGroup":{"characters":{"count":360,"decodedRgbaBytes":45017808},"companies":{"count":11,"decodedRgbaBytes":6767792},"world":{"count":790,"decodedRgbaBytes":221277952},"map-full":{"count":91,"decodedRgbaBytes":349634832},"static":{"count":126,"decodedRgbaBytes":223142112}}}
+  ✓  2 tests/e2e/modern-hd-replay-parity.spec.ts:166:1 › 生产高清开局记录下载量、解码内存估算及浏览器纹理尺寸上限 (2.7s)
+
+  2 passed (10.7s)

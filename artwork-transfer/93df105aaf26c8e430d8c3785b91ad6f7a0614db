@@ -1,0 +1,17 @@
+.F.
+======================================================================
+FAIL: test_gray_road_between_objects_stays_native (__main__.Road.test_gray_road_between_objects_stays_native)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch25_road_retention.py", line 9, in test_gray_road_between_objects_stays_native
+    def test_gray_road_between_objects_stays_native(self):self.same([268,1448,40,24])
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch25_road_retention.py", line 8, in same
+    x,y,w,h=r;box=(m.px(x)-m.px(0),m.py(y)-m.py(1264),m.px(x+w)-m.px(0),m.py(y+h)-m.py(1264));a=Image.open(F/'before.png').convert('RGBA').crop(box);b=Image.open(F/'assembled-candidate.png').convert('RGBA').crop(box);self.assertTrue(np.array_equal(np.array(a),np.array(b)),'Existing road/marking RGBA changed during grass material edit')
+                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Existing road/marking RGBA changed during grass material edit
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.249s
+
+FAILED (failures=1)
