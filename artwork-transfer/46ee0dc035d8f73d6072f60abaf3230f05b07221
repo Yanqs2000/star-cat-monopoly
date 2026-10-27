@@ -1,0 +1,35 @@
+{
+  "id": "r3c8",
+  "contentRect": [
+    1872,
+    676,
+    240,
+    256
+  ],
+  "referenceRect": [
+    1872,
+    676,
+    256,
+    384
+  ],
+  "targetSize": [
+    1024,
+    1536
+  ],
+  "workflow": "opaque-inland",
+  "sourceOutlineClipping": false,
+  "inlandEvidence": {
+    "minimumSourceAlpha": 255,
+    "zeroAlphaPixels": 0
+  },
+  "files": {
+    "target.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r3c8/target.png",
+      "sha256": "4827d6b898852e18a1f80f38845f55bf9f48f1b5c41104d2fd2a0825c89ef228"
+    },
+    "layout.png": {
+      "path": "public/modern/hd-masters/map/full-map-v1/references/batch-05/r3c8/layout.png",
+      "sha256": "6e504f972a9ccbf5ec9c70b99f99b3d05ffe47a4194b697e93e7b592d4a64650"
+    }
+  }
+}

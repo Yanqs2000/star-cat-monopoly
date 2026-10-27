@@ -1,0 +1,26 @@
+{
+  "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/masters/r9c7-r2.png",
+  "prompt": "Edit FIRST image only in its lower-left empty sky to restore the existing original small white/cyan cloud fragment seen at the bottom-left of SECOND source layout. This cloud is cropped by the LEFT and BOTTOM canvas edges; only its small upper rounded white cap and thin cyan rim are visible underneath/behind the left hanging rock. Match its source position, size and occlusion precisely (roughly x0-110 of312 and y280-312 of312), do not extend cloud higher up. Keep ALL existing cliff geometry, top context, rock colors, cut-off bottom/right cliff faces and transparency unchanged elsewhere. No new clouds anywhere else. Preserve exactly the same square canvas coordinates with no reframing. HD cartoon shading, solid white/cyan cloud, true transparent exterior. No holes or background fill. The rock is cropped by bottom edge; do not shorten it.",
+  "referenceRect": [
+    1600,
+    2068,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "lower-cliff-top-r1",
+      "rect": [
+        1632,
+        1988,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/lower-cliff-top-r1/assembled.png"
+    }
+  ],
+  "sourceReuse": {
+    "rawAttemptMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c7-r2.png",
+    "newImageGenerated": false
+  }
+}

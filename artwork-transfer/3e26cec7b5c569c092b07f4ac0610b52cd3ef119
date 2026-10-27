@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: precise-object-edit. Image1 is the edit target, an HD game map with a BROKEN UPPER-LEFT WHITE CURB. Image2 shows the same region before the road was widened, for the intact yellow building plinth and green building body ONLY. Fix Image1's one upper-left curb as a continuous coherent masonry edge: it starts at the current LEFT border position, follows the widened straight bridge, then smoothly joins the existing road corner at upper-right. Remove white sawtooth chips cutting into the green building, restore its clean black outline and rounded yellow platform from Image2. The curb must border the OUTSIDE of that platform, never cut through the building or duplicate itself. Remove the thin vertical seams and extra white streaks near the platform; continuous neutral asphalt below. Keep image1 LEFT border curb crossing fixed (do not revert to Image2's narrower left-side bridge); keep RIGHT/TOP/BOTTOM crop boundaries fixed. Preserve exact discs (partial GREEN20, BLUE30, CYAN10), positions and sizes; preserve lower-right curb, white key icon, monument, grass, buildings, lighting and road texture. Only repair this joint; no new objects, blur, alpha holes or annotations. Same square crop, native at least1254x1254.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1536,
+    1648,
+    256,
+    256
+  ],
+  "status": "rejected-boundary-moved-not-installed",
+  "reason": "Generated left curb contact shifted from required boundary; replaced by user-authorized deterministic geometry registration of existing generated artwork."
+}
