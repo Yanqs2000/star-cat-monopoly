@@ -1,0 +1,182 @@
+[
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/approved-east-boundary-reference/generation.json",
+    "id": "approved-east-boundary-reference",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-291ca12f-7e0a-496a-b880-89691118e783.png",
+    "prompt": "Use case: precise-object-edit. Repair the vertical visual join at15.4%across in this EXISTING PORTRAIT2:3 native map image, representing x1152 old tile boundary. IMPORTANT: LEFT15.4% of frame is an accepted map sample and must remain visually identical in every color, outline and pixel position. Edit only the RIGHT side of that vertical join: continue same original green30 disc shading/shape from its accepted left fragment so numeral30, green disk rim and reflection are ONE continuous object; align grey road/white curb across line; join both halves of same leaf rosette below road with matching leaf lobes, outline and shading; unify grass texture across the line. Make smooth natural material continuation into existing RIGHT native art without moving any geometry or duplicating a leaf/digit. Preserve ALL original object counts and positions, original cloud/cliff/open sky gap, lower grass arc and pillar/plant crops. No new rock, plant, building or label. Keep upper/lower/right outer16logical-pixel anchors stationary and unchanged. LEFT15.4% is frozen accepted reference: do not recolor, redraw or move it; carry its exact edge colors/shape rightward instead. Portrait2:3frame/crop exact, no zoom/rescale. Opaque solid interiors, exterior sky transparent alpha0, no holes or blurred overlays.",
+    "rect": [
+      1120,
+      420,
+      208,
+      312
+    ],
+    "status": "rejected-opaque-sky-and-invented-clouds",
+    "applied": false
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/approved-east-native-continuation-r1/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-d17349da-07ed-4bb2-a9f7-7f52619dc789.png",
+    "prompt": "Edit Image1: remove WRONG added blue background and extra white clouds from central SKY GAP between cliff and lower grassy island. Image2 is prior exact same frame showing correct TRANSPARENT gap; restore that original exterior transparency and original cloud count. There should be NO CLOUD across middle gap below road; retain only the original little cloud fragment cropped at farRIGHT near60%down as shown Image2. All newly added white puff clouds across middle/lower gap and all BLUE sky paint disappear to perfectly clear alpha0. Preserve Image1 repaired continuous GREEN30 DISC and LEAF ROSETTE shading, road/curb, grass/cliff faces, existing building/pillar crops and every solid object position exactly. No shape/count changes, only remove erroneous invented background/clouds. LEFT15.4% accepted art stays in place and unchanged; full frame/camera/crop portrait2:3 no rescaling. Solid foliage/numerals/plants/road/cloud-fragment interiors opaque, narrow natural antialias outside only, no glow. Keep repaired join and all outer edges stationary.",
+    "referenceRect": [
+      1120,
+      420,
+      208,
+      312
+    ],
+    "rect": [
+      1152,
+      420,
+      176,
+      312
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/batch16-inputs/r1c6/generation-r2.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-34514f01-a35b-4fab-9621-955867a24007.png",
+    "prompt": "Use case: precise-object-edit. Fix ALPHA/TRANSPARENCY defects only in this exact existing HD map scene. The bright pale-green highlights INSIDE TREE CROWNS incorrectly have semitransparent pixels, causing blue rings to show when on sky. All tree foliage and its highlights must be completely SOLID OPAQUE painted green with alpha255, including upperRIGHT oval crown highlight (near89%across/18%down), lowerMIDDLE crown highlight (near41%across/67%down), and lowerRIGHT small tree highlight (near71%across/60%down). Restore original smooth yellow-green light/shadow gradients and exact existing black shapes with NO transparency anywhere inside tree lobes. Retain exact same tree geometry, all lobe counts/positions, grass, hospital/cross/heart/vents/plinth, round ornamental trees, grass line motifs and leaf rosette. Do not add/remove/redesign anything or move any pixel geometry at anchor edges. Almost entire scene must be opaque alpha255, including green highlights, pale glass reflections, every solid object. Preserve ONLY actual exterior transparent SKY wedge at the extreme BOTTOMRIGHT edge, identical silhouette. No transparent highlights, white voids, holes, color spots or new rings. Exact same square crop and camera, no rescaling/reframing; correct solid opacity while retaining existing visual colors/structure.",
+    "referenceRect": [
+      1360,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/batch16-inputs/r1c6/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-769995d9-d597-4853-ba06-cda2e5b42013.png",
+    "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has completed BOTTOM40logical-pixel grass/shrub/cliff-tip anchors; fill missing middle/upper area from Image2 ORIGINAL layout of exactly the same312square. Preserve source coordinates/scale, all clipping and original object counts. Scene: original pink/cyan fixed HOSPITAL cropped at LEFT, with same partial red HEART, ONE thick yellow medical CROSS with blue front facets, cyan ribbed wing and pink round plinth. Preserve tiny round green ornamental tree beside plinth. Preserve exactly original three larger visible trees/crown groups at lowerMIDDLE, lowerRIGHT and upperRIGHT with same lobe silhouettes, forks/trunks, perspective and shadows; preserve additional tree crown cut by TOP edge and all RIGHT edge crops. Do not add a tree, extra crown lobes, hospital part, cross, heart, window, doorway or prop. Retain original dark grass curl/arc line motifs exactly at source positions, same top/central grass clearings and lowerLEFT leaf rosette. Match Image1 BOTTOM40 all existing native leaf texture scale/color, plant silhouette, arc endpoints and lowerRIGHT cliff/transparent sky tip seamlessly. Most scene is solid grass: no artificial transparent holes at top or through foliage/building. Only original tiny exterior sky wedge at farBOTTOMRIGHT remains transparent; native alpha0 there, no blue backdrop painted. Otherwise solid objects alpha255 with antialiased exterior contours, no white void. Same square exact camera/crop, no moving clipped objects inward or rescaling. Sharp glossy bright cartoon map matching established bottom art.",
+    "referenceRect": [
+      1360,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/batch16-inputs/r1c7/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-41867fbc-396c-4bfe-bfbf-86fffee23e6c.png",
+    "prompt": "Use case: precise-object-edit. Complete this square312logical HD map crop. Image1 EDIT TARGET has finished LEFT32 and BOTTOM40 anchors; Image2 ORIGINAL exact same layout composited on blue sky. Preserve original two separate grassy island silhouettes and diagonal open sky channel. LEFT island is the narrow original green grass strip with the same large tree crown/trunk cropped on LEFT and additional TOP tree fragment: continue exact existing partial tree lobes/fork positions from LEFT anchor, do not add a tree or move clipped parts into frame. LOWER-RIGHT island rises into bottomRIGHT; preserve same round tree crown cropped by BOTTOM, exactly matching finished bottom anchor. In upperRIGHT sky is ONE original white/lightcyan cloud body cut by TOP/RIGHT edges, with the same lobe silhouette, scale and native position from Image2; do not duplicate cloud or extend cloud into the channel below. Original BLUE is EXTERIOR SKY: output transparent alpha0 there, never opaque blue backdrop, land fill or opaque white patches. Grass/tree/cloud interiors fully SOLID OPAQUE, including all pale green foliage highlights and white cloud centers; antialiased alpha only exterior outline, no enclosed pinholes or semitransparent highlight rings. Preserve original grass arc motifs, native leaf texture/color and exact silhouette endpoints where LEFT/BOTTOM meet new area. No extra bush, stone, tree, building, symbol or road. Same square frame/camera/crop and source-exact object counts; no zoom/reframe. Bright sharp glossy cartoon HD matching native anchors. Keep cloud soft shading without holes, dark outlines on land/trees; no black outlines invented around soft cloud.",
+    "referenceRect": [
+      1600,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/batch16-inputs/r1c8/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-1ee6ad81-e912-43f8-be98-36726d798728.png",
+    "prompt": "Use case: precise-object-edit. Complete this square native HD Star Cat Monopoly map crop. Image1 EDIT TARGET has finished LEFT32/BOTTOM40 logical-pixel anchors, Image2 is ORIGINAL exact same312square on blue sky for viewing. Main artwork is ONE existing WHITE/LIGHT-CYAN CLOUD across upper portion, cut by TOP/LEFT edges and tapering toward RIGHT: preserve original lobe count/silhouette and ONE original painted cyan inward CURL on upper-left/middle cloud, exact location/scale, no added swirl or cloud. Connect its left body precisely to existing Image1 cloud contour/shading, same softness; curl is painted opaque cloud shading, not a hole. Keep original open SKY below cloud and above lower grassy island. LOWER edge has original grassy island silhouette with same indentations and source-exact contour; match existing native BOTTOM40 grass material/scale and existing cropped tree crown at bottomLEFT, no extra tree or shrubs. A blue backdrop in Image2 represents EXTERIOR SKY: output clear transparent alpha0 there, no opaque blue background, white void or grass fill in sky. All cloud/grass/tree interiors solid opaque, no pinholes or semitransparent pale highlights. No extra object, star, text, stone, road, building or decoration. Keep all existing LEFT/BOTTOM native contours, shape endpoints and positions, no reframe/rescale/zoom or moving clipped objects inward. Same square canvas/camera; sharp glossy cartoon ground, smoothly shaded white/cyan cloud with clean native antialiased outline.",
+    "referenceRect": [
+      1840,
+      148,
+      312,
+      312
+    ],
+    "sourceSkyReference": true
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/batch16-inputs/r2c5/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-eac593b6-7bb9-4dd6-9064-374205a75ed3.png",
+    "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET contains completed LEFT32,RIGHT40 and bottommost8 logical-pixel anchors around missing map. Image2 ORIGINAL layout of the identical312x312logical square on blue sky for viewing. Fill missing art with faithful sharp glossy cartoon restoration. Keep exact original road width/slope, white curbs, original partly clipped green30 disc and lower cyan disc/portal crop at LEFT, same upper two leafy rosettes/left rosette/bottomleft plant fragments, grass line marks and vertical golden hanging cliff silhouette. Cliff hangs over the original open SKY inlet beneath diagonal road, with original white/cyan cloud under its RIGHT end; lower grassy island and cropped gray pillar top at BOTTOM. Preserve original counts/coordinates and source silhouette, no grass fragment inside cloud, no extra stone/tree/plant/building/road disc/text. Match LEFT approved road/green30/curb/bush geometry exactly without moving it; match RIGHT native grass/cliff/cloud silhouette and bottom anchor at fixed coordinates. Extend lower island faithfully into missing narrow strip above bottommost8 anchor, connecting cropped original pillar top. Original blue in Image2 is EXTERNAL SKY: retain TRANSPARENT gap in output, never opaque blue backdrop or grass fill. White cloud is actual solid art, no pinholes. Solid grass/cliff/cloud alpha255, antialiased native exterior, no enclosed accidental cutouts. Same square frame/crop, no zoom/reframe/rescale. Preserve native finished anchor sharpness, color, texture scale. Upper unused context also original solid grass where shown, no artificial top cutouts. High native resolution>=1254square.",
+    "referenceRect": [
+      1120,
+      388,
+      312,
+      312
+    ],
+    "sourceSkyReference": true,
+    "preserveApprovedNeighbors": true,
+    "qualifiedBottomNeighbor": {
+      "tileId": "r3c5",
+      "rect": [
+        1152,
+        692,
+        240,
+        8
+      ]
+    },
+    "newBottomCoverageRect": [
+      1152,
+      676,
+      240,
+      16
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/river-bottom-shore-joint-r2/generation.json",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-41d8cb5f-347c-4b6a-af88-e579c27b339d.png",
+    "prompt": "Use case: precise-object-edit. This is an EXISTING sharp native HD river/cliff map. Remove only the straight horizontal tile-color line at about37%down through blue water/shore/gold rock, plus vertical color line about10%across through left bank/water. Continue existing native water painting, shoreline highlight, grass and faceted rock naturally across these two lines, same colors on both sides. Preserve ALL outer16 logical-pixel anchors visually identical; do not alter or shift any silhouette, rock/crack/facet/shore position, grass bank, oval stone, top-cropped tree trunk, plinth paving, or existing highlights. Same ONE oval riverstone and same clipped stone fragments, no added/removed object or decoration. Keep exact same camera,3:2landscape frame and crop. Do not redraw the whole scene or change original geometry. Only correct the color/texture discontinuity at these straight joins using sharp native art; no blur/fog/soft overlay. Full opaque alpha255 including actual blue river, no holes.",
+    "rect": [
+      1360,
+      2056,
+      312,
+      208
+    ]
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/river-road-whole-focus-r1/generation.json",
+    "id": "river-road-whole-focus-r1",
+    "rect": [
+      1304,
+      1888,
+      176,
+      176
+    ],
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-de5e3118-7db5-4e3e-bf8a-504a8114f7b3.png",
+    "prompt": "Use case: precise-object-edit. Repair this EXISTING sharp square map image. At43%across/30%down, the upper white road curb makes a small step/notch and has an extra raised parallel slab extending lowerleft. Remove the extra raised slab, continue ONE straight uniform-width white curb along its correct line between the unchanged upperRIGHT curb and road/roof intersection at LEFT. Preserve exact road width and slope, same curb brick joints. Make road asphalt continuous fine pale-gray speckles across the old vertical texture join, matching left pale gray and adjacent right speckles; no circular embossed texture replacement. Do not move any road endpoints or change entire perspective. All surrounding cliff faces, river fragment, orange dome/vent/lock/keyhole, plinth paving, tree lobes/trunk/stone shapes stay exactly in place and identical. No new objects/marks or counts changed. Preserve OUTER16 logical-pixel frame anchors visually identical at same positions; edit only faulty curb and adjacent asphalt material. Same square composition with same clipped objects, no zoom/reframe/reillustration. Sharp glossy cartoon map art, fully opaque alpha255, no holes or fog."
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/upper-cloud-middle-joint-r1/generation.json",
+    "id": "upper-cloud-middle-joint-r1",
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-6d8e7435-56a0-470e-b920-5fd240810e5c.png",
+    "prompt": "Use case: precise-object-edit. Repair this EXISTING sharp landscape3:2 transparent map image. In the single white/cyan cloud, around40%across/25–40%down, previous tile joining created a diagonal hard color step, cut-out-looking notch and doubled contour between the left large lobe and small lobe below-middle. Make this ONE continuous naturally painted cloud body with smooth consistent white/cyan volume through that spot, preserving original lobe count and exact intended silhouette, ONE existing curl clipped by TOP near70%across. No new lobe, curl, separate cloud or protruding fragment. Keep all cloud outline endpoints at frame edges and ALL outer16logical-pixel anchor bands visually identical. Keep bottom-right clipped grassy island exactly unchanged. Preserve transparent sky alpha0, solid cloud white/cyan interior opaque without holes. Same3:2frame/crop/camera no scaling. Edit only the cloud's internal old join and tiny adjacent contour fault, no whole-scene reillustration, fog or extra decoration.",
+    "rect": [
+      1744,
+      180,
+      312,
+      208
+    ],
+    "status": "superseded-by-r2-native-alpha-exterior-cleanup",
+    "applied": false
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/upper-cloud-middle-joint-r2/generation.json",
+    "id": "upper-cloud-middle-joint-r2",
+    "rect": [
+      1744,
+      180,
+      312,
+      208
+    ],
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-0c012754-261f-4fdb-be3b-43da989241b5.png",
+    "prompt": "Remove the unwanted broad blue/gray glow and green glow outside the cloud and tiny bottom grass fragment in this image. BACKGROUND REMOVAL ONLY: all exterior space becomes perfectly clear transparent alpha0 right up to original solid cloud and grass contour, with only narrow native antialias at contours. Keep the actual white/cyan cloud body, its smooth shading, exact lobes/silhouette and cropped single cyan curl unchanged. No drop shadow, aura, haze, colored mist, painted backdrop, black background or wide alpha gradient outside cloud. Solid cloud interiors remain opaque, no pinholes. Tiny bottom grass fragment remains at same exact position with clear exterior. Keep3:2frame/camera/crop exactly, no shifting/rescaling/reillustration. Only remove the accidental background glow; preserve the corrected continuous cloud body."
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/upper-golden-face-joint-r1/generation.json",
+    "id": "upper-golden-face-joint-r1",
+    "rect": [
+      1312,
+      488,
+      176,
+      176
+    ],
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-ab7924f5-84e7-4d9b-a7a1-614eb3c7f9b5.png",
+    "prompt": "Use case: precise-object-edit. Repair only a hard COLOR seam in this EXISTING square HD golden-cliff map image. Main central large golden cliff face has an irregular-edged darker orange stain split down its middle near48%across/20–38%down. This is a tile color mismatch, not a source crack or extra facet. Continue one clean smoothly shaded golden planar face from left to right, remove the stain/step, keep all existing black outer contours, true facet edges, notch/corner geometry and long diagonal crack absolutely unchanged. Preserve grass lip/leaf scale and underlying single white/cyan cloud with identical lobes, sky transparency and shading. No rock/plant/cloud added/removed, no silhouette or position changes. ALL outer16logical-pixel anchors identical. Keep same square crop/camera, no zoom/reframe or broad redraw. Solid grass/gold/cloud interiors opaque, native transparent exterior sky only, no holes or semitransparent highlights. Fix color continuity within the one face using same native sharp cartoon style."
+  },
+  {
+    "metadata": "public/modern/hd-masters/map/full-map-v1/references/batch-16/upper-gorge-cliff-lip-r1/generation.json",
+    "id": "upper-gorge-cliff-lip-r1",
+    "rect": [
+      1584,
+      432,
+      112,
+      112
+    ],
+    "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-238f0fdf-1f56-4f36-bc38-81068579ded3.png",
+    "prompt": "Use case: precise-object-edit. Repair ONLY a small seam in this existing square transparent cartoon map image. Near43%across/34%down, upperLEFT island's grassy lip/golden cliff edge has a tiny rectangular ledge and kink at a previous tile boundary. Connect existing black grass edge and golden cliff rim smoothly through this point, continuing the same natural diagonal silhouette, no square step, notch or extra rock. Harmonize any faint straight grass seam immediately beside it. Retain original outline endpoints, grass shapes/texture/color, golden cliff facet/crack and narrow gold rim. Keep lowerRIGHT island silhouette entirely unchanged. Retain open transparent sky channel between islands; do not paint blue/white sky or fill this gap with land. No added/removed plants, props, rocks, clouds or ornament. Keep ALL outer16 logical-pixel anchors visually identical, same square frame/crop/perspective and exact island positions. Edit only the small central lip fault; no rescaling or broad reillustration. Preserve native transparent background and antialiasing, solid grass/cliff no missing holes."
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "batch": "batch-29",
+  "date": "2026-10-24",
+  "installed": true,
+  "manifestSha256": "702902205b485da45411613b565d1afd024424f2b3a6a6efa6aefd019d4dd90b",
+  "nativeRegions": 187,
+  "nativeForegroundSprites": 4,
+  "basePixelSize": [
+    5400,
+    5104
+  ],
+  "resolvedCorrections": [
+    {
+      "id": "south-bridge-geometry",
+      "resolution": "User-authorized native geometric registration, original landmark errors0/1/0; original discs protected; fixed native-scale asphalt grain.",
+      "evidence": "registration.json"
+    },
+    {
+      "id": "type28-red-disc-consistency",
+      "resolution": "Reuse eastern generated design for western equivalent type28 disc, preserve footprint and surrounding terrain.",
+      "evidence": "red-disc-registration.json"
+    },
+    {
+      "id": "west-grass-material-consistency",
+      "resolution": "Suppress medium-scale checker lighting while keeping leaf detail, geometry and alpha.",
+      "evidence": "grass-normalization.json"
+    },
+    {
+      "id": "west-cyan-lower-joint",
+      "resolution": "Restore coherent cyan disc and joint context from immutable r6c1 source; edge step1.149 to0.460 logicalpx.",
+      "evidence": "cyan-joint-repair.json"
+    }
+  ],
+  "knownOpenCorrections": [],
+  "userVisualAcceptance": "pending",
+  "programmaticEditingAuthorization": "User answered: 允许程序校正生成素材（推荐）",
+  "imageGenerationCalls": 2,
+  "newGeneratedCandidatesInstalled": false,
+  "method": "Existing GPT-generated artwork corrected/reassembled programmatically after explicit user authorization.",
+  "tests": {
+    "projectUnitTests": 648,
+    "projectTestFiles": 86,
+    "mapPythonTests": 31,
+    "e2eTestsBeforeFinalCyanLocalCorrection": 14,
+    "finalInstalledRuntimeViews": 8,
+    "finalControlledRoutesPerProfile": 6,
+    "finalControlledAnimationStepsPerProfile": 22,
+    "naturalRollsPerProfileBeforeFinalCyanLocalCorrection": 4,
+    "build": "passed",
+    "buildWarnings": [
+      "existing >500kB chunk warning",
+      "vite public-file preparation timing warning"
+    ]
+  },
+  "limits": [
+    "No all-character/all-direction animation sweep",
+    "Final cyan join was reviewed by parent after subagent identified it; no successful independent re-review of its repaired image",
+    "No git commit/push or user visual acceptance yet"
+  ],
+  "recipeFiles": {
+    "register_bridge.py": "def7f46e3686a747e1b3729c7e3d9f5ec30861fa3e2c57dfc386e5bdf60d32b9",
+    "unify_red_discs.py": "c496200f87c1ac11d5a87883c6cb77bcb6d1d090400ee9ad023e076d190c3fb9",
+    "normalize_grass.py": "47704d2be74296ef21dc08ad6b48ccecdd415e9a45e0074b8020c8e2859e7860",
+    "repair_cyan_joint.py": "94731081fb636e8773147d8c3d3fef805b94d0d28da3f09294486a40eca6c379",
+    "draw-regions.json": "b43b55c43837dabdd7ced7ef3f70501d775bc5e90afdb7ceb917493ecdcf825d"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "rect": [
+    80,
+    1044,
+    384,
+    256
+  ],
+  "knownContexts": [
+    {
+      "id": "r4c0",
+      "rect": [
+        80,
+        1044,
+        80,
+        128
+      ],
+      "sha256": "38c0569d81c42589f9fc0ffd58c2f373a20c4d00c0e3ad0bcc67b7bf740f0e0a"
+    },
+    {
+      "id": "r4c1",
+      "rect": [
+        160,
+        1044,
+        240,
+        128
+      ],
+      "sha256": "8382c6775257b7c491ae9b6a3830ce202e8fc8e1f996fc52a69e6ae50efd7a13"
+    },
+    {
+      "id": "r5c0",
+      "rect": [
+        80,
+        1172,
+        80,
+        128
+      ],
+      "sha256": "e550359435f3bef26faab8c1858e4f313d563b6a82f29ad18d479fe4b4367c04"
+    },
+    {
+      "id": "r5c1",
+      "rect": [
+        160,
+        1172,
+        240,
+        128
+      ],
+      "sha256": "b1790413d25737d534eac2d9734c7ac1a4328b2df2948b95d11aad99693e3369"
+    }
+  ],
+  "unknownContextUsesSameNativeOutput": true,
+  "unknownContextIsNotAnAcceptedNeighborJoin": true,
+  "nativeAlphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 521936,
+    "solidAlphaMedian": 253.0,
+    "fullyOpaqueFraction": 0.0,
+    "nativeAlphaModified": false
+  },
+  "cloudInteriorWholeNativeRect": [
+    88,
+    1076,
+    344,
+    192
+  ],
+  "method": "Whole native cloud preserved inside border cuts; unknown neighboring area uses same new native image, not blank/legacy art. Exact old/new RGBA selection only."
+}

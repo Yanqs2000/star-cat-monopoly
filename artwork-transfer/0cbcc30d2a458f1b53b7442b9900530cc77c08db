@@ -1,0 +1,29 @@
+.FFF...
+======================================================================
+FAIL: test_north_crossing_arrow_leaves_no_paint_at_the_old_misplaced_position (test_hd_map_full_package.FullMapPackage.test_north_crossing_arrow_leaves_no_paint_at_the_old_misplaced_position)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/test_hd_map_full_package.py", line 21, in test_north_crossing_arrow_leaves_no_paint_at_the_old_misplaced_position
+    self.assertLessEqual(int(((actual.min(2)>210)&(actual.max(2)-actual.min(2)<35)).sum()),4)
+AssertionError: 83 not less than or equal to 4
+
+======================================================================
+FAIL: test_north_crossing_markings_retain_original_paint_silhouettes (test_hd_map_full_package.FullMapPackage.test_north_crossing_markings_retain_original_paint_silhouettes) (marking='upper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/test_hd_map_full_package.py", line 15, in test_north_crossing_markings_retain_original_paint_silhouettes
+    self.assertGreaterEqual(float((white&expected).sum()/expected.sum()),.90)
+AssertionError: 0.3114256825075834 not greater than or equal to 0.9
+
+======================================================================
+FAIL: test_north_crossing_markings_retain_original_paint_silhouettes (test_hd_map_full_package.FullMapPackage.test_north_crossing_markings_retain_original_paint_silhouettes) (marking='lower')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/test_hd_map_full_package.py", line 15, in test_north_crossing_markings_retain_original_paint_silhouettes
+    self.assertGreaterEqual(float((white&expected).sum()/expected.sum()),.90)
+AssertionError: 0.15987460815047022 not greater than or equal to 0.9
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.367s
+
+FAILED (failures=3)

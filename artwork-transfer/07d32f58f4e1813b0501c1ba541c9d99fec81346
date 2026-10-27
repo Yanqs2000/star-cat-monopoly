@@ -1,0 +1,136 @@
+{
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "npcDefinitions": [
+    {
+      "id": 0,
+      "name": "无障碍",
+      "enabled": false
+    },
+    {
+      "id": 1,
+      "name": "帐 篷",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "财 神",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "name": "穷 神",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "name": "福 神",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "name": "衰 神",
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "name": "路 障",
+      "enabled": false
+    },
+    {
+      "id": 7,
+      "name": "地 雷",
+      "enabled": false
+    },
+    {
+      "id": 8,
+      "name": "定时炸弹",
+      "enabled": false
+    },
+    {
+      "id": 9,
+      "name": "恶 犬",
+      "enabled": true
+    },
+    {
+      "id": 10,
+      "name": "天 使",
+      "enabled": true
+    },
+    {
+      "id": 11,
+      "name": "恶 魔",
+      "enabled": true
+    },
+    {
+      "id": 12,
+      "name": "警 察",
+      "enabled": true
+    },
+    {
+      "id": 13,
+      "name": "流 氓",
+      "enabled": true
+    },
+    {
+      "id": 14,
+      "name": "小 偷",
+      "enabled": true
+    },
+    {
+      "id": 15,
+      "name": "乞 丐",
+      "enabled": true
+    }
+  ],
+  "initialNpcIds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "godIds": [
+    2,
+    3,
+    4,
+    5,
+    10,
+    11
+  ],
+  "aiLevels": [
+    1,
+    2,
+    2,
+    3
+  ],
+  "initialCredit": {
+    "score": 100,
+    "used": 0,
+    "available": 0,
+    "grant": 100000
+  },
+  "initialTickets": 200,
+  "hospital": {
+    "direction": 2,
+    "position": {
+      "column": 19,
+      "row": 1
+    },
+    "days": 3
+  },
+  "jail": {
+    "direction": 4,
+    "position": {
+      "column": 21,
+      "row": 41
+    },
+    "days": 5
+  }
+}
