@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import CompanyCalculator from './CompanyCalculator.vue'
-import { getAssetStandings } from './queries'
+import MonthlySettlement from './MonthlySettlement.vue'
+import { financeLabels, actualChanges } from './finance-presentation'
 import { computed, defineAsyncComponent, nextTick, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
 import type { BankOperation } from './bank-operations'
-import type { FinanceEntry } from './finance-types'
 import { maxCompanySubscription } from './company'
 import { maxStockBuy } from './stock-trading'
 import type { DirectCardChoice } from './direct-cards'
@@ -182,30 +182,6 @@ const landedCompany = computed(() => interaction.value?.kind === 'company'
   ? props.game.finance.stocks[interaction.value.companyId] : null)
 const companyMaximum = computed(() => interaction.value?.kind === 'company'
   ? maxCompanySubscription(props.game, player.value.id, interaction.value.companyId) : 0)
-const financeLabels: Record<string, string> = {
-  'bank-withdraw': '取款完成', 'bank-deposit': '存款完成', 'bank-borrow': '贷款完成',
-  'bank-repay-loan': '还贷完成', 'bank-repay-credit': '刷卡额已缴纳',
-  'company-distribution': '公司分配', 'credit-monthly-payment': '信用卡月还',
-  'company-undistributed-profit': '未分配经营收入',
-  'loan-monthly-payment': '贷款月还', 'deposit-interest': '存款利息',
-  'credit-granted': '信用申请通过，信用卡已加入手牌',
-  'stock-buy': '股票买入', 'stock-sell': '股票卖出',
-  'company-subscribe': '公司认购', 'company-fee': '公司经营费',
-}
-const monthlyQuotes = [
-  '就凭你们，也想和我斗！', '赢得太轻松了……真没意思呢', '有没有像样一点的对手呀？',
-  '你们，这回逊毙了哦……', '用脚趾头想都知道，赢的当然是我啦',
-  '我的垄断时代到了哟，HOHOHOHOHO~~~', '感谢CCTV、MTV以及明日TV给我这个机会',
-  '玩游戏，要先看懂规则滴', '俺是世界第一等！', '哈哈哈哈哈哈哈哈哈哈哈~~~',
-  '不好意思，各位承让了', '赢钱要靠技术的，你们学着点',
-  '哼哼哼哼哼，你们也有今天呀', '这个宝座，我八百年前就预定好了',
-  '能力越大，责任越大，我太辛苦了',
-] as const
-const actualChanges = (entry: FinanceEntry) => [
-  ['现金', entry.cashDelta], ['存款', entry.depositDelta], ['贷款', entry.loanDelta],
-  ['已用信用', entry.creditUsedDelta], ['可用信用', entry.creditAvailableDelta], ['持股', entry.sharesDelta],
-].filter((item): item is [string, number] => typeof item[1] === 'number' && item[1] !== 0)
-  .map(([label, amount]) => `${label} ${amount > 0 ? '+' : ''}${amount}`).join(' · ')
 const cardAssetUrl = (id: number) => {
   const url = profileAssetUrl(props.cardAssets.find(asset => asset.id === id)?.url ?? `assets/interactions/cards/${id}.png`,props.assetProfile)
   return props.preparedImages?.[url] ?? `${import.meta.env.BASE_URL}${url}`
@@ -392,17 +368,7 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'monthly-settlement'">
-      <header class="settlement-header"><span class="eyebrow">银行月结</span><h2>{{ game.world.year }}年{{ game.world.month }}月结算</h2>
-        <p v-if="game.finance.monthlyQuoteIndex !== null">排名台词：{{ monthlyQuotes[game.finance.monthlyQuoteIndex] }}</p>
-      </header>
-      <div class="monthly-summary"><h3>本月资产排名</h3><ol data-testid="monthly-standings"><li v-for="row in getAssetStandings(game)" :key="row.playerId">{{ row.rank ?? '出局' }} · {{ row.name }} · 净资产 {{ row.netWorth }}</li></ol></div>
-      <h3 class="monthly-detail-title">资金明细</h3>
-      <ol v-if="interaction.entries.length" class="finance-lines" tabindex="0" aria-label="月结资金明细"><li v-for="(entry, index) in interaction.entries" :key="index">
-        {{ game.players.find(value => value.id === entry.playerId)?.name ?? '全局' }} · {{ financeLabels[entry.kind] ?? entry.kind }}<span v-if="entry.companyId"> · {{ game.finance.stocks[entry.companyId]?.name }}</span>
-        <small>{{ entry.kind === 'company-undistributed-profit' ? `来源金额 ${entry.sourceAmount}` : actualChanges(entry) }}</small>
-      </li></ol>
-      <p v-else>本月没有资金变化</p>
-      <button class="result-continue" data-testid="monthly-acknowledge" :disabled="paused" @click="emit('acknowledge-monthly')">确认月结，继续</button>
+      <MonthlySettlement :game="game" :entries="interaction.entries" :paused="paused" :prepared-images="preparedImages" @continue="emit('acknowledge-monthly')" @asset-error="emit('asset-error', $event)" />
     </template>
 
     <template v-else-if="interaction.kind === 'stock'">
@@ -474,9 +440,7 @@ watch(stockId, () => { stockShares.value = 1 })
 .interaction{position:absolute;z-index:5;left:calc((100% - var(--game-sidebar-width,0px)) / 2);top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(510px,calc(100% - var(--game-sidebar-width,0px) - 36px));max-height:calc(100% - 36px);overflow:auto;box-sizing:border-box;background:#112f3bf5;color:#f1f8f5;border:1px solid #ffe18a;border-radius:15px;box-shadow:0 18px 42px #07151dcc;padding:18px 20px;font:14px/1.45 system-ui,"PingFang SC",sans-serif}.eyebrow{color:#ffe18a;font-size:11px;letter-spacing:.11em}h2{margin:4px 0 9px;font-size:21px}p{margin:6px 0}.card-head{display:flex;gap:14px}.card-head img{width:78px;height:80px;object-fit:contain}.card-head p{color:#bed1d4}.balance,.amount{padding:8px 10px;background:#254f5c;border-radius:8px}.error{color:#ffd0c4;border:1px solid #d77867;background:#612f2b;padding:8px;border-radius:8px}.actions,.dice,.targets,.sell-list{display:flex;gap:7px;flex-wrap:wrap}.choice{display:grid;gap:10px}.choice label{display:grid;gap:5px}.choice input,.choice select{font:inherit;padding:8px;border:1px solid #73929a;border-radius:7px;background:#ecf4f1;color:#17313a}.dice button{min-width:42px;font-size:17px}.shop-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0}.shop-grid button{min-width:0;padding:5px 2px;display:grid;place-items:center;gap:2px}.shop-grid img{width:42px;height:44px;object-fit:contain}.shop-grid span,.shop-grid small{font-size:9px;white-space:nowrap}.sell-list{max-height:86px;overflow:auto;margin:7px 0 12px}.finance-lines{max-height:260px;overflow:auto;padding-left:20px}.finance-lines li{margin:6px 0}.finance-lines small{display:block;color:#bfd0d3}.luck{display:block;width:min(360px,100%);aspect-ratio:4/3;object-fit:contain;margin:8px auto;background:#fff3;border-radius:9px}button{font:inherit;background:#2a5361;color:#eff8f5;border:1px solid #66858e;border-radius:7px;padding:7px 10px;cursor:pointer}button:hover{background:#386b7a}button:disabled{opacity:.42;cursor:default}button:focus-visible,input:focus-visible{outline:2px solid #ffe18a;outline-offset:2px}@media(max-width:900px){.interaction{width:calc(100% - 24px);max-height:calc(100% - 24px)}.shop-grid{grid-template-columns:repeat(4,1fr)}}
 .interaction.targeting-panel{top:12px;transform:translateX(-50%);width:min(620px,calc(100% - 24px));padding:10px 12px;pointer-events:none}.targeting-panel .card-head,.targeting-panel .balance{display:none}.targeting-panel .target-choice{gap:4px}.targeting-panel .target-choice p{margin:0;font-size:12px}.targeting-panel .target-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}.targeting-panel .target-actions button{pointer-events:auto}.targeting-panel .targets button{font-size:12px;padding:5px 7px}
 .interaction.monthly-panel,.interaction.notice-panel{display:flex;flex-direction:column;overflow:hidden;gap:8px}
-.monthly-panel{height:calc(100% - 36px)}.settlement-header,.monthly-summary,.monthly-detail-title,.result-continue,.notice-panel>header{flex:none}
-.monthly-panel h3{font-size:15px;margin:0}.monthly-summary ol{list-style:none;padding:0;margin:6px 0 0}.monthly-summary li{padding:2px 0}
-.monthly-panel .finance-lines{flex:1;min-height:0;max-height:none;overflow:auto;margin:0;padding-right:8px;padding-left:32px;overscroll-behavior:contain}
+.interaction.monthly-panel{width:min(780px,calc(100% - var(--game-sidebar-width,0px) - 28px));height:calc(100% - 28px);padding:16px;gap:0}
 .result-continue{align-self:stretch;margin-top:2px}.notice-body{min-height:0;overflow:auto;overscroll-behavior:contain}.notice-body .luck{width:min(300px,100%);max-height:35cqh;object-fit:contain;margin:0 auto 8px}
 .reward-cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}.reward-cards figure{margin:0;text-align:center}.reward-cards figcaption{margin-bottom:8px;font-weight:600}
 .reward-card{display:block;width:96px;height:100px;object-fit:contain;margin:4px auto 12px}
