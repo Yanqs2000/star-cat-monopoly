@@ -1,0 +1,18 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-8d7ac703-59b6-4a8a-bce1-7e708842aab2.png",
+  "prompt": "Use case: precise-object-edit. Image1 is EDIT TARGET, a generated HD square map fragment with WRONG excess transparency across the upper middle. Image2 is EXACT ORIGINAL layout on blue sky for comparison only. Correct ONLY the uppermost region where Image1 wrongly cut away grass. In the original, exterior sky inlet is confined to UPPERLEFT, roughly left0..42% of canvas, reaching at most~19% down. To the RIGHT of42% width, the GRASS runs solidly up to the TOP canvas edge, behind the existing shrubs, all the way to top-right. Fill the invented black/transparent sky strip above the middle/right shrubs with continuous dense yellow-green grass of the existing scale. Never create a long exposed outer ridge across the top; it is an inland grass field at those coordinates. Keep the real upperleft transparent inlet and cropped white cloud/grass contour matching Image2. Blue in Image2 is backdrop ONLY and must be genuinely transparent in that one inlet, never painted blue. Preserve ALL completed lower art from Image1 identically: THREE orange spiral plots, gray stones/brick frames, THREE main leafy shrubs, same road/white dashes, right arrow fragment, wooden fence, cropped left shop and its original tree fragments, every position/count/crop/material and square frame. Do not add a tree, cloud, shrub, plot or object or change lettering. Keep side and bottom anchors stationary. No enclosed pinholes inside grass or objects. Sharp glossy cartoon art, native high-resolution square. Only restore incorrectly removed upper grass; native transparency outside original upperleft inlet.",
+  "referenceRect": [
+    1360,
+    644,
+    312,
+    312
+  ],
+  "neighborCoverageRects": {
+    "r3c5": [
+      1152,
+      692,
+      240,
+      240
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-f1cce41f-44ab-49cb-ba20-53aaecdfa133.png",
+  "prompt": "Use case: precise-object-edit. Asset type: transparent square HD isometric map crop.\nImage 1 EDIT TARGET contains already finished right-hand grass, tree and cropped platform plus a tiny finished bottom anchor. Complete ONLY the unfinished left-hand area using Image 2 original layout. All reference images show exactly the same square coordinates; preserve framing, scale, composition and camera. Keep completed right-hand pixels and the bottom anchor visually identical.\nLeft shape must follow original: green island at upper left edge, an irregular stepped/recessed grass silhouette descending from x~0 at top to x~110 around center and x~180 at bottom. Narrow warm orange-brown rock face follows the grass below the middle, smoothly meeting the finished lower-right cliff. The space to its left is transparent, not white or sky. No extra separate islets, no transparent holes within the grass. Match dense tiny bright yellow-green grass leaves from Image 1, with same leaf size, lighting, outline and terrain shading; never giant lumpy hedge texture. Existing round tree at top and cropped cone-tree platform at right stay unchanged, do not add any more trees. Do not reproduce the faint black arc/scratch in Image 2. No new objects, text, vines, flowers, rocks, clouds or outside shadows. Preserve the original island boundary rather than expanding it into transparent regions. No margins. Single native high-resolution square RGBA.",
+  "referenceRect": [
+    0,
+    1620,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "left-upper-outline-joint-r1",
+      "rect": [
+        80,
+        1740,
+        312,
+        312
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/left-upper-outline-joint-r1/assembled.png"
+    }
+  ]
+}

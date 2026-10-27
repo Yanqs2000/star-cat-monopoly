@@ -1,0 +1,51 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "browser": "local Chrome / SwiftShader",
+  "candidateRect": [
+    640,
+    692,
+    752,
+    480
+  ],
+  "allFiveTextureResolutionsRegistered": true,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "viewport": {
+    "width": 1600,
+    "height": 1200,
+    "pixelScale": 2
+  },
+  "views": [
+    {
+      "actualScreenScale": 2,
+      "camera": {
+        "x": -432,
+        "y": -319,
+        "scale": 1
+      }
+    },
+    {
+      "actualScreenScale": 4,
+      "camera": {
+        "x": -1536,
+        "y": -1170,
+        "scale": 2
+      },
+      "crop": [
+        300,
+        100,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "excludedGeometryCandidates": [
+    "r2c5",
+    "r1c3",
+    "r1c4"
+  ],
+  "errors": [],
+  "renderPreviewPath": "inland-640-692-752-480-render-preview.webp",
+  "packing": "Lossless WebP; decoded pixels match the PNG used during renderer checks"
+}

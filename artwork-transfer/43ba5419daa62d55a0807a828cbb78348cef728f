@@ -1,0 +1,657 @@
+[
+  {
+    "id": "r1c9",
+    "row": 1,
+    "col": 9,
+    "rect": [
+      2112,
+      180,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.002534722222222222,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c9-r1.png",
+        "masterSha256": "0c14949d26ce119b7d721e76bdf2f512f176d9dcb3fff056972d89275bbbdd09",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Complete this square312logical Star Cat Monopoly HD map crop. Image1 EDIT TARGET contains existing LEFT32 and BOTTOM40 anchors around a missing region; Image2 ORIGINAL exact same layout on blue sky for viewing. Most of the square is EXTERIOR SKY and must remain perfectly transparent alpha0, no blue painted backdrop. At upperLEFT, extend ONLY the original single cloud's tapered tail to the RIGHT, matching Image2 exact thin tip length/position, left anchor body/shading/contour, no new lobe or second upper cloud. At BOTTOM, original grassy island edge slopes down from lowerLEFT and rises toward lowerRIGHT, with original white/lightcyan cloudbank BEHIND the grass (two main visible rounded crowns at original positions); complete same existing lower cloudbank to match BOTTOM40 native cloud and grassy contours exactly, no duplicate cloud, bush, rock or object. Maintain open transparent sky between upper-tail and lower-cloudbank. Source blue is not art. Solid grass and actual cloud interiors opaque, soft native antialias only exterior, no accidental holes. Preserve all original counts, crop and coordinates, exact anchor colors, grass leaf scale and cliff/land silhouette. No added tree, building, symbol, star or decoration. Same square camera/frame no zoom/reframe/rescale or moving clipped objects inward. Sharp glossy cartoon grass, smooth white/cyan clouds, retain original thin taper without a dark outline or drop shadow.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1311230,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00024419465366330137,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.4415422885572142,
+            "p95RgbDifference": 7.333333333333333,
+            "visibleCutSamples": 268,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 13.757000903342368,
+            "p95RgbDifference": 66.0,
+            "visibleCutSamples": 738,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c9-r2.png",
+        "masterSha256": "a92aa17055931fb0b36241ff98e42e5babf03365685e56ac658594576734edc2",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Image1 is this newly generated square HD map. Correct ONLY BOTTOM40logical-pixel anchors so they match Image2's existing native BOTTOM40 strip exactly in coordinates, shape, color and texture. The lower grassy island contour and lower white cloudbank shifted slightly in Image1 and therefore do not join the finished map. Restore exact Image2 BOTTOM40 grass leaf scale, grass arc endpoints, black land outline, cloud/grass occlusion edge and two existing cloud crown positions without adding/removing any lobe or object. Keep the rest of Image1 visually identical: upper-left original tapered cloud tail and its tip length/position, all open transparent sky, same lower land and cloud composition. Blend no colors in software; paint one coherent native cartoon scene at the correct existing contour. Same square frame/camera/crop, no rescaling or shifting clipped art inward. Preserve LEFT32 anchor and upper tail exactly. All exterior sky remains clear alpha0, actual white/cyan clouds and grass solid opaque with narrow native antialias, no blue backdrop, shadows, pinholes or extra decorations. Correct bottom registration/material only, retain exact original two separate cloud fragments and source shape/counts.",
+        "generator": "built-in image_gen",
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1368517,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0005729671431006108,
+          "nativeAlphaModified": false
+        },
+        "rejected": "Whole frame omits original two cloud crowns above420; only lower matched context is eligible for source-native reuse",
+        "sourceEligibleRect": [
+          2080,
+          420,
+          312,
+          40
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c9-r3.png",
+        "masterSha256": "0c14949d26ce119b7d721e76bdf2f512f176d9dcb3fff056972d89275bbbdd09",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Complete this square312logical Star Cat Monopoly HD map crop. Image1 EDIT TARGET contains existing LEFT32 and BOTTOM40 anchors around a missing region; Image2 ORIGINAL exact same layout on blue sky for viewing. Most of the square is EXTERIOR SKY and must remain perfectly transparent alpha0, no blue painted backdrop. At upperLEFT, extend ONLY the original single cloud's tapered tail to the RIGHT, matching Image2 exact thin tip length/position, left anchor body/shading/contour, no new lobe or second upper cloud. At BOTTOM, original grassy island edge slopes down from lowerLEFT and rises toward lowerRIGHT, with original white/lightcyan cloudbank BEHIND the grass (two main visible rounded crowns at original positions); complete same existing lower cloudbank to match BOTTOM40 native cloud and grassy contours exactly, no duplicate cloud, bush, rock or object. Maintain open transparent sky between upper-tail and lower-cloudbank. Source blue is not art. Solid grass and actual cloud interiors opaque, soft native antialias only exterior, no accidental holes. Preserve all original counts, crop and coordinates, exact anchor colors, grass leaf scale and cliff/land silhouette. No added tree, building, symbol, star or decoration. Same square camera/frame no zoom/reframe/rescale or moving clipped objects inward. Sharp glossy cartoon grass, smooth white/cyan clouds, retain original thin taper without a dark outline or drop shadow.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1033093,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00034864432407040414,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.038701622971286,
+            "p95RgbDifference": 4.333333333333333,
+            "visibleCutSamples": 267,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 804,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [
+          {
+            "rect": [
+              2080,
+              404,
+              312,
+              56
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1311230,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00024419465366330137,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c9-r3.png",
+    "referenceRect": [
+      2080,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 1.038701622971286,
+        "p95RgbDifference": 4.333333333333333,
+        "visibleCutSamples": 267,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 804,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "rect": [
+          2080,
+          404,
+          312,
+          56
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1033093,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00034864432407040414,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "actual-render-inspected-candidate-not-final-acceptance",
+    "appliedRepairs": [
+      "northeast-cloud-crest-whole-joint-r1"
+    ],
+    "assembledSha256": "69f43efe47fbb74c8226f0cf34831b21a35aac1944c9d5d19ad6696932c6bdc9"
+  },
+  {
+    "id": "r1c10",
+    "row": 1,
+    "col": 10,
+    "rect": [
+      2352,
+      180,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c10-r1.png",
+        "masterSha256": "079799b3a4f5a2d96b6a20380ab43c5ad8cd055dc1b3328ea23339c94005646e",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Complete this square312logical HD map crop. Image1 EDIT TARGET shows finished LEFT32 and BOTTOM40 cloud/grass anchors; Image2 ORIGINAL exact same square on blue sky for viewing. Almost entire canvas is EXTERIOR SKY: output TRANSPARENT alpha0, never a painted blue backdrop. Artwork exists ONLY along lowerLEFT/BOTTOM: original white/lightcyan cloudbank with original large LEFT crest partly cut by frame, one middle rounded crest, small lowerRIGHT scallops tapering out of bottom crop, and original tiny grassy island corner at bottomLEFT. Preserve exact source lobe count, cloudbank position/scale/crop and grass silhouette, matching all Image1 finished left and bottom anchors in geometry, color and shading; no added cloud, puff, grass patch, tree, plant, star or decoration elsewhere. The existing lower cloudbank remains ONE body and its solid interiors fully opaque, no pinholes or translucent white holes; native soft antialias only outside outline. Preserve clear sky above and at RIGHT. No upper cloud or cloud tail belongs here. Same square camera/frame no zoom/reframe/rescale or moving cropped art inward. Smooth white/cyan cloud volume and sharp glossy cartoon grass consistent with native neighbors; no drop shadow, aura, dark outline or broad alpha glow.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1451546,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00012082547967715432,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 17.17929292929293,
+            "p95RgbDifference": 60.633333333333326,
+            "visibleCutSamples": 132,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 2.0311890838206623,
+            "p95RgbDifference": 5.0,
+            "visibleCutSamples": 342,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c10-r2.png",
+        "masterSha256": "3e13c149c2dece53da6909ec93bce770b7641d8a449ce8320b400240d39d3a2f",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Image1 is the current square HD cloudbank edge. Image2 has the authoritative completed LEFT32 and BOTTOM40 anchor bands of the same exact square. Fix Image1's LEFT32 cloud contour and white/cyan shading to match Image2 exactly at identical coordinates, especially the partly clipped large lowerLEFT cloud crest near80–90%down. Its slope/top is shifted relative to the finished left neighbor. Continue that ONE original crest naturally from the exact Image2 left curve; no spike, vertical jump, clipped white triangle, duplicated rim or extra lobe at the join. Keep Image1 BOTTOM40 identical and preserve same original middle crest and lower-right scallops, tiny grass corner, all object counts and original transparent sky. Do not copy a cropped strip as a whole new cloud or move the cloudbank up/down; correct only left registration while preserving source lobe structure. All other positions/crop/frame unchanged; square no zoom/reframe. Solid cloud interior opaque; outside sky alpha0 with narrow clean native antialias, no blue backdrop, new clouds, halos or holes. Sharp native geometry, smooth original cyan/white shading.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1452739,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0002333839528500823,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 16.048780487804876,
+            "p95RgbDifference": 58.23333333333333,
+            "visibleCutSamples": 123,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 2.3333333333333335,
+            "p95RgbDifference": 5.0,
+            "visibleCutSamples": 331,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r1c10-r3.png",
+        "masterSha256": "3e13c149c2dece53da6909ec93bce770b7641d8a449ce8320b400240d39d3a2f",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2320,
+          148,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Image1 is the current square HD cloudbank edge. Image2 has the authoritative completed LEFT32 and BOTTOM40 anchor bands of the same exact square. Fix Image1's LEFT32 cloud contour and white/cyan shading to match Image2 exactly at identical coordinates, especially the partly clipped large lowerLEFT cloud crest near80–90%down. Its slope/top is shifted relative to the finished left neighbor. Continue that ONE original crest naturally from the exact Image2 left curve; no spike, vertical jump, clipped white triangle, duplicated rim or extra lobe at the join. Keep Image1 BOTTOM40 identical and preserve same original middle crest and lower-right scallops, tiny grass corner, all object counts and original transparent sky. Do not copy a cropped strip as a whole new cloud or move the cloudbank up/down; correct only left registration while preserving source lobe structure. All other positions/crop/frame unchanged; square no zoom/reframe. Solid cloud interior opaque; outside sky alpha0 with narrow clean native antialias, no blue backdrop, new clouds, halos or holes. Sharp native geometry, smooth original cyan/white shading.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1082397,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 8.349114076422836e-05,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 90,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 363,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [
+          {
+            "rect": [
+              2080,
+              404,
+              312,
+              56
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+          },
+          {
+            "rect": [
+              2288,
+              356,
+              176,
+              176
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-crest-whole-joint-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1452739,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0002333839528500823,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c10-r3.png",
+    "referenceRect": [
+      2320,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 90,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 363,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "rect": [
+          2080,
+          404,
+          312,
+          56
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-bank-native-reuse-r1/assembled.png"
+      },
+      {
+        "rect": [
+          2288,
+          356,
+          176,
+          176
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/northeast-cloud-crest-whole-joint-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 1082397,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 8.349114076422836e-05,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "actual-render-inspected-candidate-not-final-acceptance",
+    "assembledSha256": "750abeea3b6928ae18fb559086f44d4766d86248eb3a3e06e92f4381b204ee19",
+    "repairAttempts": [
+      {
+        "id": "northeast-cloud-horizontal-native-reuse-r1",
+        "applied": false,
+        "rejected": "Wide native overlap meets numeric thresholds but creates a visible cusp in cloud outline; never exported",
+        "evidence": "public/modern/hd-masters/map/full-map-v1/references/batch-17/northeast-cloud-horizontal-native-reuse-r1/proposed-on-sky.png"
+      }
+    ]
+  },
+  {
+    "id": "r0c9",
+    "row": 0,
+    "col": 9,
+    "rect": [
+      2112,
+      0,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c9-r1-native-reused.png",
+        "masterSha256": "0c14949d26ce119b7d721e76bdf2f512f176d9dcb3fff056972d89275bbbdd09",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          148,
+          312,
+          312
+        ],
+        "generator": "built-in image_gen native context reuse",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "sourceNativeMaster": "public/modern/hd-masters/map/full-map-v1/masters/r1c9-r3.png",
+        "sourceNativeSha256": "0c14949d26ce119b7d721e76bdf2f512f176d9dcb3fff056972d89275bbbdd09",
+        "nativeAlphaAuditBeforePadding": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1311230,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00024419465366330137,
+          "nativeAlphaModified": false
+        },
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 818496,
+          "solidAlphaMedian": null,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false,
+          "sourceHasNoSolidArtwork": true,
+          "sourceMaxAlpha": 82,
+          "sourceNonzeroAlphaPixels": 9,
+          "nativeCoreMaxAlpha": 1
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 35520,
+          "nativeAlphaModified": false
+        },
+        "prompt": "Reuse validated r1c9 native top context for this sky-edge-only cell; transparent padding only where the original map is exactly transparent."
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c9-r1-native-reused.png",
+    "referenceRect": [
+      2080,
+      148,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "transparentContextOnly": true,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 818496,
+      "solidAlphaMedian": null,
+      "fullyOpaqueFraction": 0.0,
+      "nativeAlphaModified": false,
+      "sourceHasNoSolidArtwork": true,
+      "sourceMaxAlpha": 82,
+      "sourceNonzeroAlphaPixels": 9,
+      "nativeCoreMaxAlpha": 1
+    },
+    "assembledSha256": "3feb2b8d4eb6d24946938eeb830b0484576971984cd058cb8e5b1c761fc2c9d8",
+    "reviewStatus": "native-sky-edge-context-and-transparent-padding-verified"
+  },
+  {
+    "id": "r0c8",
+    "row": 0,
+    "col": 8,
+    "rect": [
+      1872,
+      0,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.0031944444444444446,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r0c8-r1.png",
+        "masterSha256": "9a49129ada65b8db2def98aadd676191b3849b1a206110f9d4a07e5966cfd248",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1840,
+          0,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit, native map OUTPAINT. Image1 square312logical crop already contains completed sharp native cloud from y148 to bottom312; its main white crown is wrongly FLAT-CUT at y148 only because upper art has not been made. Image2 ORIGINAL exact same square shows the intended full cloud silhouette. Extend Image1 upward to restore ONLY missing original top cap: original tallest rounded white/cyan crown reaches approximately y124, with same neighboring lobes and original contour matching Image2. Retain existing native positions, scale, lobe count, colors and shading; especially preserve the ONE existing painted cyan curl and entire lower cloud body at exactly its present coordinates. Do not add a curl, lobe, separate cloud, star, object or decoration. Keep completed LOWER164logical-pixel body/anchors visually identical and stationary; continue cut outline endpoints smoothly upward, no flat shelf, disconnected cap, rectangular cut or extra ridge at old y148. The rest of upper canvas is EXTERIOR SKY: clear transparent alpha0, no opaque blue backdrop. Solid white/cyan cloud interiors opaque, soft narrow native antialias at outer contour only; no pinholes or translucent highlights. Same square camera/crop, no zoom/reframe/rescale or moving the cloud inward. Match original cloud structure and existing native lower body, smooth original white/cyan volume, no drop shadow or aura.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 688580,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0005456010155258275,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0,
+            "p95RgbDifference": 0,
+            "visibleCutSamples": 0,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 1.0249759846301634,
+            "p95RgbDifference": 3.3333333333333335,
+            "visibleCutSamples": 1041,
+            "maximumChangedPixels": 62
+          }
+        ],
+        "unusedContextCaution": null,
+        "sourceSkyReference": true,
+        "sharedRepairs": [],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 1102746,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000658180902451867,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r0c8-r1.png",
+    "referenceRect": [
+      1840,
+      0,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0,
+        "p95RgbDifference": 0,
+        "visibleCutSamples": 0,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 1.0249759846301634,
+        "p95RgbDifference": 3.3333333333333335,
+        "visibleCutSamples": 1041,
+        "maximumChangedPixels": 62
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [],
+    "sourceSkyReference": true,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 688580,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0005456010155258275,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "actual-render-inspected-candidate-not-final-acceptance",
+    "assembledSha256": "a7537f7a6035816df48abeddcea6cf6d9d55c2e7245eb7bb994627add11214cc"
+  }
+]
