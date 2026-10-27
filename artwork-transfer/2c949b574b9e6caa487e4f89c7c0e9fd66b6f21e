@@ -1,0 +1,254 @@
+{
+  "renderer": "actual createMapScene / Pixi",
+  "browser": "local Chrome / SwiftShader",
+  "fixtureOnly": true,
+  "productionManifestModified": false,
+  "regionCount": 40,
+  "legacyApprovedTilesAlsoLoaded": 4,
+  "allTextureResolutionsRegistered": true,
+  "commonNativeGrid": true,
+  "bleedPixels": 5,
+  "waitsForNativeBitmapDecoding": true,
+  "views": [
+    {
+      "name": "overview",
+      "width": 1800,
+      "height": 1600,
+      "camera": {
+        "x": -78.26666666666665,
+        "y": -65.31111111111107,
+        "scale": 0.37777777777777777,
+        "following": false
+      },
+      "viewportScale": 2.25,
+      "actualScreenScale": 0.85,
+      "sourceFocus": [
+        1450,
+        1280
+      ],
+      "pending": 0,
+      "decodedCount": 50
+    },
+    {
+      "name": "north-new-2x",
+      "width": 1800,
+      "height": 1400,
+      "camera": {
+        "x": -1207.111111111111,
+        "y": -97.33333333333331,
+        "scale": 0.8888888888888888,
+        "following": false
+      },
+      "viewportScale": 2.25,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        1992,
+        760
+      ],
+      "pending": 0,
+      "decodedCount": 50
+    },
+    {
+      "name": "grass-fence-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4016,
+        "y": -1350.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1840,
+        932
+      ],
+      "pending": 0,
+      "decodedCount": 50,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "bush-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4101.333333333333,
+        "y": -1052,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1872,
+        820
+      ],
+      "pending": 0,
+      "decodedCount": 51,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "pillar-join-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4421.333333333333,
+        "y": -668,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        1992,
+        676
+      ],
+      "pending": 0,
+      "decodedCount": 53,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "ride-2x",
+      "width": 1600,
+      "height": 1400,
+      "camera": {
+        "x": -1656,
+        "y": -227,
+        "scale": 1,
+        "following": false
+      },
+      "viewportScale": 2,
+      "actualScreenScale": 2,
+      "sourceFocus": [
+        2240,
+        840
+      ],
+      "pending": 0,
+      "decodedCount": 61
+    },
+    {
+      "name": "ride-base-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -5061.333333333333,
+        "y": -1350.6666666666665,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2232,
+        932
+      ],
+      "pending": 0,
+      "decodedCount": 61,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    },
+    {
+      "name": "ride-parcel-4x",
+      "width": 1200,
+      "height": 1200,
+      "camera": {
+        "x": -4741.333333333333,
+        "y": -945.3333333333333,
+        "scale": 2.6666666666666665,
+        "following": false
+      },
+      "viewportScale": 1.5,
+      "actualScreenScale": 4,
+      "sourceFocus": [
+        2112,
+        780
+      ],
+      "pending": 0,
+      "decodedCount": 63,
+      "clip": {
+        "x": 200,
+        "y": 200,
+        "width": 800,
+        "height": 800
+      }
+    }
+  ],
+  "requestedReviewAtlases": [
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c11.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c5.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r6c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r7c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r7c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r7c6.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r7c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r7c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r8c2.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r8c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r8c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r8c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/sign.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c3.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c4.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r3c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r4c10.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c7.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r5c9.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c8.webp",
+    "/hd-masters/map/full-map-v1/reviews/batch-07/r2c9.webp"
+  ],
+  "errors": []
+}

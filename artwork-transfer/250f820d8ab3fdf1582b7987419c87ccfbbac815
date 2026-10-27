@@ -1,0 +1,65 @@
+{
+  "runtime": "24.19.0",
+  "sqlite": "3.53.3",
+  "endpoints": [
+    {
+      "port": 4186,
+      "pageHTTP": 200,
+      "sessionHTTP": 200,
+      "listHTTP": 200,
+      "slots": {
+        "slots": [
+          {
+            "slot": 1,
+            "revision": 0,
+            "savedAt": null,
+            "summary": null
+          },
+          {
+            "slot": 2,
+            "revision": 0,
+            "savedAt": null,
+            "summary": null
+          },
+          {
+            "slot": 3,
+            "revision": 0,
+            "savedAt": null,
+            "summary": null
+          }
+        ]
+      }
+    },
+    {
+      "port": 4184,
+      "pageHTTP": 200,
+      "sessionHTTP": 200,
+      "listHTTP": 200,
+      "slots": {
+        "slots": [
+          {
+            "slot": 1,
+            "revision": 0,
+            "savedAt": null,
+            "summary": null
+          },
+          {
+            "slot": 2,
+            "revision": 0,
+            "savedAt": null,
+            "summary": null
+          },
+          {
+            "slot": 3,
+            "revision": 0,
+            "savedAt": null,
+            "summary": null
+          }
+        ]
+      }
+    }
+  ],
+  "formalSavedRows": 0,
+  "directoryMode": "700",
+  "fileMode": "600"
+}

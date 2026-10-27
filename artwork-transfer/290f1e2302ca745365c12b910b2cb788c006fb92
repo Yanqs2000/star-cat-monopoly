@@ -1,0 +1,54 @@
+{
+  "status": "candidate-needs-seam-calibration",
+  "nativeSize": [
+    1254,
+    1254
+  ],
+  "pixelDensity": 4.354166666666667,
+  "sourceContentRect": [
+    1152,
+    420,
+    256,
+    256
+  ],
+  "sceneContentRect": [
+    968,
+    107,
+    256,
+    256
+  ],
+  "worldOffset": [
+    -184,
+    -313
+  ],
+  "originalCoverageIoU": 0.9724124367524271,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "masterSha256": "5b055be59cdf3b3b466887bb211f49b0d1cd5b067509c1d707d0e85d470dd35e",
+  "r02ChangedPixelCount": 1369619,
+  "r02ChangedBounds": [
+    0,
+    0,
+    1254,
+    1254
+  ],
+  "r02AlphaChangedPixels": 1172124,
+  "productionInstalled": false,
+  "fullMapReferenceGridStill110": true,
+  "notCountedAsApprovedFullMapTile": true,
+  "knownRemaining": [
+    "seam transition with approved neighboring map, including shared green marker and vegetation",
+    "100 percent pixel and actual-game overlay verification before production"
+  ],
+  "promptPaths": [
+    "public/modern/hd-masters/map/experiments/map-extension-m01-reference/generation-prompt.md",
+    "public/modern/hd-masters/map/experiments/map-extension-m01-reference/refinement-r02.md"
+  ],
+  "generator": "built-in image_gen",
+  "originalPromptPaths": [
+    ".analysis-cache/hd-rework/reference/map-extension-m01/generation-prompt.md",
+    ".analysis-cache/hd-rework/reference/map-extension-m01/refinement-r02.md"
+  ]
+}

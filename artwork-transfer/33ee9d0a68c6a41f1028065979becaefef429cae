@@ -1,0 +1,8 @@
+...../Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch23_cloud.py:21: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/public/modern/hd-masters/map/full-map-v1/reviews/batch-23/draw-regions.json' mode='r' encoding='UTF-8'>
+  rows=json.load(open(OUT/'draw-regions.json'));r=next(r for r in rows if r.get('label')=='upper-cloud-complete-r2');self.assertEqual(r['replacementRect'],[1752,116,456,184]);a=Image.open(F/'assembled.png').convert('RGBA');b=Image.open(m.ROOT/'public/modern'/r['url']).convert('RGBA');self.assertTrue(np.array_equal(np.array(a),np.array(b)));self.assertTrue(r['drawAfterApproved'])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.
+----------------------------------------------------------------------
+Ran 6 tests in 0.579s
+
+OK
