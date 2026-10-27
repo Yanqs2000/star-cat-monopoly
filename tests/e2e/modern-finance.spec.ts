@@ -78,8 +78,12 @@ test('自然开局 seed17 在第2轮银行完成存取、借还、授信与信�
   await page.setViewportSize({ width: 1920, height: 1080 })
   await revealGameDetails(page); await page.getByRole('button', { name: '全屏', exact: true }).click()
   await expect.poll(() => page.evaluate(() => document.fullscreenElement?.classList.contains('game-stage'))).toBe(true)
+  await expect.poll(async () => {
+    const board = (await page.locator('canvas').boundingBox())!, host = (await page.locator('.canvas-host').boundingBox())!
+    return Math.max(Math.abs(board.width-host.width),Math.abs(board.height-host.height))
+  }).toBeLessThan(1)
+  await expect.poll(() => page.locator('canvas').evaluate((canvas: HTMLCanvasElement) => Math.abs(canvas.width / canvas.clientWidth - canvas.height / canvas.clientHeight))).toBeLessThan(.01)
   const board = (await page.locator('canvas').boundingBox())!
-  expect(board.width / board.height).toBeCloseTo(4 / 3, 2)
   expect(board.y + board.height).toBeLessThanOrEqual(1080)
 })
 

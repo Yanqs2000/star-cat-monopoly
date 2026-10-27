@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import CompanyCalculator from './CompanyCalculator.vue'
+import PlayerWallet from './PlayerWallet.vue'
 import MonthlySettlement from './MonthlySettlement.vue'
 import { financeLabels, actualChanges } from './finance-presentation'
 import { computed, defineAsyncComponent, nextTick, ref, watch } from 'vue'
 import { getCardDefinition } from './card-economy'
-import type { BankOperation } from './bank-operations'
+import { applyBankOperation, type BankOperation } from './bank-operations'
 import { maxCompanySubscription } from './company'
 import { maxStockBuy } from './stock-trading'
 import type { DirectCardChoice } from './direct-cards'
@@ -174,6 +175,27 @@ const bankMax = computed(() => {
     case 'repay-credit': return Math.max(0, Math.min(player.value.cash, account?.used ?? 0))
   }
 })
+const uiImage = (name: string) => `${import.meta.env.BASE_URL}assets/ui/${name}.png`
+const preparedImage = (path: string) => props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`
+const portraitUrl = (characterId: number) => preparedImage(`assets/monthly/champions/${characterId}.png`)
+const dieImage = (value: number) => preparedImage(profileAssetUrl(`assets/activities/ludo-face-${value}/1.png`, props.assetProfile))
+const bankPreview = computed(() => {
+  const entry = applyBankOperation(props.game, player.value.id, bankAction.value, bankAmount.value).entry
+  const label = ['deposit','withdraw'].includes(bankAction.value) ? '存款' : bankAction.value === 'repay-credit' ? '已用信用' : '贷款'
+  return [{ label: '现金', amount: entry?.cashDelta ?? 0 }, { label, amount: label === '存款' ? entry?.depositDelta ?? 0 : label === '贷款' ? entry?.loanDelta ?? 0 : entry?.creditUsedDelta ?? 0 }]
+})
+const signed = (value: number) => `${value > 0 ? '+' : ''}${value}`
+const financeChanges = computed(() => {
+  const entry = interaction.value?.kind === 'notice' ? interaction.value.notice.financeEntry : undefined
+  return entry ? [['现金',entry.cashDelta],['存款',entry.depositDelta],['贷款',entry.loanDelta],['已用信用',entry.creditUsedDelta],['可用信用',entry.creditAvailableDelta],['持股',entry.sharesDelta]]
+    .filter((item): item is [string, number] => typeof item[1] === 'number' && item[1] !== 0).map(([label, amount]) => ({label,amount})) : []
+})
+const noticeArt = computed(() => {
+  const notice = interaction.value?.kind === 'notice' ? interaction.value.notice : undefined
+  if (notice?.financeEntry?.kind === 'credit-granted') return cardAssetUrl(1)
+  const frame = notice?.npcId ? activityClip(`mini-npc-${notice.npcId}`)?.frames[0] : undefined
+  return frame ? `${import.meta.env.BASE_URL}${frame.url}` : undefined
+})
 const chosenStock = computed(() => props.game.finance.stocks[stockId.value]!)
 const stockBuyMaximum = computed(() => maxStockBuy(props.game, player.value.id, stockId.value))
 const stockSellMaximum = computed(() => chosenStock.value.holdings[player.value.id]?.shares ?? 0)
@@ -258,7 +280,7 @@ watch(stockId, () => { stockShares.value = 1 })
 </script>
 
 <template>
-  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'targeting-panel': interaction.kind === 'target-choice', 'monthly-panel': interaction.kind === 'monthly-settlement', 'notice-panel': interaction.kind === 'notice' && !presentationBlocking, 'minigame-panel': ['ludo','carnival'].includes(interaction.kind), 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
+  <section v-if="interaction" class="interaction" :style="{ '--activity-width': `${presentationClip?.frames[0]?.width ?? 462}px` }" :class="{ 'targeting-panel': interaction.kind === 'target-choice', 'financial-panel': ['bank','stock'].includes(interaction.kind), 'shop-panel': interaction.kind === 'shop', 'monthly-panel': interaction.kind === 'monthly-settlement', 'notice-panel': interaction.kind === 'notice' && !presentationBlocking, 'minigame-panel': ['ludo','carnival'].includes(interaction.kind), 'exchange-panel': interaction.kind === 'ticket-exchange', 'portal-panel': interaction.kind === 'portal', 'court-panel': interaction.kind === 'court', 'court-transfer': interaction.kind==='court' && ['transfer','holding'].includes(interaction.stage), 'presentation-panel': presentationBlocking && !['portal','court'].includes(interaction.kind) }" role="dialog" aria-label="对局交互" data-testid="interaction-panel">
     <CarnivalStage v-if="interaction.kind==='carnival' && activityAssets" :game="interaction.game" :paused="paused" :human="player.controller==='human'" :assets="activityAssets" @input="emit('carnival-input',$event)" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <LudoActivity v-else-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" :asset-profile="assetProfile" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <template v-else-if="interaction.kind === 'portal'">
@@ -308,7 +330,7 @@ watch(stockId, () => { stockShares.value = 1 })
         <img :src="cardAssetUrl(card.id)" :alt="card.name" @error="reportImageError">
         <div><span class="eyebrow">使用卡片</span><h2>{{ card.name }}</h2><p>{{ card.description }}</p></div>
       </div>
-      <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
+      <PlayerWallet class="balance" :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <p v-if="cardInteraction.choiceError" class="error" role="alert">{{ cardInteraction.choiceError }}</p>
       <div v-if="cardInteraction.kind === 'card-confirm'" class="actions">
         <button data-testid="interaction-confirm" :disabled="!canAct" @click="emit('confirm')">确认使用</button>
@@ -316,7 +338,7 @@ watch(stockId, () => { stockShares.value = 1 })
       </div>
       <div v-else-if="cardInteraction.kind === 'dice-choice'" class="choice">
         <strong>选择下一次掷骰点数</strong>
-        <div class="dice"><button v-for="value in 6" :key="value" :data-testid="`dice-${value}`" :disabled="!canAct" @click="emit('choose', { kind: 'dice', value })">{{ value }}</button></div>
+        <div class="dice"><button v-for="value in 6" :key="value" :data-testid="`dice-${value}`" :disabled="!canAct" @click="emit('choose', { kind: 'dice', value })"><img :src="dieImage(value)" alt="" @error="reportImageError"><span>{{ value }}</span></button></div>
         <button data-testid="interaction-cancel" :disabled="!canAct" @click="emit('cancel')">取消</button>
       </div>
       <form v-else-if="cardInteraction.kind === 'credit-choice'" data-testid="credit-form" class="choice" @submit.prevent="emit('choose', { kind: 'credit', amount: creditAmount })">
@@ -328,30 +350,30 @@ watch(stockId, () => { stockShares.value = 1 })
       </form>
       <div v-else class="choice target-choice">
         <strong>{{ card.name }} · 在地图上点击目标格</strong><p>拖动地图不会提交；玩家卡也可直接选择下方真实位置。</p>
-        <div class="target-actions"><div class="targets"><button v-for="target in targetPlayers" :key="target.id" :data-testid="`target-player-${target.id}`" :disabled="!canAct" @click="emit('choose', { kind: 'cell', position: target.position })">{{ target.name }} · {{ target.position.column }},{{ target.position.row }}</button></div>
+        <div class="target-actions"><div class="targets"><button v-for="target in targetPlayers" :key="target.id" :data-testid="`target-player-${target.id}`" :disabled="!canAct" @click="emit('choose', { kind: 'cell', position: target.position })"><img :src="portraitUrl(target.characterId)" alt="" @error="reportImageError"><span>{{ target.name }}<small>{{ target.position.column }},{{ target.position.row }}</small></span></button></div>
         <button data-testid="interaction-cancel" :disabled="!canAct" @click="emit('cancel')">取消</button></div>
       </div>
     </template>
 
     <template v-else-if="interaction.kind === 'shop'">
-      <span class="eyebrow">卡片屋</span><h2>12 格真实库存</h2>
-      <p class="balance">{{ player.name }} · 奖券 {{ game.tickets[player.id] }} · 手牌 {{ inventory.length }}/24</p>
-      <div class="shop-grid">
+      <header class="desk-heading"><img :src="uiImage('tickets')" alt="" @error="reportImageError"><div><span class="eyebrow">卡片屋</span><h2>挑选你的下一张好牌</h2></div><small>12 格库存</small></header>
+      <PlayerWallet :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <div class="shop-grid" tabindex="0" aria-label="卡片库存，可上下滚动">
         <button v-for="(cardId, slot) in interaction.shop.stock" :key="slot" data-testid="shop-slot" :disabled="!canAct || cardId === null" @click="emit('buy', slot)">
           <template v-if="cardId !== null"><img :src="cardAssetUrl(cardId)" :alt="getCardDefinition(cardId).name" @error="reportImageError"><span>{{ getCardDefinition(cardId).name }}</span><small>售价 {{ getCardDefinition(cardId).price }}</small></template><span v-else>售罄</span>
         </button>
       </div>
-      <strong>出售手牌</strong>
-      <div class="sell-list"><button v-for="(cardId, index) in inventory" :key="index" :disabled="!canAct" @click="emit('sell', index)">{{ getCardDefinition(cardId).name }} · {{ getCardDefinition(cardId).price }}券</button></div>
+      <div class="inventory-label"><strong>出售手牌</strong><span>手牌 {{ inventory.length }}/24</span></div>
+      <div class="sell-list"><button v-for="(cardId, index) in inventory" :key="index" :disabled="!canAct" @click="emit('sell', index)"><img :src="cardAssetUrl(cardId)" alt="" @error="reportImageError"><span>{{ getCardDefinition(cardId).name }}<small>{{ getCardDefinition(cardId).price }}券</small></span></button></div>
       <button :disabled="!canAct" @click="emit('leave-shop')">离开卡片屋</button>
     </template>
 
     <template v-else-if="interaction.kind === 'bank'">
-      <span class="eyebrow">银行</span><h2>银行业务</h2>
-      <p class="balance">{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</p>
-      <p>信用评分 {{ game.credit[player.id]?.score }} · 已用 {{ game.credit[player.id]?.used }} · 可用 {{ game.credit[player.id]?.available }}</p>
+      <header class="desk-heading"><img :src="uiImage('emblem')" alt="" @error="reportImageError"><div><span class="eyebrow">明日银行</span><h2>银行业务</h2></div></header>
+      <PlayerWallet :player="player" :loan="game.finance.loans[player.id] ?? 0" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <div class="credit-summary"><img :src="cardAssetUrl(1)" alt="信用卡" @error="reportImageError"><span>信用评分 <strong>{{ game.credit[player.id]?.score }}</strong></span><span>已用 <strong>{{ game.credit[player.id]?.used }}</strong></span><span>可用 <strong>{{ game.credit[player.id]?.available }}</strong></span></div>
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
-      <form class="choice" data-testid="bank-form" @submit.prevent="emit('bank-operation', bankAction, bankAmount)">
+      <form class="choice bank-form" data-testid="bank-form" @submit.prevent="emit('bank-operation', bankAction, bankAmount)">
         <label>办理业务
           <select v-model="bankAction" data-testid="bank-operation" :disabled="!canAct">
             <option value="withdraw">取款</option><option value="deposit">存款</option>
@@ -362,7 +384,8 @@ watch(stockId, () => { stockShares.value = 1 })
         <label>金额
           <input v-model.number="bankAmount" data-testid="bank-amount" type="number" min="0" step="1" :max="bankMax" :disabled="!canAct">
         </label>
-        <small>本次上限 {{ bankMax }}</small>
+        <div class="transfer-preview" data-testid="bank-preview"><span v-for="(item,index) in bankPreview" :key="item.label" :class="{decrease: ['贷款','已用信用'].includes(item.label) ? item.amount>0 : item.amount<0}"><small>{{ item.label }}{{ ' ' }}</small><strong>{{ signed(item.amount) }}</strong><b v-if="index===0" aria-hidden="true">→</b></span></div>
+        <small class="form-limit">本次上限 {{ bankMax }}</small>
         <div class="actions"><button type="submit" :disabled="!canAct">确认办理</button><button type="button" :disabled="!canAct" @click="emit('request-credit')">申请信用卡</button><button type="button" :disabled="!canAct" @click="emit('leave-bank')">离开银行</button></div>
       </form>
     </template>
@@ -372,8 +395,8 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'stock'">
-      <span class="eyebrow">股市</span><h2>股票交易</h2>
-      <p class="balance">{{ player.name }} · 现金 {{ player.cash }}</p>
+      <header class="desk-heading"><span class="market-emblem" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 5v24h25M11 23l7-9 5 4 8-11M25 7h6v6"/></svg></span><div><span class="eyebrow">股市</span><h2>股票交易</h2></div></header>
+      <PlayerWallet :player="player" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
       <div class="choice">
         <label>公司
@@ -381,11 +404,11 @@ watch(stockId, () => { stockShares.value = 1 })
             <option v-for="stock in game.finance.stocks.slice(1, 13)" :key="stock.id" :value="stock.id">{{ stock.name }}</option>
           </select>
         </label>
-        <p>{{ chosenStock.name }} · 现价 {{ chosenStock.price }} · 涨跌 {{ chosenStock.change }} · 当日可买 {{ chosenStock.dailyBuyLimit }} · 已持 {{ chosenStock.holdings[player.id]?.shares ?? 0 }}</p>
+        <div class="stock-quote" data-testid="stock-quote"><div><strong>{{ chosenStock.name }}</strong><span class="quote-price">现价 <b>{{ chosenStock.price }}</b></span></div><span class="quote-change" :class="{decrease:chosenStock.change<0}">{{ chosenStock.change>0?'▲':chosenStock.change<0?'▼':'—' }} {{ signed(chosenStock.change) }}</span><dl><div><dt>{{ '当日可买 ' }}</dt><dd>{{ chosenStock.dailyBuyLimit }}</dd></div><div><dt>已持 {{ chosenStock.holdings[player.id]?.shares ?? 0 }} 股</dt><dd>均价 {{ chosenStock.holdings[player.id]?.averageCost ?? 0 }}</dd></div><div><dt>最高 / 最低</dt><dd>{{ chosenStock.high }} / {{ chosenStock.low }}</dd></div></dl></div>
         <label>股数
           <input v-model.number="stockShares" data-testid="stock-shares" type="number" min="1" step="1" :max="Math.max(stockBuyMaximum, stockSellMaximum)" :disabled="!canAct">
         </label>
-        <p>成交额 {{ Number.isFinite(stockGross) ? stockGross.toFixed(2) : '—' }} · 买入现金 -{{ Number.isFinite(stockGross) ? Math.trunc(stockGross) : '—' }} · 卖出现金 +{{ Number.isFinite(stockGross) ? Math.trunc(stockGross) : '—' }}</p>
+        <p class="trade-preview" data-testid="stock-preview">成交额 {{ Number.isFinite(stockGross) ? stockGross.toFixed(2) : '—' }} · 买入现金 -{{ Number.isFinite(stockGross) ? Math.trunc(stockGross) : '—' }} · 卖出现金 +{{ Number.isFinite(stockGross) ? Math.trunc(stockGross) : '—' }}</p>
         <small>最多可买 {{ stockBuyMaximum }} 股 · 最多可卖 {{ stockSellMaximum }} 股</small>
         <div class="actions"><button data-testid="stock-buy" :disabled="!canAct || !Number.isInteger(stockShares) || stockShares < 1 || stockShares > stockBuyMaximum" @click="emit('trade-stock', 'buy', stockId, stockShares)">买入</button><button data-testid="stock-sell" :disabled="!canAct || !Number.isInteger(stockShares) || stockShares < 1 || stockShares > stockSellMaximum" @click="emit('trade-stock', 'sell', stockId, stockShares)">卖出</button><button :disabled="!canAct" @click="emit('leave-stock')">离开股市</button></div>
       </div>
@@ -414,18 +437,18 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'notice'">
-      <header><span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2></header>
+      <header class="notice-heading"><img v-if="noticeArt" data-testid="notice-art" :src="noticeArt" :alt="interaction.notice.financeEntry?.kind === 'credit-granted' ? '信用卡' : godNames[interaction.notice.npcId ?? 0] ?? '遭遇角色'" @error="reportImageError"><img v-else-if="interaction.notice.financeEntry" :src="uiImage('cash')" alt="" @error="reportImageError"><div><span class="eyebrow">结算结果</span><h2>{{ noticeText(interaction) }}</h2></div></header>
       <div class="notice-body" tabindex="0" aria-label="结算详情">
       <div v-if="receivedCards.length" class="reward-cards"><figure v-for="(cardId,index) in receivedCards" :key="index">
         <img class="reward-card" :src="cardAssetUrl(cardId)" :alt="getCardDefinition(cardId).name" @error="reportImageError">
         <figcaption>{{ getCardDefinition(cardId).name }}</figcaption>
       </figure></div>
       <img v-if="interaction.notice.luckEvent" data-testid="luck-image" class="luck" :src="luckAssetUrl(interaction.notice.luckEvent.id)" :alt="`运气事件 ${interaction.notice.luckEvent.id}`" @error="reportImageError">
-      <p v-if="interaction.notice.financeEntry" class="amount">{{ actualChanges(interaction.notice.financeEntry) || '账户无变化' }}</p>
+      <div v-if="interaction.notice.financeEntry" class="amount changes-grid"><span v-for="item in financeChanges" :key="item.label" class="finance-change" :class="{decrease: ['贷款','已用信用'].includes(item.label) ? item.amount>0 : item.amount<0}">{{ item.label }} <strong>{{ signed(item.amount) }}</strong></span><span v-if="!financeChanges.length">账户无变化</span></div>
       <p v-else-if="interaction.notice.receipt" data-testid="activity-receipt" class="amount">{{ activityChanges(interaction.notice.receipt) }}</p>
       <p v-else-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && [2,3].includes(interaction.notice.npcId ?? 0) ? '现金' : interaction.notice.luckEvent?.kind === 'tickets' || interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
-      <p>{{ player.name }} · 现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</p>
-      <p>状态：{{ statusText }}</p>
+      <PlayerWallet :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <p class="notice-status">状态：{{ statusText }}</p>
       </div>
       <button class="result-continue" data-testid="interaction-acknowledge" :disabled="!canAct" @click="emit('acknowledge')">知道了，继续</button>
     </template>
@@ -444,4 +467,8 @@ watch(stockId, () => { stockShares.value = 1 })
 .result-continue{align-self:stretch;margin-top:2px}.notice-body{min-height:0;overflow:auto;overscroll-behavior:contain}.notice-body .luck{width:min(300px,100%);max-height:35cqh;object-fit:contain;margin:0 auto 8px}
 .reward-cards{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}.reward-cards figure{margin:0;text-align:center}.reward-cards figcaption{margin-bottom:8px;font-weight:600}
 .reward-card{display:block;width:96px;height:100px;object-fit:contain;margin:4px auto 12px}
+
+.interaction.financial-panel{width:min(620px,calc(100% - var(--game-sidebar-width,0px) - 28px));padding:16px 18px}.desk-heading{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex:none}.desk-heading>img,.market-emblem{width:40px;height:40px;object-fit:contain;flex:none}.desk-heading h2{font-size:21px;line-height:1.2;margin:2px 0;color:#1766a4}.desk-heading .eyebrow{letter-spacing:.08em}.desk-heading>small{margin-left:auto;font-size:10px;color:#5b83a2;white-space:nowrap}.market-emblem{display:grid;place-items:center;background:linear-gradient(#d7f0ff,#80c5f6);border-radius:12px;color:#186baa;box-shadow:inset 0 0 0 1px #77b8e8}.market-emblem svg{width:30px;height:30px}.financial-panel .player-wallet{margin:8px 0}.credit-summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 8px;background:#f0f9ff;border:1px solid #badcf3;border-radius:9px;margin:8px 0;font-size:10px;color:#5a7d9b}.credit-summary>img{width:26px;height:28px;object-fit:contain}.credit-summary strong{font-size:12px;color:#215d8c}.bank-form{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bank-form>label{font-size:11px;gap:4px}.financial-panel input,.financial-panel select{min-height:34px;padding:6px 9px;max-width:100%;width:100%;font-size:13px}.transfer-preview{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:#f7fcff;border:1px solid #b5d9f2;border-radius:10px;min-height:50px}.transfer-preview>span{display:flex;flex-direction:column;justify-content:center;position:relative;text-align:center;padding:5px;color:#247256}.transfer-preview small{font-size:9px;color:#6186a3}.transfer-preview strong{font-size:15px;font-variant-numeric:tabular-nums}.transfer-preview b{position:absolute;right:-6px;top:50%;transform:translateY(-50%);font-size:19px;color:#6290b4}.decrease{color:#a75b35!important}.form-limit{grid-column:1/-1;font-size:10px;color:#567f9f}.financial-panel .actions{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px;grid-column:1/-1}.interaction.financial-panel .actions>button{padding:7px 9px;font-size:12px;min-height:34px}.interaction.financial-panel .actions>button:first-child{background:linear-gradient(#fff4bb,#ffd26b);color:#775021;border-color:#fff7d9;box-shadow:0 0 0 1px #dbac53}.interaction.financial-panel .actions>button:last-child{background:#eff9ff;box-shadow:inset 0 0 0 1px #badcf3;color:#3f779f;text-shadow:none}.stock-quote{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;padding:10px 12px;border:1px solid #a5d5f5;border-radius:12px;background:linear-gradient(135deg,#f8fcff,#cdeaff);color:#245f8d}.stock-quote>div{display:grid;gap:3px}.stock-quote>div>strong{font-size:13px}.quote-price{font-size:10px;color:#5a7e9e}.quote-price b{font-size:25px;line-height:1.2;color:#1264a4;margin-left:7px;font-variant-numeric:tabular-nums}.quote-change{margin-left:auto;font-size:18px;font-weight:750;color:#257259}.stock-quote dl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;width:100%;border-top:1px solid #b1d7f1;padding-top:6px;margin:0}.stock-quote dt{font-size:10px;color:#6288a6}.stock-quote dd{font-size:11px;font-weight:650;margin:1px 0 0}.financial-panel .choice>label{gap:4px;font-size:11px}.financial-panel .choice{gap:8px}.trade-preview{background:#f1f9ff;border-radius:8px;padding:7px 9px;margin:0;font-size:11px;line-height:1.5}.financial-panel .choice>small{font-size:10px;color:#567e9d}.dice button{display:grid;place-items:center;gap:2px;flex:1;padding:5px;min-width:38px}.dice img{width:39px;height:34px;object-fit:contain}.dice span{font-size:11px}.targeting-panel .targets button{display:flex;align-items:center;gap:5px}.targets img{width:30px;height:28px;object-fit:contain}.targets small{display:block;font-size:9px;color:#4c7797}.target-actions>button{flex:none}.notice-heading{display:flex;align-items:center;gap:12px}.notice-heading>img{width:66px;height:64px;object-fit:contain;flex:none;filter:drop-shadow(0 3px 2px #4796c433)}.notice-heading h2{margin:2px 0;font-size:20px;line-height:1.35}.notice-body>.amount{font-size:19px;font-weight:700;text-align:center;line-height:1.4}.changes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.finance-change{font-size:11px;font-weight:400;color:#247356;padding:4px}.finance-change strong{display:block;font-size:22px;font-weight:800;line-height:1.3}.notice-status{font-size:11px;color:#557d9e;padding:4px 2px}.notice-body .player-wallet{margin-top:9px}.shop-panel{display:flex;flex-direction:column;overflow:hidden;height:calc(100% - 28px);width:min(620px,calc(100% - var(--game-sidebar-width,0px) - 28px));gap:8px}.shop-panel .desk-heading{margin-bottom:0}.shop-panel .desk-heading h2{font-size:19px}.shop-panel .player-wallet,.inventory-label,.shop-panel>button{flex:none}.shop-panel .shop-grid{flex:1;min-height:80px;overflow:auto;grid-auto-rows:90px;align-content:start;margin:0;padding:2px}.shop-grid img{height:46px;width:46px}.shop-panel .inventory-label{display:flex;align-items:center;justify-content:space-between;font-size:12px}.inventory-label span{font-size:10px;color:#5c82a0}.sell-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;flex:none;max-height:78px;overflow:auto;margin:0}.sell-list button{display:flex;align-items:center;gap:4px;min-width:0;padding:4px}.sell-list img{width:27px;height:30px;object-fit:contain;flex:none}.sell-list span{font-size:9px;min-width:0}.sell-list small{display:block;font-size:8px;color:#537c9a}.shop-panel>button{min-height:32px}.shop-panel .shop-grid button small{font-size:9px}
+@media(max-width:620px){.interaction.financial-panel{padding:12px;width:calc(100% - 24px)}.desk-heading{gap:8px;margin-bottom:7px}.desk-heading h2{font-size:19px}.desk-heading>img,.market-emblem{width:35px;height:35px}.credit-summary{gap:5px;padding:4px 6px;font-size:9px}.credit-summary strong{font-size:11px}.bank-form{gap:7px}.quote-price b{font-size:23px}.stock-quote{padding:8px 10px}.financial-panel .actions{gap:6px}.interaction.financial-panel .actions>button{padding:6px;font-size:11px}.dice img{width:31px;height:30px}.dice button{padding:4px;min-width:35px}.notice-heading>img{width:52px;height:54px}.notice-heading h2{font-size:18px}.shop-panel{padding:12px}.shop-panel .desk-heading h2{font-size:15px}.shop-panel .desk-heading>small{font-size:9px}.sell-list{grid-template-columns:repeat(3,minmax(0,1fr))}.targets img{width:25px;height:24px}.targeting-panel .targets button{font-size:11px;padding:4px}.stock-quote dl{gap:6px}}
+
 </style>

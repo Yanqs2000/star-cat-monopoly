@@ -32,7 +32,8 @@ async function humanRoll(page: Page, round: number): Promise<void> {
 async function buyAndAcknowledge(page: Page, parcelId: number, cost: number, screenshot?: string): Promise<void> {
   const panel = page.getByTestId('property-panel')
   await expect(panel).toContainText(`地块 ${parcelId}`, { timeout: 15_000 })
-  await expect(panel).toContainText(`买价 ${cost}`)
+  await expect(panel.locator('.amount')).toContainText('买价')
+  await expect(panel.locator('.amount strong')).toHaveText(String(cost))
   await panel.getByTestId('property-accept').click()
   await expect(panel.getByTestId('property-result')).toContainText(`现金支付 ${cost}`)
   await expect(panel).toContainText('产权：卷毛')
@@ -90,7 +91,7 @@ test('地产 PNG 404 后重试仍保持相同待定开局', async ({ page }) => 
   expect(lineup).toBe((await page.getByTestId('player-list').locator('li strong').allTextContents()).join(' · '))
   await expect(page.locator('canvas')).toHaveCount(1)
   await page.getByRole('button', { name: '掷骰' }).click()
-  await expect(page.getByTestId('interaction-panel')).toContainText('12 格真实库存', { timeout: 15_000 })
+  await expect(page.getByTestId('interaction-panel')).toContainText('12 格库存', { timeout: 15_000 })
 })
 
 test('地产决定可暂停、键盘放弃，返回选人重开后可键盘购买', async ({ page }) => {

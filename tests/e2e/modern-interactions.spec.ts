@@ -98,7 +98,7 @@ test('已结算控骰卡的反馈帧404后重试保留完整待决状态且不�
   await page.getByTestId('interaction-acknowledge').click()
   await page.getByRole('button', { name: '掷骰' }).click()
   await expect(page.getByTestId('last-roll')).toContainText('骰子 2')
-  await expect(page.getByTestId('interaction-panel')).toContainText('12 格真实库存', { timeout: 15_000 })
+  await expect(page.getByTestId('interaction-panel')).toContainText('12 格库存', { timeout: 15_000 })
   await expect(page.locator('canvas')).toHaveCount(1)
 })
 
@@ -191,7 +191,7 @@ test('seed153 生产入口卡片屋买卖后在新金融随机流继续', async 
 
   await page.getByRole('button', { name: '掷骰' }).click()
   const interaction = page.getByTestId('interaction-panel')
-  await expect(interaction).toContainText('12 格真实库存', { timeout: 30_000 })
+  await expect(interaction).toContainText('12 格库存', { timeout: 30_000 })
   await expect(interaction.getByTestId('shop-slot')).toHaveCount(12)
   await interaction.getByTestId('shop-slot').first().click()
   await expect(interaction).toContainText('奖券 170')
