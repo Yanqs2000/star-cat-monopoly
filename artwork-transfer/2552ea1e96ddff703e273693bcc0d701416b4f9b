@@ -1,0 +1,26 @@
+node_modules
+dist
+dist-modern
+dist-ssr
+coverage
+*.local
+.DS_Store
+.vite
+*.log
+
+public/ruffle/
+public/modern/assets-hd/
+playwright-report/
+test-results/
+__pycache__/
+*.pyc
+.analysis-tools/
+.analysis-cache/
+.worktrees/
+
+# Local manual saves and private development data
+.data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.superpowers/

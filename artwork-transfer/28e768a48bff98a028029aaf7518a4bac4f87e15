@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-507d57d1-94c2-4f71-b190-1f88182bef6a.png",
+  "prompt": "Use case: precise-object-edit. Input1 is the edit target, a portrait HD isometric board-game tile. Input2 is the exact SAME framing with existing HD pixels ONLY in its bottom third. The bottom third of Input1 drifted from this existing neighbor. Change only that lower portion to match Image2's colored pixels as exactly as possible, connecting the existing SINGLE stone pillar and each pointed leaf. Preserve everything in upper2/3 of Input1: grass, clipped turquoise property, roads, white markings, camera/framing. Do not shift or resize anything. Keep entire output fully opaque and same2:3 aspect at least1024x1536. The stone pillar upper and lower half must make ONE continuous pillar, no seam, no doubled leaves. Grey asphalt and bright cartoon style unchanged. This is a stitch correction, no new objects.",
+  "referenceRect": [
+    1872,
+    420,
+    256,
+    384
+  ]
+}

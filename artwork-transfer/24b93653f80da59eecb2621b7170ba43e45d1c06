@@ -1,0 +1,27 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-eac593b6-7bb9-4dd6-9064-374205a75ed3.png",
+  "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET contains completed LEFT32,RIGHT40 and bottommost8 logical-pixel anchors around missing map. Image2 ORIGINAL layout of the identical312x312logical square on blue sky for viewing. Fill missing art with faithful sharp glossy cartoon restoration. Keep exact original road width/slope, white curbs, original partly clipped green30 disc and lower cyan disc/portal crop at LEFT, same upper two leafy rosettes/left rosette/bottomleft plant fragments, grass line marks and vertical golden hanging cliff silhouette. Cliff hangs over the original open SKY inlet beneath diagonal road, with original white/cyan cloud under its RIGHT end; lower grassy island and cropped gray pillar top at BOTTOM. Preserve original counts/coordinates and source silhouette, no grass fragment inside cloud, no extra stone/tree/plant/building/road disc/text. Match LEFT approved road/green30/curb/bush geometry exactly without moving it; match RIGHT native grass/cliff/cloud silhouette and bottom anchor at fixed coordinates. Extend lower island faithfully into missing narrow strip above bottommost8 anchor, connecting cropped original pillar top. Original blue in Image2 is EXTERNAL SKY: retain TRANSPARENT gap in output, never opaque blue backdrop or grass fill. White cloud is actual solid art, no pinholes. Solid grass/cliff/cloud alpha255, antialiased native exterior, no enclosed accidental cutouts. Same square frame/crop, no zoom/reframe/rescale. Preserve native finished anchor sharpness, color, texture scale. Upper unused context also original solid grass where shown, no artificial top cutouts. High native resolution>=1254square.",
+  "referenceRect": [
+    1120,
+    388,
+    312,
+    312
+  ],
+  "sourceSkyReference": true,
+  "preserveApprovedNeighbors": true,
+  "qualifiedBottomNeighbor": {
+    "tileId": "r3c5",
+    "rect": [
+      1152,
+      692,
+      240,
+      8
+    ]
+  },
+  "newBottomCoverageRect": [
+    1152,
+    676,
+    240,
+    16
+  ]
+}

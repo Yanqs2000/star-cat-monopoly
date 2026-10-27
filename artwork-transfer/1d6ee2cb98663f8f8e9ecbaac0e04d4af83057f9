@@ -1,0 +1,12 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-bce65e65-792e-4e37-a6de-081706c2193b.png",
+  "prompt": "Use case: precise-object-edit. Image1 is existing HD map, Image2 ORIGINAL same square layout. The grass word is WRONG: Image1 has an extra leading 'S' at lowerLEFT, reading 'SStar'. Restore exactly ONE cursive 'Star' as in Image2: remove the whole extra LOWER-LEFT S into normal matching grass, keep/restore the single correct original S and following t,a,r at Image2's original diagonal positions, scale and cursive shapes. Do not invent, duplicate, omit, shift or respell a letter. The correct word is carved/dark-green grass texture BEHIND the hospital; keep original medical cross/heart occlusion in front, never paint lettering over the building. Preserve all other existing pixels visually: tree crowns/lobe counts/trunks/shadows, grassy island edge, hospital/cross/heart/vents/crops, leaf rosette, adjoining large ground arc on right. No added object, emblem or text. ALL outer16logical-pixel anchor bands visually identical at same positions. Same288logical square frame/camera, no zoom/reframe/rescale. Native transparent sky remains clear alpha0, solid objects/grass/highlights opaque, no holes or translucent green rings. Fix only the complete erroneous word area and duplicated S using continuous sharp native grass; do not alter surrounding scenery.",
+  "rect": [
+    1216,
+    16,
+    288,
+    288
+  ],
+  "context": 16,
+  "sourceFidelity": "Single cursive Star restored; extra lower-left S removed"
+}

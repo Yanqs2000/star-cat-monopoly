@@ -1,0 +1,940 @@
+[
+  {
+    "id": "r6c0",
+    "row": 6,
+    "col": 0,
+    "rect": [
+      0,
+      1412,
+      160,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.7681510416666667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c0-r1.png",
+        "masterSha256": "df1f302ecb8d6cf2f933e066d7a92fbcd90e1424fc5a3f132fe6bd30ef802306",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          0,
+          1380,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: transparent square HD isometric game map crop.\nImage1 is the EDIT TARGET with finished RIGHT HALF and BOTTOM40 logical pixels. Image2 is the exact ORIGINAL LAYOUT of the same square. Fill only unfinished left/up area from original, matching all finished pixels' coordinates, materials and tiny grass leaf scale. Never move or resize the right/bottom anchors.\nRestore left island grass silhouette: outside sky is truly transparent along upper-left and middle-left concavities; grass boundary angles left/down around original x70 near top then x0 near lower third, with a small curved protrusion near bottom. Preserve this full irregular original boundary, no square trim, no painted sky or white fringe. Fine dense yellow-green grass, gently mottled terrain shading. One cropped multi-lobed round tree near upper middle-left, whose canopy goes out the TOP edge, same original trunk position and footprint. Existing separate round tree lower right stays unchanged. Existing road white diagonal curb, single-cat engraved manhole, blue30/red20/croppedcyan10 discs and all their shapes stay unchanged; no extra road marks, faces, numbers, trees, props, flowers or cracks. Do not reproduce dark scratch arc from original grass. No empty holes inside island. Single square RGBA, native high resolution, exact edge-to-edge composition.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 177298,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 4.5786497561869004e-05,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 9.2985312899106,
+            "p95RgbDifference": 29.516666666666577,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 2.617824773413897,
+            "p95RgbDifference": 6.0,
+            "visibleCutSamples": 662,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r6c0-r1.png",
+    "referenceRect": [
+      0,
+      1380,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 9.2985312899106,
+        "p95RgbDifference": 29.516666666666577,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 2.617824773413897,
+        "p95RgbDifference": 6.0,
+        "visibleCutSamples": 662,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 177298,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 4.5786497561869004e-05,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "450bb4086c720c9136c7e807fa74629e98b492fae740ca7402806a13a32ad4d4"
+  },
+  {
+    "id": "r7c0",
+    "row": 7,
+    "col": 0,
+    "rect": [
+      0,
+      1652,
+      160,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.419765625,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c0-r1.png",
+        "masterSha256": "187ecbad9e261041b824718ef28af80539941e5654745f5396a9f2834f162d29",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          0,
+          1620,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset type: transparent square HD isometric map crop.\nImage 1 EDIT TARGET contains already finished right-hand grass, tree and cropped platform plus a tiny finished bottom anchor. Complete ONLY the unfinished left-hand area using Image 2 original layout. All reference images show exactly the same square coordinates; preserve framing, scale, composition and camera. Keep completed right-hand pixels and the bottom anchor visually identical.\nLeft shape must follow original: green island at upper left edge, an irregular stepped/recessed grass silhouette descending from x~0 at top to x~110 around center and x~180 at bottom. Narrow warm orange-brown rock face follows the grass below the middle, smoothly meeting the finished lower-right cliff. The space to its left is transparent, not white or sky. No extra separate islets, no transparent holes within the grass. Match dense tiny bright yellow-green grass leaves from Image 1, with same leaf size, lighting, outline and terrain shading; never giant lumpy hedge texture. Existing round tree at top and cropped cone-tree platform at right stay unchanged, do not add any more trees. Do not reproduce the faint black arc/scratch in Image 2. No new objects, text, vines, flowers, rocks, clouds or outside shadows. Preserve the original island boundary rather than expanding it into transparent regions. No margins. Single native high-resolution square RGBA.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 465450,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00017487898374324968,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 5.231605886116443,
+            "p95RgbDifference": 13.666666666666666,
+            "visibleCutSamples": 1042,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 149.61111111111111,
+            "p95RgbDifference": 158.33333333333334,
+            "visibleCutSamples": 6,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c0-r2.png",
+        "masterSha256": "187ecbad9e261041b824718ef28af80539941e5654745f5396a9f2834f162d29",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          0,
+          1620,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit. Asset type: transparent square HD isometric map crop.\nImage 1 EDIT TARGET contains already finished right-hand grass, tree and cropped platform plus a tiny finished bottom anchor. Complete ONLY the unfinished left-hand area using Image 2 original layout. All reference images show exactly the same square coordinates; preserve framing, scale, composition and camera. Keep completed right-hand pixels and the bottom anchor visually identical.\nLeft shape must follow original: green island at upper left edge, an irregular stepped/recessed grass silhouette descending from x~0 at top to x~110 around center and x~180 at bottom. Narrow warm orange-brown rock face follows the grass below the middle, smoothly meeting the finished lower-right cliff. The space to its left is transparent, not white or sky. No extra separate islets, no transparent holes within the grass. Match dense tiny bright yellow-green grass leaves from Image 1, with same leaf size, lighting, outline and terrain shading; never giant lumpy hedge texture. Existing round tree at top and cropped cone-tree platform at right stay unchanged, do not add any more trees. Do not reproduce the faint black arc/scratch in Image 2. No new objects, text, vines, flowers, rocks, clouds or outside shadows. Preserve the original island boundary rather than expanding it into transparent regions. No margins. Single native high-resolution square RGBA.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 416403,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.000567838090524116,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 2.3656429942418424,
+            "p95RgbDifference": 11.333333333333334,
+            "visibleCutSamples": 1042,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0,
+            "p95RgbDifference": 0,
+            "visibleCutSamples": 0,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "left-upper-outline-joint-r1",
+            "rect": [
+              80,
+              1740,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/left-upper-outline-joint-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 465450,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00017487898374324968,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c0-r2.png",
+    "referenceRect": [
+      0,
+      1620,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 2.3656429942418424,
+        "p95RgbDifference": 11.333333333333334,
+        "visibleCutSamples": 1042,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0,
+        "p95RgbDifference": 0,
+        "visibleCutSamples": 0,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "left-upper-outline-joint-r1",
+        "rect": [
+          80,
+          1740,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/left-upper-outline-joint-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 416403,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.000567838090524116,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "a78964b269bca047edaef875eb6e76b770ce2a8ecd9da5bbb83df8168d84ef02",
+    "appliedRepairs": [
+      "left-upper-outline-joint-r1"
+    ]
+  },
+  {
+    "id": "r7c1",
+    "row": 7,
+    "col": 1,
+    "rect": [
+      160,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9957465277777777,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c1-r1.png",
+        "masterSha256": "a4a3d4f09f99260af113275293415999330e872b1090d14b8c2302239c63a64c",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          128,
+          1620,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Asset type: transparent HD game map fragment, exact square crop.\nImage 1 is the EDIT TARGET showing already completed HD pixels only, empty transparent areas are unfinished. Image 2 is the original full layout of this exact square. Reconstruct all unfinished terrain and the cropped building from Image 2 in sharp colorful cartoon-isometric style matching Image 1. Keep all existing reference pixels' positions and use the full square without margins.\nLayout invariants: grassy island fills most of the square; narrow brown/orange cliff face and irregular island silhouette at left bottom, outside it genuine transparent background; original building cropped along top and right, with thick yellow curved chevron roof around orange/red roof surface, magenta/lavender curved walls, small purple supports, pale blue-gray platform and precisely the same visible green cone trees at their original positions. Preserve original roof outline, building size, platform footprint, supports, and tree count; do not invent missing parts outside frame. Upper left has the original cropped light-green round tree canopy and trunk. Upper right tiny diagonal gray road/white curb continues out of crop.\nMatch the completed bottom 40 logical pixels of Image 1 exactly in grass color and leaf scale and cliff outline; extend upward smoothly. Match its tiny upper-right finished road/curb corner. Grass must be fine dense small leaf texture, subtle broader terrain shading, not large lumpy bushes. Keep building edges and tree outlines crisp. Do not reproduce the faint black circular scratch on the original grass. No additional flowers, stones, vines, cloud, props, people, symbols or text. No empty white holes, no new transparent holes inside island, no sky fill, no drop shadow outside silhouette. Native RGBA transparency only outside island. Return a single square image at native high resolution, composition aligned edge-to-edge to both inputs.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 52022,
+          "solidAlphaMedian": 251.0,
+          "fullyOpaqueFraction": 8.83933772374971e-05,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "bottom",
+            "meanRgbDifference": 11.885486443381179,
+            "p95RgbDifference": 34.0,
+            "visibleCutSamples": 1045,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c1-r1.png",
+    "referenceRect": [
+      128,
+      1620,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "bottom",
+        "meanRgbDifference": 11.885486443381179,
+        "p95RgbDifference": 34.0,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 52022,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 8.83933772374971e-05,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "appliedRepairs": [
+      "left-upper-outline-joint-r1"
+    ],
+    "assembledSha256": "ff619885a49580b4a2989de0edecaa9eb509c87e93fa2f91378fb5d2a22c086d"
+  },
+  {
+    "id": "r8c0",
+    "row": 8,
+    "col": 0,
+    "rect": [
+      0,
+      1892,
+      160,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.00010416666666666667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c0-r1.png",
+        "masterSha256": "e144b040eda671445fd534d3eb5c1d03fd828b9f79fe9c4dbab41856f5ec2ac3",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          144,
+          1892,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop as HD cartoon terrain. It contains ONLY a continuous bright green grassy island cap and golden/brown cliff underneath, with the same sloping left outside silhouette and original groove/face counts. Grass and cliff are cropped at TOP and RIGHT and continue outside the canvas. The original island's tiny leftmost tip enters near x11 of312 at the top; retain that outline position and do not move or enlarge the island. The cliff recedes diagonally rightward toward the bottom, leaving transparent empty sky at lower-left.\nSECOND reference is fixed finished HD RIGHT56 logical pixels (~18% width) and BOTTOM72 logical pixels (~23% height). Match the existing clustered grass texture, grass/cliff edge, gold/brown planes and grooves exactly, making smooth continuous connections. Fill only the missing terrain; preserve the same rock structure as original. Bright dense game grass, warm faceted golden/amber cliff, clean dark brown contours matching second reference. Solid art with no holes, genuine native RGBA transparent exterior sky. No trees, bushes, vines, clouds, buildings, props, faces or text. Fixed square crop, no reframing or perspective change.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 516828,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00040635516586158744,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 34560,
+          "nativeAlphaModified": false
+        },
+        "seams": [],
+        "sourceReuse": {
+          "fromTile": "r8c1",
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c1-r1.png",
+          "masterSha256": "e144b040eda671445fd534d3eb5c1d03fd828b9f79fe9c4dbab41856f5ec2ac3",
+          "newImageGenerated": false,
+          "sourceAlphaOutsideReferenceNonzero": 0,
+          "nativeLeftCoreEdgeMaxAlpha": 0,
+          "coreSolidPixels": 108
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c0-r1.png",
+    "referenceRect": [
+      144,
+      1892,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 516828,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.00040635516586158744,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "9b48aa0e24fd3009f6f5a246a98362e62f9bb09c295ec666488d08ceac0f6924",
+    "appliedRepairs": [
+      "left-upper-outline-joint-r1"
+    ],
+    "sourceReuse": {
+      "fromTile": "r8c1",
+      "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c1-r1.png",
+      "masterSha256": "e144b040eda671445fd534d3eb5c1d03fd828b9f79fe9c4dbab41856f5ec2ac3",
+      "newImageGenerated": false,
+      "sourceAlphaOutsideReferenceNonzero": 0,
+      "nativeLeftCoreEdgeMaxAlpha": 0,
+      "coreSolidPixels": 108
+    }
+  },
+  {
+    "id": "r8c1",
+    "row": 8,
+    "col": 1,
+    "rect": [
+      160,
+      1892,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.7085069444444444,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c1-r1.png",
+        "masterSha256": "e144b040eda671445fd534d3eb5c1d03fd828b9f79fe9c4dbab41856f5ec2ac3",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          144,
+          1892,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop as HD cartoon terrain. It contains ONLY a continuous bright green grassy island cap and golden/brown cliff underneath, with the same sloping left outside silhouette and original groove/face counts. Grass and cliff are cropped at TOP and RIGHT and continue outside the canvas. The original island's tiny leftmost tip enters near x11 of312 at the top; retain that outline position and do not move or enlarge the island. The cliff recedes diagonally rightward toward the bottom, leaving transparent empty sky at lower-left.\nSECOND reference is fixed finished HD RIGHT56 logical pixels (~18% width) and BOTTOM72 logical pixels (~23% height). Match the existing clustered grass texture, grass/cliff edge, gold/brown planes and grooves exactly, making smooth continuous connections. Fill only the missing terrain; preserve the same rock structure as original. Bright dense game grass, warm faceted golden/amber cliff, clean dark brown contours matching second reference. Solid art with no holes, genuine native RGBA transparent exterior sky. No trees, bushes, vines, clouds, buildings, props, faces or text. Fixed square crop, no reframing or perspective change.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 516828,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00040635516586158744,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 5.610153256704981,
+            "p95RgbDifference": 16.61666666666664,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 21.24774774774775,
+            "p95RgbDifference": 140.66666666666666,
+            "visibleCutSamples": 370,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c1-r2.png",
+        "masterSha256": "e144b040eda671445fd534d3eb5c1d03fd828b9f79fe9c4dbab41856f5ec2ac3",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          144,
+          1892,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer. Faithfully redraw FIRST original map crop as HD cartoon terrain. It contains ONLY a continuous bright green grassy island cap and golden/brown cliff underneath, with the same sloping left outside silhouette and original groove/face counts. Grass and cliff are cropped at TOP and RIGHT and continue outside the canvas. The original island's tiny leftmost tip enters near x11 of312 at the top; retain that outline position and do not move or enlarge the island. The cliff recedes diagonally rightward toward the bottom, leaving transparent empty sky at lower-left.\nSECOND reference is fixed finished HD RIGHT56 logical pixels (~18% width) and BOTTOM72 logical pixels (~23% height). Match the existing clustered grass texture, grass/cliff edge, gold/brown planes and grooves exactly, making smooth continuous connections. Fill only the missing terrain; preserve the same rock structure as original. Bright dense game grass, warm faceted golden/amber cliff, clean dark brown contours matching second reference. Solid art with no holes, genuine native RGBA transparent exterior sky. No trees, bushes, vines, clouds, buildings, props, faces or text. Fixed square crop, no reframing or perspective change.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 281796,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0006040440704687529,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 5,
+            "maximumChangedPixels": 68
+          },
+          {
+            "side": "right",
+            "meanRgbDifference": 3.1392081736909323,
+            "p95RgbDifference": 15.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 310,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceSkyReference": false,
+        "sharedRepairs": [
+          {
+            "repairId": "left-cliff-joint-r1",
+            "rect": [
+              240,
+              1988,
+              312,
+              312
+            ],
+            "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/left-cliff-joint-r1/assembled.png"
+          }
+        ],
+        "nativeAlphaAuditBeforeRepairs": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 516828,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00040635516586158744,
+          "nativeAlphaModified": false
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c1-r2.png",
+    "referenceRect": [
+      144,
+      1892,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 5,
+        "maximumChangedPixels": 68
+      },
+      {
+        "side": "right",
+        "meanRgbDifference": 3.1392081736909323,
+        "p95RgbDifference": 15.0,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 310,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sharedRepairs": [
+      {
+        "repairId": "left-cliff-joint-r1",
+        "rect": [
+          240,
+          1988,
+          312,
+          312
+        ],
+        "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/left-cliff-joint-r1/assembled.png"
+      }
+    ],
+    "sourceSkyReference": false,
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 281796,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0006040440704687529,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "ca0be678e81d1803173568a9f0fb432e3dee0e368d7c0c339d5cf342f73dfdd2",
+    "appliedRepairs": [
+      "left-upper-outline-joint-r1",
+      "left-cliff-joint-r1"
+    ]
+  },
+  {
+    "id": "r9c1",
+    "row": 9,
+    "col": 1,
+    "rect": [
+      160,
+      2132,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.14229166666666668,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c1-r1.png",
+        "masterSha256": "82b544d5cc292c0c250962b9f2a4d73b52483b4f48c332dafb1044a240660aab",
+        "nativePixelSize": [
+          1086,
+          1448
+        ],
+        "referenceRect": [
+          280,
+          2068,
+          192,
+          256
+        ],
+        "prompt": "Use case: precise-object-edit. Complete the missing LEFT portion of this HD floating-island cliff crop. FIRST contains fixed finished rock along the RIGHT37.5% canvas; preserve every colored pixel's contour positions, grooves and gold/amber shading there. SECOND is the original layout for the missing left face. Extend the same continuous brown/amber cliff leftward, with exactly the original stepped/sloping outside edge and same rock-plane count, connecting naturally into the existing right cliff. The rock enters from the TOP and clips the upper LEFT edge; below that it recedes diagonally rightward to the same original lower tips, with transparent sky below/left. Keep the long gold face cropped at far RIGHT continuing off canvas exactly as first reference; don't add a new closed border. Bright faceted warm amber/gold rock, dark brown outline, matching first reference. Solid rock interiors without holes, genuine native RGBA transparent exterior. No plants, clouds, crystals, faces, added rock fingers, props or text. Fixed portrait3:4 crop, no reframing.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 749511,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0005526133715902038,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 34560,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 0.7304964539007092,
+            "p95RgbDifference": 1.6666666666666667,
+            "visibleCutSamples": 470,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c1-r1.png",
+    "referenceRect": [
+      280,
+      2068,
+      192,
+      256
+    ],
+    "nativePixelDensity": 5.65625,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 0.7304964539007092,
+        "p95RgbDifference": 1.6666666666666667,
+        "visibleCutSamples": 470,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 749511,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005526133715902038,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "appliedRepairs": [
+      "left-cliff-joint-r1"
+    ],
+    "assembledSha256": "c90fd3bbf2db1d5fb6eaa6caebbc246bdb99007245990a11f44705fdb4ab0b06"
+  },
+  {
+    "id": "r9c2",
+    "row": 9,
+    "col": 2,
+    "rect": [
+      400,
+      2132,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.8268229166666666,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c2-r1.png",
+        "masterSha256": "2ac4b4a76bfb6e7a550f47ec71526fb04f8266aa54e430f8358495a0a77d6a8b",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          400,
+          2068,
+          256,
+          384
+        ],
+        "prompt": "Use case: precise-object-edit. Complete FIRST reference's missing cliff texture using SECOND original layout. This portrait2:3 crop contains ONLY a continuous golden/amber floating-island cliff and transparent exterior sky. Preserve the same cliff face/finger counts, groove positions, stepped silhouette and relative tip heights as original. The longest narrow lower finger ends near94% canvas height, same original position; the left side ends higher and the far-right cropped face ends around68% height. No rocks/planes added or omitted.\nFIRST's TOP64 logical pixels (~16.7% height) and RIGHT16 logical pixels (~6.25% width) are finished HD neighbor anchors: match their existing gold/brown contours, groove positions and colors exactly. Continue each face downward smoothly. Rock cropped at TOP/LEFT continues outside, so never delete flat gold planes as background; keep solid rock everywhere the original has rock. Crisp bright warm faceted yellow/gold/amber shading, dark brown contours, matching finished first reference. True native RGBA transparent exterior below/between cliff tips; rock interiors solid without accidental holes. No clouds, plants, crystals, faces, props or text. Fixed portrait2:3 canvas, no reframing or camera changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 492234,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "right",
+            "meanRgbDifference": 1.6204498977505113,
+            "p95RgbDifference": 4.0,
+            "visibleCutSamples": 815,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 2.818646232439336,
+            "p95RgbDifference": 6.666666666666667,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r9c2-r1.png",
+    "referenceRect": [
+      400,
+      2068,
+      256,
+      384
+    ],
+    "nativePixelDensity": 4.0,
+    "seams": [
+      {
+        "side": "right",
+        "meanRgbDifference": 1.6204498977505113,
+        "p95RgbDifference": 4.0,
+        "visibleCutSamples": 815,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.818646232439336,
+        "p95RgbDifference": 6.666666666666667,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 492234,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "appliedRepairs": [
+      "left-cliff-joint-r1"
+    ],
+    "assembledSha256": "29b6d63baa39f1111ea66263196773a325f491c0725e8282858d6e0b38b2e5cb"
+  },
+  {
+    "id": "r10c2",
+    "row": 10,
+    "col": 2,
+    "rect": [
+      400,
+      2372,
+      240,
+      180
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.04949074074074074,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r10c2-r1.png",
+        "masterSha256": "2ac4b4a76bfb6e7a550f47ec71526fb04f8266aa54e430f8358495a0a77d6a8b",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          400,
+          2068,
+          256,
+          384
+        ],
+        "prompt": "Use case: precise-object-edit. Complete FIRST reference's missing cliff texture using SECOND original layout. This portrait2:3 crop contains ONLY a continuous golden/amber floating-island cliff and transparent exterior sky. Preserve the same cliff face/finger counts, groove positions, stepped silhouette and relative tip heights as original. The longest narrow lower finger ends near94% canvas height, same original position; the left side ends higher and the far-right cropped face ends around68% height. No rocks/planes added or omitted.\nFIRST's TOP64 logical pixels (~16.7% height) and RIGHT16 logical pixels (~6.25% width) are finished HD neighbor anchors: match their existing gold/brown contours, groove positions and colors exactly. Continue each face downward smoothly. Rock cropped at TOP/LEFT continues outside, so never delete flat gold planes as background; keep solid rock everywhere the original has rock. Crisp bright warm faceted yellow/gold/amber shading, dark brown contours, matching finished first reference. True native RGBA transparent exterior below/between cliff tips; rock interiors solid without accidental holes. No clouds, plants, crystals, faces, props or text. Fixed portrait2:3 canvas, no reframing or camera changes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "referenceApprovedSkyPixels": 0,
+          "referenceRegistrationOutlierPixels": 0,
+          "borderConnectedLowAlphaPixels": 492234,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 24000,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "top",
+            "meanRgbDifference": 0.0,
+            "p95RgbDifference": 0.0,
+            "visibleCutSamples": 343,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "sourceReuse": {
+          "fromTile": "r9c2",
+          "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c2-r1.png",
+          "masterSha256": "2ac4b4a76bfb6e7a550f47ec71526fb04f8266aa54e430f8358495a0a77d6a8b",
+          "newImageGenerated": false,
+          "sourceAlphaOutsideReferenceNonzero": 0,
+          "nativeBottomCoreEdgeMaxAlpha": 0
+        }
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r10c2-r1.png",
+    "referenceRect": [
+      400,
+      2068,
+      256,
+      384
+    ],
+    "nativePixelDensity": 4.0,
+    "seams": [
+      {
+        "side": "top",
+        "meanRgbDifference": 0.0,
+        "p95RgbDifference": 0.0,
+        "visibleCutSamples": 343,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 492234,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.0,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "pending-native-alpha-render-review",
+    "assembledSha256": "542d2d9af7265a876ea88865a494fa686b0d8f322e4fd341ed37107518a0241a",
+    "sourceReuse": {
+      "fromTile": "r9c2",
+      "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r9c2-r1.png",
+      "masterSha256": "2ac4b4a76bfb6e7a550f47ec71526fb04f8266aa54e430f8358495a0a77d6a8b",
+      "newImageGenerated": false,
+      "sourceAlphaOutsideReferenceNonzero": 0,
+      "nativeBottomCoreEdgeMaxAlpha": 0
+    }
+  }
+]
