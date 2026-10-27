@@ -1,0 +1,15 @@
+
+> star-cat-monopoly@0.1.0 test:e2e:modern
+> playwright test --config playwright.modern.config.ts tests/e2e/modern-map-layer-order.spec.ts tests/e2e/modern-hd-map-sample.spec.ts
+
+
+Running 4 tests using 1 worker
+
+(node:22394) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/e2e/modern-hd-map-sample.spec.ts:41:1 › 高清模式显示已验收地图样本，保留人物资源和画质切换前后的完整对局状态 (24.2s)
+  ✓  2 tests/e2e/modern-hd-map-sample.spec.ts:85:1 › 地图切片404后可以重试，且不推进对局 (5.2s)
+  ✓  3 tests/e2e/modern-hd-map-sample.spec.ts:110:1 › 1366桌面全图概览释放地图补片，恢复跟随后重新加载 (3.5s)
+  ✓  4 tests/e2e/modern-map-layer-order.spec.ts:3:1 › 地图前景在底座较晚载入和镜头往返后仍显示在上层 (2.9s)
+
+  4 passed (37.2s)

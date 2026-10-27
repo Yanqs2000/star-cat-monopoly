@@ -1,0 +1,10 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-a9cea305-6ba5-437f-ae22-73eed05acdb3.png",
+  "prompt": "Use case: precise-object-edit. Edit Image1, the square HD river/cliff map tile. Correct ONLY its LEFT boundary context to match Image2's completed LEFT32 logical-pixel strip exactly in position, color and texture. Image2 is the same square canvas with existing top, left, right and bottom anchors around a missing middle. In Image1 the diagonal road in upper LEFT wrongly changes the fine pale gray speckled asphalt from Image2 into dark embossed circles; restore continuous PALE GRAY FINE SPECKLED ASPHALT across that road, matching the LEFT edge and white curb geometry precisely. Align all LEFT32 grass, gray stone-paved building plinth, curb and riverbank texture with Image2 so no vertical hue or contour join appears. Keep Image1's same one three-lobed tree, forked trunk, exactly three small bank stones (two pale bare stones and one grass-topped bank rock), one foreground river stone, cyan10/green20 discs, golden cliff facets/foot rock, river path, all original object counts and exact positions. Preserve Image1 TOP32/RIGHT40/BOTTOM40 context unchanged. No added/removed objects or lettering, no shifted tree/plinth/shore or road. Square exact frame, no zoom/reframe/rescale. Sharp glossy cartoon art. Entire map art opaque alpha255, no holes. Repair asphalt material and LEFT context registration only.",
+  "referenceRect": [
+    1360,
+    1860,
+    312,
+    312
+  ]
+}

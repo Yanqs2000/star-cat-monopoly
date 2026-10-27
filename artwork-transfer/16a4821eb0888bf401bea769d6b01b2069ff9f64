@@ -1,0 +1,12 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-71e52c84-326c-445a-a491-6ddcda47d37a.png",
+  "prompt": "Use case: precise-object-edit. Repair transparency defects in Image1 only, same exact square HD map scene. Image2 is original scene layout on blue sky, Image3 finished right/bottom matching anchors. Image1 has WRONG transparent cutouts inside solid art: a large ragged HOLE with black/white-speckled torn edge inside the white CLOUD near 43%across/73%down; and scalloped transparent gouges cutting into solid upper grass along top at 3–8%across, 30–57%across. Restore these missing solid regions naturally from surrounding artwork: CLOUD HOLE becomes complete white-to-light-cyan shaded cloud artwork with intact smooth outlines, no spot or pinholes; TOP GRASS GOUGES become continuous original green grass all the way to top crop wherever Image2 has grass. Image2 original has NO transparent holes in grass/clouds at those places. Preserve the little original cropped object at top unchanged, never expand it into a new object. Retain TRUE external sky transparency in the diagonal open gap at right and BELOW the cloud at bottom-left, exactly matching original exterior silhouette. No sky-filled holes within grass, cliff or cloud. Do not change cliff columns, lip shape, plants, positions, object counts or any outer RIGHT/BOTTOM finished matching anchor. Keep same crisp native density, camera and square frame, no reframe or scaling. Transparent exterior alpha0, fully painted solid grass/cliff/cloud interiors alpha255, antialias only outer artwork contours. Clean cloud and top grass solidity, no added decoration.",
+  "referenceRect": [
+    1360,
+    388,
+    312,
+    312
+  ],
+  "sourceSkyReference": true,
+  "unusedContextCaution": "Upper32 logical context remains unreviewed: native top alpha gouges are outside core; never treat that unused top margin as qualified coverage."
+}

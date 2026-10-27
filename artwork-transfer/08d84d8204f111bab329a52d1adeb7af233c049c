@@ -1,0 +1,22 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-e12344fc-7b72-4847-bc55-fde4b35f6ab6.png",
+  "prompt": "Use case: style-transfer / faithful HD map tile reconstruction. Image1 original exact layout, Image2 same-framed completed HD LEFT32 and BOTTOM32 logical strips; preserve their colored pixels as stitching anchors, fill missing art from image1. Same square288x288logical framing, at least1254x1254. Reconstruct the grassy upper terrain/hills, cropped white cloud at top, grey road lower-left and ONE blue futuristic building lower-right. Keep exact original building structure: central round blue dome, left and right blue rear towers, two gold rooftop ornaments, sloped light-cyan walls, teal entrance/stairs, existing cone trees and cropped round tree; no extra roof units or props. Continue the existing lower building directly into its fixed base. IMPORTANT ALPHA: This map is solid painted artwork. ALL ground, grass, road, building and white CLOUD pixels must be FULLY OPAQUE alpha255. The only transparent part is the small actual sky cutout along the upper-left/top border shown in image1, plus any true outside-island sky beyond that silhouette. No semitransparent haze, no translucent grass, no holes inside ground or cloud; crisp native RGBA edge antialias only. Preserve silhouette and cropped framing. Ignore magenta/cyan/yellow extraction fringes around the old source edge; they are defects, not objects. No new tufts, flowers, characters, lettering or decorative items. Match existing bright polished cartoon HD grass and grey asphalt. Output genuine transparent RGBA only outside the map's visible contour.",
+  "referenceRect": [
+    2080,
+    420,
+    288,
+    288
+  ],
+  "verifiedNeighborSubregions": [
+    {
+      "tileId": "r3c9",
+      "rect": [
+        2112,
+        676,
+        240,
+        32
+      ],
+      "side": "bottom"
+    }
+  ]
+}

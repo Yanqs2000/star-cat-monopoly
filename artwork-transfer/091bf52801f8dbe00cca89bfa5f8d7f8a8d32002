@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>星猫大富翁 · 5B 高清资源分组对照</title>
+  <style>
+    :root{color-scheme:light dark;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:#17252b;color:#edf5f3}
+    *{box-sizing:border-box}body{margin:0;padding:24px;max-width:1560px;margin-inline:auto}
+    header{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+    h1{font-size:clamp(26px,4vw,42px);margin:0}.eyebrow{color:#82caca;letter-spacing:.12em}
+    a{color:#8bdbed}p{color:#bed0d4}.summary{padding:14px 18px;background:#243b43;border-radius:12px;margin:16px 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,470px),1fr));gap:18px}
+    article{border:1px solid #48616a;border-radius:14px;background:#20343b;padding:16px;min-width:0}
+    h2{font-size:20px;margin:0 0 4px}article>p{min-height:3em;margin:0 0 12px;font-size:14px}
+    .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    figure{margin:0;min-width:0}figcaption{font-weight:650;font-size:13px;margin:0 0 6px}
+    .preview{height:230px;border-radius:8px;display:grid;place-items:center;overflow:hidden;background-color:#dce7e7}
+    .checker{background-image:linear-gradient(45deg,#0002 25%,transparent 25%),linear-gradient(-45deg,#0002 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#0002 75%),linear-gradient(-45deg,transparent 75%,#0002 75%);background-size:18px 18px;background-position:0 0,0 9px,9px -9px,-9px 0}
+    body.dark-stage .preview{background-color:#172127;background-image:linear-gradient(45deg,#fff2 25%,transparent 25%),linear-gradient(-45deg,#fff2 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#fff2 75%),linear-gradient(-45deg,transparent 75%,#fff2 75%)}
+    img{max-width:100%;max-height:224px;width:auto;height:auto;object-fit:contain;image-rendering:auto}
+    .meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:8px;color:#a9c4ca;font:12px ui-monospace,monospace}
+    .map .preview{height:300px}.map img{max-height:294px;max-width:100%}
+    footer{margin:26px 0;color:#a9c4ca;font-size:13px}
+    @media(max-width:560px){body{padding:14px}.pair{grid-template-columns:1fr}.preview{height:180px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">第五阶段 · 5B 分组替换</span><h1>高清资源逐组对照</h1></div>
+    <div><label><input id="dark-background" type="checkbox"> 深色棋盘底</label>　<a href="../5a/index.html">打开 5A 地图与角色动作样本 ↗</a></div>
+  </header>
+  <p class="summary">左右对照原始 PNG 与高清 WebP。透明角色、公司、NPC、住宅和特效置于浅色与深色棋盘底；画面按相同逻辑尺寸展示，尺寸标签保留原始像素倍率。公司 2–12 使用对应已选高分辨率候选，原始 SWF 的轮廓边界和摆放锚点保持不变。地图源保持 2700×2552，没有把重采样当作新增细节。</p>
+  <main class="grid" id="samples" aria-live="polite"></main>
+  <footer>高清镜像采用 2× 逻辑像素密度；公司、房屋/出售标记、NPC/世界动画、互动卡牌/运气插图及角色时间轴由原版 SWF 以 2× 重绘，动画帧、边界、锚点、方向与时序对照原始清单。嵌入 SWF 的位图仍受其源像素限制；地图与其它静态源位图使用预乘透明度 Lanczos 插值，并以 WebP q98 编码（alpha quality 100）。11 张公司候选经黑底透明提取，完整来源/哈希及逐文件验证位于 docs/modernization/evidence/phase-5b/。</footer>
+  <script>
+    const samples = [
+      {group:'角色',name:'卷毛 · 行走帧',original:'walk/down-right/1.png'},
+      {group:'角色',name:'阿牛 · 开心表情',original:'characters/2/reactions/happy/down-right/1.png'},
+      {group:'角色',name:'阿牛 · 欢呼动作',original:'characters/2/reactions/cheer/down-right/1.png'},
+      {group:'公司建筑',name:'公司 · 卷毛（原版时间轴 2×）',original:'companies/1.png'},
+      ...Array.from({length:11},(_,index)=>({group:'公司建筑',name:`公司 · 高分辨率候选 ${index+2}`,original:`companies/${index+2}.png`})),
+      {group:'公司建筑',name:'公司对话框',original:'companies/dialog.png'},
+      {group:'住宅与标记',name:'出售标记 · 朝向1',original:'properties/sell-sign/facing-1.png'},
+      {group:'住宅与标记',name:'房屋 · 朝向1 · 等级0',original:'properties/houses/owner-1/facing-1/level-0.png'},
+      {group:'住宅与标记',name:'房屋 · 朝向1 · 等级4',original:'properties/houses/owner-1/facing-1/level-4.png'},
+      {group:'NPC 与世界',name:'NPC 1 · 帧1',original:'world/npc-1/1.png'},
+      {group:'NPC 与世界',name:'火箭 · 帧1',original:'world/rocket/1.png'},
+      {group:'卡片与事件',name:'卡片 · 1',original:'interactions/cards/1.png'},
+      {group:'卡片与事件',name:'运气事件插图 · 12',original:'interactions/luck/12.png'},
+      {group:'特效与小游戏',name:'魔法门飞行 · 帧1',original:'activities/fly-1-4/1.png'},
+      {group:'特效与小游戏',name:'彩票投注场景',original:'activities/ludo-game/1.png'},
+      {group:'特效与小游戏',name:'游乐场结算场景',original:'activities/carnival-score/1.png'},
+      {group:'地图',name:'完整地图',original:'map.png',map:true},
+    ]
+    const root=document.getElementById('samples')
+    for(const item of samples){
+      const hd=item.original.replace(/^/,'').replace(/\.png$/i,'.webp')
+      const title=document.createElement('article');if(item.map)title.classList.add('map')
+      title.innerHTML=`<h2>${item.group} · ${item.name}</h2><p>相同逻辑尺寸对照；点击图片可单独检查原始像素与透明边缘。</p>`
+      const pair=document.createElement('div');pair.className='pair'
+      for(const side of [{label:'原版',url:`/assets/${item.original}`},{label:'高清',url:`/assets-hd/${hd}`}]){
+        const figure=document.createElement('figure')
+        figure.innerHTML=`<figcaption>${side.label}</figcaption><a href="${side.url}" target="_blank" rel="noreferrer"><div class="preview checker"><img loading="lazy" decoding="async" src="${side.url}" alt="${item.group} ${item.name} ${side.label}"></div></a><div class="meta"><span class="size">读取尺寸…</span><span>${side.url.split('/').at(-1)}</span></div>`
+        const image=figure.querySelector('img'),size=figure.querySelector('.size')
+        image.addEventListener('load',()=>{size.textContent=`${image.naturalWidth} × ${image.naturalHeight} px`})
+        image.addEventListener('error',()=>{size.textContent='资源加载失败'})
+        pair.append(figure)
+      }
+      title.append(pair);root.append(title)
+      const imagePair=[...pair.querySelectorAll('img')]
+      Promise.all(imagePair.map(image=>image.decode())).then(()=>{
+        const width=imagePair[0].naturalWidth,height=imagePair[0].naturalHeight
+        for(const image of imagePair){image.style.width=`${width}px`;image.style.height=`${height}px`}
+      }).catch(()=>{})
+    }
+    document.querySelector('#dark-background').addEventListener('change',event=>document.body.classList.toggle('dark-stage',event.target.checked))
+  </script>
+</body>
+</html>

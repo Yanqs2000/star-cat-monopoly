@@ -1,0 +1,24 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-2c292856-61a9-4f71-b5a8-a007dca008d7.png",
+  "prompt": "Use case: precise-object-edit. Square native HD Star Cat Monopoly map continuation. Image1 EDIT TARGET has ready sharp borders and a central transparent missing rectangle; Image2 is original layout of the exact same square. Fill unfinished area faithfully. Keep the existing sharp left32, right24 and bottom40 logical pixels at identical coordinates, shapes, crop and texture scale; never reframe or magnify. Main interior is original dense green grass enclosure. One long brown wooden picket fence descends diagonally from upperRIGHT to its square end post near center-left/lower-middle, preserving exact original fence angle/end coordinate and original picket spacing. One grey diagonal asphalt road runs lowerLEFT toward upperRIGHT, with original white dashed centerline, white curved loop-symbol fragment at lowerleft and one bent right-angle arrow near lower middle. Continue existing road/curbs through left, right and bottom anchors in straight unbroken lines; no offset or extra white spur. Red-orange spiral parcel row at lower/right boundary has same original brick dimensions, gray corner-stone positions, parcel count and spiral pattern phase as ready anchors. Preserve cropped small left shrub and bottomright lobed tree fragment. No new trees, buildings, stones, gates or objects. Match sharp glossy cartoon outlines, fine grass leaf size and fine gray asphalt grain of Image1. Same square view and original object footprints. Entire frame within island: alpha255 everywhere, no transparent or white holes. High native resolution square.",
+  "referenceRect": [
+    864,
+    1380,
+    312,
+    312
+  ],
+  "sharedRepairs": [
+    {
+      "repairId": "central-red-parcels-whole-r2",
+      "rect": [
+        864,
+        1576,
+        216,
+        208
+      ],
+      "assembledPath": "public/modern/hd-masters/map/full-map-v1/repairs/central-red-parcels-whole-r2/assembled.png",
+      "requiredOverlay": true,
+      "scope": "Local artifact correction; preserve in later exports"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+F.
+======================================================================
+FAIL: test_completed_east_building_survives_sign_export (__main__.SignContextExportTest.test_completed_east_building_survives_sign_export)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch14_sign_export.py", line 10, in test_completed_east_building_survives_sign_export
+    def test_completed_east_building_survives_sign_export(self):self.check('r4c6',[1392,1098,40,74])
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch14_sign_export.py", line 8, in check
+    native=np.array(Image.open(m.WORK/'assembled'/f'{tid}.png').convert('RGBA').crop(box));export=np.array(Image.open(m.WORK/'reviews/batch-14'/f'{tid}.webp').convert('RGBA').crop(box));wrong=int(np.any(native!=export,axis=2).sum());results[tid]={'rect':roi,'wrongPixels':wrong};self.assertEqual(wrong,0,'Old sign context overwrote completed native map art')
+                                                                                                                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 56027 != 0 : Old sign context overwrote completed native map art
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.134s
+
+FAILED (failures=1)

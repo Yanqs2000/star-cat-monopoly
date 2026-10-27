@@ -1,0 +1,857 @@
+[
+  {
+    "id": "r2c9",
+    "row": 2,
+    "col": 9,
+    "rect": [
+      2112,
+      420,
+      240,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9400553385416667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c9-r1.png",
+        "masterSha256": "4f3908e68abf2f19331b49546cbe02b8628018fc2da99f20410feab2e6fdaa55",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2080,
+          420,
+          288,
+          288
+        ],
+        "prompt": "Use case: style-transfer / faithful HD map tile reconstruction. Image1 original exact layout, Image2 same-framed completed HD LEFT32 and BOTTOM32 logical strips; preserve their colored pixels as stitching anchors, fill missing art from image1. Same square288x288logical framing, at least1254x1254. Reconstruct the grassy upper terrain/hills, cropped white cloud at top, grey road lower-left and ONE blue futuristic building lower-right. Keep exact original building structure: central round blue dome, left and right blue rear towers, two gold rooftop ornaments, sloped light-cyan walls, teal entrance/stairs, existing cone trees and cropped round tree; no extra roof units or props. Continue the existing lower building directly into its fixed base. IMPORTANT ALPHA: This map is solid painted artwork. ALL ground, grass, road, building and white CLOUD pixels must be FULLY OPAQUE alpha255. The only transparent part is the small actual sky cutout along the upper-left/top border shown in image1, plus any true outside-island sky beyond that silhouette. No semitransparent haze, no translucent grass, no holes inside ground or cloud; crisp native RGBA edge antialias only. Preserve silhouette and cropped framing. Ignore magenta/cyan/yellow extraction fringes around the old source edge; they are defects, not objects. No new tufts, flowers, characters, lettering or decorative items. Match existing bright polished cartoon HD grass and grey asphalt. Output genuine transparent RGBA only outside the map's visible contour.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [
+          {
+            "tileId": "r3c9",
+            "rect": [
+              2112,
+              676,
+              240,
+              32
+            ],
+            "side": "bottom"
+          }
+        ],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 67944,
+          "solidAlphaMedian": 251.0,
+          "fullyOpaqueFraction": 3.3068026016905396e-05,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 4.75014961101137,
+            "p95RgbDifference": 11.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 8.517241379310345,
+            "p95RgbDifference": 30.666666666666668,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 67
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r2c9-r1.png",
+    "referenceRect": [
+      2080,
+      420,
+      288,
+      288
+    ],
+    "nativePixelDensity": 4.354166666666667,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 4.75014961101137,
+        "p95RgbDifference": 11.0,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 8.517241379310345,
+        "p95RgbDifference": 30.666666666666668,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 67
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 67944,
+      "solidAlphaMedian": 251.0,
+      "fullyOpaqueFraction": 3.3068026016905396e-05,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-review-complete-pending-user-art-acceptance",
+    "assembledSha256": "aca7b1fbe21d678cfdf4674fa6c5017fee6bfecfc9ab57f09f6c2415afb81963",
+    "appliedRepairs": [
+      "blue-base-joint-r1",
+      "blue-base-fullframe-r3"
+    ],
+    "visualReview": {
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-07/native-alpha-browser-verification.json",
+      "unfinishedAdjacentRegionsRemain": true
+    }
+  },
+  {
+    "id": "r2c10",
+    "row": 2,
+    "col": 10,
+    "rect": [
+      2352,
+      420,
+      240,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.59130859375,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c10-r1.png",
+        "masterSha256": "b74baa6f8dcf7248dc831227e5668dfaa39cc3a09de54d53495a4b4dad281dcc",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2296,
+          420,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer / faithful HD map continuation. Image1 exact original game crop; Image2 same-framed already finished LEFT56 and BOTTOM56 logical strips. Keep their existing colored pixels and native transparency fixed; reconstruct only missing map art from image1. Exact square312x312logical framing, output1254x1254 or larger. Contents: cropped ONE soft white cloud along the upper edge with its thin rightward tail, continuous green grassy hill/outer island silhouette toward upper-right, clipped right tip of the EXISTING blue futuristic building lower-left, and the same EXISTING round-lobed tree continuing into bottom reference. Do not add another tree, building, cloud, flowers, bushes, road signs or tufts. Preserve original positions, roof cap count and rounded tree silhouette. Continue the existing grass grain, painted green terrain contours, blue rear roof and tree from both fixed anchors. The actual sky beyond the outer hill/cloud contour is genuinely transparent, not white paint. Map ground, tree, building and white cloud must be solid rather than translucent; no internal holes or semitransparent haze. Preserve native RGBA; ignore original extraction's magenta/cyan/yellow fringe pixels. Seamlessly join left and bottom boundaries, no reframing or zoom.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 325392,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0003643842097632075,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.3635467980295566,
+            "p95RgbDifference": 5.333333333333333,
+            "visibleCutSamples": 1015,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 9.44667943805875,
+            "p95RgbDifference": 39.2833333333333,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r2c10-r1.png",
+    "referenceRect": [
+      2296,
+      420,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.3635467980295566,
+        "p95RgbDifference": 5.333333333333333,
+        "visibleCutSamples": 1015,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 9.44667943805875,
+        "p95RgbDifference": 39.2833333333333,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 325392,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0003643842097632075,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-review-complete-pending-user-art-acceptance",
+    "assembledSha256": "77812d400a67fa18dc1b65a375cb0955bbfb42772fd61fb20bd6f9ceecfa009e",
+    "appliedRepairs": [
+      "northeast-contour-join-r1",
+      "blue-base-fullframe-r3"
+    ],
+    "visualReview": {
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-07/native-alpha-browser-verification.json",
+      "unfinishedAdjacentRegionsRemain": true
+    }
+  },
+  {
+    "id": "r2c11",
+    "row": 2,
+    "col": 11,
+    "rect": [
+      2592,
+      420,
+      108,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.12821903935185186,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c11-r1.png",
+        "masterSha256": "da8a82878bcc119c0a08a9b33ffb3e8b77df494af01134ecdd44220576c9fc8b",
+        "nativePixelSize": [
+          887,
+          1774
+        ],
+        "referenceRect": [
+          2560,
+          420,
+          144,
+          288
+        ],
+        "prompt": "Use case: faithful map-edge continuation. Image1 original layout for this narrow mostly-empty crop; Image2 existing HD LEFT32 and BOTTOM32 logical strips at exactly same framing. Preserve those fixed colored pixels and transparency. Output the same1:2 portrait144x288logical crop, at least887x1774. MOST of the image is genuinely transparent sky. Only the LOWER-LEFT/LOWER area contains the existing continuous green grassy island/hill edge, connecting both fixed HD strips. Follow the original silhouette and existing anchor positions precisely. Do NOT fill the empty upper area with landscape. Do not zoom the grass to fill the canvas. No new cloud, tree, bush, flower, building, cliff, object or markings. Ignore tiny black or magenta/cyan extraction defects in old sky. Existing hill has subtle dark-green contour; keep its source placement and match grass texture to both anchors. Solid native grass pixels, no interior holes; native RGBA transparency only outside island edge. Same camera and crop.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 1301221,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.00017349438018020538,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 4.526946107784431,
+            "p95RgbDifference": 7.0,
+            "visibleCutSamples": 334,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 18.409863945578234,
+            "p95RgbDifference": 91.75,
+            "visibleCutSamples": 196,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c11-r2.png",
+        "masterSha256": "1140d9bc24fde44a52a022329441fbc4bbac7d9e89660747f81a327f5399e701",
+        "nativePixelSize": [
+          887,
+          1774
+        ],
+        "referenceRect": [
+          2560,
+          420,
+          144,
+          288
+        ],
+        "prompt": "Use case: precise-object-edit / transparent contour stitch. Image1 EDIT TARGET has a narrow missing horizontal band near the bottom of a mostly-transparent portrait island-edge crop. Image2 same framing shows a step between the fixed upper grassy edge and fixed bottom grassy edge. Image3 original layout. Reconnect ONLY this narrow band into ONE smooth continuous grassy silhouette, no abrupt horizontal ledge, notch or doubled green outline. Preserve all visible fixed pixels and alpha on both sides, including nearly all empty transparent upper sky and left context. Native RGBA outside island remains transparent; solid grass has no internal holes. Exact1:2 portrait144x288logical framing, output887x1774 or larger. Do not zoom, fill upper sky, or add any trees/clouds/objects. Join existing grass grain and subtle dark contour. This is only an edge continuity correction.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 1306242,
+          "solidAlphaMedian": 253.0,
+          "fullyOpaqueFraction": 0.0001665037641289883,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.7908113391984357,
+            "p95RgbDifference": 4.333333333333333,
+            "visibleCutSamples": 341,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 18.64154103852596,
+            "p95RgbDifference": 90.33333333333333,
+            "visibleCutSamples": 199,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r2c11-r3.png",
+        "masterSha256": "6ee9a850922ce8be645304a48dbcd34fcf9fe6cb6667910901dcdd5ab1aa860d",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2560,
+          564,
+          144,
+          144
+        ],
+        "prompt": "Use case: faithful HD map contour reconstruction. Image1 original exact square crop; image2 same-framed fixed HD LEFT32 and BOTTOM32logical-pixel strips. Reconstruct only the missing center from image1, connecting both fixed edges EXACTLY. Square144x144logical framing, output1254x1254 or larger. Only green grassy island edge in lower-left/lower section, and genuine transparent sky above/right. Preserve both anchors' outline positions and their transparency, especially the entire bottom32logical strip and its smooth curved slope. Form one uninterrupted island silhouette with no horizontal ledge, no sudden notch at either joining border. No new trees, clouds, objects or markings. Match the existing grass texture, green hill shading and subtle dark contour. Same crop and camera, no zoom/reframing. Ignore old colorful edge extraction fringes. Solid map art, native transparent RGBA outside its contour, no internal holes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 1032868,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.0002168499398416296,
+          "nativeAlphaModified": false
+        },
+        "transparentCanvasPadding": {
+          "sourceNonzeroAlphaOutsideGeneratedReference": 0,
+          "logicalPixelsPadded": 15552,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 2.5722713864306783,
+            "p95RgbDifference": 4.366666666666655,
+            "visibleCutSamples": 339,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 15.569444444444445,
+            "p95RgbDifference": 89.81666666666666,
+            "visibleCutSamples": 192,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      }
+    ],
+    "appliedRepairs": [
+      "northeast-contour-join-r1"
+    ],
+    "assembledSha256": "a034aa6b1ecfb24188d24dd9acd650760df339f646982f3b5794d64ef9c293ff",
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r2c11-r3.png",
+    "referenceRect": [
+      2560,
+      564,
+      144,
+      144
+    ],
+    "nativePixelDensity": 8.708333333333334,
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 493142,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00014324458535467359,
+      "nativeAlphaModified": false
+    },
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.5722713864306783,
+        "p95RgbDifference": 4.366666666666655,
+        "visibleCutSamples": 339,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "repair-left",
+        "meanRgbDifference": 2.0654952076677318,
+        "p95RgbDifference": 3.3333333333333335,
+        "visibleCutSamples": 626,
+        "maximumChangedPixels": 110
+      },
+      {
+        "side": "repair-right",
+        "meanRgbDifference": 0,
+        "p95RgbDifference": 0,
+        "visibleCutSamples": 0,
+        "maximumChangedPixels": 138
+      },
+      {
+        "side": "repair-top",
+        "meanRgbDifference": 2.151202749140894,
+        "p95RgbDifference": 4.1166666666666645,
+        "visibleCutSamples": 194,
+        "maximumChangedPixels": 138
+      },
+      {
+        "side": "repair-bottom",
+        "meanRgbDifference": 2.302158273381295,
+        "p95RgbDifference": 4.066666666666663,
+        "visibleCutSamples": 417,
+        "maximumChangedPixels": 138
+      }
+    ],
+    "reviewStatus": "internal-review-complete-pending-user-art-acceptance",
+    "selectionMethod": "Native base attempt plus shared contour repair; failed pre-repair attempt retained",
+    "selectedBaseAttemptRejectedBeforeRepair": true,
+    "boundaryRepairedBy": "northeast-contour-join-r1",
+    "committedPassedLeftSeam": {
+      "meanRgbDifference": 1.991150442477876,
+      "p95RgbDifference": 4.0,
+      "visibleCutSamples": 339,
+      "maximumChangedPixels": 69
+    },
+    "geometryReplayAudit": {
+      "sourceX": 2592,
+      "logicalY": [
+        564,
+        612
+      ],
+      "alphaMismatchRowsBefore": 13,
+      "alphaMismatchRowsAfter": 1,
+      "nativeAlphaModified": false
+    },
+    "visualReview": {
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-07/native-alpha-browser-verification.json",
+      "unfinishedAdjacentRegionsRemain": true
+    }
+  },
+  {
+    "id": "r3c10",
+    "row": 3,
+    "col": 10,
+    "rect": [
+      2352,
+      676,
+      240,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.999951171875,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c10-r1.png",
+        "masterSha256": "5bf86a7abfe674e3a787d4a6c3a97baf8d003eba70f459e85122b3f68fc0f756",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          2352,
+          676,
+          256,
+          384
+        ],
+        "prompt": "Use case: precise-object-edit. Complete only missing transparent area in image1, a precise Star Cat Monopoly HD isometric map tile. Image2 is exact original layout of same canvas. All sharp neighbor context in image1 is locked at its exact coordinates. Match same dense bright yellow-green grass, grey spiral-pebble ASPHALT roads, white brick curbs, glossy cartoon3D props, brown parcel borders. Roads are continuous grey asphalt, never white paving or grid slabs. Preserve exact original object counts, values, footprints and silhouettes. No rescaling, shifting, extra objects, signs, numbers, holes or blur. Whole output opaque alpha255, same square canvas. At slight source-vs-HD differences, align to existing sharp HD boundaries.\nPortrait2:3. Restore original grassy parcel with the cropped round tree at upper-left, exactly one full multi-lobed tree to right, and original grey asphalt road at left with its cyan10 discs and silver circular single-cat engraving. Same clipped objects, positions and values as original; no extra tree, disc or cat face. Keep bottom128 logical grass and road context stationary.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "bottom",
+            "meanRgbDifference": 10.910280970625799,
+            "p95RgbDifference": 41.333333333333336,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c10-r2.png",
+        "masterSha256": "9a851512edea8d3a41b40bb5140af1de51fd85f58378737850fdf3ed6e06be09",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2296,
+          676,
+          312,
+          312
+        ],
+        "prompt": "Use case: style-transfer / precise map reconstruction. This is an image EDIT of a fixed crop in an isometric Star Cat Monopoly board game, NOT a redesign. Image 1 is the exact original layout: match every object position, count, silhouette, crop, road width, curb, markings, and architecture. Image 2 is the already completed HD context at exactly the same framing: retain its existing colored pixels and continue them seamlessly into the missing black/transparent areas, reconstructing those areas from Image 1. Black/transparent missing context is a guide only: final entire image must be solid fully opaque art with no holes or white gaps. Match Image 2's crisp polished bright 3D cartoon rendering, leaf clusters and grey asphalt material (no paving slab grid), white curb and markings. Keep identical isometric projection and camera, no zoom/reframing. The final canvas has the same exact aspect ratio as the input; every boundary coordinate must align. Preserve clipped objects as clipped; do not complete an object by moving it inward. No extra/missing props, no characters, no added text or signs. Only reconstruct the currently missing art. Existing boundary strips are strict stitching anchors.\nSquare312x312 logical crop. Missing upper-right area contains open green lawn, two clipped existing round-lobed trees at upper-left and right edge, diagonal grey road ending at a crisp white curb corner, two CYAN discs each with WHITE '10', and ONE round grey metal manhole cover engraved with exactly ONE cat face and its paws. Copy the original single cat head proportions; do not produce two overlapped cats or an extra eye/ear. Preserve disc count and exact10values. Keep the existing colored left56logical strip and bottom56logical strip precisely fixed: partial violet10, blue ride rail/train/bush, pink20, grey asphalt, white curb and grass. Match road surface, no tile paving grid. Do not move the road corner or round trees, no added grass tufts, buildings, flowers, props or text.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.4937163375224416,
+            "p95RgbDifference": 4.0,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 14.638569604086845,
+            "p95RgbDifference": 79.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c10-r3.png",
+        "masterSha256": "1a82e9d279be65490fd4f53f04b64ce78a4076a8c25351de36bf3650948f5fae",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2296,
+          676,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / game tile stitch correction. Image1 is EDIT TARGET, an HD tile with a narrow missing horizontal strip near the lower edge. Image2 complete same-framed before-image; image3 original game layout. Fill only the missing strip to connect fixed grass texture, grey asphalt and white curb into the lower existing reference. Keep upper image and left reference fixed, no reframing/zoom. Additionally clean the engraved CAT on the round manhole cover: exactly ONE single cat head with exactly TWO ears, TWO eyes, ONE nose and TWO paws, matching original image3; remove any extra triangular ear/overlapped outline behind the head. All other art stays fixed, including precisely TWO cyan discs reading '10' each, the existing violet10 at left, pink20 at bottom, the two clipped round trees, terrain shapes and blue rail. Grey road surface, no paving grid. No new objects, no holes or seams. Entire square canvas1254x1254 or larger, fully opaque alpha255.",
+        "generator": "built-in image_gen",
+        "rejected": "Overlap disagreement too large",
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 1.7806702573309394,
+            "p95RgbDifference": 5.44999999999997,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "bottom",
+            "meanRgbDifference": 16.155172413793103,
+            "p95RgbDifference": 80.0,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "verifiedNeighborSubregions": [
+          {
+            "tileId": "r3c9",
+            "rect": [
+              2296,
+              676,
+              56,
+              256
+            ],
+            "side": "left"
+          }
+        ]
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c10-r4.png",
+        "masterSha256": "1a82e9d279be65490fd4f53f04b64ce78a4076a8c25351de36bf3650948f5fae",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          2296,
+          676,
+          312,
+          312
+        ],
+        "prompt": "Use case: precise-object-edit / game tile stitch correction. Image1 is EDIT TARGET, an HD tile with a narrow missing horizontal strip near the lower edge. Image2 complete same-framed before-image; image3 original game layout. Fill only the missing strip to connect fixed grass texture, grey asphalt and white curb into the lower existing reference. Keep upper image and left reference fixed, no reframing/zoom. Additionally clean the engraved CAT on the round manhole cover: exactly ONE single cat head with exactly TWO ears, TWO eyes, ONE nose and TWO paws, matching original image3; remove any extra triangular ear/overlapped outline behind the head. All other art stays fixed, including precisely TWO cyan discs reading '10' each, the existing violet10 at left, pink20 at bottom, the two clipped round trees, terrain shapes and blue rail. Grey road surface, no paving grid. No new objects, no holes or seams. Entire square canvas1254x1254 or larger, fully opaque alpha255.",
+        "generator": "built-in image_gen",
+        "verifiedNeighborSubregions": [
+          {
+            "tileId": "r3c9",
+            "rect": [
+              2296,
+              676,
+              56,
+              256
+            ],
+            "side": "left"
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r3c10-r4.png",
+    "referenceRect": [
+      2296,
+      676,
+      312,
+      312
+    ],
+    "nativePixelDensity": 4.019230769230769,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 1.7806702573309394,
+        "p95RgbDifference": 5.44999999999997,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "bottom",
+        "meanRgbDifference": 3.2774584929757347,
+        "p95RgbDifference": 9.333333333333334,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "internal-review-complete-pending-user-art-acceptance",
+    "assembledSha256": "6d643da4d280607d555b6bd214a1eb493a83836b42ca905a185532e65ca33ddf",
+    "appliedRepairs": [
+      "cyan10-missing-half-r1",
+      "northeast-contour-join-r1",
+      "cat-cheek-joint-r1",
+      "blue-base-fullframe-r3"
+    ],
+    "visualReview": {
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-07/native-alpha-browser-verification.json",
+      "unfinishedAdjacentRegionsRemain": true
+    }
+  },
+  {
+    "id": "r3c11",
+    "row": 3,
+    "col": 11,
+    "rect": [
+      2592,
+      676,
+      108,
+      256
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.7562934027777778,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r3c11-r1.png",
+        "masterSha256": "e39291375b962ef9ff89b2729679cd7affabbacd912144535c1a58a72d106123",
+        "nativePixelSize": [
+          887,
+          1774
+        ],
+        "referenceRect": [
+          2560,
+          676,
+          144,
+          288
+        ],
+        "prompt": "Use case: style-transfer / map-edge continuation. Image1 original exact narrow game-map crop; Image2 same-framed finished HD LEFT32logical-pixel strip. Preserve the entire colored left strip and continue it into the missing area from image1. Exact1:2 portrait144x288logical framing; output at least887x1774 or1024x2048. The ONLY contents are the same green grassy island edge with rounded hill shading, the clipped right portion of the ONE existing round-lobed tree at lower-left (connect to its fixed left half and trunk), and genuine transparent sky on the right. Follow the original contour, positions and crop. Do not create another tree, bush, cloud, rock, fence, flower or object. Match existing grass grain and tree colors; no new decorations. Keep map art solid, no internal holes, with native RGBA antialias only at the outside right silhouette. Ignore old magenta/cyan/yellow edge extraction fringes. No blue/white background rectangle. No zoom or reframing. The fixed tree halves must make exactly one continuous tree, no duplicate trunk or extra lobes.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 470787,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 0.00013155068387290297,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 3.301915020945542,
+            "p95RgbDifference": 7.666666666666667,
+            "visibleCutSamples": 1114,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r3c11-r1.png",
+    "referenceRect": [
+      2560,
+      676,
+      144,
+      288
+    ],
+    "nativePixelDensity": 6.159722222222222,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 3.301915020945542,
+        "p95RgbDifference": 7.666666666666667,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 470787,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00013155068387290297,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-review-complete-pending-user-art-acceptance",
+    "assembledSha256": "b02b78e2e8646c65220c0dc1a1e97fec839ecfd811228fe49251e8780809c979",
+    "appliedRepairs": [
+      "northeast-contour-join-r1"
+    ],
+    "visualReview": {
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-07/native-alpha-browser-verification.json",
+      "unfinishedAdjacentRegionsRemain": true
+    }
+  },
+  {
+    "id": "r4c11",
+    "row": 4,
+    "col": 11,
+    "rect": [
+      2592,
+      932,
+      108,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.6409336419753087,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r4c11-r1.png",
+        "masterSha256": "af76ba564db14b0abb40d6cc2e973fd1905f2b5be416bda56ee9bbeda5e590f9",
+        "nativePixelSize": [
+          887,
+          1774
+        ],
+        "referenceRect": [
+          2560,
+          900,
+          144,
+          288
+        ],
+        "prompt": "Use case: faithful HD map-edge continuation. Image1 original layout; image2 same-framed completed TOP32 and LEFT32logical strips. Keep all their existing colored pixels and native alpha fixed. Reconstruct the missing area exactly from image1. Exact1:2 portrait144x288logical crop, output887x1774 or larger. Only existing grassy hill/outer edge above and ONE continuous yellow-gold cliff face below, meeting at the same irregular grassy lip as original. Preserve the original cliff planes and long vertical groove count/positions, the clipped existing tree trunk at upper-left, and the transparent outside sky on the right. Join the top green silhouette and left gold cliff continuously without a step, extra crack, rock, tree, cloud or vegetation. No new objects or decorative details. Match established crisp cartoon grass/cliff materials, shadows, contour widths and camera. Native RGBA outside contour only, no internal transparent holes; don't copy old extraction magenta/cyan fringes. Preserve full frame; no zoom.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 509240,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 5.084084400885139e-06,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 6.518837803320562,
+            "p95RgbDifference": 42.94999999999997,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 69
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 2.604016064257028,
+            "p95RgbDifference": 5.0,
+            "visibleCutSamples": 415,
+            "maximumChangedPixels": 69
+          }
+        ],
+        "rejected": "Overlap disagreement too large"
+      },
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r4c11-r2.png",
+        "masterSha256": "3ee9c1becb9aa27d2f42cc9a5856825fed3224397eb1dc1e924c95d8fc92c127",
+        "nativePixelSize": [
+          887,
+          1774
+        ],
+        "referenceRect": [
+          2560,
+          900,
+          144,
+          288
+        ],
+        "prompt": "Use case: precise-object-edit / map seam repair. Image1 EDIT TARGET has a narrow vertical missing strip near its left edge. Image2 same framing shows the previous old/new join; image3 original game layout. Fill ONLY the narrow strip to connect fixed grass and the grass-to-gold-cliff lip into a continuous surface. Preserve existing pixels/positions and native alpha on both fixed sides, including the full top32logical-pixel strip. The gold cliff groove on the left and grass lip must connect without a step, doubled edge or extra crack. No new trees, clouds, rocks or decorative objects. Maintain exactly the original cliff planes and outer right silhouette, transparent sky beyond the edge, solid painted grass/cliff and existing cropped trunk upper-left. Exact1:2 portrait144x288logical canvas, at least887x1774. No zoom or redesign; remove only the left stitch mismatch.",
+        "generator": "built-in image_gen",
+        "workflow": "native-rgba-coverage-preserved",
+        "sourceMaskApplied": false,
+        "verifiedNeighborSubregions": [],
+        "alphaAudit": {
+          "enclosedLowAlphaPixels": 0,
+          "borderConnectedLowAlphaPixels": 511022,
+          "solidAlphaMedian": 252.0,
+          "fullyOpaqueFraction": 8.897147701548993e-06,
+          "nativeAlphaModified": false
+        },
+        "seams": [
+          {
+            "side": "left",
+            "meanRgbDifference": 3.851532567049809,
+            "p95RgbDifference": 7.333333333333333,
+            "visibleCutSamples": 1044,
+            "maximumChangedPixels": 64
+          },
+          {
+            "side": "top",
+            "meanRgbDifference": 2.8934294871794872,
+            "p95RgbDifference": 4.416666666666666,
+            "visibleCutSamples": 416,
+            "maximumChangedPixels": 69
+          }
+        ]
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r4c11-r2.png",
+    "referenceRect": [
+      2560,
+      900,
+      144,
+      288
+    ],
+    "nativePixelDensity": 6.159722222222222,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 3.851532567049809,
+        "p95RgbDifference": 7.333333333333333,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 64
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.8934294871794872,
+        "p95RgbDifference": 4.416666666666666,
+        "visibleCutSamples": 416,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "workflow": "native-rgba-coverage-preserved",
+    "sourceMaskApplied": false,
+    "alphaAudit": {
+      "enclosedLowAlphaPixels": 0,
+      "borderConnectedLowAlphaPixels": 511022,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 8.897147701548993e-06,
+      "nativeAlphaModified": false
+    },
+    "reviewStatus": "internal-review-complete-pending-user-art-acceptance",
+    "assembledSha256": "f2cc0e6e616701afd6b8bdb55667c09000819f7fce2fa348e90da33cbec8743a",
+    "visualReview": {
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-07/native-alpha-browser-verification.json",
+      "unfinishedAdjacentRegionsRemain": true
+    }
+  }
+]
