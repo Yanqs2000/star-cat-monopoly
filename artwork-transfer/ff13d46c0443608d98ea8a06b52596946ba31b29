@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星猫大富翁 · 5A高清资源样本</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#12242d;color:#e9f2f4;font:16px/1.5 system-ui,"PingFang SC",sans-serif}main{max-width:1440px;margin:auto;padding:26px}h1,h2{margin:0 0 8px}p{color:#b9cbd1}.note{padding:12px 16px;background:#213b46;border-left:4px solid #ffe18a;border-radius:6px}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:18px 0}button,select{font:inherit;padding:8px 13px;background:#244652;color:white;border:1px solid #648491;border-radius:7px}button{cursor:pointer}.layout{display:grid;grid-template-columns:minmax(340px,1fr) minmax(380px,1fr);gap:20px}section{background:#19343f;border:1px solid #3b606c;border-radius:12px;padding:18px;min-width:0}.map-img{width:100%;max-height:68vh;object-fit:contain;background:#d9e2e7}.source-link{display:block;margin-top:8px}.actors{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.actor{padding:12px;background:#203e49;border-radius:8px;text-align:center}.actor img{display:block;margin:12px auto;width:144px;height:192px;object-fit:contain;background:linear-gradient(45deg,#cfdae0 25%,transparent 25%,transparent 75%,#cfdae0 75%),linear-gradient(45deg,#cfdae0 25%,#fff 25%,#fff 75%,#cfdae0 75%);background-color:#fff;background-size:16px 16px;background-position:0 0,8px 8px}.metadata{font-size:13px;color:#a9c0c8}.state{font-variant-numeric:tabular-nums;color:#ffe18a}@media(max-width:850px){.layout{grid-template-columns:1fr}main{padding:16px}}
+</style>
+</head>
+<body><main>
+<h1>星猫大富翁 · 第5A高清样本</h1>
+<p class="note">卷毛样本由已确认方向的高清候选替换离线工作SWF中的角色底图，再用JPEXS逐帧导出原动画，页面只载入PNG/JSON。原图和2倍像素样本并排循环；两者占用相同逻辑尺寸。眼睛、脸部体积和材质有可见风格差异，需在视觉验收时一并查看。</p>
+<div class="layout">
+<section>
+<h2>地图底图样本</h2>
+<p>地图源为原版合成底图，2700×2552 RGBA。该样本保留原尺寸、像素和位置，不重绘、不裁剪、不声称增加了原图不存在的纹理细节。目标1080p窗口使用原图纹理。</p>
+<img class="map-img" src="../../assets/map.png" alt="原版2700乘2552地图底图">
+<a class="source-link" href="../../assets/map.png" target="_blank" rel="noopener">在新标签查看原尺寸底图</a>
+<p class="metadata" id="map-meta"></p>
+</section>
+<section>
+<h2>完整普通动作 · 卷毛</h2>
+<p>每方向原始24帧、30帧/秒。选择方向后两侧同步循环，可暂停并逐帧检查连贯、外轮廓、眼睛比例、配色和脚底锚点。</p>
+<div class="controls">
+<label>方向 <select id="facing"><option value="down-right">右下</option><option value="down-left">左下</option><option value="up-left">左上</option><option value="up-right">右上</option></select></label>
+<button id="toggle">暂停</button><button id="previous">上一帧</button><button id="next">下一帧</button>
+<span class="state" id="frame-status"></span>
+</div>
+<div class="actors">
+<div class="actor"><strong>原版帧</strong><img id="original-frame" alt="卷毛原版行走帧"></div>
+<div class="actor"><strong>高清帧（2倍源纹理）</strong><img id="hd-frame" alt="卷毛高清行走帧"></div>
+</div>
+<p class="metadata" id="actor-meta"></p>
+<p>神灵与普通表情帧同样以相同规则逐帧导出，可选取检查：</p>
+<div class="controls">
+<label>动作 <select id="reaction"><option>neutral</option><option>ready</option><option>happy</option><option>sad</option><option>hurt</option></select></label>
+<button id="reaction-toggle">预览表情</button><span class="state" id="reaction-status"></span>
+</div>
+<div class="actors">
+<div class="actor"><strong>原版表情</strong><img id="original-reaction" alt="原版表情帧"></div>
+<div class="actor"><strong>高清表情（2倍）</strong><img id="hd-reaction" alt="高清表情帧"></div>
+</div>
+</section>
+</div>
+<p class="metadata" id="build-meta">载入帧清单…</p>
+<p><a href="../5b/index.html">查看 5B 六组高清资源对照 →</a></p>
+</main>
+<script type="module">
+const manifest=await(await fetch('sample-manifest.json')).json();
+const labels={'down-right':'右下','down-left':'左下','up-left':'左上','up-right':'右上'};
+let frame=0,playing=true,reactionFrame=0,reactionPlaying=false;
+const original=document.querySelector('#original-frame'),hd=document.querySelector('#hd-frame');
+const originalReaction=document.querySelector('#original-reaction'),hdReaction=document.querySelector('#hd-reaction');
+const facing=document.querySelector('#facing'),reaction=document.querySelector('#reaction');
+function showWalk(){
+ const dir=facing.value,n=(frame%24)+1;
+ original.src='../../assets/walk/'+dir+'/'+n+'.png';
+ hd.src='generated/characters/1/walk/'+dir+'/'+n+'.png';
+ document.querySelector('#frame-status').textContent=labels[dir]+' · '+n+'/24 · 30 fps';
+}
+function showReaction(){
+ const dir=facing.value,clip=manifest.character.reactions.clips.find(x=>x.name===reaction.value&&x.facing===dir);
+ const n=(reactionFrame%clip.frames)+1;
+ originalReaction.src='../../assets/characters/1/reactions/'+reaction.value+'/'+dir+'/'+n+'.png';
+ hdReaction.src='generated/characters/1/reactions/'+reaction.value+'/'+dir+'/'+n+'.png';
+ document.querySelector('#reaction-status').textContent=labels[dir]+' · '+n+'/'+clip.frames;
+}
+facing.onchange=()=>{frame=0;reactionFrame=0;showWalk();showReaction()};
+reaction.onchange=()=>{reactionFrame=0;showReaction()};
+document.querySelector('#toggle').onclick=e=>{playing=!playing;e.target.textContent=playing?'暂停':'播放'};
+document.querySelector('#previous').onclick=()=>{frame=(frame+23)%24;showWalk()};
+document.querySelector('#next').onclick=()=>{frame=(frame+1)%24;showWalk()};
+document.querySelector('#reaction-toggle').onclick=e=>{reactionPlaying=!reactionPlaying;e.target.textContent=reactionPlaying?'停止表情预览':'预览表情'};
+setInterval(()=>{if(playing){frame=(frame+1)%24;showWalk()}if(reactionPlaying){reactionFrame++;showReaction()}},1000/30);
+showWalk();showReaction();
+document.querySelector('#map-meta').textContent='SHA-256 '+manifest.map.sha256;
+document.querySelector('#actor-meta').textContent='walk '+manifest.character.walk.clips.map(x=>labels[x.facing]+' '+x.frameCount+'帧').join(' · ')+' · 原始帧间隔 33.333ms';
+document.querySelector('#build-meta').textContent='JPEXS '+manifest.tool+' · 源分辨率 ×'+manifest.pixelDensity+' · '+manifest.timelinePngFrames+'张序列/覆盖帧 · '+manifest.files.length+'张PNG（含高清角色源图）';
+</script></body></html>
