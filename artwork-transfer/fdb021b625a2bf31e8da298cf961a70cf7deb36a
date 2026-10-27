@@ -1,0 +1,543 @@
+{
+  "objective": "完成剩余地图素材，注意按照顺序来，中间要注意和别的素材的接合",
+  "status": "complete",
+  "phase": "user-approved",
+  "completedCheckpoint": "batch-30",
+  "nextTile": null,
+  "orderedNext": [],
+  "orderPolicy": "Follow the connected right-hand outline clockwise downward, then remaining lower/left outline and interior gaps. Preserve existing completed art; inspect existing rejected masters before regenerating. Resolve all recorded join debt before completion.",
+  "knownJoinDebt": [],
+  "exitCriteria": [
+    "All remaining meaningful map coverage generated or reused and inspected",
+    "No pending generation, rework or visual-correction tasks",
+    "Continuous roads, curbs, terrain, buildings and silhouettes in actual MapScene at overview/2x/4x",
+    "Source object counts, numeric discs and signs retained",
+    "Approved four runtime tiles and masters unchanged; character/Blender work untouched",
+    "Full map replacement review must not overlay old map behind new transparent outlines; preserve approved pilot underlay"
+  ],
+  "productionEnabled": true,
+  "specialCases": {
+    "r5c10": "Existing native master passes intrinsic alpha-hole audit but its reference starts at1172 and lacks top context for now-ready r4c10. Stage/review it, repair the shared top joint if needed, and commit all independently passed neighboring cuts when promoting. Do not blindly call the ordinary accept path.",
+    "r7c9_r8c8": "Existing native masters have full left/top context and zero enclosed alpha<200 holes. Inspect and try RGBA-preserving join validation before generating replacements.",
+    "r3c5_missing_top16": {
+      "rect": [
+        1152,
+        676,
+        240,
+        16
+      ],
+      "status": "closed-native-coverage-with-local-corrections-and-actual-render",
+      "requiredBeforeCompletion": false,
+      "evidence": "reviews/batch-16/verification.json"
+    },
+    "tomorrow_city_sign": "When r5c4/neighboring pending cells are generated, preserve the already-correct TOMORROW/CITY glyphs. Do not overlay the old full sign-repair background over newly HD surroundings; its old blurry context is not completed coverage.",
+    "approved_pilot": "Keep original map, four approved runtime tiles and native masters byte unchanged. Opaque donor assemblies are generation references, not runtime sky overlays. Preserve the approved pilot underlay when simulating full replacement.",
+    "alpha_and_review": "Keep native RGBA; no alpha normalization or original-outline clipping. Compare cuts on sky matte only for analysis. Actual replacement review must cull assets-hd/map.webp at2x coordinates and assert culling occurred; do not claim overlay images prove replacement.",
+    "preferWholeVisibleObject": "If a small patch moves a defect to its perimeter, inspect the whole visible object/shared join before generating another small patch. Use a complete generated frame when its native density/aspect and surrounding cuts pass; do not force pixel cuts across an object contour or lower seam thresholds.",
+    "batch08_failed_lower_cliffs": {
+      "r8c9": "Standalone target-first fills altered old r8c8 silhouette. r1/r2 left mean47.15/44.52; widened left96 ref r3 left37.61. All unselected. Inspect old/new/source whole shared cliff geometry before another image; do not lower thresholds.",
+      "r9c8": "r1 top mean1.97 passed but closed left pillars before the bottom crop; withdrawn, r8c8 bottom restored. r2 source-first preserved continuing pillars but top mean21.95 p95146 failed. Needs whole shared outline repair with r8c8. Do not extend from r1.",
+      "r9c7": "r1 omitted original lower-left cropped cloud; rejected before assembly. r2 restored cloud and kept bottom-cropped cliff; top mean12.70/p9557 failed. Reuse r2 as layout candidate while repairing the upper connection.",
+      "r10c8": "Only references prepared, no generation. Must regenerate target after correcting r9c8; current target was built from withdrawn r9c8-r1 and is stale.",
+      "resolution": "Completed in batch09 using original native layouts plus shared cliff repairs; never reuse the withdrawn early-ending r9c8-r1."
+    },
+    "batch09": {
+      "completedCandidates": [
+        "r8c9",
+        "r9c3",
+        "r9c4",
+        "r9c5",
+        "r9c6",
+        "r9c7",
+        "r9c8",
+        "r10c4",
+        "r10c5",
+        "r10c6",
+        "r10c7",
+        "r10c8"
+      ],
+      "remainingNotGenerated": 36,
+      "remainingRework": 10,
+      "pendingVisualReview": 3,
+      "nativeAlpha": "Keep native RGBA. A declared source reference may approve existing enclosed sky windows by component correspondence only; it never clips/fills output. Default audit still rejects enclosed holes. Preserve sourceSkyReference metadata for r9c4/r10c4.",
+      "previewPacking": "Zero-bleed draw rectangles prevent repeated alpha compositing at tile boundaries. Keep grid geometry non-overlapping; sign partial remains special and must not cover later HD surroundings.",
+      "partialContext": "Later complete native scenes supersede obsolete local context. Reapply validated latest whole-object scenes in order; do not let old partial cloud/background context overwrite complete new art.",
+      "nativePreview": "Transparent pixels may carry black/blue/brown RGB glows. Inspect actual RGBA on game sky before judging artifacts; do not erase or normalize alpha based on hidden RGB.",
+      "wideBudget": "384x256 logical landscape produced1536x1024 native (exact4x). Prefer a whole closed object/joint when it fits; square312x312 gives4.019x. Verify actual native output size rather than assuming.",
+      "cancelledRequest": "One unused waiting call was terminated after its cloud was repaired by exact reuse; no retry of that request and no pending generation handle remains.",
+      "next": "Continue connected lower/left outline from r9c2; then remaining interior gaps and all recorded visual/coverage debt. Keep objective intact."
+    },
+    "batch10": {
+      "completedCandidates": [
+        "r6c0",
+        "r7c0",
+        "r7c1",
+        "r8c0",
+        "r8c1",
+        "r9c1",
+        "r9c2",
+        "r10c2"
+      ],
+      "newVisualRework": [
+        "r6c1"
+      ],
+      "remainingNotGenerated": 28,
+      "remainingRework": 9,
+      "pendingVisualReview": 4,
+      "sourceValueCorrection": "West manhole road blue30/red20/cyan10/green30. Early prompt wrongly said green20; original magnified/rotated confirms green30. Raw drafts remain immutable; donor reassembly corrects green numeral.",
+      "rejectedRoadJoint": "Do not use r6c1 as a fully ready neighbor. Single cat and correct numerals are reusable draft design only. Existing r6c2 assembly restored byte-identical to batch10-before. Full repair overlay remains visibly unqualified in review; no production change.",
+      "failedFrameExperiments": "32-frame has duplicate parcel posts/spiral mismatch. 96/132/192 right-context cache-only trials shift defects to curb, rail or castle. None promoted. Repair whole object/parcel adjacency before accepting, not merely numerical seam thresholds.",
+      "reuse": [
+        "r10c2 shares r9c2 native master",
+        "r8c0 shares r8c1 native master"
+      ],
+      "next": "Continue left outer outline upward from r5c0, then close interior and all visual/coverage debt."
+    },
+    "batch11": {
+      "completedCandidates": [
+        "r2c1",
+        "r3c1",
+        "r4c0",
+        "r4c1",
+        "r5c0",
+        "r5c1"
+      ],
+      "boundaryCoverageOnly": [
+        "r2c1"
+      ],
+      "previousCandidateWithdrawn": [
+        "r4c9"
+      ],
+      "remainingNotGenerated": 22,
+      "remainingRework": 9,
+      "pendingVisualReview": 5,
+      "sourceIconAudit": "Board type27 is dice game; id199/r5c1 now has original white dice, red pip and blue pips. id200/r4c9 wrong card/star10 withdrawn. id201/r5c2 pending and id202/r3c9 visual-pending need same dice emblem with original rail occlusion. Do not trust old prompts saying purple10.",
+      "nativeAlpha": "r5c1 raw r2 still has1441 enclosed low-alpha pixels. Only qualified after all those pixels were superseded by declared immutable native cloud donor, with full reference and final core alpha audits. Original raw bytes retained; no fill, alpha normalization or source-outline mask; global audit unchanged.",
+      "wholeCloud": "Donor cuts removed holes but caused color polygons inside cloud. Superseded lower cloud with one full384x256 native scene at[80,1044,384,256]; all cloud interior comes from one image, no cuts inside it. Left8/top32/bottom32 known borders checked; unfinished right context uses same new native art, not a claimed accepted neighbor.",
+      "treeExport": "Tree partial exported only into actual selected/modified cores; exclude pending r6c1 road[160,1412,64,28]. Preserve same exportRects in later packing.",
+      "boundaryNative": "r2c1 original tiny30x9 grass lip falls into adjacent r3c1 under native stylized contour; alpha0..1 core is transparent boundary coverage, not a new visible object. Parent whole scene and top edge verified.",
+      "next": "Continue connected strip r2c2 then down r3c2/r4c2/r5c2; inspect prior rejected masters before any regeneration; all existing visual debt remains required."
+    },
+    "batch12": {
+      "completedCandidates": [
+        "r2c2",
+        "r3c2",
+        "r4c2",
+        "r5c2"
+      ],
+      "remainingNotGenerated": 20,
+      "remainingRework": 7,
+      "pendingVisualReview": 5,
+      "restoredBoundary": "r2c1 tiny grass lip restored by northwest-grass-lip-joint-r1; its prior transparent-only classification is superseded. Do not reapply transparentCoreAfterSharedOutline.",
+      "STAR": "Raw r2c2 SHRR crosses676; raw r3c2-r3 STRAR is rejected. Entire correct STAR word across row676 comes from r3c2-r4 via star-roof-native-reuse-r1. Never reuse uncorrected raw glyphs.",
+      "protectedPilot": "No approved runtime/master/assembled bytes changed. r2c2/r3c2 review atlases contain32logical pixels of raw native right-context underlay. Draw candidate/context first and approved pilot overlays last; cull actual native2x legacy base for replacementRect. Retain native RGBA; no alpha normalization or original-outline output mask. This is review-verified, still not production-enabled. See reviews/batch-12/native-pilot-underlay-spec.json.",
+      "opaqueInterior": "r5c2 corrected opaque frame[384,1156,272,272] lies wholly inside island (source min247, no alpha<240); built-in imagegen transparent_background=false removed pinholes natively. Failed transparent raw still contains155 enclosed low-alpha pixels; technical crop still27. No software hole filling.",
+      "rideCrop": "west-ride-horizontal-joint-r1 generated wrong20 in upper context. Only apply[400,1368,240,136] from parent[400,1296,240,240]; preserve correct green30 from opaque r5c2 raw. Never export whole parent.",
+      "wholeCyan": "west-cyan10-whole-r1 regenerates one complete cyan10 across r5c2/r5c3; entire disc lies inside one native scene, cuts only in8pixel frame.",
+      "exportScopes": "Preserve exportRects on r5c1-tree-native-reuse-r1, west-cloud-whole-r1 and west-road-ride-native-reassembly-r1. Old unqualified context must not overwrite later completed art or cyan10.",
+      "tests": "31actual renderer views; 30map Python,27map npm-entry,643default unit tests,1actual export regression with observed red/green; source/approved/static protection audits. Full-map/user visual acceptance still incomplete.",
+      "next": "Correct r6c1 west road/blue30/curb contact, then r7c2 and remaining maps/recorded debt. Inspect existing masters before regenerating."
+    },
+    "approvedNorthReviewCrop": {
+      "reviewOnly": true,
+      "rects": [
+        [
+          672,
+          420,
+          224,
+          32
+        ],
+        [
+          896,
+          420,
+          224,
+          32
+        ]
+      ],
+      "croppedNativeRows": 139,
+      "formalFilesUnchanged": true,
+      "reason": "Approved masked sky retained a disconnected cloud outline. Whole-map review uses native context for top32 and exact approved RGBA crop below. Preserve metadata/test on future continuation.",
+      "evidence": "reviews/batch-19/verification.json"
+    },
+    "northeastNativeReuseBeforeRegeneration": {
+      "status": "verified-local-object-and-sky-fix",
+      "evidence": "reviews/batch-21/verification.json",
+      "numericValue": "cyan10, previous cyan20 label was wrong",
+      "cornerCut": "native-reuse/northeast-corner-v1/sources.json",
+      "cyan10Rect": [
+        1056,
+        472,
+        96,
+        64
+      ],
+      "protectedGreen30Rects": [
+        [
+          1136,
+          440,
+          16,
+          12
+        ],
+        [
+          1136,
+          472,
+          16,
+          8
+        ]
+      ],
+      "approvedReviewParts": "r0c1 green30-band has source crop[0,139,980,261]; lower-retained crop[0,261,1119,1119] preserves full width. Keep five derived review regions from four original sources, flatten parts by sourceTileId.",
+      "latestPackingRecipe": "reviews/batch-21/batch21-pack.py"
+    }
+  },
+  "resolvedLocalDebt": [
+    {
+      "batch": "batch-12",
+      "issue": "Rejected west-road preview overwrote completed r6c2 parcel background",
+      "resolution": "Crop preview to r6c1 and separately validated green30. Artifact regression went from336577 wrong pixels to0; completed parcel pattern restored."
+    },
+    {
+      "batch": "batch-13",
+      "issues": [
+        "r6c1 duplicate blue30 and stepped curb",
+        "r6c1/r6c2 castle/platform color join",
+        "r7c2/r7c3 V curb gap",
+        "r6c4/r7c4 red parcel horizontal join",
+        "r6c4 localized curb cut"
+      ],
+      "remaining": "Global grass hue/leaf-scale and pending-neighbor handoffs still require later whole-map review."
+    },
+    {
+      "batch": "batch-14",
+      "issues": [
+        "Old sign background overwrote completed east building",
+        "r5c4/r5c5 shared white parcel split",
+        "Long white stripe internal dogleg",
+        "r2c7/r2c8 platform front notch"
+      ],
+      "evidence": "reviews/batch-14/verification.json",
+      "remaining": "All previously recorded unfinished sky/grass/perimeter and r3c5 top16 debts remain in full-map goal."
+    },
+    {
+      "batch": "batch-24",
+      "issues": [
+        "Two original cone trees omitted from yellow-roof building",
+        "Restored tree geometry drift in whole-scene image generation",
+        "Slow base texture covered foreground prop after camera return"
+      ],
+      "resolution": "Clean native base plus one extracted native tree at two original-coordinate placements; fixed MapScene rendering order. Actual five-tree positions and sizes within0.25worldpixel, three camera reloads verified.",
+      "evidence": "reviews/batch-24/verification.json",
+      "remaining": "Broad terrain leaf scale/color and road grain still need whole-map review."
+    },
+    {
+      "batch": "batch-25",
+      "issues": [
+        "Broad western coarse leaf blocks beside fine field",
+        "Old rectangular grass backing retained around tree and platform",
+        "Visible cropped map regions omitted in tall/wide canvas extensions"
+      ],
+      "resolution": "Four adjacent fine-terrain scenes; two existing trees separated as native foreground; native road/building source selection follows foreground geometry. Correct viewport bounds, permanent tall/wide cases pass.",
+      "remaining": "Upper y1264 contour/material join is not qualified; close first, then eastern terrain/road review.",
+      "evidence": "reviews/batch-25/verification.json"
+    },
+    {
+      "batch": "batch-26",
+      "issues": [
+        "West y1264 horizontal coastline/material cutoff",
+        "Old white-curb notch retained from prior local assembly",
+        "Old native cloud outline low-alpha defects"
+      ],
+      "resolution": "One complete native cloud/grass scene, native gold cliff and originalcyan10 retained. No cloud interior cuts, alpha repaint or source outline clipping. Actual2x/4x and whole-map .8x checked.",
+      "evidence": "reviews/batch-26/verification.json"
+    },
+    {
+      "batch": "batch-27",
+      "issues": [
+        "South prison bridge light/dark asphalt boundary",
+        "Native source-sky mask erased portions of pilot curb",
+        "Green30 lighting cut through x1152",
+        "Overview omitted approved fade underlays",
+        "Full-map runtime and matching low-zoom base not installed"
+      ],
+      "resolution": "Asphalt-only generated scene; native full curb/sky and whole green30 reassembly; replay all native source-over layers into2x overview; install full artwork manifest and atomic base/native layer swap.",
+      "evidence": "reviews/batch-27/verification.json"
+    },
+    {
+      "batch": "batch-29",
+      "issues": [
+        "south-bridge-geometry",
+        "type28-red-disc-consistency",
+        "west-grass-material-consistency",
+        "west-cyan-lower-joint"
+      ],
+      "evidence": "reviews/batch-29/verification.json"
+    },
+    {
+      "batch": "batch-30",
+      "issues": [
+        "User-marked incomplete upper road symbol",
+        "User-marked displaced lower chevron"
+      ],
+      "evidence": "reviews/batch-30/verification.json"
+    }
+  ],
+  "nextQueue": [],
+  "notes": {
+    "batch13": {
+      "completedCandidates": [
+        "r6c1",
+        "r7c2",
+        "r6c4"
+      ],
+      "remainingNotGenerated": 20,
+      "remainingRework": 5,
+      "pendingVisualReview": 4,
+      "wholeObjectRepairs": [
+        "blue30/curb",
+        "castle/platform",
+        "southwest V-curb",
+        "central red parcel",
+        "central curb cut"
+      ],
+      "nativeContext": "Keep all batch12 pilot underlay/draw-order/culling rules. Formal runtime remains4 approved tiles.",
+      "oldWestRoadPreview": "exportRects=[]; full r6c1-r6 and whole-object corrections supersede rejected context. Never re-enable it.",
+      "partialCrop": "central-red-parcels-whole-r2 only exports[864,1576,216,208] from fullparent[864,1576,312,208]. Fullparent moved right tree; do not export unused right context.",
+      "next": "Fill r5c4 using fresh r6c4 bottom anchor, then connected center/east gaps. Review TOMORROW CITY old partial scope before using it so blurry old context does not overwrite new HD surroundings. All previous map debts remain."
+    },
+    "batch14": {
+      "completedCandidates": [
+        "r5c4",
+        "r4c6",
+        "r3c6",
+        "r2c7"
+      ],
+      "remainingNotGenerated": 18,
+      "remainingRework": 3,
+      "pendingVisualReview": 4,
+      "generationCalls": 9,
+      "reuse": "r5c4 retry reuses same native; title reuse copies accepted batch13 sign quilt AFTER prior curb repair, never old pre-curb donor.",
+      "oldSignScope": "tomorrow-city-sign-r1 exportRects=[]; glyph-native-reuse-r1 exports only12 rectangles from donor-canonical-v2 / assembled-v2. Never export its whole stale context.",
+      "wholeStripe": "central-long-dash-whole-r1 exportRects=[]; final central-long-lane-complete-r1[1120,1224,176,176] contains entire stripe with both endpoints. 29525connected native paint pixels replayed exactly.",
+      "sky": "r3c6-r1 rejected for extra upper sky strip; r2 has corrected original upperleft inlet; r2c7 retains original diagonal sky channel. No opaque sky fill/alpha normalization.",
+      "coverage": "r3c5 onlyy692..932 may be used as completed anchor. Original top16bytes unchanged and still excluded; must close later with full edge/neighbor evidence.",
+      "tests": "643default,30map Python,27map npm-entry,4actual export regression,34native replacement views. Original/approved/static protection passed; no whole-map or final user acceptance."
+    },
+    "batch15": {
+      "newEngineeringCandidates": [
+        "r5c8",
+        "r7c5",
+        "r8c5",
+        "r8c6",
+        "r2c6"
+      ],
+      "selectedTotal": 85,
+      "remainingNotGenerated": 15,
+      "remainingRework": 1,
+      "legacyPendingVisualReview": 4,
+      "generationCalls": 13,
+      "nativeMasters": 168,
+      "actualViews": 33,
+      "localCorrections": [
+        "platform missing orb/support/rings and curb",
+        "phantom gray stone removed"
+      ],
+      "newOpenVisualDebt": {
+        "r8c6": [
+          "left road changes asphalt material and doubles curb; tree-ground join",
+          "bottom horizontal river/shore/cliff hue line at2132"
+        ],
+        "r2c6": [
+          "Minor golden cliff lip step near right boundary x1632,y470; inspect shared contour with r2c7 before final art acceptance. Upper/left neighbors remain unfinished."
+        ]
+      },
+      "rejectedCorrections": [
+        "river-building-road-joint-r1",
+        "river-bottom-shore-joint-r1"
+      ],
+      "rejectedCorrectionsApplied": false,
+      "r2c6UnusedTop32": "Native top context outside core remains unreviewed; do not use its alpha gouges as anchor or coverage.",
+      "r2c5Dependency": "Left is protected pilot r2c4; bottom r3c5 top16 still unreviewed. Do not compare unreviewed gap as finished anchor or modify pilot.",
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch16": {
+      "newEngineeringCandidates": [
+        "r2c5",
+        "r1c6",
+        "r1c7",
+        "r1c8"
+      ],
+      "selectedTotal": 89,
+      "remainingNotGenerated": 12,
+      "remainingRework": 0,
+      "legacyPendingVisualReview": 4,
+      "generationCalls": 13,
+      "nativeAttemptMasters": 173,
+      "actualViews": 59,
+      "closedPriorDebts": [
+        "river road curb",
+        "river bottom color band",
+        "upper cliff lip step",
+        "golden face stain",
+        "r3c5 top16 coverage"
+      ],
+      "approvedEastBoundary": "Native left32 context below unchanged approved4, actual legacy alpha probes255/255 ->0/0; tests3 red/green; core owned/right field unchanged. Also inspect south/north feather before full completion.",
+      "cloud": "Local generated mother withdrawn exportRects=[]; existing native masters reassembled over72logicalpx,16px end anchors; faint shading requires whole-cloud final review.",
+      "unitTests": 643,
+      "mapPythonTests": 30,
+      "mapNpmTests": 27,
+      "exportRegressionTests": 4,
+      "eastUnderlayRegressionTests": 3,
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch17": {
+      "newCandidates": [
+        "r1c9",
+        "r1c10",
+        "r0c9",
+        "r0c8"
+      ],
+      "selectedTotal": 93,
+      "remainingNotGenerated": 8,
+      "remainingRework": 0,
+      "legacyPendingVisualReview": 4,
+      "imageGenerationCalls": 6,
+      "nativeEdgeReuse": {
+        "tile": "r0c9",
+        "sourceNonzeroPixels": 9,
+        "originalMaximumAlpha": 82,
+        "opaqueSourcePixels": 0,
+        "method": "Existing r1c9 top context and verified transparent padding; no new image generation or source alpha mask"
+      },
+      "southUnderlay": "Two224x32native strips fill between existing west/east corner owners; no overlapping draw rectangles. Actual old-base probes255/255 ->0/0;3regressions red/green.",
+      "cloud": "First source crowns retained; second frame used only below420; complete176square crest correction replaces detached caps; numeric-pass horizontal reuse with spike was rejected and never applied.",
+      "tests": {
+        "default": 643,
+        "mapPython": 30,
+        "mapNpmEntry": 27,
+        "existingExport": 4,
+        "eastUnderlay": 3,
+        "southUnderlay": 3,
+        "actualViews": 20
+      },
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch22": {
+      "imageGenerationCalls": 2,
+      "connectionFailureRetries": 1,
+      "newReviewOnlyRepairs": [
+        "southwest-curb-whole-joint-r1",
+        "southeast-road-whole-joint-r1"
+      ],
+      "all109WorkingAssembliesUnchanged": true,
+      "drawRegions": 127,
+      "retainedSourceCrops": 20,
+      "newRegressionTests": 13,
+      "actualViews": 23,
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch23": {
+      "imageGenerationCalls": 2,
+      "rejectedLowDensityCandidate": 1,
+      "selectedWholeCloud": "upper-cloud-complete-r2",
+      "nativePixelDensity": 4.326086956521739,
+      "silhouetteIoU": 0.9900435087024683,
+      "newCloudTests": 6,
+      "actualViews": 26,
+      "all109WorkingAssembliesUnchanged": true,
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch24": {
+      "imageGenerationCalls": 6,
+      "selectedSceneRepairs": [
+        "west-grass1412-whole-r1",
+        "west-grass-scale-transition-r1",
+        "yellow-building-empty-base-r3"
+      ],
+      "nativeConeMaster": "native-props/yellow-building-cone-v1",
+      "rejectedTwoTreeLayouts": 2,
+      "originalTreeCount": 5,
+      "oldCandidateTreeCount": 3,
+      "actualTreeCount": 5,
+      "actualMaximumWorldEdgeError": 0.25,
+      "mapSceneAddedLines": 3,
+      "projectTests": 643,
+      "modernE2eTests": 4,
+      "actualViews": 32,
+      "all109WorkingAssembliesUnchanged": true,
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch25": {
+      "imageGenerationCalls": 7,
+      "selectedTerrainRepairs": [
+        "west-terrain-fine-south-r1",
+        "west-terrain-fine-middle-base-r3",
+        "west-terrain-fine-coast-r1",
+        "west-terrain-fine-north-base-r1"
+      ],
+      "newForegroundTrees": [
+        "native-props/west-round-tree-v1",
+        "native-props/west-coast-tree-v1"
+      ],
+      "totalNativePropInstances": 4,
+      "prototypeSelectionsWithdrawn": 2,
+      "runtimeFix": "Full canvas/viewport bounds, four expressions",
+      "projectTests": 643,
+      "modernE2eTests": 6,
+      "artifactTests": 59,
+      "actualViews": 41,
+      "all109WorkingAssembliesUnchanged": true,
+      "productionEnabled": false,
+      "upperCapAccepted": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch26": {
+      "imageGenerationCalls": 2,
+      "selectedCap": "west-upper-terrain-cap-r2",
+      "rejectedGrainCandidate": 1,
+      "nativePixelDensity": 4.060483870967742,
+      "actualViews": 16,
+      "artifactTests": 37,
+      "mapPythonTests": 30,
+      "northeastFinishedArtRegenerated": false,
+      "wholeCloudFromOneNativeSource": true,
+      "all109WorkingAssembliesUnchanged": true,
+      "productionEnabled": false,
+      "fullMapAcceptance": "incomplete"
+    },
+    "batch27": {
+      "imageGenerationCalls": 1,
+      "nativeReuseCorrections": [
+        "pilot-curb-native-continuation-r1",
+        "green30-whole-native-r1"
+      ],
+      "wholeMapGlobalViews": 13,
+      "bridgeLocalViews": 5,
+      "installedRuntimeViews": 14,
+      "runtimeNativeRegions": 178,
+      "overviewPixelSize": [
+        5400,
+        5104
+      ],
+      "productionEnabled": true,
+      "fullMapUserAcceptance": "pending"
+    }
+  },
+  "lastEngineeringCheckpoint": "batch-30",
+  "activeBatch": "batch-30-complete",
+  "lastActualRenderCheckpoint": "batch-30",
+  "preflightNext": "User approved final visuals on 2026-10-24. No pending generation or visual correction.",
+  "currentCoverage": {
+    "selectedEngineering": 105,
+    "approved": 4,
+    "notGenerated": 0,
+    "pendingVisualCorrection": 0,
+    "fullMapAccepted": true,
+    "unfinishedWholeMapJoinReview": false,
+    "runtimeInstalled": true
+  },
+  "userAcceptance": "reviews/batch-30/user-acceptance.json"
+}

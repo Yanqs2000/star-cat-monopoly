@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_overview_preserves_native_fade_underlay_composition (__main__.FullMapPackage.test_overview_preserves_native_fade_underlay_composition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/scripts/test_full_hd_map_package.py", line 13, in test_overview_preserves_native_fade_underlay_composition
+    self.assertLessEqual(int(np.abs(actual-expected).max()),2)
+AssertionError: 247 not less than or equal to 2
+
+----------------------------------------------------------------------
+Ran 1 test in 0.432s
+
+FAILED (failures=1)
