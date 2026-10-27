@@ -28,6 +28,7 @@ export async function prepareGameUiAssets(
   return asset.url
  })
  for(let face=1;face<=6;face++)needed.push(profileAssetUrl(`assets/activities/ludo-face-${face}/1.png`,profile))
+ for(const player of state.players)needed.push(`assets/monthly/champions/${player.characterId}.png`)
  if(state.outcome)needed.push(profileAssetUrl(`assets/activities/${state.outcome.kind==='victory'?'gamewin':'gameover'}/1.png`,profile))
  if(state.interaction?.kind==='bankruptcy')needed.push(profileAssetUrl('assets/activities/bankrupt/1.png',profile))
  const results=await Promise.allSettled(needed.map(url=>load(url,signal)))

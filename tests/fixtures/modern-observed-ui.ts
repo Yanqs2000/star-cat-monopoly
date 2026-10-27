@@ -15,9 +15,9 @@ import '../../src/modern/styles/original-ui.css'
 const query = new URLSearchParams(location.search), scenario = query.get('scenario') ?? 'monthly'
 let game = createGame([1, 2, 3, 4], 0, 1)
 game.phase = 'interaction'
-if (scenario === 'monthly') game.interaction = { kind: 'monthly-settlement', playerId: 1,
+if (scenario === 'monthly') { game.finance.monthlyQuoteIndex = 6; game.interaction = { kind: 'monthly-settlement', playerId: 1,
   entries: Array.from({ length: 20 }, (_, index) => ({ kind: 'deposit-interest', playerId: index % 4 + 1, depositDelta: 13294 })),
-}
+} }
 else if (scenario === 'carnival') game.interaction = { kind: 'carnival', playerId: 1, game: beginCarnival(1, 1).game }
 else if (scenario === 'ludo') game.interaction = { kind: 'ludo', playerId: 1, game: beginLudo(100, 1).game }
 else if (scenario === 'fortune' || scenario === 'wealth') {
