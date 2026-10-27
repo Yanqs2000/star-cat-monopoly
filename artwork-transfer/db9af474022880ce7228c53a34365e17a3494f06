@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-22",
+  "completedImageGenerationCallsThisBatch": 2,
+  "selectedNewRepairs": [
+    "upper-cloud-complete-r2"
+  ],
+  "rejectedRepairs": [
+    {
+      "id": "upper-cloud-complete-r1",
+      "reason": "Native density3.82 below4; not applied"
+    }
+  ],
+  "nativePixelDensity": 4.326086956521739,
+  "nativePixelSize": [
+    1975,
+    796
+  ],
+  "wholeNativeSpriteNoInteriorCuts": true,
+  "silhouetteIoU": 0.9900435087024683,
+  "alphaAudit": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 893625,
+    "solidAlphaMedian": 253.0,
+    "fullyOpaqueFraction": 0.0008485465301189492,
+    "nativeAlphaModified": false
+  },
+  "counts": {
+    "selected-engineering": 105,
+    "approved-source-reused": 4,
+    "pending": 0
+  },
+  "immutableAttemptMasterHashesVerified": 192,
+  "all109WorkingAssembliesByteIdentical": true,
+  "allPriorRepairFilesUnchanged": true,
+  "approvedFourNativeAndRuntimeFilesUnchanged": true,
+  "existing113ReviewAtlasesByteIdentical": true,
+  "reviewAtlasCount": 114,
+  "drawRegionCount": 132,
+  "retainedExactRgbaCrops": 30,
+  "replacementDoesNotDoubleCompositeAlpha": true,
+  "newCloudTestsPassed": 6,
+  "priorLocalTestsPassed": 13,
+  "mapPythonTestsPassed": 30,
+  "priorNortheastExportUnderlayTestsPassed": 24,
+  "actualMapSceneViews": 26,
+  "browserErrors": [],
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "remaining": [
+    "remaining-grass-texture-joins",
+    "whole-map-road-grain-review",
+    "full-map-final-review"
+  ],
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "7cc44abf65f6360f68308c1bef1b69fc03c29524426fbccf7229c201e62ca4c4"
+    },
+    {
+      "view": "northeast-whole-2x",
+      "sha256": "7065eecb439dbbe0e5a37f0999720ffd9030d3a001c71e56edae0a362c79207b"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "e3f5a75451c610f44553834ee74f192c00da842add6fa2009a78d896c4262f08"
+    },
+    {
+      "view": "cyan10-whole-4x",
+      "sha256": "dce2b7a493ce72c5536996aeac01c5ec1996fcc71eda9f76bc5c480152f7d71a"
+    },
+    {
+      "view": "cyan10-left-4x",
+      "sha256": "42aa020856db30254a0cee788d740e1fdde378f0d8ec8aaea05dec68cab0e600"
+    },
+    {
+      "view": "cyan10-top-4x",
+      "sha256": "a3125d12f39a8e0b17914b174108f088599eb0c346c62b0861dce8a552604acc"
+    },
+    {
+      "view": "cyan10-bottom-4x",
+      "sha256": "4f744851597dafce16cbe8330327f370e7470e00f449195a31486fa9fceba754"
+    },
+    {
+      "view": "northeast-road-right-4x",
+      "sha256": "62b301431ec891fa570e61b28129b1e92a72052664a767485904bfa9bf375166"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "c1ba31467624656e5130543a39ca150e5e095ee8a3e4b4b02871f5c152b8ac40"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "f22b01a27d8d8edbd8cd11d7cfa18d0bdc8913446791d0cf9ef34e75ec061faf"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "f8bfbed0af67c6a9efb8d69b3b1f87026d85dd6b1483ccdce9c1b198fbfc7cf8"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "b460c4167cec7850520ff6d49f11be7b8ed9797ddb05a6a3687439faed241a92"
+    },
+    {
+      "view": "southwest-whole-2x",
+      "sha256": "1288d30cf019310e05e717770a18d2ef94c53265b7166c79fb4ac0e0471b20bb"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "5ab324465f5c89491faf8f27591b9169205fdce575b45ead4d20d26b99b2e0b7"
+    },
+    {
+      "view": "southeast-whole-2x",
+      "sha256": "91b569f105189acb7d6f35df80aa2f8ca54a9c8ca360223617652ea019302ff1"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "867247436b4f9e3ae3e6d460120064f473d5f51e28c8176ef7ca5d50b621ff66"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e5aa7b9225dc965684c237a017340fc4962e3b9d4777b0a86e84891dbb96386a"
+    },
+    {
+      "view": "upper-cloud-full-4x",
+      "sha256": "fe8606c5e85d71058eee0562c3b31b9d8526fa25f20b4669f7114637f950495f"
+    },
+    {
+      "view": "upper-cloud-left-joint-4x",
+      "sha256": "fcc8b7d65cd9a0a7278f024355288e49b142097a1e099a34bcdd11de3bc041eb"
+    },
+    {
+      "view": "upper-cloud-tail-4x",
+      "sha256": "9f251fc4be665d9cdb0eb911faa029cf786274fd73ae8d8e2192d24cac83d115"
+    },
+    {
+      "view": "ride-whole-2x",
+      "sha256": "98572e841e49f2d33274c54bbe3a1324f0ca75675436f7cef0cf93905d1c4866"
+    },
+    {
+      "view": "west-grass-whole-2x",
+      "sha256": "41b6fd41193a6b9408b622c24a126cabd38e226a74a61555a8bc5d196ac43a33"
+    },
+    {
+      "view": "west-road-whole-2x",
+      "sha256": "304bd4802859cea6515c9718bbd8ac303d95c86f2af2e754334e37d606bd793b"
+    },
+    {
+      "view": "green30-whole-4x",
+      "sha256": "40b6a987af9a3923ed5da234cac7000f9135fe0b4ceac6dde423a4fb0738597c"
+    },
+    {
+      "view": "approved-east-mid-4x",
+      "sha256": "4e856fb29945f2d7392f6afa1d9bef13e4c37226a2fa5f4edd20e77d092b1a6e"
+    },
+    {
+      "view": "approved-east-row-joint-4x",
+      "sha256": "b963cd3046d61fa46ed01b8fd42f331defd2de532492d6e124d7e9b6ee0a9122"
+    }
+  ]
+}

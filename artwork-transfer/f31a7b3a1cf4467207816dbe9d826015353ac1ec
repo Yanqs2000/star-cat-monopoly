@@ -1,0 +1,23 @@
+{
+  "referenceRect": [
+    280,
+    1412,
+    320,
+    240
+  ],
+  "donorRect": [
+    328,
+    1536,
+    112,
+    88
+  ],
+  "primary": "master.png",
+  "green30Donor": "green30-native.png",
+  "donorMask": "donor-cut-mask.png",
+  "frameMask": "mask.png",
+  "operation": "Resize each native once to canonical grid; exact old/new RGBA pixel selection only; no blending, painting or alpha edits",
+  "prompts": [
+    "Use case: precise-object-edit. Landscape4:3 map joint.\nImage1 EDIT TARGET is the original quilt with fixed outer frame. Image2 supplies the completed interior design with corrected green30.\nProduce Image1 with ONLY the interior vertical quilt seam repaired as in Image2, keeping Image1's entire outer32-logical-pixel frame geometrically stationary and visually identical. Particularly preserve BOTTOM BORDER yellow roof top/roof tip, diagonal white curb, asphalt marks, parcel corner and RIGHT BORDER brick/spiral contours. Image2 moved those border details slightly: do NOT copy that displacement. Every border curb/roof/brick endpoint must meet Image1 at its exact coordinates with zero shift. Interior still needs a continuous ride base, blue rail, single lower bush, curb, gray road and one whole green disc with clean numeral \"30\". Cyan disc10, cropped red20 and blue30 unchanged. Fine road grain matches right side. No duplicated features, new objects, holes or labels. Single fully opaque high-resolution image, same4:3 crop and camera. Match Image1 outer frame; apply Image2 only where safely inside it.",
+    "Use case: precise-object-edit. Asset type: landscape 4:3 HD map shared joint.\nImage 1 EDIT TARGET is a quilt with a VERTICAL mismatch through the turquoise ride, lower leaf cluster, white curb and GREEN disc. Image 2 is exact original layout of same frame.\nMake a single continuous glossy cartoon map surface, matching Image 1 outer32-logical-pixel frame on all four sides. Repair the central vertical discontinuity at x~38%: continuous turquoise ride platform, blue rail, castle ring, leafy bush, diagonal white curb and fine gray asphalt. Do not change their footprints, angle, number of rails/cars/towers/bushes, parcel brick pattern or crops. Match fine dense gray asphalt grain on the finished RIGHT side uniformly across the interior. Keep 3 original red spiral parcels visible at right with same outlines.\nCRITICAL original value correction: the GREEN circular disc in lower-left-middle MUST read \"30\", THREE then ZERO, matching Image2. Its current left half incorrectly reads20 while its right half is blank at quilt join. Restore ONE whole green glossy circular disc, same original center, diameter, rim and embossed perspective, with an unmistakable clean30. No duplicate discs, no ghost numerals or blank portion. The cyan disc stays10. Cropped blue disc stays30. Cropped red disc at far left stays20. Keep yellow roof at bottom-left unchanged. No new props, signs, lane marks, cracks, plants or people. The entire frame is inside island: completely opaque artwork, no alpha holes or white gaps. Exact 4:3 landscape framing, same camera and composition, native HD."
+  ]
+}

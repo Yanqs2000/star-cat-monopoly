@@ -1,0 +1,383 @@
+{
+  "date": "2026-10-23",
+  "completedImageGenerationCallsThisBatch": 7,
+  "selectedTerrainRepairs": [
+    "west-terrain-fine-south-r1",
+    "west-terrain-fine-middle-base-r3",
+    "west-terrain-fine-coast-r1",
+    "west-terrain-fine-north-base-r1"
+  ],
+  "selectedForegroundMasters": [
+    "native-props/west-round-tree-v1",
+    "native-props/west-coast-tree-v1"
+  ],
+  "nativeTerrainDensities": {
+    "west-terrain-fine-south-r1": 4.9375,
+    "west-terrain-fine-middle-base-r3": 5.236607142857143,
+    "west-terrain-fine-coast-r1": 6.1953125,
+    "west-terrain-fine-north-base-r1": 4.019230769230769
+  },
+  "assemblyReusedWithoutNewGeneration": "west-terrain-fine-middle-base-r3 reuses r2 native master, narrows original source protection to the actual foreground",
+  "withdrawnSelections": [
+    "middle-r1 coarse rectangle around retained tree",
+    "middle-base-r2 coarse backing beside building"
+  ],
+  "all109WorkingAssembliesByteIdentical": true,
+  "all192TileAttemptMastersUnchanged": true,
+  "allPriorRepairAndPropFilesUnchanged": true,
+  "approvedFourNativeAndRuntimeFilesUnchanged": true,
+  "existing119ReviewAtlasesByteIdentical": true,
+  "reviewAtlasCount": 125,
+  "drawRegionCount": 160,
+  "retainedExactRgbaCrops": 64,
+  "nativeForegroundSpriteInstances": 4,
+  "alphaAudits": {
+    "west-terrain-fine-south-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 84957,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.04577514990716326,
+      "nativeAlphaModified": false
+    },
+    "west-terrain-fine-middle-base-r3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 6297,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.046086636284122816,
+      "nativeAlphaModified": false
+    },
+    "west-terrain-fine-coast-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 100350,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00011607750882189067,
+      "nativeAlphaModified": false
+    },
+    "west-terrain-fine-north-base-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 440875,
+      "solidAlphaMedian": 253.0,
+      "fullyOpaqueFraction": 0.180774319163276,
+      "nativeAlphaModified": false
+    },
+    "yellow-building-two-cones-original-placement-r3": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 663350,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.00043800650461909326,
+      "nativeAlphaModified": false
+    },
+    "west-round-tree-original-placement-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 835831,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0004753516203897883,
+      "nativeAlphaModified": false
+    },
+    "west-coast-tree-original-placement-r1": {
+      "enclosedLowAlphaPixels": 0,
+      "referenceApprovedSkyPixels": 0,
+      "referenceRegistrationOutlierPixels": 0,
+      "borderConnectedLowAlphaPixels": 730500,
+      "solidAlphaMedian": 252.0,
+      "fullyOpaqueFraction": 0.0005816747656136764,
+      "nativeAlphaModified": false
+    }
+  },
+  "afterActualRenderConeTrees": 5,
+  "existingConeTreeGeometry": [
+    {
+      "sourceGreenBounds": [
+        448,
+        1687,
+        468,
+        1710
+      ],
+      "actualGreenBounds": [
+        448.0,
+        1686.75,
+        468.25,
+        1710.0
+      ],
+      "maximumWorldEdgeError": 0.25
+    },
+    {
+      "sourceGreenBounds": [
+        416,
+        1710,
+        435,
+        1738
+      ],
+      "actualGreenBounds": [
+        416.0,
+        1710.25,
+        435.0,
+        1738.0
+      ],
+      "maximumWorldEdgeError": 0.25
+    }
+  ],
+  "runtimeFix": {
+    "path": "src/modern/features/map/MapScene.ts",
+    "changedBoundsExpressions": 4,
+    "behavior": "Calculate visible map bounds from the full canvas and viewport offset/scale, including tall/wide extensions",
+    "sha256": "6be2e697ff512907af16b9556ed41fc93fa72171156d8fea630c43bf8e193da5",
+    "regression": "tests/e2e/modern-map-visible-bounds.spec.ts",
+    "testSha256": "d9479df6f06aa06975429ae2833bc4441773d13905fd9eda96df60e7f8050415",
+    "priorFixedLayerOrderPreserved": true
+  },
+  "projectUnitTestsPassed": 643,
+  "modernE2eTestsPassed": 6,
+  "modernBuildPassed": true,
+  "mapPythonTestsPassed": 30,
+  "nativeArtifactChecksPassed": 59,
+  "actualMapSceneViews": 41,
+  "browserErrors": [],
+  "canvasEdgeNativeProbes": [
+    {
+      "point": [
+        352,
+        1248
+      ],
+      "sourceLabel": "r5c1-retained-0",
+      "actualRgb": [
+        209,
+        245,
+        3
+      ]
+    },
+    {
+      "point": [
+        224,
+        2010
+      ],
+      "sourceLabel": "r8c1-retained-0",
+      "actualRgb": [
+        239,
+        143,
+        10
+      ]
+    }
+  ],
+  "formalMapVerification": {
+    "mapSourceImages": 16,
+    "approvedRuntimeTiles": 4,
+    "logicalRegion": [
+      640,
+      420,
+      512,
+      512
+    ],
+    "characterArtImported": false
+  },
+  "staticProtectionVerification": {
+    "protectedFilesUnchanged": 81,
+    "installedPaths": 211,
+    "distinctStaticJobs": 142,
+    "installedJobs": 142,
+    "complete": false
+  },
+  "productionEnabled": false,
+  "fullMapUserAcceptance": "incomplete",
+  "openConnections": [
+    {
+      "id": "west-upper-cloud-terrain-cap",
+      "sourceEdge": "north terrain y1264 and upper-right grass",
+      "review": "terrain-north-open-4x.png",
+      "priority": 1,
+      "note": "Visible contour/material handoff remains, do not mark complete or activate full replacement."
+    },
+    {
+      "id": "west-east-lower-grass-balance",
+      "note": "Whole-map review still checks the x432 material handoff; local close-ups inspected, not final art acceptance."
+    },
+    {
+      "id": "northeast-grass-and-road-material",
+      "priority": 2
+    }
+  ],
+  "remaining": [
+    "Close west upper cloud/terrain handoff",
+    "Northeast grass and whole-map grass balance",
+    "Whole map asphalt grain and lighting review",
+    "Full map art acceptance and final integration"
+  ],
+  "reviewScreenshotHashes": [
+    {
+      "view": "overview",
+      "sha256": "eebbe7457734ca94eb365ae0b0dc6296cc14bcfabe81c31fc61f7ce79b965c05"
+    },
+    {
+      "view": "northeast-whole-2x",
+      "sha256": "ec93c00c10773ef48c12bda43d2adb86b69f179abcca847261eb0bd2c2eab1f2"
+    },
+    {
+      "view": "pilot-north-east-corner-4x",
+      "sha256": "9c65e3fc983478691ae05e38997abf8d262fe2099c9013305697863528b517a5"
+    },
+    {
+      "view": "cyan10-whole-4x",
+      "sha256": "ccaa41c3c6f9c56e1cde4d0c9a3b13a8454621063908a0d3250a85519ec14045"
+    },
+    {
+      "view": "cyan10-left-4x",
+      "sha256": "fc1f4749b30974e00e6998f19b484319acf8b6ba17a1d1a3833fb42fc2d97d25"
+    },
+    {
+      "view": "cyan10-top-4x",
+      "sha256": "e2d438f9cdb7acdcb4bed2293686a39b0e58006ce2dfe8bdf7ef51b9c9ea2ceb"
+    },
+    {
+      "view": "cyan10-bottom-4x",
+      "sha256": "8d24bb2e6aaf51f1854f95ac0719175bd4827a1b8ae5f20722038fdd3716ae79"
+    },
+    {
+      "view": "northeast-road-right-4x",
+      "sha256": "3d8e449c43b03ed49a8920f4fa7853e35c5c5acacb6bef61c874d0970b0569a5"
+    },
+    {
+      "view": "hospital-whole-2x",
+      "sha256": "acebc0367fffbf7eec1b4bd1bd87968635020d4da605d4c221c173842781be20"
+    },
+    {
+      "view": "pilot-north-right-4x",
+      "sha256": "c952481ddbaf664576511c7fc2a2b9175f4c23acfd3641aaf7b40b85e76d0934"
+    },
+    {
+      "view": "pilot-north-whole-2x",
+      "sha256": "6f4f409ade1a948343368d6122217ae3be89c16b597e6f32a281d80366fde986"
+    },
+    {
+      "view": "pilot-south-whole-2x",
+      "sha256": "2a39705f95719ccd92d70d6544d78b8334f3c4a10048d4f7eee0135c84f81afd"
+    },
+    {
+      "view": "southwest-whole-2x",
+      "sha256": "4b3698737535cb01f4019aa2a343b7e862a4e9eddeac72ce64addc9ee903528b"
+    },
+    {
+      "view": "pilot-south-west-corner-4x",
+      "sha256": "db679e0448cae398ea0a07b1b869623bd05c4e4735ae6c7704c4ce6bbde2efe1"
+    },
+    {
+      "view": "southeast-whole-2x",
+      "sha256": "b04796baf346fccf08e48f5a22746e7a2337422dab10c7317c4ab8f9ee2842e7"
+    },
+    {
+      "view": "pilot-south-east-corner-4x",
+      "sha256": "867247436b4f9e3ae3e6d460120064f473d5f51e28c8176ef7ca5d50b621ff66"
+    },
+    {
+      "view": "upper-cloud-whole-2x",
+      "sha256": "e5aa7b9225dc965684c237a017340fc4962e3b9d4777b0a86e84891dbb96386a"
+    },
+    {
+      "view": "upper-cloud-full-4x",
+      "sha256": "a6ebc78b876b5f45f3e611b16967e4f1c60405eab786dd7daf5738f015f9fd35"
+    },
+    {
+      "view": "upper-cloud-left-joint-4x",
+      "sha256": "fcc8b7d65cd9a0a7278f024355288e49b142097a1e099a34bcdd11de3bc041eb"
+    },
+    {
+      "view": "upper-cloud-tail-4x",
+      "sha256": "9f251fc4be665d9cdb0eb911faa029cf786274fd73ae8d8e2192d24cac83d115"
+    },
+    {
+      "view": "ride-whole-2x",
+      "sha256": "98572e841e49f2d33274c54bbe3a1324f0ca75675436f7cef0cf93905d1c4866"
+    },
+    {
+      "view": "west-grass-whole-2x",
+      "sha256": "1648b061d302c307694115174b117a131657d1aa242f74d74a38a5d0d026f210"
+    },
+    {
+      "view": "west1412-whole-2x",
+      "sha256": "8c1258d87d9a7d9842a43b04bf617e2af00efe6f3be0c87cec5c97e7e87a1f42"
+    },
+    {
+      "view": "west1412-join-4x",
+      "sha256": "7c1d05c532f126e003e90d4bd30c1dcf6ea1d8b775a8569a80adc353e877f917"
+    },
+    {
+      "view": "five-trees-whole-4x",
+      "sha256": "904d1abb36d72bc41fcd0c9ea15b080aa893875a4167a2536de11158c7b29c80"
+    },
+    {
+      "view": "five-trees-right-4x",
+      "sha256": "305a8630956ba79bf0b787f5a164d503ebd5716464893d0bff7bd3d0643934b8"
+    },
+    {
+      "view": "grass-scale-whole-2x",
+      "sha256": "ee4838bef30cd5e486d265ef177a46e5d2b943bf359d42510e5d3aca5b07524d"
+    },
+    {
+      "view": "grass-scale-cross-4x",
+      "sha256": "f8a5064f270913134c6349d4e90d1bcaeac7bded3ab08bb672d27c32e6f10ab7"
+    },
+    {
+      "view": "terrain-main-whole-2x",
+      "sha256": "a50e72d9dacb716f806c293491e7445f4ac43ca1e5777ed5165d6783c1c7012a"
+    },
+    {
+      "view": "terrain-north-mid-4x",
+      "sha256": "42dfbeb7d33d4e976c11e2d03466af10d2151973c45c117a0828bae75faa8728"
+    },
+    {
+      "view": "terrain-west-side-4x",
+      "sha256": "c32b65d75d554928e1177332e03ba5a2801db4621cecccbc8399927f58607f50"
+    },
+    {
+      "view": "terrain-mid-south-4x",
+      "sha256": "eb9131a3ff23ee7bc4a3156c055a4e760192b43c8deaa049da41fd72d2fd7b98"
+    },
+    {
+      "view": "terrain-north-open-4x",
+      "sha256": "c0ec36baf67cd7c80f6e172420563780eff671f19447d5d2846e9090cbbb8c45"
+    },
+    {
+      "view": "west-round-tree-4x",
+      "sha256": "76c639da9afc4ce72ae03d8c01b380f0348c5537588d6edfb07d8fabfd333703"
+    },
+    {
+      "view": "west-coast-tree-4x",
+      "sha256": "eb04b23dfe6cbf14be08db72b4af264c7d0a948b62bc76f84ce401644b69f4bf"
+    },
+    {
+      "view": "west-road-whole-2x",
+      "sha256": "270e0c2afd9905ab3d1b0351cb16bbb7826e66ea28ca2f00f906c18b0b2040ac"
+    },
+    {
+      "view": "green30-whole-4x",
+      "sha256": "43c0eead821e6f9bcf7db1048d208bcb3a7121aa392993bbcbc130e752ef8e22"
+    },
+    {
+      "view": "approved-east-mid-4x",
+      "sha256": "dbc8c4e44576012463b8cf6a55097bf78679b8b1d3683003bfd0a7d1906f920e"
+    },
+    {
+      "view": "approved-east-row-joint-4x",
+      "sha256": "b79febe7a31ce3817cfe874d0eb28e19f8c0e7948c7e6c37000422df2ced5784"
+    },
+    {
+      "view": "terrain-south-bottom-4x",
+      "sha256": "254c53fd428bc4709d0c4749ec4132d4e5db9291f215bf7f83d76d8b13158402"
+    },
+    {
+      "view": "terrain-south-east-corner-4x",
+      "sha256": "2bd7f3316a2b9037adb1792800fdf390df102c2d6e7ff8d530a3356f217663a1"
+    }
+  ]
+}

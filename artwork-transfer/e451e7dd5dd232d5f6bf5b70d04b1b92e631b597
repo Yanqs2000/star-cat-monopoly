@@ -1,0 +1,46 @@
+{
+  "seams": [
+    {
+      "side": "left",
+      "meanRgbDifference": 2.3298212005108554,
+      "p95RgbDifference": 8.333333333333334,
+      "visibleCutSamples": 1044,
+      "maximumChangedPixels": 103
+    },
+    {
+      "side": "right",
+      "meanRgbDifference": 2.0667305236270757,
+      "p95RgbDifference": 7.0,
+      "visibleCutSamples": 1044,
+      "maximumChangedPixels": 93
+    },
+    {
+      "side": "top",
+      "meanRgbDifference": 1.9201787994891444,
+      "p95RgbDifference": 6.333333333333333,
+      "visibleCutSamples": 1044,
+      "maximumChangedPixels": 97
+    },
+    {
+      "side": "bottom",
+      "meanRgbDifference": 1.8004469987228606,
+      "p95RgbDifference": 6.666666666666667,
+      "visibleCutSamples": 1044,
+      "maximumChangedPixels": 88
+    }
+  ],
+  "alpha": {
+    "enclosedLowAlphaPixels": 0,
+    "referenceApprovedSkyPixels": 0,
+    "referenceRegistrationOutlierPixels": 0,
+    "borderConnectedLowAlphaPixels": 0,
+    "solidAlphaMedian": 255.0,
+    "fullyOpaqueFraction": 1.0,
+    "nativeAlphaModified": false
+  },
+  "passed": true,
+  "nativePixelSize": [
+    1254,
+    1254
+  ]
+}

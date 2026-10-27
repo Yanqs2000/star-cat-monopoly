@@ -1,0 +1,298 @@
+[
+  {
+    "id": "r6c8",
+    "row": 6,
+    "col": 8,
+    "rect": [
+      1872,
+      1412,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r6c8-r1.png",
+        "masterSha256": "9f83c8bedc7e91055319de8757871d485d9fc415fccdd885e4523d08180ebfc6",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          1744,
+          1412,
+          368,
+          246
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nLandscape 3:2 canvas. Missing eastern area contains road bend, repeated directional white chevrons and one circular white cloud-shaped road icon. Match their exact count and positions in original. Cropped lime green camera-shaped building at bottom right has original small label CAMERA; keep same label, footprint, button/lens layout. Continuous wooden fence and the existing bushes.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r6c8-r1.png",
+    "referenceRect": [
+      1744,
+      1412,
+      368,
+      246
+    ],
+    "nativePixelDensity": 4.162601626016261,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 7.505747126436781,
+        "p95RgbDifference": 28.283333333333303,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "0b8a2dd2a0860adc44810874c4c7676d1f934ba156fe60280ccc5ac113cbe0fc",
+    "appliedRepairs": [
+      "east-road-chevron-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-03/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r7c4",
+    "row": 7,
+    "col": 4,
+    "rect": [
+      896,
+      1652,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9999837239583333,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c4-r1.png",
+        "masterSha256": "050fc885008a50a72f09090345e8a3f3da81d951e7331ce22136f57e35f71279",
+        "nativePixelSize": [
+          1536,
+          1024
+        ],
+        "referenceRect": [
+          768,
+          1652,
+          384,
+          256
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nLandscape 3:2 canvas. Complete original grass parcel, exactly three bushes in a diagonal row beside the red lots, one cropped round green tree on right edge, and a cropped grey stacked stone pillar at bottom right. Do not change left fixed blue/white gateway map illustration. Match exact grass and red lot outlines, original object counts, no added decorations.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c4-r1.png",
+    "referenceRect": [
+      768,
+      1652,
+      384,
+      256
+    ],
+    "nativePixelDensity": 4.0,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 2.5269537480063797,
+        "p95RgbDifference": 6.0,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "b6a3cd04798630abeb744f207428da84a02e2aefedebf22432f5b65900669b3e",
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-03/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r7c7",
+    "row": 7,
+    "col": 7,
+    "rect": [
+      1632,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 1.0,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c7-r1.png",
+        "masterSha256": "43f780b8d3514cd245b0015b26a95ec21676f35ed880c66170120f88452aa2a6",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          1632,
+          1524,
+          246,
+          368
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nPortrait 2:3 canvas. Missing southern area contains diagonal grey road and original circular white road icon plus chevrons, a cyan round manhole at lower left, cropped green/yellow building at left and a grey stacked rock pillar at lower center-right. Exactly match original count, footprints and positions; do not add an extra pillar or invent inscriptions.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c7-r1.png",
+    "referenceRect": [
+      1632,
+      1524,
+      246,
+      368
+    ],
+    "nativePixelDensity": 4.162601626016261,
+    "seams": [
+      {
+        "side": "top",
+        "meanRgbDifference": 6.694444444444445,
+        "p95RgbDifference": 20.94999999999997,
+        "visibleCutSamples": 1044,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "4e1edc7e80f57d35078dca1a4e88eb6a815af644f36f28355860289c982d83bc",
+    "appliedRepairs": [
+      "east-road-chevron-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-03/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r7c8",
+    "row": 7,
+    "col": 8,
+    "rect": [
+      1872,
+      1652,
+      240,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9996701388888889,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r7c8-r1.png",
+        "masterSha256": "d2e6649729e67e5050f93c7b4a363fb6190c52aa3a77d17acc871f33f82d9621",
+        "nativePixelSize": [
+          1254,
+          1254
+        ],
+        "referenceRect": [
+          1816,
+          1596,
+          296,
+          296
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nSquare. Fill the grassy southeast parcel. Exactly one round green tree at lower left matching original and continuing cropped tree pixels from left context, one cropped irregular yellow feature at bottom right, and lime green CAMERA building footprint at top right with the small round tree beside it. Preserve the original circular yellow-green building base and its curved brown outline. Same object counts, no extra tree or stone. Existing road and camera context locked.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r7c8-r1.png",
+    "referenceRect": [
+      1816,
+      1596,
+      296,
+      296
+    ],
+    "nativePixelDensity": 4.236486486486487,
+    "seams": [
+      {
+        "side": "left",
+        "meanRgbDifference": 10.70749601275917,
+        "p95RgbDifference": 27.333333333333332,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      },
+      {
+        "side": "top",
+        "meanRgbDifference": 2.322488038277512,
+        "p95RgbDifference": 7.9333333333333185,
+        "visibleCutSamples": 1045,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "71e8e77aea5d50c0960c615f86c8a531cf0507a276a4c322df6f6fef58381b05",
+    "appliedRepairs": [
+      "east-road-chevron-r1"
+    ],
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-03/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  },
+  {
+    "id": "r8c4",
+    "row": 8,
+    "col": 4,
+    "rect": [
+      896,
+      1892,
+      256,
+      240
+    ],
+    "status": "selected-engineering",
+    "opaqueFraction": 0.9888346354166667,
+    "attempts": [
+      {
+        "masterPath": "public/modern/hd-masters/map/full-map-v1/masters/r8c4-r1.png",
+        "masterSha256": "5875b03971b5b2b7cc715444334ed298c4f1070152ffca4d9b6130a9b9a4bafc",
+        "nativePixelSize": [
+          1024,
+          1536
+        ],
+        "referenceRect": [
+          896,
+          1764,
+          256,
+          384
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: one continuous Star Cat Monopoly HD isometric map region. Image1 is the edit target, existing SHARP finished neighbor art with transparent area to complete. Image2 is the exact original low-resolution layout of the SAME full canvas. Fill only the missing area in image1 with faithful HD restoration of image2. Copy sharp context positions/materials EXACTLY, no rescaling/reframing/shifting of old art. Match bright glossy cartoon 3D objects, dense green grass, fine grey asphalt, white brick curbs, brown block parcel borders, spiral lot texture phase and all outlines. Same object counts, footprints, cropped parts and road marking positions as original. Every cross-boundary contour/white stripe/fence must continue straight without gaps/kinks/doubled objects. Entire result must be opaque alpha255, no holes. Do not invent or add objects, rocks, plants, signs, lane marks. No blur, no smooth empty bands. Preserve canvas aspect exactly. \nPortrait 2:3. This is the map's solid grassland cliff INTERIOR, no sky is in this canvas. Restore the exact original winding grass-to-cliff silhouette: green upper grass above angular golden yellow/orange vertical cliff columns and original green ivy plants extending along the cliff. Match original cliff facet edges and ivy positions/count, do not add rocks/roads/buildings. Keep existing top grass and cropped stone at top right stationary; image2 is strict geometry. Full canvas opaque as original; no clipping to low-resolution alpha.",
+        "generator": "built-in image_gen"
+      }
+    ],
+    "selectedMaster": "public/modern/hd-masters/map/full-map-v1/masters/r8c4-r1.png",
+    "referenceRect": [
+      896,
+      1764,
+      256,
+      384
+    ],
+    "nativePixelDensity": 4.0,
+    "seams": [
+      {
+        "side": "top",
+        "meanRgbDifference": 6.084679832435667,
+        "p95RgbDifference": 14.333333333333334,
+        "visibleCutSamples": 1114,
+        "maximumChangedPixels": 69
+      }
+    ],
+    "reviewStatus": "pending-user-review",
+    "assembledSha256": "f5ef5d2813d7268ff5f49fe6d7502b1c5035fc352451c814c3e103e9d38a0e0e",
+    "visualReview": {
+      "renderer": "actual createMapScene/Pixi",
+      "status": "internal-review-complete-pending-user-art-acceptance",
+      "evidence": "reviews/batch-03/browser-verification.json",
+      "perimeterHandoff": "unfinished"
+    }
+  }
+]

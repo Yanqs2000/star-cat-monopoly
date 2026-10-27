@@ -1,0 +1,16 @@
+
+> star-cat-monopoly@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.0 /Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets
+
+
+ Test Files  86 passed (86)
+      Tests  648 passed (648)
+   Start at  17:34:07
+   Duration  12.01s (tests 52%, environment 20%, transform 15%, import 12%, worker 1%)
+
+    Isolate  86 workers spawned · ~173ms startup each (spawn + environment, per file)
+             at least ~1.48s faster with isolate: false — reuses workers across files instead of one per file
+
