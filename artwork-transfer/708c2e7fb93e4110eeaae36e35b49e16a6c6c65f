@@ -1,0 +1,47 @@
+FFFF
+======================================================================
+FAIL: test_north_rgba_comes_from_its_native_context (__main__.ApprovedNorthEdgeUnderlayTests.test_north_rgba_comes_from_its_native_context) (tile='r1c3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch19_north_underlay.py", line 17, in test_north_rgba_comes_from_its_native_context
+    matches=[r for r in rs if r.get('northUnderlaySourceTile')==tid];self.assertEqual(len(matches),1,'No source-native north strip exported')
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : No source-native north strip exported
+
+======================================================================
+FAIL: test_north_rgba_comes_from_its_native_context (__main__.ApprovedNorthEdgeUnderlayTests.test_north_rgba_comes_from_its_native_context) (tile='r1c4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch19_north_underlay.py", line 17, in test_north_rgba_comes_from_its_native_context
+    matches=[r for r in rs if r.get('northUnderlaySourceTile')==tid];self.assertEqual(len(matches),1,'No source-native north strip exported')
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : No source-native north strip exported
+
+======================================================================
+FAIL: test_renderer_clears_original_base_under_north (__main__.ApprovedNorthEdgeUnderlayTests.test_renderer_clears_original_base_under_north)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch19_north_underlay.py", line 23, in test_renderer_clears_original_base_under_north
+    b=json.loads((OUT/'native-alpha-browser-verification.json').read_text());self.assertEqual(b['legacyBaseCulling']['northUnderlayZeroAlphaSamples'],[0,0],'Old 2x base leaks below native north fade')
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [0, 195] != [0, 0]
+
+First differing element 1:
+195
+0
+
+- [0, 195]
++ [0, 0] : Old 2x base leaks below native north fade
+
+======================================================================
+FAIL: test_whole_north_feather_has_native_coverage (__main__.ApprovedNorthEdgeUnderlayTests.test_whole_north_feather_has_native_coverage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-assets/.analysis-cache/map-continuation-20261019/test_batch19_north_underlay.py", line 12, in test_whole_north_feather_has_native_coverage
+    self.assertTrue(covers,f'Native art is missing beneath approved north fade at{x},{y}')
+AssertionError: [] is not true : Native art is missing beneath approved north fade at680,424
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (failures=4)

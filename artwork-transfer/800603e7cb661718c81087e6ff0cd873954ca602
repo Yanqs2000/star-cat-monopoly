@@ -1,0 +1,12 @@
+{
+  "prompt": "Use case: style-transfer. Image 1 is the EDIT TARGET and STRICT GEOMETRY MASTER, a crop of the original game map. Image 2 is STYLE REFERENCE ONLY, a newer crisp high resolution rendition whose bridge shape is WRONG. Repaint IMAGE 1 in the crisp colorful HD style, dark fine asphalt texture, white stone curbs, golden polygonal cliffs and dense fine grass of Image 2. Preserve IMAGE 1's precise positions and silhouettes: especially its straight upper-left edge of the bridge, its lower-right edge and the full original wide span. Do NOT trace Image 2's inset/narrower bridge. In the 1296x1008 target coordinates, upper white curb passes through (468,423),(498,405),(528,381), while lower edge and tree remain exactly where Image 1 places them. The entire bridge must remain a straight parallelogram following the original diagonals; no inward bow, taper or narrowing near the prison. Do not move/scale the image, endpoints, discs, tree, prison, cliffs or water. Keep four discs with cyan10, green20, blue30, cyan10 in original positions, all objects and colors, unchanged count. Crisp HD painted cartoon shading, no blurry original texture, no text labels/annotations/new props. Same 9:7 crop and framing, opaque high resolution, all four outer crop boundaries registered to original. Main purpose is an EXACT geometry faithful remaster of Image1, using Image2 only as texture/lighting/color reference.",
+  "tool": "built-in image_gen",
+  "referenceRect": [
+    1264,
+    1760,
+    432,
+    336
+  ],
+  "status": "candidate-not-installed",
+  "generatedPath": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-7f39b9bc-042c-4e24-b8be-fe2f08fe3f1a.png"
+}

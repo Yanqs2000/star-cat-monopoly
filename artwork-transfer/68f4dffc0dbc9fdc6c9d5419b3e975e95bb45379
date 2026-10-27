@@ -1,0 +1,35 @@
+{
+  "path": "/Users/yanqs/.codex/generated_images/01a14de9-d7ab-71d3-b7a1-3c4ebc1459a8/exec-c71ea65c-3d66-445c-86ed-8501a5b16d57.png",
+  "prompt": "Use case: precise-object-edit. Existing Star Cat Monopoly HD fine-grass map crop. The image is the EDIT TARGET. Remove ONLY the ONE large round-canopied tree in the left-center, including its brown trunk and its ground shadow, and continue the same tiny dense yellow-green grass seamlessly through its former footprint. This output is the clean terrain BACKGROUND; that same tree will be drawn separately later at its original position. Keep every other object and pixel geometry fixed: the one complete cone tree and partial cone tree at right, cropped yellow building/blue platform/purple column, diagonal white road curb and partial cyan disc, tan ground patches, cliff rim and gold rock at lower left. Do not remove those cone trees, add grass to the blue platform, move road/terrain outlines, draw a new tree or leave a stump/round empty patch. All grass remains the existing fine uniform leaf scale, including bottom strip. Preserve outer24 logical pixels on RIGHT/BOTTOM as fixed connection context; north/left grass will join later neighboring update. Native genuine RGBA transparency only outside original island; no holes inside land. Same7:8 portrait framing and native detail at least1120x1280, same lighting and sharp cartoon game style.",
+  "rect": [
+    112,
+    1552,
+    224,
+    256
+  ],
+  "context": 16,
+  "contextSides": {
+    "left": 0,
+    "right": 24,
+    "top": 0,
+    "bottom": 24
+  },
+  "protectedRects": [
+    [
+      304,
+      1552,
+      32,
+      256
+    ],
+    [
+      264,
+      1668,
+      72,
+      140
+    ]
+  ],
+  "pendingNeighborEdges": [
+    "left",
+    "top"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "generated-candidate-not-accepted",
+  "method": "built-in imagegen redraw with approved neighboring master as style reference",
+  "sourceContentRect": [
+    1152,
+    420,
+    256,
+    256
+  ],
+  "pixelSize": [
+    1254,
+    1254
+  ],
+  "referenceLogicalSize": [
+    288,
+    288
+  ],
+  "pixelDensity": 4.354166666666667,
+  "nativeDensityAtLeast4": true,
+  "sha256": "aed75b41d2c557bbf38eb862d43a6a1686b0113a08764d5c60b7daea3a7c9923",
+  "originalCoverageIoU": 0.9718415820302004,
+  "roadOuterEdgeMedianErrorLogicalPx": 1.0,
+  "roadOuterEdgeMaxErrorLogicalPx": 3,
+  "checksAre": "diagnostic only; layout and seam require visual validation",
+  "layoutReference": "public/modern/hd-masters/map/experiments/map-extension-m01-reference/manifest.json",
+  "prompt": "public/modern/hd-masters/map/experiments/map-extension-m01-reference/generation-prompt.md",
+  "originalLayoutReference": ".analysis-cache/hd-rework/reference/map-extension-m01/manifest.json",
+  "originalPrompt": ".analysis-cache/hd-rework/reference/map-extension-m01/generation-prompt.md"
+}
