@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed,ref } from 'vue'
+import { profileAssetUrl,type AssetProfile } from '../assets/profiles'
 import UiIcon from '../game/UiIcon.vue'
 import type { SaveSlot } from './snapshot-types'
-defineProps<{slots:SaveSlot[];canSave:boolean;busy:boolean;error:string;hasGame:boolean;message?:string;retryable?:boolean}>()
+const props=defineProps<{slots:SaveSlot[];canSave:boolean;busy:boolean;error:string;hasGame:boolean;message?:string;retryable?:boolean;assetProfile?:AssetProfile}>()
 const emit=defineEmits<{save:[slot:number];load:[slot:number];refresh:[];close:[];retry:[]}>()
 const confirm=ref<{kind:'save'|'load';slot:number}|null>(null)
-const emblemUrl = `${import.meta.env.BASE_URL}assets/ui/emblem.png`
+const emblemUrl = computed(()=>`${import.meta.env.BASE_URL}${profileAssetUrl('assets/ui/emblem.png',props.assetProfile??'original')}`)
 const slotState = (slot: SaveSlot) => slot.summary ? '已有存档' : slot.revision === 0 ? '空槽' : '摘要异常'
 function save(slot:SaveSlot){if(slot.revision>0)confirm.value={kind:'save',slot:slot.slot};else emit('save',slot.slot)}
 function load(slot:SaveSlot,hasGame:boolean){if(hasGame)confirm.value={kind:'load',slot:slot.slot};else emit('load',slot.slot)}

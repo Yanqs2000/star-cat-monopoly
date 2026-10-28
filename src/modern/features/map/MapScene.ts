@@ -1,3 +1,4 @@
+import { approvedWorldAssets } from '../assets/approved-artwork'
 import type { PreparedAnimations } from '../game/animation-preload'
 import { Application, Container, Graphics, ImageSource, Point, Sprite, Text, Texture, type Ticker } from 'pixi.js'
 import { WalkPreview } from '../characters/WalkPreview'
@@ -187,7 +188,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       const url = 'assets/world/manifest.json'
       const response = await fetch(`${import.meta.env.BASE_URL}${url}`, { signal: controller.signal })
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
-      return parseWorldAssets(await response.json())
+      return approvedWorldAssets(parseWorldAssets(await response.json()),assetProfile)
     })() : undefined
     const companyManifest = options.playerManifests ? await (async (): Promise<CompanyAssetsManifest> => {
       const url = 'assets/companies/manifest.json'

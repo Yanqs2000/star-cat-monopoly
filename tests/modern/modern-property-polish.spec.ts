@@ -48,15 +48,15 @@ it('胜出者角色图与每位玩家的图文资金账目一致，新增角色�
   expect(winner.text()).toContain('现金 12345')
   expect(winner.text()).toContain('胜出')
   expect(panel.findAll('[data-testid^="endgame-player-"]')).toHaveLength(4)
-  expect(winner.findAll('img').map(image => image.attributes('src'))).toContain('/assets/ui/cash.png')
+  expect(winner.findAll('img').map(image => image.attributes('src'))).toContain('/hd-static/approved-01-12/ui/cash.webp')
 })
 
-it('高清地产面板使用真实共享现金图，不请求不存在的HD钱包图', () => {
+it('高清地产面板使用已验收现金图，不请求不存在的HD钱包图', () => {
   const game = createGame([1], 1)
   game.phase = 'property-decision'
   game.propertyOffer = { kind: 'purchase', parcelId: 83, amount: 1800, ownerId: null }
   const panel = mount(PropertyPanel, { props: { game, paused: false, assetProfile: 'hd' } })
-  expect(panel.get('.amount img').attributes('src')).toBe('/assets/ui/cash.png')
+  expect(panel.get('.amount img').attributes('src')).toBe('/hd-static/approved-01-12/ui/cash.webp')
 })
 
 it('无主但保留建筑等级的地产显示中立建筑，不把它画成空地出售牌', () => {

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { MapInspection } from './queries'
-defineProps<{ info: MapInspection }>()
+import { profileAssetUrl,type AssetProfile } from '../assets/profiles'
+const props=defineProps<{ info: MapInspection;assetProfile?:AssetProfile }>()
 const emit = defineEmits<{ close: [] }>()
-const asset = (name: string) => `${import.meta.env.BASE_URL}assets/ui/${name}.png`
+const asset = (name: string) => `${import.meta.env.BASE_URL}${profileAssetUrl(`assets/ui/${name}.png`,props.assetProfile??'original')}`
 </script>
 <template>
   <aside class="map-info" data-testid="map-info" aria-label="地图地点信息">

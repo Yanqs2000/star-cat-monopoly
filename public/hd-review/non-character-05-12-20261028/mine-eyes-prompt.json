@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen",
+  "name": "11-mine-eyes-r2",
+  "transparent": true,
+  "refs": [
+    "11-mine-sheet-candidate-r1.png"
+  ],
+  "output": "11-mine-eyes-candidate-r2.png",
+  "prompt": "Use case: precise-object-edit. Input image is the current game sprite sheet, the edit target. Create ONE transparent PNG of ONLY the MIDDLE bomb/mine object, in EXACTLY its existing middle pose, isolated and upright as in that middle cell, with generous transparent margin. Correct only the missing pupils: the TWO lower half-closed white oval eyes must each have one clearly visible small black pupil in the exposed LOWER white portion BELOW the slanted eyelid line. Sleepy, half-lidded, slightly grumpy eyes looking forward/down, matching an old cartoon bomb. The round white circle on the upper right of the bomb is a highlight and MUST remain an empty white circle, it is NOT an eye. Preserve all other details and their placement: gray glossy round bomb, olive yellow screw cap and curved fuse, red/yellow crossed-out symbol, thick black outline, slim white mouth, cigarette, black ground shadow. No new facial features, no eyelashes, no eyebrows, no eyebrows replacing pupils, no third pupil. Keep the middle sprite's silhouette, proportions, shading, hue, line weight and camera angle. Output only ONE complete bomb sprite, not a sheet or multiple poses. Background truly transparent. This sprite will be animated by rigid continuous transforms, so do not create animation frames."
+}

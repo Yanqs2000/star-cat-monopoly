@@ -2,12 +2,13 @@
 import { computed, ref, watch } from 'vue'
 import type { GameState } from './types'
 import UiIcon from './UiIcon.vue'
-const props = defineProps<{ game?: GameState; detailsOpen: boolean; blocked: boolean; fullscreen: boolean; busy: boolean; status: string }>()
+import { profileAssetUrl,type AssetProfile } from '../assets/profiles'
+const props = defineProps<{ game?: GameState; detailsOpen: boolean; blocked: boolean; fullscreen: boolean; busy: boolean; status: string;assetProfile?:AssetProfile }>()
 const emit = defineEmits<{ saves: []; details: []; fullscreen: [] }>()
 const settingsOpen = ref(false)
 const active = computed(() => props.game?.players[props.game.activePlayerIndex])
 const date = computed(() => props.game ? `${props.game.world.month}月${props.game.world.day}日 ${['星期日','星期一','星期二','星期三','星期四','星期五','星期六'][props.game.world.weekday]}` : '正在准备对局')
-const asset = (name: string) => `${import.meta.env.BASE_URL}assets/ui/${name}.png`
+const asset = (name: string) => `${import.meta.env.BASE_URL}${profileAssetUrl(`assets/ui/${name}.png`,props.assetProfile??'original')}`
 watch(() => props.blocked, value => { if (value) settingsOpen.value = false })
 </script>
 <template>

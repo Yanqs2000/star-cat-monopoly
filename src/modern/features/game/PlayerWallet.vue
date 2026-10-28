@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { PlayerState } from './types'
-const props=defineProps<{ player:PlayerState; tickets?:number; loan?:number; preparedImages?:Record<string,string> }>()
+import { profileAssetUrl,type AssetProfile } from '../assets/profiles'
+const props=defineProps<{ player:PlayerState; tickets?:number; loan?:number; preparedImages?:Record<string,string>;assetProfile?:AssetProfile }>()
 const emit=defineEmits<{'asset-error':[error:Error]}>()
-const image=(path:string)=>props.preparedImages?.[path]??`${import.meta.env.BASE_URL}${path}`
+const image=(path:string)=>{const url=path.startsWith('assets/ui/')?profileAssetUrl(path,props.assetProfile??'original'):path;return props.preparedImages?.[url]??`${import.meta.env.BASE_URL}${url}`}
 const error=(event:Event)=>emit('asset-error',new Error(`账户图片加载失败：${(event.target as HTMLImageElement).src}`))
 </script>
 <template>

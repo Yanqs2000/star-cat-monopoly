@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "date": "2026-10-28",
+  "assets": [
+    {
+      "name": "cash",
+      "originalSize": [
+        46,
+        37
+      ],
+      "candidateSize": [
+        1398,
+        1125
+      ],
+      "originalBounds": [
+        3,
+        3,
+        41,
+        32
+      ],
+      "candidateBounds": [
+        33,
+        32,
+        1350,
+        1081
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sourceSha256": "1bbc97779109096772fb393a5d18f24bd99637e4039adf00b205375d7ab9b2d3",
+      "candidateSha256": "5ab9678199167c258bf9ce79448665100378785c903d76f17eb75a2e6c5ef2ce",
+      "candidate": "cash-candidate-r1.png",
+      "reviewStatus": "approved",
+      "enabled": true,
+      "generator": "built-in image_gen",
+      "sourceVisibleBounds": [
+        6,
+        6,
+        36,
+        27
+      ],
+      "candidateVisibleBounds": [
+        145,
+        165,
+        1272,
+        948
+      ],
+      "previewRegistration": {
+        "width": 37.213842058562555,
+        "height": 30.17241379310345,
+        "left": 2.14019520851819,
+        "top": 1.5747126436781604
+      }
+    },
+    {
+      "name": "deposit",
+      "originalSize": [
+        60,
+        47
+      ],
+      "candidateSize": [
+        1417,
+        1110
+      ],
+      "originalBounds": [
+        4,
+        3,
+        55,
+        42
+      ],
+      "candidateBounds": [
+        0,
+        39,
+        1379,
+        1088
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sourceSha256": "ae0beaa0ffc97d2357e070a66d5ad7f84dc8f93e765889784bc124d3bfbb75f7",
+      "candidateSha256": "446bb8ddc676c7908fac5cdeae277ae4022b9c31fc7fc81e7a6a7c810dca97e5",
+      "candidate": "deposit-candidate-r1.png",
+      "reviewStatus": "approved",
+      "enabled": true,
+      "generator": "built-in image_gen",
+      "sourceVisibleBounds": [
+        7,
+        6,
+        50,
+        37
+      ],
+      "candidateVisibleBounds": [
+        132,
+        180,
+        1327,
+        988
+      ],
+      "previewRegistration": {
+        "width": 50.98828451882846,
+        "height": 42.586633663366335,
+        "left": 2.25020920502092,
+        "top": -0.9059405940594054
+      }
+    },
+    {
+      "name": "tickets",
+      "originalSize": [
+        55,
+        51
+      ],
+      "candidateSize": [
+        1302,
+        1208
+      ],
+      "originalBounds": [
+        5,
+        4,
+        49,
+        45
+      ],
+      "candidateBounds": [
+        0,
+        59,
+        1232,
+        1156
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sourceSha256": "2844af8982358628ed5f0196fb5ef61c38dc01e65b60d70192c4e1f2b9f45a17",
+      "candidateSha256": "e992a5040abb08852c7a2e5296c83f230a7555ccba3754e726cc2b8137f29de1",
+      "candidate": "tickets-candidate-r1.png",
+      "reviewStatus": "approved",
+      "enabled": true,
+      "generator": "built-in image_gen",
+      "sourceVisibleBounds": [
+        8,
+        7,
+        44,
+        40
+      ],
+      "candidateVisibleBounds": [
+        121,
+        126,
+        1221,
+        1039
+      ],
+      "previewRegistration": {
+        "width": 42.6109090909091,
+        "height": 43.662650602409634,
+        "left": 4.039999999999999,
+        "top": 2.4457831325301207
+      }
+    },
+    {
+      "name": "emblem",
+      "originalSize": [
+        35,
+        35
+      ],
+      "candidateSize": [
+        1254,
+        1254
+      ],
+      "originalBounds": [
+        0,
+        0,
+        35,
+        35
+      ],
+      "candidateBounds": [
+        41,
+        54,
+        1217,
+        1190
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sourceSha256": "b883eaa7a0779b30699ce20dc6ff50ec289640d2305c8d702925fa9512e7b961",
+      "candidateSha256": "6d8db345374b439a485d06de9d338a3809f5a119bf852a07977186fe20be9290",
+      "candidate": "emblem-candidate-r1.png",
+      "reviewStatus": "approved",
+      "enabled": true,
+      "generator": "built-in image_gen",
+      "sourceVisibleBounds": [
+        0,
+        0,
+        32,
+        33
+      ],
+      "candidateVisibleBounds": [
+        44,
+        57,
+        1213,
+        1187
+      ],
+      "previewRegistration": {
+        "width": 34.3267750213858,
+        "height": 36.6212389380531,
+        "left": -1.204448246364414,
+        "top": -1.6646017699115043
+      }
+    }
+  ],
+  "runtimeIntegration": true,
+  "userApproval": {
+    "date": "2026-10-28",
+    "statement": "行，1-12通过，合并到主分支",
+    "scope": "selected 01-04"
+  },
+  "integrationRecord": "docs/modernization/approved-non-character-01-12.md"
+}

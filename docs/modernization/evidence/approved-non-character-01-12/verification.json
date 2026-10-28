@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-28",
+  "baseCommit": "c27814526a2452579b034eb821f8d874d8bdcaae",
+  "approved": "01-12",
+  "mineRevision": 4,
+  "node": "24.22.1",
+  "unitTests": {
+    "files": 103,
+    "passed": 757,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "modernProductionBuild": "passed; existing large chunk warning",
+  "assetVerification": {
+    "uniqueFiles": 415,
+    "bytes": 15609930,
+    "motionFramesPixelMatched": 400,
+    "alphaMaxError": 0,
+    "visibleRgbMaxError": 0,
+    "mineUniqueFrames": 160,
+    "previousStaticPathsUnchanged": 211,
+    "previousProtectedFilesUnchanged": 81
+  },
+  "productionBrowser": {
+    "baseURL": "http://127.0.0.1:4199",
+    "browser": "project Playwright local Chrome with SwiftShader; Browser plugin unavailable",
+    "passed": [
+      "approved HD carnival real 20 seconds, input, preload, screenshot-equal pause, tally, single credit and input release",
+      "original company calculator natural play and one debit",
+      "HD company calculator natural play and one debit",
+      "original/HD same-seed start and dice full GameState equality"
+    ],
+    "failed": 0,
+    "evidenceDirectory": "/tmp/starcat-approved-assets-e2e"
+  },
+  "limitations": [
+    "Not whole-game hardware 60fps performance acceptance",
+    "Court and Win not all naturally triggered in this browser run",
+    "No new character artwork",
+    "13-17 analyzed and planned only"
+  ],
+  "runtimeManifestSha256": "c98ea6677eb4aa1a60f0b3566fac1d720e7d4451cc7a4b550d5ff2ae5ed9bfdd"
+}

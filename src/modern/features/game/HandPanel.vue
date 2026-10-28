@@ -15,6 +15,7 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{ 'begin-card': [index: number]; 'asset-error': [error: Error, cardId: number] }>()
 const page = ref(0)
+const cardRailStyle=computed(()=>({'--card-rail-image': `url(${import.meta.env.BASE_URL}${profileAssetUrl('assets/ui/card-rail.png',props.assetProfile??'original')})`}))
 const active = computed(() => props.game.players[props.game.activePlayerIndex]!)
 const inventory = computed(() => props.game.inventories[active.value.id] ?? [])
 const pages = computed(() => Math.max(1, Math.ceil(inventory.value.length / 8)))
@@ -34,7 +35,7 @@ watch([inventory, pages], () => { if (page.value >= pages.value) page.value = pa
 </script>
 
 <template>
-  <section class="hand" aria-label="当前手牌" data-testid="hand-panel">
+  <section :style="cardRailStyle" class="hand" aria-label="当前手牌" data-testid="hand-panel">
     <header>
       <div><strong>{{ active.name }}的手牌</strong><span>{{ inventory.length }}/24</span></div>
       <div class="pager">

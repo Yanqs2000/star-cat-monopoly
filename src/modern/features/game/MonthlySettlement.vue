@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { profileAssetUrl,type AssetProfile } from '../assets/profiles'
 import type { GameState } from './types'
 import type { FinanceEntry } from './finance-types'
 import { getAssetStandings } from './queries'
 import { monthlyQuotes, financeLabels, actualChanges } from './finance-presentation'
 
-const props = defineProps<{ game: GameState; entries: FinanceEntry[]; paused: boolean; preparedImages?: Record<string, string> }>()
+const props = defineProps<{ game: GameState; entries: FinanceEntry[]; paused: boolean; preparedImages?: Record<string, string>;assetProfile?:AssetProfile }>()
 const emit = defineEmits<{ continue: []; 'asset-error': [error: Error] }>()
 const standings = computed(() => getAssetStandings(props.game))
 const champion = computed(() => standings.value.find(row => row.rank === 1))
@@ -16,7 +17,7 @@ const portrait = (playerId: number) => {
   return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`
 }
 const imageError = (event: Event) => emit('asset-error', new Error(`月结图片加载失败：${(event.target as HTMLImageElement).src}`))
-const emblemUrl = `${import.meta.env.BASE_URL}assets/ui/emblem.png`
+const emblemUrl = computed(()=>`${import.meta.env.BASE_URL}${profileAssetUrl('assets/ui/emblem.png',props.assetProfile??'original')}`)
 const number = (value: number) => value.toLocaleString('zh-CN')
 const walletDelta = (entry: FinanceEntry) => (entry.cashDelta ?? 0) + (entry.depositDelta ?? 0)
 </script>

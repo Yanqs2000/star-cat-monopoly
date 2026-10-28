@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { approvedActivityAssets } from './features/assets/approved-artwork'
 import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, shallowRef } from 'vue'
 import mapJson from './data/map.json'
 import SavePanel from './features/saves/SavePanel.vue'
@@ -288,7 +289,7 @@ async function prepareGameScene(state:GameState,target:HTMLElement,signal:AbortS
     const mapRegions=mapArtwork?.regions??[]
     const textureResolutions=Object.fromEntries(mapRegions.map(region=>[region.url,region.pixelDensity]))
     const displayInteractions=mapAssetProfile(loadedInteractionAssets,profile)
-    const displayActivities=mapAssetProfile(loadedActivityAssets,profile)
+    const displayActivities=approvedActivityAssets(mapAssetProfile(loadedActivityAssets,profile),profile)
     const ui=await prepareGameUiAssets(state,displayInteractions,signal,undefined,profile)
     let animations:PreparedAnimations|undefined
     try{
@@ -790,7 +791,7 @@ onBeforeUnmount(() => {
   </main>
   <main v-else class="game-shell original-ui">
     <Teleport :to="fullscreenToolbar ?? 'body'" :disabled="!fullscreen || !fullscreenToolbar">
-    <GameToolbar :game="game" :details-open="detailsOpen" :blocked="savesOpen || referenceTab !== null" :fullscreen="fullscreen" :busy="assetProfileBusy" :status="loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…'" @saves="openSaves" @details="detailsOpen=!detailsOpen" @fullscreen="toggleFullscreen">
+    <GameToolbar :asset-profile="assetProfile" :game="game" :details-open="detailsOpen" :blocked="savesOpen || referenceTab !== null" :fullscreen="fullscreen" :busy="assetProfileBusy" :status="loadState === 'ready' ? '对局已载入' : loadState === 'error' ? '加载失败' : '正在载入本局角色与交互素材…'" @saves="openSaves" @details="detailsOpen=!detailsOpen" @fullscreen="toggleFullscreen">
     <div class="audio-controls" aria-label="声音设置">
       <button @click="audio.unlock();audio.retry()">开启声音</button>
       <label>素材画质 <select aria-label="对局素材画质" :disabled="!canSwitchAssetProfile" :value="assetProfileSelection" @change="setAssetProfile"><option value="original">原版素材</option><option value="hd">高清素材</option></select></label>
@@ -815,7 +816,7 @@ onBeforeUnmount(() => {
       </div>
 
       <DiceRoll :roll="diceRoll" :player-name="game?.players.find(player => player.id === diceRoll?.playerId)?.name ?? ''" :paused="paused" :speed="speed" :asset-profile="assetProfile" :prepared-images="preparedImages" @complete="diceRoll = null" @asset-error="failRuntimeAsset" />
-      <MapInfoPanel v-if="mapInspection && referenceTab === null && loadState === 'ready'" :info="mapInspection" @close="mapInspectionPosition=undefined" />
+      <MapInfoPanel :asset-profile="assetProfile" v-if="mapInspection && referenceTab === null && loadState === 'ready'" :info="mapInspection" @close="mapInspectionPosition=undefined" />
       <PropertyPanel v-if="game && loadState === 'ready'" :game="game" :paused="paused" :previewing="rentPreviewing" :asset-profile="assetProfile" :prepared-images="preparedImages" @asset-error="failRuntimeAsset" @decide="decideProperty" @acknowledge="acknowledgeProperty" />
       <InteractionPanel v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :luck-assets="interactionAssets.luck" :activity-assets="activityAssets" :portal-decorations="portalDecorations" :asset-profile="assetProfile" @confirm="confirmInteraction" @cancel="cancelInteraction" @choose="chooseInteraction" @acknowledge="acknowledgeInteraction" @buy="buyCard" @sell="sellCard" @leave-shop="leaveShop" @request-credit="requestCredit" @bank-operation="bankOperation" @leave-bank="leaveBank" @acknowledge-monthly="acknowledgeMonthly" @trade-stock="tradeStock" @leave-stock="leaveStock" @subscribe-company="subscribeCompany" @leave-company="leaveCompany" @exchange-tickets="exchangeTickets" @leave-exchange="leaveExchange" @activity-ready="readyActivity" @skip-activity="skipActivity" @carnival-input="carnivalInput" @place-wager="placeWager" @confirm-wagers="confirmWagers" @choose-portal="choosePortal" @court-target="chooseCourtTarget" @court-case="chooseCourtCase" @asset-error="failInteractionAsset" />
       <EndgamePanel v-if="game && loadState==='ready' && controllerReady" :game="game" :paused="paused" :prepared-images="preparedImages" :asset-profile="assetProfile" @acknowledge="gameController?.acknowledgeBankruptcy()" @restart="startGame" @selection="returnToSelection" @asset-error="failRuntimeAsset" />
@@ -836,8 +837,8 @@ onBeforeUnmount(() => {
     </section>
   </main>
   <Teleport :to="boardArea ?? 'body'" :disabled="mode !== 'game' || !boardArea">
-  <GameReferencePanel v-if="referenceTab !== null" :game="mode === 'game' ? game : undefined" :tab="referenceTab" @tab="referenceTab=$event" @close="closeReference" />
-  <SavePanel v-if="savesOpen" :slots="saveSlots" :can-save="saveAllowed" :busy="savesBusy" :error="savesError" :message="savesMessage" :has-game="!!game" :retryable="retryableSave" @save="saveToSlot" @load="loadFromSlot" @refresh="refreshSaveSlots" @retry="submitRetrySave" @close="closeSaves" />
+  <GameReferencePanel :asset-profile="assetProfile" v-if="referenceTab !== null" :game="mode === 'game' ? game : undefined" :tab="referenceTab" @tab="referenceTab=$event" @close="closeReference" />
+  <SavePanel :asset-profile="assetProfile" v-if="savesOpen" :slots="saveSlots" :can-save="saveAllowed" :busy="savesBusy" :error="savesError" :message="savesMessage" :has-game="!!game" :retryable="retryableSave" @save="saveToSlot" @load="loadFromSlot" @refresh="refreshSaveSlots" @retry="submitRetrySave" @close="closeSaves" />
   </Teleport>
 </template>
 

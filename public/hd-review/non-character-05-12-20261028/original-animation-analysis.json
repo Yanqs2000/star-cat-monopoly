@@ -1,0 +1,1367 @@
+[
+  {
+    "id": "barrier-1",
+    "group": "world",
+    "sourceSymbol": 3689,
+    "fps": 30,
+    "frames": 10,
+    "unique": [
+      {
+        "url": "assets/world/barrier-1/1.png",
+        "sha256": "c583e08a315cc99da3cbe885e9213d4911f20bdac8e7dbb5b3588b50dcde72ac",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          4,
+          37,
+          83,
+          117
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/world/barrier-1/4.png",
+        "sha256": "7916d687e53e7f5884d3725ea002ced42ce522729a66494681ad8124c106fc1b",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          4,
+          37,
+          74,
+          117
+        ],
+        "sampleFrame": 4
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "barrier-2",
+    "group": "world",
+    "sourceSymbol": 3689,
+    "fps": 30,
+    "frames": 10,
+    "unique": [
+      {
+        "url": "assets/world/barrier-2/1.png",
+        "sha256": "3112ea4957b4d153a22650a7c67d4f386973e3131c3674190071ffa1165245fb",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          7,
+          9,
+          86,
+          117
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/world/barrier-2/4.png",
+        "sha256": "53e5ab14b8430c219aecb53562789d740b841501830e75a98471157da1856ab1",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          7,
+          22,
+          78,
+          117
+        ],
+        "sampleFrame": 4
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "barrier-3",
+    "group": "world",
+    "sourceSymbol": 3689,
+    "fps": 30,
+    "frames": 10,
+    "unique": [
+      {
+        "url": "assets/world/barrier-3/1.png",
+        "sha256": "c583e08a315cc99da3cbe885e9213d4911f20bdac8e7dbb5b3588b50dcde72ac",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          4,
+          37,
+          83,
+          117
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/world/barrier-3/4.png",
+        "sha256": "7916d687e53e7f5884d3725ea002ced42ce522729a66494681ad8124c106fc1b",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          4,
+          37,
+          74,
+          117
+        ],
+        "sampleFrame": 4
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "barrier-4",
+    "group": "world",
+    "sourceSymbol": 3689,
+    "fps": 30,
+    "frames": 10,
+    "unique": [
+      {
+        "url": "assets/world/barrier-4/1.png",
+        "sha256": "3112ea4957b4d153a22650a7c67d4f386973e3131c3674190071ffa1165245fb",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          7,
+          9,
+          86,
+          117
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/world/barrier-4/4.png",
+        "sha256": "53e5ab14b8430c219aecb53562789d740b841501830e75a98471157da1856ab1",
+        "size": [
+          95,
+          120
+        ],
+        "visibleBounds": [
+          7,
+          22,
+          78,
+          117
+        ],
+        "sampleFrame": 4
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "mine",
+    "group": "world",
+    "sourceSymbol": 3696,
+    "fps": 30,
+    "frames": 80,
+    "unique": [
+      {
+        "url": "assets/world/mine/1.png",
+        "sha256": "72bc856ac61dc9d855a9c208f232258d367c1ec80ef908550cd0c2f2fedfad0b",
+        "size": [
+          53,
+          76
+        ],
+        "visibleBounds": [
+          4,
+          1,
+          52,
+          66
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/world/mine/5.png",
+        "sha256": "afeeab4cfe2f9a1b7ba2a98c4c719cd94afc24962d6fd58d7f66da2f8e32256f",
+        "size": [
+          53,
+          76
+        ],
+        "visibleBounds": [
+          4,
+          3,
+          52,
+          68
+        ],
+        "sampleFrame": 5
+      },
+      {
+        "url": "assets/world/mine/46.png",
+        "sha256": "f85e3c413b4baf29cc9a5a5cec24417304e92b9c74a5d6f5d8c3688ff3ffd1c7",
+        "size": [
+          53,
+          76
+        ],
+        "visibleBounds": [
+          4,
+          0,
+          52,
+          65
+        ],
+        "sampleFrame": 46
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "id": "court-highlight",
+    "group": "activities",
+    "sourceSymbol": 2667,
+    "fps": 30,
+    "frames": 23,
+    "unique": [
+      {
+        "url": "assets/activities/court-highlight/1.png",
+        "sha256": "23468a8e8f4f3073134d9e5f1a2c6a138883961861d1709cc07105cf43d28a45",
+        "size": [
+          61,
+          71
+        ],
+        "visibleBounds": null,
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/court-highlight/2.png",
+        "sha256": "3e1e610f314c240294bbe743c6462b98a95759f14989a3d684de2100cfaa47ba",
+        "size": [
+          61,
+          71
+        ],
+        "visibleBounds": [
+          0,
+          0,
+          61,
+          71
+        ],
+        "sampleFrame": 2
+      }
+    ],
+    "timeline": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "id": "ludo-win",
+    "group": "activities",
+    "sourceSymbol": 1575,
+    "fps": 30,
+    "frames": 40,
+    "unique": [
+      {
+        "url": "assets/activities/ludo-win/1.png",
+        "sha256": "d274d75f5e7811560608303fab489395f2f24fcaa633d6f7c779afbcc008bc91",
+        "size": [
+          169,
+          66
+        ],
+        "visibleBounds": [
+          0,
+          10,
+          131,
+          65
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/ludo-win/6.png",
+        "sha256": "4d62de528d71bf21f7314b49ee8f052f2f40155d3a3997ad09b071c926c65703",
+        "size": [
+          169,
+          66
+        ],
+        "visibleBounds": null,
+        "sampleFrame": 6
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "carnival-ball-1",
+    "group": "activities",
+    "sourceSymbol": 1141,
+    "fps": 30,
+    "frames": 30,
+    "unique": [
+      {
+        "url": "assets/activities/carnival-ball-1/1.png",
+        "sha256": "a661c4755bc448363e94a8b33a902f6e90766ea9a750a5842364c7446b88a237",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          4,
+          34,
+          35
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/4.png",
+        "sha256": "d1f1b7d65d6de65da72b34c9b84154d6f01014d90edd23ce8cc709ef6e1611c5",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          5,
+          34,
+          32
+        ],
+        "sampleFrame": 4
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/7.png",
+        "sha256": "37e13c9a80c0bf70dd325d37315b6bf437146174693476edfd232771750ff380",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          12,
+          34,
+          25
+        ],
+        "sampleFrame": 7
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/10.png",
+        "sha256": "19d495d4b5431f0d072fdbe6a255982bad180bab5f9617239d3241db80e7dc3c",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          13,
+          34,
+          28
+        ],
+        "sampleFrame": 10
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/13.png",
+        "sha256": "99a4fd9661dfdbde40b6633e7391cf2bb9b62dbe086af740bf7d59a7602f8635",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          7,
+          34,
+          34
+        ],
+        "sampleFrame": 13
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/16.png",
+        "sha256": "07ae8c5828943fe6fc410c9cd0c335f1891f80eaece5f5001da7930736abcef5",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          4,
+          34,
+          35
+        ],
+        "sampleFrame": 16
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/19.png",
+        "sha256": "0201db94898beb0d0b4975ca6c6e3e94e31c2b964af7642dbf919a1a236879ed",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          5,
+          34,
+          32
+        ],
+        "sampleFrame": 19
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/22.png",
+        "sha256": "dbe375b813785e94acb71fca14dbeafb32b9315f5a436aeb00e24ff8acad8587",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          12,
+          34,
+          25
+        ],
+        "sampleFrame": 22
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/25.png",
+        "sha256": "8578b06ef1e2b449f5163d2c9153b60c025a84370427aea973e92c7e388ee980",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          13,
+          34,
+          28
+        ],
+        "sampleFrame": 25
+      },
+      {
+        "url": "assets/activities/carnival-ball-1/28.png",
+        "sha256": "644e0235f131419b4f5acf7be1c36139fedd7ed3f2e87f999ead8e7d99dbe6d5",
+        "size": [
+          37,
+          38
+        ],
+        "visibleBounds": [
+          3,
+          7,
+          34,
+          34
+        ],
+        "sampleFrame": 28
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9
+    ]
+  },
+  {
+    "id": "carnival-ball-2",
+    "group": "activities",
+    "sourceSymbol": 1260,
+    "fps": 30,
+    "frames": 30,
+    "unique": [
+      {
+        "url": "assets/activities/carnival-ball-2/1.png",
+        "sha256": "ddc0d2d49d9e8e8c6bd2f1ffe423e54511a1b1791bef24ac940cfa25f730279f",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          0,
+          1,
+          51,
+          57
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/4.png",
+        "sha256": "4cbea3f52b7235646c57ebc8cd4d8446045207fe4024540ad5d7ccea8b122d05",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          3,
+          1,
+          48,
+          58
+        ],
+        "sampleFrame": 4
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/7.png",
+        "sha256": "e9f033186fb3e4624190953a94f40c3fd63058d53101feb575caa8313a6674cd",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          15,
+          1,
+          37,
+          58
+        ],
+        "sampleFrame": 7
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/10.png",
+        "sha256": "c23b2e7cab397251930c8143a27ffa288971f39cdba0fc64488da629f527ad4f",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          15,
+          1,
+          36,
+          58
+        ],
+        "sampleFrame": 10
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/13.png",
+        "sha256": "8f4bbcce2cf6adf00dc53e76e7827c9a8532f19b423dfd42379ae9a0ce9fcb72",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          3,
+          1,
+          48,
+          58
+        ],
+        "sampleFrame": 13
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/16.png",
+        "sha256": "e7b9f59acba7f165223d52ed88b4c381b9f84289c6e04f661022ece30b7aa891",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          0,
+          1,
+          51,
+          57
+        ],
+        "sampleFrame": 16
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/19.png",
+        "sha256": "c2f0dac33bc1013fa7c9d907962d27d3b56bf130b54a4323a235f5523d8f2686",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          3,
+          1,
+          48,
+          58
+        ],
+        "sampleFrame": 19
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/22.png",
+        "sha256": "fb390e35e1ad0c2d8bdf31772551f25defb1bc29ec4f21fd741c516d42039922",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          15,
+          1,
+          36,
+          58
+        ],
+        "sampleFrame": 22
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/25.png",
+        "sha256": "3c93877e61daedfd4b3a413e8e0fd4630d7528c20648420592d0dfcb937e16b8",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          15,
+          1,
+          37,
+          58
+        ],
+        "sampleFrame": 25
+      },
+      {
+        "url": "assets/activities/carnival-ball-2/28.png",
+        "sha256": "92d9177cff4d4f0b68febcfb3b0654073993f97ba6b434f9e1ca7e229766dd22",
+        "size": [
+          52,
+          58
+        ],
+        "visibleBounds": [
+          4,
+          1,
+          48,
+          58
+        ],
+        "sampleFrame": 28
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9
+    ]
+  },
+  {
+    "id": "carnival-ball-3",
+    "group": "activities",
+    "sourceSymbol": 1218,
+    "fps": 30,
+    "frames": 30,
+    "unique": [
+      {
+        "url": "assets/activities/carnival-ball-3/1.png",
+        "sha256": "abd43f134d5059b5d336f2ab0021e5a4b76f56c4a4a0b7ea2919652cdd2021d4",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          1,
+          1,
+          52,
+          58
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/4.png",
+        "sha256": "3bbd91127a035565cf9160c4c8ad07ea1c21fc9246c581a689b04361ceed4b37",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          5,
+          1,
+          49,
+          58
+        ],
+        "sampleFrame": 4
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/7.png",
+        "sha256": "663dd39fd758b8d2cc2c501fcffa96801c07e8027b834009f4491edfb5dbbfd9",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          16,
+          1,
+          38,
+          58
+        ],
+        "sampleFrame": 7
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/10.png",
+        "sha256": "94f01e9830852befed4044405ef20891bc2de5c7f3bb9f9b06ab0d0b244f66dc",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          16,
+          1,
+          38,
+          58
+        ],
+        "sampleFrame": 10
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/13.png",
+        "sha256": "a1f5132facefff27219c701217d5b39013cdc84ffac496b13f7f6fe572ea5ece",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          4,
+          1,
+          49,
+          58
+        ],
+        "sampleFrame": 13
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/16.png",
+        "sha256": "c16ff6c713b2d0f566bb94c69d12d0d3892386b3240fd6dcca8d69abec585e0c",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          1,
+          1,
+          52,
+          57
+        ],
+        "sampleFrame": 16
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/19.png",
+        "sha256": "10003939aa4961533ce716d1e88b0a52383a4c773f7bb14bbbebb98197b71ae1",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          4,
+          1,
+          49,
+          58
+        ],
+        "sampleFrame": 19
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/22.png",
+        "sha256": "23f9b5af1595798d5b94e4270ed0ad79495c44a8e45c5b69519f3ff192f9c147",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          16,
+          1,
+          38,
+          58
+        ],
+        "sampleFrame": 22
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/25.png",
+        "sha256": "833ce8f4a30983de7cafe6acc6f7e5099ea3dd791f10bfc661b22311277af14b",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          16,
+          1,
+          38,
+          58
+        ],
+        "sampleFrame": 25
+      },
+      {
+        "url": "assets/activities/carnival-ball-3/28.png",
+        "sha256": "fad00bd830e4137cc22669df4d643b7433ec0d777fba0af4f2e23ab605f4cf7b",
+        "size": [
+          53,
+          59
+        ],
+        "visibleBounds": [
+          5,
+          1,
+          49,
+          58
+        ],
+        "sampleFrame": 28
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9
+    ]
+  },
+  {
+    "id": "carnival-ball-4",
+    "group": "activities",
+    "sourceSymbol": 1239,
+    "fps": 30,
+    "frames": 30,
+    "unique": [
+      {
+        "url": "assets/activities/carnival-ball-4/1.png",
+        "sha256": "4b0e06bb4918a842f35bbd492157770b15a775e37283048f29fa0fa96174abe0",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          1,
+          1,
+          52,
+          57
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/4.png",
+        "sha256": "eff3a3af8a97306e9b646fa23b9d74cffa5532b415dc6f1bac90b84f3f374fa7",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          4,
+          1,
+          49,
+          58
+        ],
+        "sampleFrame": 4
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/7.png",
+        "sha256": "284478d27ca457be3eb6514e2915ba25b70de513c70aeb353b8c0b9d9cbe1005",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          16,
+          1,
+          37,
+          58
+        ],
+        "sampleFrame": 7
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/10.png",
+        "sha256": "95084b341ef81f543172a2dfd6b220773f4760054e605f9d5526fbe56012fb88",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          15,
+          1,
+          37,
+          58
+        ],
+        "sampleFrame": 10
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/13.png",
+        "sha256": "0ef8cf8d0929ae2464e77403e0745dae40694a0cddc569e3dfc7579f31660eb2",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          3,
+          1,
+          48,
+          58
+        ],
+        "sampleFrame": 13
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/16.png",
+        "sha256": "8e726773555fd904549012ab3eb715f990d88ff713e82dd98efff4de7d6ca509",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          1,
+          1,
+          52,
+          57
+        ],
+        "sampleFrame": 16
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/19.png",
+        "sha256": "6d95ddcd4ee5d1ff43aef46902bc314a5c515bb72bda689e6976ccc3386f0cf6",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          3,
+          1,
+          48,
+          58
+        ],
+        "sampleFrame": 19
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/22.png",
+        "sha256": "90602034d5b8b89b35f7d83214fff716da8f7dafc97cdb7a177c18e919b075db",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          15,
+          1,
+          37,
+          58
+        ],
+        "sampleFrame": 22
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/25.png",
+        "sha256": "87132b4e7b1af4f9f160082f7876cec955dff398701d31adffb971d6626d9bc0",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          16,
+          1,
+          37,
+          58
+        ],
+        "sampleFrame": 25
+      },
+      {
+        "url": "assets/activities/carnival-ball-4/28.png",
+        "sha256": "ecbbf315149c3d6e1b89a765aa71c50147be21a31ce7da4e7a713253861cec5c",
+        "size": [
+          53,
+          58
+        ],
+        "visibleBounds": [
+          4,
+          1,
+          49,
+          58
+        ],
+        "sampleFrame": 28
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9
+    ]
+  },
+  {
+    "id": "carnival-intro",
+    "group": "activities",
+    "sourceSymbol": 2154,
+    "fps": 30,
+    "frames": 90,
+    "unique": [
+      {
+        "url": "assets/activities/carnival-intro/1.png",
+        "sha256": "056a5fd19bc3bf34ce228a18e992e6d2ca6dc37d516cd9579a850803741f1254",
+        "size": [
+          404,
+          146
+        ],
+        "visibleBounds": [
+          13,
+          16,
+          335,
+          137
+        ],
+        "sampleFrame": 1
+      },
+      {
+        "url": "assets/activities/carnival-intro/21.png",
+        "sha256": "2b6bf06736d6774da7a75bcb25d4ce14e5f2d0fe48d456b33fac81701fcacd82",
+        "size": [
+          404,
+          146
+        ],
+        "visibleBounds": null,
+        "sampleFrame": 21
+      }
+    ],
+    "timeline": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+]

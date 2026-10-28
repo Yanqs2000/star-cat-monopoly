@@ -8,7 +8,7 @@ export interface WorldFrame {
 
 export interface WorldClip {
   id: string
-  fps: 30
+  fps: number
   loop: boolean
   frames: WorldFrame[]
   sourceSymbol: number

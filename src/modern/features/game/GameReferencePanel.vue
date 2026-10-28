@@ -4,8 +4,10 @@ import type { GameState } from './types'
 import { getAssetStandings, getHoldingsOverview, getStockOverview } from './queries'
 import { getCardDefinition, getOrdinaryCardIds } from './card-economy'
 
+import { profileAssetUrl,type AssetProfile } from '../assets/profiles'
+
 export type ReferenceTab = 'assets' | 'stocks' | 'holdings' | 'help'
-const props = defineProps<{ game?: GameState; tab: ReferenceTab }>()
+const props = defineProps<{ game?: GameState; tab: ReferenceTab;assetProfile?:AssetProfile }>()
 const emit = defineEmits<{ close: []; tab: [value: ReferenceTab] }>()
 const root = ref<HTMLElement>(), closeButton = ref<HTMLButtonElement>()
 const playerId = ref(props.game?.players[props.game.activePlayerIndex]?.id ?? 1)
@@ -17,7 +19,7 @@ const tabs: { id: ReferenceTab; label: string }[] = [
   { id: 'holdings', label: '全员持股' }, { id: 'help', label: '游戏帮助' },
 ]
 const cards = [1, ...getOrdinaryCardIds()].map(getCardDefinition)
-const asset = (path: string) => `${import.meta.env.BASE_URL}assets/${path}`
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.startsWith('ui/')?profileAssetUrl(`assets/${path}`,props.assetProfile??'original'):`assets/${path}`}`
 const number = (value: number) => value.toLocaleString('zh-CN', { maximumFractionDigits: 2 })
 const portrait = (id: number) => asset(`monthly/champions/${props.game?.players.find(player => player.id === id)?.characterId}.png`)
 const selectedPlayer = computed(() => props.game?.players.find(player => player.id === playerId.value))

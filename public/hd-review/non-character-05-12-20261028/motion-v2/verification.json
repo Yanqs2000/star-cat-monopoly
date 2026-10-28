@@ -1,0 +1,332 @@
+{
+  "version": 2,
+  "fps": 60,
+  "clips": [
+    {
+      "id": "barrier-1",
+      "width": 380,
+      "height": 480,
+      "durationMs": 333.3333333333333,
+      "count": 20,
+      "fps": 60,
+      "uniqueRasterFrames": 2,
+      "longestRepeatedRun": 14,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 13.5,
+      "seamPixelDifference": 14.57295230263158,
+      "maxNormalPixelDifference": 14.57295230263158,
+      "frameWidthRange": [
+        70.0,
+        83.5
+      ],
+      "frameHeightRange": [
+        80.0,
+        80.5
+      ],
+      "encodedFrames": 2,
+      "encodedDurationMs": 333,
+      "file": "motion-v2/animations/barrier-1.webp",
+      "sha256": "93b30b0ad00bddbe72284829c404cee9c20f5c157785d16e5fbb5f11a0b3f429"
+    },
+    {
+      "id": "barrier-2",
+      "width": 380,
+      "height": 480,
+      "durationMs": 333.3333333333333,
+      "count": 20,
+      "fps": 60,
+      "uniqueRasterFrames": 2,
+      "longestRepeatedRun": 14,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 17.0,
+      "seamPixelDifference": 15.557621984649122,
+      "maxNormalPixelDifference": 15.557621984649122,
+      "frameWidthRange": [
+        71.0,
+        88.0
+      ],
+      "frameHeightRange": [
+        95.0,
+        101.5
+      ],
+      "encodedFrames": 2,
+      "encodedDurationMs": 333,
+      "file": "motion-v2/animations/barrier-2.webp",
+      "sha256": "f021f95b46be50f154bb35439cc1778e76e4ce70198d04df6d529b9503d24a6f"
+    },
+    {
+      "id": "mine",
+      "width": 244,
+      "height": 336,
+      "durationMs": 2666.6666666666665,
+      "count": 160,
+      "fps": 60,
+      "uniqueRasterFrames": 160,
+      "longestRepeatedRun": 1,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 0.25,
+      "seamPixelDifference": 1.6772540983606556,
+      "maxNormalPixelDifference": 1.7093457259953162,
+      "frameWidthRange": [
+        46.75,
+        49.25
+      ],
+      "frameHeightRange": [
+        64.25,
+        65.0
+      ],
+      "encodedFrames": 160,
+      "encodedDurationMs": 2667,
+      "file": "motion-v2/animations/mine.webp",
+      "sha256": "3b223da550bf14634f002dd11762bfb4015f7f5187baf4155fdd72fc2f542fc0",
+      "motionRevision": 4,
+      "swingDegrees": 6,
+      "verticalTravelLogicalPx": 3,
+      "transparentPaddingLogicalPx": 4
+    },
+    {
+      "id": "carnival-ball-1",
+      "width": 148,
+      "height": 152,
+      "durationMs": 1000,
+      "count": 60,
+      "fps": 60,
+      "uniqueRasterFrames": 59,
+      "longestRepeatedRun": 1,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 0.5,
+      "seamPixelDifference": 4.413129000711238,
+      "maxNormalPixelDifference": 19.902704925320055,
+      "frameWidthRange": [
+        31.0,
+        31.5
+      ],
+      "frameHeightRange": [
+        2.5,
+        31.5
+      ],
+      "encodedFrames": 60,
+      "encodedDurationMs": 1000,
+      "file": "motion-v2/animations/carnival-ball-1.webp",
+      "sha256": "dfa3a53acb9258272879a0b192d2b9d8f310bf51f6439630b65c3f92b0062d6d"
+    },
+    {
+      "id": "carnival-ball-2",
+      "width": 208,
+      "height": 232,
+      "durationMs": 1000,
+      "count": 60,
+      "fps": 60,
+      "uniqueRasterFrames": 59,
+      "longestRepeatedRun": 1,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 5.0,
+      "seamPixelDifference": 3.2616203166445623,
+      "maxNormalPixelDifference": 20.927382087201593,
+      "frameWidthRange": [
+        1.5,
+        49.0
+      ],
+      "frameHeightRange": [
+        54.0,
+        54.0
+      ],
+      "encodedFrames": 60,
+      "encodedDurationMs": 1000,
+      "file": "motion-v2/animations/carnival-ball-2.webp",
+      "sha256": "26c983c634a73b213f870b9478c109fd178f9c21c7760d7701534f64dadf12b3"
+    },
+    {
+      "id": "carnival-ball-3",
+      "width": 212,
+      "height": 236,
+      "durationMs": 1000,
+      "count": 60,
+      "fps": 60,
+      "uniqueRasterFrames": 59,
+      "longestRepeatedRun": 1,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 5.5,
+      "seamPixelDifference": 3.0388551327150624,
+      "maxNormalPixelDifference": 18.23310581228014,
+      "frameWidthRange": [
+        1.5,
+        50.0
+      ],
+      "frameHeightRange": [
+        55.0,
+        55.5
+      ],
+      "encodedFrames": 60,
+      "encodedDurationMs": 1000,
+      "file": "motion-v2/animations/carnival-ball-3.webp",
+      "sha256": "f84c40bc1dc290b5c80d359b5c29367f56a32544608d623153a588fbbe532d8c"
+    },
+    {
+      "id": "carnival-ball-4",
+      "width": 212,
+      "height": 232,
+      "durationMs": 1000,
+      "count": 60,
+      "fps": 60,
+      "uniqueRasterFrames": 59,
+      "longestRepeatedRun": 1,
+      "fullPeriodPixelIdentical": true,
+      "nextPeriodNextFramePixelIdentical": true,
+      "maxWidthStepLogicalPx": 5.5,
+      "seamPixelDifference": 2.4197503253090438,
+      "maxNormalPixelDifference": 18.650119957709823,
+      "frameWidthRange": [
+        1.5,
+        50.0
+      ],
+      "frameHeightRange": [
+        55.0,
+        55.0
+      ],
+      "encodedFrames": 60,
+      "encodedDurationMs": 1000,
+      "file": "motion-v2/animations/carnival-ball-4.webp",
+      "sha256": "c3ce0394cb7eb22b0ae971928a31e7b6840c61cef16531c356d20dc4a73ed305"
+    }
+  ],
+  "aliases": {
+    "barrier-3": "barrier-1",
+    "barrier-4": "barrier-2"
+  },
+  "performance": {
+    "samples": 479,
+    "medianMs": 16.699999999999818,
+    "p95Ms": 16.700000000000728,
+    "maxMs": 49.900000000000034,
+    "over50ms": 0
+  },
+  "browserErrors": [],
+  "failedRequests": [],
+  "gameIntegration": false,
+  "losslessDecodeVerification": [
+    {
+      "id": "barrier-1",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    },
+    {
+      "id": "barrier-2",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    },
+    {
+      "id": "mine",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    },
+    {
+      "id": "carnival-ball-1",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    },
+    {
+      "id": "carnival-ball-2",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    },
+    {
+      "id": "carnival-ball-3",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    },
+    {
+      "id": "carnival-ball-4",
+      "alphaMaxError": 0,
+      "visibleRgbMaxError": 0
+    }
+  ],
+  "nativeVectorAnimations": [
+    {
+      "id": "court-highlight",
+      "file": "motion-v2/animations/court-highlight.webp",
+      "sourceFps": 30,
+      "sourceFrameCount": 23,
+      "encodedFrameCount": 7,
+      "durationMs": 767,
+      "method": "unchanged native vector frames; intentional blink",
+      "sha256": "8a14a1379edfb71a3534fb8d441ebf88c94f0a113f0f114b70a15b69b22418fe"
+    },
+    {
+      "id": "carnival-intro",
+      "file": "motion-v2/animations/carnival-intro.webp",
+      "sourceFps": 30,
+      "sourceFrameCount": 90,
+      "encodedFrameCount": 5,
+      "durationMs": 3000,
+      "method": "unchanged native vector frames; intentional blink",
+      "sha256": "8d58208d28b5ac21f61c3d4b2ed7168e19ae9ce4999bc949e284d2beb7567841"
+    },
+    {
+      "id": "ludo-win",
+      "file": "motion-v2/animations/ludo-win.webp",
+      "sourceFps": 30,
+      "sourceFrameCount": 40,
+      "encodedFrameCount": 7,
+      "durationMs": 1333,
+      "method": "unchanged native vector frames; intentional blink",
+      "sha256": "b3d83692843fc6c232c18816a2d4b131ac11f860aac04871592fb629a66235fa"
+    }
+  ],
+  "protectedSourcesChecked": 62,
+  "protectedSourceMismatches": [],
+  "originalCandidatePngFingerprintsUnchanged": 224,
+  "projectTests": {
+    "command": "npm test",
+    "node": "26.12.0",
+    "filesPassed": 102,
+    "testsPassed": 750
+  },
+  "animationTechnicalVerdict": "pass after correction; legacy atlas switching failed",
+  "browserValidation": "browser-verification.json",
+  "mineAmplitudeRevision": {
+    "revision": 3,
+    "previousSwingDegrees": 1.25,
+    "swingDegrees": 6,
+    "previousVerticalTravelLogicalPx": 0.36,
+    "verticalTravelLogicalPx": 3,
+    "clippedFrames": 0,
+    "testedFrames": 160,
+    "loopPixelIdentical": true,
+    "losslessAlphaMaxError": 0,
+    "losslessVisibleRGBMaxError": 0,
+    "browser": {
+      "samples": 241,
+      "p95Ms": 16.700000000000273,
+      "maxMs": 16.800000000000182,
+      "over50ms": 0
+    }
+  },
+  "mineEyesRevision": {
+    "revision": 4,
+    "previousSwingDegrees": 1.25,
+    "swingDegrees": 6,
+    "previousVerticalTravelLogicalPx": 0.36,
+    "verticalTravelLogicalPx": 3,
+    "clippedFrames": 0,
+    "testedFrames": 160,
+    "loopPixelIdentical": true,
+    "losslessAlphaMaxError": 0,
+    "losslessVisibleRGBMaxError": 0,
+    "browser": {
+      "samples": 235,
+      "p95Ms": 16.800000000000068,
+      "maxMs": 116.69999999999999,
+      "over50ms": 1
+    },
+    "texture": "11-mine-eyes-candidate-r2.png",
+    "pupils": "two black pupils visible in lower half-open eyes; upper white circle preserved as highlight",
+    "previousRevision": 3
+  }
+}
