@@ -67,6 +67,7 @@ export interface WorldEvent {
   npcId?: number
   amount?: number
   cashDelta?: number
+  launchPosition?: GridPoint
   impactPosition?: GridPoint
   affectedCellIds: number[]
   affectedPlayerIds: number[]
@@ -315,6 +316,7 @@ function applyMissile(
   return result(snapshot, event('missile-fired', playerId, {
     cardId: 9,
     impactPosition: { ...choice.position },
+    launchPosition: { ...source.players.find(player => player.id === playerId)!.position },
     affectedCellIds,
     affectedPlayerIds,
   }), { consumed: true, endTurn: casterHit || publicDamage })

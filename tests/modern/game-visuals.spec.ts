@@ -7,6 +7,26 @@ import { applyWorldCard } from '../../src/modern/features/game/world-cards'
 import { gridToScene } from '../../src/modern/features/map/coordinates'
 
 describe('3A 对局视觉投影', () => {
+  it.each([
+    ['self', { column: 24, row: 32 }, { column: 24, row: 32 }, 3],
+    ['public', { column: 6, row: 32 }, { column: 24, row: 32 }, 2],
+  ] as const)('飞弹%s迁移到医院或监狱之前锁定发射原点', (_kind, origin, impact, status) => {
+    const game = createGame([1], 153, 1)
+    game.players[0]!.position = { ...origin }
+    game.inventories[1] = [9]
+    const events: Parameters<typeof interactionVisualPlan>[0][] = []
+    const controller = createGameController(game, { onInteractionEvent: event => events.push(event) })
+    controller.beginCard(0)
+    controller.confirmCard()
+    expect(controller.chooseCard({ kind: 'cell', position: impact })).toBe(true)
+    expect(controller.state.world.statuses[1]!.state).toBe(status)
+    expect(controller.state.players[0]!.position).not.toEqual(origin)
+    expect(interactionVisualPlan(events.at(-1)!).effects[0]).toEqual({
+      clipId: 'rocket', position: impact, launchPosition: origin,
+    })
+    controller.dispose()
+  })
+
   it('真实控制器玩家中弹但无房产受损时仍在所选中心播放飞弹和爆炸', () => {
     const game = createGame([1], 153, 1)
     const events: Parameters<typeof interactionVisualPlan>[0][] = []
@@ -20,7 +40,7 @@ describe('3A 对局视觉投影', () => {
     const hit = events.at(-1)!
     expect(hit.worldEvent).toMatchObject({ kind: 'missile-fired', affectedPlayerIds: [4], affectedCellIds: [], impactPosition })
     expect(interactionVisualPlan(hit).effects).toEqual([
-      { clipId: 'rocket', position: impactPosition },
+      { clipId: 'rocket', position: impactPosition, launchPosition: game.players[0]!.position },
       { clipId: 'explosion', position: impactPosition },
     ])
     expect(interactionVisualPlan(hit).effects.map(effect => gridToScene(effect.position!)))
@@ -37,7 +57,7 @@ describe('3A 对局视觉投影', () => {
     expect(result.event?.affectedCellIds).toEqual([104])
     expect(result.event).toMatchObject({ impactPosition })
     expect(interactionVisualPlan({ kind: 'card', playerId: 1, worldEvent: result.event }).effects).toEqual([
-      { clipId: 'rocket', position: impactPosition },
+      { clipId: 'rocket', position: impactPosition, launchPosition: game.players[0]!.position },
       { clipId: 'explosion', position: impactPosition },
     ])
   })

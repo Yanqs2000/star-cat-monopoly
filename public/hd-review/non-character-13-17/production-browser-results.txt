@@ -1,0 +1,25 @@
+
+Running 13 tests using 1 worker
+
+(node:68613) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/13] tests/e2e/modern-approved-assets.spec.ts:10:1 › 已验收高清01—12生产游戏：中间帧预载、真20秒接物、暂停、发券和释放输入
+[2/13] tests/e2e/modern-hd-assets.spec.ts:158:1 › 暂停安全点切换画质；预载失败保留当前场景，成功后状态与相机保持稳定
+[3/13] tests/e2e/modern-places.spec.ts:15:1 › 自然seed4首轮魔法门原分布图、头像、飞行暂停和东站到达
+(node:68645) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/13] tests/e2e/modern-approved-effects.spec.ts:31:68 › card-gain自然获得后显示60fps、暂停冻结且结束清理
+[5/13] tests/e2e/modern-approved-effects.spec.ts:31:68 › ticket-gain自然获得后显示60fps、暂停冻结且结束清理
+[6/13] tests/e2e/modern-approved-effects.spec.ts:34:1 › fog自然帐篷过程保留源15帧开窗和18/19帧业务时钟
+[7/13] tests/e2e/modern-approved-effects.spec.ts:37:1 › 火箭真实发射：原点到目标，80帧后爆炸，暂停和倍速不重复扣卡送医
+[8/13] tests/e2e/modern-approved-effects.spec.ts:40:1 › 通过正常读档入口构造踩雷局，实际掷骰触发爆炸和唯一送医
+[9/13] tests/e2e/modern-approved-effects.spec.ts:45:1 › 飞弹确认后暂停切换原版与高清，保留未到时的爆炸和精确播放进度
+[10/13] tests/e2e/modern-approved-effects.spec.ts:71:46 › 飞弹self边界实际命中多名玩家，迁移前原点固定、只扣一张卡
+[11/13] tests/e2e/modern-approved-effects.spec.ts:71:46 › 飞弹public边界实际命中多名玩家，迁移前原点固定、只扣一张卡
+[12/13] tests/e2e/modern-approved-effects.spec.ts:101:1 › 高清传送飞行暂停和两倍速保持原目的地
+[13/13] tests/e2e/modern-approved-effects.spec.ts:111:1 › AI帐篷实际调用18帧烟雾，高清显示不进入第19源帧
+  13 passed (3.9m)
