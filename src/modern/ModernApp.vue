@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {missilePresentationSchedule} from './features/assets/effect-timing'
 import { approvedActivityAssets } from './features/assets/approved-artwork'
 import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, shallowRef } from 'vue'
 import mapJson from './data/map.json'
@@ -255,11 +256,13 @@ function failRuntimeAsset(error: Error, visual?: InteractionVisualPlan) {
 }
 async function playVisual(state: GameState, visual: InteractionVisualPlan): Promise<void> {
   const token = visualRecovery.begin(visual)
+  const schedule=missilePresentationSchedule(assetProfile.value),hasRocket=visual.effects.some(effect=>effect.clipId==='rocket')
   for (const effect of visual.effects) {
     const position = effect.position ?? (effect.cellId === undefined
       ? state.players.find(player => player.id === effect.playerId)?.position
       : getCardRecord(effect.cellId)?.position)
-    if (position) scene?.playEffect(effect.clipId, position)
+    const launch=effect.launchPosition
+    if(position){if(schedule&&hasRocket&&effect.clipId==='explosion')scene?.playEffect(effect.clipId,position,{delayMs:schedule.explosionDelayMs});else if(schedule&&effect.clipId==='rocket'&&launch)scene?.playEffect(effect.clipId,position,{launchPosition:launch,relocateAtMs:schedule.relocateAtMs});else scene?.playEffect(effect.clipId,position)}
   }
   try {
     await Promise.all(visual.reactions.map(reaction => scene?.playReaction(reaction.playerId, reaction.name)))
@@ -481,6 +484,7 @@ async function switchPausedGameAssetProfile(target:AssetProfile,request:number,s
   const currentState=controller.state
   const stateFingerprint=JSON.stringify(currentState)
   const camera:MapCameraState=scene.getCameraState()
+  const effects=scene.getEffectState()
   const currentSpeed=speed.value
   const currentPaused=paused.value
   const targetHost=document.createElement('div')
@@ -500,6 +504,7 @@ async function switchPausedGameAssetProfile(target:AssetProfile,request:number,s
     candidate.showMarkers(true)
     candidate.setSpeed(currentSpeed)
     candidate.setPaused(currentPaused)
+    candidate.restoreEffectState(effects)
     candidate.restoreCameraState(camera)
     signal.throwIfAborted()
     const liveCamera=scene?.getCameraState()

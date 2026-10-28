@@ -1,3 +1,5 @@
+import {loadSceneTextures} from './texture-preload'
+import {activityPresentationFrame,effectAnchor} from '../assets/effect-timing'
 import { approvedWorldAssets } from '../assets/approved-artwork'
 import type { PreparedAnimations } from '../game/animation-preload'
 import { Application, Container, Graphics, ImageSource, Point, Sprite, Text, Texture, type Ticker } from 'pixi.js'
@@ -18,7 +20,7 @@ import { pickMapPointerAction } from './target-selection'
 import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
 import { decodeBitmap } from './bitmap-loader'
-import { ReactionVisibility } from '../game/game-visuals'
+import { ReactionVisibility, type EffectClipId } from '../game/game-visuals'
 import type { ActivityClip, NativeOverlay } from '../game/activity-assets'
 import { profileAssetUrl, profileSpriteTransform, profileTextureResolution, type AssetProfile } from '../assets/profiles'
 import type { HdMapBase, HdMapRegion } from '../assets/hd-map-art'
@@ -47,7 +49,9 @@ export interface MapSceneHandle {
   setWorld(world: WorldState): void
   setTargeting(targeting: boolean): void
   playReaction(playerId: number, reaction: ReactionName): Promise<void>
-  playEffect(clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint): void
+  playEffect(clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint, playback?: {delayMs?:number;launchPosition?:GridPoint;relocateAtMs?:number}): void
+  getEffectState(): EffectPlaybackState[]
+  restoreEffectState(state: EffectPlaybackState[]): void
   setActivity(clip: ActivityClip | null, frame?: number, position?: GridPoint, transform?: {scale: number;depth: number}): Promise<void>
   getPortalDecorations(): NativeOverlay[]
   transitionPlayer(transition: PlayerTransition | null): void
@@ -58,6 +62,15 @@ export interface MapSceneHandle {
   restoreCameraState(state: MapCameraState): void
   resize(width: number, height: number): void
   destroy(): void
+}
+
+export interface EffectPlaybackState {
+  clipId: EffectClipId
+  impactPosition: GridPoint
+  launchPosition?: GridPoint
+  relocateAtMs?: number
+  delayMs: number
+  elapsedMs: number
 }
 
 export interface MapCameraState { x:number; y:number; scale:number; following:boolean }
@@ -91,6 +104,10 @@ interface WorldAnimation {
 
 interface EffectAnimation extends WorldAnimation {
   holdMs: number
+  delayMs: number
+  impactPosition: GridPoint
+  launchPosition?: GridPoint
+  relocateAtMs?: number
 }
 
 function worldFrameAt(clip: WorldClip, elapsedMs: number) {
@@ -201,9 +218,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
       ...(companyManifest?.companies.map(item => item.url) ?? [])])]
-    const results = await Promise.allSettled(urls.map(loadTexture))
-    const failure = results.find(result => result.status === 'rejected')
-    if (failure?.status === 'rejected') throw failure.reason
+    await loadSceneTextures(urls,loadTexture,controller.signal)
     controller.signal.throwIfAborted()
 
     const viewport = new Container()
@@ -293,9 +308,10 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     activitySprite.visible = false
     let activityId: string | undefined
     let activityGeneration = 0
+    let activityMotion:{clip:ActivityClip;sourceFrame:number;elapsedMs:number}|undefined
     const setActivity = async (clip: ActivityClip | null, frame = 1, position?: GridPoint, transform?: {scale: number;depth: number}) => {
       if (!clip) {
-        activityId = undefined; activityGeneration += 1; activitySprite.visible = false
+        activityId = undefined; activityGeneration += 1; activitySprite.visible = false; activityMotion=undefined;app.canvas.dataset.activityClip='';app.canvas.dataset.activityFrame='0';app.canvas.dataset.activitySourceFrame='0'
         return
       }
       if (activityId !== clip.id) { activityId = clip.id; activityGeneration += 1 }
@@ -306,7 +322,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         while (cursor < clip.frames.length) await loadTexture(clip.frames[cursor++]!.url)
       }))
       if (destroyed || token !== activityGeneration) return
-      const source = clip.frames[frame - 1]!
+      if(clip.id==='fog'&&clip.fps===60){if(activityMotion?.sourceFrame!==frame||activityMotion.clip!==clip)activityMotion={clip,sourceFrame:frame,elapsedMs:0}}else activityMotion=undefined
+      const source = clip.frames[activityPresentationFrame(frame,activityMotion?.elapsedMs??0,clip.fps,clip.frames.length)-1]!
       activitySprite.texture = textures.get(source.url)!
       const scale=transform?.scale ?? 1
       activitySprite.scale.set(scale)
@@ -320,6 +337,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         activitySprite.position.set(source.offsetX, source.offsetY)
       }
       activitySprite.visible = true
+      app.canvas.dataset.activityClip=clip.id;app.canvas.dataset.activitySourceFrame=String(frame);app.canvas.dataset.activityFrame=String(activityPresentationFrame(frame,activityMotion?.elapsedMs??0,clip.fps,clip.frames.length))
     }
     app.stage.addChild(viewport)
 
@@ -568,7 +586,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         throw error
       })
     }
-    const playEffect = (clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint) => {
+    const playEffect = (clipId: 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain', position: GridPoint, playback: {delayMs?:number;launchPosition?:GridPoint;relocateAtMs?:number}={}) => {
       const clip = worldManifest?.clips.find(item => item.id === clipId)
       if (!clip) return
       const view = new Container()
@@ -578,11 +596,44 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       view.zIndex = position.row * 100 + position.column + 1
       view.addChild(sprite)
       entities.addChild(view)
-      const animation: EffectAnimation = { view, sprite, clip, elapsedMs: 0, holdMs: 250 }
-      const frame = worldFrameAt(clip, 0)
-      sprite.texture = textures.get(frame.url)!
-      sprite.position.set(frame.offsetX, frame.offsetY)
+      const animation: EffectAnimation = { view, sprite, clip, elapsedMs: 0, holdMs: 250,delayMs:playback.delayMs??0,impactPosition:position,...(playback.launchPosition?{launchPosition:playback.launchPosition,relocateAtMs:playback.relocateAtMs??1300}:{}) }
+      updateEffect(animation)
       effects.add(animation)
+    }
+    const updateEffect = (animation: EffectAnimation) => {
+      const elapsed = animation.elapsedMs - animation.delayMs
+      animation.sprite.visible = elapsed >= 0
+      if (animation.launchPosition) {
+        const anchor = effectAnchor(animation.launchPosition, animation.impactPosition, Math.max(0, elapsed), animation.relocateAtMs!)
+        const point = gridToScene(anchor)
+        animation.view.position.set(point.x, point.y)
+        animation.view.zIndex = anchor.row * 100 + anchor.column + 1
+      }
+      const frame = worldFrameAt(animation.clip, Math.max(0, elapsed))
+      animation.sprite.texture = textures.get(frame.url)!
+      animation.sprite.position.set(frame.offsetX, frame.offsetY)
+    }
+    const getEffectState = (): EffectPlaybackState[] => [...effects].map(animation => ({
+      clipId: animation.clip.id as EffectClipId,
+      impactPosition: { ...animation.impactPosition },
+      ...(animation.launchPosition ? { launchPosition: { ...animation.launchPosition }, relocateAtMs: animation.relocateAtMs! } : {}),
+      delayMs: animation.delayMs,
+      elapsedMs: animation.elapsedMs,
+    }))
+    const restoreEffectState = (state: EffectPlaybackState[]) => {
+      for (const animation of effects) {
+        entities.removeChild(animation.view)
+        animation.view.destroy({ children: true })
+      }
+      effects.clear()
+      for (const saved of state) {
+        playEffect(saved.clipId, { ...saved.impactPosition }, saved)
+        const animation = [...effects].at(-1)
+        if (animation) {
+          animation.elapsedMs = saved.elapsedMs
+          updateEffect(animation)
+        }
+      }
     }
     let previousFrame = -1
     const tick = (ticker: Ticker) => {
@@ -612,18 +663,21 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         animation.sprite.texture = textures.get(frame.url)!
         animation.sprite.position.set(frame.offsetX, frame.offsetY)
       }
+      if(activityMotion){activityMotion.elapsedMs+=paused?0:ticker.deltaMS;const index=activityPresentationFrame(activityMotion.sourceFrame,activityMotion.elapsedMs,activityMotion.clip.fps,activityMotion.clip.frames.length)-1;activitySprite.texture=textures.get(activityMotion.clip.frames[index]!.url)!;app.canvas.dataset.activityFrame=String(index+1)}
       for (const animation of effects) {
         animation.elapsedMs += deltaMs
-        const frame = worldFrameAt(animation.clip, animation.elapsedMs)
-        animation.sprite.texture = textures.get(frame.url)!
-        animation.sprite.position.set(frame.offsetX, frame.offsetY)
+        updateEffect(animation)
+        const elapsed = animation.elapsedMs - animation.delayMs
         const durationMs = animation.clip.frames.length * 1000 / animation.clip.fps
-        if (animation.elapsedMs >= durationMs + animation.holdMs) {
+        if (elapsed >= durationMs + animation.holdMs) {
           entities.removeChild(animation.view)
           animation.view.destroy({ children: true })
           effects.delete(animation)
         }
       }
+      // DOM diagnostics describe the actual selected textures, enabling playback/lifecycle checks.
+      const effectFrames=JSON.stringify([...effects].map(a=>({id:a.clip.id,frame:a.clip.frames.indexOf(worldFrameAt(a.clip,Math.max(0,a.elapsedMs-a.delayMs)))+1,elapsedMs:Math.round(a.elapsedMs*1000)/1000,delayMs:a.delayMs,x:a.view.x,y:a.view.y,visible:a.sprite.visible})))
+      if(app.canvas.dataset.effectFrames!==effectFrames)app.canvas.dataset.effectFrames=effectFrames
       if (!movement || paused) return
       movement.elapsedMs = Math.min(movement.durationMs, movement.elapsedMs + deltaMs)
       const progress = movement.durationMs === 0 ? 1 : movement.elapsedMs / movement.durationMs
@@ -643,6 +697,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
 
     const canvas = app.canvas
     canvas.setAttribute('aria-label', '现代地图场景')
+    canvas.dataset.effectFrames='[]'
     canvas.style.touchAction = 'none'
     let targeting = false
     let drag: { x: number; y: number; startX: number; startY: number; id: number; cameraMoved: boolean } | undefined
@@ -691,7 +746,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     app.start()
 
     return {
-      focus, follow, resize, getCameraState, restoreCameraState, setPlayers, setCompanies, setProperties, setRentHighlight, setWorld, playReaction, playEffect, setActivity, getPortalDecorations,
+      focus, follow, resize, getCameraState, restoreCameraState, setPlayers, setCompanies, setProperties, setRentHighlight, setWorld, playReaction, playEffect, getEffectState, restoreEffectState, setActivity, getPortalDecorations,
       setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },

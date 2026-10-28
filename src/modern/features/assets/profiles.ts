@@ -1,5 +1,6 @@
 import staticArtwork from '../../data/static-hd-assets.json'
 import approvedArtwork from '../../data/approved-non-character.json'
+import effects from '../../data/non-character-effects.json'
 
 export type AssetProfile = 'original' | 'hd'
 
@@ -7,7 +8,7 @@ type Bounds = readonly number[]
 type StaticArtworkOverride = { source: string; url: string; pixelSize: readonly number[]; pixelDensity: number; registration?: { sourceBounds: Bounds; renderedBounds: Bounds } }
 const staticOverrides = new Map<string, StaticArtworkOverride>([...staticArtwork.assets,...approvedArtwork.assets].filter(asset => asset.enabled)
   .map(asset => [asset.source, asset]))
-const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...approvedArtwork.runtimeImages.map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
+const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...[...approvedArtwork.runtimeImages,...effects.runtimeImages].map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
 
 export function staticAssetPixels(url: string) {
   return staticResolved.get(url)

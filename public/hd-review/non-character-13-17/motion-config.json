@@ -1,0 +1,2721 @@
+{
+  "version": 1,
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "masters": {
+    "cardFront": {
+      "url": "13-card-textures-r1.png",
+      "rect": [
+        127,
+        49,
+        589,
+        894
+      ]
+    },
+    "cardBack": {
+      "url": "13-card-textures-r1.png",
+      "rect": [
+        823,
+        49,
+        587,
+        894
+      ]
+    },
+    "coin": {
+      "url": "14-gold-coin-r1.png",
+      "rect": [
+        44,
+        45,
+        1160,
+        1167
+      ]
+    },
+    "smoke": {
+      "url": "15-smoke-puff-r1.png",
+      "rect": [
+        0,
+        44,
+        1304,
+        1006
+      ]
+    },
+    "rocket": {
+      "url": "17-rocket-body-r1.png",
+      "rect": [
+        60,
+        69,
+        802,
+        1574
+      ]
+    }
+  },
+  "clips": {
+    "card-gain": {
+      "id": "card-gain",
+      "sequence": 13,
+      "sourceSymbol": 1163,
+      "sourceFps": 30,
+      "sourceFrames": 50,
+      "fps": 60,
+      "count": 100,
+      "width": 58,
+      "height": 167,
+      "offsetX": 0.7,
+      "offsetY": -201.0,
+      "track": [
+        {
+          "frame": 0,
+          "x": 31.95,
+          "y": -66.75,
+          "alpha": 1.0,
+          "h": 47.5
+        },
+        {
+          "frame": 1,
+          "x": 31.95,
+          "y": -70.55,
+          "alpha": 1.0,
+          "h": 47.5
+        },
+        {
+          "frame": 2,
+          "x": 31.95,
+          "y": -74.35,
+          "alpha": 1.0,
+          "h": 47.5
+        },
+        {
+          "frame": 3,
+          "x": 30.95,
+          "y": -78.65,
+          "alpha": 1.0,
+          "h": 46.5
+        },
+        {
+          "frame": 4,
+          "x": 30.95,
+          "y": -82.4,
+          "alpha": 1.0,
+          "h": 46.5
+        },
+        {
+          "frame": 5,
+          "x": 30.95,
+          "y": -86.2,
+          "alpha": 1.0,
+          "h": 46.5
+        },
+        {
+          "frame": 6,
+          "x": 29.45,
+          "y": -90.0,
+          "alpha": 1.0,
+          "h": 44.5
+        },
+        {
+          "frame": 7,
+          "x": 29.45,
+          "y": -93.8,
+          "alpha": 1.0,
+          "h": 44.5
+        },
+        {
+          "frame": 8,
+          "x": 29.45,
+          "y": -97.6,
+          "alpha": 1.0,
+          "h": 44.5
+        },
+        {
+          "frame": 9,
+          "x": 28.45,
+          "y": -97.4,
+          "alpha": 1.0,
+          "h": 54.5
+        },
+        {
+          "frame": 10,
+          "x": 28.45,
+          "y": -101.2,
+          "alpha": 1.0,
+          "h": 54.5
+        },
+        {
+          "frame": 11,
+          "x": 28.45,
+          "y": -104.95,
+          "alpha": 1.0,
+          "h": 54.5
+        },
+        {
+          "frame": 12,
+          "x": 29.45,
+          "y": -108.25,
+          "alpha": 1.0,
+          "h": 57.5
+        },
+        {
+          "frame": 13,
+          "x": 29.45,
+          "y": -112.05,
+          "alpha": 1.0,
+          "h": 57.5
+        },
+        {
+          "frame": 14,
+          "x": 29.45,
+          "y": -115.85,
+          "alpha": 1.0,
+          "h": 57.5
+        },
+        {
+          "frame": 15,
+          "x": 29.45,
+          "y": -121.15,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 16,
+          "x": 29.45,
+          "y": -124.95,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 17,
+          "x": 29.45,
+          "y": -128.75,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 18,
+          "x": 27.95,
+          "y": -135.55,
+          "alpha": 1.0,
+          "h": 44.5
+        },
+        {
+          "frame": 19,
+          "x": 27.95,
+          "y": -139.3,
+          "alpha": 1.0,
+          "h": 44.5
+        },
+        {
+          "frame": 20,
+          "x": 27.95,
+          "y": -143.1,
+          "alpha": 1.0,
+          "h": 44.5
+        },
+        {
+          "frame": 21,
+          "x": 26.45,
+          "y": -146.9,
+          "alpha": 1.0,
+          "h": 46.5
+        },
+        {
+          "frame": 22,
+          "x": 26.45,
+          "y": -150.7,
+          "alpha": 1.0,
+          "h": 46.5
+        },
+        {
+          "frame": 23,
+          "x": 26.45,
+          "y": -154.5,
+          "alpha": 1.0,
+          "h": 46.5
+        },
+        {
+          "frame": 24,
+          "x": 26.45,
+          "y": -158.3,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 25,
+          "x": 26.45,
+          "y": -162.1,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 26,
+          "x": 26.45,
+          "y": -165.85,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 27,
+          "x": 30.45,
+          "y": -169.65,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 28,
+          "x": 30.45,
+          "y": -173.45,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 29,
+          "x": 30.45,
+          "y": -177.25,
+          "alpha": 1.0,
+          "h": 48.5
+        },
+        {
+          "frame": 30,
+          "x": 31.95,
+          "y": -172.75,
+          "alpha": 0.94921875,
+          "h": 47.5
+        },
+        {
+          "frame": 31,
+          "x": 31.95,
+          "y": -168.75,
+          "alpha": 0.8984375,
+          "h": 47.5
+        },
+        {
+          "frame": 32,
+          "x": 31.95,
+          "y": -164.75,
+          "alpha": 0.8515625,
+          "h": 47.5
+        },
+        {
+          "frame": 33,
+          "x": 30.95,
+          "y": -161.25,
+          "alpha": 0.80078125,
+          "h": 46.5
+        },
+        {
+          "frame": 34,
+          "x": 30.95,
+          "y": -157.25,
+          "alpha": 0.75,
+          "h": 46.5
+        },
+        {
+          "frame": 35,
+          "x": 30.95,
+          "y": -153.25,
+          "alpha": 0.69921875,
+          "h": 46.5
+        },
+        {
+          "frame": 36,
+          "x": 29.45,
+          "y": -149.25,
+          "alpha": 0.6484375,
+          "h": 44.5
+        },
+        {
+          "frame": 37,
+          "x": 29.45,
+          "y": -145.25,
+          "alpha": 0.6015625,
+          "h": 44.5
+        },
+        {
+          "frame": 38,
+          "x": 29.45,
+          "y": -141.25,
+          "alpha": 0.55078125,
+          "h": 44.5
+        },
+        {
+          "frame": 39,
+          "x": 28.45,
+          "y": -133.25,
+          "alpha": 0.5,
+          "h": 54.5
+        },
+        {
+          "frame": 40,
+          "x": 28.45,
+          "y": -129.25,
+          "alpha": 0.44921875,
+          "h": 54.5
+        },
+        {
+          "frame": 41,
+          "x": 28.45,
+          "y": -125.25,
+          "alpha": 0.3984375,
+          "h": 54.5
+        },
+        {
+          "frame": 42,
+          "x": 29.45,
+          "y": -120.75,
+          "alpha": 0.3515625,
+          "h": 57.5
+        },
+        {
+          "frame": 43,
+          "x": 29.45,
+          "y": -116.75,
+          "alpha": 0.30078125,
+          "h": 57.5
+        },
+        {
+          "frame": 44,
+          "x": 29.45,
+          "y": -112.75,
+          "alpha": 0.25,
+          "h": 57.5
+        },
+        {
+          "frame": 45,
+          "x": 29.45,
+          "y": -110.25,
+          "alpha": 0.19921875,
+          "h": 48.5
+        },
+        {
+          "frame": 46,
+          "x": 29.45,
+          "y": -106.25,
+          "alpha": 0.1484375,
+          "h": 48.5
+        },
+        {
+          "frame": 47,
+          "x": 29.45,
+          "y": -102.25,
+          "alpha": 0.1015625,
+          "h": 48.5
+        },
+        {
+          "frame": 48,
+          "x": 27.95,
+          "y": -101.25,
+          "alpha": 0.05078125,
+          "h": 44.5
+        },
+        {
+          "frame": 49,
+          "x": 27.95,
+          "y": -97.25,
+          "alpha": 0.0,
+          "h": 44.5
+        }
+      ],
+      "sourceFramesData": [
+        {
+          "url": "assets/world/card-gain/1.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/2.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/3.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/4.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/5.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/6.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/7.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/8.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/9.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/10.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/11.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/12.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/13.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/14.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/15.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/16.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/17.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/18.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/19.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/20.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/21.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/22.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/23.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/24.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/25.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/26.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/27.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/28.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/29.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/30.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/31.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/32.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/33.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/34.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/35.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/36.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/37.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/38.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/39.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/40.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/41.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/42.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/43.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/44.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/45.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/46.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/47.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/48.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/49.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        },
+        {
+          "url": "assets/world/card-gain/50.png",
+          "width": 58,
+          "height": 167,
+          "offsetX": 0.7,
+          "offsetY": -201.0
+        }
+      ]
+    },
+    "ticket-gain": {
+      "id": "ticket-gain",
+      "sequence": 14,
+      "sourceSymbol": 1185,
+      "sourceFps": 30,
+      "sourceFrames": 30,
+      "fps": 60,
+      "count": 60,
+      "width": 37,
+      "height": 128,
+      "offsetX": 11.2,
+      "offsetY": -171.0,
+      "track": [
+        {
+          "frame": 0,
+          "x": 29.45,
+          "y": -62.25,
+          "alpha": 1.0,
+          "h": 38.5
+        },
+        {
+          "frame": 1,
+          "x": 29.45,
+          "y": -67.55,
+          "alpha": 1.0,
+          "h": 38.5
+        },
+        {
+          "frame": 2,
+          "x": 29.45,
+          "y": -72.85,
+          "alpha": 1.0,
+          "h": 38.5
+        },
+        {
+          "frame": 3,
+          "x": 29.45,
+          "y": -79.15,
+          "alpha": 1.0,
+          "h": 34.5
+        },
+        {
+          "frame": 4,
+          "x": 29.45,
+          "y": -84.45,
+          "alpha": 1.0,
+          "h": 34.5
+        },
+        {
+          "frame": 5,
+          "x": 29.45,
+          "y": -89.7,
+          "alpha": 1.0,
+          "h": 34.5
+        },
+        {
+          "frame": 6,
+          "x": 29.45,
+          "y": -95.0,
+          "alpha": 1.0,
+          "h": 20.5
+        },
+        {
+          "frame": 7,
+          "x": 29.45,
+          "y": -100.3,
+          "alpha": 1.0,
+          "h": 20.5
+        },
+        {
+          "frame": 8,
+          "x": 29.45,
+          "y": -105.6,
+          "alpha": 1.0,
+          "h": 20.5
+        },
+        {
+          "frame": 9,
+          "x": 29.45,
+          "y": -109.4,
+          "alpha": 1.0,
+          "h": 23.5
+        },
+        {
+          "frame": 10,
+          "x": 29.45,
+          "y": -114.7,
+          "alpha": 1.0,
+          "h": 23.5
+        },
+        {
+          "frame": 11,
+          "x": 29.45,
+          "y": -120.0,
+          "alpha": 1.0,
+          "h": 23.5
+        },
+        {
+          "frame": 12,
+          "x": 29.45,
+          "y": -124.8,
+          "alpha": 1.0,
+          "h": 34.5
+        },
+        {
+          "frame": 13,
+          "x": 29.45,
+          "y": -130.05,
+          "alpha": 1.0,
+          "h": 34.5
+        },
+        {
+          "frame": 14,
+          "x": 29.45,
+          "y": -135.35,
+          "alpha": 1.0,
+          "h": 34.5
+        },
+        {
+          "frame": 15,
+          "x": 29.45,
+          "y": -141.65,
+          "alpha": 1.0,
+          "h": 38.5
+        },
+        {
+          "frame": 16,
+          "x": 29.45,
+          "y": -146.95,
+          "alpha": 1.0,
+          "h": 38.5
+        },
+        {
+          "frame": 17,
+          "x": 29.45,
+          "y": -152.25,
+          "alpha": 1.0,
+          "h": 38.5
+        },
+        {
+          "frame": 18,
+          "x": 29.45,
+          "y": -146.6,
+          "alpha": 0.91796875,
+          "h": 34.5
+        },
+        {
+          "frame": 19,
+          "x": 29.45,
+          "y": -139.9,
+          "alpha": 0.83203125,
+          "h": 34.5
+        },
+        {
+          "frame": 20,
+          "x": 29.45,
+          "y": -133.25,
+          "alpha": 0.75,
+          "h": 34.5
+        },
+        {
+          "frame": 21,
+          "x": 29.45,
+          "y": -126.6,
+          "alpha": 0.66796875,
+          "h": 20.5
+        },
+        {
+          "frame": 22,
+          "x": 29.45,
+          "y": -119.9,
+          "alpha": 0.58203125,
+          "h": 20.5
+        },
+        {
+          "frame": 23,
+          "x": 29.45,
+          "y": -113.25,
+          "alpha": 0.5,
+          "h": 20.5
+        },
+        {
+          "frame": 24,
+          "x": 29.45,
+          "y": -105.1,
+          "alpha": 0.41796875,
+          "h": 23.5
+        },
+        {
+          "frame": 25,
+          "x": 29.45,
+          "y": -98.4,
+          "alpha": 0.33203125,
+          "h": 23.5
+        },
+        {
+          "frame": 26,
+          "x": 29.45,
+          "y": -91.75,
+          "alpha": 0.25,
+          "h": 23.5
+        },
+        {
+          "frame": 27,
+          "x": 29.45,
+          "y": -84.6,
+          "alpha": 0.16796875,
+          "h": 34.5
+        },
+        {
+          "frame": 28,
+          "x": 29.45,
+          "y": -77.9,
+          "alpha": 0.08203125,
+          "h": 34.5
+        },
+        {
+          "frame": 29,
+          "x": 29.45,
+          "y": -71.25,
+          "alpha": 0.0,
+          "h": 34.5
+        }
+      ],
+      "sourceFramesData": [
+        {
+          "url": "assets/world/ticket-gain/1.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/2.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/3.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/4.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/5.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/6.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/7.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/8.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/9.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/10.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/11.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/12.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/13.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/14.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/15.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/16.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/17.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/18.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/19.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/20.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/21.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/22.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/23.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/24.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/25.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/26.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/27.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/28.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/29.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        },
+        {
+          "url": "assets/world/ticket-gain/30.png",
+          "width": 37,
+          "height": 128,
+          "offsetX": 11.2,
+          "offsetY": -171.0
+        }
+      ]
+    },
+    "fog": {
+      "id": "fog",
+      "sequence": 15,
+      "sourceSymbol": 3758,
+      "sourceFps": 30,
+      "sourceFrames": 19,
+      "fps": 60,
+      "count": 38,
+      "width": 182,
+      "height": 152,
+      "offsetX": -59.0,
+      "offsetY": -82.0,
+      "track": [
+        {
+          "frame": 0,
+          "x": 28.75,
+          "y": -5.25,
+          "w": 86.5,
+          "h": 72.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 2,
+          "x": 30.25,
+          "y": -5.25,
+          "w": 113.5,
+          "h": 94.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 4,
+          "x": 30.75,
+          "y": -5.25,
+          "w": 142.5,
+          "h": 118.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 6,
+          "x": 30.75,
+          "y": -4.75,
+          "w": 160.5,
+          "h": 133.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 8,
+          "x": 31.75,
+          "y": -4.25,
+          "w": 178.5,
+          "h": 148.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 10,
+          "x": 31.75,
+          "y": -6.25,
+          "w": 182.5,
+          "h": 152.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 12,
+          "x": 26.75,
+          "y": -11.75,
+          "w": 170.5,
+          "h": 141.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 14,
+          "x": 30.25,
+          "y": 0.75,
+          "w": 167.5,
+          "h": 138.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 16,
+          "x": 38.25,
+          "y": 1.75,
+          "w": 155.5,
+          "h": 136.5,
+          "alpha": 1.0
+        }
+      ],
+      "sourceFramesData": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "assets/activities/fog/1.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 2,
+          "fields": [],
+          "url": "assets/activities/fog/2.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 3,
+          "fields": [],
+          "url": "assets/activities/fog/3.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 4,
+          "fields": [],
+          "url": "assets/activities/fog/4.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 5,
+          "fields": [],
+          "url": "assets/activities/fog/5.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 6,
+          "fields": [],
+          "url": "assets/activities/fog/6.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 7,
+          "fields": [],
+          "url": "assets/activities/fog/7.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 8,
+          "fields": [],
+          "url": "assets/activities/fog/8.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 9,
+          "fields": [],
+          "url": "assets/activities/fog/9.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 10,
+          "fields": [],
+          "url": "assets/activities/fog/10.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 11,
+          "fields": [],
+          "url": "assets/activities/fog/11.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 12,
+          "fields": [],
+          "url": "assets/activities/fog/12.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 13,
+          "fields": [],
+          "url": "assets/activities/fog/13.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 14,
+          "fields": [],
+          "url": "assets/activities/fog/14.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 15,
+          "fields": [],
+          "url": "assets/activities/fog/15.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 16,
+          "fields": [],
+          "url": "assets/activities/fog/16.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 17,
+          "fields": [],
+          "url": "assets/activities/fog/17.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 18,
+          "fields": [],
+          "url": "assets/activities/fog/18.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        },
+        {
+          "sourceFrame": 19,
+          "fields": [],
+          "url": "assets/activities/fog/19.png",
+          "width": 182,
+          "height": 152,
+          "offsetX": -59.0,
+          "offsetY": -82.0
+        }
+      ]
+    },
+    "explosion": {
+      "id": "explosion",
+      "sequence": 16,
+      "sourceSymbol": 1027,
+      "sourceFps": 30,
+      "sourceFrames": 60,
+      "fps": 60,
+      "count": 120,
+      "width": 219,
+      "height": 254,
+      "offsetX": -81.0,
+      "offsetY": -159.65,
+      "track": [
+        {
+          "frame": 0,
+          "x": 28.75,
+          "y": 15.099999999999994,
+          "w": 120.5,
+          "h": 110.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 1,
+          "x": 28.75,
+          "y": -17.900000000000006,
+          "w": 134.5,
+          "h": 176.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 2,
+          "x": 29.25,
+          "y": -45.400000000000006,
+          "w": 137.5,
+          "h": 229.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 5,
+          "x": 29.25,
+          "y": -44.900000000000006,
+          "w": 139.5,
+          "h": 228.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 8,
+          "x": 29.25,
+          "y": -41.900000000000006,
+          "w": 135.5,
+          "h": 216.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 11,
+          "x": 28.75,
+          "y": -36.900000000000006,
+          "w": 134.5,
+          "h": 202.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 14,
+          "x": 29.25,
+          "y": -30.400000000000006,
+          "w": 147.5,
+          "h": 199.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 17,
+          "x": 28.75,
+          "y": -22.400000000000006,
+          "w": 160.5,
+          "h": 193.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 21,
+          "x": 28.75,
+          "y": -13.900000000000006,
+          "w": 174.5,
+          "h": 186.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 25,
+          "x": 28.75,
+          "y": -5.900000000000006,
+          "w": 158.5,
+          "h": 146.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 29,
+          "x": 28.75,
+          "y": 3.5999999999999943,
+          "w": 178.5,
+          "h": 145.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 34,
+          "x": 29.25,
+          "y": 10.599999999999994,
+          "w": 191.5,
+          "h": 143.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 39,
+          "x": 28.75,
+          "y": 16.099999999999994,
+          "w": 200.5,
+          "h": 140.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 44,
+          "x": 28.75,
+          "y": 20.099999999999994,
+          "w": 208.5,
+          "h": 138.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 49,
+          "x": 28.75,
+          "y": 23.599999999999994,
+          "w": 214.5,
+          "h": 137.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 54,
+          "x": 28.25,
+          "y": 26.099999999999994,
+          "w": 219.5,
+          "h": 136.5,
+          "alpha": 1.0
+        }
+      ],
+      "sourceFramesData": [
+        {
+          "url": "assets/world/explosion/1.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/2.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/3.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/4.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/5.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/6.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/7.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/8.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/9.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/10.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/11.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/12.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/13.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/14.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/15.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/16.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/17.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/18.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/19.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/20.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/21.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/22.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/23.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/24.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/25.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/26.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/27.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/28.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/29.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/30.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/31.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/32.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/33.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/34.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/35.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/36.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/37.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/38.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/39.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/40.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/41.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/42.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/43.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/44.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/45.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/46.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/47.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/48.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/49.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/50.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/51.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/52.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/53.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/54.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/55.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/56.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/57.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/58.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/59.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        },
+        {
+          "url": "assets/world/explosion/60.png",
+          "width": 219,
+          "height": 254,
+          "offsetX": -81.0,
+          "offsetY": -159.65
+        }
+      ]
+    },
+    "rocket": {
+      "id": "rocket",
+      "sequence": 17,
+      "sourceSymbol": 1080,
+      "sourceFps": 30,
+      "sourceFrames": 80,
+      "fps": 60,
+      "count": 160,
+      "width": 222,
+      "height": 312,
+      "offsetX": -82.55,
+      "offsetY": -195.65,
+      "track": [
+        {
+          "frame": 0,
+          "x": 30.75,
+          "y": -22.9,
+          "w": 57.5,
+          "h": 106.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 3,
+          "x": 30.25,
+          "y": -4.399999999999999,
+          "w": 78.5,
+          "h": 85.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 9,
+          "x": 29.25,
+          "y": -4.899999999999999,
+          "w": 78.5,
+          "h": 84.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 12,
+          "x": 30.75,
+          "y": -3.8999999999999986,
+          "w": 79.5,
+          "h": 86.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 15,
+          "x": 29.25,
+          "y": -3.3999999999999986,
+          "w": 78.5,
+          "h": 87.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 18,
+          "x": 30.25,
+          "y": -1.3999999999999986,
+          "w": 78.5,
+          "h": 89.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 21,
+          "x": 30.25,
+          "y": -1.8999999999999986,
+          "w": 78.5,
+          "h": 90.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 24,
+          "x": 29.25,
+          "y": -1.8999999999999986,
+          "w": 78.5,
+          "h": 90.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 27,
+          "x": 30.75,
+          "y": -1.3999999999999986,
+          "w": 79.5,
+          "h": 91.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 30,
+          "x": 29.25,
+          "y": -1.3999999999999986,
+          "w": 78.5,
+          "h": 91.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 33,
+          "x": 30.250000000000004,
+          "y": -33.9,
+          "w": 54.5,
+          "h": 140.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 36,
+          "x": 30.25,
+          "y": -85.9,
+          "w": 60.5,
+          "h": 218.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 69,
+          "x": 38.25,
+          "y": -87.9,
+          "w": 56.5,
+          "h": 216.5,
+          "alpha": 1.0
+        },
+        {
+          "frame": 73,
+          "x": 34.75,
+          "y": -35.4,
+          "w": 75.5,
+          "h": 127.5,
+          "alpha": 1.0
+        }
+      ],
+      "sourceFramesData": [
+        {
+          "url": "assets/world/rocket/1.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/2.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/3.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/4.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/5.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/6.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/7.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/8.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/9.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/10.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/11.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/12.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/13.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/14.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/15.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/16.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/17.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/18.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/19.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/20.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/21.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/22.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/23.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/24.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/25.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/26.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/27.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/28.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/29.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/30.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/31.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/32.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/33.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/34.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/35.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/36.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/37.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/38.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/39.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/40.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/41.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/42.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/43.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/44.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/45.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/46.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/47.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/48.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/49.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/50.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/51.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/52.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/53.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/54.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/55.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/56.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/57.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/58.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/59.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/60.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/61.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/62.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/63.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/64.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/65.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/66.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/67.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/68.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/69.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/70.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/71.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/72.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/73.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/74.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/75.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/76.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/77.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/78.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/79.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        },
+        {
+          "url": "assets/world/rocket/80.png",
+          "width": 222,
+          "height": 312,
+          "offsetX": -82.55,
+          "offsetY": -195.65
+        }
+      ]
+    }
+  }
+}

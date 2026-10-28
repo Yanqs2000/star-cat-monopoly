@@ -10,7 +10,7 @@ export type EffectClipId = 'rocket' | 'explosion' | 'card-gain' | 'ticket-gain'
 
 export interface InteractionVisualPlan {
   reactions: Array<{ playerId: number; name: ReactionName }>
-  effects: Array<{ clipId: EffectClipId; cellId?: number; playerId?: number; position?: GridPoint }>
+  effects: Array<{ clipId: EffectClipId; cellId?: number; playerId?: number; position?: GridPoint; launchPosition?: GridPoint }>
 }
 
 export class ReactionVisibility {
@@ -167,7 +167,7 @@ export function interactionVisualPlan(event: InteractionEvent): InteractionVisua
     else react(event.playerId, 'happy')
     for (const playerId of affectedPlayers) if (playerId !== event.playerId) react(playerId, 'hurt')
     const position = event.worldEvent?.impactPosition
-    if (position) effects.push({ clipId: 'rocket', position }, { clipId: 'explosion', position })
+    if (position) effects.push({ clipId: 'rocket', position, ...(event.worldEvent?.launchPosition ? { launchPosition: event.worldEvent.launchPosition } : {}) }, { clipId: 'explosion', position })
     else {
       const cellId = affectedCells[0]
       if (cellId !== undefined) effects.push({ clipId: 'rocket', cellId }, { clipId: 'explosion', cellId })
