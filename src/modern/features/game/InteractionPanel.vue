@@ -175,7 +175,7 @@ const bankMax = computed(() => {
     case 'repay-credit': return Math.max(0, Math.min(player.value.cash, account?.used ?? 0))
   }
 })
-const uiImage = (name: string) => `${import.meta.env.BASE_URL}assets/ui/${name}.png`
+const uiImage = (name: string) => `${import.meta.env.BASE_URL}${profileAssetUrl(`assets/ui/${name}.png`,props.assetProfile)}`
 const preparedImage = (path: string) => props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`
 const portraitUrl = (characterId: number) => preparedImage(`assets/monthly/champions/${characterId}.png`)
 const dieImage = (value: number) => preparedImage(profileAssetUrl(`assets/activities/ludo-face-${value}/1.png`, props.assetProfile))
@@ -330,7 +330,7 @@ watch(stockId, () => { stockShares.value = 1 })
         <img :src="cardAssetUrl(card.id)" :alt="card.name" @error="reportImageError">
         <div><span class="eyebrow">使用卡片</span><h2>{{ card.name }}</h2><p>{{ card.description }}</p></div>
       </div>
-      <PlayerWallet class="balance" :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <PlayerWallet :asset-profile="assetProfile" class="balance" :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <p v-if="cardInteraction.choiceError" class="error" role="alert">{{ cardInteraction.choiceError }}</p>
       <div v-if="cardInteraction.kind === 'card-confirm'" class="actions">
         <button data-testid="interaction-confirm" :disabled="!canAct" @click="emit('confirm')">确认使用</button>
@@ -357,7 +357,7 @@ watch(stockId, () => { stockShares.value = 1 })
 
     <template v-else-if="interaction.kind === 'shop'">
       <header class="desk-heading"><img :src="uiImage('tickets')" alt="" @error="reportImageError"><div><span class="eyebrow">卡片屋</span><h2>挑选你的下一张好牌</h2></div><small>12 格库存</small></header>
-      <PlayerWallet :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <PlayerWallet :asset-profile="assetProfile" :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <div class="shop-grid" tabindex="0" aria-label="卡片库存，可上下滚动">
         <button v-for="(cardId, slot) in interaction.shop.stock" :key="slot" data-testid="shop-slot" :disabled="!canAct || cardId === null" @click="emit('buy', slot)">
           <template v-if="cardId !== null"><img :src="cardAssetUrl(cardId)" :alt="getCardDefinition(cardId).name" @error="reportImageError"><span>{{ getCardDefinition(cardId).name }}</span><small>售价 {{ getCardDefinition(cardId).price }}</small></template><span v-else>售罄</span>
@@ -370,7 +370,7 @@ watch(stockId, () => { stockShares.value = 1 })
 
     <template v-else-if="interaction.kind === 'bank'">
       <header class="desk-heading"><img :src="uiImage('emblem')" alt="" @error="reportImageError"><div><span class="eyebrow">明日银行</span><h2>银行业务</h2></div></header>
-      <PlayerWallet :player="player" :loan="game.finance.loans[player.id] ?? 0" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <PlayerWallet :asset-profile="assetProfile" :player="player" :loan="game.finance.loans[player.id] ?? 0" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <div class="credit-summary"><img :src="cardAssetUrl(1)" alt="信用卡" @error="reportImageError"><span>信用评分 <strong>{{ game.credit[player.id]?.score }}</strong></span><span>已用 <strong>{{ game.credit[player.id]?.used }}</strong></span><span>可用 <strong>{{ game.credit[player.id]?.available }}</strong></span></div>
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
       <form class="choice bank-form" data-testid="bank-form" @submit.prevent="emit('bank-operation', bankAction, bankAmount)">
@@ -391,12 +391,12 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
 
     <template v-else-if="interaction.kind === 'monthly-settlement'">
-      <MonthlySettlement :game="game" :entries="interaction.entries" :paused="paused" :prepared-images="preparedImages" @continue="emit('acknowledge-monthly')" @asset-error="emit('asset-error', $event)" />
+      <MonthlySettlement :asset-profile="assetProfile" :game="game" :entries="interaction.entries" :paused="paused" :prepared-images="preparedImages" @continue="emit('acknowledge-monthly')" @asset-error="emit('asset-error', $event)" />
     </template>
 
     <template v-else-if="interaction.kind === 'stock'">
       <header class="desk-heading"><span class="market-emblem" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 5v24h25M11 23l7-9 5 4 8-11M25 7h6v6"/></svg></span><div><span class="eyebrow">股市</span><h2>股票交易</h2></div></header>
-      <PlayerWallet :player="player" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <PlayerWallet :asset-profile="assetProfile" :player="player" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
       <div class="choice">
         <label>公司
@@ -429,7 +429,7 @@ watch(stockId, () => { stockShares.value = 1 })
       </div>
       <p v-if="interaction.error" class="error" role="alert">{{ interaction.error }}</p>
       <h2 v-if="companyCalculatorOpen">{{ landedCompany.name }} · 承销价 {{ landedCompany.basePrice }}</h2>
-      <CompanyCalculator v-if="companyCalculatorOpen" :maximum="companyMaximum" :price="landedCompany.basePrice" :disabled="!canAct" @confirm="$event === 0 ? emit('leave-company') : emit('subscribe-company', $event)" @cancel="closeCompanyCalculator" @asset-error="emit('asset-error', $event)" />
+      <CompanyCalculator :asset-profile="assetProfile" v-if="companyCalculatorOpen" :maximum="companyMaximum" :price="landedCompany.basePrice" :disabled="!canAct" @confirm="$event === 0 ? emit('leave-company') : emit('subscribe-company', $event)" @cancel="closeCompanyCalculator" @asset-error="emit('asset-error', $event)" />
       <template v-else>
         <small>本次最多认购 {{ companyMaximum }} 股</small>
         <div class="actions"><button ref="companySubscribeButton" data-testid="company-subscribe" :disabled="!canAct || companyMaximum < 1" @click="companyCalculatorOpen = true">认购</button><button data-testid="company-leave" :disabled="!canAct" @click="emit('leave-company')">离开公司</button></div>
@@ -447,7 +447,7 @@ watch(stockId, () => { stockShares.value = 1 })
       <div v-if="interaction.notice.financeEntry" class="amount changes-grid"><span v-for="item in financeChanges" :key="item.label" class="finance-change" :class="{decrease: ['贷款','已用信用'].includes(item.label) ? item.amount>0 : item.amount<0}">{{ item.label }} <strong>{{ signed(item.amount) }}</strong></span><span v-if="!financeChanges.length">账户无变化</span></div>
       <p v-else-if="interaction.notice.receipt" data-testid="activity-receipt" class="amount">{{ activityChanges(interaction.notice.receipt) }}</p>
       <p v-else-if="interaction.notice.amount !== undefined && interaction.notice.amount !== 0" class="amount">{{ interaction.notice.luckEvent?.kind === 'cash' || interaction.notice.eventKind === 'god-encountered' && [2,3].includes(interaction.notice.npcId ?? 0) ? '现金' : interaction.notice.luckEvent?.kind === 'tickets' || interaction.notice.kind === 'tickets' || interaction.notice.kind === 'shop' ? '奖券' : '数值' }} {{ interaction.notice.amount > 0 ? '+' : '' }}{{ interaction.notice.amount }}</p>
-      <PlayerWallet :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
+      <PlayerWallet :asset-profile="assetProfile" :player="player" :tickets="game.tickets[player.id]" :prepared-images="preparedImages" @asset-error="emit('asset-error', $event)" />
       <p class="notice-status">状态：{{ statusText }}</p>
       </div>
       <button class="result-continue" data-testid="interaction-acknowledge" :disabled="!canAct" @click="emit('acknowledge')">知道了，继续</button>

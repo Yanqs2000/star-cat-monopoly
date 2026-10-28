@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
 
-const props = defineProps<{ maximum: number; price: number; disabled: boolean }>()
+const props = defineProps<{ maximum: number; price: number; disabled: boolean; assetProfile?: AssetProfile }>()
 const emit = defineEmits<{ confirm: [shares: number]; cancel: []; 'asset-error': [error: Error] }>()
 const shares = ref(0)
 const submitted = ref(false)
 const root = ref<HTMLElement>()
-const artwork = `${import.meta.env.BASE_URL}assets/companies/calculator.png`
+const artwork = computed(()=>`${import.meta.env.BASE_URL}${profileAssetUrl('assets/companies/calculator.png',props.assetProfile??'original')}`)
 const keys = [
   { label: '数字 7', value: '7', x: 33, y: 128 }, { label: '数字 8', value: '8', x: 83, y: 128 },
   { label: '数字 9', value: '9', x: 133, y: 128 }, { label: '最大', value: 'max', x: 257, y: 128 },

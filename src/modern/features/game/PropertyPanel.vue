@@ -19,7 +19,7 @@ const event = computed(() => props.game.lastPropertyEvent)
 const title = computed(() => ({ purchase: '购买住宅地', upgrade: '升级建筑', rent: '支付租金', 'max-level': '建筑已满级' })[offer.value?.kind ?? 'purchase'])
 const rentItems = computed(() => offer.value?.kind === 'rent' && parcel.value ? streetRentItems(props.game.properties, offer.value.ownerId!, parcel.value.streetId, props.game.prices).map(item => ({ ...item, amount: item.amount * (props.game.world.statuses[player.value.id]?.godId === 2 ? 0 : props.game.world.statuses[player.value.id]?.godId === 3 ? 2 : 1) })) : [])
 const assetUrl = (source: string) => {
-  const path = source.startsWith('assets/ui/') ? source : profileAssetUrl(source, props.assetProfile)
+  const path = profileAssetUrl(source, props.assetProfile)
   return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`
 }
 const assetError = (source: string) => emit('asset-error', new Error(`素材加载失败：${assetUrl(source)}`))

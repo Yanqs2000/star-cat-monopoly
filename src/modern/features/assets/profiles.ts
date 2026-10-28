@@ -1,12 +1,13 @@
 import staticArtwork from '../../data/static-hd-assets.json'
+import approvedArtwork from '../../data/approved-non-character.json'
 
 export type AssetProfile = 'original' | 'hd'
 
 type Bounds = readonly number[]
 type StaticArtworkOverride = { source: string; url: string; pixelSize: readonly number[]; pixelDensity: number; registration?: { sourceBounds: Bounds; renderedBounds: Bounds } }
-const staticOverrides = new Map<string, StaticArtworkOverride>(staticArtwork.assets.filter(asset => asset.enabled)
+const staticOverrides = new Map<string, StaticArtworkOverride>([...staticArtwork.assets,...approvedArtwork.assets].filter(asset => asset.enabled)
   .map(asset => [asset.source, asset]))
-const staticResolved = new Map([...staticOverrides.values()].map(asset => [asset.url, asset]))
+const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...approvedArtwork.runtimeImages.map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
 
 export function staticAssetPixels(url: string) {
   return staticResolved.get(url)
@@ -26,7 +27,7 @@ export function profileSpriteTransform(url: string, profile: AssetProfile) {
 
 export function profileTextureResolution(url: string, profile: AssetProfile): number {
   if (profile === 'original') return 1
-  return staticOverrides.get(url.split(/[?#]/, 1)[0]!)?.pixelDensity ?? 2
+  return staticOverrides.get(url.split(/[?#]/, 1)[0]!)?.pixelDensity ?? staticResolved.get(url.split(/[?#]/, 1)[0]!)?.pixelDensity ?? 2
 }
 
 export function isCompleteHdProfileIndex(value: unknown): boolean {

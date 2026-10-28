@@ -5,10 +5,12 @@ import { activityPixelDensity,loadActivityFrames,type ActivityManifest,type Acti
 import type { CarnivalGame,CarnivalInput } from './carnival'
 import { listenCarnivalInputs } from './carnival-input'
 import { animationFramesKey } from './animation-context'
+import { carnivalPresentationFrame } from '../assets/approved-artwork'
 const prepared=inject(animationFramesKey,undefined)
 const props=defineProps<{game:CarnivalGame;paused:boolean;human:boolean;assets:ActivityManifest}>()
 const emit=defineEmits<{input:[input:CarnivalInput];ready:[id:string];'asset-error':[error:Error]}>()
 const host=ref<HTMLDivElement>(),loaded=ref(false),abort=new AbortController()
+let subframeMs=0
 let app:Application|undefined,removeInputs:(()=>void)|undefined
 const textures=new Map<string,Texture[]>(),owned:Texture[]=[],releases:(()=>void)[]=[]
 const find=(id:string)=>props.assets.clips.find(c=>c.id===id)!
@@ -29,7 +31,7 @@ function draw() {
  const g=props.game,id=g.stage==='tally'?'carnival-score':'carnival-play'
  picture(background,id,1,0,0)
  picture(objects,g.pose===1?`carnival-boy-${g.characterId}`:`carnival-walk-${g.characterId}-${g.pose===2?'left':'right'}`,g.pose===1?1:g.boyFrame,g.x,500)
- for(const ball of [...g.balls].sort((a,b)=>a.kind===1&&b.kind>1?-1:a.kind>1&&b.kind===1?1:a.creation-b.creation))picture(objects,`carnival-ball-${ball.kind}`,ball.frame,ball.x,ball.y)
+ for(const ball of [...g.balls].sort((a,b)=>a.kind===1&&b.kind>1?-1:a.kind>1&&b.kind===1?1:a.creation-b.creation))picture(objects,`carnival-ball-${ball.kind}`,carnivalPresentationFrame(ball.frame,subframeMs,find(`carnival-ball-${ball.kind}`).fps,1),ball.x,ball.y)
  if(g.stage==='intro')picture(intro,'carnival-intro',Math.max(1,g.frame),400.05,279.85,.9993286)
  text(find(id).frames[0]!);app.render()
 }
@@ -64,13 +66,14 @@ onMounted(async()=>{
   const candidate=new Application();await candidate.init({width:800,height:600,resolution:Math.min(devicePixelRatio || 1,2),autoDensity:true,backgroundAlpha:0,autoStart:false})
   if(abort.signal.aborted){candidate.destroy({removeView:true});releaseResources();return}
   app=candidate;app.canvas.style.width='100%';app.canvas.style.height='100%';host.value!.append(app.canvas);app.stage.addChild(background,objects,labels,intro)
-  loaded.value=true;draw();removeInputs=listenCarnivalInputs(host.value!,()=>playing.value,input=>emit('input',input))
+  loaded.value=true;draw();// Carnival uses a real 30Hz clock even when the map speed is 2x.
+  if(find('carnival-ball-1').fps===60){app.ticker.add(ticker=>{if(!props.paused&&['play','tally'].includes(props.game.stage)){subframeMs+=ticker.deltaMS;draw()}});app.start()}removeInputs=listenCarnivalInputs(host.value!,()=>playing.value,input=>emit('input',input))
   // Key state belongs to the active listener and cannot remain held through a rebuild.
   if(props.game.input.kind==='key'&&props.game.input.direction!==0)emit('input',{kind:'key',direction:0})
   emit('ready','carnival-play')
  } catch(error){releaseResources();if(!abort.signal.aborted)emit('asset-error',error instanceof Error?error:new Error(String(error)))}
 })
-watch(()=>props.game,()=>{try{draw()}catch(error){emit('asset-error',error instanceof Error?error:new Error(String(error)))}})
+watch(()=>props.game,(next,previous)=>{if(next.frame!==previous.frame||next.stage!==previous.stage)subframeMs=next.remainderMs;try{draw()}catch(error){emit('asset-error',error instanceof Error?error:new Error(String(error)))}})
 onBeforeUnmount(()=>{loaded.value=false;const current=app;app=undefined;abort.abort();removeInputs?.();current?.destroy({removeView:true},{children:true});releaseResources()})
 </script>
 <template>
