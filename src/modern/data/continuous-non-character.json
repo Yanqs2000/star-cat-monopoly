@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "pending-user-art-review",
+  "status": "approved",
   "scope": [
     18,
     19,
@@ -19693,5 +19693,18 @@
       "pixelDensity": 2,
       "sha256": "da98099e79079b98b5f7845b5e438bf5773e24a1d4b2bdb82607db3d24ddc65e"
     }
-  ]
+  ],
+  "approval": {
+    "date": "2026-10-29",
+    "scope": [
+      18,
+      19,
+      21
+    ],
+    "deferred": [
+      20
+    ],
+    "userMessage": "确认，合并到主分支，然后做22、23、24",
+    "reviewedCommit": "f1fd9bf"
+  }
 }
