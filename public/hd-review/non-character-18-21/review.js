@@ -15,15 +15,27 @@ window.continuousReady=(async()=>{
  await Promise.all([...sources.values()].flatMap(c=>c.frames.map(f=>load(f.url))))
  await Promise.all(Object.values(data.faces).flatMap(f=>[load(f.frame.url),load(f.hd)]))
  const resolved=new Map();for(const [url,promise]of images)resolved.set(url,await promise)
+ // The stripped dice base is only153x134; dice are separate moving overlays.
+ // Fit one stable viewport to all original/intermediate poses and face variants.
+ let diceLeft=Infinity,diceTop=Infinity,diceRight=-Infinity,diceBottom=-Infinity;
+ for(const clip of [sources.get('ludo-dice'),hd.get('ludo-dice')])for(const frame of clip.frames)for(const p of frame.placements||[]){
+  const kind=Number(p.name.slice(2))<4?'face':'shadow',[a,b,c,d]=p.matrix;
+  for(let n=1;n<=6;n++){const f=data.faces['ludo-'+kind+'-'+n].frame;
+   for(const x of [f.offsetX,f.offsetX+f.width])for(const y of [f.offsetY,f.offsetY+f.height]){
+    const px=p.x+a*x+c*y,py=p.y+b*x+d*y;diceLeft=Math.min(diceLeft,px);diceTop=Math.min(diceTop,py);diceRight=Math.max(diceRight,px);diceBottom=Math.max(diceBottom,py);
+   }
+  }
+ }
+ const diceViewport={offsetX:Math.floor(diceLeft)-8,offsetY:Math.floor(diceTop)-8,width:Math.ceil(diceRight)-Math.floor(diceLeft)+16,height:Math.ceil(diceBottom)-Math.floor(diceTop)+16};
  const titles={'ludo-dice':'18 · 三骰滚动与落定','show2':'19 · 通用提示框','show-npc4':'19 · 明细提示框','car1':'21 · 警用飞碟','car2':'21 · 救护飞碟'},rows=[]
  for(const [id,title]of Object.entries(titles)){
   const article=document.createElement('article');article.id='item-'+id;article.innerHTML='<h2>'+title+'</h2><p class="frame-label"></p><div class="pair"><div class="view"><span>原版</span><canvas></canvas></div><div class="view"><span>高清</span><canvas></canvas></div></div>';document.getElementById('clips').append(article)
-  const [before,after]=article.querySelectorAll('canvas'),source=sources.get(id);for(const canvas of [before,after]){canvas.width=(id.startsWith('car')?800:source.frames[0].width)*2;canvas.height=(id.startsWith('car')?410:source.frames[0].height)*2;canvas.style.width=canvas.width/2+'px'}
+  const [before,after]=article.querySelectorAll('canvas'),source=sources.get(id),viewport=id==='ludo-dice'?diceViewport:source.frames[0];for(const canvas of [before,after]){canvas.width=(id.startsWith('car')?800:viewport.width)*2;canvas.height=(id.startsWith('car')?410:viewport.height)*2;canvas.style.width=canvas.width/2+'px'}
   rows.push({id,source,before,after,label:article.querySelector('p'),temp:document.createElement('canvas')})
  }
  const sourceFace=(name,f)=>{const i=Number(name.slice(2));return i===1?2:i===2?4:i===3?f>=17?3:1:i===4?f>=18?5:1:i===6?f>=19?4:1:1}
  function drawDice(ctx,clip,sourceFrame,sampled,modern){
-  const base=clip.frames[sampled],origin=clip.frames[0];ctx.save();ctx.translate(-origin.offsetX,-origin.offsetY)
+  const base=clip.frames[sampled];ctx.save();ctx.translate(-diceViewport.offsetX,-diceViewport.offsetY)
   for(const p of base.placements||[]){
    const name='ludo-'+(Number(p.name.slice(2))<4?'face':'shadow')+'-'+sourceFace(p.name,sourceFrame),face=data.faces[name],f=face.frame;
    ctx.save();ctx.translate(p.x,p.y);ctx.transform(...p.matrix,0,0);ctx.drawImage(resolved.get(modern?face.hd:f.url),f.offsetX,f.offsetY,f.width,f.height);ctx.restore()
@@ -57,5 +69,5 @@ window.continuousReady=(async()=>{
  slider.oninput=()=>{playing=false;pause.textContent='继续';elapsed=Number(slider.value)*4;render(elapsed)}
  window.reviewControl={seek(ms){playing=false;pause.textContent='继续';elapsed=ms;render(ms)},play(){playing=true;pause.textContent='暂停';last=performance.now()},get elapsed(){return elapsed}}
  function tick(now){if(playing)elapsed+=Math.max(0,now-last)*speed;last=now;render(elapsed);document.getElementById('clock').textContent=(elapsed/1000).toFixed(2)+' s';if(playing)slider.value=elapsed%4000/4;requestAnimationFrame(tick)}
- render(0);requestAnimationFrame(tick);return{config,index,data}
+ render(0);requestAnimationFrame(tick);return{config,index,data,diceViewport}
 })()

@@ -37,5 +37,14 @@
     844
   ],
   "startupEarlyRafBoundaryPassed": true,
-  "localServer": "HTTP/1.1;backlog128;bounded6imageBitmaps"
+  "localServer": "HTTP/1.1;backlog128;bounded6imageBitmaps",
+  "diceCompleteViewport": {
+    "displaySamples": 80,
+    "comparedViews": 160,
+    "clippedViews": 0,
+    "maxOutsideAlpha": 0,
+    "gameHdBoundsSamples": 243,
+    "gameOriginalBoundsSamples": 246,
+    "gameClippedSamples": 0
+  }
 }
