@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": false,
+  "prompt": "Use case: precise-object-edit. Image1 is the target blue notification panel; Image2 is the original reference. Produce the corrected panel as a completely OPAQUE full-canvas rectangular game UI master, RGB or RGBA alpha255 everywhere. No transparent background, no transparent pixels, no translucency. The opaque solid blue board fills the entire image, with the existing rounded white/silver rim touching the canvas edges, and the same small circular blue-and-white star emblem at upper left. Preserve Image1 colors, proportions, exact emblem size/position, bevels and empty content area. Outside the rounded rim, the tiny corner triangles should be opaque WHITE; the game renderer will clip those exterior corners to its registered rounded silhouette. Interior is solid opaque enamel/plastic, never glass. All blue pixels and all rim/emblem pixels are fully opaque. Do NOT add letters, figures, buttons, decorative objects, floor or shadows; do not change design. Flat front-facing landscape panel, correct 396:243 aspect ratio, exact edge-to-edge framing, no surrounding margins. This output must be a native opaque raster master.",
+  "reason": "Native opaque panel master; rounded exterior clipped only in renderer. Semitransparent candidates rejected."
+}

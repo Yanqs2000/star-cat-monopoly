@@ -27,6 +27,9 @@ for c in data['activityClips']:
   last=actual.astype(float)
  results.append({'id':c['id'],'reconstructedFrames':len(c['frames']),'alphaAndVisibleRgbExact':True,'maxMeanPixelStep':max_step})
 assert used==set(images)
+for id in ['show2','show-npc4']:
+ c=next(c for c in data['activityClips']if c['id']==id);image=images[c['frames'][0]['url']];density=image['pixelDensity'];im=Image.open(p/image['url']).convert('RGBA')
+ assert im.getchannel('A').crop(tuple(n*density for n in (110,39,330,67))).getextrema()==(255,255),id+' title must be opaque'
 assert {x.relative_to(p).as_posix() for x in (p/'hd-static/continuous-18-21').rglob('*.webp')}==set(images)
 report=json.loads((review/'verification.json').read_text());report.update(status='technical-artifact-checks-passed; pending-browser-and-user-art-acceptance',sourceSha256=data['sourceSha256'],reconstruction=results);(review/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'runtimeFiles':len(images),'clips':results,'sourceUnchanged':True,'deferred20Unchanged':True},ensure_ascii=False))

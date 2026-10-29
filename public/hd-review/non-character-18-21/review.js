@@ -4,7 +4,10 @@ window.continuousReady=(async()=>{
  const load=url=>{
   if(!images.has(url))images.set(url,(async()=>{
    if(active>=6)await new Promise(resolve=>pending.push(resolve));active++;
-   try{const im=new Image();im.src='/modern/'+url;try{await im.decode()}catch(e){throw new Error('Image decode: '+url+'; '+e.message)}return im}
+   try{
+    const response=await fetch('/modern/'+url);if(!response.ok)throw new Error('Image fetch: '+url+'; HTTP '+response.status);
+    return await createImageBitmap(await response.blob());
+   }
    finally{active--;pending.shift()?.()}
   })());return images.get(url)
  }
@@ -31,6 +34,7 @@ window.continuousReady=(async()=>{
   for(const field of frame.fields){const value=field.variable.endsWith('1')?'原版提示 · 高清重制':field.variable.endsWith('2')?'时序、文字位置与操作保持一致':field.variable.endsWith('3')?'奖券':'100';ctx.save();ctx.transform(...field.matrix,field.x-source.offsetX,field.y-source.offsetY);ctx.font=field.fontSize+'px "Songti SC",serif';ctx.textAlign=field.align===2?'center':'left';ctx.fillText(value,field.align===2?field.width/2:0,0,field.width);ctx.restore()}ctx.restore()
  }
  function render(ms){
+  ms=Math.max(0,ms)
   for(const row of rows){
    const c=row.source,duration=c.frames.length/30*1000,time=ms%(duration+650),f=Math.min(c.frames.length-1,Math.floor(time*30/1000)),frame=c.frames[f],sample=Math.min(hd.get(row.id).frames.length-1,Math.floor(time*hd.get(row.id).fps/1000))
    for(const [canvas,modern]of [[row.before,false],[row.after,true]]){
@@ -52,6 +56,6 @@ window.continuousReady=(async()=>{
  document.getElementById('background').onchange=e=>document.body.className=e.target.value
  slider.oninput=()=>{playing=false;pause.textContent='继续';elapsed=Number(slider.value)*4;render(elapsed)}
  window.reviewControl={seek(ms){playing=false;pause.textContent='继续';elapsed=ms;render(ms)},play(){playing=true;pause.textContent='暂停';last=performance.now()},get elapsed(){return elapsed}}
- function tick(now){if(playing)elapsed+=(now-last)*speed;last=now;render(elapsed);document.getElementById('clock').textContent=(elapsed/1000).toFixed(2)+' s';if(playing)slider.value=elapsed%4000/4;requestAnimationFrame(tick)}
+ function tick(now){if(playing)elapsed+=Math.max(0,now-last)*speed;last=now;render(elapsed);document.getElementById('clock').textContent=(elapsed/1000).toFixed(2)+' s';if(playing)slider.value=elapsed%4000/4;requestAnimationFrame(tick)}
  render(0);requestAnimationFrame(tick);return{config,index,data}
 })()

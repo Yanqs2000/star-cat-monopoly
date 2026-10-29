@@ -8,7 +8,7 @@ source=json.loads((R/'source-timeline.json').read_text())
 sprites={s['symbol']:s for s in source['sprites']}
 activities=json.loads((ROOT/'public/modern/assets/activities/manifest.json').read_text())
 masters={}
-for key,file in [('panel','19-notice-panel-r1.png'),('police','21-police-r2.png'),('ambulance','21-ambulance-r1.png')]:
+for key,file in [('panel','19-notice-panel-r3-opaque.png'),('police','21-police-r2.png'),('ambulance','21-ambulance-r1.png')]:
  im=Image.open(R/file).convert('RGBA');b=im.getchannel('A').point(lambda a:255 if a>8 else 0).getbbox()
  masters[key]={'url':file,'rect':[b[0],b[1],b[2]-b[0],b[3]-b[1]],'sha256':hashlib.sha256((R/file).read_bytes()).hexdigest()}
 clips={}
