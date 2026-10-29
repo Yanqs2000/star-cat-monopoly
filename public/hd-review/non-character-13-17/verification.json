@@ -1,5 +1,5 @@
 {
-  "status": "technical-verification; pending-art-acceptance",
+  "status": "technical-verification; user-approved",
   "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
   "clips": [
     {
@@ -1091,5 +1091,17 @@
   },
   "runtimeImages": 410,
   "runtimeBytes": 43288414,
-  "decodedRgbaBytes": 361899264
+  "decodedRgbaBytes": 361899264,
+  "approval": {
+    "date": "2026-10-29",
+    "statement": "确认，合并到主分支",
+    "items": [
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "rocketRevision": "down-r2"
+  }
 }

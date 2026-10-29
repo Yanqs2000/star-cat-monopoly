@@ -1,6 +1,6 @@
 # 非人物连续动画 13—17
 
-状态：技术候选，等待用户视觉验收。运行索引 `src/modern/data/non-character-effects.json` 保持 `pending-user-art-review`；本分支未合并主分支。01—12仍使用原批准清单。
+状态：2026-10-29用户确认13—17通过（含火箭下降方向修正），并授权合并到本地主分支。运行索引 `src/modern/data/non-character-effects.json` 已标记 `approved` 并记录原始确认语句；01—12继续使用原批准清单。未推送远端。
 
 ## 审阅入口
 
