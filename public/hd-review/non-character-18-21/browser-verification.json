@@ -1,0 +1,39 @@
+{
+  "page": "http://127.0.0.1:64867/hd-review/non-character-18-21/",
+  "browser": "local Chrome; Browser plugin absent",
+  "viewport": [
+    1440,
+    1000
+  ],
+  "reviewOnlyFrameIntervalsMs": {
+    "samples": 240,
+    "median": 16.699999999999818,
+    "p95": 16.700000000000273,
+    "max": 16.800000000000182,
+    "over50": 0
+  },
+  "pausePixelsExact": true,
+  "backgrounds": [
+    "light",
+    "dark",
+    "map"
+  ],
+  "speedControls": [
+    0.25,
+    0.5,
+    1,
+    2
+  ],
+  "reviewQa": {
+    "url": "http://127.0.0.1:64867/hd-review/non-character-18-21/",
+    "title": "非人物18/19/21 · 动画验收",
+    "errors": [],
+    "failed": [],
+    "overflow": false
+  },
+  "reviewScreenshotSamples": 20,
+  "mobileViewport": [
+    390,
+    844
+  ]
+}

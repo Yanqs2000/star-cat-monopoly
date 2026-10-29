@@ -286,7 +286,7 @@ watch(stockId, () => { stockShares.value = 1 })
     <LudoActivity v-else-if="interaction.kind==='ludo'" :game="interaction.game" :human="player.controller==='human'" :paused="paused" :assets="activityAssets" :asset-profile="assetProfile" @wager="emit('place-wager',$event)" @confirm="emit('confirm-wagers')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
     <template v-else-if="interaction.kind === 'portal'">
       <div v-if="interaction.stage === 'choice'" class="portal-original">
-        <NativeActivity v-if="portalClip" data-testid="portal-original" :clip="portalClip" :preload="portalPrepared" :overlays="portalOverlays" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+        <NativeActivity :paused="paused" v-if="portalClip" data-testid="portal-original" :clip="portalClip" :preload="portalPrepared" :overlays="portalOverlays" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
         <img v-else data-testid="portal-original" :src="nativeImageUrl('station')" alt="魔法门分布图" @error="reportImageError">
         <button v-for="destination in 5" :key="destination" :data-testid="`portal-${destination}`" class="original-hotspot portal-choice" :style="nativeHotspot('station',17,destination === 5 ? 319 : 88+(destination-1)*54,139,37)" :disabled="!canAct" :aria-label="destination === 5 ? '保持原地' : PORTALS[destination-1]?.name" @click="emit('choose-portal',destination)">{{ destination === 5 ? '保持原地' : PORTALS[destination-1]?.name }}</button>
         <p v-if="interaction.error" class="error">{{ interaction.error }}</p>
@@ -295,25 +295,25 @@ watch(stockId, () => { stockShares.value = 1 })
     </template>
     <template v-else-if="interaction.kind === 'court'">
       <div v-if="['target','case','judgement'].includes(interaction.stage)" class="court-original">
-        <NativeActivity v-if="courtClip" data-testid="court-original" :key="courtClip.id" :clip="courtClip" :preload="courtPrepared" :overlays="courtOverlays" :text="courtText" @pointerdown="interaction.stage === 'judgement' && emit('skip-activity')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
+        <NativeActivity :paused="paused" v-if="courtClip" data-testid="court-original" :key="courtClip.id" :clip="courtClip" :preload="courtPrepared" :overlays="courtOverlays" :text="courtText" @pointerdown="interaction.stage === 'judgement' && emit('skip-activity')" @ready="emit('activity-ready',$event)" @asset-error="emit('asset-error',$event)" />
         <img v-else data-testid="court-original" :src="nativeImageUrl(courtClipId)" alt="法院" @error="reportImageError">
         <template v-if="interaction.stage === 'target'"><button v-for="(target,index) in eligibleCourtPlayers" :key="target.id" :data-testid="`court-target-${target.id}`" class="original-hotspot court-target" :style="nativeHotspot('court-target',490,252+index*50,190,48)" :disabled="!canAct" @click="emit('court-target',target.id)">{{ target.name }}</button></template>
         <template v-else-if="interaction.stage === 'case'"><button v-for="item in COURT_CASES" :key="item.id" :data-testid="`court-case-${item.id}`" class="original-hotspot court-case" :style="nativeHotspot('court-case',300,254+item.id*82,192,78)" :disabled="!canAct" @click="emit('court-case',item.id)">{{ item.name }} · {{ item.days }}天</button></template>
         <p v-if="interaction.error" class="error">{{ interaction.error }}</p>
       </div>
-      <NativeActivity v-else-if="interaction.stage === 'transfer' && (interaction.verdictFrame ?? 45)<45 && activityClip('show2')" class="court-transit-verdict" :clip="activityClip('show2')!" :frame="interaction.verdictFrame" :text="verdictText" @asset-error="emit('asset-error',$event)" />
+      <NativeActivity :paused="paused" v-else-if="interaction.stage === 'transfer' && (interaction.verdictFrame ?? 45)<45 && activityClip('show2')" class="court-transit-verdict" :clip="activityClip('show2')!" :frame="interaction.verdictFrame" :text="verdictText" @asset-error="emit('asset-error',$event)" />
       <span v-else class="sr-only">拘留转运处理中</span>
     </template>
     <template v-else-if="presentationBlocking && presentation && ['fog','car2'].includes(presentation.clipId)">
       <span class="sr-only">{{ presentation.clipId === 'fog' ? '帐篷开启中' : '送医途中' }}</span>
     </template>
     <template v-else-if="presentationBlocking && presentation && presentationClip">
-      <NativeActivity :key="presentationClip.id" :clip="presentationClip" :frame="presentation.frame" :text="activityText" :viewport="presentation.clipId === 'car2'" @pointerdown="emit('skip-activity')" @ready="emit('activity-ready', $event)" @asset-error="emit('asset-error', $event)" />
+      <NativeActivity :paused="paused" :key="presentationClip.id" :clip="presentationClip" :frame="presentation.frame" :text="activityText" :viewport="presentation.clipId === 'car2'" @pointerdown="emit('skip-activity')" @ready="emit('activity-ready', $event)" @asset-error="emit('asset-error', $event)" />
       <button v-if="presentation.clipId.startsWith('trait-') && presentation.frame >= 10 && presentation.frame < 55" :disabled="paused" @click="emit('skip-activity')">继续动画</button>
     </template>
     <template v-else-if="interaction.kind === 'ticket-exchange'">
       <div class="exchange-original">
-        <NativeActivity v-if="exchangeClip" :key="exchangeClip.id" :clip="exchangeClip" :text="{ money: String(player.cash), jiang: String(game.tickets[player.id]) }" @ready="exchangeLoaded = true" @asset-error="emit('asset-error', $event)" />
+        <NativeActivity :paused="paused" v-if="exchangeClip" :key="exchangeClip.id" :clip="exchangeClip" :text="{ money: String(player.cash), jiang: String(game.tickets[player.id]) }" @ready="exchangeLoaded = true" @asset-error="emit('asset-error', $event)" />
         <img v-else data-testid="exchange-original" :src="originalExchangeUrl" alt="奖券兑换" @error="reportImageError">
         <form data-testid="exchange-form" class="exchange-form" @submit.prevent="emit('exchange-tickets', exchangeQuantity)">
           <label>{{ interaction.mode === 'sell' ? '兑奖张数' : '购券张数' }}

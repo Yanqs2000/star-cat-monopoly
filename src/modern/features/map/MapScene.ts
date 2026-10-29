@@ -321,7 +321,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         while (cursor < clip.frames.length) await loadTexture(clip.frames[cursor++]!.url)
       }))
       if (destroyed || token !== activityGeneration) return
-      if(clip.id==='fog'&&clip.fps===60){if(activityMotion?.sourceFrame!==frame||activityMotion.clip!==clip)activityMotion={clip,sourceFrame:frame,elapsedMs:0}}else activityMotion=undefined
+      if(clip.fps===60){if(activityMotion?.sourceFrame!==frame||activityMotion.clip!==clip)activityMotion={clip,sourceFrame:frame,elapsedMs:0}}else activityMotion=undefined
       const source = clip.frames[activityPresentationFrame(frame,activityMotion?.elapsedMs??0,clip.fps,clip.frames.length)-1]!
       activitySprite.texture = textures.get(source.url)!
       const scale=transform?.scale ?? 1
@@ -661,7 +661,14 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         animation.sprite.texture = textures.get(frame.url)!
         animation.sprite.position.set(frame.offsetX, frame.offsetY)
       }
-      if(activityMotion){activityMotion.elapsedMs+=paused?0:ticker.deltaMS;const index=activityPresentationFrame(activityMotion.sourceFrame,activityMotion.elapsedMs,activityMotion.clip.fps,activityMotion.clip.frames.length)-1;activitySprite.texture=textures.get(activityMotion.clip.frames[index]!.url)!;app.canvas.dataset.activityFrame=String(index+1)}
+      if(activityMotion){
+        const before=activityMotion.clip.frames[activityPresentationFrame(activityMotion.sourceFrame,activityMotion.elapsedMs,activityMotion.clip.fps,activityMotion.clip.frames.length)-1]!
+        activityMotion.elapsedMs+=paused?0:ticker.deltaMS
+        const index=activityPresentationFrame(activityMotion.sourceFrame,activityMotion.elapsedMs,activityMotion.clip.fps,activityMotion.clip.frames.length)-1,after=activityMotion.clip.frames[index]!
+        activitySprite.texture=textures.get(after.url)!
+        activitySprite.x+=(after.offsetX-before.offsetX)*activitySprite.scale.x;activitySprite.y+=(after.offsetY-before.offsetY)*activitySprite.scale.y
+        app.canvas.dataset.activityFrame=String(index+1)
+      }
       for (const animation of effects) {
         animation.elapsedMs += deltaMs
         updateEffect(animation)

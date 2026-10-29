@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Image1 is the edit target, the newly redrawn blue police UFO. Image2 is the original low-resolution reference for badge placement only. Change ONLY the location of the small pink plate bearing the yellow P: remove that plate cleanly from the front-right corner and place ONE matching pink plate/yellow uppercase P at the true center of the front lower bumper, between the two small cyan lower headlights, exactly as in Image2 (horizontal center of the vehicle front, not on the right side). Preserve every other shape, blue/cyan/magenta color, all windows, lamps, the red top beacon, the exact three-quarter frontal view and polished toy material of Image1. Keep the silhouette and scale unchanged. No extra plate or extra P, no text elsewhere. Genuine transparent background and the complete intact vehicle with small transparent padding.",
+  "replaces": "21-police-r1.png",
+  "reason": "Restore the original front-centre P badge."
+}

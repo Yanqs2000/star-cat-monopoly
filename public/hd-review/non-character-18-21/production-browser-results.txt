@@ -1,0 +1,26 @@
+
+Running 6 tests using 1 worker
+
+(node:80813) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/6] tests/e2e/modern-continuous-artwork.spec.ts:30:40 › hd真实三骰下注开奖：连续位移、暂停冻结、点数和奖券只结算一次
+[2/6] tests/e2e/modern-continuous-artwork.spec.ts:30:40 › original真实三骰下注开奖：连续位移、暂停冻结、点数和奖券只结算一次
+[3/6] tests/e2e/modern-continuous-artwork.spec.ts:49:70 › 21 car2真实进场转运：60Hz子帧、暂停冻结和原业务时点
+[4/6] tests/e2e/modern-continuous-artwork.spec.ts:49:70 › 21 car1真实进场转运：60Hz子帧、暂停冻结和原业务时点
+[5/6] tests/e2e/modern-continuous-artwork.spec.ts:65:79 › 19 show2真实提示文字保持登记、可暂停并继续
+[6/6] tests/e2e/modern-continuous-artwork.spec.ts:65:79 › 19 show-npc4真实提示文字保持登记、可暂停并继续
+  6 passed (1.4m)
+
+Compatibility:
+
+Running 2 tests using 1 worker
+
+(node:81121) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] tests/e2e/modern-approved-effects.spec.ts:34:1 › fog自然帐篷过程保留源15帧开窗和18/19帧业务时钟
+[2/2] tests/e2e/modern-approved-effects.spec.ts:37:1 › 火箭真实发射：原点到目标，80帧后爆炸，暂停和倍速不重复扣卡送医
+  2 passed (32.9s)

@@ -4,6 +4,7 @@ import NativeActivity from './NativeActivity.vue'
 import type { ActivityManifest,NativeOverlay } from './activity-assets'
 import { LUDO_CELLS,type LudoGame } from './ludo'
 import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
+import { activityPresentationFrame } from '../assets/effect-timing'
 const props=withDefaults(defineProps<{game:LudoGame;paused:boolean;human:boolean;assets?:ActivityManifest;assetProfile?:AssetProfile}>(),{assetProfile:'original'})
 const emit=defineEmits<{wager:[id:number];confirm:[];ready:[id:string];'asset-error':[error:Error]}>()
 const loaded=ref(false)
@@ -23,10 +24,10 @@ const overlays=computed(()=>{
  }
  if(g.stage!=='betting') {
   const dice=find('ludo-dice'),frame=g.stage==='rolling'?Math.max(1,g.frame):40
-  if(dice){items.push({clip:dice,frame,x:640,y:200});for(const placement of dice.frames[frame-1]?.placements ?? []) {
+  if(dice){items.push({clip:dice,frame,x:640,y:200});for(const placement of dice.frames[activityPresentationFrame(frame,0,dice.fps,dice.frames.length)-1]?.placements ?? []) {
    const index=Number(placement.name.slice(2)),face=index===1?g.displayFaces[0]:index===2?g.displayFaces[1]:index===3?frame>=17?g.faces[0]:1:index===4?frame>=18?g.faces[1]:1:index===6?frame>=19?g.faces[2]:1:1
    const c=find(`ludo-${index<4?'face':'shadow'}-${face}`)
-   if(c)items.push({clip:c,frame:1,x:640+placement.x,y:200+placement.y,matrix:placement.matrix})
+   if(c)items.push({clip:c,frame:1,x:640,y:200,placement:{clip:dice,frame,name:placement.name}})
   }}
   const win=find('ludo-win')
   if(win&&g.paid)for(const id of g.winningCells)items.push({clip:win,frame:(g.frame%40)+1,x:50+(id===7?120:id===9?280:id%6*80),y:75+(id===7||id===9?160:Math.trunc(id/6)*80)})
@@ -41,7 +42,7 @@ function ready(id:string){loaded.value=true;emit('ready',id)}
 </script>
 <template>
  <div class="ludo-activity" data-testid="ludo-original" :data-stage="game.stage" :data-frame="game.frame">
-  <NativeActivity v-if="clip" :key="clipId" :clip="clip" :text="{pay:String(game.remaining)}" :preload="prepared" :overlays="overlays" @ready="ready" @asset-error="emit('asset-error',$event)" />
+  <NativeActivity v-if="clip" :key="clipId" :clip="clip" :paused="paused" :text="{pay:String(game.remaining)}" :preload="prepared" :overlays="overlays" @ready="ready" @asset-error="emit('asset-error',$event)" />
   <img v-else :src="posterUrl" alt="原版投注盘">
   <template v-if="game.stage==='betting'&&human">
    <button v-for="(_,id) in LUDO_CELLS" :key="id" :data-testid="`ludo-cell-${id}`" class="hotspot cell" :style="{left:`${(50+id%6*80)/8}%`,top:`${(75+Math.trunc(id/6)*80)/6}%`}" :aria-label="label(id)" :disabled="!canAct||game.remaining<=0" @click="emit('wager',id)">{{ label(id) }}</button>

@@ -8,7 +8,7 @@ export interface ActivityFrame {
   sourceFrame: number; url: string; width: number; height: number; offsetX: number; offsetY: number; fields: ActivityTextField[];placements?:{name:string;x:number;y:number;matrix:[number,number,number,number]}[]
 }
 export interface ActivityClip { id: string; sourceSymbol: number; fps: number; frames: ActivityFrame[] }
-export interface NativeOverlay { clip: ActivityClip; frame: number; x: number; y: number; scale?: number; opacity?: number; text?: Record<string,string>; depth?: number;matrix?:[number,number,number,number] }
+export interface NativeOverlay { clip: ActivityClip; frame: number; x: number; y: number; scale?: number; opacity?: number; text?: Record<string,string>; depth?: number;matrix?:[number,number,number,number]; placement?:{clip:ActivityClip;frame:number;name:string} }
 export interface ActivityManifest { version: 1; sourceSha256: string; clips: ActivityClip[] }
 
 export function activityPixelDensity(url:string):number {
