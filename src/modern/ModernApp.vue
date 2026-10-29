@@ -50,8 +50,8 @@ const rentPreviewing = ref(false)
 const map = mapJson as MapData
 const mode = ref<'selection' | 'game' | 'inspection'>('selection')
 function storedAssetProfile():AssetProfile {
-  try{return localStorage.getItem('star-cat-monopoly:asset-profile')==='hd'?'hd':'original'}
-  catch{return 'original'}
+  try{return localStorage.getItem('star-cat-monopoly:asset-profile')==='original'?'original':'hd'}
+  catch{return 'hd'}
 }
 const assetProfile=ref<AssetProfile>(storedAssetProfile())
 const assetProfileSelection=ref<AssetProfile>(assetProfile.value)

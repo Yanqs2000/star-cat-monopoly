@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CompanyCalculator from './CompanyCalculator.vue'
+import { TARGET_CURSOR } from '../map/target-selection'
 import PlayerWallet from './PlayerWallet.vue'
 import MonthlySettlement from './MonthlySettlement.vue'
 import { financeLabels, actualChanges } from './finance-presentation'
@@ -350,7 +351,7 @@ watch(stockId, () => { stockShares.value = 1 })
       </form>
       <div v-else class="choice target-choice">
         <strong>{{ card.name }} · 在地图上点击目标格</strong><p>拖动地图不会提交；玩家卡也可直接选择下方真实位置。</p>
-        <div class="target-actions"><div class="targets"><button v-for="target in targetPlayers" :key="target.id" :data-testid="`target-player-${target.id}`" :disabled="!canAct" @click="emit('choose', { kind: 'cell', position: target.position })"><img :src="portraitUrl(target.characterId)" alt="" @error="reportImageError"><span>{{ target.name }}<small>{{ target.position.column }},{{ target.position.row }}</small></span></button></div>
+        <div class="target-actions"><div class="targets"><button v-for="target in targetPlayers" :key="target.id" :data-testid="`target-player-${target.id}`" :style="{ cursor: canAct ? TARGET_CURSOR : undefined }" :disabled="!canAct" @click="emit('choose', { kind: 'cell', position: target.position })"><img :src="portraitUrl(target.characterId)" alt="" @error="reportImageError"><span>{{ target.name }}<small>{{ target.position.column }},{{ target.position.row }}</small></span></button></div>
         <button data-testid="interaction-cancel" :disabled="!canAct" @click="emit('cancel')">取消</button></div>
       </div>
     </template>
