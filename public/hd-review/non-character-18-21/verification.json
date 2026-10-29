@@ -1,0 +1,92 @@
+{
+  "status": "technical-and-production-browser-checks-passed; pending-user-art-acceptance",
+  "scope": [
+    18,
+    19,
+    21
+  ],
+  "deferred": [
+    20
+  ],
+  "clips": [
+    {
+      "id": "show2",
+      "frames": 45,
+      "uniqueVisibleFrames": 1,
+      "uniqueTextures": 1,
+      "sourceDurationMs": 1500.0,
+      "density": 4
+    },
+    {
+      "id": "show-npc4",
+      "frames": 50,
+      "uniqueVisibleFrames": 1,
+      "uniqueTextures": 1,
+      "sourceDurationMs": 1666.6666666666667,
+      "density": 4
+    },
+    {
+      "id": "car1",
+      "frames": 226,
+      "uniqueVisibleFrames": 226,
+      "uniqueTextures": 226,
+      "sourceDurationMs": 3766.6666666666665,
+      "density": 2
+    },
+    {
+      "id": "car2",
+      "frames": 222,
+      "uniqueVisibleFrames": 222,
+      "uniqueTextures": 222,
+      "sourceDurationMs": 3700.0,
+      "density": 2
+    }
+  ],
+  "runtimeBytes": 41989278,
+  "decodedRgbaBytes": 203028352,
+  "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
+  "reconstruction": [
+    {
+      "id": "show2",
+      "reconstructedFrames": 45,
+      "alphaAndVisibleRgbExact": true,
+      "maxMeanPixelStep": 0
+    },
+    {
+      "id": "show-npc4",
+      "reconstructedFrames": 50,
+      "alphaAndVisibleRgbExact": true,
+      "maxMeanPixelStep": 0
+    },
+    {
+      "id": "car1",
+      "reconstructedFrames": 226,
+      "alphaAndVisibleRgbExact": true,
+      "maxMeanPixelStep": 9.88988013830566
+    },
+    {
+      "id": "car2",
+      "reconstructedFrames": 222,
+      "alphaAndVisibleRgbExact": true,
+      "maxMeanPixelStep": 11.24812807548652
+    },
+    {
+      "id": "ludo-dice",
+      "sourceSamplesExact": 40,
+      "displaySamples": 80,
+      "newTextures": 0
+    }
+  ],
+  "validation": {
+    "unitTests": 776,
+    "unitFiles": 108,
+    "productionBrowserCases": 6,
+    "compatibilityBrowserCases": 2,
+    "typecheck": true,
+    "modernBuild": true,
+    "saveSchemaUnchanged": true,
+    "approved01to12PixelGuard": true,
+    "approved13to17PixelGuard": true,
+    "static211PathsProtected": true
+  }
+}

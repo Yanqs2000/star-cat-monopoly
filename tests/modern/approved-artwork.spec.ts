@@ -32,7 +32,7 @@ describe('已验收01—12游戏接入',()=>{
   const original=parseActivityAssets(activities),hd=approvedActivityAssets(original,'hd')
   expect(approvedActivityAssets(original,'original')).toBe(original)
   for(let i=1;i<=4;i++){const c=hd.clips.find(c=>c.id===`carnival-ball-${i}`)!;expect(c.frames).toHaveLength(60);expect(c.fps).toBe(60);expect(c.frames.length/c.fps).toBe(1);expect(new Set(c.frames.map(f=>f.url)).size).toBeGreaterThanOrEqual(59);for(let j=1;j<c.frames.length;j++)expect(c.frames[j]!.url).not.toBe(c.frames[j-1]!.url)}
-  expect(hd.clips.filter(c=>!c.id.startsWith('carnival-ball-')&&c.id!=='fog')).toEqual(original.clips.filter(c=>!c.id.startsWith('carnival-ball-')&&c.id!=='fog'))
+  expect(hd.clips.filter(c=>!c.id.startsWith('carnival-ball-')&&!['fog','show2','show-npc4','ludo-dice','car1','car2'].includes(c.id))).toEqual(original.clips.filter(c=>!c.id.startsWith('carnival-ball-')&&!['fog','show2','show-npc4','ludo-dice','car1','car2'].includes(c.id)))
  })
  it('30fps游戏逻辑之间显示中间帧，暂停、倍速和末帧衔接不越界',()=>{
   expect(carnivalPresentationFrame(1,0,60,1)).toBe(1)
