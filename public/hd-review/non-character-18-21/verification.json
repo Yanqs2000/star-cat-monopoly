@@ -42,7 +42,7 @@
       "density": 2
     }
   ],
-  "runtimeBytes": 41989278,
+  "runtimeBytes": 41554848,
   "decodedRgbaBytes": 203028352,
   "sourceSha256": "790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba",
   "reconstruction": [
@@ -82,11 +82,16 @@
     "unitFiles": 108,
     "productionBrowserCases": 6,
     "compatibilityBrowserCases": 2,
+    "noticeFixBrowserReplays": 2,
+    "noticeTitleAlpha": [
+      255,
+      255
+    ],
     "typecheck": true,
     "modernBuild": true,
     "saveSchemaUnchanged": true,
-    "approved01to12PixelGuard": true,
-    "approved13to17PixelGuard": true,
-    "static211PathsProtected": true
+    "priorAssetGuardsPassed": true,
+    "production450TextureHashesMatch": true,
+    "reviewStartupClockRegressionPassed": true
   }
 }

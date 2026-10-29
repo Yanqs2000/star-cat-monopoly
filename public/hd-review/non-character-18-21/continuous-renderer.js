@@ -40,7 +40,8 @@ window.ContinuousRenderer=(()=>{
   g.addColorStop(0,id==='car1'?'rgba(255,50,20,'+pulse+')':'rgba(255,225,40,'+pulse+')');g.addColorStop(1,'rgba(255,240,80,0)');ctx.fillStyle=g;ctx.fillRect(bx-q.w*.14,by-q.w*.14,q.w*.28,q.w*.28);ctx.restore();
  }
  function panel(ctx,id,c){
-  ctx.drawImage(textures.get('panel'),-198,-123,396,243);
+  // Native opaque master; only clip the registered outer rounded silhouette.
+  ctx.save();ctx.beginPath();ctx.roundRect(-198,-123,396,243,12);ctx.clip();ctx.drawImage(textures.get('panel'),-198,-123,396,243);ctx.restore();
   const y=id==='show2'?-40:-45,h=id==='show2'?100:140;
   ctx.fillStyle='#d4ebff';ctx.strokeStyle='#a5c9ee';ctx.lineWidth=.65;ctx.beginPath();ctx.roundRect(-170,y,340,h,7);ctx.fill();ctx.stroke();
  }

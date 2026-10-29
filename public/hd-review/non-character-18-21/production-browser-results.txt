@@ -24,3 +24,15 @@ Running 2 tests using 1 worker
 [1/2] tests/e2e/modern-approved-effects.spec.ts:34:1 › fog自然帐篷过程保留源15帧开窗和18/19帧业务时钟
 [2/2] tests/e2e/modern-approved-effects.spec.ts:37:1 › 火箭真实发射：原点到目标，80帧后爆炸，暂停和倍速不重复扣卡送医
   2 passed (32.9s)
+
+After native-opaque-master fix:
+
+Running 2 tests using 1 worker
+
+(node:82393) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] tests/e2e/modern-continuous-artwork.spec.ts:65:79 › 19 show2真实提示文字保持登记、可暂停并继续
+[2/2] tests/e2e/modern-continuous-artwork.spec.ts:65:79 › 19 show-npc4真实提示文字保持登记、可暂停并继续
+  2 passed (28.2s)
