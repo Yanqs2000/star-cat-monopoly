@@ -19,7 +19,14 @@ async function pause(page:Page){await page.getByRole('button',{name:'暂停对�
 async function resume(page:Page){await page.getByRole('button',{name:'继续对局',exact:true}).click()}
 async function watch(page:Page){
  await page.evaluate(()=>{
-  const w=window as any;w.continuousSamples=[]
+  const w=window as any;w.continuousSamples=[];w.diceBounds=[]
+  function checkDice(){
+   const ludo=document.querySelector('[data-testid="ludo-original"]'),svg=ludo?.querySelector('svg');
+   if(svg&&ludo!.getAttribute('data-stage')!=='betting'){
+    const viewport=svg.getBoundingClientRect(),dice=[...svg.querySelectorAll('[data-placement]')].map(e=>e.getBoundingClientRect());
+    if(dice.length)w.diceBounds.push({source:ludo!.getAttribute('data-stage')==='rolling'?Number(ludo!.getAttribute('data-frame')):40,clipped:dice.some(r=>r.left<viewport.left-1||r.top<viewport.top-1||r.right>viewport.right+1||r.bottom>viewport.bottom+1)});
+   }requestAnimationFrame(checkDice);
+  }requestAnimationFrame(checkDice)
   new MutationObserver(()=>{
    const canvas=document.querySelector('canvas')!,ludo=document.querySelector('[data-testid="ludo-original"]'),dice=ludo?.querySelector('[data-overlay-clip="ludo-dice"]')
    if(dice)w.continuousSamples.push({id:'ludo-dice',source:Number(ludo!.getAttribute('data-frame')),display:Number(dice.getAttribute('data-display-frame')),pose:ludo!.querySelector('[data-placement="tz1"]')?.getAttribute('transform')})
@@ -44,6 +51,7 @@ for(const profile of ['hd','original'])test(profile+'真实三骰下注开奖：
   expect(samples.some((s:any)=>s.display%2===0&&s.source<17)).toBe(true)
   expect(samples.some((s:any,i:number)=>i>0&&s.source===samples[i-1].source&&s.pose!==samples[i-1].pose)).toBe(true)
  }
+ const bounds=await page.evaluate(()=>(window as any).diceBounds);expect(bounds.length).toBeGreaterThan(10);expect(bounds.some((b:any)=>b.source===40)).toBe(true);expect(bounds.filter((b:any)=>b.clipped)).toEqual([]);console.log(profile+' dice bounds: '+bounds.length+' samples,0 clipped')
  await page.screenshot({path:evidence+'/'+profile+'-dice-result.png'});expect(errors).toEqual([])
 })
 for(const [scenario,id]of [['dog','car2'],['court','car1']] as const)test('21 '+id+'真实进场转运：60Hz子帧、暂停冻结和原业务时点',async({page})=>{
