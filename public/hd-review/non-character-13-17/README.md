@@ -7,7 +7,7 @@
 在仓库根目录运行 `python3 -m http.server 64866 --bind 127.0.0.1 --directory public`，打开 <http://127.0.0.1:64866/hd-review/non-character-13-17/>。页面提供五项原版／高清同速对照、1／0.5／0.25倍、逐帧、背景和缩放；末帧留白一秒后由审阅页重播，游戏中的特效均单次播放。
 
 - `comparison.mp4`：1440×1000、60fps、8秒同速对照。该视频由确定性渲染器采样编码，不用它证明整局设备性能。
-- `gameplay/missile-flow.mp4`：实际生产游戏操作录屏，25fps、11.4秒，包含用卡、起飞、暂停、2倍速与命中；同目录保存各项游戏截图及烟雾18／19帧采样。
+- `gameplay/missile-flow.mp4`：实际生产游戏操作录屏，25fps、13.9秒，包含用卡、起飞、暂停、2倍速与命中；同目录保存各项游戏截图及烟雾18／19帧采样。
 - `production-browser-results.txt`：最终13个生产浏览器场景全部通过（10个本批、3个兼容场景）。
 - `animations/*.webp`：透明、单次动画，每帧16或17毫秒。
 - `source-timeline.json`、`source-bitmaps/`：JPEXS提取的原始摆放、矩阵、透明度与嵌套位图。
@@ -33,10 +33,10 @@
 |ticket-gain|60|59|1,073,632|3,672,832|
 |fog|38|37|7,108,880|65,508,352|
 |explosion|120|116|27,705,114|221,565,440|
-|rocket|160|99|5,402,020|59,328,256|
-|总计|478|410|43,285,076|360,793,280|
+|rocket|160|99|5,405,358|60,434,240|
+|总计|478|410|43,288,414|361,899,264|
 
-理论RGBA约344.1 MiB，不包含Pixi纹理副本、其他素材或GPU开销，不能当作整局实测内存。为避免Chrome同时请求数千张图片导致`ERR_INSUFFICIENT_RESOURCES`，地图纹理预载限制为6个并行的获取／解码任务，所有帧仍在进入对局前加载。
+理论RGBA约345.1 MiB，不包含Pixi纹理副本、其他素材或GPU开销，不能当作整局实测内存。为避免Chrome同时请求数千张图片导致`ERR_INSUFFICIENT_RESOURCES`，地图纹理预载限制为6个并行的获取／解码任务，所有帧仍在进入对局前加载。
 
 每帧大画布额外渲染检查可见裁切，阈值alpha>8／255；实测最大越界尾光7／255，只涉及极淡羽化。所有帧alpha和可见RGB的无损压缩重建误差为0。源SWF SHA-256为 `790ac003dfe627d8d9cc0a929740d2240e18f23a98d6606ecd614804063d71ba`。
 
@@ -58,3 +58,5 @@ node scripts/verify-effects-review.mjs
 重新制作使用 `python3 scripts/build-non-character-effects.py`（会重新运行连续渲染和打包），然后 `python3 scripts/verify-non-character-effects.py --capture-baseline`。重新编码对照视频使用 `node scripts/render-effects-comparison.mjs`，需要审阅服务器已启动。再运行默认验证器可独立核对已保存的每帧可见像素摘要，不依赖忽略目录中的PNG缓存。
 
 验证结果和最终用户审批记录见 `docs/modernization/non-character-13-17-delivery.md`。生产构建仅复制 `public/modern/hd-static/effects-13-17`，母版、源图、审阅页和视频不进入生产包。
+
+2026-10-29用户修正：火箭下降阶段（显示帧139—154）弹头向下、尾焰向上；其余462帧可见像素均与312f3c6一致，上升阶段未改。`node scripts/verify-rocket-heading.mjs`分别从连续渲染器和实际游戏WebP帧检查橙色弹头与尾焰位置，结果见 `rocket-heading-verification.json`。
