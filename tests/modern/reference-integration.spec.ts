@@ -25,13 +25,14 @@ const captured = vi.hoisted(() => ({ options: undefined as MapSceneOptions | und
 vi.mock('../../src/modern/features/map/MapScene', () => ({ createMapScene: vi.fn(async (_host, _map, _manifest, options) => { captured.options = options; return scene }) }))
 let wrapper: VueWrapper
 beforeEach(() => {
+  localStorage.setItem('star-cat-monopoly:asset-profile', 'original')
   vi.stubGlobal('fetch', vi.fn(async (url: string) => new Response(readFileSync(`public/modern/${url.replace(/^\//, '')}`), { status: 200 })))
   vi.stubGlobal('Image', class { src = ''; async decode() {} })
   const NativeURL = URL
   vi.stubGlobal('URL', class extends NativeURL { static override createObjectURL() { return 'blob:query-test' } static override revokeObjectURL() {} })
   vi.stubGlobal('ResizeObserver', class { observe() {} disconnect() {} })
 })
-afterEach(() => { wrapper?.unmount(); vi.unstubAllGlobals(); vi.clearAllMocks() })
+afterEach(() => { wrapper?.unmount(); localStorage.removeItem('star-cat-monopoly:asset-profile'); vi.unstubAllGlobals(); vi.clearAllMocks() })
 
 async function loaded(paused = false) {
   wrapper = shallowMount(ModernApp, { global: { renderStubDefaultSlot: true } })

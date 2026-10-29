@@ -1,5 +1,8 @@
 import { pickCardCell } from '../game/direct-cards'
 import type { GridPoint, ScenePoint } from './types'
+import targetCursorUrl from './target-cursor.svg?url'
+
+export const TARGET_CURSOR = `url("${targetCursorUrl}") 16 16, crosshair`
 
 const CLICK_THRESHOLD_PX = 6
 

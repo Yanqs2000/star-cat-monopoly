@@ -16,7 +16,7 @@ import { propertyMarkerOffset } from './property-marker-placement'
 import mapCollectibles from '../../data/map-collectibles.json'
 import { parsePropertyAssets } from './property-assets'
 import { companyPlacement, parseCompanyAssets, type CompanyAssetsManifest } from './company-assets'
-import { pickMapPointerAction } from './target-selection'
+import { pickMapPointerAction, TARGET_CURSOR } from './target-selection'
 import type { GridPoint, MapData } from './types'
 import { parseWorldAssets, type WorldAssetsManifest, type WorldClip } from './world-assets'
 import { decodeBitmap } from './bitmap-loader'
@@ -286,7 +286,6 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     }) : []
     const actors = (options.playerManifests ?? []).map(({ playerId, manifest: playerManifest, reactions }) => {
       const view = new Container()
-      const active = new Graphics().circle(28, 20, 18).fill({ color: '#ffe18a', alpha: 0.28 }).stroke({ color: '#ffe18a', width: 2 })
       const walker = new WalkPreview(playerManifest.clips, textures)
       const initialReaction = reactions.clips.find(clip => clip.facing === 'down-right' && clip.name === 'neutral')!
       const reaction = new ReactionPlayer(initialReaction)
@@ -294,9 +293,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       const godSprite = new Sprite()
       reactionSprite.visible = false
       godSprite.visible = false
-      view.addChild(active, walker.view, reactionSprite, godSprite)
+      view.addChild(walker.view, reactionSprite, godSprite)
       entities.addChild(view)
-      return { playerId, view, active, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
+      return { playerId, view, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
     })
     const worldAnimations = new Map<number, WorldAnimation>()
     const effects = new Set<EffectAnimation>()
@@ -419,7 +418,6 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const target = gridToScene(pose.position)
         actor.view.position.set(target.x, target.y)
         actor.view.zIndex = pose.position.row * 100 + pose.position.column
-        actor.active.visible = pose.active
         const wasDesired = actor.visibility.desiredVisible
         actor.visibility.setDesired(pose.visible)
         if (pose.visible && !wasDesired && actor.visibility.reaction === 'hurt') {
@@ -747,7 +745,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
 
     return {
       focus, follow, resize, getCameraState, restoreCameraState, setPlayers, setCompanies, setProperties, setRentHighlight, setWorld, playReaction, playEffect, getEffectState, restoreEffectState, setActivity, getPortalDecorations,
-      setTargeting: value => { targeting = value; canvas.style.cursor = value ? 'crosshair' : 'grab' },
+      setTargeting: value => { targeting = value; canvas.style.cursor = value ? TARGET_CURSOR : 'grab' },
       transitionPlayer: next => { movement = next ? { ...next, elapsedMs: 0 } : undefined },
       setPaused: value => { paused = value },
       setSpeed: value => { speed = value },

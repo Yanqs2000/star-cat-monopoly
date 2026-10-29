@@ -26,6 +26,7 @@ async function replayProfile(page: Page, profile: 'original' | 'hd'): Promise<Re
     if (response.status() >= 400) failures.push(`${response.status()} ${new URL(response.url()).pathname}`)
   })
   page.on('pageerror', error => pageErrors.push(error.message))
+  await page.addInitScript(profile => localStorage.setItem('star-cat-monopoly:asset-profile', profile), profile)
   await page.addInitScript(seed => {
     const original = crypto.getRandomValues.bind(crypto)
     crypto.getRandomValues = array => {
@@ -45,7 +46,7 @@ async function replayProfile(page: Page, profile: 'original' | 'hd'): Promise<Re
   await page.getByLabel('素材画质').selectOption(profile)
   await expect(page.getByLabel('素材画质')).toHaveValue(profile)
   await expect(page.getByTestId('asset-profile-busy')).toHaveCount(0)
-  expect(await page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBe(profile==='hd'?'hd':null)
+  expect(await page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBe(profile)
   await page.reload()
   await expect(page.getByRole('heading', { name: '选择参赛角色' })).toBeVisible()
   await expect(page.getByLabel('素材画质')).toHaveValue(profile)
@@ -157,6 +158,7 @@ test('高清角色帧加载失败后重试恢复同一阵容，并可正常暂�
 
 test('暂停安全点切换画质；预载失败保留当前场景，成功后状态与相机保持稳定', async ({ page }) => {
   test.setTimeout(240_000)
+  await page.addInitScript(() => localStorage.setItem('star-cat-monopoly:asset-profile', 'original'))
   await page.addInitScript(seed => {
     const original = crypto.getRandomValues.bind(crypto)
     crypto.getRandomValues = array => {
@@ -204,7 +206,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
   expect(await page.getByTestId('player-list').innerText()).toBe(before.players)
   expect(await page.getByTestId('round').innerText()).toBe(before.round)
   expect(await page.getByTestId('game-state-fingerprint').getAttribute('data-fingerprint')).toBe(before.stateFingerprint)
-  expect(await page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBeNull()
+  expect(await page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBe('original')
 
   failCandidate = false
   holdCandidate=true
@@ -246,6 +248,7 @@ test('暂停安全点切换画质；预载失败保留当前场景，成功后�
 })
 
 test('选人页高清清单验证期间改回原版会取消旧请求，不被迟到结果覆盖', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('star-cat-monopoly:asset-profile', 'original'))
   await page.goto('/modern.html')
   let release!: () => void
   const delayed = new Promise<void>(resolve => { release = resolve })
@@ -259,7 +262,7 @@ test('选人页高清清单验证期间改回原版会取消旧请求，不被�
   await selector.selectOption('original')
   release()
   await expect(selector).toHaveValue('original')
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBeNull()
+  await expect.poll(() => page.evaluate(() => localStorage.getItem('star-cat-monopoly:asset-profile'))).toBe('original')
   await expect(page.getByRole('button', { name: '开始对局' })).toBeEnabled()
 })
 
@@ -271,6 +274,7 @@ test('游乐场Pixi图集在原版/高清模式下保持同一逻辑画布与玩
     page.on('request', request => requests.push(new URL(request.url()).pathname))
     page.on('pageerror', error => pageErrors.push(error.message))
     await page.setViewportSize({ width: 1440, height: 1000 })
+    await page.addInitScript(profile => localStorage.setItem('star-cat-monopoly:asset-profile', profile), profile)
     await page.addInitScript(seed => {
       const original = crypto.getRandomValues.bind(crypto)
       crypto.getRandomValues = array => {
