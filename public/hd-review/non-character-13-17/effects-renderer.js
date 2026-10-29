@@ -12,7 +12,25 @@ window.EffectsRenderer=(()=>{
  function plume(ctx,x,bottom,w,h,t,opacity=1){if(opacity<=0||h<=0)return;ctx.save();ctx.translate(x,bottom);ctx.globalAlpha*=opacity;const g=ctx.createLinearGradient(0,-h,0,0);g.addColorStop(0,'rgba(255,154,7,.15)');g.addColorStop(.25,'#ffae0a');g.addColorStop(.58,'#ffe33b');g.addColorStop(1,'#fffbd5');ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(-w*.48,-h*.05);ctx.bezierCurveTo(-w*.62,-h*.45,-w*.23+Math.sin(t*12)*w*.05,-h*1.02,0,-h);ctx.bezierCurveTo(w*.32+Math.sin(t*9)*w*.04,-h*.96,w*.6,-h*.4,w*.48,-h*.05);ctx.quadraticCurveTo(0,h*.02,-w*.48,-h*.05);ctx.fill();const core=ctx.createRadialGradient(0,-h*.22,0,0,-h*.22,Math.max(w*.4,h*.42));core.addColorStop(0,'rgba(255,255,240,.98)');core.addColorStop(.45,'rgba(255,244,94,.72)');core.addColorStop(1,'rgba(255,200,20,0)');ctx.fillStyle=core;ctx.fillRect(-w*.5,-h,w,h);ctx.restore();}
  function explosion(ctx,t,q){if(t>=58/30)return;const fade=1-smooth(1.25,58/30,t),fire=1-smooth(.38,.92,t),bottom=q.y+q.h/2;const ring=smooth(0,.35,t),ringFade=1-smooth(.15,.6,t);if(ringFade>0){ctx.save();ctx.strokeStyle=`rgba(255,232,119,${ringFade*.75})`;ctx.lineWidth=1.5*(1-ring)+.5;ctx.beginPath();ctx.ellipse(q.x,bottom-8,10+ring*91,4+ring*25,0,0,Math.PI*2);ctx.stroke();ctx.restore();}image(ctx,'smoke',q.x,q.y,q.w*.96,q.h*.96,fade*(1-fire*.7));plume(ctx,q.x,bottom-2,q.w*.82,q.h*.96,t,fire);for(let i=0;i<4;i++){const a=i*Math.PI*.5+t*.18;image(ctx,'smoke',q.x+Math.cos(a)*q.w*.16,q.y+Math.sin(a)*q.h*.12,q.w*.56,q.h*.6,fade*(1-fire)*.35,a*.1);}}
  function smokeRing(ctx,frame){const local=frame<39?frame:frame>=69?frame-69:-1;if(local<0||local>=10)return;const p=local/10,rx=10+p*80,ry=7+p*55,cx=29,cy=20,opacity=(1-smooth(.62,1,p))*.68;for(let i=0;i<12;i++){const a=i*Math.PI*2/12;image(ctx,'smoke',cx+Math.cos(a)*rx,cy+Math.sin(a)*ry,8+p*24,7+p*21,opacity,.2*Math.sin(a));}}
- function rocket(ctx,t,c){const f=t*30;smokeRing(ctx,f);if(f>=39&&f<69||f>=77)return;let top,h,cx=30;const mix=(a,b,v)=>a+(b-a)*clamp(v);if(f<3){top=mix(-76,-52,f/3);h=mix(90,70,f/3)}else if(f<30){top=-52+Math.sin(t*4)*.7;h=70}else if(f<36){top=mix(-52,-193,(f-30)/6);h=70}else if(f<39){top=-193;h=70}else{top=mix(-193,-52,(f-69)/5);h=70;cx=mix(38,31,(f-69)/5)}const opacity=f<39?1-smooth(38,39,f):1-smooth(76,77,f);ctx.save();ctx.globalAlpha=opacity;const nozzle=top+h*.86,flameLength=f>=30&&f<39?25+(f-30)*8:20+3*Math.sin(t*13);ctx.save();ctx.translate(cx,nozzle);ctx.rotate(Math.PI);plume(ctx,0,0,13+1.5*Math.sin(t*11),flameLength,t,.95);ctx.restore();image(ctx,'rocket',cx,top+h/2,43*(1+.025*Math.sin(t*4)),h,1,Math.sin(t*5)*.015);ctx.restore();}
+ function rocket(ctx,t,c){
+  const f=t*30;smokeRing(ctx,f);if(f>=39&&f<69||f>=77)return;
+  let top,h,cx=30;const mix=(a,b,v)=>a+(b-a)*clamp(v);
+  if(f<3){top=mix(-76,-52,f/3);h=mix(90,70,f/3)}
+  else if(f<30){top=-52+Math.sin(t*4)*.7;h=70}
+  else if(f<36){top=mix(-52,-193,(f-30)/6);h=70}
+  else if(f<39){top=-193;h=70}
+  else{top=mix(-193,-52,(f-69)/5);h=70;cx=mix(38,31,(f-69)/5)}
+  const descending=f>=69,opacity=f<39?1-smooth(38,39,f):1-smooth(76,77,f);
+  const nozzle=top+h*(descending?.14:.86);
+  const baseFlameLength=f>=30&&f<39?25+(f-30)*8:20+3*Math.sin(t*13);
+  // The re-entering tail grows into view without crossing the source canvas edge.
+  const flameLength=descending?Math.min(baseFlameLength,Math.max(0,nozzle-c.offsetY-1)):baseFlameLength;
+  ctx.save();ctx.globalAlpha=opacity;
+  ctx.save();ctx.translate(cx,nozzle);ctx.rotate(descending?0:Math.PI);
+  plume(ctx,0,0,13+1.5*Math.sin(t*11),flameLength,t,.95);ctx.restore();
+  image(ctx,'rocket',cx,top+h/2,43*(1+.025*Math.sin(t*4)),h,1,(descending?Math.PI:0)+Math.sin(t*5)*.015);
+  ctx.restore();
+ }
  function draw(id,timeMs,canvas,density=4){const c=config.clips[id],ctx=canvas.getContext('2d');if(canvas.width!==c.width*density||canvas.height!==c.height*density){canvas.width=c.width*density;canvas.height=c.height*density}ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,canvas.width,canvas.height);if(timeMs<0||timeMs>=c.sourceFrames/30*1000)return;ctx.setTransform(density,0,0,density,-c.offsetX*density,-c.offsetY*density);ctx.imageSmoothingQuality='high';const t=timeMs/1000,q=track(id,t*30);if(id==='card-gain')card(ctx,t,q);else if(id==='ticket-gain')coin(ctx,t,q);else if(id==='fog')fog(ctx,t,q,c);else if(id==='explosion')explosion(ctx,t,q);else rocket(ctx,t,c);}
  async function init(){config=await fetch('motion-config.json').then(r=>r.json());const urls=new Map();await Promise.all(Object.entries(config.masters).map(async([key,item])=>{let promise=urls.get(item.url);if(!promise){promise=(async()=>{const image=new Image();image.src=item.url;try{await image.decode()}catch(e){throw new Error('Master image decode failed: '+new URL(item.url,location.href).href+'; '+e.message)}return image})();urls.set(item.url,promise)}const image=await promise,[x,y,w,h]=item.rect,canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;canvas.getContext('2d').drawImage(image,x,y,w,h,0,0,w,h);textures.set(key,canvas)}));return config;}
  return{init,draw,get config(){return config}};
