@@ -1,0 +1,117 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "effectiveCalls": 1,
+  "transparentBackground": true,
+  "generatedOriginal": "/Users/yanqs/.codex/generated_images/01a18b18-16c6-7f91-8dd3-47e32ca89be2/exec-fe1173ca-c469-4d31-95e5-876ecbc07f36.png",
+  "prompt": "Use case: identity-preserve. Asset type: animation turn inbetweens for an existing chibi fox traffic policeman game sprite. Input image 1 is the canonical exact front identity. Input image 2 is the same exact character turned to the viewer's left (roughly 60 degrees). Produce ONE clean transparent sprite sheet containing exactly THREE characters in one horizontal row, equally spaced, with generous transparent margins and absolutely no labels/grid/background/shadow. These are actual intermediate angles between the supplied endpoints: cell1 15 degrees toward viewer-left, cell2 30 degrees toward viewer-left, cell3 45 degrees toward viewer-left. Each must be the exact same fox: identical orange fur, amber-brown eyes and eyelids, white muzzle, navy traffic-police cap with silver badge and white band, pale blue short-sleeved shirt, navy shorts and black belt, orange bare paws. Keep the face shape/expression, huge chibi head-to-body proportion, hat shape, clean soft 3D toy rendering, directional highlights and edge treatment of the references. Both arms remain low horizontally outward as in the references, hands naturally rounded. Feet planted on exactly the same baseline, identical overall scale and stature in all three cells; vertical neck/root and midpoint between feet stay fixed while rotating in place. This is a smooth in-place yaw turn, no leaning, no swaying, no walking, no head tilt, no gesture, no recoloring or accessory additions. The ears and cap must naturally occlude as angle progresses, and eye/muzzle perspective must naturally agree with each yaw angle. Do not reproduce either endpoint angle; provide only the three requested intermediate yaw angles. All three figures must be fully visible including ear tips and feet with no clipping. Match the existing originals closely, rather than redesigning the character.",
+  "references": "reference-0.png and reference-3.png are split_atlas-selected original front and left-facing cells from unchanged npc-12-master.png. Original native source PNGs are world-registered 58x105, not centred by each silhouette.",
+  "files": [
+    {
+      "path": "public/hd-review/characters-22-23/npc-12-master.png",
+      "sha256": "8a8a98d82f7c67edda5507bdebd6d05b8fc11e358c5c001fb226c95052be3538"
+    },
+    {
+      "path": "public/hd-review/characters-22-23/npc-12-turn-reference-front.png",
+      "sha256": "0e8dc624f3162927646058902f0bd8d0d8d19a768ce5f73cbb55395a6be240cb"
+    },
+    {
+      "path": "public/hd-review/characters-22-23/npc-12-turn-reference-side.png",
+      "sha256": "17fab0f8df3de17d10711bbc00c91f2c8fb93407197e54f119a4fd2d47ddd3e1"
+    },
+    {
+      "path": "public/hd-review/characters-22-23/npc-12-turn-master.png",
+      "sha256": "a589560fe4a15acbc8d04d1a2412a79acd8cafbd526ca355bfd02573d0814e86"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/1.png",
+      "sha256": "40fb465e4aeff56c5ab237783d9489fabddffd78fa356c6ef64307635aa29673"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/12.png",
+      "sha256": "fd8a07519458bf487edc0e1679755bb18686c52f2d62a564df3846e45686a085"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/14.png",
+      "sha256": "d8753e900ff50c0a64b257b8c602df1ad3e41435f52db028b56613ed8dbc720e"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/40.png",
+      "sha256": "40fb465e4aeff56c5ab237783d9489fabddffd78fa356c6ef64307635aa29673"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/41.png",
+      "sha256": "9675b011303c722c2619d0bc4d0bc2b6c23e947b3ed5fe72a5c48039ab17a05f"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/52.png",
+      "sha256": "638d262697df6bb676b044a59bee8a8130018524ae288ec205f8114336ff3ba7"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/54.png",
+      "sha256": "fb893371a45476df166e8754f965bd762f587f824899d7bb5733b783e4c8cd6a"
+    },
+    {
+      "path": "public/modern/assets/world/npc-12/81.png",
+      "sha256": "9675b011303c722c2619d0bc4d0bc2b6c23e947b3ed5fe72a5c48039ab17a05f"
+    }
+  ],
+  "usage": "Generated sheet contributes head surfaces only. Body, trousers, boots and both articulated arm textures are the single original front mother. No optical flow. Three actual generated heads plus the original front/side heads have sparse anatomical triangle correspondences and continuous premultiplied surface blending. Head layers are registered to a fixed neck; side head is translated +9,+4 pixels at density 2, preserving its pixels and avoiding whole-body displacement. Small neutral neck underside reuses the original front chin shadow.",
+  "sourceFootEvidence": {
+    "canvas": [
+      58,
+      105
+    ],
+    "orangeFootBoundsXYXY": {
+      "1": [
+        18,
+        76,
+        40,
+        85
+      ],
+      "12": [
+        18,
+        76,
+        40,
+        85
+      ],
+      "14": [
+        18,
+        77,
+        40,
+        85
+      ],
+      "41": [
+        18,
+        76,
+        40,
+        85
+      ],
+      "52": [
+        18,
+        76,
+        40,
+        85
+      ],
+      "54": [
+        18,
+        76,
+        40,
+        85
+      ]
+    },
+    "method": "Orange threshold R>1.5G and G>1.5B with alpha>128 in rows70..86. Source feet share bounds; minor RGB/one-row threshold differences are not a walking trajectory."
+  },
+  "verification": {
+    "script": "scripts/test_npc22_fox_rig.py",
+    "tests": 7,
+    "passed": true,
+    "all162FrameBootPixelsFixed": true,
+    "continuity": "continuity-final.json",
+    "visualReview": "contact-final.png and slow-final.gif are review evidence; final natural-motion/user acceptance remains required."
+  },
+  "limitations": "Generated angle labels are requested approximate yaw angles, not measured calibrated views. This is a 2D head-turn rig with actual intermediate surfaces, not a 3D model. Residual cap/ear detail softness during the short turn must be assessed at game scale; tests alone do not prove natural animation.",
+  "archivedReferences": [
+    "public/hd-review/characters-22-23/npc-12-turn-reference-front.png",
+    "public/hd-review/characters-22-23/npc-12-turn-reference-side.png"
+  ]
+}

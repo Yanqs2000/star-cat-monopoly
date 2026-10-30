@@ -8,6 +8,17 @@ import numpy as np
 from PIL import Image
 
 
+def gesture_sampler(npc,registered,density,canvas_rect,root,definition):
+ if npc in ('npc-2','npc-5','npc-10','npc-11'):
+  from npc22_gesture_rigs import prepare_rig
+ elif npc=='npc-12':
+  from npc22_fox_rig import prepare_rig
+ elif npc in ('npc-13','npc-14'):
+  from npc22_frog_rabbit_rigs import prepare_rig
+ else:return None
+ return prepare_rig(npc,registered,density,canvas_rect,root,definition)
+
+
 def split_atlas(image,count,layout=None):
  import cv2
  columns=layout['columns']if layout else min(4,count)
@@ -160,12 +171,16 @@ def build(root,partial=False,density=2,only=None):
   atlas=Image.open(master).convert('RGBA');poses=split_atlas(atlas,definition['uniqueCompositePoses'],layouts.get(npc))
   schedule=definition['framePoseIndicesZeroBased'];rects,outer=source_body_rects(source,definition['sourceSymbol'],len(schedule))
   union=union_rect(rects);canvas_rect=tuple([math.floor(v)for v in union[:2]]+[math.ceil(v)for v in union[2:]])
+  local_gesture=npc in ('npc-2','npc-5','npc-10','npc-11','npc-12','npc-13','npc-14')
+  if local_gesture:
+   canvas_rect=tuple([v-16 for v in canvas_rect[:2]]+[v+16 for v in canvas_rect[2:]])
   first=definition['poseFirstFramesOneBased']
   registered=[register_pose(pose,rects[first[index]-1],canvas_rect,density)for index,pose in enumerate(poses)]
+  sampler=gesture_sampler(npc,registered,density,canvas_rect,root,definition)
   frames=[];seen={};pose_samples=[]
   for frame in range(len(schedule)*2):
    a,b,fraction=pose_sample(schedule,frame/2)
-   image=registered[a]if a==b or fraction==0 else morph_pair(registered[a],registered[b],fraction)
+   image=sampler(frame/2)if sampler else registered[a]if a==b or fraction==0 else morph_pair(registered[a],registered[b],fraction)
    bbox=image.getchannel('A').getbbox()
    trim=(math.floor(bbox[0]/density)*density,math.floor(bbox[1]/density)*density,
          min(image.width,math.ceil(bbox[2]/density)*density),min(image.height,math.ceil(bbox[3]/density)*density))
@@ -179,7 +194,8 @@ def build(root,partial=False,density=2,only=None):
      'sha256':hashlib.sha256(target.read_bytes()).hexdigest()})
    frames.append({'url':url,'width':cropped.width/density,'height':cropped.height/density,
     'offsetX':canvas_rect[0]+trim[0]/density,'offsetY':canvas_rect[1]+trim[1]/density})
-   pose_samples.append({'frame':frame,'a':a,'b':b,'fraction':fraction})
+   pose_samples.append({'frame':frame,'sourceTime':frame/2,'sourcePoseA':a,'sourcePoseB':b,'sourceFraction':fraction,
+    'method':'fixed-mother-local-gesture'if sampler else 'whole-pose-morph'})
   result['worldClips'].append({'id':npc,'sourceSymbol':definition['sourceSymbol'],'fps':60,'loop':True,'frames':frames})
   result['motion'].append({'id':npc,'sourceSymbol':definition['sourceSymbol'],'outerFps':30,'outerTrack':outer})
   qa.append({'id':npc,'masterSize':list(atlas.size),'masterSha256':hashlib.sha256(master.read_bytes()).hexdigest(),
