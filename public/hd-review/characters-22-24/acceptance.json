@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "status": "accepted",
+  "acceptedAt": "2026-10-30T14:55:11.847553+00:00",
+  "scope": [
+    22,
+    23,
+    24
+  ],
+  "deferred": [
+    20
+  ],
+  "acceptedCommit": "9a679a5",
+  "acceptedRevision": "npc-motion-r2",
+  "userStatement": "可以，合并到主分支",
+  "integration": "local main",
+  "remotePushRequested": false,
+  "notes": "Acceptance covers current NPC local gestures, item23 icons/narratives, and item24 Juanmao. Other playable characters and deferred item20 remain outside this batch."
+}

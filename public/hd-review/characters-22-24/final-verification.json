@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-10-30T14:27:46.668697+00:00",
-  "status": "candidate-awaiting-user-review",
+  "status": "accepted",
   "baselineMain": "119c810",
   "scope": [
     22,
@@ -79,7 +79,6 @@
     "Newly authored2D motion; original action durations retained, not a per-pose original-frame replica",
     "Original AVM1 outer-loop child-reset behavior not dynamically probed",
     "Short hardware movement capture does not guarantee whole-game60fps on all devices",
-    "User visual acceptance remains required; previous NPC motion revision was rejected",
     "Short fox yaw cap/ear details soften slightly during matched interpolation"
   ],
   "juanmaoFullMotionBounds": {
@@ -475,10 +474,19 @@
     "foxOldHardSwitchMax": 6783,
     "actualBrowserPhaseSamples": 73,
     "slowPlayback": 0.25,
-    "userVisualAcceptance": false,
+    "userVisualAcceptance": true,
     "sourceTiming": "original inner periods; original independent vertical float and shadow preserved",
     "reviewFindings": "Angel rectangular root and detached dot, devil fork edge and isolated old-wing fragments corrected and independently rechecked",
     "limit": "Short fox cap/ear turn surfaces retain some interpolation softening; source part motions are authored reconstruction, not original recovered rigs"
   },
-  "trackedSwfsUnchanged": 16
+  "trackedSwfsUnchanged": 16,
+  "userAcceptance": {
+    "file": "acceptance.json",
+    "commit": "9a679a5",
+    "scope": [
+      22,
+      23,
+      24
+    ]
+  }
 }

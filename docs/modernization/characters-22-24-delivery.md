@@ -1,8 +1,8 @@
-# 22–24 高清动画候选交付
+# 22–24 高清动画交付
 
-日期：2026-10-30。阶段：技术验证完成，等待用户视觉验收。工作分支为feat/character-22-24，复用原隔离工作区；新素材未合并主分支。此前已验收18/19/21及三骰裁切修复，已合并本地主分支119c810，并重建主分支生产包；没有推送远端。
+日期：2026-10-30。阶段：用户已验收，批准合并本地主分支。工作分支为feat/character-22-24，复用原隔离工作区；已验收来源为9a679a5（npc-motion-r2），验收记录见public/hd-review/characters-22-24/acceptance.json。此前已验收18/19/21及三骰裁切修复，已合并本地主分支119c810，并重建主分支生产包；没有推送远端。
 
-统一验收：http://127.0.0.1:64867/hd-review/characters-22-24/index.html?review=npc-motion-r2#npc22 。候选游戏：http://127.0.0.1:4202/modern.html 。NPC 动作 r1 被用户指出整体横向扭动，本次 r2 修正仍等待视觉验收。
+统一验收：http://127.0.0.1:64867/hd-review/characters-22-24/index.html?review=npc-motion-r2#npc22 。主分支游戏：http://127.0.0.1:4201/modern.html 。NPC 动作 r1 被用户指出整体横向扭动，本次 r2 修正已获用户验收。
 
 ## 范围与方法
 
@@ -38,4 +38,4 @@ r2 实际Chrome审阅页另采样七只NPC的56个周期相位、17个交警转�
 
 使用Node24及带Pillow、NumPy、OpenCV-contrib的Python（本机验证OpenCV5.0.0），依次运行scripts/build-npc22.py、build-npc23.py、build-juanmao-24.py、build-juanmao-24-review.mjs、build-characters-review.py；重建不调用生图服务。生产包只包含运行素材，排除母版和审阅工作文件。
 
-最终工程证据见public/hd-review/characters-22-24/final-verification.json。用户视觉验收后再合并本批。
+最终工程证据见public/hd-review/characters-22-24/final-verification.json。用户已确认“可以，合并到主分支”；本轮仅合并本地主分支。
