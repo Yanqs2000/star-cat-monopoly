@@ -15,7 +15,7 @@ function runtimeAssets(mode: string): Plugin {
       if (!config.publicDir) return
       const output = path.resolve(config.root, config.build.outDir)
       const directories = mode === 'modern'
-        ? ['assets', 'assets-hd', 'hd-map', 'hd-static']
+        ? ['assets', 'assets-hd', 'hd-map', 'hd-static', 'hd-characters']
         : ['original', 'hd-assets', 'ruffle']
       for (const directory of directories) {
         const source = path.join(config.publicDir, directory)

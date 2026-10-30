@@ -2,6 +2,9 @@ import staticArtwork from '../../data/static-hd-assets.json'
 import approvedArtwork from '../../data/approved-non-character.json'
 import effects from '../../data/non-character-effects.json'
 import continuous from '../../data/continuous-non-character.json'
+import npc22 from '../../data/npc-22.json'
+import npc23 from '../../data/npc-23.json'
+import juanmao24 from '../../data/juanmao-24.json'
 
 export type AssetProfile = 'original' | 'hd'
 
@@ -9,7 +12,8 @@ type Bounds = readonly number[]
 type StaticArtworkOverride = { source: string; url: string; pixelSize: readonly number[]; pixelDensity: number; registration?: { sourceBounds: Bounds; renderedBounds: Bounds } }
 const staticOverrides = new Map<string, StaticArtworkOverride>([...staticArtwork.assets,...approvedArtwork.assets].filter(asset => asset.enabled)
   .map(asset => [asset.source, asset]))
-const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...[...approvedArtwork.runtimeImages,...effects.runtimeImages,...continuous.runtimeImages].map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
+const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...[...approvedArtwork.runtimeImages,...effects.runtimeImages,...continuous.runtimeImages,...npc22.runtimeImages,...npc23.runtimeImages].map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
+const juanmao24Textures = new Set(Object.values(juanmao24.facings).flatMap(facing=>Object.values(facing.parts).map(part=>part.url)))
 
 export function staticAssetPixels(url: string) {
   return staticResolved.get(url)
@@ -29,6 +33,7 @@ export function profileSpriteTransform(url: string, profile: AssetProfile) {
 
 export function profileTextureResolution(url: string, profile: AssetProfile): number {
   if (profile === 'original') return 1
+  if (juanmao24Textures.has(url.split(/[?#]/, 1)[0]!)) return juanmao24.density
   return staticOverrides.get(url.split(/[?#]/, 1)[0]!)?.pixelDensity ?? staticResolved.get(url.split(/[?#]/, 1)[0]!)?.pixelDensity ?? 2
 }
 

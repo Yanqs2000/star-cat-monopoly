@@ -1,9 +1,11 @@
 import {loadSceneTextures} from './texture-preload'
 import {activityPresentationFrame,effectAnchor} from '../assets/effect-timing'
 import { approvedWorldAssets } from '../assets/approved-artwork'
+import { createNpc22View, npc22MotionFor, type Npc22View } from '../assets/npc-22-artwork'
 import type { PreparedAnimations } from '../game/animation-preload'
 import { Application, Container, Graphics, ImageSource, Point, Sprite, Text, Texture, type Ticker } from 'pixi.js'
 import { WalkPreview } from '../characters/WalkPreview'
+import { Juanmao24Player, JUANMAO_24_TEXTURE_URLS } from '../characters/juanmao-24'
 import type { AssetManifest, Facing } from '../characters/assets'
 import { ReactionPlayer, type GodId, type ReactionManifest, type ReactionName } from '../characters/reactions'
 import type { PlayerTransition } from '../game/controller'
@@ -100,6 +102,7 @@ interface WorldAnimation {
   sprite: Sprite
   clip: WorldClip
   elapsedMs: number
+  npc22?: Npc22View
 }
 
 interface EffectAnimation extends WorldAnimation {
@@ -213,7 +216,8 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if (!response.ok) throw new Error(`素材加载失败：${url}（HTTP ${response.status}）`)
       return parseCompanyAssets(await response.json())
     })() : undefined
-    const urls = [...new Set([mapUrl, ...collectibles.map(item => item.sprite.url), ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+    const useJuanmao24 = assetProfile === 'hd' && options.playerManifests?.some(player=>player.characterId===1)
+    const urls = [...new Set([mapUrl, ...collectibles.map(item => item.sprite.url), ...(useJuanmao24?JUANMAO_24_TEXTURE_URLS:[]), ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
@@ -284,18 +288,20 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       entities.addChild(view)
       return { view, image }
     }) : []
-    const actors = (options.playerManifests ?? []).map(({ playerId, manifest: playerManifest, reactions }) => {
+    const actors = (options.playerManifests ?? []).map(({ playerId, characterId, manifest: playerManifest, reactions }) => {
       const view = new Container()
       const walker = new WalkPreview(playerManifest.clips, textures)
       const initialReaction = reactions.clips.find(clip => clip.facing === 'down-right' && clip.name === 'neutral')!
       const reaction = new ReactionPlayer(initialReaction)
       const reactionSprite = new Sprite()
       const godSprite = new Sprite()
+      const puppet = assetProfile === 'hd' && characterId === 1 ? new Juanmao24Player(textures,true) : null
       reactionSprite.visible = false
       godSprite.visible = false
       view.addChild(walker.view, reactionSprite, godSprite)
+      if(puppet){view.addChild(puppet.view);view.addChild(godSprite);walker.view.visible=false}
       entities.addChild(view)
-      return { playerId, view, walker, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
+      return { playerId, view, walker, puppet, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
     })
     const worldAnimations = new Map<number, WorldAnimation>()
     const effects = new Set<EffectAnimation>()
@@ -424,6 +430,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
           actor.visibility.clear()
           actor.reacting = false
           actor.reactionSprite.visible = false
+          actor.puppet?.setReaction(null)
         }
         actor.facing = FACING_BY_DIRECTION[pose.direction]
         if (pose.eliminated) {
@@ -432,12 +439,14 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
           return
         }
         actor.walker.setPose(actor.facing, pose.moving)
+        actor.puppet?.setPose(actor.facing, pose.moving)
         if (pose.moving) {
+          if(actor.reacting)actor.puppet?.setReaction(null)
           actor.visibility.clear()
           actor.reacting = false
           actor.reactionSprite.visible = false
         }
-        actor.walker.view.visible = !actor.reacting
+        actor.walker.view.visible = !actor.reacting && !actor.puppet
         actor.view.visible = actor.visibility.visible
         const god = actor.reactions.godOverlays.find(item => item.godId === pose.godId as GodId)
         actor.godId = pose.godId
@@ -542,18 +551,22 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
           existing.view.destroy({ children: true })
           worldAnimations.delete(cellId)
         }
-        const view = new Container()
-        const sprite = new Sprite()
+        const npc22Motion = npc22MotionFor(clip)
+        const npc22 = npc22Motion ? createNpc22View(clip,textures,npc22Motion) : undefined
+        const view = npc22?.view ?? new Container()
+        const sprite = npc22?.body ?? new Sprite()
         const position = gridToScene(record.position)
         view.position.set(position.x, position.y)
         view.zIndex = record.position.row * 100 + record.position.column
-        view.addChild(sprite)
+        if (!npc22) view.addChild(sprite)
         entities.addChild(view)
-        const animation = { view, sprite, clip, elapsedMs: 0 }
+        const animation = { view, sprite, clip, elapsedMs: 0, npc22 }
         worldAnimations.set(cellId, animation)
-        const frame = worldFrameAt(clip, 0)
-        sprite.texture = textures.get(frame.url)!
-        sprite.position.set(frame.offsetX, frame.offsetY)
+        if (!npc22) {
+          const frame = worldFrameAt(clip, 0)
+          sprite.texture = textures.get(frame.url)!
+          sprite.position.set(frame.offsetX, frame.offsetY)
+        }
       }
     }
     const playReaction = (playerId: number, name: ReactionName): Promise<void> => {
@@ -568,8 +581,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         actor.reaction.reset(clip)
         actor.visibility.loaded()
         actor.reacting = true
+        actor.puppet?.setReaction(name)
         actor.walker.view.visible = false
-        actor.reactionSprite.visible = true
+        actor.reactionSprite.visible = !actor.puppet
         actor.view.visible = actor.visibility.visible
         const frame = actor.reaction.currentFrame
         actor.reactionSprite.texture = textures.get(frame.url)!
@@ -578,8 +592,9 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         if (destroyed || !actor.visibility.isCurrent(token)) return
         actor.visibility.clear()
         actor.reacting = false
+        actor.puppet?.setReaction(null)
         actor.reactionSprite.visible = false
-        actor.walker.view.visible = true
+        actor.walker.view.visible = !actor.puppet
         actor.view.visible = actor.visibility.visible
         throw error
       })
@@ -642,7 +657,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         const frame = inspectionWalker.update(deltaMs)
         if (frame !== previousFrame) { previousFrame = frame; options.onFrame(frame) }
       }
-      for (const actor of actors) actor.walker.update(deltaMs)
+      for (const actor of actors) { actor.walker.update(deltaMs);actor.puppet?.update(deltaMs) }
       for (const actor of actors) {
         if (!actor.reacting) continue
         const frame = actor.reaction.advance(deltaMs)
@@ -650,13 +665,15 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
         actor.reactionSprite.position.set(frame.offsetX, frame.offsetY)
         if (actor.reaction.finished && actor.visibility.advanceHiddenHurtFinished(deltaMs, 1000 / actor.reaction.clip.fps)) {
           actor.reacting = false
+          actor.puppet?.setReaction(null)
           actor.reactionSprite.visible = false
-          actor.walker.view.visible = true
+          actor.walker.view.visible = !actor.puppet
           actor.view.visible = actor.visibility.visible
         }
       }
       for (const animation of worldAnimations.values()) {
         animation.elapsedMs += deltaMs
+        if (animation.npc22) { animation.npc22.update(animation.elapsedMs); continue }
         const frame = worldFrameAt(animation.clip, animation.elapsedMs)
         animation.sprite.texture = textures.get(frame.url)!
         animation.sprite.position.set(frame.offsetX, frame.offsetY)
@@ -683,6 +700,11 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       // DOM diagnostics describe the actual selected textures, enabling playback/lifecycle checks.
       const effectFrames=JSON.stringify([...effects].map(a=>({id:a.clip.id,frame:a.clip.frames.indexOf(worldFrameAt(a.clip,Math.max(0,a.elapsedMs-a.delayMs)))+1,elapsedMs:Math.round(a.elapsedMs*1000)/1000,delayMs:a.delayMs,x:a.view.x,y:a.view.y,visible:a.sprite.visible})))
       if(app.canvas.dataset.effectFrames!==effectFrames)app.canvas.dataset.effectFrames=effectFrames
+      for(const [index,actor]of actors.entries()){
+        if(index!==movement?.playerIndex)actor.puppet?.setWorldPosition(actor.view.x,actor.view.y)
+      }
+      app.canvas.dataset.character24=JSON.stringify(actors.filter(a=>a.puppet).map(a=>({playerId:a.playerId,facing:a.facing,action:a.puppet!.action,distance:a.puppet!.gaitDistance,x:a.view.x,y:a.view.y,registration:[a.puppet!.view.x,a.puppet!.view.y],visible:a.view.visible,parts:a.puppet!.view.children.filter(c=>c instanceof Sprite).map(c=>[c.label,c.x,c.y,c.rotation])})))
+      app.canvas.dataset.npc22=JSON.stringify([...worldAnimations].filter(([,a])=>a.npc22).map(([cellId,a])=>({cellId,id:a.clip.id,elapsedMs:a.elapsedMs,x:a.sprite.x,y:a.sprite.y,shadowScale:a.npc22!.shadow.scale.x,url:textureUrls.get(a.sprite.texture)})))
       if (!movement || paused) return
       movement.elapsedMs = Math.min(movement.durationMs, movement.elapsedMs + deltaMs)
       const progress = movement.durationMs === 0 ? 1 : movement.elapsedMs / movement.durationMs
@@ -693,6 +715,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       const actor = actors[movement.playerIndex]
       if (actor) {
         actor.view.position.set(x, y)
+        actor.puppet?.setWorldPosition(x,y)
         actor.view.zIndex = (movement.from.row + (movement.to.row - movement.from.row) * progress) * 100 + movement.from.column + (movement.to.column - movement.from.column) * progress
       }
       if (following) placeCamera({ x, y })

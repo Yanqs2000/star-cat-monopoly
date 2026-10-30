@@ -1,0 +1,145 @@
+{
+  "mode": "built-in image_gen; no external generation API",
+  "selected": {
+    "npcMasters": [
+      "public/hd-review/characters-22-23/npc-10-master.png",
+      "public/hd-review/characters-22-23/npc-11-master.png",
+      "public/hd-review/characters-22-23/npc-12-master.png",
+      "public/hd-review/characters-22-23/npc-13-master.png",
+      "public/hd-review/characters-22-23/npc-14-master.png",
+      "public/hd-review/characters-22-23/npc-15-master.png",
+      "public/hd-review/characters-22-23/npc-2-master.png",
+      "public/hd-review/characters-22-23/npc-3-master.png",
+      "public/hd-review/characters-22-23/npc-4-master.png",
+      "public/hd-review/characters-22-23/npc-5-master.png",
+      "public/hd-review/characters-22-23/npc-9-master.png"
+    ],
+    "narrativeMasters": [
+      "public/hd-review/characters-22-23/trait-12-opaque-r2.png",
+      "public/hd-review/characters-22-23/trait-13-opaque-r2.png",
+      "public/hd-review/characters-22-23/trait-14-opaque-r2.png",
+      "public/hd-review/characters-22-23/trait-15-opaque-r2.png",
+      "public/hd-review/characters-22-23/trait-23-opaque-r2.png",
+      "public/hd-review/characters-22-23/trait-9-opaque-r2.png"
+    ],
+    "juanmaoMasters": [
+      "public/hd-review/character-24/juanmao-four-view-master-r1.png",
+      "public/hd-review/character-24/juanmao-happy-master-r1.png",
+      "public/hd-review/character-24/juanmao-hurt-master-r1.png",
+      "public/hd-review/character-24/juanmao-sad-master-r1.png"
+    ],
+    "runtime": "public/modern/hd-characters/"
+  },
+  "npcPrompts": [
+    {
+      "id": 2,
+      "n": 5,
+      "cols": 4,
+      "rows": 2,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Fortune cat: golden striped round lucky cat, closed happy eyes, red neck scarf, large gold oval coin held to belly, raised paw moving slightly. Preserve each reference pose and tiny hand variants. ATLAS: exactly 5 complete full-body poses arranged row-major in 4 columns and 2 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1024."
+    },
+    {
+      "id": 3,
+      "n": 4,
+      "cols": 4,
+      "rows": 1,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Poverty spirit: pale beige bald long-eared creature, white bandage on one ear exactly as reference, tiny closed sad eyes, blue ragged neck cloth and shorts, long pale hands, crouching sad poses. ATLAS: exactly 4 complete full-body poses arranged row-major in 4 columns and 1 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 512."
+    },
+    {
+      "id": 5,
+      "n": 11,
+      "cols": 4,
+      "rows": 3,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Misfortune spirit: small tan wide-eyed mummy wrapped in white bandages with brown crown showing, and ONE purple bat with enormous yellow eyes suspended above left on a loose white bandage ribbon. Bat wings follow all eleven successive flap poses precisely. Mummy face and proportions must be identical across the atlas. ATLAS: exactly 11 complete full-body poses arranged row-major in 4 columns and 3 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1536."
+    },
+    {
+      "id": 9,
+      "n": 5,
+      "cols": 4,
+      "rows": 2,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Small golden yellow puppy with one brown floppy ear, one yellow floppy ear, big black eyes, white oval belly, red collar with tiny gold studs, seated with four splayed paws. Match head turns and head tilts of each of five poses. ATLAS: exactly 5 complete full-body poses arranged row-major in 4 columns and 2 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1024."
+    },
+    {
+      "id": 10,
+      "n": 4,
+      "cols": 4,
+      "rows": 1,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Little angel: yellow lemon shaped hair, two green-tipped short antennae, pointed peach elf ears, huge violet-blue eyes, bare peach chest, blue shorts and shoes, slim pale blue-white wings. Wings flap through reference four poses up, horizontal, down, lowest. Body and face EXACTLY fixed across poses. ATLAS: exactly 4 complete full-body poses arranged row-major in 4 columns and 1 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 512."
+    },
+    {
+      "id": 11,
+      "n": 6,
+      "cols": 4,
+      "rows": 2,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Little devil: bright red spiky hair, two short golden horns, pointed ears, big black eyes and fanged smiling mouth, tiny dark blue shorts, bare peach chest, slim pink bat membrane wings and a white three-pronged pitchfork held on viewer-right. Wing phases and arm/face variants match six reference poses. ATLAS: exactly 6 complete full-body poses arranged row-major in 4 columns and 2 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1024."
+    },
+    {
+      "id": 12,
+      "n": 6,
+      "cols": 4,
+      "rows": 2,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Orange fox traffic police: very large upright orange ears with pale pink inner, bright orange fox head, white muzzle, narrow brown eyes, blue peaked police cap with thin white trim, light blue buttoned police shirt, dark blue shorts, orange feet. First THREE poses face front; last THREE turn to the left exactly as reference. Front and side must be the SAME fox with the same uniform. ATLAS: exactly 6 complete full-body poses arranged row-major in 4 columns and 2 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1024."
+    },
+    {
+      "id": 13,
+      "n": 7,
+      "cols": 4,
+      "rows": 2,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Green frog ruffian: very large lime-green rounded frog head with raised orange-red inner eyes, half-closed mischievous eyes, oversized head dwarfing tiny torso, blue shirt, dark blue belt with red/yellow buckle, tiny green hands and feet, relaxed crouching stance. Seven subtle head and body/foot poses exactly as reference. ATLAS: exactly 7 complete full-body poses arranged row-major in 4 columns and 2 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1024."
+    },
+    {
+      "id": 14,
+      "n": 5,
+      "cols": 4,
+      "rows": 2,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: White rabbit thief: huge white rabbit head, one long upright ear, other ear folded down at tip, pink inner ears, gentle black eyes, tiny pink nose; blue bundle tied behind back with green knot, pale blue shirt, yellow neck tie, white hands/feet. Five ear/head/foot poses matching reference, same bag and face every cell. ATLAS: exactly 5 complete full-body poses arranged row-major in 4 columns and 2 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 2048 x 1024."
+    },
+    {
+      "id": 15,
+      "n": 3,
+      "cols": 3,
+      "rows": 1,
+      "prompt": "Use case: identity-preserve. Asset: a single production transparent NPC animation POSE ATLAS, for Star Cat Monopoly. Reference TOP section lists complete poses in source order; ignore ALL lower raw bitmap pieces and ignore labels. Preserve the original identity, anatomy, proportions, facing, clothes, props and all appendages. Redraw at high resolution in a polished smoothly shaded stylized 3D game-art look with clean rounded volume and crisp edges, no grain. These are controlled key poses of ONE IDENTICAL character, not different designs: keep head size, facial landmarks, materials and colors identical between every cell. No floor, no shadow (shadow is animated separately), no lettering, no grids, no labels, no background. Each cell has full body including ears/wings/props with generous 12 percent transparent margin; equal cell bounds, identical logical body scale and centered registration. Do NOT draw extra or omitted characters. CHARACTER: Beggar monkey: brown-haired monkey with pale tan face, big ears, dark sorrowful eyes, brown/red clothing, yellow banana peel on top of head and small gold begging bowl held forward. Preserve sad/half-lidded/smiling expression variants in three reference poses. ATLAS: exactly 3 complete full-body poses arranged row-major in 3 columns and 1 rows of equal square 512 pixel cells. Empty trailing cells entirely transparent. Requested total canvas 1536 x 512."
+    }
+  ],
+  "npc4Prompt": "Use case: identity-preserve. Asset: high resolution transparent game NPC master for Star Cat Monopoly. Recreate ONLY the single complete golden blessing cat from the TOP of the reference (ignore the dissected raw bitmap pieces below). Exact original identity and pose: plump golden striped lucky cat, closed joyful eyes, pointed cat ears, cream cheeks/paws/feet, red belly bib bearing the gold Chinese character 福, seated with legs forward, raised bent paw, small tail. Match reference silhouette, face proportions, clothing and camera angle exactly. Premium polished stylized 3D game illustration with smooth rounded volume and clean edges, not photorealism; readable at small map size. One complete cat centered on 1024x1024 true transparent canvas with 15 percent empty margin, no cast shadow, no floor, no text labels or surrounding elements. Do not invent accessories or change clothing. This is the fixed identity master for continuous rig animation, not a contact sheet.",
+  "narrativePrompts": [
+    {
+      "id": 9,
+      "prompt": "Use case: style-transfer / identity-preserve. Asset: one static high-resolution narrative event panel for Star Cat Monopoly. Faithfully redraw the reference as clean professional rich-color cartoon illustration with softly shaded volume and crisp contours, matching original composition, action, clothes and facial identities; do not convert humans to animals and do not add a playable character. Keep original panel geometry exactly: rounded glossy blue outer frame, thin white inner rim, small Q/star medallion upper-left, empty BLUE title bar, illustration window at x32..431 y62..359, empty pale footer x32..431 y373..396, all coordinates relative to original462x433. Requested output1848x1732 so native detailed art can downsample losslessly. Blue frame, blue title bar, illustration and footer MUST be completely OPAQUE with alpha255; Use an opaque pure white canvas ONLY outside the rounded frame corners. No checkered pattern, translucent interior, watermark, new captions or text in blank title/footer. Preserve frame's proportion and all text-safe areas. This scene is intentionally a held picture, not an animation sheet. SCENE: A red-haired young man in cyan long sleeve shirt, purple trousers, brown shoes runs terrified LEFT along a park path. A dark navy blue snarling dog leaps from RIGHT chasing his trailing pant leg. Big rounded green trees, bushes, blue sky and beige ground. Preserve exactly the reference canine rather than adding map icons."
+    },
+    {
+      "id": 12,
+      "prompt": "Use case: style-transfer / identity-preserve. Asset: one static high-resolution narrative event panel for Star Cat Monopoly. Faithfully redraw the reference as clean professional rich-color cartoon illustration with softly shaded volume and crisp contours, matching original composition, action, clothes and facial identities; do not convert humans to animals and do not add a playable character. Keep original panel geometry exactly: rounded glossy blue outer frame, thin white inner rim, small Q/star medallion upper-left, empty BLUE title bar, illustration window at x32..431 y62..359, empty pale footer x32..431 y373..396, all coordinates relative to original462x433. Requested output1848x1732 so native detailed art can downsample losslessly. Blue frame, blue title bar, illustration and footer MUST be completely OPAQUE with alpha255; Use an opaque pure white canvas ONLY outside the rounded frame corners. No checkered pattern, translucent interior, watermark, new captions or text in blank title/footer. Preserve frame's proportion and all text-safe areas. This scene is intentionally a held picture, not an animation sheet. SCENE: A crying small blonde girl with orange headband and pink flower, pink polka-dot dress, stands in the middle next to a blue bicycle on the LEFT; a dark-haired blue-uniform police officer stands RIGHT pointing and scolding. Green bushes, white city skyline, blue sky, pavement tiles. Same comic storytelling and original human characters."
+    },
+    {
+      "id": 13,
+      "prompt": "Use case: style-transfer / identity-preserve. Asset: one static high-resolution narrative event panel for Star Cat Monopoly. Faithfully redraw the reference as clean professional rich-color cartoon illustration with softly shaded volume and crisp contours, matching original composition, action, clothes and facial identities; do not convert humans to animals and do not add a playable character. Keep original panel geometry exactly: rounded glossy blue outer frame, thin white inner rim, small Q/star medallion upper-left, empty BLUE title bar, illustration window at x32..431 y62..359, empty pale footer x32..431 y373..396, all coordinates relative to original462x433. Requested output1848x1732 so native detailed art can downsample losslessly. Blue frame, blue title bar, illustration and footer MUST be completely OPAQUE with alpha255; Use an opaque pure white canvas ONLY outside the rounded frame corners. No checkered pattern, translucent interior, watermark, new captions or text in blank title/footer. Preserve frame's proportion and all text-safe areas. This scene is intentionally a held picture, not an animation sheet. SCENE: A small crying pink-curly-haired girl with a red bow and blue dotted dress on LEFT offers a red purse; an adult purple-haired masked robber on RIGHT in a yellow hoodie, blue trousers and brown shoes demands the purse, holding a small silver knife angled UP away from her. Cracked gray wall, pasted white notes and grass. Preserve the original non-graphic comic composition, original human characters."
+    },
+    {
+      "id": 14,
+      "prompt": "Use case: style-transfer / identity-preserve. Asset: one static high-resolution narrative event panel for Star Cat Monopoly. Faithfully redraw the reference as clean professional rich-color cartoon illustration with softly shaded volume and crisp contours, matching original composition, action, clothes and facial identities; do not convert humans to animals and do not add a playable character. Keep original panel geometry exactly: rounded glossy blue outer frame, thin white inner rim, small Q/star medallion upper-left, empty BLUE title bar, illustration window at x32..431 y62..359, empty pale footer x32..431 y373..396, all coordinates relative to original462x433. Requested output1848x1732 so native detailed art can downsample losslessly. Blue frame, blue title bar, illustration and footer MUST be completely OPAQUE with alpha255; Use an opaque pure white canvas ONLY outside the rounded frame corners. No checkered pattern, translucent interior, watermark, new captions or text in blank title/footer. Preserve frame's proportion and all text-safe areas. This scene is intentionally a held picture, not an animation sheet. SCENE: A distressed brown-haired boy in white short-sleeve shirt and blue overalls crouches in wide-legged stance on tiled sidewalk, staring at his empty pink open wallet, one hand outward, sweat drops and worried open mouth. Beige building wall and window behind, scattered green leaves and paper. Preserve original human character and exact empty-wallet story."
+    },
+    {
+      "id": 15,
+      "prompt": "Use case: style-transfer / identity-preserve. Asset: one static high-resolution narrative event panel for Star Cat Monopoly. Faithfully redraw the reference as clean professional rich-color cartoon illustration with softly shaded volume and crisp contours, matching original composition, action, clothes and facial identities; do not convert humans to animals and do not add a playable character. Keep original panel geometry exactly: rounded glossy blue outer frame, thin white inner rim, small Q/star medallion upper-left, empty BLUE title bar, illustration window at x32..431 y62..359, empty pale footer x32..431 y373..396, all coordinates relative to original462x433. Requested output1848x1732 so native detailed art can downsample losslessly. Blue frame, blue title bar, illustration and footer MUST be completely OPAQUE with alpha255; Use an opaque pure white canvas ONLY outside the rounded frame corners. No checkered pattern, translucent interior, watermark, new captions or text in blank title/footer. Preserve frame's proportion and all text-safe areas. This scene is intentionally a held picture, not an animation sheet. SCENE: A surprised blue-haired young man in pale short-sleeve shirt and brown pants on RIGHT recoils from a ragged green-haired beggar lying on ground LEFT, beggar's dark patched clothes, pale hands reaching out, white bowl and small golden coins at lower right. Gray cracked wall with notices and worn sidewalk. Preserve original human characters, comedic expressions and composition."
+    },
+    {
+      "id": 23,
+      "prompt": "Use case: style-transfer / identity-preserve. Asset: one static high-resolution narrative event panel for Star Cat Monopoly. Faithfully redraw the reference as clean professional rich-color cartoon illustration with softly shaded volume and crisp contours, matching original composition, action, clothes and facial identities; do not convert humans to animals and do not add a playable character. Keep original panel geometry exactly: rounded glossy blue outer frame, thin white inner rim, small Q/star medallion upper-left, empty BLUE title bar, illustration window at x32..431 y62..359, empty pale footer x32..431 y373..396, all coordinates relative to original462x433. Requested output1848x1732 so native detailed art can downsample losslessly. Blue frame, blue title bar, illustration and footer MUST be completely OPAQUE with alpha255; Use an opaque pure white canvas ONLY outside the rounded frame corners. No checkered pattern, translucent interior, watermark, new captions or text in blank title/footer. Preserve frame's proportion and all text-safe areas. This scene is intentionally a held picture, not an animation sheet. SCENE: A happy pink-haired woman in a blue flower dress and red heels at LEFT retrieves a small red purse from a smiling brown-haired clerk behind an arched service window on RIGHT. Pink wall. At right is blue vertical sign with EXACT four Chinese characters, top to bottom: 失 物 招 领. The final character must be SIMPLIFIED 领, not traditional 領. Preserve original human characters and lost-property return story."
+    }
+  ],
+  "juanmaoPriorPrompts": "../character-24/prompts.json",
+  "juanmaoHurtPrompt": "Use case: precise-object-edit / identity-preserve. Production character atlas for Star Cat Monopoly Juanmao. Image1 is the exact four-view fixed identity master and layout, image2 is original game's comedic soot-black post-explosion hair/eyes reference. Change ONLY the heads in image1 to the original cartoon burned reaction: the white wool puffs become CHARCOAL BLACK with a ragged, spiky singed wool silhouette and a few short stray tufts, face is soot black, headband and curled horns remain same geometry but deeply soot-darkened; eyes are crisp WHITE with black pupils, same landmarks/camera positions as master. Cute exaggerated shocked round-eye expression, entirely non-graphic. Keep the SAME four body poses, four camera facings, character scales, head/neck positions, clothes, gloves, shoes, 4 equal columns and full canvas alignment from image1. Body and limbs remain unchanged neutral silver-white because game renderer animates their separate soot tint. No damage wounds or smoke particles, no scenery, no floor, no cast shadows, no labels or grids. This is one consistent 4-view soot-head variant, not separate characters. High-resolution polished stylized 3D artwork at the same2:1 canvas aspect, transparent background and opaque character interiors.",
+  "unused": [
+    {
+      "files": "trait-*-master.png",
+      "reason": "rejected translucent interior; final panels use native RGB r2 masters"
+    },
+    {
+      "file": "npc-5-clean-r2.png",
+      "reason": "unused alternate reference experiment; runtime keeps original chosen master"
+    }
+  ],
+  "sourcePoseArchive": "../characters-22-23/source-references/"
+}

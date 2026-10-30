@@ -10,7 +10,7 @@ test('modern production output keeps runtime assets and excludes artwork working
   try {
     const publicDir = path.join(root, 'public/modern')
     for (const file of ['assets/character.png', 'assets-hd/character.webp', 'hd-map/map.webp',
-      'hd-static/card.webp', 'hd-masters/review.png', 'hd-static-masters/card.png', 'hd-review/index.html']) {
+      'hd-static/card.webp', 'hd-characters/juanmao-24/head.png', 'hd-masters/review.png', 'hd-static-masters/card.png', 'hd-review/index.html']) {
       const target = path.join(publicDir, file)
       await mkdir(path.dirname(target), { recursive: true })
       await writeFile(target, file)
@@ -21,7 +21,8 @@ test('modern production output keeps runtime assets and excludes artwork working
     const outDir = path.join(root, 'custom-output')
     await build({ ...config, root, configFile: false, publicDir, logLevel: 'silent',
       build: { ...config.build, outDir, rolldownOptions: { input } } })
-    expect((await readdir(outDir)).sort()).toEqual(['assets', 'assets-hd', 'hd-map', 'hd-static', 'modern.html'])
+    expect((await readdir(outDir)).sort()).toEqual(['assets', 'assets-hd', 'hd-characters', 'hd-map', 'hd-static', 'modern.html'])
+    expect(await readFile(path.join(outDir,'hd-characters/juanmao-24/head.png'),'utf8')).toBe('hd-characters/juanmao-24/head.png')
     expect(await readFile(path.join(outDir, 'assets/character.png'), 'utf8')).toBe('assets/character.png')
     expect(await readFile(path.join(outDir, 'assets-hd/character.webp'), 'utf8')).toBe('assets-hd/character.webp')
     expect(await readFile(path.join(outDir, 'hd-map/map.webp'), 'utf8')).toBe('hd-map/map.webp')
@@ -60,7 +61,7 @@ test('modern original-profile build works before the ignored HD cache is generat
   const root = await mkdtemp(path.join(tmpdir(), 'star-cat-no-hd-cache-'))
   try {
     const publicDir = path.join(root, 'public/modern')
-    for (const directory of ['assets', 'hd-map', 'hd-static']) {
+    for (const directory of ['assets', 'hd-map', 'hd-static', 'hd-characters']) {
       await mkdir(path.join(publicDir, directory), { recursive: true })
       await writeFile(path.join(publicDir, directory, 'image.png'), 'runtime image')
     }
@@ -70,7 +71,7 @@ test('modern original-profile build works before the ignored HD cache is generat
     const outDir = path.join(root, 'output')
     await build({ ...config, root, configFile: false, publicDir, logLevel: 'silent',
       build: { ...config.build, outDir, rolldownOptions: { input } } })
-    expect((await readdir(outDir)).sort()).toEqual(['assets', 'hd-map', 'hd-static', 'modern.html'])
+    expect((await readdir(outDir)).sort()).toEqual(['assets', 'hd-characters', 'hd-map', 'hd-static', 'modern.html'])
   } finally {
     await rm(root, { recursive: true, force: true })
   }

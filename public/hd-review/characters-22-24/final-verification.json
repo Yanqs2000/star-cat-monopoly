@@ -1,0 +1,439 @@
+{
+  "checkedAt": "2026-10-30T01:10:23.344687+00:00",
+  "status": "candidate-awaiting-user-review",
+  "baselineMain": "119c810",
+  "scope": [
+    22,
+    23,
+    24
+  ],
+  "deferred": [
+    20
+  ],
+  "unit": {
+    "files": 112,
+    "tests": 792,
+    "passed": true
+  },
+  "python": {
+    "npc22": 9,
+    "npc23": 3,
+    "passed": true
+  },
+  "productionBuild": true,
+  "acceptedMainBuild": true,
+  "functionalGameScenarios": {
+    "count": 8,
+    "passed": true,
+    "rendering": "project SwiftShader functional configuration"
+  },
+  "finalHardwareReplay": {
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "profile": "hd",
+    "samples": 85,
+    "supportChecks": 12,
+    "maxSupportDriftPx": 1.1368683772161603e-13,
+    "rafMedianMs": 16.799999713897705,
+    "rafP95Ms": 19.199999809265137
+  },
+  "finalHardwareScenarios": 2,
+  "review": {
+    "url": "http://127.0.0.1:64867/hd-review/characters-22-24/index.html",
+    "browser": "local Chrome / Playwright; Browser plugin unavailable",
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "npcCards": 11,
+    "canonicalIcons": 11,
+    "staticNarratives": 6,
+    "bounds": {
+      "samples": 1341,
+      "failures": []
+    },
+    "playPauseSeek": true,
+    "sevenActionsFourDirections": true,
+    "errors": [],
+    "failed": []
+  },
+  "video": {
+    "file": "../character-24/juanmao-24-seven-actions.mp4",
+    "fps": 60,
+    "frames": 689,
+    "pixelSize": [
+      1200,
+      562
+    ]
+  },
+  "independentReview": {
+    "p2Found": 1,
+    "fixed": "Native tile anchor registered at(28,20); failing and passing regression recorded"
+  },
+  "sourceOriginalsUnchanged": 13,
+  "protectedMainUserFilesUnchanged": 32,
+  "npcTextures": 281,
+  "npcDecodedRgbaBytes": 30004400,
+  "limitations": [
+    "User visual acceptance remains required",
+    "Newly authored2D motion; original action durations retained, not a per-pose original-frame replica",
+    "Original AVM1 outer-loop child-reset behavior not dynamically probed",
+    "Short hardware movement capture does not guarantee whole-game60fps on all devices"
+  ],
+  "juanmaoFullMotionBounds": {
+    "samples": 2292,
+    "failures": []
+  },
+  "npcDisplayRecords": 894,
+  "finalRoleBrowser": {
+    "checkedAt": "2026-10-30T01:03:48.948Z",
+    "status": "candidate-awaiting-user-review",
+    "url": "http://127.0.0.1:64867/hd-review/character-24/index.html",
+    "title": "24 卷毛连续2D动画候选审阅",
+    "browser": "local Chrome / Playwright; Browser plugin and browser skill unavailable",
+    "viewports": [
+      "1320x1030 DPR1",
+      "430x932 DPR1"
+    ],
+    "pageIdentity": true,
+    "controls": true,
+    "sevenActionsFourDirections": true,
+    "errors": [],
+    "failedRequests": [],
+    "videoFrames": 689,
+    "videoFps": 60,
+    "limitations": [
+      "newly authored 2D puppet motion, not recovered original limb rig",
+      "world-displacement stance and native tile registration; turns and start-stop need visual acceptance",
+      "source durations retained; continuous poses and soot-wool silhouette are newly authored",
+      "no user visual acceptance recorded for candidate"
+    ]
+  },
+  "naturalMovement": {
+    "checkedAt": "2026-10-30T01:10:47.379Z",
+    "status": "candidate-awaiting-user-review",
+    "flow": "controller 533.333ms for diagonal grid movement (56,40); same-frame actual root position drives 24px gait cycle",
+    "sceneSpeedPxPerSecond": 129.0348790056394,
+    "adaptiveCycleMs": 185.99622199011085,
+    "standaloneCycleMs": 800,
+    "maxSupportFootWorldDriftPx": 2.5121479338940403e-15,
+    "footAnchorSamples": [
+      [
+        {
+          "facing": "down-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.284265839426256,
+              "y": -4.512570837685422
+            },
+            {
+              "side": "right",
+              "x": 7.064236454904898,
+              "y": -12.42078348459174
+            }
+          ]
+        },
+        {
+          "facing": "down-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -15.549067493907076,
+              "y": -5.179237504352088
+            },
+            {
+              "side": "right",
+              "x": 10.602430211761769,
+              "y": -9.420783484591741
+            }
+          ]
+        },
+        {
+          "facing": "up-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -13.715734160573744,
+              "y": -9.820762495647912
+            },
+            {
+              "side": "right",
+              "x": 14.102430211761767,
+              "y": -5.845883182074927
+            }
+          ]
+        },
+        {
+          "facing": "up-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.784265839426256,
+              "y": -10.820762495647912
+            },
+            {
+              "side": "right",
+              "x": 6.064236454904898,
+              "y": -4.512549848741594
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "facing": "down-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.2842658394262574,
+              "y": -4.512570837685422
+            },
+            {
+              "side": "right",
+              "x": 8.669099689784847,
+              "y": -12.074452602534635
+            }
+          ]
+        },
+        {
+          "facing": "down-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -15.549067493907074,
+              "y": -5.179237504352088
+            },
+            {
+              "side": "right",
+              "x": 8.99756697688182,
+              "y": -9.074452602534635
+            }
+          ]
+        },
+        {
+          "facing": "up-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -13.715734160573742,
+              "y": -9.820762495647912
+            },
+            {
+              "side": "right",
+              "x": 12.497566976881819,
+              "y": -7.7922140641320325
+            }
+          ]
+        },
+        {
+          "facing": "up-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.7842658394262574,
+              "y": -10.820762495647912
+            },
+            {
+              "side": "right",
+              "x": 7.669099689784847,
+              "y": -6.4588807307986995
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "facing": "down-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.284265839426257,
+              "y": -4.512570837685422
+            },
+            {
+              "side": "right",
+              "x": 12.963804121153727,
+              "y": -10.392447226183393
+            }
+          ]
+        },
+        {
+          "facing": "down-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -15.549067493907074,
+              "y": -5.179237504352087
+            },
+            {
+              "side": "right",
+              "x": 4.702862545512939,
+              "y": -7.392447226183392
+            }
+          ]
+        },
+        {
+          "facing": "up-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -13.715734160573742,
+              "y": -9.820762495647912
+            },
+            {
+              "side": "right",
+              "x": 8.20286254551294,
+              "y": -12.245500732593477
+            }
+          ]
+        },
+        {
+          "facing": "up-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.784265839426257,
+              "y": -10.820762495647912
+            },
+            {
+              "side": "right",
+              "x": 11.963804121153727,
+              "y": -10.912167399260145
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "facing": "down-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.284265839426257,
+              "y": -4.5125708376854226
+            },
+            {
+              "side": "right",
+              "x": 17.8009975333271,
+              "y": -6.937309074630984
+            }
+          ]
+        },
+        {
+          "facing": "down-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -15.549067493907074,
+              "y": -5.179237504352089
+            },
+            {
+              "side": "right",
+              "x": -0.1343308666604317,
+              "y": -3.937309074630986
+            }
+          ]
+        },
+        {
+          "facing": "up-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -13.715734160573742,
+              "y": -9.82076249564791
+            },
+            {
+              "side": "right",
+              "x": 3.3656691333395683,
+              "y": -15.700638884145885
+            }
+          ]
+        },
+        {
+          "facing": "up-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.784265839426257,
+              "y": -10.82076249564791
+            },
+            {
+              "side": "right",
+              "x": 16.8009975333271,
+              "y": -14.367305550812553
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "facing": "down-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.284265839426256,
+              "y": -4.512570837685422
+            },
+            {
+              "side": "right",
+              "x": 23.700565199575923,
+              "y": -0.5376915241124314
+            }
+          ]
+        },
+        {
+          "facing": "down-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -15.549067493907076,
+              "y": -5.179237504352088
+            },
+            {
+              "side": "right",
+              "x": -6.033898532909255,
+              "y": 2.4623084758875677
+            }
+          ]
+        },
+        {
+          "facing": "up-left",
+          "feet": [
+            {
+              "side": "left",
+              "x": -13.715734160573744,
+              "y": -9.82076249564791
+            },
+            {
+              "side": "right",
+              "x": -2.533898532909256,
+              "y": -17.728975142554233
+            }
+          ]
+        },
+        {
+          "facing": "up-right",
+          "feet": [
+            {
+              "side": "left",
+              "x": -3.784265839426256,
+              "y": -10.82076249564791
+            },
+            {
+              "side": "right",
+              "x": 22.700565199575923,
+              "y": -16.395641809220898
+            }
+          ]
+        }
+      ]
+    ],
+    "video": {
+      "file": "juanmao-24-natural-60fps.mp4",
+      "fps": 60,
+      "frames": 240
+    },
+    "errors": [],
+    "scope": "bundled candidate natural movement harness using real controller speed; final MapScene integration checked separately"
+  }
+}
