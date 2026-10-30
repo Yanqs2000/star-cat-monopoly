@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-30T01:10:23.344687+00:00",
+  "checkedAt": "2026-10-30T14:27:46.668697+00:00",
   "status": "candidate-awaiting-user-review",
   "baselineMain": "119c810",
   "scope": [
@@ -16,29 +16,30 @@
     "passed": true
   },
   "python": {
-    "npc22": 9,
+    "npc22": 24,
     "npc23": 3,
     "passed": true
   },
   "productionBuild": true,
   "acceptedMainBuild": true,
   "functionalGameScenarios": {
-    "count": 8,
+    "count": 2,
     "passed": true,
-    "rendering": "project SwiftShader functional configuration"
+    "scope": "HD and original world: load, dice, movement, registration, pause/resume",
+    "rendering": "hardware Chrome / ANGLE Metal Apple M4"
   },
   "finalHardwareReplay": {
     "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
     "profile": "hd",
-    "samples": 85,
-    "supportChecks": 12,
-    "maxSupportDriftPx": 1.1368683772161603e-13,
-    "rafMedianMs": 16.799999713897705,
-    "rafP95Ms": 19.199999809265137
+    "samples": 83,
+    "supportChecks": 5,
+    "maxSupportDriftPx": 2.8421709430404007e-13,
+    "rafMedianMs": 16.300000190734863,
+    "rafP95Ms": 17.5
   },
   "finalHardwareScenarios": 2,
   "review": {
-    "url": "http://127.0.0.1:64867/hd-review/characters-22-24/index.html",
+    "url": "http://127.0.0.1:64867/hd-review/characters-22-24/index.html?review=npc-motion-r2#npc22",
     "browser": "local Chrome / Playwright; Browser plugin unavailable",
     "viewports": [
       "1440x1000",
@@ -67,17 +68,19 @@
   },
   "independentReview": {
     "p2Found": 1,
-    "fixed": "Native tile anchor registered at(28,20); failing and passing regression recorded"
+    "fixed": "Native tile anchor registered at(28,20); failing and passing regression recorded",
+    "npcMotionR2": "Two mask findings corrected; recheck confirmed no detached old-wing fragments or fork edge carried by wing."
   },
   "sourceOriginalsUnchanged": 13,
   "protectedMainUserFilesUnchanged": 32,
-  "npcTextures": 281,
-  "npcDecodedRgbaBytes": 30004400,
+  "npcTextures": 248,
+  "npcDecodedRgbaBytes": 27791680,
   "limitations": [
-    "User visual acceptance remains required",
     "Newly authored2D motion; original action durations retained, not a per-pose original-frame replica",
     "Original AVM1 outer-loop child-reset behavior not dynamically probed",
-    "Short hardware movement capture does not guarantee whole-game60fps on all devices"
+    "Short hardware movement capture does not guarantee whole-game60fps on all devices",
+    "User visual acceptance remains required; previous NPC motion revision was rejected",
+    "Short fox yaw cap/ear details soften slightly during matched interpolation"
   ],
   "juanmaoFullMotionBounds": {
     "samples": 2292,
@@ -435,5 +438,47 @@
     },
     "errors": [],
     "scope": "bundled candidate natural movement harness using real controller speed; final MapScene integration checked separately"
-  }
+  },
+  "revision": "npc-motion-r2",
+  "finalFocusedUnit": {
+    "files": 2,
+    "tests": 5,
+    "passed": true
+  },
+  "previousFunctionalGameScenarios": {
+    "count": 8,
+    "passed": true,
+    "rendering": "project SwiftShader functional configuration"
+  },
+  "npcMotionRevision": {
+    "affectedNpcIds": [
+      2,
+      5,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "methods": {
+      "2": "canonical paw local mesh, original sprite309 hand Y track",
+      "5/10/11": "canonical body, shoulder hinges and source-period wing curves",
+      "12": "fixed front torso/boots; local arms; neck-registered actual intermediate head views with continuous anatomical mesh/surface interpolation",
+      "13": "local forearm lift and original long hold",
+      "14": "rooted folded-ear local mesh"
+    },
+    "oldFixedBodyRegionFailures": 335,
+    "oldForkRegionFailures": 34,
+    "newRegressionsPassed": true,
+    "foxTurnStepSourceFrames": 0.05,
+    "foxTurnMaxPremulRgbaL1": 665.53,
+    "foxOldHardSwitchMax": 6783,
+    "actualBrowserPhaseSamples": 73,
+    "slowPlayback": 0.25,
+    "userVisualAcceptance": false,
+    "sourceTiming": "original inner periods; original independent vertical float and shadow preserved",
+    "reviewFindings": "Angel rectangular root and detached dot, devil fork edge and isolated old-wing fragments corrected and independently rechecked",
+    "limit": "Short fox cap/ear turn surfaces retain some interpolation softening; source part motions are authored reconstruction, not original recovered rigs"
+  },
+  "trackedSwfsUnchanged": 16
 }

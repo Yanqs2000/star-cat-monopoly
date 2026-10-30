@@ -28,7 +28,8 @@
       "public/hd-review/character-24/juanmao-hurt-master-r1.png",
       "public/hd-review/character-24/juanmao-sad-master-r1.png"
     ],
-    "runtime": "public/modern/hd-characters/"
+    "runtime": "public/modern/hd-characters/",
+    "npcTurnMaster": "public/hd-review/characters-22-23/npc-12-turn-master.png"
   },
   "npcPrompts": [
     {
@@ -141,5 +142,18 @@
       "reason": "unused alternate reference experiment; runtime keeps original chosen master"
     }
   ],
-  "sourcePoseArchive": "../characters-22-23/source-references/"
+  "sourcePoseArchive": "../characters-22-23/source-references/",
+  "npcMotionRevision": {
+    "revision": "npc-motion-r2",
+    "rigScripts": [
+      "scripts/npc22_gesture_rigs.py",
+      "scripts/npc22_fox_rig.py",
+      "scripts/npc22_frog_rabbit_rigs.py"
+    ],
+    "extraGeneratedHeads": 3,
+    "generationProvenance": "public/hd-review/characters-22-23/npc-12-turn-provenance.json",
+    "effectiveExtraImagegenCalls": 1,
+    "unchangedOriginalNpcMasters": true,
+    "generatedHeadBodyUsage": "Only head surfaces; front torso, boots, arms remain canonical"
+  }
 }

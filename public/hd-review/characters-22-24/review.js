@@ -1,9 +1,11 @@
 const names={2:'财神',3:'穷神',4:'福神',5:'衰神',9:'恶犬',10:'天使',11:'恶魔',12:'交警',13:'流氓',14:'小偷',15:'乞丐',23:'失物招领'};
 const base='../characters-22-23/';
-const [original,npc,activities]=await Promise.all([fetch('./original.json'),fetch(base+'npc-22-runtime.json'),fetch(base+'npc-23-runtime.json')].map(async p=>(await p).json()));
+const [original,npc,activities]=await Promise.all(['./original.json',base+'npc-22-runtime.json',base+'npc-23-runtime.json'].map(async url=>(await fetch(url,{cache:'no-store'})).json()));
+const versions=new Map([...npc.runtimeImages,...activities.runtimeImages].map(i=>[i.url,i.sha256]));
+const assetUrl=url=>'../../modern/'+url+(versions.has(url)?'?v='+versions.get(url).slice(0,12):'');
 const images=new Map(),motions=new Map(npc.motion.map(m=>[m.id,m])),allFrames=[...original.world,...original.activities,...npc.worldClips,...activities.activityClips].flatMap(c=>c.frames);
 const urls=[...new Set(allFrames.map(f=>f.url))];let cursor=0;
-await Promise.all(Array.from({length:6},async()=>{while(cursor<urls.length){const url=urls[cursor++],im=new Image();im.src='../../modern/'+url;await im.decode();images.set(url,im)}}));
+await Promise.all(Array.from({length:6},async()=>{while(cursor<urls.length){const url=urls[cursor++],im=new Image();im.src=assetUrl(url);await im.decode();images.set(url,im)}}));
 const visible=new Set(),cards=[];
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>e.isIntersecting?visible.add(e.target):visible.delete(e.target)),{rootMargin:'150px'});
 for(const clip of npc.worldClips){
@@ -16,7 +18,7 @@ for(const clip of activities.activityClips){
  const before=original.activities.find(c=>c.id===clip.id),card=document.createElement('article');card.className='card';
  const id=Number(clip.id.split('-').at(-1));
  card.innerHTML='<div class="caption"><b>'+names[id]+'</b></div><div class="labels"><span>原版</span><span>高清</span></div><div class="pair"></div>';
- for(const c of [before,clip]){const im=new Image();im.src='../../modern/'+c.frames[0].url;im.alt=names[id];card.querySelector('.pair').append(im)}
+ for(const c of [before,clip]){const im=new Image();im.src=assetUrl(c.frames[0].url);im.alt=names[id];card.querySelector('.pair').append(im)}
  document.querySelector(clip.id.startsWith('mini')?'#icons':'#traits').append(card);
 }
 let elapsed=0,paused=false,speed=1,last,intervals=[];
