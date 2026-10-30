@@ -1,0 +1,1055 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "characterId": 1,
+  "density": 6.0,
+  "mapAnchor": [
+    28,
+    20
+  ],
+  "sourceSha256": "17b5448ca05080660b8e251db842c1e9130ec574fdb65788014b6e5899bce059",
+  "originalSwfSha256": "7c20816b680f04fdb0c64bcdbf6203d4d4687cc690c89c3a118b4b6e8d107fcc",
+  "method": "fixed 2D cutout layers, two-bone IK, continuous transforms; newly authored motion, original durations",
+  "facings": {
+    "down-right": {
+      "joints": {
+        "neck": [
+          0.0,
+          -29.666666666666668
+        ],
+        "spine": [
+          0.0,
+          -20.833333333333332
+        ],
+        "leftShoulder": [
+          -8.333333333333334,
+          -27.5
+        ],
+        "leftElbow": [
+          -12.833333333333334,
+          -23.166666666666668
+        ],
+        "leftHand": [
+          -17.666666666666668,
+          -17.833333333333332
+        ],
+        "rightShoulder": [
+          10.333333333333334,
+          -28.333333333333332
+        ],
+        "rightElbow": [
+          13.666666666666666,
+          -25.166666666666668
+        ],
+        "rightHand": [
+          17.666666666666668,
+          -20.666666666666668
+        ],
+        "leftHip": [
+          -4.666666666666667,
+          -17.0
+        ],
+        "leftKnee": [
+          -7.0,
+          -12.333333333333334
+        ],
+        "leftAnkle": [
+          -8.166666666666666,
+          -8.0
+        ],
+        "rightHip": [
+          4.5,
+          -17.166666666666668
+        ],
+        "rightKnee": [
+          7.333333333333333,
+          -13.166666666666666
+        ],
+        "rightAnkle": [
+          10.5,
+          -9.166666666666666
+        ]
+      },
+      "parts": {
+        "body": {
+          "url": "hd-characters/juanmao-24/down-right-body.png",
+          "width": 141,
+          "height": 100,
+          "pivot": [
+            12.166666666666666,
+            10.5
+          ],
+          "sha256": "996d1633b4e9f0530b594da14f84001587ecf26a7dfd388520d9e70841921c58"
+        },
+        "head": {
+          "url": "hd-characters/juanmao-24/down-right-head.png",
+          "width": 429,
+          "height": 393,
+          "pivot": [
+            40.833333333333336,
+            63.5
+          ],
+          "sha256": "4aea5d284ac96c1c7308fe68a5f9285a90cd9dda25b32323a9ee7a03f8efb603"
+        },
+        "head-eyes": {
+          "url": "hd-characters/juanmao-24/down-right-head-eyes.png",
+          "width": 170,
+          "height": 90,
+          "pivot": [
+            4.833333333333333,
+            20.833333333333332
+          ],
+          "sha256": "6d2b75d0b2af464c0bdf1625c809e8f5ea4c5aebdccaf5e6116bc2a99ec73074"
+        },
+        "head-happy": {
+          "url": "hd-characters/juanmao-24/down-right-head-happy.png",
+          "width": 429,
+          "height": 394,
+          "pivot": [
+            40.833333333333336,
+            63.666666666666664
+          ],
+          "sha256": "2399bbaa797f615df592a3bdc194401ac58933a114f6f2a6f85b149d7bb2c0ea"
+        },
+        "head-sad": {
+          "url": "hd-characters/juanmao-24/down-right-head-sad.png",
+          "width": 429,
+          "height": 394,
+          "pivot": [
+            40.833333333333336,
+            63.666666666666664
+          ],
+          "sha256": "77d177469c2e55b6a355e4fe5bf74842cf5261353157d8ead1e759d1e54bfd15"
+        },
+        "head-hurt": {
+          "url": "hd-characters/juanmao-24/down-right-head-hurt.png",
+          "width": 429,
+          "height": 439,
+          "pivot": [
+            40.833333333333336,
+            71.16666666666667
+          ],
+          "sha256": "c6a2b3a3a320a22bee1ecfbedd56027b5466c9345532d36d0474c1e40821ca3e"
+        },
+        "leftUpperArm": {
+          "url": "hd-characters/juanmao-24/down-right-leftUpperArm.png",
+          "width": 62,
+          "height": 52,
+          "pivot": [
+            7.333333333333333,
+            1.3333333333333333
+          ],
+          "axis": [
+            -4.5,
+            4.333333333333333
+          ],
+          "sha256": "1f681eb2586b3cda2f17ad3f25ef907b69022faf6d456131e6ff2d9371bb2dbf"
+        },
+        "leftForearm": {
+          "url": "hd-characters/juanmao-24/down-right-leftForearm.png",
+          "width": 55,
+          "height": 49,
+          "pivot": [
+            9.333333333333334,
+            -1.3333333333333333
+          ],
+          "axis": [
+            -4.833333333333333,
+            5.333333333333333
+          ],
+          "sha256": "2a06819c8f3027222ff915354904366e2b43265c44f4359f56fd9b677d68d323"
+        },
+        "leftThigh": {
+          "url": "hd-characters/juanmao-24/down-right-leftThigh.png",
+          "width": 63,
+          "height": 62,
+          "pivot": [
+            6.333333333333333,
+            4.0
+          ],
+          "axis": [
+            -2.3333333333333335,
+            4.666666666666667
+          ],
+          "sha256": "4b59470f19793ca770edbaf8f14936d52e90c75a637f0ea2100320ecddb97f7a"
+        },
+        "leftShin": {
+          "url": "hd-characters/juanmao-24/down-right-leftShin.png",
+          "width": 47,
+          "height": 32,
+          "pivot": [
+            3.8333333333333335,
+            3.8333333333333335
+          ],
+          "axis": [
+            -1.1666666666666667,
+            4.333333333333333
+          ],
+          "sha256": "3ee604f44e88e24c4f03c62e6aee39cb26b182ad56f9e924d8b9c2e41522af66"
+        },
+        "leftFoot": {
+          "url": "hd-characters/juanmao-24/down-right-leftFoot.png",
+          "width": 94,
+          "height": 75,
+          "pivot": [
+            8.0,
+            4.0
+          ],
+          "sha256": "e471c5b97532a5c99e499faa9aa5bee02e80b828ec03d58b36f22f64dddd60bb"
+        },
+        "rightUpperArm": {
+          "url": "hd-characters/juanmao-24/down-right-rightUpperArm.png",
+          "width": 55,
+          "height": 46,
+          "pivot": [
+            2.8333333333333335,
+            1.5
+          ],
+          "axis": [
+            3.3333333333333335,
+            3.1666666666666665
+          ],
+          "sha256": "2d1315e67d1f1ca7530ac3ccd1fed692056d26f63827fb6ceccf21929cf0b312"
+        },
+        "rightForearm": {
+          "url": "hd-characters/juanmao-24/down-right-rightForearm.png",
+          "width": 49,
+          "height": 43,
+          "pivot": [
+            0.5,
+            -0.5
+          ],
+          "axis": [
+            4.0,
+            4.5
+          ],
+          "sha256": "b64e29fa6f7d8521f5f6d81f7b4090090ed210d8727e9d07614b1520b4503eb9"
+        },
+        "rightThigh": {
+          "url": "hd-characters/juanmao-24/down-right-rightThigh.png",
+          "width": 62,
+          "height": 50,
+          "pivot": [
+            3.3333333333333335,
+            4.0
+          ],
+          "axis": [
+            2.8333333333333335,
+            4.0
+          ],
+          "sha256": "462ede5f5a47f1567d4dc72f61dc1f93e5061219576ee4397a26c7b6a60e3482"
+        },
+        "rightShin": {
+          "url": "hd-characters/juanmao-24/down-right-rightShin.png",
+          "width": 55,
+          "height": 26,
+          "pivot": [
+            3.8333333333333335,
+            3.8333333333333335
+          ],
+          "axis": [
+            3.1666666666666665,
+            4.0
+          ],
+          "sha256": "106d49652945fc2a0982c39e8bf0ddeaf76b62efffbe8e8001a58ef4bed115d2"
+        },
+        "rightFoot": {
+          "url": "hd-characters/juanmao-24/down-right-rightFoot.png",
+          "width": 103,
+          "height": 68,
+          "pivot": [
+            9.333333333333334,
+            4.166666666666667
+          ],
+          "sha256": "70d140f71523ba9896e403f6c2d24f36da87d2bfaf58045387d77fb5502ec838"
+        }
+      }
+    },
+    "down-left": {
+      "joints": {
+        "neck": [
+          -0.6666666666666666,
+          -29.666666666666668
+        ],
+        "spine": [
+          -0.6666666666666666,
+          -20.833333333333332
+        ],
+        "leftShoulder": [
+          -13.0,
+          -28.333333333333332
+        ],
+        "leftElbow": [
+          -16.0,
+          -25.0
+        ],
+        "leftHand": [
+          -18.333333333333332,
+          -20.5
+        ],
+        "rightShoulder": [
+          8.166666666666666,
+          -27.666666666666668
+        ],
+        "rightElbow": [
+          11.166666666666666,
+          -22.5
+        ],
+        "rightHand": [
+          15.166666666666666,
+          -17.666666666666668
+        ],
+        "leftHip": [
+          -5.833333333333333,
+          -17.0
+        ],
+        "leftKnee": [
+          -9.0,
+          -12.833333333333334
+        ],
+        "leftAnkle": [
+          -10.666666666666666,
+          -8.666666666666666
+        ],
+        "rightHip": [
+          4.0,
+          -16.666666666666668
+        ],
+        "rightKnee": [
+          5.833333333333333,
+          -12.0
+        ],
+        "rightAnkle": [
+          7.166666666666667,
+          -6.166666666666667
+        ]
+      },
+      "parts": {
+        "body": {
+          "url": "hd-characters/juanmao-24/down-left-body.png",
+          "width": 145,
+          "height": 104,
+          "pivot": [
+            13.166666666666666,
+            10.833333333333334
+          ],
+          "sha256": "7dbff6f874ab0a8483654d3c30f6c13415a0cc6c32f052e34f2e2e89c8df180e"
+        },
+        "head": {
+          "url": "hd-characters/juanmao-24/down-left-head.png",
+          "width": 422,
+          "height": 395,
+          "pivot": [
+            31.666666666666668,
+            63.833333333333336
+          ],
+          "sha256": "dc48ef5bc4e42209ee3ec302ea7cadc1637a8439ed1bd9c669b489ae93c54bd3"
+        },
+        "head-eyes": {
+          "url": "hd-characters/juanmao-24/down-left-head-eyes.png",
+          "width": 158,
+          "height": 100,
+          "pivot": [
+            26.333333333333332,
+            21.166666666666668
+          ],
+          "sha256": "5a56d713f2e0d86f6d7355542be39e1ba6c10c2f7d73bdfe14bf4a161d51382e"
+        },
+        "head-happy": {
+          "url": "hd-characters/juanmao-24/down-left-head-happy.png",
+          "width": 422,
+          "height": 396,
+          "pivot": [
+            31.666666666666668,
+            64.0
+          ],
+          "sha256": "e1b061ca6f3a06d98ee1aaa6a36c208d2eaa21b0fe16cdb6f063f46603675c11"
+        },
+        "head-sad": {
+          "url": "hd-characters/juanmao-24/down-left-head-sad.png",
+          "width": 423,
+          "height": 397,
+          "pivot": [
+            31.833333333333332,
+            64.16666666666667
+          ],
+          "sha256": "964e137251bfa3bdc50c824a802ecd6a123cde8eb64fa99576ad3beb47a90bb1"
+        },
+        "head-hurt": {
+          "url": "hd-characters/juanmao-24/down-left-head-hurt.png",
+          "width": 423,
+          "height": 434,
+          "pivot": [
+            31.833333333333332,
+            70.33333333333333
+          ],
+          "sha256": "ea7919d44e87b8a4cd7beab5871d35577aec57196bb6179f9869b06d9ff80457"
+        },
+        "leftUpperArm": {
+          "url": "hd-characters/juanmao-24/down-left-leftUpperArm.png",
+          "width": 53,
+          "height": 50,
+          "pivot": [
+            5.833333333333333,
+            2.0
+          ],
+          "axis": [
+            -3.0,
+            3.3333333333333335
+          ],
+          "sha256": "ef77aaaac3c21d976668168b6b60bf466f6c3118d7c8631d7038bdbc0e982ff8"
+        },
+        "leftForearm": {
+          "url": "hd-characters/juanmao-24/down-left-leftForearm.png",
+          "width": 55,
+          "height": 47,
+          "pivot": [
+            6.833333333333333,
+            -0.5
+          ],
+          "axis": [
+            -2.3333333333333335,
+            4.5
+          ],
+          "sha256": "7078ab3c173084d6f01eb2d5e383de65aed350358285326ff010eeb223775d01"
+        },
+        "leftThigh": {
+          "url": "hd-characters/juanmao-24/down-left-leftThigh.png",
+          "width": 68,
+          "height": 58,
+          "pivot": [
+            7.166666666666667,
+            4.0
+          ],
+          "axis": [
+            -3.1666666666666665,
+            4.166666666666667
+          ],
+          "sha256": "33dc6e1e76ad80410a6460d0b2c3209332e1f7a3a767e4891ad99c76c98fa696"
+        },
+        "leftShin": {
+          "url": "hd-characters/juanmao-24/down-left-leftShin.png",
+          "width": 47,
+          "height": 32,
+          "pivot": [
+            3.8333333333333335,
+            3.8333333333333335
+          ],
+          "axis": [
+            -1.6666666666666667,
+            4.166666666666667
+          ],
+          "sha256": "bedbeb2106c3fc8f3fdc34f78fb690ec335d9c1309f0f3ebddc9ff0fbca656c5"
+        },
+        "leftFoot": {
+          "url": "hd-characters/juanmao-24/down-left-leftFoot.png",
+          "width": 104,
+          "height": 69,
+          "pivot": [
+            9.166666666666666,
+            4.5
+          ],
+          "sha256": "bd110573e26402b9b7204e1b4d7f4565007f6f627b1396018e00df282cea857d"
+        },
+        "rightUpperArm": {
+          "url": "hd-characters/juanmao-24/down-left-rightUpperArm.png",
+          "width": 53,
+          "height": 57,
+          "pivot": [
+            2.8333333333333335,
+            1.3333333333333333
+          ],
+          "axis": [
+            3.0,
+            5.166666666666667
+          ],
+          "sha256": "5b252f50b6d05b62902333c41849d1f1e48833d59eba121d65d35586b1cdc80c"
+        },
+        "rightForearm": {
+          "url": "hd-characters/juanmao-24/down-left-rightForearm.png",
+          "width": 55,
+          "height": 48,
+          "pivot": [
+            0.5,
+            -0.8333333333333334
+          ],
+          "axis": [
+            4.0,
+            4.833333333333333
+          ],
+          "sha256": "6a541062e7b7b2a710de587d2ffb88e034ea9be2d96670a737a39a4486b11ef1"
+        },
+        "rightThigh": {
+          "url": "hd-characters/juanmao-24/down-left-rightThigh.png",
+          "width": 60,
+          "height": 61,
+          "pivot": [
+            4.0,
+            4.0
+          ],
+          "axis": [
+            1.8333333333333333,
+            4.666666666666667
+          ],
+          "sha256": "6080134e65795cdbbe11e151c6797162427b8763ffb53a7bbc2bf71747b5d42d"
+        },
+        "rightShin": {
+          "url": "hd-characters/juanmao-24/down-left-rightShin.png",
+          "width": 50,
+          "height": 35,
+          "pivot": [
+            3.8333333333333335,
+            3.8333333333333335
+          ],
+          "axis": [
+            1.3333333333333333,
+            5.833333333333333
+          ],
+          "sha256": "b95a82d5a6e7d4416c39c125dcf13b023f18b03a17fc4ed8bfd8a5828e57e1e1"
+        },
+        "rightFoot": {
+          "url": "hd-characters/juanmao-24/down-left-rightFoot.png",
+          "width": 93,
+          "height": 71,
+          "pivot": [
+            8.5,
+            4.833333333333333
+          ],
+          "sha256": "5826f4b4beefc54559ee40e127c3472c1b73b01159ca945068b3c0c472a70428"
+        }
+      }
+    },
+    "up-left": {
+      "joints": {
+        "neck": [
+          -0.5,
+          -32.5
+        ],
+        "spine": [
+          0.0,
+          -20.833333333333332
+        ],
+        "leftShoulder": [
+          -9.0,
+          -30.333333333333332
+        ],
+        "leftElbow": [
+          -13.5,
+          -24.833333333333332
+        ],
+        "leftHand": [
+          -18.166666666666668,
+          -17.5
+        ],
+        "rightShoulder": [
+          12.833333333333334,
+          -28.666666666666668
+        ],
+        "rightElbow": [
+          17.333333333333332,
+          -25.0
+        ],
+        "rightHand": [
+          22.333333333333332,
+          -20.166666666666668
+        ],
+        "leftHip": [
+          -5.666666666666667,
+          -17.0
+        ],
+        "leftKnee": [
+          -7.666666666666667,
+          -12.333333333333334
+        ],
+        "leftAnkle": [
+          -8.833333333333334,
+          -6.333333333333333
+        ],
+        "rightHip": [
+          5.166666666666667,
+          -17.0
+        ],
+        "rightKnee": [
+          8.0,
+          -12.333333333333334
+        ],
+        "rightAnkle": [
+          10.666666666666666,
+          -7.5
+        ]
+      },
+      "parts": {
+        "body": {
+          "url": "hd-characters/juanmao-24/up-left-body.png",
+          "width": 149,
+          "height": 111,
+          "pivot": [
+            12.333333333333334,
+            12.5
+          ],
+          "sha256": "d6af6f48ba2507678f66984f50ef77fcac56ce600498fef10801bd3cdcfe2779"
+        },
+        "head": {
+          "url": "hd-characters/juanmao-24/up-left-head.png",
+          "width": 419,
+          "height": 467,
+          "pivot": [
+            33.0,
+            59.666666666666664
+          ],
+          "sha256": "64517c02d9d0a3e9d27d261f1c5469cb6246d61a5ac4b798d1b03ad3a56dd148"
+        },
+        "head-happy": {
+          "url": "hd-characters/juanmao-24/up-left-head-happy.png",
+          "width": 420,
+          "height": 468,
+          "pivot": [
+            33.166666666666664,
+            59.833333333333336
+          ],
+          "sha256": "674f60fba0d033df7a5752b1ef0176974dad8332827d8cb04d97648f9127ecfb"
+        },
+        "head-sad": {
+          "url": "hd-characters/juanmao-24/up-left-head-sad.png",
+          "width": 420,
+          "height": 467,
+          "pivot": [
+            33.166666666666664,
+            59.666666666666664
+          ],
+          "sha256": "0d465bb36651c4130c22306ba26bbd3f60cc61c03a95689b359043125c9486eb"
+        },
+        "head-hurt": {
+          "url": "hd-characters/juanmao-24/up-left-head-hurt.png",
+          "width": 424,
+          "height": 521,
+          "pivot": [
+            33.833333333333336,
+            68.33333333333333
+          ],
+          "sha256": "152ef2ecb16b539c2e3ea58ca83efbb67309b278f9b629a616842fdc5bf0248f"
+        },
+        "leftUpperArm": {
+          "url": "hd-characters/juanmao-24/up-left-leftUpperArm.png",
+          "width": 62,
+          "height": 59,
+          "pivot": [
+            7.333333333333333,
+            1.3333333333333333
+          ],
+          "axis": [
+            -4.5,
+            5.5
+          ],
+          "sha256": "fd026a5c7a08d2b9fc3c202858bc545ff1a4064e371ac46b47af245d4f947a93"
+        },
+        "leftForearm": {
+          "url": "hd-characters/juanmao-24/up-left-leftForearm.png",
+          "width": 55,
+          "height": 49,
+          "pivot": [
+            9.166666666666666,
+            -3.3333333333333335
+          ],
+          "axis": [
+            -4.666666666666667,
+            7.333333333333333
+          ],
+          "sha256": "3e2827678e6f623e74205b5f390d9c3b0cf91dabafb32ce62bd95c3fd420f5ab"
+        },
+        "leftThigh": {
+          "url": "hd-characters/juanmao-24/up-left-leftThigh.png",
+          "width": 59,
+          "height": 70,
+          "pivot": [
+            5.666666666666667,
+            4.0
+          ],
+          "axis": [
+            -2.0,
+            4.666666666666667
+          ],
+          "sha256": "180dadde71061030aad281f10578ae75d06e5f03605b27fd04e99f6cbf42af6c"
+        },
+        "leftShin": {
+          "url": "hd-characters/juanmao-24/up-left-leftShin.png",
+          "width": 49,
+          "height": 43,
+          "pivot": [
+            4.166666666666667,
+            3.8333333333333335
+          ],
+          "axis": [
+            -1.1666666666666667,
+            6.0
+          ],
+          "sha256": "c5ba1f3f40ab899198efb1d3bf29fa77989c21478b31911c866eba2a88f994f5"
+        },
+        "leftFoot": {
+          "url": "hd-characters/juanmao-24/up-left-leftFoot.png",
+          "width": 109,
+          "height": 66,
+          "pivot": [
+            9.333333333333334,
+            4.166666666666667
+          ],
+          "sha256": "443d1bcc8ebbca5d7011550ce943caf8ef5eeb38ccd1e12fafcab9a3f2cb4bdf"
+        },
+        "rightUpperArm": {
+          "url": "hd-characters/juanmao-24/up-left-rightUpperArm.png",
+          "width": 3,
+          "height": 16,
+          "pivot": [
+            2.8333333333333335,
+            1.1666666666666667
+          ],
+          "axis": [
+            4.5,
+            3.6666666666666665
+          ],
+          "sha256": "669a75f64a4d06c65441fbd6e2ee9adeed661359fee1f987b14659958b8655f8"
+        },
+        "rightForearm": {
+          "url": "hd-characters/juanmao-24/up-left-rightForearm.png",
+          "width": 28,
+          "height": 45,
+          "pivot": [
+            -3.6666666666666665,
+            -0.8333333333333334
+          ],
+          "axis": [
+            5.0,
+            4.833333333333333
+          ],
+          "sha256": "d777474c5e1b9e85099d68532c80d116e9fc10001559ddd6fc9aa9dda182f16a"
+        },
+        "rightThigh": {
+          "url": "hd-characters/juanmao-24/up-left-rightThigh.png",
+          "width": 66,
+          "height": 64,
+          "pivot": [
+            4.0,
+            4.0
+          ],
+          "axis": [
+            2.8333333333333335,
+            4.666666666666667
+          ],
+          "sha256": "003e8d541dc6182ca0bb5cce527aeec4f6bf9559fef69e8d3a7bd4272146b3b8"
+        },
+        "rightShin": {
+          "url": "hd-characters/juanmao-24/up-left-rightShin.png",
+          "width": 61,
+          "height": 44,
+          "pivot": [
+            3.8333333333333335,
+            3.8333333333333335
+          ],
+          "axis": [
+            2.6666666666666665,
+            4.833333333333333
+          ],
+          "sha256": "50b69d15c369e52630320ca980f8cefc9a5d4e107550558dd94cd845ba702204"
+        },
+        "rightFoot": {
+          "url": "hd-characters/juanmao-24/up-left-rightFoot.png",
+          "width": 94,
+          "height": 60,
+          "pivot": [
+            8.5,
+            3.5
+          ],
+          "sha256": "d40088aff06d5541a2d83b841a87f3b1f686897c19e2d637ae371d3cc3984e24"
+        }
+      }
+    },
+    "up-right": {
+      "joints": {
+        "neck": [
+          0.0,
+          -31.666666666666668
+        ],
+        "spine": [
+          0.0,
+          -21.0
+        ],
+        "leftShoulder": [
+          -9.833333333333334,
+          -30.0
+        ],
+        "leftElbow": [
+          -14.166666666666666,
+          -24.833333333333332
+        ],
+        "leftHand": [
+          -18.0,
+          -21.5
+        ],
+        "rightShoulder": [
+          6.333333333333333,
+          -29.0
+        ],
+        "rightElbow": [
+          9.833333333333334,
+          -23.333333333333332
+        ],
+        "rightHand": [
+          13.666666666666666,
+          -17.666666666666668
+        ],
+        "leftHip": [
+          -3.6666666666666665,
+          -17.333333333333332
+        ],
+        "leftKnee": [
+          -6.0,
+          -12.333333333333334
+        ],
+        "leftAnkle": [
+          -8.666666666666666,
+          -7.333333333333333
+        ],
+        "rightHip": [
+          4.833333333333333,
+          -16.833333333333332
+        ],
+        "rightKnee": [
+          6.833333333333333,
+          -12.0
+        ],
+        "rightAnkle": [
+          9.5,
+          -6.166666666666667
+        ]
+      },
+      "parts": {
+        "body": {
+          "url": "hd-characters/juanmao-24/up-right-body.png",
+          "width": 129,
+          "height": 105,
+          "pivot": [
+            12.0,
+            11.166666666666666
+          ],
+          "sha256": "620b170969302b12b20457adf3c2a227f138be8a7d5f4a94c5a54c4ac1717ce0"
+        },
+        "head": {
+          "url": "hd-characters/juanmao-24/up-right-head.png",
+          "width": 374,
+          "height": 412,
+          "pivot": [
+            36.0,
+            61.166666666666664
+          ],
+          "sha256": "6d7a8fd6d043d0b78f918119c5f6f510db6c1532b620755cc8ac6222983049f0"
+        },
+        "head-eyes": {
+          "url": "hd-characters/juanmao-24/up-right-head-eyes.png",
+          "width": 43,
+          "height": 85,
+          "pivot": [
+            -19.166666666666668,
+            19.166666666666668
+          ],
+          "sha256": "803c09fe1cbed2903c8b585e70a42256b0f2536f40a6509f5c2fa45de40d693a"
+        },
+        "head-happy": {
+          "url": "hd-characters/juanmao-24/up-right-head-happy.png",
+          "width": 375,
+          "height": 412,
+          "pivot": [
+            36.0,
+            61.166666666666664
+          ],
+          "sha256": "8476cc945da528adc01df340d3b9d2b20c8858c9268d284804731de4ce868add"
+        },
+        "head-sad": {
+          "url": "hd-characters/juanmao-24/up-right-head-sad.png",
+          "width": 374,
+          "height": 412,
+          "pivot": [
+            36.166666666666664,
+            61.166666666666664
+          ],
+          "sha256": "f1ebdd49c6748f4a9e00735cb842cd1c4df1b0b0a993627d3c2475d304385e43"
+        },
+        "head-hurt": {
+          "url": "hd-characters/juanmao-24/up-right-head-hurt.png",
+          "width": 401,
+          "height": 456,
+          "pivot": [
+            39.333333333333336,
+            67.66666666666667
+          ],
+          "sha256": "900a1c908d0c21bbbbc13317370163050eaede04acc7a296047cd73c69ba816b"
+        },
+        "leftUpperArm": {
+          "url": "hd-characters/juanmao-24/up-right-leftUpperArm.png",
+          "width": 61,
+          "height": 55,
+          "pivot": [
+            7.166666666666667,
+            1.0
+          ],
+          "axis": [
+            -4.333333333333333,
+            5.166666666666667
+          ],
+          "sha256": "49f3333c3d3d0a02af95220ad19c10bc09a72ebae3fdecf6cbd9f693be82e2a9"
+        },
+        "leftForearm": {
+          "url": "hd-characters/juanmao-24/up-right-leftForearm.png",
+          "width": 55,
+          "height": 46,
+          "pivot": [
+            8.333333333333334,
+            0.6666666666666666
+          ],
+          "axis": [
+            -3.8333333333333335,
+            3.3333333333333335
+          ],
+          "sha256": "2da459ba8e36453a544ecb6d5ce7561fe60bb1534f3cc542b1a7aea338a0ab03"
+        },
+        "leftThigh": {
+          "url": "hd-characters/juanmao-24/up-right-leftThigh.png",
+          "width": 63,
+          "height": 73,
+          "pivot": [
+            6.333333333333333,
+            4.0
+          ],
+          "axis": [
+            -2.3333333333333335,
+            5.0
+          ],
+          "sha256": "3a799449bf841482e0652dad57fa95b451b326c4815c1e15e2b48b2d9475aed6"
+        },
+        "leftShin": {
+          "url": "hd-characters/juanmao-24/up-right-leftShin.png",
+          "width": 49,
+          "height": 42,
+          "pivot": [
+            4.666666666666667,
+            3.8333333333333335
+          ],
+          "axis": [
+            -2.6666666666666665,
+            5.0
+          ],
+          "sha256": "d5e2d0241a8d91ae000d4b25896a20a76e89a5353e87621969c27b147de7927e"
+        },
+        "leftFoot": {
+          "url": "hd-characters/juanmao-24/up-right-leftFoot.png",
+          "width": 97,
+          "height": 61,
+          "pivot": [
+            8.833333333333334,
+            4.0
+          ],
+          "sha256": "4264878ac80edac6c592f0b2915e670184d8d1f190904b3de55d336d225e797a"
+        },
+        "rightUpperArm": {
+          "url": "hd-characters/juanmao-24/up-right-rightUpperArm.png",
+          "width": 56,
+          "height": 53,
+          "pivot": [
+            2.8333333333333335,
+            0.16666666666666666
+          ],
+          "axis": [
+            3.5,
+            5.666666666666667
+          ],
+          "sha256": "75127936a5f77ce6cf34f1c2a94e024ddcacec7c99b56396ed6b5601c72e4b06"
+        },
+        "rightForearm": {
+          "url": "hd-characters/juanmao-24/up-right-rightForearm.png",
+          "width": 55,
+          "height": 49,
+          "pivot": [
+            0.6666666666666666,
+            -1.6666666666666667
+          ],
+          "axis": [
+            3.8333333333333335,
+            5.666666666666667
+          ],
+          "sha256": "dd7648deef05d40f4b886e4ca17ff4ee455e421fa279235bf9fca17a16994bf4"
+        },
+        "rightThigh": {
+          "url": "hd-characters/juanmao-24/up-right-rightThigh.png",
+          "width": 60,
+          "height": 62,
+          "pivot": [
+            4.0,
+            4.0
+          ],
+          "axis": [
+            2.0,
+            4.833333333333333
+          ],
+          "sha256": "c7a4ac676d681d7454359021d4420e5490483c753f3533a059bad272251ee5c9"
+        },
+        "rightShin": {
+          "url": "hd-characters/juanmao-24/up-right-rightShin.png",
+          "width": 56,
+          "height": 38,
+          "pivot": [
+            3.8333333333333335,
+            3.8333333333333335
+          ],
+          "axis": [
+            2.6666666666666665,
+            5.833333333333333
+          ],
+          "sha256": "6530b1aa5e55f9b99cf8ed3a019ee0760e9bfca28dca56aca0ce3faa8edfaf14"
+        },
+        "rightFoot": {
+          "url": "hd-characters/juanmao-24/up-right-rightFoot.png",
+          "width": 100,
+          "height": 68,
+          "pivot": [
+            9.166666666666666,
+            4.5
+          ],
+          "sha256": "68a61e9b5c8d3e447843d8ccffa95a721582001b77ea5d0a479635c3eb905422"
+        }
+      }
+    }
+  },
+  "masters": [
+    {
+      "path": "juanmao-four-view-master-r1.png",
+      "sha256": "17b5448ca05080660b8e251db842c1e9130ec574fdb65788014b6e5899bce059",
+      "pixelSize": [
+        1774,
+        887
+      ]
+    },
+    {
+      "path": "juanmao-happy-master-r1.png",
+      "sha256": "bb580817869a19fedab84a6d50ed022ad4bf27e3b423cb988aae1683a875b658",
+      "pixelSize": [
+        1774,
+        887
+      ]
+    },
+    {
+      "path": "juanmao-sad-master-r1.png",
+      "sha256": "64f385387a20734179296d5a5ff8d42a9df3b4cb409d9d50828f654cff80119a",
+      "pixelSize": [
+        1774,
+        887
+      ]
+    },
+    {
+      "path": "juanmao-hurt-master-r1.png",
+      "sha256": "7dfedfc335e787ce4c68d4d5747df340c4dc6f7c74b1a78193a274dc84dd2de4",
+      "pixelSize": [
+        1774,
+        887
+      ]
+    }
+  ]
+}

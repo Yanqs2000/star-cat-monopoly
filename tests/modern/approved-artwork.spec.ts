@@ -5,6 +5,9 @@ import { parseWorldAssets } from '../../src/modern/features/map/world-assets'
 import { parseActivityAssets } from '../../src/modern/features/game/activity-assets'
 import { profileAssetUrl, profileTextureResolution } from '../../src/modern/features/assets/profiles'
 import { approvedWorldAssets, approvedActivityAssets, carnivalPresentationFrame } from '../../src/modern/features/assets/approved-artwork'
+const npcIds=[2,3,4,5,9,10,11,12,13,14,15]
+const newWorldIds=new Set(npcIds.map(id=>'npc-'+id))
+const newActivityIds=new Set([...npcIds.map(id=>'mini-npc-'+id),...[9,12,13,14,15,23].map(id=>'trait-'+id)])
 
 describe('已验收01—12游戏接入',()=>{
  it('六个静态图只在高清模式替换，原图和查询参数保留',()=>{
@@ -26,13 +29,15 @@ describe('已验收01—12游戏接入',()=>{
   expect(after.frames[0]!.offsetY).toBeCloseTo(before.frames[0]!.offsetY-4)
   expect(after.frames[0]!.width).toBe(before.frames[0]!.width+8)
   expect(profileTextureResolution(after.frames[0]!.url,'hd')).toBe(4)
-  expect(hd.clips.filter(c=>!c.id.startsWith('barrier-')&&!['mine','card-gain','ticket-gain','explosion','rocket'].includes(c.id))).toEqual(original.clips.filter(c=>!c.id.startsWith('barrier-')&&!['mine','card-gain','ticket-gain','explosion','rocket'].includes(c.id)))
+  const protectedClip=(c:{id:string})=>!newWorldIds.has(c.id)&&!c.id.startsWith('barrier-')&&!['mine','card-gain','ticket-gain','explosion','rocket'].includes(c.id)
+  expect(hd.clips.filter(protectedClip)).toEqual(original.clips.filter(protectedClip))
  })
  it('四种掉落物使用60帧且保持一秒时长，不改人物动画',()=>{
   const original=parseActivityAssets(activities),hd=approvedActivityAssets(original,'hd')
   expect(approvedActivityAssets(original,'original')).toBe(original)
   for(let i=1;i<=4;i++){const c=hd.clips.find(c=>c.id===`carnival-ball-${i}`)!;expect(c.frames).toHaveLength(60);expect(c.fps).toBe(60);expect(c.frames.length/c.fps).toBe(1);expect(new Set(c.frames.map(f=>f.url)).size).toBeGreaterThanOrEqual(59);for(let j=1;j<c.frames.length;j++)expect(c.frames[j]!.url).not.toBe(c.frames[j-1]!.url)}
-  expect(hd.clips.filter(c=>!c.id.startsWith('carnival-ball-')&&!['fog','show2','show-npc4','ludo-dice','car1','car2'].includes(c.id))).toEqual(original.clips.filter(c=>!c.id.startsWith('carnival-ball-')&&!['fog','show2','show-npc4','ludo-dice','car1','car2'].includes(c.id)))
+  const protectedClip=(c:{id:string})=>!newActivityIds.has(c.id)&&!c.id.startsWith('carnival-ball-')&&!['fog','show2','show-npc4','ludo-dice','car1','car2'].includes(c.id)
+  expect(hd.clips.filter(protectedClip)).toEqual(original.clips.filter(protectedClip))
  })
  it('30fps游戏逻辑之间显示中间帧，暂停、倍速和末帧衔接不越界',()=>{
   expect(carnivalPresentationFrame(1,0,60,1)).toBe(1)

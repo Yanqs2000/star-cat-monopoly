@@ -1,0 +1,38 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "paidExternalApi": false,
+  "newVisualAcceptance": false,
+  "generations": [
+    {
+      "file": "juanmao-four-view-master-r1.png",
+      "generatedFile": "/Users/yanqs/.codex/generated_images/01a18854-f6ac-73b3-8deb-115e1f943067/exec-b50fd205-ae61-4ff1-843f-aa1b4344c834.png",
+      "references": [
+        "public/hd-review/juanmao-hd-v2.png",
+        "original-four-directions.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: identity-preserve. Production game art reference sheet for a consistent 2D cutout puppet, not animation frames. Image1 is the mandatory approved character identity: Juanmao, giant white curled wool hair/head, two GOLDEN RAM SPIRAL HORNS, red cloth headband, pale peach round face, big oval black/white eyes with thick eyebrows, small silver-white rounded torso, white gloves and silver-white boots. Image2 specifies FOUR exact camera directions. Produce ONE wide 2048x1024 transparent RGBA sheet with FOUR equally spaced complete full-body characters in one horizontal row, all same scale and same character identity/rendering: cell1 down-right/front three-quarter matching image1, cell2 down-left/front three-quarter, cell3 up-left/rear three-quarter showing rear wool and red headband tails, cell4 up-right/right rear three-quarter matching the last original reference (a little right face visible). The poses must be identical neutral standing A-poses, arms separated from torso and slightly out/down at 35 degrees, hands fully visible, both legs and boots separated by clear transparency, both soles level. Huge head relative to very small body exactly as image1. Full silhouette visible with margin, equal head sizes across views. Keep Image1 polished dimensional 3D-toy lighting/white material, no outlines. This is ONE SAME character viewed around, not four designs; no facial redesign, no extra accessories, no missing horn, do not change clothing, no perspective floor, no shadow on floor, no text, no labels, no panel borders, no checkerboard. Transparent background. High quality 2D bitmap source suitable for deterministic segmented arm/leg/head animation.",
+      "sha256": "17b5448ca05080660b8e251db842c1e9130ec574fdb65788014b6e5899bce059"
+    },
+    {
+      "file": "juanmao-happy-master-r1.png",
+      "generatedFile": "/Users/yanqs/.codex/generated_images/01a18854-f6ac-73b3-8deb-115e1f943067/exec-9981c80c-b901-4711-900a-33a373fcbc88.png",
+      "references": [
+        "juanmao-four-view-master-r1.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Edit this exact four-direction same-character reference sheet ONLY in the facial features. Preserve every character placement, size, head outline, wool, golden horns, red headband, body, arms, hands, feet and all lighting exactly. Make Juanmao in all four views look JOYFUL: eyes become gentle closed crescent smile shapes, thick eyebrows soften upward, mouth changes from a small O to a cheerful wide open smile, tiny peach rosy cheeks. The rear third view should remain unchanged since face is hidden. Four cells stay exactly the same sizes and locations as original. This is an expression texture for a fixed 2D puppet; zero geometric redesign, no extra objects, no pose changes, no camera changes, no decorations or sparkles. Preserve genuine transparency. Output same wide aspect and resolution.",
+      "sha256": "bb580817869a19fedab84a6d50ed022ad4bf27e3b423cb988aae1683a875b658"
+    },
+    {
+      "file": "juanmao-sad-master-r1.png",
+      "generatedFile": "/Users/yanqs/.codex/generated_images/01a18854-f6ac-73b3-8deb-115e1f943067/exec-b684c15c-2c04-4e2d-9c09-481598994751.png",
+      "references": [
+        "juanmao-four-view-master-r1.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Edit this exact four-direction same-character reference sheet ONLY in facial features. Preserve character placement, scale, head silhouette, white wool, golden horns, red headband, body arms feet and lighting pixel-aligned to the original. Make Juanmao look SAD/CRYING in the three visible faces: worried inward-raised thick brows, lower eyelids lifted, glossy teary big eyes, downturned little mouth. Two little tear streams on peach cheeks. Rear third view unchanged. Four cells exactly same sizes/locations as original. This is an expression texture for a fixed 2D puppet: no poses, no resizing, no head geometry changes, no props, no text. Preserve genuine transparent background. Same wide aspect/resolution.",
+      "sha256": "64f385387a20734179296d5a5ff8d42a9df3b4cb409d9d50828f654cff80119a"
+    }
+  ]
+}

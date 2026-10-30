@@ -1,0 +1,608 @@
+SWF fps=30.0 frames=120
+SYMBOL 2 DefineShapeTag
+DEPENDENCIES 2 [1]
+SYMBOL 1 DefineBitsJPEG3Tag
+BITMAP 1 69x90
+DEPENDENCIES 1 []
+SYMBOL 130 DefineSpriteTag
+DEPENDENCIES 130 [115, 117, 119, 121, 123, 125, 127, 129]
+FRAMES 24
+FRAME 130 1 depth=1 symbol=115 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 2 depth=1 symbol=115 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 3 depth=1 symbol=115 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 4 depth=1 symbol=117 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 5 depth=1 symbol=117 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 6 depth=1 symbol=117 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 7 depth=1 symbol=119 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 8 depth=1 symbol=119 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 9 depth=1 symbol=119 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 10 depth=1 symbol=121 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 11 depth=1 symbol=121 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 12 depth=1 symbol=121 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 13 depth=1 symbol=123 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 14 depth=1 symbol=123 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 15 depth=1 symbol=123 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 16 depth=1 symbol=125 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 17 depth=1 symbol=125 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 18 depth=1 symbol=125 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 19 depth=1 symbol=127 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 20 depth=1 symbol=127 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 21 depth=1 symbol=127 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 22 depth=1 symbol=129 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 23 depth=1 symbol=129 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 130 24 depth=1 symbol=129 name=null matrix=1.0,0.0,0.0,1.0,0,0
+SYMBOL 115 DefineShapeTag
+DEPENDENCIES 115 [114]
+SYMBOL 114 DefineBitsJPEG3Tag
+BITMAP 114 69x88
+DEPENDENCIES 114 []
+SYMBOL 117 DefineShapeTag
+DEPENDENCIES 117 [116]
+SYMBOL 116 DefineBitsJPEG3Tag
+BITMAP 116 69x87
+DEPENDENCIES 116 []
+SYMBOL 119 DefineShapeTag
+DEPENDENCIES 119 [118]
+SYMBOL 118 DefineBitsJPEG3Tag
+BITMAP 118 69x95
+DEPENDENCIES 118 []
+SYMBOL 121 DefineShapeTag
+DEPENDENCIES 121 [120]
+SYMBOL 120 DefineBitsJPEG3Tag
+BITMAP 120 69x91
+DEPENDENCIES 120 []
+SYMBOL 123 DefineShapeTag
+DEPENDENCIES 123 [122]
+SYMBOL 122 DefineBitsJPEG3Tag
+BITMAP 122 68x88
+DEPENDENCIES 122 []
+SYMBOL 125 DefineShapeTag
+DEPENDENCIES 125 [124]
+SYMBOL 124 DefineBitsJPEG3Tag
+BITMAP 124 68x87
+DEPENDENCIES 124 []
+SYMBOL 127 DefineShapeTag
+DEPENDENCIES 127 [126]
+SYMBOL 126 DefineBitsJPEG3Tag
+BITMAP 126 69x95
+DEPENDENCIES 126 []
+SYMBOL 129 DefineShapeTag
+DEPENDENCIES 129 [128]
+SYMBOL 128 DefineBitsJPEG3Tag
+BITMAP 128 70x90
+DEPENDENCIES 128 []
+SYMBOL 132 DefineShapeTag
+DEPENDENCIES 132 [131]
+SYMBOL 131 DefineBitsJPEG3Tag
+BITMAP 131 69x90
+DEPENDENCIES 131 []
+SYMBOL 52 DefineSpriteTag
+DEPENDENCIES 52 [19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+FRAMES 68
+FRAME 52 1 depth=1 symbol=19 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 2 depth=1 symbol=19 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 3 depth=1 symbol=19 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 4 depth=1 symbol=19 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 5 depth=1 symbol=21 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 6 depth=1 symbol=21 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 7 depth=1 symbol=21 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 8 depth=1 symbol=21 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 9 depth=1 symbol=23 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 10 depth=1 symbol=23 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 11 depth=1 symbol=23 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 12 depth=1 symbol=23 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 13 depth=1 symbol=25 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 14 depth=1 symbol=25 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 15 depth=1 symbol=25 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 16 depth=1 symbol=25 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 17 depth=1 symbol=27 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 18 depth=1 symbol=27 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 19 depth=1 symbol=27 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 20 depth=1 symbol=27 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 21 depth=1 symbol=29 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 22 depth=1 symbol=29 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 23 depth=1 symbol=29 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 24 depth=1 symbol=29 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 25 depth=1 symbol=31 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 26 depth=1 symbol=31 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 27 depth=1 symbol=31 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 28 depth=1 symbol=31 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 29 depth=1 symbol=33 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 30 depth=1 symbol=33 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 31 depth=1 symbol=33 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 32 depth=1 symbol=33 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 33 depth=1 symbol=35 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 34 depth=1 symbol=35 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 35 depth=1 symbol=35 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 36 depth=1 symbol=35 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 37 depth=1 symbol=37 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 38 depth=1 symbol=37 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 39 depth=1 symbol=37 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 40 depth=1 symbol=37 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 41 depth=1 symbol=39 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 42 depth=1 symbol=39 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 43 depth=1 symbol=39 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 44 depth=1 symbol=39 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 45 depth=1 symbol=41 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 46 depth=1 symbol=41 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 47 depth=1 symbol=41 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 48 depth=1 symbol=41 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 49 depth=1 symbol=43 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 50 depth=1 symbol=43 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 51 depth=1 symbol=43 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 52 depth=1 symbol=43 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 53 depth=1 symbol=45 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 54 depth=1 symbol=45 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 55 depth=1 symbol=45 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 56 depth=1 symbol=45 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 57 depth=1 symbol=47 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 58 depth=1 symbol=47 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 59 depth=1 symbol=47 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 60 depth=1 symbol=47 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 61 depth=1 symbol=49 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 62 depth=1 symbol=49 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 63 depth=1 symbol=49 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 64 depth=1 symbol=49 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 65 depth=1 symbol=51 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 66 depth=1 symbol=51 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 67 depth=1 symbol=51 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 52 68 depth=1 symbol=51 name=null matrix=1.0,0.0,0.0,1.0,0,0
+SYMBOL 19 DefineShapeTag
+DEPENDENCIES 19 [18]
+SYMBOL 18 DefineBitsJPEG3Tag
+BITMAP 18 69x90
+DEPENDENCIES 18 []
+SYMBOL 21 DefineShapeTag
+DEPENDENCIES 21 [20]
+SYMBOL 20 DefineBitsJPEG3Tag
+BITMAP 20 69x91
+DEPENDENCIES 20 []
+SYMBOL 23 DefineShapeTag
+DEPENDENCIES 23 [22]
+SYMBOL 22 DefineBitsJPEG3Tag
+BITMAP 22 70x90
+DEPENDENCIES 22 []
+SYMBOL 25 DefineShapeTag
+DEPENDENCIES 25 [24]
+SYMBOL 24 DefineBitsJPEG3Tag
+BITMAP 24 70x91
+DEPENDENCIES 24 []
+SYMBOL 27 DefineShapeTag
+DEPENDENCIES 27 [26]
+SYMBOL 26 DefineBitsJPEG3Tag
+BITMAP 26 70x94
+DEPENDENCIES 26 []
+SYMBOL 29 DefineShapeTag
+DEPENDENCIES 29 [28]
+SYMBOL 28 DefineBitsJPEG3Tag
+BITMAP 28 69x95
+DEPENDENCIES 28 []
+SYMBOL 31 DefineShapeTag
+DEPENDENCIES 31 [30]
+SYMBOL 30 DefineBitsJPEG3Tag
+BITMAP 30 69x97
+DEPENDENCIES 30 []
+SYMBOL 33 DefineShapeTag
+DEPENDENCIES 33 [32]
+SYMBOL 32 DefineBitsJPEG3Tag
+BITMAP 32 70x98
+DEPENDENCIES 32 []
+SYMBOL 35 DefineShapeTag
+DEPENDENCIES 35 [34]
+SYMBOL 34 DefineBitsJPEG3Tag
+BITMAP 34 70x98
+DEPENDENCIES 34 []
+SYMBOL 37 DefineShapeTag
+DEPENDENCIES 37 [36]
+SYMBOL 36 DefineBitsJPEG3Tag
+BITMAP 36 70x99
+DEPENDENCIES 36 []
+SYMBOL 39 DefineShapeTag
+DEPENDENCIES 39 [38]
+SYMBOL 38 DefineBitsJPEG3Tag
+BITMAP 38 70x98
+DEPENDENCIES 38 []
+SYMBOL 41 DefineShapeTag
+DEPENDENCIES 41 [40]
+SYMBOL 40 DefineBitsJPEG3Tag
+BITMAP 40 70x96
+DEPENDENCIES 40 []
+SYMBOL 43 DefineShapeTag
+DEPENDENCIES 43 [42]
+SYMBOL 42 DefineBitsJPEG3Tag
+BITMAP 42 69x87
+DEPENDENCIES 42 []
+SYMBOL 45 DefineShapeTag
+DEPENDENCIES 45 [44]
+SYMBOL 44 DefineBitsJPEG3Tag
+BITMAP 44 70x90
+DEPENDENCIES 44 []
+SYMBOL 47 DefineShapeTag
+DEPENDENCIES 47 [46]
+SYMBOL 46 DefineBitsJPEG3Tag
+BITMAP 46 70x90
+DEPENDENCIES 46 []
+SYMBOL 49 DefineShapeTag
+DEPENDENCIES 49 [48]
+SYMBOL 48 DefineBitsJPEG3Tag
+BITMAP 48 69x90
+DEPENDENCIES 48 []
+SYMBOL 51 DefineShapeTag
+DEPENDENCIES 51 [50]
+SYMBOL 50 DefineBitsJPEG3Tag
+BITMAP 50 69x90
+DEPENDENCIES 50 []
+SYMBOL 69 DefineSpriteTag
+DEPENDENCIES 69 [54, 56, 58, 60, 62, 64, 66, 68]
+FRAMES 57
+FRAME 69 1 depth=1 symbol=54 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 2 depth=1 symbol=54 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 3 depth=1 symbol=54 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 4 depth=1 symbol=56 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 5 depth=1 symbol=56 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 6 depth=1 symbol=56 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 7 depth=1 symbol=56 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 8 depth=1 symbol=58 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 9 depth=1 symbol=58 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 10 depth=1 symbol=58 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 11 depth=1 symbol=58 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 12 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 13 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 14 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 15 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 16 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 17 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 18 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 19 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 20 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 21 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 22 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 23 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 24 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 25 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 26 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 27 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 28 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 29 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 30 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 31 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 32 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 33 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 34 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 35 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 36 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 37 depth=1 symbol=60 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 38 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 39 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 40 depth=1 symbol=62 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 41 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 42 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 43 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 44 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 45 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 46 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 47 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 48 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 49 depth=1 symbol=64 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 50 depth=1 symbol=66 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 51 depth=1 symbol=66 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 52 depth=1 symbol=66 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 53 depth=1 symbol=66 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 54 depth=1 symbol=68 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 55 depth=1 symbol=68 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 56 depth=1 symbol=68 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 69 57 depth=1 symbol=68 name=null matrix=1.0,0.0,0.0,1.0,0,0
+SYMBOL 54 DefineShapeTag
+DEPENDENCIES 54 [53]
+SYMBOL 53 DefineBitsJPEG3Tag
+BITMAP 53 69x90
+DEPENDENCIES 53 []
+SYMBOL 56 DefineShapeTag
+DEPENDENCIES 56 [55]
+SYMBOL 55 DefineBitsJPEG3Tag
+BITMAP 55 69x90
+DEPENDENCIES 55 []
+SYMBOL 58 DefineShapeTag
+DEPENDENCIES 58 [57]
+SYMBOL 57 DefineBitsJPEG3Tag
+BITMAP 57 70x89
+DEPENDENCIES 57 []
+SYMBOL 60 DefineShapeTag
+DEPENDENCIES 60 [59]
+SYMBOL 59 DefineBitsJPEG3Tag
+BITMAP 59 69x88
+DEPENDENCIES 59 []
+SYMBOL 62 DefineShapeTag
+DEPENDENCIES 62 [61]
+SYMBOL 61 DefineBitsJPEG3Tag
+BITMAP 61 68x88
+DEPENDENCIES 61 []
+SYMBOL 64 DefineShapeTag
+DEPENDENCIES 64 [63]
+SYMBOL 63 DefineBitsJPEG3Tag
+BITMAP 63 69x88
+DEPENDENCIES 63 []
+SYMBOL 66 DefineShapeTag
+DEPENDENCIES 66 [65]
+SYMBOL 65 DefineBitsJPEG3Tag
+BITMAP 65 70x89
+DEPENDENCIES 65 []
+SYMBOL 68 DefineShapeTag
+DEPENDENCIES 68 [67]
+SYMBOL 67 DefineBitsJPEG3Tag
+BITMAP 67 69x90
+DEPENDENCIES 67 []
+SYMBOL 113 DefineSpriteTag
+DEPENDENCIES 113 [78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112]
+FRAMES 73
+FRAME 113 1 depth=1 symbol=78 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 2 depth=1 symbol=78 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 3 depth=1 symbol=78 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 4 depth=1 symbol=80 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 5 depth=1 symbol=80 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 6 depth=1 symbol=80 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 7 depth=1 symbol=80 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 8 depth=1 symbol=80 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 9 depth=1 symbol=82 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 10 depth=1 symbol=82 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 11 depth=1 symbol=82 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 12 depth=1 symbol=82 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 13 depth=1 symbol=82 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 14 depth=1 symbol=84 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 15 depth=1 symbol=84 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 16 depth=1 symbol=84 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 17 depth=1 symbol=84 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 18 depth=1 symbol=84 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 19 depth=1 symbol=86 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 20 depth=1 symbol=86 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 21 depth=1 symbol=86 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 22 depth=1 symbol=86 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 23 depth=1 symbol=86 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 24 depth=1 symbol=88 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 25 depth=1 symbol=88 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 26 depth=1 symbol=88 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 27 depth=1 symbol=88 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 28 depth=1 symbol=88 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 29 depth=1 symbol=90 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 30 depth=1 symbol=90 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 31 depth=1 symbol=90 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 32 depth=1 symbol=92 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 33 depth=1 symbol=92 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 34 depth=1 symbol=92 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 35 depth=1 symbol=94 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 36 depth=1 symbol=94 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 37 depth=1 symbol=94 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 38 depth=1 symbol=96 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 39 depth=1 symbol=96 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 40 depth=1 symbol=96 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 41 depth=1 symbol=98 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 42 depth=1 symbol=98 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 43 depth=1 symbol=98 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 44 depth=1 symbol=100 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 45 depth=1 symbol=100 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 46 depth=1 symbol=100 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 47 depth=1 symbol=102 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 48 depth=1 symbol=102 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 49 depth=1 symbol=102 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 50 depth=1 symbol=104 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 51 depth=1 symbol=104 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 52 depth=1 symbol=104 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 53 depth=1 symbol=104 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 54 depth=1 symbol=104 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 55 depth=1 symbol=106 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 56 depth=1 symbol=106 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 57 depth=1 symbol=106 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 58 depth=1 symbol=106 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 59 depth=1 symbol=106 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 60 depth=1 symbol=108 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 61 depth=1 symbol=108 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 62 depth=1 symbol=108 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 63 depth=1 symbol=108 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 64 depth=1 symbol=108 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 65 depth=1 symbol=110 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 66 depth=1 symbol=110 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 67 depth=1 symbol=110 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 68 depth=1 symbol=110 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 69 depth=1 symbol=110 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 70 depth=1 symbol=112 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 71 depth=1 symbol=112 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 72 depth=1 symbol=112 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 113 73 depth=1 symbol=112 name=null matrix=1.0,0.0,0.0,1.0,0,0
+SYMBOL 78 DefineShapeTag
+DEPENDENCIES 78 [77]
+SYMBOL 77 DefineBitsJPEG3Tag
+BITMAP 77 69x90
+DEPENDENCIES 77 []
+SYMBOL 80 DefineShapeTag
+DEPENDENCIES 80 [79]
+SYMBOL 79 DefineBitsJPEG3Tag
+BITMAP 79 69x90
+DEPENDENCIES 79 []
+SYMBOL 82 DefineShapeTag
+DEPENDENCIES 82 [81]
+SYMBOL 81 DefineBitsJPEG3Tag
+BITMAP 81 70x90
+DEPENDENCIES 81 []
+SYMBOL 84 DefineShapeTag
+DEPENDENCIES 84 [83]
+SYMBOL 83 DefineBitsJPEG3Tag
+BITMAP 83 70x89
+DEPENDENCIES 83 []
+SYMBOL 86 DefineShapeTag
+DEPENDENCIES 86 [85]
+SYMBOL 85 DefineBitsJPEG3Tag
+BITMAP 85 69x88
+DEPENDENCIES 85 []
+SYMBOL 88 DefineShapeTag
+DEPENDENCIES 88 [87]
+SYMBOL 87 DefineBitsJPEG3Tag
+BITMAP 87 68x88
+DEPENDENCIES 87 []
+SYMBOL 90 DefineShapeTag
+DEPENDENCIES 90 [89]
+SYMBOL 89 DefineBitsJPEG3Tag
+BITMAP 89 69x88
+DEPENDENCIES 89 []
+SYMBOL 92 DefineShapeTag
+DEPENDENCIES 92 [91]
+SYMBOL 91 DefineBitsJPEG3Tag
+BITMAP 91 69x88
+DEPENDENCIES 91 []
+SYMBOL 94 DefineShapeTag
+DEPENDENCIES 94 [93]
+SYMBOL 93 DefineBitsJPEG3Tag
+BITMAP 93 69x88
+DEPENDENCIES 93 []
+SYMBOL 96 DefineShapeTag
+DEPENDENCIES 96 [95]
+SYMBOL 95 DefineBitsJPEG3Tag
+BITMAP 95 68x88
+DEPENDENCIES 95 []
+SYMBOL 98 DefineShapeTag
+DEPENDENCIES 98 [97]
+SYMBOL 97 DefineBitsJPEG3Tag
+BITMAP 97 69x88
+DEPENDENCIES 97 []
+SYMBOL 100 DefineShapeTag
+DEPENDENCIES 100 [99]
+SYMBOL 99 DefineBitsJPEG3Tag
+BITMAP 99 68x88
+DEPENDENCIES 99 []
+SYMBOL 102 DefineShapeTag
+DEPENDENCIES 102 [101]
+SYMBOL 101 DefineBitsJPEG3Tag
+BITMAP 101 69x88
+DEPENDENCIES 101 []
+SYMBOL 104 DefineShapeTag
+DEPENDENCIES 104 [103]
+SYMBOL 103 DefineBitsJPEG3Tag
+BITMAP 103 68x88
+DEPENDENCIES 103 []
+SYMBOL 106 DefineShapeTag
+DEPENDENCIES 106 [105]
+SYMBOL 105 DefineBitsJPEG3Tag
+BITMAP 105 69x88
+DEPENDENCIES 105 []
+SYMBOL 108 DefineShapeTag
+DEPENDENCIES 108 [107]
+SYMBOL 107 DefineBitsJPEG3Tag
+BITMAP 107 70x89
+DEPENDENCIES 107 []
+SYMBOL 110 DefineShapeTag
+DEPENDENCIES 110 [109]
+SYMBOL 109 DefineBitsJPEG3Tag
+BITMAP 109 70x90
+DEPENDENCIES 109 []
+SYMBOL 112 DefineShapeTag
+DEPENDENCIES 112 [111]
+SYMBOL 111 DefineBitsJPEG3Tag
+BITMAP 111 69x90
+DEPENDENCIES 111 []
+SYMBOL 193 DefineSpriteTag
+DEPENDENCIES 193 [176, 178, 180, 182, 184, 186, 188, 190, 192]
+FRAMES 60
+FRAME 193 1 depth=1 symbol=176 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 2 depth=1 symbol=178 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 3 depth=1 symbol=180 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 4 depth=1 symbol=180 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 5 depth=1 symbol=180 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 6 depth=1 symbol=182 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 7 depth=1 symbol=182 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 8 depth=1 symbol=182 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 9 depth=1 symbol=184 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 10 depth=1 symbol=184 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 11 depth=1 symbol=184 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 12 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 13 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 14 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 15 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 16 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 17 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 18 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 19 depth=1 symbol=186 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 20 depth=1 symbol=188 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 21 depth=1 symbol=188 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 22 depth=1 symbol=188 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 23 depth=1 symbol=188 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 24 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 25 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 26 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 27 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 28 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 29 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 30 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 31 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 32 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 33 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 34 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 35 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 36 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 37 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 38 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 39 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 40 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 41 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 42 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 43 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 44 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 45 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 46 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 47 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 48 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 49 depth=1 symbol=192 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 50 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 51 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 52 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 53 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 54 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 55 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 56 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 57 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 58 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 59 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+FRAME 193 60 depth=1 symbol=190 name=null matrix=1.0,0.0,0.0,1.0,0,0
+SYMBOL 176 DefineShapeTag
+DEPENDENCIES 176 [175]
+SYMBOL 175 DefineBitsJPEG3Tag
+BITMAP 175 80x93
+DEPENDENCIES 175 []
+SYMBOL 178 DefineShapeTag
+DEPENDENCIES 178 [177]
+SYMBOL 177 DefineBitsJPEG3Tag
+BITMAP 177 83x105
+DEPENDENCIES 177 []
+SYMBOL 180 DefineShapeTag
+DEPENDENCIES 180 [179]
+SYMBOL 179 DefineBitsJPEG3Tag
+BITMAP 179 84x110
+DEPENDENCIES 179 []
+SYMBOL 182 DefineShapeTag
+DEPENDENCIES 182 [181]
+SYMBOL 181 DefineBitsJPEG3Tag
+BITMAP 181 88x109
+DEPENDENCIES 181 []
+SYMBOL 184 DefineShapeTag
+DEPENDENCIES 184 [183]
+SYMBOL 183 DefineBitsJPEG3Tag
+BITMAP 183 80x92
+DEPENDENCIES 183 []
+SYMBOL 186 DefineShapeTag
+DEPENDENCIES 186 [185]
+SYMBOL 185 DefineBitsJPEG3Tag
+BITMAP 185 87x93
+DEPENDENCIES 185 []
+SYMBOL 188 DefineShapeTag
+DEPENDENCIES 188 [187]
+SYMBOL 187 DefineBitsJPEG3Tag
+BITMAP 187 84x92
+DEPENDENCIES 187 []
+SYMBOL 190 DefineShapeTag
+DEPENDENCIES 190 [189]
+SYMBOL 189 DefineBitsJPEG3Tag
+BITMAP 189 77x92
+DEPENDENCIES 189 []
+SYMBOL 192 DefineShapeTag
+DEPENDENCIES 192 [191]
+SYMBOL 191 DefineBitsJPEG3Tag
+BITMAP 191 77x92
+DEPENDENCIES 191 []

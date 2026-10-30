@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-30T01:03:48.948Z",
+  "status": "candidate-awaiting-user-review",
+  "url": "http://127.0.0.1:64867/hd-review/character-24/index.html",
+  "title": "24 卷毛连续2D动画候选审阅",
+  "browser": "local Chrome / Playwright; Browser plugin and browser skill unavailable",
+  "viewports": [
+    "1320x1030 DPR1",
+    "430x932 DPR1"
+  ],
+  "pageIdentity": true,
+  "controls": true,
+  "sevenActionsFourDirections": true,
+  "errors": [],
+  "failedRequests": [],
+  "videoFrames": 689,
+  "videoFps": 60,
+  "limitations": [
+    "newly authored 2D puppet motion, not recovered original limb rig",
+    "world-displacement stance and native tile registration; turns and start-stop need visual acceptance",
+    "source durations retained; continuous poses and soot-wool silhouette are newly authored",
+    "no user visual acceptance recorded for candidate"
+  ]
+}
