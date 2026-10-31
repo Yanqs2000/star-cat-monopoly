@@ -2,10 +2,11 @@
 import { computed } from 'vue'
 import characterIndex from '../../../../public/modern/assets/characters/index.json'
 import { profileAssetUrl, type AssetProfile } from '../assets/profiles'
+import{character25ThumbnailUrl}from'../characters/characters-25-registry'
 import type { AnimationProgress } from './animation-preload'
 const props=defineProps<{progress:AnimationProgress;stage:string;players:{characterId:number;name:string}[];profile:AssetProfile}>()
 const percent=computed(()=>props.progress.total?Math.floor(props.progress.completed/props.progress.total*100):0)
-const portrait=(id:number)=>import.meta.env.BASE_URL+profileAssetUrl(characterIndex.characters.find(character=>character.id===id)!.manifestUrl.replace(/manifest\.json$/, 'walk/down-right/1.png'),props.profile)
+const portrait=(id:number)=>import.meta.env.BASE_URL+(character25ThumbnailUrl(id,props.profile)??profileAssetUrl(characterIndex.characters.find(character=>character.id===id)!.manifestUrl.replace(/manifest\.json$/, 'walk/down-right/1.png'),props.profile))
 </script>
 <template>
  <section class="loading-card" aria-label="准备本局游戏">

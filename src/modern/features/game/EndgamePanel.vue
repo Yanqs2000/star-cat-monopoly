@@ -10,7 +10,7 @@ const art=computed(()=>bankruptcy.value?'bankrupt':props.game.outcome?.kind==='v
 const artUrl=computed(()=>{const path=profileAssetUrl(`assets/activities/${art.value}/1.png`,props.assetProfile);return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`})
 const assetUrl=(source:string,profiled=true)=>{const path=profiled?profileAssetUrl(source,props.assetProfile):source;return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`}
 const assetError=(url:string)=>emit('asset-error',new Error(`素材加载失败：${url}`))
-const portrait=(characterId:number)=>assetUrl(`assets/monthly/champions/${characterId}.png`,false)
+const portrait=(characterId:number)=>assetUrl(`assets/monthly/champions/${characterId}.png`)
 const sharesReturned=computed(()=>bankruptcy.value?Object.values(bankruptcy.value.receipt.sharesReturned).reduce((a,b)=>a+b,0):0)
 </script>
 <template>

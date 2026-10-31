@@ -13,8 +13,9 @@ const champion = computed(() => standings.value.find(row => row.rank === 1))
 const quote = computed(() => props.game.finance.monthlyQuoteIndex === null ? '' : monthlyQuotes[props.game.finance.monthlyQuoteIndex])
 const portrait = (playerId: number) => {
   const characterId = props.game.players.find(player => player.id === playerId)!.characterId
-  const path = `assets/monthly/champions/${characterId}.png`
-  return props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`
+  const source = `assets/monthly/champions/${characterId}.png`
+  const path=profileAssetUrl(source,props.assetProfile??'original')
+  return props.preparedImages?.[path] ?? props.preparedImages?.[source] ?? `${import.meta.env.BASE_URL}${path}`
 }
 const imageError = (event: Event) => emit('asset-error', new Error(`月结图片加载失败：${(event.target as HTMLImageElement).src}`))
 const emblemUrl = computed(()=>`${import.meta.env.BASE_URL}${profileAssetUrl('assets/ui/emblem.png',props.assetProfile??'original')}`)

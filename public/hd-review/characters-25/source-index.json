@@ -1,0 +1,2694 @@
+{
+  "version": 1,
+  "scope": [
+    25
+  ],
+  "baseCommit": "20d9c55",
+  "sourceTiming": "Native manifests; frames and duration are independent per identity/facing/action.",
+  "roles": [
+    {
+      "id": 2,
+      "name": "阿牛",
+      "anatomy": "biped",
+      "sourceSwfSha256": "e6210696f011727e4df393f6568c4099a545d70b26d0886f042204bcf02c106a",
+      "sourceManifestSha256": "f2f4d2d264bf6caf1900420d88aaf5d056f885fbede863275fa9a263a60be38b",
+      "sourceReactionManifestSha256": "073301c68429214f1aaa36af9a5d66260fc876bb0643de5e1d8ab8952cb26c65",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2100.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/2/reactions/neutral/down-right/1.png",
+              "sha256": "b1f3347ed3ec78907fca0ab1bfbc75cb057badb7cb1f71d394e02f82674662dc",
+              "bounds": [
+                -5.5,
+                -54.0,
+                64,
+                91
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/2/reactions/happy/down-right/35.png",
+              "sha256": "90c011d1e5953214ee5c73168010cc3c7757c2a40c7175ac312f85f331e5d454",
+              "bounds": [
+                -5.55,
+                -54.0,
+                67,
+                92
+              ]
+            },
+            "sad": {
+              "frame": 39,
+              "url": "assets/characters/2/reactions/sad/down-right/39.png",
+              "sha256": "b746d7f92b20d44c6905389b44d9626e2b594dd7b5dff70118f5ff775178eca3",
+              "bounds": [
+                -6.45,
+                -52.8,
+                69,
+                92
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/2/reactions/hurt/down-right/49.png",
+              "sha256": "9488604ea23f7d7c43f6c72a2af70bfd62f9268025e5f730cbfdef7abf84028c",
+              "bounds": [
+                -17.45,
+                -69.15,
+                84,
+                113
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2100.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/2/reactions/neutral/down-left/1.png",
+              "sha256": "83a83104cc56e5f2f22cf51bb1b7bf08b4cbe2776391b44174f20ff9a53de692",
+              "bounds": [
+                -2.5,
+                -53.65,
+                59,
+                89
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/2/reactions/happy/down-left/35.png",
+              "sha256": "940af7fefda75d746d230daed7ff72b502970ba77219b5ca34dce5e09f522c5d",
+              "bounds": [
+                -2.7,
+                -54.15,
+                71,
+                90
+              ]
+            },
+            "sad": {
+              "frame": 39,
+              "url": "assets/characters/2/reactions/sad/down-left/39.png",
+              "sha256": "5721b2b0b59216f0af0191194aa6403a6e9c2e39225ab5e649fad55e54f422da",
+              "bounds": [
+                -3.15,
+                -54.15,
+                71,
+                92
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/2/reactions/hurt/down-left/49.png",
+              "sha256": "cac4c40eeb74d44afc5bd8e2e1f5449b9e46f6673a2eb8228bec16deeb67678f",
+              "bounds": [
+                -11.65,
+                -68.65,
+                91,
+                112
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2100.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/2/reactions/neutral/up-left/1.png",
+              "sha256": "6c3d26f9dd594efbd8da58ed15017f20d41edd5b497e2a1aac092b07fd4e06aa",
+              "bounds": [
+                2.35,
+                -41.65,
+                63,
+                81
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/2/reactions/happy/up-left/35.png",
+              "sha256": "eaa9103c4256f1ceddbcd97e994ee20e471f99f52e80a31e5c2cb754da3f3537",
+              "bounds": [
+                -1.7,
+                -42.65,
+                69,
+                84
+              ]
+            },
+            "sad": {
+              "frame": 39,
+              "url": "assets/characters/2/reactions/sad/up-left/39.png",
+              "sha256": "43262aead06943526cba167c3a3d80ff25fdbc4c304caf513120d6eec0865ba9",
+              "bounds": [
+                -2.65,
+                -43.65,
+                70,
+                83
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/2/reactions/hurt/up-left/49.png",
+              "sha256": "bcb8b3059c8360b7aa80bb85e6ee4320edffd0ce5121accd892168febb3dabe1",
+              "bounds": [
+                -10.15,
+                -63.15,
+                87,
+                112
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2100.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/2/reactions/neutral/up-right/1.png",
+              "sha256": "cfb1d73f7507b4da2e4d1deb92cc66228ce6b3112af59b2a031ac5644cf6c3ca",
+              "bounds": [
+                -7.15,
+                -53.0,
+                62,
+                93
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/2/reactions/happy/up-right/35.png",
+              "sha256": "117f92e3de12c9d0e2687399ea27881f201226e32cbf16ac291612c36571a1b8",
+              "bounds": [
+                -9.05,
+                -53.15,
+                63,
+                93
+              ]
+            },
+            "sad": {
+              "frame": 39,
+              "url": "assets/characters/2/reactions/sad/up-right/39.png",
+              "sha256": "a5917f3163e98fafff6bc980f2e54eddabf8912175701775db999e8e8b946cb6",
+              "bounds": [
+                -10.15,
+                -52.65,
+                63,
+                94
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/2/reactions/hurt/up-right/49.png",
+              "sha256": "74428e51f532fd428ab55c8d2734d7d675a93149329428bbc88ef1558bd5bb9c",
+              "bounds": [
+                -27.15,
+                -66.5,
+                84,
+                102
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-02-source.png",
+      "referenceSha256": "21c15e56838cc674e7d7b10b22ea95cdf0f941d8884001e2ac401b2f912c7fee"
+    },
+    {
+      "id": 3,
+      "name": "吉吉&米米",
+      "anatomy": "paired",
+      "sourceSwfSha256": "1e8b720f4c0836d3a2a96372d5f3e80b2877efc4b7cded488ab2e464cb3dd154",
+      "sourceManifestSha256": "6df2830538260a13f1e9111d6032be69509b04c93156a8a93b2e0fa89f3e7688",
+      "sourceReactionManifestSha256": "09ec0495ee7c638c312efb81d2c0bd3e3578ac24a96535744eb5dd1a7a1a66f9",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/3/reactions/neutral/down-right/1.png",
+              "sha256": "322db510c31335af7d3e9bd1c540e9bdaa76e79730c73ceddbc42b97888e8270",
+              "bounds": [
+                -23.6,
+                -41.65,
+                94,
+                74
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/3/reactions/happy/down-right/35.png",
+              "sha256": "fc486845ff8f965941f889d80b69097cc1f9e65e8d8dcc1b46388279e254b1ed",
+              "bounds": [
+                -25.15,
+                -42.15,
+                100,
+                75
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/3/reactions/sad/down-right/45.png",
+              "sha256": "23991dcf0a06f5ca001a9cc14c86419ee278969cd6e43ce217da4606dae893bb",
+              "bounds": [
+                -25.0,
+                -72.0,
+                180,
+                104
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/3/reactions/hurt/down-right/49.png",
+              "sha256": "235e2fedfe7b7595ea7f2ce5896f29da52d49b1cf01e22848d195ab85b400d1e",
+              "bounds": [
+                -26.15,
+                -51.15,
+                102,
+                86
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/3/reactions/neutral/down-left/1.png",
+              "sha256": "d21d4397f92adc9fbc68588bcc9aab0bf05628bbda0ac926dd654c39db58bd65",
+              "bounds": [
+                -3.65,
+                -54.65,
+                88,
+                104
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/3/reactions/happy/down-left/35.png",
+              "sha256": "3fa2eb3a89b13455a576e3aea545f15ab1196794600186b8af48936bb97fb22d",
+              "bounds": [
+                -7.5,
+                -60.15,
+                95,
+                109
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/3/reactions/sad/down-left/45.png",
+              "sha256": "f88e1322e65fc01c1246966c3164b81d1373ed3db28a0d233add49b81e0dd226",
+              "bounds": [
+                -4.5,
+                -58.0,
+                91,
+                108
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/3/reactions/hurt/down-left/49.png",
+              "sha256": "4a9148a6806ed194933ffad846e249365c09697dba8a23850869ce0291ea2761",
+              "bounds": [
+                -12.15,
+                -64.65,
+                102,
+                115
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/3/reactions/neutral/up-left/1.png",
+              "sha256": "79cda06091bab278591ff074390013afa846bdedd3defa78402795532eb117eb",
+              "bounds": [
+                -22.15,
+                -41.15,
+                109,
+                97
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/3/reactions/happy/up-left/35.png",
+              "sha256": "3b45aac15fd9f8aa3f8f2fb052d57ba52665d43b225b863bb723c421671c90b9",
+              "bounds": [
+                -26.15,
+                -41.15,
+                116,
+                100
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/3/reactions/sad/up-left/45.png",
+              "sha256": "4729a7c6dbac4efedbdc983d667da86e80e786cde66d8915e20bc5a7aba66390",
+              "bounds": [
+                -25.05,
+                -42.15,
+                115,
+                100
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/3/reactions/hurt/up-left/49.png",
+              "sha256": "d6cd7590674ae74a92e43cf3b1557b2584f0367c8854b0aed9a628dfdab583ea",
+              "bounds": [
+                -23.2,
+                -49.65,
+                115,
+                110
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/3/reactions/neutral/up-right/1.png",
+              "sha256": "26881db105a1ea34fd3d7bdb1d0025e4d60ccf217f9b74d50a1b4025c1a3f319",
+              "bounds": [
+                -20.0,
+                -56.5,
+                77,
+                117
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/3/reactions/happy/up-right/35.png",
+              "sha256": "ef96785f1d273bcf2847febed31da0f3f46bee44a907a135457e9ae213202ba1",
+              "bounds": [
+                -23.15,
+                -56.5,
+                82,
+                118
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/3/reactions/sad/up-right/45.png",
+              "sha256": "db931ff5fe658e6d04edba66a34306b21ba8ca1018a1fdc64b6af90d268ba254",
+              "bounds": [
+                -23.15,
+                -55.5,
+                81,
+                118
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/3/reactions/hurt/up-right/49.png",
+              "sha256": "5a090291001586321f9ff0eec4d1721ab1b036c54cd7a2dbcbad4c7c4ae90c83",
+              "bounds": [
+                -25.2,
+                -69.5,
+                88,
+                133
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-03-source.png",
+      "referenceSha256": "bcbc125429779b01a88e3eefc592ab9e433d4ad66c76c27b348a53a91c56299e"
+    },
+    {
+      "id": 4,
+      "name": "佳佳",
+      "anatomy": "crab",
+      "sourceSwfSha256": "bce4cd26f9768ce1eb649f74f0c5629536f2250209695c06cd7cb6bebfbdfe10",
+      "sourceManifestSha256": "f7928f7093b32da0b3b61ef36a58e363317786aa63bbeea23ab41f607e5b203e",
+      "sourceReactionManifestSha256": "a70af845acd87db271458fd5bccde548ffb0991aa0926e28052cc30a66db4847",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/4/reactions/neutral/down-right/1.png",
+              "sha256": "3b988c081a1bdb88fd792fec356fb9863a058994ec6029c05759afcfa59274d5",
+              "bounds": [
+                -12.0,
+                -33.0,
+                78,
+                66
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/4/reactions/happy/down-right/35.png",
+              "sha256": "5a01e7446f44a72e78f00ab451ce667c9e2e16d403f7deee564750122d29ab45",
+              "bounds": [
+                -13.0,
+                -33.0,
+                85,
+                66
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/4/reactions/sad/down-right/45.png",
+              "sha256": "efb273871210e3ef03d00cbada336367620c93786538476ca3253e0b4c5f9796",
+              "bounds": [
+                -12.65,
+                -33.0,
+                84,
+                66
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/4/reactions/hurt/down-right/49.png",
+              "sha256": "ed37adadc0ca04ffbfc2fb2be96b0f4ae49514977c732faaf8323aa6a389f3f6",
+              "bounds": [
+                -10.65,
+                -45.0,
+                78,
+                77
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/4/reactions/neutral/down-left/1.png",
+              "sha256": "03f749f0a2b7a9ecec4d1211801c6642b5738ba4ae1ef821a3de899906720bed",
+              "bounds": [
+                10.35,
+                -35.65,
+                58,
+                80
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/4/reactions/happy/down-left/35.png",
+              "sha256": "481b87dc7ccf8a1d96306d3efff9bb78eace3451d77ef8fce9a946deee641e42",
+              "bounds": [
+                -2.65,
+                -35.65,
+                74,
+                80
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/4/reactions/sad/down-left/45.png",
+              "sha256": "803db5202f1a76136eddf12678729948648eb79f10ebd25e737f418f455f6675",
+              "bounds": [
+                -1.15,
+                -36.15,
+                77,
+                80
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/4/reactions/hurt/down-left/49.png",
+              "sha256": "bc526ebab14438159009c0049266b6bb7e6cfb1d2fc0dc48a2970df3035afffa",
+              "bounds": [
+                0.5,
+                -46.15,
+                75,
+                90
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/4/reactions/neutral/up-left/1.png",
+              "sha256": "5791f70ab2203a0dc0c167d8e26aa4676415de9dea3ac5cdc55b445a902e2063",
+              "bounds": [
+                -8.65,
+                -30.15,
+                80,
+                79
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/4/reactions/happy/up-left/35.png",
+              "sha256": "8ea19c1fc31c774ed248db94d5bb20dbc89389758632e589f363163d4c2bace2",
+              "bounds": [
+                -8.65,
+                -31.15,
+                80,
+                81
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/4/reactions/sad/up-left/45.png",
+              "sha256": "fe1a9f940fdb50a161932050d97a7467fc274059c7435ec00da53a86e7184ae0",
+              "bounds": [
+                -11.0,
+                -33.0,
+                78,
+                84
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/4/reactions/hurt/up-left/49.png",
+              "sha256": "848f5b3b165607c6ce4fcb5a84702343f0ca78641fd5cf4b75705be23684315e",
+              "bounds": [
+                -7.0,
+                -43.65,
+                73,
+                98
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/4/reactions/neutral/up-right/1.png",
+              "sha256": "e14cc49be8a0f9de85e807d1a29f56bbd66a0d00ce19bb59a6672ecc0003ffe9",
+              "bounds": [
+                -12.5,
+                -36.0,
+                63,
+                84
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/4/reactions/happy/up-right/35.png",
+              "sha256": "a6f61aa2f87d3f6ebd81d100e4fe15ada8b7b9d3a192af548a88a7aad326bbbd",
+              "bounds": [
+                -15.5,
+                -36.0,
+                80,
+                84
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/4/reactions/sad/up-right/45.png",
+              "sha256": "10a1e21ef487cb2b9e6aa1553b7de5053fde20feb7e606f9ce37530e8aeb20d1",
+              "bounds": [
+                -16.1,
+                -34.5,
+                77,
+                82
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/4/reactions/hurt/up-right/49.png",
+              "sha256": "4bc6973e9d568c0e2a0a3215f4ced852a519916533121de46990bb7a84c9aa04",
+              "bounds": [
+                -21.95,
+                -46.25,
+                81,
+                91
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-04-source.png",
+      "referenceSha256": "8f880a3ff51d14815a681788a2df79c052a4414e11621c5ec2affc2b59fb61ba"
+    },
+    {
+      "id": 5,
+      "name": "大牌",
+      "anatomy": "biped",
+      "sourceSwfSha256": "e45e5f8f4c7cfd1a7cf896ec5ff645444f7831a18ed4739b167af0aae6667686",
+      "sourceManifestSha256": "f6aad8a8946be9e058342c12f19a15fce71821afc4dd760e3dead81240aa3c12",
+      "sourceReactionManifestSha256": "2314930acfaeb6401e0b6a1ef24e6b553c61e44b7baff5363632baaf8050003c",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/5/reactions/neutral/down-right/1.png",
+              "sha256": "9fd675a7da861fd3eb872494b6bc0521332854f9c7ba70725470f1da6572f152",
+              "bounds": [
+                -20.5,
+                -57.0,
+                83,
+                95
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/5/reactions/happy/down-right/35.png",
+              "sha256": "0ec637621d3f7317bae0d64ad7d8687768b70fb116822b23fb0f599684555d84",
+              "bounds": [
+                -20.55,
+                -58.0,
+                88,
+                97
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/5/reactions/sad/down-right/45.png",
+              "sha256": "f42624adce184c3bbd9f23a1ab0204db25ae989b439a86afb1169a5e6066d666",
+              "bounds": [
+                -20.45,
+                -57.8,
+                89,
+                97
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/5/reactions/hurt/down-right/49.png",
+              "sha256": "9e86b1a0fd2962cbb9a4e789514d027ad8d17a953d8bd483a5db19eae713813b",
+              "bounds": [
+                -26.65,
+                -78.5,
+                100,
+                128
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/5/reactions/neutral/down-left/1.png",
+              "sha256": "066d9957074031c294006fd9bed851b154158924e170158598577c0cfc192f68",
+              "bounds": [
+                3.5,
+                -54.65,
+                78,
+                98
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/5/reactions/happy/down-left/35.png",
+              "sha256": "034af3dc3259197e3d80337559879d613b87a8f40a2b30d1dee99780354fb33a",
+              "bounds": [
+                1.05,
+                -54.8,
+                80,
+                98
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/5/reactions/sad/down-left/45.png",
+              "sha256": "df45dbe6783d9ebe2947249a323c01b066b9e2ad76292e5d50dda54735f8ebb5",
+              "bounds": [
+                1.85,
+                -56.15,
+                82,
+                98
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/5/reactions/hurt/down-left/49.png",
+              "sha256": "a85d0e5a86c848a44e9dd3a5e475d376c8a4b91b287d6566f475d6c1d4353092",
+              "bounds": [
+                -14.7,
+                -80.15,
+                108,
+                129
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/5/reactions/neutral/up-left/1.png",
+              "sha256": "1b87b71ce16abeda85d40fc10040b12c4dfb8b3338b3f342b404d1991c6a72c9",
+              "bounds": [
+                -6.65,
+                -51.65,
+                88,
+                103
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/5/reactions/happy/up-left/35.png",
+              "sha256": "80143eacb29c980c7233a2130ae43255df8337b4c6218924b9dcf6b8ef7c4e03",
+              "bounds": [
+                -11.7,
+                -52.65,
+                95,
+                108
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/5/reactions/sad/up-left/45.png",
+              "sha256": "cd5974e009d35698bbee18af63b88380c0d9182bbf7faf0acdc908d3168cfbe7",
+              "bounds": [
+                -12.65,
+                -52.65,
+                97,
+                108
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/5/reactions/hurt/up-left/49.png",
+              "sha256": "2fc6465a7aa993bb2590dc9be4658f7adc9e321a0bc6705d0b22f7cbc9a6a7e8",
+              "bounds": [
+                -18.1,
+                -75.0,
+                108,
+                137
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2466.6666666666665,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/5/reactions/neutral/up-right/1.png",
+              "sha256": "26fa40a98a883175b796f4d27d97a262e6902ad0ca9c2bd1d23b5a9e49426cfc",
+              "bounds": [
+                -22.15,
+                -59.0,
+                76,
+                101
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/5/reactions/happy/up-right/35.png",
+              "sha256": "58a067721842fd4e5e3c508433d69d823703b447ef7552398548dd65f679475d",
+              "bounds": [
+                -32.05,
+                -59.15,
+                86,
+                105
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/5/reactions/sad/up-right/45.png",
+              "sha256": "601aa5ed7a00d79acf78ab3d7c7fca85c05a07e64c1bc3319fbe9b5c836f8ab2",
+              "bounds": [
+                -32.15,
+                -58.65,
+                86,
+                105
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/5/reactions/hurt/up-right/49.png",
+              "sha256": "5dd3cea4c2bfa374b75f31c513cd5e81bd10825830917b78ac0f798480c8d258",
+              "bounds": [
+                -43.15,
+                -76.65,
+                108,
+                134
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-05-source.png",
+      "referenceSha256": "45cc82c1caab95cd5d5f73ebdb1f2eb0b956bc1980e9695eb61b7f21eb24a3ae"
+    },
+    {
+      "id": 6,
+      "name": "薇薇",
+      "anatomy": "floating",
+      "sourceSwfSha256": "0655c323278deabe0976c7e9fe34b0cdbd659f33c261b3f800b8e26e12a90c14",
+      "sourceManifestSha256": "274b9c84ef7b370543b8445a377f8eb18fdcb33ce129051e693f06ae29e25c6e",
+      "sourceReactionManifestSha256": "f941f77de83a511a36d984ab49ee423da370290d7df0d7b21ff3611af756d011",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 666.6666666666667,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 2266.6666666666665,
+            "sad": 2300.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 20,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/6/reactions/neutral/down-right/1.png",
+              "sha256": "e937eb44a5a20ed6172591231e4cadd3826faa678246c44947b395b4b4e200ae",
+              "bounds": [
+                -2.5,
+                -52.0,
+                60,
+                90
+              ]
+            },
+            "happy": {
+              "frame": 42,
+              "url": "assets/characters/6/reactions/happy/down-right/42.png",
+              "sha256": "2681514c46ed879672569961f3a1ddba5d2f6537d06691ebdf97417c9d72e7c8",
+              "bounds": [
+                -4.55,
+                -65.0,
+                66,
+                108
+              ]
+            },
+            "sad": {
+              "frame": 42,
+              "url": "assets/characters/6/reactions/sad/down-right/42.png",
+              "sha256": "9190883ce0ff18102642fb730f9815f00f2a601f0ed81893ffe2796e9a26c91e",
+              "bounds": [
+                -2.45,
+                -52.8,
+                61,
+                92
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/6/reactions/hurt/down-right/49.png",
+              "sha256": "4c7dca296045e10b2f24a3ca3b7593e6b9da0a16e4b70955618b2de8a8db1f66",
+              "bounds": [
+                -15.0,
+                -65.65,
+                83,
+                113
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 666.6666666666667,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2300.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 20,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/6/reactions/neutral/down-left/1.png",
+              "sha256": "d810a78dd892ef23a11725c874456e1da13569dc6505228d1a5cef9887e1874b",
+              "bounds": [
+                -0.5,
+                -52.65,
+                61,
+                89
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/6/reactions/happy/down-left/35.png",
+              "sha256": "4f802d8f0a4350cab36802a57d78b8027c82ea75f5893b0cca2b86e7dde48ba8",
+              "bounds": [
+                -0.7,
+                -53.15,
+                64,
+                89
+              ]
+            },
+            "sad": {
+              "frame": 42,
+              "url": "assets/characters/6/reactions/sad/down-left/42.png",
+              "sha256": "4b435c895c56f41a0108bf4270b3e4e930cc44051c9ef7f9da04fe8bde5bd087",
+              "bounds": [
+                -1.15,
+                -53.15,
+                65,
+                89
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/6/reactions/hurt/down-left/49.png",
+              "sha256": "8c800b0f63cba2260bb4f3fa34a6429dd4c19387359260004f3b0c6f63d27cf9",
+              "bounds": [
+                -14.0,
+                -63.65,
+                98,
+                106
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 666.6666666666667,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2300.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 20,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/6/reactions/neutral/up-left/1.png",
+              "sha256": "e173256e2041be52dfb86d4c8bf7ebc513129c6cf487fc5fe329e1adb379297a",
+              "bounds": [
+                1.35,
+                -49.65,
+                59,
+                88
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/6/reactions/happy/up-left/35.png",
+              "sha256": "7a7f7f78477d74998e8938667d7d56e8e9609d5410ee9ca93dad6a5a18f93c59",
+              "bounds": [
+                -2.7,
+                -50.65,
+                64,
+                94
+              ]
+            },
+            "sad": {
+              "frame": 42,
+              "url": "assets/characters/6/reactions/sad/up-left/42.png",
+              "sha256": "f2c09892695f8ec00cf1a152c62db6310f1af53f0f632703dbb76706f72010ac",
+              "bounds": [
+                -3.65,
+                -51.65,
+                64,
+                93
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/6/reactions/hurt/up-left/49.png",
+              "sha256": "8e77706078181ebc9f50bfca6751f6535c3d155c4a684ba64c5fbd341e4b7ae4",
+              "bounds": [
+                -10.65,
+                -58.65,
+                87,
+                108
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 666.6666666666667,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2300.0,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 20,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/6/reactions/neutral/up-right/1.png",
+              "sha256": "4a0d2cf3a6d23c11d999fface0a76bdb9f8c4784f7cbb7fcc6dc11366e4fcc5e",
+              "bounds": [
+                -3.15,
+                -52.0,
+                62,
+                90
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/6/reactions/happy/up-right/35.png",
+              "sha256": "9eb55c1f991b71ec9fdeadbe73d019746dddde67bbb7d4cb73c7180131cc719e",
+              "bounds": [
+                -7.05,
+                -52.15,
+                68,
+                91
+              ]
+            },
+            "sad": {
+              "frame": 42,
+              "url": "assets/characters/6/reactions/sad/up-right/42.png",
+              "sha256": "25bf980ac3e425cf4f71e3b8f3d8026d6356eb2d31d1b3bab5d388248a53b8c8",
+              "bounds": [
+                -8.15,
+                -52.65,
+                68,
+                91
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/6/reactions/hurt/up-right/49.png",
+              "sha256": "bbe36d3b6e79768978ea23506bf49b7b42502ff339095d29754be09c1d3025f3",
+              "bounds": [
+                -26.15,
+                -62.65,
+                98,
+                108
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-06-source.png",
+      "referenceSha256": "dcfef80f98ae4382313e57d32243d5d4d32b2a9d20ff41932f8b0b8d46cfd43e"
+    },
+    {
+      "id": 7,
+      "name": "帅戈",
+      "anatomy": "floating",
+      "sourceSwfSha256": "d701b1506ea29b701b93f61ba4ede3b34dcde022fba43d898fb9bb9f110409ef",
+      "sourceManifestSha256": "36de8c1e41f13dab9f4d2287f25d9243fe4ca167f9dfc36f43157830932eae2b",
+      "sourceReactionManifestSha256": "89879a89360b2dc2a04c7a83a7072f54556cda2f97414e13d6c65971e3f0b109",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 533.3333333333334,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 16,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/7/reactions/neutral/down-right/1.png",
+              "sha256": "23c07a1e08708ae00afd074fda6ffd2558e9a6377f1f186ee6640fe25708441d",
+              "bounds": [
+                -3.0,
+                -64.15,
+                61,
+                95
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/7/reactions/happy/down-right/35.png",
+              "sha256": "44625144f23a13c9fe1053cfb05d64c018d01ab6d054537f258e281ecb5489c8",
+              "bounds": [
+                -3.0,
+                -69.0,
+                65,
+                100
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/7/reactions/sad/down-right/45.png",
+              "sha256": "34e513ff23ae82cebffdd0a9bc8f0532d055cdf351a90956ea16264eb6344259",
+              "bounds": [
+                -3.15,
+                -69.15,
+                65,
+                100
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/7/reactions/hurt/down-right/49.png",
+              "sha256": "46d3e7ebf700207fef55f3a7dc1e0b9562c3e50f88f7974c4dc1189f20923a77",
+              "bounds": [
+                -9.15,
+                -74.15,
+                74,
+                107
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 533.3333333333334,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 16,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/7/reactions/neutral/down-left/1.png",
+              "sha256": "4c73c7d213c90c51a9920e8bed9ca76ab71cc187ab2b7dfd87bbddc813880e7f",
+              "bounds": [
+                -5.0,
+                -69.15,
+                90,
+                107
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/7/reactions/happy/down-left/35.png",
+              "sha256": "b27e2def3c8b8d25c5e13adebdb4a6199ee417f85ef8736d9adb4995bc32e7e0",
+              "bounds": [
+                -6.15,
+                -71.15,
+                91,
+                109
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/7/reactions/sad/down-left/45.png",
+              "sha256": "ecfc3e4bf2ae528cac81f1673cb1e1b866e62e29dc95377da82dc56c88f75fb4",
+              "bounds": [
+                -6.0,
+                -71.15,
+                91,
+                110
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/7/reactions/hurt/down-left/49.png",
+              "sha256": "c030c67bbaf43d03eeaf1390fc66718019e3073d8c7b9a6e7f644b9cce877d6a",
+              "bounds": [
+                -13.0,
+                -72.65,
+                99,
+                113
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 533.3333333333334,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 16,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/7/reactions/neutral/up-left/1.png",
+              "sha256": "4f23be47f9600881c26c276d1426aa8d1d760abcac51639189fa9e862b027360",
+              "bounds": [
+                -1.65,
+                -74.15,
+                68,
+                133
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/7/reactions/happy/up-left/35.png",
+              "sha256": "c6e2f2ce86c75290bef5d3ff2877594e9f5241a2a8ac95561d004cbd729f5ad8",
+              "bounds": [
+                -3.45,
+                -71.65,
+                70,
+                137
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/7/reactions/sad/up-left/45.png",
+              "sha256": "c4bc231142b44b4b697350e3a02a34122cafff27adee937168304f0bac6c4f7a",
+              "bounds": [
+                -2.0,
+                -71.15,
+                69,
+                137
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/7/reactions/hurt/up-left/49.png",
+              "sha256": "6f0d766e7d8bb51d79a8734c0a932fb3af9593a72b4b338022d516b441452d19",
+              "bounds": [
+                -5.65,
+                -81.15,
+                79,
+                149
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 533.3333333333334,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 16,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/7/reactions/neutral/up-right/1.png",
+              "sha256": "b43349440cca80229097540c618373da5d2e1fd0b8a5774ab9f18a6ad877e078",
+              "bounds": [
+                -34.45,
+                -65.0,
+                99,
+                108
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/7/reactions/happy/up-right/35.png",
+              "sha256": "33c3ff32ec7722f84aa05998cded7e35cdda92fd88e8e3d30aede453f30f3daf",
+              "bounds": [
+                -37.65,
+                -67.0,
+                104,
+                109
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/7/reactions/sad/up-right/45.png",
+              "sha256": "198e6e469fcdaccd7d16761d43d5fe9f6d2908d57004e80f3ed8422bc49db432",
+              "bounds": [
+                -36.0,
+                -65.15,
+                104,
+                109
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/7/reactions/hurt/up-right/49.png",
+              "sha256": "b318d195f93f81415a0bc42fd8be62190a75a9929e67f25acbe32cc6c539f598",
+              "bounds": [
+                -40.5,
+                -78.0,
+                113,
+                121
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-07-source.png",
+      "referenceSha256": "6559435db21ba849517fd80f5335ad884db46d9396e0121d1bf26055e551a075"
+    },
+    {
+      "id": 8,
+      "name": "大尾",
+      "anatomy": "scorpion",
+      "sourceSwfSha256": "3d25d19b558af55c36b38cfc6e31f75b2920a1a0453e3ac6e1627f3d06cf9da7",
+      "sourceManifestSha256": "9186b358826aca078f8b704956ee7ad42baa343091fe764848f9a6b095ee4876",
+      "sourceReactionManifestSha256": "5ff7751908a5bc015a89d6485b8c22d584d3b9912f6464b1a723a1a79b7f4410",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 1100.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/8/reactions/neutral/down-right/1.png",
+              "sha256": "fe4bafc82dd60f617c8c7443dc9cc99410326155c91ab3f4b66e2971919bb148",
+              "bounds": [
+                -10.15,
+                -36.0,
+                73,
+                72
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/8/reactions/happy/down-right/35.png",
+              "sha256": "d433b150a6f5da3857702f9d833b1248ab292b8fd29109223490fd35e31013df",
+              "bounds": [
+                -11.15,
+                -37.0,
+                80,
+                75
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/8/reactions/sad/down-right/45.png",
+              "sha256": "85f13a0569b2be1347a5335dd9f88b92651a18346d9c035a6e9c533bf53a836d",
+              "bounds": [
+                -8.65,
+                -39.0,
+                81,
+                75
+              ]
+            },
+            "hurt": {
+              "frame": 27,
+              "url": "assets/characters/8/reactions/hurt/down-right/27.png",
+              "sha256": "153544cd19745b93f0b58a3b9e7ff56bf948e9f4af876d7be77c96aed3acd9c5",
+              "bounds": [
+                -21.15,
+                -48.0,
+                87,
+                81
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 1100.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/8/reactions/neutral/down-left/1.png",
+              "sha256": "53c6d193c4ca95aa0c2c966980029bc5d75c1172c156ff63c3c5af0e5d40c4e7",
+              "bounds": [
+                -2.0,
+                -34.65,
+                84,
+                76
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/8/reactions/happy/down-left/35.png",
+              "sha256": "0f16e872f556547916daa62353f60c408c13d8d09cf1094080930e8ee6f4c3a1",
+              "bounds": [
+                -4.0,
+                -34.65,
+                87,
+                81
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/8/reactions/sad/down-left/45.png",
+              "sha256": "287061dcdeb3d5f32e7cc9245b7ed9d86c005ac8e2141a3d17cb0f0dced28dbb",
+              "bounds": [
+                -8.0,
+                -36.15,
+                103,
+                82
+              ]
+            },
+            "hurt": {
+              "frame": 27,
+              "url": "assets/characters/8/reactions/hurt/down-left/27.png",
+              "sha256": "b536f83ff5f48a84785a7b3218b69971ba5c2a6ec30b27fae50d373ebd08c6db",
+              "bounds": [
+                -3.0,
+                -47.65,
+                91,
+                88
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 1100.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/8/reactions/neutral/up-left/1.png",
+              "sha256": "58ebe5a7a1135e2f956eb852c09608219a2fc103bcfa3080883c3a29d1ad398c",
+              "bounds": [
+                0.8,
+                -33.6,
+                79,
+                94
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/8/reactions/happy/up-left/35.png",
+              "sha256": "025e3fc01acb87e66cbfe99f39bc88cbdbf2e1f79de869a9eb7994c932e0ef31",
+              "bounds": [
+                -6.0,
+                -33.65,
+                89,
+                96
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/8/reactions/sad/up-left/45.png",
+              "sha256": "e8ec90605eb4d28a80f88d3a6300b81d4718ec0945c4c202fd288040de22f7fa",
+              "bounds": [
+                -11.65,
+                -33.15,
+                90,
+                103
+              ]
+            },
+            "hurt": {
+              "frame": 27,
+              "url": "assets/characters/8/reactions/hurt/up-left/27.png",
+              "sha256": "6347fd3b2eb2fbf87bfab976ecef3cbedb7b9d3aaefcb8e818a861efb6feae1c",
+              "bounds": [
+                -1.65,
+                -46.15,
+                99,
+                113
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 1100.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/8/reactions/neutral/up-right/1.png",
+              "sha256": "ee9385c58912d7960767fd651c8113e8006b96c719189d0cf740688e43fb0cb0",
+              "bounds": [
+                -40.45,
+                -31.65,
+                99,
+                82
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/8/reactions/happy/up-right/35.png",
+              "sha256": "12d1ebfc45045a70b2c6b802908316265af18d0062adff2e14df22c442625cd1",
+              "bounds": [
+                -43.45,
+                -31.65,
+                105,
+                83
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/8/reactions/sad/up-right/45.png",
+              "sha256": "e6e675d72f2000ae198c140a5e4f80e75a87f0f134ca76049538bc07cb844c69",
+              "bounds": [
+                -46.55,
+                -32.65,
+                115,
+                83
+              ]
+            },
+            "hurt": {
+              "frame": 27,
+              "url": "assets/characters/8/reactions/hurt/up-right/27.png",
+              "sha256": "2ff54de541a25e072fbdfc8d1e024016747397f5e457fccc48c1f3ce87ed9041",
+              "bounds": [
+                -52.5,
+                -43.65,
+                116,
+                102
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-08-source.png",
+      "referenceSha256": "3aa71b24869fc9f9bd6aa158a3ad9b7b67537a524ad6ed2b772b8be042387815"
+    },
+    {
+      "id": 9,
+      "name": "阿飞",
+      "anatomy": "centaur",
+      "sourceSwfSha256": "6ccbacbc4f9ae631028d1c2391dd1123451e8d977406e80864a20411e4a0b067",
+      "sourceManifestSha256": "0b8f9aa1fe35507c5274c6382f4ec91752ab290721d3670cb4a785816c091fe3",
+      "sourceReactionManifestSha256": "2c4d70936619438c1584caf72b8d61b61050cb0bc0137a9b3b88b151b7297afb",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1433.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/9/reactions/neutral/down-right/1.png",
+              "sha256": "0a37de8830862eb81b62a3859f3750e60567a67307429841ef0a112faef7b84e",
+              "bounds": [
+                -5.65,
+                -63.0,
+                64,
+                98
+              ]
+            },
+            "happy": {
+              "frame": 27,
+              "url": "assets/characters/9/reactions/happy/down-right/27.png",
+              "sha256": "b97f098fc4b182a15c26a1570197e97ed526283a6f78a06b1ef55691eb5ea324",
+              "bounds": [
+                -6.15,
+                -63.65,
+                74,
+                98
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/9/reactions/sad/down-right/45.png",
+              "sha256": "f2100d8eb600ac8c42b636661242ff6b56205fb7cf20f621b2703c1beead633a",
+              "bounds": [
+                -7.65,
+                -67.65,
+                75,
+                104
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/9/reactions/hurt/down-right/49.png",
+              "sha256": "1377c283ddb3de41ba78f629e82b56ed85c8dfd0a83be9c1fe6651f6691d7a10",
+              "bounds": [
+                -15.15,
+                -76.5,
+                88,
+                119
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1433.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/9/reactions/neutral/down-left/1.png",
+              "sha256": "cdb582e74f92a605991b959bcf6b70be08f7d60a78e3dccc01c961ec2a0717f8",
+              "bounds": [
+                -1.65,
+                -56.65,
+                100,
+                94
+              ]
+            },
+            "happy": {
+              "frame": 27,
+              "url": "assets/characters/9/reactions/happy/down-left/27.png",
+              "sha256": "68a8ddd5c2d8199edc1ecd43729e59e7a77805cb7cd608710cdb000386cbad24",
+              "bounds": [
+                -2.0,
+                -59.0,
+                102,
+                96
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/9/reactions/sad/down-left/45.png",
+              "sha256": "f30f198f832c169cdd2e8db5f0f74165036dcd7b73ef9d67c4dc608ebbaa874e",
+              "bounds": [
+                -4.65,
+                -61.0,
+                107,
+                100
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/9/reactions/hurt/down-left/49.png",
+              "sha256": "a0f5000247189d1f814f64e1ece2d3620bbf400b961d04c5ad926d31907eb4b5",
+              "bounds": [
+                -6.15,
+                -74.15,
+                143,
+                114
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1433.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/9/reactions/neutral/up-left/1.png",
+              "sha256": "31af412e2a1bd3c48ff41c86a3f5a562eea69a4c647033c47400528facc9e438",
+              "bounds": [
+                0.0,
+                -58.0,
+                66,
+                138
+              ]
+            },
+            "happy": {
+              "frame": 27,
+              "url": "assets/characters/9/reactions/happy/up-left/27.png",
+              "sha256": "2aab6d4e24da96fb4e808031533aaaf920bc4d3e745196021845f491646b6c00",
+              "bounds": [
+                -13.0,
+                -59.0,
+                79,
+                138
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/9/reactions/sad/up-left/45.png",
+              "sha256": "11c62faa7879a4801ffd75d96e75c0e70d3f8c5ed7c2467f6c8f323f6eb4fb95",
+              "bounds": [
+                -14.0,
+                -61.0,
+                79,
+                147
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/9/reactions/hurt/up-left/49.png",
+              "sha256": "0282ba6c7d65cb7223aeb00da64902bbb4c410f0f485c5d1d928eb52c6a6043f",
+              "bounds": [
+                -15.0,
+                -65.0,
+                96,
+                157
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1433.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2133.3333333333335
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/9/reactions/neutral/up-right/1.png",
+              "sha256": "b8e797e4a96b2f614507c695abbcb7f7b08dac43136280d565d1e2651259f2bb",
+              "bounds": [
+                -58.0,
+                -57.65,
+                118,
+                104
+              ]
+            },
+            "happy": {
+              "frame": 27,
+              "url": "assets/characters/9/reactions/happy/up-right/27.png",
+              "sha256": "6ecbc47caa1835697f711b14963dfd36ec18aa02fdad5ce7080cac6b0cf8530f",
+              "bounds": [
+                -58.6,
+                -58.65,
+                118,
+                104
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/9/reactions/sad/up-right/45.png",
+              "sha256": "167b764d98f987ff6e87ca119b3add8b9836d5842751c80ac71d14a959ac07e8",
+              "bounds": [
+                -59.0,
+                -58.65,
+                122,
+                106
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/9/reactions/hurt/up-right/49.png",
+              "sha256": "d2702862ff0d9eb18ec74ce30030f8547983aab811e50568c5ee44ae442e61c7",
+              "bounds": [
+                -72.6,
+                -70.65,
+                142,
+                122
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-09-source.png",
+      "referenceSha256": "74119410e3ec8513bc11b9282252623fedc6eb759130c0869b34b86178dd0e46"
+    },
+    {
+      "id": 10,
+      "name": "阿杰",
+      "anatomy": "biped",
+      "sourceSwfSha256": "50bec10e4ed40e4333a031d7af76a92605d5f462de4c43c2845cf1e32e2bfebc",
+      "sourceManifestSha256": "9b2eabf0838bedac448bb819984bb18d561a722b4e7c4d52da3126014e417880",
+      "sourceReactionManifestSha256": "61fdf8694739c604df7e17e3fd59b106c7ca410907f29d7d83dfdf0572db1862",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/10/reactions/neutral/down-right/1.png",
+              "sha256": "d6ade34ba46ce4cf1e439b72378b4927961b70092585822b85667471c1d33bc3",
+              "bounds": [
+                -2.65,
+                -43.15,
+                58,
+                77
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/10/reactions/happy/down-right/29.png",
+              "sha256": "9547685211ff43b322d5aa6f65702e8374ce900ec3d7cb9ddddea305fd62103e",
+              "bounds": [
+                -3.15,
+                -42.65,
+                60,
+                76
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/10/reactions/sad/down-right/45.png",
+              "sha256": "398e6f72c60dae925958b4f73234fc37213fa91b5bc984b7813e2c7b01c844a2",
+              "bounds": [
+                -2.65,
+                -43.15,
+                66,
+                77
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/10/reactions/hurt/down-right/49.png",
+              "sha256": "5a6ca5243ddadf27af324c6aa3d42bf50719a43b63379230363f9d96c8718f9a",
+              "bounds": [
+                -1.65,
+                -60.15,
+                81,
+                97
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/10/reactions/neutral/down-left/1.png",
+              "sha256": "38a931769de58901f6c944ad07399cbbfe1fd22b02a81de881a129263396ee4f",
+              "bounds": [
+                0.5,
+                -42.15,
+                81,
+                83
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/10/reactions/happy/down-left/29.png",
+              "sha256": "6e86e7c0b2bf3349dc01e6bf0f8efb5a00bb468f0c9dccbe46133b5763e58a27",
+              "bounds": [
+                0.85,
+                -41.65,
+                83,
+                82
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/10/reactions/sad/down-left/45.png",
+              "sha256": "90d436b7dc7602243048fe5af2c33cdb01ebf534e5c4c63882ae4b9a7da4f90f",
+              "bounds": [
+                -0.5,
+                -41.65,
+                83,
+                83
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/10/reactions/hurt/down-left/49.png",
+              "sha256": "85cf03cac21b5ab39a7ae41bf1ccbaf352a55437a1b11895b5103b096f4b00ef",
+              "bounds": [
+                -8.5,
+                -60.15,
+                94,
+                115
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/10/reactions/neutral/up-left/1.png",
+              "sha256": "74662f49e5a8b7904070cc1653ad157d15826a8dd9a25734e82046224907739b",
+              "bounds": [
+                1.0,
+                -37.15,
+                60,
+                95
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/10/reactions/happy/up-left/29.png",
+              "sha256": "8d0a387a13c3f295aa0000cc722602feafef18360b2d3a36456b3b2312f4bde0",
+              "bounds": [
+                -5.0,
+                -36.15,
+                70,
+                99
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/10/reactions/sad/up-left/45.png",
+              "sha256": "c3a35e83e115b72a47a221821d442c7373aaf6f6351ef4e65712ef67e07a48c0",
+              "bounds": [
+                2.0,
+                -36.65,
+                69,
+                96
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/10/reactions/hurt/up-left/49.png",
+              "sha256": "0736df28295043d1a6cdb1e37c3603ea8f0a37ae6ae941a6cf1cd072cb9f89d6",
+              "bounds": [
+                0.0,
+                -40.15,
+                69,
+                117
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/10/reactions/neutral/up-right/1.png",
+              "sha256": "b6d00965ec8c6cc66a7c74311779018136eb8a33f5493a0ef55f67e4c1a237c2",
+              "bounds": [
+                -20.15,
+                -43.5,
+                79,
+                87
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/10/reactions/happy/up-right/29.png",
+              "sha256": "6af7d3e4d4c72c52163f58918d36964174cce0489a5866f3859d7f40320ed99a",
+              "bounds": [
+                -26.0,
+                -41.65,
+                85,
+                88
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/10/reactions/sad/up-right/45.png",
+              "sha256": "897083c687572fa6ce44708f8502e1fc02c44066282ea1574ad9b583db85ceca",
+              "bounds": [
+                -24.15,
+                -41.65,
+                84,
+                89
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/10/reactions/hurt/up-right/49.png",
+              "sha256": "802adf5ba7bbd0051b7777efc1c50f089a2b121916ea713a7eb25142579b6868",
+              "bounds": [
+                -25.15,
+                -59.5,
+                91,
+                106
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-10-source.png",
+      "referenceSha256": "d1d98f93460e3155527dc5954ce80e864c9b80a586600c28aee5d4fbf6d7921c"
+    },
+    {
+      "id": 11,
+      "name": "怪卡",
+      "anatomy": "biped",
+      "sourceSwfSha256": "20436eb45d37e4ad674fec3f34cfac9a3111a86e84a0e3e721daef8749df06e7",
+      "sourceManifestSha256": "3b07c5895cc179123a1e10cb963532923e4eeed6fa07ae928a4683d2c8cd31ac",
+      "sourceReactionManifestSha256": "dd4995a83d67bfe21700fcc8b1f7d0ff3a0a0727bd232affe53fffda5576ff24",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/11/reactions/neutral/down-right/1.png",
+              "sha256": "c08c01089ca3dfb40b8f8d52b07b0c11c068b116086de83845359e594a0f7524",
+              "bounds": [
+                0.5,
+                -51.15,
+                57,
+                83
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/11/reactions/happy/down-right/35.png",
+              "sha256": "152d2f271f81b8cc652e510ec34a1534fcfbe1795766d8c741bdeb19c2aa2568",
+              "bounds": [
+                0.5,
+                -53.15,
+                60,
+                84
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/11/reactions/sad/down-right/45.png",
+              "sha256": "937891c68b2c5bf432b9e3622ebc4837ec28422faacd3ef14e9a25d7fea89989",
+              "bounds": [
+                0.5,
+                -53.15,
+                58,
+                84
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/11/reactions/hurt/down-right/49.png",
+              "sha256": "7d3f4d828cc3d3ef9886ca790e80934fc6ee5a4c9348e7b9378578ed144b8cbf",
+              "bounds": [
+                -2.5,
+                -61.15,
+                63,
+                95
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/11/reactions/neutral/down-left/1.png",
+              "sha256": "5f8f96901a53d23ee6e2f3d0c5e573f3cc65432caadbd96eec893f5ebaea9fe2",
+              "bounds": [
+                1.0,
+                -48.65,
+                78,
+                88
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/11/reactions/happy/down-left/35.png",
+              "sha256": "01a2f8b2547932658d0f0ee2a3a967e629cfacc11aafb6700fcceecb6a5d7864",
+              "bounds": [
+                -3.0,
+                -49.65,
+                83,
+                90
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/11/reactions/sad/down-left/45.png",
+              "sha256": "f3d1095ee1930c0c46b30f9982e821b5e7e401432427756d1e373edd086aa9bf",
+              "bounds": [
+                0.0,
+                -51.0,
+                83,
+                90
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/11/reactions/hurt/down-left/49.png",
+              "sha256": "03906de141729ea66dcda04a06087e033f6d54514b1ad7b845173835f9c9a728",
+              "bounds": [
+                -4.15,
+                -61.15,
+                88,
+                101
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/11/reactions/neutral/up-left/1.png",
+              "sha256": "d54fa657fa0f21388b5d00ff489411710413679039ffbd3d96b8faff406164c6",
+              "bounds": [
+                0.0,
+                -51.65,
+                60,
+                106
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/11/reactions/happy/up-left/35.png",
+              "sha256": "e3394addab830c326523834e0aa3667e65d254a0809dc8ffab7ca03d0a0b9f20",
+              "bounds": [
+                -2.0,
+                -51.65,
+                62,
+                108
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/11/reactions/sad/up-left/45.png",
+              "sha256": "1976e10404d3b493a13ed607b2ba6d5189db43f0f3bcee04f5453bdabd3a4c19",
+              "bounds": [
+                0.0,
+                -49.65,
+                61,
+                110
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/11/reactions/hurt/up-left/49.png",
+              "sha256": "dd4b37817f0a245c3b50e292689d697ee531b5f5d0d3c8c1c8a2137d53856bad",
+              "bounds": [
+                -1.0,
+                -63.15,
+                66,
+                124
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1900.0,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/11/reactions/neutral/up-right/1.png",
+              "sha256": "1bd25976175471be592817ab3d22d6720694cd41ebe6fb213fc33a63ab352513",
+              "bounds": [
+                -24.65,
+                -51.5,
+                82,
+                93
+              ]
+            },
+            "happy": {
+              "frame": 35,
+              "url": "assets/characters/11/reactions/happy/up-right/35.png",
+              "sha256": "0731aba88325ae1e22e217e1df3a100bc9866ecf3f65e6d076d2d5543ad0faa2",
+              "bounds": [
+                -26.65,
+                -51.5,
+                87,
+                93
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/11/reactions/sad/up-right/45.png",
+              "sha256": "2d79a2e4d042d70b46da95fb948e959582c6a6bb0c43ebdab855f51d80512215",
+              "bounds": [
+                -28.65,
+                -51.5,
+                86,
+                94
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/11/reactions/hurt/up-right/49.png",
+              "sha256": "b7023d964b1672cefcc88e4bd6d20a2ee6a33cf549eae5c48e41a43241857323",
+              "bounds": [
+                -30.0,
+                -64.5,
+                91,
+                108
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-11-source.png",
+      "referenceSha256": "d8319dc242ad1ba1421ed8b6292474af09fa50289a041acaef970e419c9ac295"
+    },
+    {
+      "id": 12,
+      "name": "妮妮",
+      "anatomy": "floating",
+      "sourceSwfSha256": "a6ae96c98b3597337ee0cd5610beacc478e810ba43d7a1bcd67100ef6c72ae49",
+      "sourceManifestSha256": "5260720624edaaeba1bd176a42e790fe0a0d412ecaca667e68c22fbb5aa65345",
+      "sourceReactionManifestSha256": "17521a2b793813606f102658e3acfc8d02446bf3c384375accf8f94c76735958",
+      "facings": {
+        "down-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/12/reactions/neutral/down-right/1.png",
+              "sha256": "4040edd5f7fb0d3d00147736b2e253a4471e9bc48c759aa8b3f007092e180b55",
+              "bounds": [
+                1.85,
+                -52.15,
+                53,
+                89
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/12/reactions/happy/down-right/29.png",
+              "sha256": "6af63b1b9aaf17f13adc658b8b074b9d0f61a804936ab209850badafd82cf3da",
+              "bounds": [
+                -3.15,
+                -55.15,
+                58,
+                91
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/12/reactions/sad/down-right/45.png",
+              "sha256": "71121efb503c929e911632a4d8e0acacf6c3dd5ba7ff9588e6cea65e476b2797",
+              "bounds": [
+                -8.15,
+                -56.5,
+                63,
+                94
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/12/reactions/hurt/down-right/49.png",
+              "sha256": "4ce8302000346b083d8a0b805f80d74984067f4b7935591d30b8e39407e1e287",
+              "bounds": [
+                -4.0,
+                -56.65,
+                69,
+                97
+              ]
+            }
+          }
+        },
+        "down-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/12/reactions/neutral/down-left/1.png",
+              "sha256": "96e448396dd164e50cfc4d4d7bb1331653c6bfb6f192dba5568369ed7e8e61e3",
+              "bounds": [
+                -4.65,
+                -54.0,
+                80,
+                96
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/12/reactions/happy/down-left/29.png",
+              "sha256": "9d6b3a7ba74fe451cb4cdd9bf66f7ecb6bffa7e927faf152434a48d5eebd647c",
+              "bounds": [
+                -4.65,
+                -54.0,
+                82,
+                98
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/12/reactions/sad/down-left/45.png",
+              "sha256": "50399c80397af7ec1df4b272f86a29edd43bd0c2919b2af4420d92dcb4cb3b38",
+              "bounds": [
+                -7.5,
+                -54.65,
+                87,
+                100
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/12/reactions/hurt/down-left/49.png",
+              "sha256": "8968017aaee75ca526c53a74516f10298fd72446b6db3244a45ebb3132c3629b",
+              "bounds": [
+                -13.0,
+                -62.15,
+                93,
+                110
+              ]
+            }
+          }
+        },
+        "up-left": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/12/reactions/neutral/up-left/1.png",
+              "sha256": "ab70ddca575d8bd2674c581e1ec58011998b13f364ce166c7c712ffea363f026",
+              "bounds": [
+                2.35,
+                -62.15,
+                56,
+                119
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/12/reactions/happy/up-left/29.png",
+              "sha256": "12e525657b1d8c6520a2eb3b8d9cfc3db92ac203596f54d956bab1f4bb47187c",
+              "bounds": [
+                2.35,
+                -63.15,
+                61,
+                124
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/12/reactions/sad/up-left/45.png",
+              "sha256": "263e3a55fc3cb474e03feda3b780bf4fc1c4de1822bc332e2adb64d029bc3462",
+              "bounds": [
+                0.85,
+                -62.5,
+                66,
+                125
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/12/reactions/hurt/up-left/49.png",
+              "sha256": "22db6177e837a2fc65cb1ef03fa7c1646592db0bc7b4ecf5448c4ddb1c1e765b",
+              "bounds": [
+                2.0,
+                -59.65,
+                64,
+                133
+              ]
+            }
+          }
+        },
+        "up-right": {
+          "durationsMs": {
+            "walk": 800.0,
+            "neutral": 33.333333333333336,
+            "ready": 33.333333333333336,
+            "happy": 1533.3333333333333,
+            "sad": 2433.3333333333335,
+            "hurt": 2000.0,
+            "cheer": 2266.6666666666665
+          },
+          "walkFrameCount": 24,
+          "sourceReferences": {
+            "neutral": {
+              "frame": 1,
+              "url": "assets/characters/12/reactions/neutral/up-right/1.png",
+              "sha256": "a14405f1e9b91e2410b39f088dab9dca756889770e9436336c8baa272bc92d70",
+              "bounds": [
+                -23.6,
+                -61.15,
+                86,
+                101
+              ]
+            },
+            "happy": {
+              "frame": 29,
+              "url": "assets/characters/12/reactions/happy/up-right/29.png",
+              "sha256": "975954a288ed402655cf8d9a61e5b68533389fb33c247178ec1925ca7e38f007",
+              "bounds": [
+                -26.0,
+                -62.15,
+                89,
+                105
+              ]
+            },
+            "sad": {
+              "frame": 45,
+              "url": "assets/characters/12/reactions/sad/up-right/45.png",
+              "sha256": "dec9786a6686522df5b195abcf2cb6b1919ababae11aa199d85fc746b32b7681",
+              "bounds": [
+                -28.0,
+                -59.5,
+                94,
+                107
+              ]
+            },
+            "hurt": {
+              "frame": 49,
+              "url": "assets/characters/12/reactions/hurt/up-right/49.png",
+              "sha256": "890cc65be519b6fc85757276257893fa676f2641cb623a7ffde312ec1aad45fa",
+              "bounds": [
+                -24.65,
+                -70.65,
+                99,
+                114
+              ]
+            }
+          }
+        }
+      },
+      "referenceImage": "public/hd-review/characters-25/source-references/role-12-source.png",
+      "referenceSha256": "d7bc0ee2926f2296c2ef31b247dae3fd2782860338fd522cd18aef49f3fe5383"
+    }
+  ]
+}

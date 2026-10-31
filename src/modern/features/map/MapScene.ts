@@ -6,6 +6,8 @@ import type { PreparedAnimations } from '../game/animation-preload'
 import { Application, Container, Graphics, ImageSource, Point, Sprite, Text, Texture, type Ticker } from 'pixi.js'
 import { WalkPreview } from '../characters/WalkPreview'
 import { Juanmao24Player, JUANMAO_24_TEXTURE_URLS } from '../characters/juanmao-24'
+import {Character25Player}from'../characters/characters-25'
+import {character25RigFor,character25TextureUrls}from'../characters/characters-25-registry'
 import type { AssetManifest, Facing } from '../characters/assets'
 import { ReactionPlayer, type GodId, type ReactionManifest, type ReactionName } from '../characters/reactions'
 import type { PlayerTransition } from '../game/controller'
@@ -217,7 +219,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       return parseCompanyAssets(await response.json())
     })() : undefined
     const useJuanmao24 = assetProfile === 'hd' && options.playerManifests?.some(player=>player.characterId===1)
-    const urls = [...new Set([mapUrl, ...collectibles.map(item => item.sprite.url), ...(useJuanmao24?JUANMAO_24_TEXTURE_URLS:[]), ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
+    const urls = [...new Set([mapUrl, ...collectibles.map(item => item.sprite.url), ...(useJuanmao24?JUANMAO_24_TEXTURE_URLS:[]),...character25TextureUrls(options.playerManifests?.map(p=>p.characterId)??[],assetProfile), ...(options.requiredTextureUrls ?? []), ...manifests.flatMap(item => item.clips.flatMap(clip => clip.frames.map(frame => frame.url))),
       ...(propertyManifest?.sellSigns.map(item => item.url) ?? []), ...(propertyManifest?.houses.map(item => item.url) ?? []),
       ...(worldManifest?.clips.flatMap(clip => clip.frames.map(frame => frame.url)) ?? []),
       ...(worldManifest?.neutralHouses.map(frame => frame.url) ?? []),
@@ -295,13 +297,14 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       const reaction = new ReactionPlayer(initialReaction)
       const reactionSprite = new Sprite()
       const godSprite = new Sprite()
-      const puppet = assetProfile === 'hd' && characterId === 1 ? new Juanmao24Player(textures,true) : null
+      const rig25=character25RigFor(characterId,assetProfile)
+      const puppet = assetProfile === 'hd' && characterId === 1 ? new Juanmao24Player(textures,true) : rig25?new Character25Player(rig25,textures,true):null
       reactionSprite.visible = false
       godSprite.visible = false
       view.addChild(walker.view, reactionSprite, godSprite)
       if(puppet){view.addChild(puppet.view);view.addChild(godSprite);walker.view.visible=false}
       entities.addChild(view)
-      return { playerId, view, walker, puppet, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
+      return { playerId,characterId, view, walker, puppet, reactions, reaction, reactionSprite, godSprite, facing: 'down-right' as Facing, reacting: false, godId: null as number | null, visibility: new ReactionVisibility(true) }
     })
     const worldAnimations = new Map<number, WorldAnimation>()
     const effects = new Set<EffectAnimation>()
@@ -316,7 +319,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
     let activityMotion:{clip:ActivityClip;sourceFrame:number;elapsedMs:number}|undefined
     const setActivity = async (clip: ActivityClip | null, frame = 1, position?: GridPoint, transform?: {scale: number;depth: number}) => {
       if (!clip) {
-        activityId = undefined; activityGeneration += 1; activitySprite.visible = false; activityMotion=undefined;app.canvas.dataset.activityClip='';app.canvas.dataset.activityFrame='0';app.canvas.dataset.activitySourceFrame='0'
+        activityId = undefined; activityGeneration += 1; activitySprite.visible = false; activityMotion=undefined;app.canvas.dataset.activityClip='';app.canvas.dataset.activityFrame='0';app.canvas.dataset.activitySourceFrame='0';app.canvas.dataset.activityUrl=''
         return
       }
       if (activityId !== clip.id) { activityId = clip.id; activityGeneration += 1 }
@@ -330,6 +333,7 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       if(clip.fps===60){if(activityMotion?.sourceFrame!==frame||activityMotion.clip!==clip)activityMotion={clip,sourceFrame:frame,elapsedMs:0}}else activityMotion=undefined
       const source = clip.frames[activityPresentationFrame(frame,activityMotion?.elapsedMs??0,clip.fps,clip.frames.length)-1]!
       activitySprite.texture = textures.get(source.url)!
+      app.canvas.dataset.activityUrl=textureUrls.get(activitySprite.texture)??''
       const scale=transform?.scale ?? 1
       activitySprite.scale.set(scale)
       if (position) {
@@ -700,26 +704,26 @@ export async function createMapScene(host: HTMLElement, map: MapData, manifest: 
       // DOM diagnostics describe the actual selected textures, enabling playback/lifecycle checks.
       const effectFrames=JSON.stringify([...effects].map(a=>({id:a.clip.id,frame:a.clip.frames.indexOf(worldFrameAt(a.clip,Math.max(0,a.elapsedMs-a.delayMs)))+1,elapsedMs:Math.round(a.elapsedMs*1000)/1000,delayMs:a.delayMs,x:a.view.x,y:a.view.y,visible:a.sprite.visible})))
       if(app.canvas.dataset.effectFrames!==effectFrames)app.canvas.dataset.effectFrames=effectFrames
-      for(const [index,actor]of actors.entries()){
-        if(index!==movement?.playerIndex)actor.puppet?.setWorldPosition(actor.view.x,actor.view.y)
+      if (movement && !paused) {
+        movement.elapsedMs = Math.min(movement.durationMs, movement.elapsedMs + deltaMs)
+        const progress = movement.durationMs === 0 ? 1 : movement.elapsedMs / movement.durationMs
+        const from = gridToScene(movement.from)
+        const to = gridToScene(movement.to)
+        const x = from.x + (to.x - from.x) * progress
+        const y = from.y + (to.y - from.y) * progress
+        const actor = actors[movement.playerIndex]
+        if (actor) {
+          actor.view.position.set(x, y)
+          actor.view.zIndex = (movement.from.row + (movement.to.row - movement.from.row) * progress) * 100 + movement.from.column + (movement.to.column - movement.from.column) * progress
+        }
+        if (following) placeCamera({ x, y })
+        if (progress === 1) movement = undefined
       }
-      app.canvas.dataset.character24=JSON.stringify(actors.filter(a=>a.puppet).map(a=>({playerId:a.playerId,facing:a.facing,action:a.puppet!.action,distance:a.puppet!.gaitDistance,x:a.view.x,y:a.view.y,registration:[a.puppet!.view.x,a.puppet!.view.y],visible:a.view.visible,parts:a.puppet!.view.children.filter(c=>c instanceof Sprite).map(c=>[c.label,c.x,c.y,c.rotation])})))
+      // Capture the positions and contacts that this frame actually renders.
+      for (const actor of actors) actor.puppet?.setWorldPosition(actor.view.x,actor.view.y)
+      app.canvas.dataset.character24=JSON.stringify(actors.filter(a=>a.puppet&&a.characterId===1).map(a=>({playerId:a.playerId,facing:a.facing,action:a.puppet!.action,distance:a.puppet!.gaitDistance,x:a.view.x,y:a.view.y,registration:[a.puppet!.view.x,a.puppet!.view.y],visible:a.view.visible,parts:a.puppet!.view.children.filter(c=>c instanceof Sprite).map(c=>[c.label,c.x,c.y,c.rotation])})))
+      app.canvas.dataset.character25=JSON.stringify(actors.filter(a=>a.puppet&&a.characterId!==1).map(a=>({playerId:a.playerId,characterId:a.characterId,contacts:(a.puppet instanceof Character25Player?a.puppet.footContacts:[]).map(f=>({...f,x:a.view.x+a.puppet!.view.x+f.x,y:a.view.y+a.puppet!.view.y+f.y})),god:{id:a.godId,visible:a.godSprite.visible,url:textureUrls.get(a.godSprite.texture)??null},facing:a.facing,action:a.puppet!.action,distance:a.puppet!.gaitDistance,x:a.view.x,y:a.view.y,registration:[a.puppet!.view.x,a.puppet!.view.y],visible:a.view.visible,parts:a.puppet!.view.children.filter(c=>c instanceof Sprite).map(c=>[c.label,c.x,c.y,c.rotation])})))
       app.canvas.dataset.npc22=JSON.stringify([...worldAnimations].filter(([,a])=>a.npc22).map(([cellId,a])=>({cellId,id:a.clip.id,elapsedMs:a.elapsedMs,x:a.sprite.x,y:a.sprite.y,shadowScale:a.npc22!.shadow.scale.x,url:textureUrls.get(a.sprite.texture)})))
-      if (!movement || paused) return
-      movement.elapsedMs = Math.min(movement.durationMs, movement.elapsedMs + deltaMs)
-      const progress = movement.durationMs === 0 ? 1 : movement.elapsedMs / movement.durationMs
-      const from = gridToScene(movement.from)
-      const to = gridToScene(movement.to)
-      const x = from.x + (to.x - from.x) * progress
-      const y = from.y + (to.y - from.y) * progress
-      const actor = actors[movement.playerIndex]
-      if (actor) {
-        actor.view.position.set(x, y)
-        actor.puppet?.setWorldPosition(x,y)
-        actor.view.zIndex = (movement.from.row + (movement.to.row - movement.from.row) * progress) * 100 + movement.from.column + (movement.to.column - movement.from.column) * progress
-      }
-      if (following) placeCamera({ x, y })
-      if (progress === 1) movement = undefined
     }
     app.ticker.add(tick)
 

@@ -28,7 +28,7 @@ export async function prepareGameUiAssets(
   return asset.url
  })
  for(let face=1;face<=6;face++)needed.push(profileAssetUrl(`assets/activities/ludo-face-${face}/1.png`,profile))
- for(const player of state.players)needed.push(`assets/monthly/champions/${player.characterId}.png`)
+ for(const player of state.players)needed.push(profileAssetUrl(`assets/monthly/champions/${player.characterId}.png`,profile))
  if(state.outcome)needed.push(profileAssetUrl(`assets/activities/${state.outcome.kind==='victory'?'gamewin':'gameover'}/1.png`,profile))
  if(state.interaction?.kind==='bankruptcy')needed.push(profileAssetUrl('assets/activities/bankrupt/1.png',profile))
  const results=await Promise.allSettled(needed.map(url=>load(url,signal)))
@@ -36,5 +36,9 @@ export async function prepareGameUiAssets(
  const failure=results.find(r=>r.status==='rejected')
  if(failure?.status==='rejected'||signal.aborted){resources.forEach(r=>r.release());throw failure?.status==='rejected'?failure.reason:new DOMException('Aborted','AbortError')}
  let released=false
- return {urls:Object.fromEntries(results.map((r,i)=>[needed[i]!,r.status==='fulfilled'?r.value.url:''])),release:()=>{if(released)return;released=true;resources.forEach(r=>r.release())}}
+ const urls=Object.fromEntries(results.map((r,i)=>[needed[i]!,r.status==='fulfilled'?r.value.url:'']))
+ // Existing UI consumers can keep native portrait keys while both aliases
+ // point to the exact same decoded image for the selected profile.
+ for(const player of state.players){const source=`assets/monthly/champions/${player.characterId}.png`;urls[source]=urls[profileAssetUrl(source,profile)]!}
+ return {urls,release:()=>{if(released)return;released=true;resources.forEach(r=>r.release())}}
 }
