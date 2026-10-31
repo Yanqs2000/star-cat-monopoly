@@ -40,6 +40,7 @@ import SceneInspector from './features/map/SceneInspector.vue'
 import type { GridPoint, MapData } from './features/map/types'
 import { loadHdMapArtwork } from './features/assets/hd-map-art'
 import { isCompleteHdProfileIndex, mapAssetProfile, profileAssetUrl, type AssetProfile } from './features/assets/profiles'
+import{character25ThumbnailUrl}from'./features/characters/characters-25-registry'
 
 interface CharacterIndexItem { id: number; name: string; manifestUrl: string }
 interface PreparedGame { loaded:MapSceneHandle; interactions:InteractionAssetsManifest; activities:ActivityManifest; ui:PreparedUiAssets; animations:PreparedAnimations; assetProfile:AssetProfile; stagingHost?:HTMLElement; committed?:boolean }
@@ -126,7 +127,7 @@ const canSwitchAssetProfile=computed(()=>referenceTab.value === null && (mode.va
 )))
 function thumbnail(item: CharacterIndexItem): string {
   const path=item.manifestUrl.replace(/manifest\.json$/, 'walk/down-right/1.png')
-  return `${import.meta.env.BASE_URL}${profileAssetUrl(path,assetProfile.value)}`
+  return `${import.meta.env.BASE_URL}${character25ThumbnailUrl(item.id,assetProfile.value)??profileAssetUrl(path,assetProfile.value)}`
 }
 async function verifyHdAssetProfile(signal?:AbortSignal){
  const response=await fetch(`${import.meta.env.BASE_URL}assets-hd/hd-profile.json`,{signal})
@@ -837,7 +838,7 @@ onBeforeUnmount(() => {
       </div>
         <TurnControls v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :inert="savesOpen || referenceTab !== null" :game="game" :paused="paused" :card-assets="interactionAssets.cards" :prepared-images="preparedImages" :asset-profile="assetProfile" @roll="roll" @pause="togglePause" @begin-card="beginCard" @asset-error="failHandAsset" />
       </div>
-      <GamePanel id="game-details" :open="detailsOpen" :inert="savesOpen || referenceTab !== null" v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" @reference="openReference" @control="(id,control)=>gameController?.requestControl(id,control)" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" />
+      <GamePanel :asset-profile="assetProfile" id="game-details" :open="detailsOpen" :inert="savesOpen || referenceTab !== null" v-if="game && interactionAssets && controllerReady && loadState === 'ready'" :game="game" :paused="paused" :speed="speed" :history="history" @reference="openReference" @control="(id,control)=>gameController?.requestControl(id,control)" @speed="changeSpeed" @overview="overview" @follow="followCurrent" @fullscreen="toggleFullscreen" @restart="returnToSelection" />
       </div>
     </section>
   </main>

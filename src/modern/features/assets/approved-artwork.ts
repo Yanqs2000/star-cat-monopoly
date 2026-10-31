@@ -3,6 +3,7 @@ import effects from '../../data/non-character-effects.json'
 import continuous from '../../data/continuous-non-character.json'
 import npc22 from '../../data/npc-22.json'
 import npc23 from '../../data/npc-23.json'
+import characters25 from '../../data/characters-25.json'
 import type { AssetProfile } from './profiles'
 import type { WorldAssetsManifest, WorldClip } from '../map/world-assets'
 import type { ActivityManifest, ActivityClip } from '../game/activity-assets'
@@ -15,7 +16,8 @@ export function approvedWorldAssets(manifest: WorldAssetsManifest, profile: Asse
 }
 export function approvedActivityAssets(manifest: ActivityManifest, profile: AssetProfile): ActivityManifest {
  if(profile==='original')return manifest
- const replacements=new Map<string,ActivityClip>([...approved.activityClips,...effects.activityClips,...continuous.activityClips as unknown as ActivityClip[],...npc23.activityClips as unknown as ActivityClip[]].map(c=>[c.id,c]))
+ const extra=(characters25 as unknown as{activityClips?:ActivityClip[]}).activityClips??[]
+ const replacements=new Map<string,ActivityClip>([...approved.activityClips,...effects.activityClips,...continuous.activityClips as unknown as ActivityClip[],...npc23.activityClips as unknown as ActivityClip[],...extra].map(c=>[c.id,c]))
  return {...manifest,clips:manifest.clips.map(c=>replacements.get(c.id)??c)}
 }
 /** Source gameplay advances at 30Hz; presentation can expose the intervening 60Hz sample. */

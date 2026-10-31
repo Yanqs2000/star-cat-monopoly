@@ -178,7 +178,7 @@ const bankMax = computed(() => {
 })
 const uiImage = (name: string) => `${import.meta.env.BASE_URL}${profileAssetUrl(`assets/ui/${name}.png`,props.assetProfile)}`
 const preparedImage = (path: string) => props.preparedImages?.[path] ?? `${import.meta.env.BASE_URL}${path}`
-const portraitUrl = (characterId: number) => preparedImage(`assets/monthly/champions/${characterId}.png`)
+const portraitUrl = (characterId: number) => preparedImage(profileAssetUrl(`assets/monthly/champions/${characterId}.png`,props.assetProfile))
 const dieImage = (value: number) => preparedImage(profileAssetUrl(`assets/activities/ludo-face-${value}/1.png`, props.assetProfile))
 const bankPreview = computed(() => {
   const entry = applyBankOperation(props.game, player.value.id, bankAction.value, bankAmount.value).entry

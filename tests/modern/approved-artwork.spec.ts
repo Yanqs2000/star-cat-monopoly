@@ -5,9 +5,10 @@ import { parseWorldAssets } from '../../src/modern/features/map/world-assets'
 import { parseActivityAssets } from '../../src/modern/features/game/activity-assets'
 import { profileAssetUrl, profileTextureResolution } from '../../src/modern/features/assets/profiles'
 import { approvedWorldAssets, approvedActivityAssets, carnivalPresentationFrame } from '../../src/modern/features/assets/approved-artwork'
+import characters25 from '../../src/modern/data/characters-25.json'
 const npcIds=[2,3,4,5,9,10,11,12,13,14,15]
 const newWorldIds=new Set(npcIds.map(id=>'npc-'+id))
-const newActivityIds=new Set([...npcIds.map(id=>'mini-npc-'+id),...[9,12,13,14,15,23].map(id=>'trait-'+id)])
+const newActivityIds=new Set([...npcIds.map(id=>'mini-npc-'+id),...[9,12,13,14,15,23].map(id=>'trait-'+id),...characters25.activityClips.map(c=>c.id)])
 
 describe('已验收01—12游戏接入',()=>{
  it('六个静态图只在高清模式替换，原图和查询参数保留',()=>{
@@ -32,7 +33,7 @@ describe('已验收01—12游戏接入',()=>{
   const protectedClip=(c:{id:string})=>!newWorldIds.has(c.id)&&!c.id.startsWith('barrier-')&&!['mine','card-gain','ticket-gain','explosion','rocket'].includes(c.id)
   expect(hd.clips.filter(protectedClip)).toEqual(original.clips.filter(protectedClip))
  })
- it('四种掉落物使用60帧且保持一秒时长，不改人物动画',()=>{
+ it('四种掉落物使用60帧且保持一秒时长，未启用人物和活动继续保留原动画',()=>{
   const original=parseActivityAssets(activities),hd=approvedActivityAssets(original,'hd')
   expect(approvedActivityAssets(original,'original')).toBe(original)
   for(let i=1;i<=4;i++){const c=hd.clips.find(c=>c.id===`carnival-ball-${i}`)!;expect(c.frames).toHaveLength(60);expect(c.fps).toBe(60);expect(c.frames.length/c.fps).toBe(1);expect(new Set(c.frames.map(f=>f.url)).size).toBeGreaterThanOrEqual(59);for(let j=1;j<c.frames.length;j++)expect(c.frames[j]!.url).not.toBe(c.frames[j-1]!.url)}
