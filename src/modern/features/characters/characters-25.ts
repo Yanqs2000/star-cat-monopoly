@@ -21,18 +21,20 @@ export class Character25Player{
  private contacts:Character25Contacts|undefined
  private virtualRoot={x:0,y:0}
  private bodyDistance=0
+ private floatingElapsed=0
  private velocity=0
  private lastDeltaMs=1000/60
  private walking=false
  private weight=0
  private blend={from:0,target:0,elapsed:120}
 
- constructor(private readonly rig:Character25Rig,private readonly textures:Map<string,Texture>,mapPlacement=false,contactMotion=true){
+ constructor(private readonly rig:Character25Rig,private readonly textures:Map<string,Texture>,mapPlacement=false,private readonly contactMotion=true){
   this.characterId=rig.id
-  if(contactMotion&&rig.id===2&&rig.anatomy==='biped'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
+  if(contactMotion&&[2,11].includes(rig.id)&&rig.anatomy==='biped'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
   if(mapPlacement)this.view.position.set(...rig.mapAnchor)
   this.view.addChild(this.shadow,this.prop);this.update(0)
  }
+ private get floatingMotion(){return this.contactMotion&&this.rig.anatomy==='floating'}
  get action():Character25Action{return this.reaction??(this.moving?'walk':'neutral')}
  get gaitDistance():number|null{return this.contacts?.distance??this.locomotion?.distance??null}
  get footContacts(){
@@ -42,7 +44,7 @@ export class Character25Player{
  }
  get finished():boolean{return this.action!=='walk'&&this.elapsedMs>=character25DurationMs(this.rig.id,this.action,this.facing)}
  setPose(facing:Facing,moving:boolean):void{
-  if(this.facing!==facing||this.moving!==moving){this.elapsedMs=0;if(this.locomotion&&!this.contacts)this.locomotion.distance=0}
+  if(this.facing!==facing||this.moving!==moving){this.elapsedMs=0;if(this.locomotion&&!this.contacts&&!this.floatingMotion)this.locomotion.distance=0}
   const changed=this.facing!==facing
   this.facing=facing;this.moving=moving
   if(changed)this.contacts?.setRest(this.definitions())
@@ -56,7 +58,7 @@ export class Character25Player{
  private activateBody(){if(this.blend.target!==1)this.blend={from:this.weight,target:1,elapsed:0}}
  setReaction(name:Exclude<Character25Action,'walk'>|null):void{this.reaction=name;this.elapsedMs=0;this.syncWalking()}
  clearWorldPosition():void{
-  this.locomotion=null;this.virtualRoot={x:0,y:0};this.bodyDistance=0;this.velocity=0;this.weight=0;this.blend={from:0,target:this.walking?1:0,elapsed:0}
+  this.locomotion=null;this.virtualRoot={x:0,y:0};this.bodyDistance=0;this.floatingElapsed=0;this.velocity=0;this.weight=0;this.blend={from:0,target:this.walking?1:0,elapsed:0}
   this.contacts?.reset(0,0,this.definitions());this.contacts?.setMoving(this.walking);this.update(0)
  }
  setWorldPosition(x:number,y:number):void{
@@ -69,6 +71,10 @@ export class Character25Player{
     if(this.walking&&d<=80){this.activateBody();this.contacts.moveTo(x,y);this.bodyDistance+=d;this.velocity=d/Math.max(1,this.lastDeltaMs)}
     else if(!this.walking&&d<=this.rig.stridePx/2)this.contacts.adjustStoppedRoot(x,y)
     else{this.contacts.reset(x,y,this.definitions());this.contacts.setMoving(this.walking)}
+   }
+   if(this.floatingMotion&&d>1e-6){
+    if(this.walking&&d<=80)this.activateBody()
+    else if(d>80){this.floatingElapsed=0;this.weight=0;this.blend={from:0,target:0,elapsed:0}}
    }
    this.locomotion.position={x,y}
   }
@@ -100,17 +106,18 @@ export class Character25Player{
  update(deltaMs:number):void{
   const dt=Math.max(0,deltaMs);this.elapsedMs+=dt
   if(dt>0)this.lastDeltaMs=dt
-  if(this.contacts){
+  if(this.contacts||this.floatingMotion){
    if(!this.locomotion&&this.walking&&dt>0)this.activateBody()
    this.blend.elapsed=Math.min(120,this.blend.elapsed+dt);const t=this.blend.elapsed/120,s=t*t*(3-2*t);this.weight=this.blend.from+(this.blend.target-this.blend.from)*s
-   if(!this.locomotion&&this.walking&&dt>0){const direction={x:this.facing.includes('right')?56:-56,y:this.facing.startsWith('down')?40:-40},length=Math.hypot(direction.x,direction.y),d=dt/character25DurationMs(this.rig.id,'walk',this.facing)*this.rig.stridePx
+   if(this.floatingMotion&&this.weight>0)this.floatingElapsed+=dt
+   if(this.contacts&&!this.locomotion&&this.walking&&dt>0){const direction={x:this.facing.includes('right')?56:-56,y:this.facing.startsWith('down')?40:-40},length=Math.hypot(direction.x,direction.y),d=dt/character25DurationMs(this.rig.id,'walk',this.facing)*this.rig.stridePx
     this.virtualRoot={x:this.virtualRoot.x+direction.x/length*d,y:this.virtualRoot.y+direction.y/length*d};this.contacts.moveTo(this.virtualRoot.x,this.virtualRoot.y);this.bodyDistance+=d;this.velocity=d/dt}
-   if(!this.walking){this.contacts.advanceIdle(dt);this.bodyDistance+=this.velocity*dt*this.weight}
+   if(!this.walking&&this.contacts){this.contacts.advanceIdle(dt);this.bodyDistance+=this.velocity*dt*this.weight}
   }
   this.buildFacing()
   const direction=this.locomotion?.direction??{x:this.facing.includes('right')?56:-56,y:this.facing.startsWith('down')?40:-40}
   const root=this.locomotion?.position??this.virtualRoot
-  const motion=this.contacts?{distance:this.bodyDistance,direction,motionWeight:this.weight,feet:Object.fromEntries(this.contacts.snapshot().map(f=>[f.key,[f.x-root.x,f.y-root.y]as const]))}:this.action==='walk'&&this.locomotion?{distance:this.locomotion.distance,direction}:undefined
+  const motion=this.contacts?{distance:this.bodyDistance,direction,motionWeight:this.weight,feet:Object.fromEntries(this.contacts.snapshot().map(f=>[f.key,[f.x-root.x,f.y-root.y]as const]))}:this.floatingMotion?{distance:this.floatingElapsed/character25DurationMs(this.rig.id,'walk',this.facing)*this.rig.stridePx,direction,motionWeight:this.weight}:this.action==='walk'&&this.locomotion?{distance:this.locomotion.distance,direction}:undefined
   const states=sampleCharacter25Rig(this.rig,this.facing,this.action,this.elapsedMs,motion)
   for(const sprite of this.parts.values())sprite.visible=false
   for(const state of states){
@@ -123,7 +130,7 @@ export class Character25Player{
   }
   this.prop.clear()
   if(this.action==='ready'){
-   const actor=this.rig.facings[this.facing].actors[0]!,arm=actor.arms.find(a=>a.name.startsWith('right'))
+   const actor=this.rig.facings[this.facing].actors[0]!,arm=actor.arms.find(a=>a.name.startsWith('right'))??(this.rig.id===6&&this.facing==='up-right'?actor.arms.find(a=>a.name.startsWith('left')):undefined)
    const state=arm?states.find(p=>p.key===actor.id+'/'+arm.lower):undefined
    if(state){const axis=state.part.axis!,x=state.a*axis[0]+state.c*axis[1]+state.tx,y=state.b*axis[0]+state.d*axis[1]+state.ty
     this.prop.roundRect(x-5,y-7,10,10,1.5).fill(0xf7f8fa).stroke({width:.4,color:0x8a929c});this.prop.circle(x,y-2,1.8).fill(0xe63332)}

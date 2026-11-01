@@ -1,4 +1,4 @@
-import index from '../../data/characters-25.json'
+import index from './characters-25-materials'
 import type{AssetProfile}from'../assets/profiles'
 import type{Character25Rig}from'./characters-25-types'
 const rigs=new Map<number,Character25Rig>((index.characters as unknown as Character25Rig[]).filter(r=>index.activeIds.includes(r.id)).map(r=>[r.id,r]))

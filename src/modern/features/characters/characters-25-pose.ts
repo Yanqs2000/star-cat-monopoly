@@ -12,13 +12,14 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
  const distance=action==='walk'?(locomotion?.distance??Math.max(0,elapsedMs)/duration*rig.stridePx):0
  const time=action==='walk'&&locomotion?distance/rig.stridePx*duration:elapsedMs
  const pose=sampleCharacter25(rig.id,action,facing,time),scale=rig.motionScale
- if(locomotion?.feet){
+ if(locomotion?.feet||(rig.anatomy==='floating'&&locomotion?.motionWeight!==undefined)){
   const walk=sampleCharacter25(rig.id,'walk',facing,locomotion.distance/rig.stridePx*character25DurationMs(rig.id,'walk',facing)),weight=locomotion.motionWeight??1
   for(const key of['bodyY','bodyRotation','headRotation']as const)pose[key]=(action==='walk'?0:pose[key])+walk[key]*weight
   for(const key of['leftHand','rightHand']as const)pose[key]={x:(action==='walk'?0:pose[key].x)+walk[key].x*weight,y:(action==='walk'?0:pose[key].y)+walk[key].y*weight}
  }
- const bodyY=pose.bodyY*scale,rotation=action==='walk'&&rig.anatomy==='floating'?0:pose.bodyRotation*scale
- const headRotation=action==='walk'&&rig.anatomy==='floating'?0:pose.headRotation*scale
+ const upright=rig.anatomy==='floating'&&(action==='walk'||action==='neutral')
+ const bodyY=pose.bodyY*scale,rotation=upright?0:pose.bodyRotation*scale
+ const headRotation=upright?0:pose.headRotation*scale
  const direction=locomotion?.direction??{x:facing.includes('right')?56:-56,y:facing.startsWith('down')?40:-40}
  const gray=Math.round(255-pose.soot*223),tint=gray*0x010101,result:RenderPart25[]=[]
  for(const actor of rig.facings[facing].actors){
@@ -68,8 +69,13 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
   else place(actor.head,actor.head,head,rotation+headRotation)
   for(const extra of actor.appendages){
    const p=joints.get(extra.joint)??transformed(extra.joint)
-   const wave=extra.kind==='fixed'?0:locomotion?.feet?Math.sin(locomotion.distance/rig.stridePx*Math.PI*2)*(extra.amplitude??.035)*(locomotion.motionWeight??1):action==='walk'?Math.sin(distance/rig.stridePx*Math.PI*2)*(extra.amplitude??.035):0
+   const weight=locomotion?.motionWeight??(action==='walk'?1:0)
+   const beat=Math.sin((locomotion?.distance??distance)/rig.stridePx*Math.PI*2)
+   const floatingWing=rig.anatomy==='floating'&&extra.kind==='wing'
+   const side=floatingWing?Math.sign(p.x-spine.x)||1:1
+   const wave=extra.kind==='fixed'?0:beat*(extra.amplitude??.035)*weight*side
    place(extra.part,extra.part,p,extra.kind==='pan'?0:rotation+wave)
+   if(floatingWing){const state=states.get(extra.part)!,fold=1-.38*beat*beat*weight;state.a*=fold;state.b*=fold}
   }
   for(const name of actor.order){const state=states.get(name);if(state)result.push(state)}
  }

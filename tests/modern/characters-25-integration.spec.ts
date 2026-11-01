@@ -2,9 +2,11 @@ import{it,expect}from'vitest'
 import * as selection from '../../src/modern/features/characters/characters-25-registry'
 import {profileTextureResolution}from'../../src/modern/features/assets/profiles'
 
-it('enables only the single in-progress identity and keeps original and accepted Juanmao routing',()=>{
+it('keeps accepted A-Niu and the Guaika/Weiwei candidates isolated from paused identities and original routing',()=>{
  expect(selection.character25RigFor(2,'hd')?.id).toBe(2)
- for(const id of[1,3,4,5,6,7,8,9,10,11,12])expect(selection.character25RigFor(id,'hd')).toBeUndefined()
+ expect(selection.character25RigFor(11,'hd')?.id).toBe(11)
+ expect(selection.character25RigFor(6,'hd')?.id).toBe(6)
+ for(const id of[1,3,4,5,7,8,9,10,12])expect(selection.character25RigFor(id,'hd')).toBeUndefined()
  expect(selection.character25RigFor(2,'original')).toBeUndefined()
  expect(selection.character25TextureUrls([1,3,12],'hd')).toEqual([])
  expect(selection.character25TextureUrls([2],'original')).toEqual([])
