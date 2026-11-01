@@ -1,0 +1,832 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    10
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 10,
+      "name": "阿杰",
+      "anatomy": "floating",
+      "density": 7,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 112,
+      "motionScale": 0.5,
+      "sourceSwfSha256": "50bec10e4ed40e4333a031d7af76a92605d5f462de4c43c2845cf1e32e2bfebc",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  1.7142857142857142,
+                  -25.0
+                ],
+                "spine": [
+                  1.7142857142857142,
+                  -14.428571428571429
+                ],
+                "tailBase": [
+                  -4.428571428571429,
+                  -11.0
+                ],
+                "leftFinRoot": [
+                  -3.857142857142857,
+                  -19.571428571428573
+                ],
+                "rightFinRoot": [
+                  9.285714285714286,
+                  -19.571428571428573
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-right-main-head.webp",
+                  "width": 512,
+                  "height": 459,
+                  "pivot": [
+                    37.42857142857143,
+                    64.42857142857143
+                  ],
+                  "reconstructedFrom": "masters/role-10-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-right-main-tail.webp",
+                  "width": 158,
+                  "height": 127,
+                  "pivot": [
+                    17.857142857142858,
+                    5.857142857142857
+                  ]
+                },
+                "leftFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-right-main-leftFin.webp",
+                  "width": 102,
+                  "height": 56,
+                  "pivot": [
+                    12.571428571428571,
+                    4.428571428571429
+                  ],
+                  "axis": [
+                    -9.0,
+                    0.42857142857142855
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      -63.0,
+                      3.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "rightFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-right-main-rightFin.webp",
+                  "width": 100,
+                  "height": 54,
+                  "pivot": [
+                    1.8571428571428572,
+                    4.428571428571429
+                  ],
+                  "axis": [
+                    8.928571428571429,
+                    0.5714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      62.5,
+                      4.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-right-main-body.webp",
+                  "width": 181,
+                  "height": 161,
+                  "pivot": [
+                    12.428571428571429,
+                    10.857142857142858
+                  ],
+                  "reconstructedFrom": "masters/role-10-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailBase",
+                  "kind": "tail",
+                  "amplitude": 0.12
+                },
+                {
+                  "part": "leftFin",
+                  "joint": "leftFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": 0.65
+                },
+                {
+                  "part": "rightFin",
+                  "joint": "rightFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": -0.65
+                }
+              ],
+              "order": [
+                "tail",
+                "body",
+                "head",
+                "head-expression",
+                "leftFin",
+                "rightFin"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -0.8571428571428571,
+                  -23.428571428571427
+                ],
+                "spine": [
+                  -0.14285714285714285,
+                  -13.571428571428571
+                ],
+                "tailBase": [
+                  8.142857142857142,
+                  -12.285714285714286
+                ],
+                "leftFinRoot": [
+                  -6.0,
+                  -19.857142857142858
+                ],
+                "rightFinRoot": [
+                  -1.5714285714285714,
+                  -19.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-left-main-head.webp",
+                  "width": 472,
+                  "height": 482,
+                  "pivot": [
+                    32.0,
+                    68.0
+                  ],
+                  "reconstructedFrom": "masters/role-10-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-left-main-tail.webp",
+                  "width": 160,
+                  "height": 128,
+                  "pivot": [
+                    4.142857142857143,
+                    4.714285714285714
+                  ]
+                },
+                "leftFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-left-main-leftFin.webp",
+                  "width": 113,
+                  "height": 61,
+                  "pivot": [
+                    14.221428571428573,
+                    4.950000000000001
+                  ],
+                  "axis": [
+                    -10.450000000000001,
+                    0.23571428571428574
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      -73.15,
+                      1.6500000000000001
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "rightFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-left-main-rightFin.webp",
+                  "width": 73,
+                  "height": 71,
+                  "pivot": [
+                    8.45,
+                    1.4857142857142858
+                  ],
+                  "axis": [
+                    -4.642857142857143,
+                    5.292857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      -32.5,
+                      37.050000000000004
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-10-carnival/down-left-main-body.webp",
+                  "width": 200,
+                  "height": 154,
+                  "pivot": [
+                    14.0,
+                    10.142857142857142
+                  ],
+                  "reconstructedFrom": "masters/role-10-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailBase",
+                  "kind": "tail",
+                  "amplitude": -0.12
+                },
+                {
+                  "part": "leftFin",
+                  "joint": "leftFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": 0.5
+                },
+                {
+                  "part": "rightFin",
+                  "joint": "rightFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": 1.3
+                }
+              ],
+              "order": [
+                "tail",
+                "body",
+                "head",
+                "head-expression",
+                "leftFin",
+                "rightFin"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -0.8571428571428571,
+                  -23.428571428571427
+                ],
+                "spine": [
+                  -0.14285714285714285,
+                  -13.571428571428571
+                ],
+                "tailBase": [
+                  8.142857142857142,
+                  -12.285714285714286
+                ],
+                "leftFinRoot": [
+                  -6.0,
+                  -19.857142857142858
+                ],
+                "rightFinRoot": [
+                  -1.5714285714285714,
+                  -19.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-left-main-head.webp",
+                  "width": 472,
+                  "height": 482,
+                  "pivot": [
+                    32.0,
+                    68.0
+                  ],
+                  "reconstructedFrom": "masters/role-10-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-left-main-tail.webp",
+                  "width": 160,
+                  "height": 128,
+                  "pivot": [
+                    4.142857142857143,
+                    4.714285714285714
+                  ]
+                },
+                "leftFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-left-main-leftFin.webp",
+                  "width": 113,
+                  "height": 61,
+                  "pivot": [
+                    14.221428571428573,
+                    4.950000000000001
+                  ],
+                  "axis": [
+                    -10.450000000000001,
+                    0.23571428571428574
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      -73.15,
+                      1.6500000000000001
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "rightFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-left-main-rightFin.webp",
+                  "width": 73,
+                  "height": 71,
+                  "pivot": [
+                    8.45,
+                    1.4857142857142858
+                  ],
+                  "axis": [
+                    -4.642857142857143,
+                    5.292857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      -32.5,
+                      37.050000000000004
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-left-main-body.webp",
+                  "width": 200,
+                  "height": 154,
+                  "pivot": [
+                    14.0,
+                    10.142857142857142
+                  ],
+                  "reconstructedFrom": "masters/role-10-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailBase",
+                  "kind": "tail",
+                  "amplitude": -0.12
+                },
+                {
+                  "part": "leftFin",
+                  "joint": "leftFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": 0.5
+                },
+                {
+                  "part": "rightFin",
+                  "joint": "rightFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": 1.3
+                }
+              ],
+              "order": [
+                "tail",
+                "body",
+                "head",
+                "head-expression",
+                "leftFin",
+                "rightFin"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  4.0,
+                  -23.428571428571427
+                ],
+                "spine": [
+                  3.2857142857142856,
+                  -13.571428571428571
+                ],
+                "tailBase": [
+                  -5.0,
+                  -12.285714285714286
+                ],
+                "leftFinRoot": [
+                  9.142857142857142,
+                  -19.857142857142858
+                ],
+                "rightFinRoot": [
+                  4.714285714285714,
+                  -19.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-right-main-head.webp",
+                  "width": 462,
+                  "height": 463,
+                  "pivot": [
+                    38.142857142857146,
+                    65.28571428571429
+                  ],
+                  "reconstructedFrom": "masters/role-10-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-right-main-tail.webp",
+                  "width": 162,
+                  "height": 127,
+                  "pivot": [
+                    18.857142857142858,
+                    4.571428571428571
+                  ]
+                },
+                "leftFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-right-main-leftFin.webp",
+                  "width": 115,
+                  "height": 60,
+                  "pivot": [
+                    1.885714285714286,
+                    4.950000000000001
+                  ],
+                  "axis": [
+                    10.450000000000001,
+                    0.23571428571428574
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      73.15,
+                      1.6500000000000001
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "rightFin": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-right-main-rightFin.webp",
+                  "width": 73,
+                  "height": 71,
+                  "pivot": [
+                    1.95,
+                    1.4857142857142858
+                  ],
+                  "axis": [
+                    4.642857142857143,
+                    5.292857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-10-carnival-arms-reference-r1.png",
+                    "axis": [
+                      32.5,
+                      37.050000000000004
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-10-carnival-arms-reference-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-10-carnival/up-right-main-body.webp",
+                  "width": 200,
+                  "height": 154,
+                  "pivot": [
+                    14.571428571428571,
+                    10.142857142857142
+                  ],
+                  "reconstructedFrom": "masters/role-10-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailBase",
+                  "kind": "tail",
+                  "amplitude": 0.12
+                },
+                {
+                  "part": "leftFin",
+                  "joint": "leftFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": -0.5
+                },
+                {
+                  "part": "rightFin",
+                  "joint": "rightFinRoot",
+                  "kind": "flipper",
+                  "amplitude": 0,
+                  "restAngle": -1.3
+                }
+              ],
+              "order": [
+                "tail",
+                "body",
+                "head",
+                "head-expression",
+                "leftFin",
+                "rightFin"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-right-main-head.webp",
+      "pixelSize": [
+        512,
+        459
+      ],
+      "pixelDensity": 7,
+      "sha256": "499c131bc7f9d6526261c2f6cfd17e7a860baa082865a3482d9d080f0bfddc43"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-right-main-tail.webp",
+      "pixelSize": [
+        158,
+        127
+      ],
+      "pixelDensity": 7,
+      "sha256": "7a997e8cbcf70095d1f9cd9e87546c71c881e16b8cc30348658714dd71851ba0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-right-main-leftFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-right-main-leftFin.webp",
+      "pixelSize": [
+        102,
+        56
+      ],
+      "pixelDensity": 7,
+      "sha256": "fde7bd029eee0eb6223c539d443700621a5ca21a1c43a570eacaef23b449432b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-right-main-rightFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-right-main-rightFin.webp",
+      "pixelSize": [
+        100,
+        54
+      ],
+      "pixelDensity": 7,
+      "sha256": "04f798ac10d30490851bdb02e2860ef751d74a73f7162020f0ed2424ecdb4b32"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-right-main-body.webp",
+      "pixelSize": [
+        181,
+        161
+      ],
+      "pixelDensity": 7,
+      "sha256": "58a6f8b999a7150360a203d4d93dc4737a418f60f7a778567822dc6f76ca81ee"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-left-main-head.webp",
+      "pixelSize": [
+        472,
+        482
+      ],
+      "pixelDensity": 7,
+      "sha256": "017bee557d7209187f01bd2f9178aa8f63f1fc9025fc8b757f0429ee7625520b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-left-main-tail.webp",
+      "pixelSize": [
+        160,
+        128
+      ],
+      "pixelDensity": 7,
+      "sha256": "9f63b1a1e001b83e1cbd03311795a8b7658312e3a71b0bac5fb9e86f396db256"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-left-main-leftFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-left-main-leftFin.webp",
+      "pixelSize": [
+        113,
+        61
+      ],
+      "pixelDensity": 7,
+      "sha256": "2948f80b2fdd59cfb90fec7c55a06b6f1cabda41817e295ce8d1ab73cc67038f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-left-main-rightFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-left-main-rightFin.webp",
+      "pixelSize": [
+        73,
+        71
+      ],
+      "pixelDensity": 7,
+      "sha256": "70f90e05558d8e56db0726016189c129b7cd802feea294d0d87ea8d377c16c9c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/down-left-main-body.webp",
+      "pixelSize": [
+        200,
+        154
+      ],
+      "pixelDensity": 7,
+      "sha256": "60ddf238d433467116f60f4984255f018373fc7618991b463d87f69225258c09"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-left-main-head.webp",
+      "pixelSize": [
+        472,
+        482
+      ],
+      "pixelDensity": 7,
+      "sha256": "017bee557d7209187f01bd2f9178aa8f63f1fc9025fc8b757f0429ee7625520b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-left-main-tail.webp",
+      "pixelSize": [
+        160,
+        128
+      ],
+      "pixelDensity": 7,
+      "sha256": "9f63b1a1e001b83e1cbd03311795a8b7658312e3a71b0bac5fb9e86f396db256"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-left-main-leftFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-left-main-leftFin.webp",
+      "pixelSize": [
+        113,
+        61
+      ],
+      "pixelDensity": 7,
+      "sha256": "2948f80b2fdd59cfb90fec7c55a06b6f1cabda41817e295ce8d1ab73cc67038f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-left-main-rightFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-left-main-rightFin.webp",
+      "pixelSize": [
+        73,
+        71
+      ],
+      "pixelDensity": 7,
+      "sha256": "70f90e05558d8e56db0726016189c129b7cd802feea294d0d87ea8d377c16c9c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-left-main-body.webp",
+      "pixelSize": [
+        200,
+        154
+      ],
+      "pixelDensity": 7,
+      "sha256": "60ddf238d433467116f60f4984255f018373fc7618991b463d87f69225258c09"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-right-main-head.webp",
+      "pixelSize": [
+        462,
+        463
+      ],
+      "pixelDensity": 7,
+      "sha256": "4327df315048e0dfe1e504108e725e8c0655551c51c358874765541c11e14b6b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-right-main-tail.webp",
+      "pixelSize": [
+        162,
+        127
+      ],
+      "pixelDensity": 7,
+      "sha256": "23e154658b817710d2e6134a098f7cfb0869fc0b33f6941eac2a156dbf96f773"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-right-main-leftFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-right-main-leftFin.webp",
+      "pixelSize": [
+        115,
+        60
+      ],
+      "pixelDensity": 7,
+      "sha256": "6fe7073be7fb812e322914e8b685c82f360c3a9591a6aa2a22d4af7f74be312f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-right-main-rightFin.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-right-main-rightFin.webp",
+      "pixelSize": [
+        73,
+        71
+      ],
+      "pixelDensity": 7,
+      "sha256": "5c17b873a74b9bdbebd2bf5679538479e0ab9bb8aafb7ea173e84327a17c7d11"
+    },
+    {
+      "url": "hd-characters/characters-25/role-10-carnival/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-10-carnival/up-right-main-body.webp",
+      "pixelSize": [
+        200,
+        154
+      ],
+      "pixelDensity": 7,
+      "sha256": "291be09fe6d18a5b6dd48430e665cf4b465440976de81f005b80e1b16448e0b1"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    10,
+    12
+  ]
+}

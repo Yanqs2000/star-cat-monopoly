@@ -16,7 +16,7 @@ def build():
  for cid in range(2,13):
   base=ROOT/f'public/modern/assets/characters/{cid}'
   source=json.loads((base/'reactions/manifest.json').read_text());walk=json.loads((base/'manifest.json').read_text())
-  role={'id':cid,'name':NAMES[cid-1],'anatomy':{3:'paired',4:'crab',6:'floating',7:'floating',8:'scorpion',9:'centaur',12:'floating'}.get(cid,'biped'),
+  role={'id':cid,'name':NAMES[cid-1],'anatomy':{3:'paired',4:'crab',6:'floating',7:'floating',8:'scorpion',9:'centaur',10:'floating',12:'floating'}.get(cid,'biped'),
         'sourceSwfSha256':sha(ROOT/f'public/original/star{cid}.swf'),'sourceManifestSha256':sha(base/'manifest.json'),
         'sourceReactionManifestSha256':sha(base/'reactions/manifest.json'),'facings':{}}
   sheet=Image.new('RGB',(2048,2080),'#edf1f5');draw=ImageDraw.Draw(sheet)

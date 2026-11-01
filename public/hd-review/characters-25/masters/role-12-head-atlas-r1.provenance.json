@@ -1,0 +1,17 @@
+{
+  "tool": "image_gen.imagegen",
+  "status": "candidate-needs-right-side-expression-correction",
+  "sha256": "cc118bc2f5affff781aad7a8e6e9644e97fd7b52d82fcca3ce9ed24129b5cade",
+  "generatedSource": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-c45623b7-52fd-435d-af47-f3e984affa20.png",
+  "inputs": [
+    "masters/role-12-neutral-r1.png",
+    "source-references/role-12-source.png"
+  ],
+  "prompt": "role-12-head-atlas-r1.prompt.txt",
+  "supersededBy": "role-12-head-atlas-r2.png",
+  "inputSha256": {
+    "masters/role-12-neutral-r1.png": "1a4bcac935e2827d51e890ae89b6bed198bb8472003ec686281664fdf60aa3e6",
+    "source-references/role-12-source.png": "d7bc0ee2926f2296c2ef31b247dae3fd2782860338fd522cd18aef49f3fe5383"
+  },
+  "humanAccepted": false
+}

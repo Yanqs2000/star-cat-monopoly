@@ -31,21 +31,24 @@ class NextCharacterMaterials(unittest.TestCase):
    self.assertAlmostEqual(len(clip['frames'])/clip.get('fps',30),len(source['frames'])/source.get('fps',30))
    if clip['id'].startswith('carnival-walk'):
     self.assertEqual(clip['fps'],120);self.assertEqual(len(clip['frames']),len(source['frames'])*4)
-    if cid==6:self.assertEqual(len({f['url']for f in clip['frames']}),48,'one full native wingbeat must not repeat a truncated third of a cycle')
+    if cid in [6,10,12]:self.assertEqual(len({f['url']for f in clip['frames']}),len(source['frames'])*4,'one full native swimming/wing cycle must not repeat a truncated cycle')
   self.assertIn(str(cid),d['thumbnailUrls'])
   for entry in d['runtimeImages']:
    p=ROOT/'public/modern'/entry['url'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),entry['sha256'])
    with Image.open(p)as im:self.assertEqual(list(im.size),entry['pixelSize'])
   # Physical raster bounds, including ALL intermediate walking frames.
-  for name in ['thumbnail','champion',*[f'carnival-{side}-{i}'for side in ['left','right']for i in range(48 if cid==6 else 16)]]:
+  samples={6:48,10:56,12:64,11:16}[cid]
+  for name in ['thumbnail','champion',*[f'carnival-{side}-{i}'for side in ['left','right']for i in range(samples)]]:
    p=ROOT/f'public/modern/hd-characters/characters-25/role-{cid:02d}/{name}.webp'
    # The packed thumbnail is intentionally trimmed; its source raster must
    # contain the whole character before that lossless bounding-box crop.
-   if name=='thumbnail':p=Path(f'/tmp/starcat-guaika-weiwei/role-{cid}/material-renders/thumbnail.png')
+   if name=='thumbnail':p=Path(f'/tmp/starcat-{"ajie-nini"if cid in[10,12]else"guaika-weiwei"}/role-{cid}/material-renders/thumbnail.png')
    with Image.open(p)as im:
     box=im.getbbox();self.assertIsNotNone(box);self.assertGreater(box[0],0);self.assertGreater(box[1],0);self.assertLess(box[2],im.width);self.assertLess(box[3],im.height)
 
  def test_guaika_complete_native_routes_and_unclipped_artwork(self):self.verify_character(11,'guaika')
  def test_weiwei_complete_native_routes_and_unclipped_artwork(self):self.verify_character(6,'weiwei')
+ def test_ajie_complete_native_routes_and_unclipped_artwork(self):self.verify_character(10,'ajie')
+ def test_nini_complete_native_routes_and_unclipped_artwork(self):self.verify_character(12,'nini')
 
 if __name__=='__main__':unittest.main()

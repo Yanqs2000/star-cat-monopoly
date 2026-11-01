@@ -1,0 +1,900 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    12
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "characters": [
+    {
+      "id": 12,
+      "name": "妮妮",
+      "anatomy": "floating",
+      "density": 7,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 128,
+      "motionScale": 0.5,
+      "sourceSwfSha256": "a6ae96c98b3597337ee0cd5610beacc478e810ba43d7a1bcd67100ef6c72ae49",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.14285714285714285,
+                  -31.714285714285715
+                ],
+                "spine": [
+                  0.14285714285714285,
+                  -23.571428571428573
+                ],
+                "dorsalRoot": [
+                  -9.285714285714286,
+                  -27.714285714285715
+                ],
+                "tailRoot": [
+                  -1.0,
+                  -18.857142857142858
+                ],
+                "fin0Root": [
+                  -8.428571428571429,
+                  -28.285714285714285
+                ],
+                "fin1Root": [
+                  10.714285714285714,
+                  -28.428571428571427
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-head.webp",
+                  "width": 503,
+                  "height": 566,
+                  "pivot": [
+                    37.857142857142854,
+                    79.14285714285714
+                  ],
+                  "reconstructedFrom": "masters/role-12-activity-heads-r1.png"
+                },
+                "dorsal": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-dorsal.webp",
+                  "width": 69,
+                  "height": 136,
+                  "pivot": [
+                    3.5714285714285716,
+                    4.857142857142857
+                  ]
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-tail.webp",
+                  "width": 179,
+                  "height": 153,
+                  "pivot": [
+                    20.285714285714285,
+                    1.2857142857142858
+                  ]
+                },
+                "fin0": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-fin0.webp",
+                  "width": 107,
+                  "height": 61,
+                  "pivot": [
+                    13.571428571428571,
+                    2.4285714285714284
+                  ],
+                  "axis": [
+                    -8.714285714285714,
+                    2.857142857142857
+                  ]
+                },
+                "fin1": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-fin1.webp",
+                  "width": 95,
+                  "height": 57,
+                  "pivot": [
+                    0.8571428571428571,
+                    2.0
+                  ],
+                  "axis": [
+                    7.428571428571429,
+                    2.857142857142857
+                  ]
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-body.webp",
+                  "width": 164,
+                  "height": 174,
+                  "pivot": [
+                    11.571428571428571,
+                    11.857142857142858
+                  ],
+                  "reconstructedFrom": "masters/role-12-clean-torso-r1.png"
+                },
+                "head-champion": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-right-main-head-champion.webp",
+                  "width": 510,
+                  "height": 558,
+                  "pivot": [
+                    38.285714285714285,
+                    78.0
+                  ],
+                  "reconstructedFrom": "masters/role-12-activity-heads-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "dorsal",
+                  "joint": "dorsalRoot",
+                  "kind": "ribbon",
+                  "amplitude": 0.018
+                },
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.12
+                },
+                {
+                  "part": "fin0",
+                  "joint": "fin0Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                },
+                {
+                  "part": "fin1",
+                  "joint": "fin1Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                }
+              ],
+              "order": [
+                "dorsal",
+                "tail",
+                "body",
+                "fin0",
+                "fin1",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -4.142857142857143,
+                  -31.428571428571427
+                ],
+                "spine": [
+                  -4.428571428571429,
+                  -23.714285714285715
+                ],
+                "dorsalRoot": [
+                  20.142857142857142,
+                  -31.0
+                ],
+                "tailRoot": [
+                  0.42857142857142855,
+                  -18.714285714285715
+                ],
+                "fin0Root": [
+                  -14.857142857142858,
+                  -28.142857142857142
+                ],
+                "fin1Root": [
+                  2.4285714285714284,
+                  -25.857142857142858
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-left-main-head.webp",
+                  "width": 479,
+                  "height": 578,
+                  "pivot": [
+                    30.0,
+                    80.71428571428571
+                  ],
+                  "reconstructedFrom": "masters/role-12-activity-heads-r1.png"
+                },
+                "dorsal": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-left-main-dorsal.webp",
+                  "width": 216,
+                  "height": 288,
+                  "pivot": [
+                    14.0,
+                    34.42857142857143
+                  ]
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-left-main-tail.webp",
+                  "width": 197,
+                  "height": 151,
+                  "pivot": [
+                    4.714285714285714,
+                    1.2857142857142858
+                  ]
+                },
+                "fin0": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-left-main-fin0.webp",
+                  "width": 101,
+                  "height": 46,
+                  "pivot": [
+                    12.714285714285714,
+                    2.5714285714285716
+                  ],
+                  "axis": [
+                    -8.285714285714286,
+                    0.8571428571428571
+                  ]
+                },
+                "fin1": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-left-main-fin1.webp",
+                  "width": 78,
+                  "height": 72,
+                  "pivot": [
+                    2.2857142857142856,
+                    3.142857142857143
+                  ],
+                  "axis": [
+                    3.7142857142857144,
+                    3.142857142857143
+                  ]
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-12-carnival/down-left-main-body.webp",
+                  "width": 168,
+                  "height": 172,
+                  "pivot": [
+                    11.142857142857142,
+                    11.571428571428571
+                  ],
+                  "reconstructedFrom": "masters/role-12-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "dorsal",
+                  "joint": "dorsalRoot",
+                  "kind": "ribbon",
+                  "amplitude": 0.018
+                },
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": -0.12
+                },
+                {
+                  "part": "fin0",
+                  "joint": "fin0Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                },
+                {
+                  "part": "fin1",
+                  "joint": "fin1Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                }
+              ],
+              "order": [
+                "dorsal",
+                "tail",
+                "body",
+                "fin0",
+                "fin1",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -4.142857142857143,
+                  -31.428571428571427
+                ],
+                "spine": [
+                  -4.428571428571429,
+                  -23.714285714285715
+                ],
+                "dorsalRoot": [
+                  20.142857142857142,
+                  -31.0
+                ],
+                "tailRoot": [
+                  0.42857142857142855,
+                  -18.714285714285715
+                ],
+                "fin0Root": [
+                  -14.857142857142858,
+                  -28.142857142857142
+                ],
+                "fin1Root": [
+                  2.4285714285714284,
+                  -25.857142857142858
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-left-main-head.webp",
+                  "width": 479,
+                  "height": 578,
+                  "pivot": [
+                    30.0,
+                    80.71428571428571
+                  ],
+                  "reconstructedFrom": "masters/role-12-activity-heads-r1.png"
+                },
+                "dorsal": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-left-main-dorsal.webp",
+                  "width": 216,
+                  "height": 288,
+                  "pivot": [
+                    14.0,
+                    34.42857142857143
+                  ]
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-left-main-tail.webp",
+                  "width": 197,
+                  "height": 151,
+                  "pivot": [
+                    4.714285714285714,
+                    1.2857142857142858
+                  ]
+                },
+                "fin0": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-left-main-fin0.webp",
+                  "width": 101,
+                  "height": 46,
+                  "pivot": [
+                    12.714285714285714,
+                    2.5714285714285716
+                  ],
+                  "axis": [
+                    -8.285714285714286,
+                    0.8571428571428571
+                  ]
+                },
+                "fin1": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-left-main-fin1.webp",
+                  "width": 78,
+                  "height": 72,
+                  "pivot": [
+                    2.2857142857142856,
+                    3.142857142857143
+                  ],
+                  "axis": [
+                    3.7142857142857144,
+                    3.142857142857143
+                  ]
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-left-main-body.webp",
+                  "width": 168,
+                  "height": 172,
+                  "pivot": [
+                    11.142857142857142,
+                    11.571428571428571
+                  ],
+                  "reconstructedFrom": "masters/role-12-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "dorsal",
+                  "joint": "dorsalRoot",
+                  "kind": "ribbon",
+                  "amplitude": 0.018
+                },
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": -0.12
+                },
+                {
+                  "part": "fin0",
+                  "joint": "fin0Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                },
+                {
+                  "part": "fin1",
+                  "joint": "fin1Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                }
+              ],
+              "order": [
+                "dorsal",
+                "tail",
+                "body",
+                "fin0",
+                "fin1",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  5.714285714285714,
+                  -31.571428571428573
+                ],
+                "spine": [
+                  5.857142857142857,
+                  -23.714285714285715
+                ],
+                "dorsalRoot": [
+                  -18.571428571428573,
+                  -30.857142857142858
+                ],
+                "tailRoot": [
+                  0.7142857142857143,
+                  -18.857142857142858
+                ],
+                "fin0Root": [
+                  14.714285714285714,
+                  -28.571428571428573
+                ],
+                "fin1Root": [
+                  -3.2857142857142856,
+                  -25.857142857142858
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-right-main-head.webp",
+                  "width": 489,
+                  "height": 576,
+                  "pivot": [
+                    39.714285714285715,
+                    80.14285714285714
+                  ],
+                  "reconstructedFrom": "masters/role-12-activity-heads-r1.png"
+                },
+                "dorsal": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-right-main-dorsal.webp",
+                  "width": 219,
+                  "height": 293,
+                  "pivot": [
+                    17.571428571428573,
+                    35.0
+                  ]
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-right-main-tail.webp",
+                  "width": 206,
+                  "height": 155,
+                  "pivot": [
+                    24.285714285714285,
+                    1.5714285714285714
+                  ]
+                },
+                "fin0": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-right-main-fin0.webp",
+                  "width": 99,
+                  "height": 45,
+                  "pivot": [
+                    1.2857142857142858,
+                    1.7142857142857142
+                  ],
+                  "axis": [
+                    8.285714285714286,
+                    1.0
+                  ]
+                },
+                "fin1": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-right-main-fin1.webp",
+                  "width": 74,
+                  "height": 73,
+                  "pivot": [
+                    8.0,
+                    3.0
+                  ],
+                  "axis": [
+                    -3.4285714285714284,
+                    3.5714285714285716
+                  ]
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-12-carnival/up-right-main-body.webp",
+                  "width": 170,
+                  "height": 172,
+                  "pivot": [
+                    14.142857142857142,
+                    11.571428571428571
+                  ],
+                  "reconstructedFrom": "masters/role-12-clean-torso-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "dorsal",
+                  "joint": "dorsalRoot",
+                  "kind": "ribbon",
+                  "amplitude": 0.018
+                },
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.12
+                },
+                {
+                  "part": "fin0",
+                  "joint": "fin0Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                },
+                {
+                  "part": "fin1",
+                  "joint": "fin1Root",
+                  "kind": "flipper",
+                  "amplitude": 0
+                }
+              ],
+              "order": [
+                "dorsal",
+                "tail",
+                "body",
+                "fin0",
+                "fin1",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-head.webp",
+      "pixelSize": [
+        503,
+        566
+      ],
+      "pixelDensity": 7,
+      "sha256": "ae99af7834e31dd188d5614accda7912b35d69da678d66633d47e424e255beaf"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-dorsal.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-dorsal.webp",
+      "pixelSize": [
+        69,
+        136
+      ],
+      "pixelDensity": 7,
+      "sha256": "6e9aff0980daf063960cd008c270519c09a74e195d03c6343aef95954a20fd39"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-tail.webp",
+      "pixelSize": [
+        179,
+        153
+      ],
+      "pixelDensity": 7,
+      "sha256": "71533c3224fcda4f7a382eab404bd69fe3408547fb07228db5c678b012e5b376"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-fin0.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-fin0.webp",
+      "pixelSize": [
+        107,
+        61
+      ],
+      "pixelDensity": 7,
+      "sha256": "bfdb650475b154096627d6364d1ce052214119b08db6ed31a16424e0f7a56b56"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-fin1.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-fin1.webp",
+      "pixelSize": [
+        95,
+        57
+      ],
+      "pixelDensity": 7,
+      "sha256": "5b5f5b9633a6830b4ae4b2d60c6e59174346d759e2317ff95a033bf41f30d104"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-body.webp",
+      "pixelSize": [
+        164,
+        174
+      ],
+      "pixelDensity": 7,
+      "sha256": "99fd9bd9d4a9521fbd861247395d341af39bbccbfb9a0c0a5e7fa2894971bccd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-right-main-head-champion.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-right-main-head-champion.webp",
+      "pixelSize": [
+        510,
+        558
+      ],
+      "pixelDensity": 7,
+      "sha256": "4d7e776240ce0749c3f65025f82c4bd61fb56c242d16e526e77b9b7ec99e2151"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-left-main-head.webp",
+      "pixelSize": [
+        479,
+        578
+      ],
+      "pixelDensity": 7,
+      "sha256": "f38ea80ed5bb87db700082b1d74302c2fe719585737ec5759664b2824a65719c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-left-main-dorsal.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-left-main-dorsal.webp",
+      "pixelSize": [
+        216,
+        288
+      ],
+      "pixelDensity": 7,
+      "sha256": "dbc5f63b098eb8101944486b57bcc6ae9d8c26b8d66574c24031ff9b7770c1d5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-left-main-tail.webp",
+      "pixelSize": [
+        197,
+        151
+      ],
+      "pixelDensity": 7,
+      "sha256": "8d67db1d69eea086fff0c82eca708e6fef9de02a5b91e1ca6138b09d3b553cc3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-left-main-fin0.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-left-main-fin0.webp",
+      "pixelSize": [
+        101,
+        46
+      ],
+      "pixelDensity": 7,
+      "sha256": "c75efc39757de79d1af82cb9a343001fa02f1c3c877e2550a252f472f5db87d8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-left-main-fin1.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-left-main-fin1.webp",
+      "pixelSize": [
+        78,
+        72
+      ],
+      "pixelDensity": 7,
+      "sha256": "7dceb8f0e4dc2253ecb36a5e6f51f6cc3706257f8a4f27ac4c52f21fe82a89ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/down-left-main-body.webp",
+      "pixelSize": [
+        168,
+        172
+      ],
+      "pixelDensity": 7,
+      "sha256": "e0334c9fc79961a00d1e70bcd0d38b1109b7abb0b4d192df61d054db3b0303be"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-left-main-head.webp",
+      "pixelSize": [
+        479,
+        578
+      ],
+      "pixelDensity": 7,
+      "sha256": "f38ea80ed5bb87db700082b1d74302c2fe719585737ec5759664b2824a65719c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-left-main-dorsal.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-left-main-dorsal.webp",
+      "pixelSize": [
+        216,
+        288
+      ],
+      "pixelDensity": 7,
+      "sha256": "dbc5f63b098eb8101944486b57bcc6ae9d8c26b8d66574c24031ff9b7770c1d5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-left-main-tail.webp",
+      "pixelSize": [
+        197,
+        151
+      ],
+      "pixelDensity": 7,
+      "sha256": "8d67db1d69eea086fff0c82eca708e6fef9de02a5b91e1ca6138b09d3b553cc3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-left-main-fin0.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-left-main-fin0.webp",
+      "pixelSize": [
+        101,
+        46
+      ],
+      "pixelDensity": 7,
+      "sha256": "c75efc39757de79d1af82cb9a343001fa02f1c3c877e2550a252f472f5db87d8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-left-main-fin1.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-left-main-fin1.webp",
+      "pixelSize": [
+        78,
+        72
+      ],
+      "pixelDensity": 7,
+      "sha256": "7dceb8f0e4dc2253ecb36a5e6f51f6cc3706257f8a4f27ac4c52f21fe82a89ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-left-main-body.webp",
+      "pixelSize": [
+        168,
+        172
+      ],
+      "pixelDensity": 7,
+      "sha256": "e0334c9fc79961a00d1e70bcd0d38b1109b7abb0b4d192df61d054db3b0303be"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-right-main-head.webp",
+      "pixelSize": [
+        489,
+        576
+      ],
+      "pixelDensity": 7,
+      "sha256": "c5ae04760abea7c553b6af57346150de7a019b38fb7bdfe09e9022d8c1e7e6f7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-right-main-dorsal.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-right-main-dorsal.webp",
+      "pixelSize": [
+        219,
+        293
+      ],
+      "pixelDensity": 7,
+      "sha256": "ab47299aa3201de1a7cc3f4edc3f4e74c6e3847eced3693433958778c314ba8c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-right-main-tail.webp",
+      "pixelSize": [
+        206,
+        155
+      ],
+      "pixelDensity": 7,
+      "sha256": "62cbc8f6442fb33f42e970166ce86e11f2baa5d1de111f092703a31148e664bc"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-right-main-fin0.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-right-main-fin0.webp",
+      "pixelSize": [
+        99,
+        45
+      ],
+      "pixelDensity": 7,
+      "sha256": "6995e7934b5744b8bdbad69e10c9c4593357dd8745eae149a0e9d60d0af6cae7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-right-main-fin1.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-right-main-fin1.webp",
+      "pixelSize": [
+        74,
+        73
+      ],
+      "pixelDensity": 7,
+      "sha256": "ab57c2cda8e90e9f626564153836cbcac4575323bbedc57768436c01d6dce803"
+    },
+    {
+      "url": "hd-characters/characters-25/role-12-carnival/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-12-carnival/up-right-main-body.webp",
+      "pixelSize": [
+        170,
+        172
+      ],
+      "pixelDensity": 7,
+      "sha256": "0e7fcbd570ae220e89610582c4eaaf3bab42ba7fba430a965eb306494c064a87"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    10,
+    12
+  ]
+}

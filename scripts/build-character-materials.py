@@ -6,9 +6,12 @@ ROOT=Path(__file__).resolve().parents[1]
 REVIEW=ROOT/'public/hd-review/characters-25'
 
 def build(cid):
- stem={11:'guaika',6:'weiwei'}[cid];role=f'role-{cid:02d}'
+ stem={11:'guaika',6:'weiwei',10:'ajie',12:'nini'}[cid];role=f'role-{cid:02d}'
  out=ROOT/f'public/modern/hd-characters/characters-25/{role}'
- rasters=Path(f'/tmp/starcat-guaika-weiwei/role-{cid}/material-renders')
+ batch='ajie-nini'if cid in[10,12]else'guaika-weiwei'
+ rasters=Path(f'/tmp/starcat-{batch}/role-{cid}/material-renders')
+ author=json.loads((REVIEW/f'{role}-authoring.json').read_text())
+ spec=importlib.util.spec_from_file_location('layers',ROOT/'scripts/build-characters25.py');layers=importlib.util.module_from_spec(spec);spec.loader.exec_module(layers)
  data=json.loads((ROOT/f'src/modern/data/{stem}-map-rig.json').read_text())
  native=json.loads((ROOT/'public/modern/assets/activities/manifest.json').read_text())
  def clip(name):return next(c for c in native['clips']if c['id']==name)
@@ -25,7 +28,7 @@ def build(cid):
   canvas=Image.new('RGBA',size);canvas.alpha_composite(image,((size[0]-image.width)//2,(size[1]-image.height)//2));return canvas
  carnival=json.loads((ROOT/f'src/modern/data/{stem}-carnival.json').read_text())
  head=carnival['characters'][0]['facings']['down-right']['actors'][0]['parts']['head']
- art=Image.open(ROOT/'public/modern'/head['url'])
+ art=layers.split_views(Image.open(REVIEW/author['portraitMaster']),*author.get('portraitLayout',[4,1]))[author.get('portraitAtlasIndex',0)]if author.get('portraitMaster')else Image.open(ROOT/'public/modern'/head['url'])
  for name,density in [('face',4),('head',2)]:
   original=clip(f'{name}-{cid}');frame=original['frames'][0]
   url=save(name,fit(art,(frame['width']*density,frame['height']*density)),density,frame['url'])
@@ -33,8 +36,7 @@ def build(cid):
  champion=f'assets/monthly/champions/{cid}.png';size=Image.open(ROOT/'public/modern'/champion).size
  save('champion',fit(Image.open(rasters/'champion.png'),size,6),1,champion)
  thumb=Image.open(rasters/'thumbnail.png').convert('RGBA');thumb=thumb.crop(thumb.getbbox());data['thumbnailUrls']={str(cid):save('thumbnail',thumb,6)}
- spec=importlib.util.spec_from_file_location('layers',ROOT/'scripts/build-characters25.py');layers=importlib.util.module_from_spec(spec);spec.loader.exec_module(layers)
- flying=layers.split_views(Image.open(REVIEW/f'masters/{role}-flight-master-r1.png'),4,1)
+ flying=layers.split_views(Image.open(REVIEW/author.get('flightMaster',f'masters/{role}-flight-master-r1.png')),4,1)
  for heading,image in enumerate(flying,1):
   replacement=copy.deepcopy(clip(f'fly-{cid}-{heading}'));frame=replacement['frames'][0]
   frame['url']=save(f'fly-{heading}',fit(image,(frame['width']*3,frame['height']*3),6),3);data['activityClips'].append(replacement)
@@ -45,7 +47,7 @@ def build(cid):
  for pose,direction in [(2,'left'),(3,'right')]:
   original=clip(f'carnival-walk-{cid}-{direction}');replacement=copy.deepcopy(original);replacement['fps']=120;replacement['frames']=[]
   frame_count=round(len(original['frames'])/original['fps']*120)
-  unique=frame_count if cid==6 else 16
+  unique=16 if cid==11 else frame_count
   urls=[save(f'carnival-{direction}-{i}',Image.open(rasters/f'carnival-{pose}-{i}.png'),4)for i in range(unique)]
   for i in range(frame_count):replacement['frames'].append(dict(sourceFrame=i+1,fields=[],url=urls[i%unique],width=140,height=140,offsetX=-70,offsetY=-125))
   data['activityClips'].append(replacement)
@@ -57,9 +59,9 @@ def build(cid):
   metadata[entry['url']]=next(i for i in accepted['runtimeImages']if i['url']==entry['url'])
  data['runtimeImages']+=list(metadata.values())
  inventory=json.loads((REVIEW/f'{role}-material-sources.json').read_text())
- data['derivation']=dict(identity=cid,nativeInventoryCount=inventory['counts']['total'],carnivalNativeFps=30,carnivalArtworkFps=120,carnivalWorldStride=32,method='Canonical articulated rigs, complete same-identity heads and hidden surfaces, flight master, accepted shared possession badges. Native physics/RNG/clocks preserved.')
+ data['derivation']=dict(identity=cid,nativeInventoryCount=inventory['counts']['total'],carnivalNativeFps=30,carnivalArtworkFps=120,carnivalWorldStride=carnival['characters'][0]['stridePx']if cid in[10,12]else 32,method='Canonical articulated rigs, complete same-identity heads and hidden surfaces, flight master, accepted shared possession badges. Native physics/RNG/clocks preserved.')
  for path in [ROOT/f'src/modern/data/{stem}-complete.json',REVIEW/f'{role}-complete.json']:path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(dict(role=cid,staticRoutes=len(data['assets']),activityClips=len(data['activityClips']),runtimeImages=len(data['runtimeImages']))))
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--role',type=int,choices=[11,6],required=True);build(p.parse_args().role)
+ p=argparse.ArgumentParser();p.add_argument('--role',type=int,choices=[11,6,10,12],required=True);build(p.parse_args().role)

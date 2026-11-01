@@ -6,7 +6,7 @@ export interface Limb25 {
  name:string;root:string;middle:string;end:string;upper:string;lower:string;tip?:string;phase:number;bend:number;
  lengths?:Point25;hiddenParts?:('upper'|'lower')[]
 }
-export interface Appendage25 {part:string;joint:string;kind:'tail'|'wing'|'pan'|'ribbon'|'fixed';amplitude?:number}
+export interface Appendage25 {part:string;joint:string;kind:'tail'|'wing'|'pan'|'ribbon'|'fixed'|'flipper';amplitude?:number;poseHand?:'leftHand'|'rightHand';maxAngle?:number;readyProp?:boolean;restAngle?:number}
 export interface Actor25 {
  id:string;joints:Record<string,Point25>;parts:Record<string,Part25>;body?:string;head:string;
  legs:Limb25[];arms:Limb25[];appendages:Appendage25[];order:string[]

@@ -1,0 +1,50 @@
+{
+  "status": "accepted",
+  "technicalVerificationDate": "2026-11-01",
+  "characters": [
+    {
+      "id": 10,
+      "name": "阿杰",
+      "nativeSources": 1136,
+      "runtimeImages": 161,
+      "review": "./?role=10&review=complete-r1",
+      "humanAccepted": true
+    },
+    {
+      "id": 12,
+      "name": "妮妮",
+      "nativeSources": 1140,
+      "runtimeImages": 179,
+      "review": "./?role=12&review=complete-r1",
+      "humanAccepted": true
+    }
+  ],
+  "validation": {
+    "unitFiles": 128,
+    "unitTests": 833,
+    "artworkChecks": 30,
+    "productionCases": 32,
+    "reviewCases": 2,
+    "isolatedExportCases": 4,
+    "rebuildFilesByteIdentical": 385,
+    "reviewPageErrors": 0,
+    "realApiStartup": {
+      "saveRowsRead": 3,
+      "saveWrites": 0,
+      "errors": 0,
+      "sessionStatus": 200,
+      "slotsStatus": 200
+    },
+    "acceptedCharacterFilesUnchanged": 616,
+    "protectedWorkspaceFilesUnchanged": 32,
+    "preMergeReviewImportantFixed": 1
+  },
+  "generator": "builtin image_gen; prompts and provenance in ../masters/",
+  "humanAcceptanceEvidence": "用户最终回复：两位通过",
+  "humanAcceptanceDate": "2026-11-01",
+  "preMergeReview": {
+    "importantFindings": 1,
+    "fixed": "Nini carnival native64-sample cycle now closes at128px; original duration and accepted identity unchanged",
+    "regression": "sampler RED to GREEN; actual left/right raster wrap checked"
+  }
+}

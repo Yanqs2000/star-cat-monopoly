@@ -1,0 +1,19 @@
+{
+  "tool": "builtin image_gen",
+  "generatedOriginal": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-eb500895-c182-4a6a-ad37-f64efa1fed32.png",
+  "projectImage": "public/hd-review/characters-25/masters/role-10-carnival-master-r1.png",
+  "sha256": "6b378a050d30404a609d1d76fb9a6df5eae318b4b4c1a5a83c537f1d73b8583a",
+  "promptFile": "role-10-carnival-master-r1.prompt.txt",
+  "inputs": [
+    {
+      "path": "public/hd-review/characters-25/masters/role-10-neutral-r2.png",
+      "sha256": "82d9ec31b2034dffa081ef72f401f54fcd53eb59cf9cc4630d5736b97f521283"
+    },
+    {
+      "path": "public/hd-review/characters-25/source-references/role-10-activities.png",
+      "sha256": "216ae69fa4e3c4953942f675adf68f815a786c5bb8fd1565617fdd60a856f3b0"
+    }
+  ],
+  "status": "needs-side-profile-correction",
+  "reason": "Side poses show both eyes at three-quarter angle, whereas original activity poses have near-profile one-eye visibility."
+}

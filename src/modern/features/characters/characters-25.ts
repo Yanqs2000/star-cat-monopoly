@@ -131,7 +131,9 @@ export class Character25Player{
   this.prop.clear()
   if(this.action==='ready'){
    const actor=this.rig.facings[this.facing].actors[0]!,arm=actor.arms.find(a=>a.name.startsWith('right'))??(this.rig.id===6&&this.facing==='up-right'?actor.arms.find(a=>a.name.startsWith('left')):undefined)
-   const state=arm?states.find(p=>p.key===actor.id+'/'+arm.lower):undefined
+   const flipper=actor.appendages.find(p=>p.readyProp)
+   const part=arm?.lower??flipper?.part
+   const state=part?states.find(p=>p.key===actor.id+'/'+part):undefined
    if(state){const axis=state.part.axis!,x=state.a*axis[0]+state.c*axis[1]+state.tx,y=state.b*axis[0]+state.d*axis[1]+state.ty
     this.prop.roundRect(x-5,y-7,10,10,1.5).fill(0xf7f8fa).stroke({width:.4,color:0x8a929c});this.prop.circle(x,y-2,1.8).fill(0xe63332)}
   }

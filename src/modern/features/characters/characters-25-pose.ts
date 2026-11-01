@@ -74,7 +74,16 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
    const floatingWing=rig.anatomy==='floating'&&extra.kind==='wing'
    const side=floatingWing?Math.sign(p.x-spine.x)||1:1
    const wave=extra.kind==='fixed'?0:beat*(extra.amplitude??.035)*weight*side
-   place(extra.part,extra.part,p,extra.kind==='pan'?0:rotation+wave)
+   const restAngle=extra.restAngle??0
+   let angle=extra.kind==='pan'?0:rotation+wave+restAngle
+   const axis=actor.parts[extra.part]!.axis
+   if(extra.kind==='flipper'&&extra.poseHand&&axis){
+    const x=axis[0]*Math.cos(restAngle)-axis[1]*Math.sin(restAngle),y=axis[0]*Math.sin(restAngle)+axis[1]*Math.cos(restAngle)
+    const hand=pose[extra.poseHand],turn=Math.atan2(y+hand.y*scale,x+hand.x*scale)-Math.atan2(y,x)
+    const wrapped=Math.atan2(Math.sin(turn),Math.cos(turn)),limit=extra.maxAngle??.9
+    angle+=Math.max(-limit,Math.min(limit,wrapped))
+   }
+   place(extra.part,extra.part,p,angle)
    if(floatingWing){const state=states.get(extra.part)!,fold=1-.38*beat*beat*weight;state.a*=fold;state.b*=fold}
   }
   for(const name of actor.order){const state=states.get(name);if(state)result.push(state)}

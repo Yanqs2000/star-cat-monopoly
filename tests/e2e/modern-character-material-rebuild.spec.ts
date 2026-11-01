@@ -17,7 +17,7 @@ test.beforeAll(async()=>{
 })
 test.afterAll(async()=>{if(reviewServer&&reviewServer.exitCode===null){reviewServer.kill();await once(reviewServer,'exit')}})
 
-for(const role of [11,6])test(`role${role} material exporter starts without previous complete pack or derived portraits`,async({page})=>{
+for(const role of [11,6,10,12])test(`role${role} material exporter starts without previous complete pack or derived portraits`,async({page})=>{
  const denied:string[]=[]
  const id=String(role).padStart(2,'0')
  await page.route(`**/role-${id}-complete.json`,r=>{denied.push(r.request().url());return r.fulfill({status:404,body:'not built yet'})})

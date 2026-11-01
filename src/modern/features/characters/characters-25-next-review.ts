@@ -5,8 +5,8 @@ import type {Character25Rig} from './characters-25-types'
 import type {Facing} from './assets'
 import {createCharacterMaterialRenderer,type MaterialRigIndex} from './character-material-render'
 
-const cid=Number(new URLSearchParams(location.search).get('role')??11)
-if(![11,6].includes(cid))throw Error('本轮仅怪卡与薇薇')
+const cid=Number(new URLSearchParams(location.search).get('role')??(location.pathname.includes('/ajie-nini/')?10:11))
+if(![11,6,10,12].includes(cid))throw Error('本页支持怪卡、薇薇、阿杰与妮妮')
 const variant=new URLSearchParams(location.search).get('variant')==='carnival'?'-carnival':''
 const index=await(await fetch(`../role-${String(cid).padStart(2,'0')}${variant}-rig.json`)).json()as {
  characters:Character25Rig[];runtimeImages:{url:string}[]
@@ -28,7 +28,7 @@ const panels=facings.map((facing,i)=>{
 })
 const animatedMaterials:{image:HTMLImageElement;frames:{url:string}[];fps:number}[]=[]
 let materialElapsed=0
-if([11,6].includes(cid)&&!new URLSearchParams(location.search).has('export')){
+if([11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
  const complete=await(await fetch(`../role-${String(cid).padStart(2,'0')}-complete.json`)).json()as {
   thumbnailUrls:Record<string,string>;assets:{source:string;url:string}[];activityClips:{id:string;fps?:number;frames:{url:string}[]}[]
  }

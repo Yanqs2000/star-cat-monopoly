@@ -1,0 +1,20 @@
+{
+  "tool": "builtin image_gen",
+  "generatedOriginal": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-7d3438b4-ec45-41bb-806a-7a73c3ec2c82.png",
+  "projectImage": "public/hd-review/characters-25/masters/role-10-expressions-r1.png",
+  "sha256": "d2659d43b1f149bc21aeaf7e32f65e9136370222f85d6dcf6c2e88023fc3f0ea",
+  "promptFile": "role-10-expressions-r1.prompt.txt",
+  "inputs": [
+    {
+      "path": "public/hd-review/characters-25/masters/role-10-neutral-r1.png",
+      "sha256": "0b5cf12727b80f262a270e8d8760cd76c93602897f6a146b2f8dbca53e9a649f"
+    },
+    {
+      "path": "public/hd-review/characters-25/source-references/role-10-source.png",
+      "sha256": "d1d98f93460e3155527dc5954ce80e864c9b80a586600c28aee5d4fbf6d7921c"
+    }
+  ],
+  "status": "superseded",
+  "supersededBy": "role-10-expressions-r2.png",
+  "reason": "Preserve the visible up-right side eye"
+}

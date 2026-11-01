@@ -36,13 +36,15 @@ it('收费房屋图片仅来自同街真实地主，HD按已登记映射且图�
   expect(panel.emitted('asset-error')?.[0]?.[0]).toBeInstanceOf(Error)
 })
 
-it('胜出者角色图与每位玩家的图文资金账目一致，新增角色图不假定HD路径', () => {
+it('胜出者角色图与每位玩家的图文资金账目一致，高清与原版各用登记素材', () => {
   const game = createGame([12, 2, 3, 4], 1)
   game.phase = 'ended'; game.outcome = { kind: 'victory', winnerId: 1 }
   game.eliminatedPlayerIds = [2, 3, 4]
   game.players[0]!.cash = 12345
   const panel = mount(EndgamePanel, { props: { game, paused: false, assetProfile: 'hd' } })
-  expect(panel.get('[data-testid="endgame-actor-art"]').attributes('src')).toContain('/assets/monthly/champions/12.png')
+  expect(panel.get('[data-testid="endgame-actor-art"]').attributes('src')).toContain('/hd-characters/characters-25/role-12/champion.webp')
+  const original = mount(EndgamePanel, { props: { game, paused: false, assetProfile: 'original' } })
+  expect(original.get('[data-testid="endgame-actor-art"]').attributes('src')).toBe('/assets/monthly/champions/12.png')
   const winner = panel.get('[data-testid="endgame-player-1"]')
   expect(winner.text()).toContain('妮妮')
   expect(winner.text()).toContain('现金 12345')

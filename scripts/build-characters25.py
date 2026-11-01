@@ -142,6 +142,7 @@ def build_role(author):
  master=Image.open(REVIEW/author['neutralMaster']).convert('RGBA')
  views=split_views(master,*author['layout'])
  torso_views=split_views(Image.open(REVIEW/author['cleanTorsoMaster']),4,1)if author.get('cleanTorsoMaster')else None
+ head_views=split_views(Image.open(REVIEW/author['headMaster']),*author.get('headLayout',[4,1]))if author.get('headMaster')else None
  foot_views=split_views(Image.open(REVIEW/author['footMaster']),4,2)if author.get('footMaster')else None
  appendage_views=isolated_views(Image.open(REVIEW/author['appendageMaster']),4,2)if author.get('appendageMaster')else None
  leg_views=isolated_views(Image.open(REVIEW/author['legMaster']),4,2)if author.get('legMaster')else None
@@ -170,8 +171,8 @@ def build_role(author):
     if extra.get('excludeCloth',False):
      exclusion=neutral_cloth_mask(pose);removed=ImageChops.darker(mask,exclusion)
      extra_transfers.append((extra['clothOwner'],removed));mask=ImageChops.subtract(mask,exclusion);extra_exclusions[extra['name']]=exclusion
-    extras=ImageChops.lighter(extras,mask);layers[extra['name']]=(mask,extra['pivot'],None)
-    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**({'amplitude':extra['amplitude']}if 'amplitude'in extra else{})})
+    extras=ImageChops.lighter(extras,mask);layers[extra['name']]=(mask,extra['pivot'],extra.get('axis'))
+    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**{k:extra[k]for k in['amplitude','poseHand','maxAngle','readyProp','restAngle']if k in extra}})
    for owner,removed in extra_transfers:
     mask,pivot,axis=layers[owner];layers[owner]=(ImageChops.lighter(mask,removed),pivot,axis);extras=ImageChops.lighter(extras,removed)
    body=ImageChops.lighter(polygon(master.size,description['bodyPolygon']),protected)
@@ -277,9 +278,24 @@ def build_role(author):
      image=image.resize((x1-x0,y1-y0),Image.Resampling.LANCZOS)
      pivot=[extra['pivot'][0]-x0,extra['pivot'][1]-y0]
      donors[extra['name']]=(image,pivot,{'master':author['appendageMaster'],'viewIndex':extra['atlasIndex']})
+   for extra in description['extras']:
+    if not extra.get('sourceMaster'):continue
+    source=Image.open(REVIEW/extra['sourceMaster']).convert('RGBA');image=masked(source,polygon(source.size,extra['sourcePolygon']));box=image.getbbox();image=image.crop(box)
+    factor=extra.get('sourceScale',1);root=extra['sourcePivot'];pivot=[(root[0]-box[0])*factor,(root[1]-box[1])*factor]
+    image=image.resize((max(1,round(image.width*factor)),max(1,round(image.height*factor))),Image.Resampling.LANCZOS)
+    donor={'master':extra['sourceMaster']}
+    if 'sourceAxis'in extra:donor['axis']=[v*factor for v in extra['sourceAxis']]
+    donors[extra['name']]=(image,pivot,donor)
+   complete_head=None
    for name,(mask,pivot,axis)in layers.items():
     masks[name]=mask;combined_mask=ImageChops.lighter(combined_mask,mask)
     image=masked(pose,mask);url=f'{prefix}/{facing}-{actor["id"]}-{name}.webp'
+    if name=='head'and head_views:
+     source=head_views[entry.get('headAtlasIndex',index)];box=image.getbbox()
+     factor=math.sqrt((box[2]-box[0])*(box[3]-box[1])/(source.width*source.height))
+     source=source.resize((round(source.width*factor),round(source.height*factor)),Image.Resampling.LANCZOS)
+     canvas=Image.new('RGBA',master.size);canvas.alpha_composite(source,(round((box[0]+box[2]-source.width)/2),box[3]-source.height));image=canvas
+     complete_head=image.copy()
     if name=='body'and torso_views:
      torso=torso_views[entry.get('torsoViewIndex',index)];torso=torso.crop((0,round(torso.height*author.get('cleanTorsoCropTopFraction',.16)),torso.width,torso.height))
      x0,y0,x1,y1=description['cleanBodyBounds'];torso=torso.resize((x1-x0,y1-y0),Image.Resampling.LANCZOS)
@@ -295,10 +311,19 @@ def build_role(author):
     packed,info=register_part(image,pivot,density,url,axis);packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
     if name in donors:info['donor']=donors[name][2]
     if name=='body'and torso_views:info['reconstructedFrom']=author['cleanTorsoMaster']
+    if name=='head'and head_views:info['reconstructedFrom']=author['headMaster']
     if name in donors and 'master'in donors[name][2]:info['reconstructedFrom']=donors[name][2]['master']
     actor['parts'][name]=info;runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    headmask=layers['head'][0]
-   canonical=masked(pose,headmask);headbox=canonical.getbbox();neck=joints['neck']
+   canonical=complete_head if complete_head is not None else masked(pose,headmask);headbox=canonical.getbbox();neck=joints['neck']
+   if head_views and 'championHeadAtlasIndex'in entry:
+    image=head_views[entry['championHeadAtlasIndex']]
+    factor=math.sqrt((headbox[2]-headbox[0])*(headbox[3]-headbox[1])/(image.width*image.height))
+    image=image.resize((round(image.width*factor),round(image.height*factor)),Image.Resampling.LANCZOS)
+    canvas=Image.new('RGBA',master.size);canvas.alpha_composite(image,(round((headbox[0]+headbox[2]-image.width)/2),headbox[3]-image.height))
+    url=f'{prefix}/{facing}-{actor["id"]}-head-champion.webp';packed,info=register_part(canvas,neck,density,url)
+    info['reconstructedFrom']=author['headMaster'];actor['parts']['head-champion']=info;packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
+    runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    if expressions:
     happy=expressions[index]
     factor=math.sqrt((headbox[2]-headbox[0])/happy.width*(headbox[3]-headbox[1])/(author['expressionNeckRows'][0][index]+3))
@@ -324,8 +349,10 @@ def build_role(author):
     runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    actor['joints']={name:[(p[0]-origin[0])/density,(p[1]-origin[1])/density]for name,p in joints.items()}
    arm_order=lambda front:[part for spec,limb in zip(description['arms'],actor['arms'])if spec.get('front',False)==front for part in [limb['upper'],limb['lower'],limb['tip']]if part in actor['parts']]
-   front_extras={e['name']for e in description['extras']if e.get('front',False)}
-   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+['head','head-expression']+[e['part']for e in actor['appendages']if e['kind']=='fixed'or e['part']in front_extras]
+   front_extras={e['name']for e in description['extras']if e.get('front',False)or e.get('overHead',False)}
+   over_head={e['name']for e in description['extras']if e.get('overHead',False)}
+   front_flippers=[e['part']for e in actor['appendages']if e['kind']=='flipper'and e['part']in front_extras and e['part']not in over_head]
+   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+front_flippers+['head','head-expression']+[e['part']for e in actor['appendages']if e['kind']=='fixed'or(e['part']in front_extras and e['part']not in front_flippers)]
    actors.append(actor)
   original_alpha=np.asarray(pose.getchannel('A'));retained=np.asarray(combined_mask)>0
   missing=int(np.count_nonzero((original_alpha>128)&~retained));total=int(np.count_nonzero(original_alpha>128))
@@ -339,7 +366,7 @@ def build_role(author):
 
 if __name__=='__main__':
  import argparse
- parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,11,6]);parser.add_argument('--author');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,11,6,10,12]);parser.add_argument('--author');args=parser.parse_args()
  author=json.loads((REVIEW/(args.author or f'role-{args.role:02d}-authoring.json')).read_text())
  if author['id']!=args.role:raise ValueError('authoring identity must match the selected role')
  result=build_role(author)

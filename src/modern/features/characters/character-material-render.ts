@@ -14,8 +14,9 @@ export async function createCharacterMaterialRenderer(mapIndex:MaterialRigIndex,
  const championRig=structuredClone(mapIndex.characters[0]!.id===6?mapIndex.characters[0]!:carnivalIndex.characters[0]!)
  const source=mapIndex.characters[0]!.facings['down-right'].actors[0]!
  for(const actor of championRig.facings['down-right'].actors){
-  const happy=source.parts['head-happy']
-  if(happy){const factor=actor.parts[actor.head]!.width/happy.width;actor.parts[actor.head]={...happy,width:happy.width*factor,height:happy.height*factor,pivot:[happy.pivot[0]*factor,happy.pivot[1]*factor]}}
+  const happy=actor.parts['head-champion']??source.parts['head-happy']
+  // Native Ajie opens its eyes for the monthly portrait; its map-happy head stays closed.
+  if(happy&&mapIndex.characters[0]!.id!==10){const factor=actor.parts[actor.head]!.width/happy.width;actor.parts[actor.head]={...happy,width:happy.width*factor,height:happy.height*factor,pivot:[happy.pivot[0]*factor,happy.pivot[1]*factor]}}
   for(const arm of actor.arms){const root=actor.joints[arm.root]!;actor.joints[arm.end]=[root[0]+(arm.name==='left'?-6:6),root[1]+4]}
  }
  const champion=new Character25Player(championRig,textures,false,false)

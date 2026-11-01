@@ -26,7 +26,7 @@ class Characters25SourceTest(unittest.TestCase):
   self.assertEqual(next(r for r in data['roles']if r['id']==3)['anatomy'],'paired')
   self.assertEqual(next(r for r in data['roles']if r['id']==4)['anatomy'],'crab')
   self.assertEqual(next(r for r in data['roles']if r['id']==8)['anatomy'],'scorpion')
-  for cid in [6,7,12]:self.assertEqual(next(r for r in data['roles']if r['id']==cid)['anatomy'],'floating')
+  for cid in [6,7,10,12]:self.assertEqual(next(r for r in data['roles']if r['id']==cid)['anatomy'],'floating')
   self.assertEqual(next(r for r in data['roles']if r['id']==9)['anatomy'],'centaur')
 
 if __name__=='__main__':unittest.main()

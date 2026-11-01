@@ -1,0 +1,19 @@
+{
+  "tool": "builtin image_gen",
+  "generatedOriginal": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-aee9d215-ff87-4847-a435-a5b16d01b112.png",
+  "projectImage": "public/hd-review/characters-25/masters/role-10-flight-master-r1.png",
+  "sha256": "9c6d39ed412ebbd0aebd696bcb2bbde9f9b714a07a7cb261fb2d9bc1f42a40ea",
+  "promptFile": "role-10-flight-master-r1.prompt.txt",
+  "inputs": [
+    {
+      "path": "public/hd-review/characters-25/masters/role-10-neutral-r1.png",
+      "sha256": "0b5cf12727b80f262a270e8d8760cd76c93602897f6a146b2f8dbca53e9a649f"
+    },
+    {
+      "path": "public/hd-review/characters-25/source-references/role-10-activities.png",
+      "sha256": "216ae69fa4e3c4953942f675adf68f815a786c5bb8fd1565617fdd60a856f3b0"
+    }
+  ],
+  "status": "needs-tail-fin-correction",
+  "reason": "Original shows a two-lobed brown fish fin; r1 has a cone."
+}
