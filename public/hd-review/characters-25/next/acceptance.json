@@ -1,0 +1,42 @@
+{
+  "status": "accepted",
+  "technicalVerificationDate": "2026-11-01",
+  "characters": [
+    {
+      "id": 11,
+      "name": "怪卡",
+      "nativeSources": 1184,
+      "runtimeImages": 117,
+      "review": "./?role=11&review=complete-r2",
+      "humanAccepted": true
+    },
+    {
+      "id": 6,
+      "name": "薇薇",
+      "nativeSources": 1155,
+      "runtimeImages": 160,
+      "review": "./?role=6&review=complete-r2",
+      "humanAccepted": true
+    }
+  ],
+  "validation": {
+    "unitTests": 824,
+    "unitFiles": 124,
+    "artworkChecks": 24,
+    "productionCases": 36,
+    "reviewFindingsFixed": 4,
+    "rebuildFilesByteIdentical": 273,
+    "reviewPageDerivedImagesPerCharacter": 19,
+    "reviewPageErrors": 0,
+    "realApiStartup": {
+      "saveRowsRead": 3,
+      "saveWrites": 0,
+      "errors": 0
+    },
+    "acceptedCharacterFilesUnchanged": true,
+    "protectedWorkspaceFilesUnchanged": 32
+  },
+  "generator": "builtin image_gen; prompts and provenance in ../masters/",
+  "humanAcceptanceDate": "2026-11-01",
+  "humanAcceptanceEvidence": "用户回复：两位通过"
+}

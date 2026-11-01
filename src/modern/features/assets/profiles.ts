@@ -5,14 +5,16 @@ import continuous from '../../data/continuous-non-character.json'
 import npc22 from '../../data/npc-22.json'
 import npc23 from '../../data/npc-23.json'
 import juanmao24 from '../../data/juanmao-24.json'
+import characters25 from '../characters/characters-25-materials'
 
 export type AssetProfile = 'original' | 'hd'
 
 type Bounds = readonly number[]
 type StaticArtworkOverride = { source: string; url: string; pixelSize: readonly number[]; pixelDensity: number; registration?: { sourceBounds: Bounds; renderedBounds: Bounds } }
-const staticOverrides = new Map<string, StaticArtworkOverride>([...staticArtwork.assets,...approvedArtwork.assets].filter(asset => asset.enabled)
+const character25Overrides=(characters25 as unknown as{assets?:Array<StaticArtworkOverride & {enabled:boolean}>}).assets??[]
+const staticOverrides = new Map<string, StaticArtworkOverride>([...staticArtwork.assets,...approvedArtwork.assets,...character25Overrides].filter(asset => asset.enabled)
   .map(asset => [asset.source, asset]))
-const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...[...approvedArtwork.runtimeImages,...effects.runtimeImages,...continuous.runtimeImages,...npc22.runtimeImages,...npc23.runtimeImages].map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
+const staticResolved = new Map<string,StaticArtworkOverride>([...staticOverrides.values(),...[...approvedArtwork.runtimeImages,...effects.runtimeImages,...continuous.runtimeImages,...npc22.runtimeImages,...npc23.runtimeImages,...characters25.runtimeImages].map(asset=>({...asset,source:asset.url}))].map(asset => [asset.url, asset]))
 const juanmao24Textures = new Set(Object.values(juanmao24.facings).flatMap(facing=>Object.values(facing.parts).map(part=>part.url)))
 
 export function staticAssetPixels(url: string) {
@@ -71,6 +73,9 @@ export function profileAssetUrl(url: string, profile: AssetProfile): string {
   const suffix = suffixStart < 0 ? '' : url.slice(suffixStart)
   const replacement = staticOverrides.get(path)
   if (replacement) return `${replacement.url}${suffix}`
+  // The other legacy champion illustrations retain their existing shared
+  // source until that identity has completed its own review.
+  if(/^assets\/monthly\/champions\//.test(path))return url
   return `${path.replace(/^assets\//, 'assets-hd/').replace(/\.png$/i, '.webp')}${suffix}`
 }
 

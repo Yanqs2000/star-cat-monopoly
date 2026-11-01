@@ -4,6 +4,7 @@ import { commitPreparedSave } from '../../src/modern/features/saves/restore'
 import { createGame } from '../../src/modern/features/game/setup'
 import rawAssets from '../../public/modern/assets/interactions/manifest.json'
 import {parseInteractionAssets}from '../../src/modern/features/game/interaction-assets'
+import{profileAssetUrl}from'../../src/modern/features/assets/profiles'
 const assets=parseInteractionAssets(rawAssets)
 const signal=new AbortController().signal
 it('所有玩家/翻页手牌和终局图片先准备为本地资源，离开时统一释放',async()=>{
@@ -31,7 +32,9 @@ it('入场前准备所有参赛角色的月结立绘，高清模式不请求不�
  const game=createGame([1,2,3,4],1);game.inventories={1:[],2:[],3:[],4:[]}
  const urls:string[]=[]
  const result=await prepareGameUiAssets(game,assets,signal,async url=>{urls.push(url);return {url:`blob:${url}`,release:()=>{}}},'hd')
- for(const id of [1,2,3,4])expect(result.urls[`assets/monthly/champions/${id}.png`]).toBe(`blob:assets/monthly/champions/${id}.png`)
+ for(const id of [1,2,3,4]){const source=`assets/monthly/champions/${id}.png`,resolved=profileAssetUrl(source,'hd');expect(result.urls[source]).toBe(`blob:${resolved}`);expect(result.urls[resolved]).toBe(result.urls[source])}
+ expect(urls).toContain('hd-characters/characters-25/role-02/champion.webp')
+ expect(urls).not.toContain('assets/monthly/champions/2.png')
  expect(urls.some(url=>url.startsWith('assets-hd/monthly/'))).toBe(false)
  result.release()
 })

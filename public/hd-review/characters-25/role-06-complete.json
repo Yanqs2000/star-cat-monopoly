@@ -1,0 +1,3810 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    6
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 6,
+      "name": "薇薇",
+      "anatomy": "floating",
+      "density": 6,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 86,
+      "motionScale": 0.45,
+      "sourceSwfSha256": "0655c323278deabe0976c7e9fe34b0cdbd659f33c261b3f800b8e26e12a90c14",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.0,
+                  -26.0
+                ],
+                "spine": [
+                  0.6666666666666666,
+                  -16.833333333333332
+                ],
+                "braidBase": [
+                  -21.666666666666668,
+                  -28.666666666666668
+                ],
+                "leftWingBase": [
+                  -5.166666666666667,
+                  -22.833333333333332
+                ],
+                "leftShoulder": [
+                  -6.166666666666667,
+                  -24.666666666666668
+                ],
+                "leftElbow": [
+                  -9.333333333333334,
+                  -19.5
+                ],
+                "leftHand": [
+                  -11.833333333333334,
+                  -13.166666666666666
+                ],
+                "rightShoulder": [
+                  10.666666666666666,
+                  -25.333333333333332
+                ],
+                "rightElbow": [
+                  12.666666666666666,
+                  -23.166666666666668
+                ],
+                "rightHand": [
+                  13.333333333333334,
+                  -20.5
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-head.webp",
+                  "width": 404,
+                  "height": 368,
+                  "pivot": [
+                    34.333333333333336,
+                    58.666666666666664
+                  ]
+                },
+                "braid": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-braid.webp",
+                  "width": 57,
+                  "height": 70,
+                  "pivot": [
+                    5.666666666666667,
+                    2.3333333333333335
+                  ]
+                },
+                "leftWing": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-leftWing.webp",
+                  "width": 110,
+                  "height": 66,
+                  "pivot": [
+                    16.5,
+                    2.6666666666666665
+                  ],
+                  "donor": {
+                    "master": "masters/role-06-complete-wings-r1.png",
+                    "viewIndex": 0
+                  },
+                  "reconstructedFrom": "masters/role-06-complete-wings-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-body.webp",
+                  "width": 131,
+                  "height": 125,
+                  "pivot": [
+                    10.5,
+                    9.666666666666666
+                  ],
+                  "reconstructedFrom": "masters/role-06-clean-torso-r2.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-leftUpperArm.webp",
+                  "width": 61,
+                  "height": 62,
+                  "pivot": [
+                    7.333333333333333,
+                    2.3333333333333335
+                  ],
+                  "axis": [
+                    -3.1666666666666665,
+                    5.166666666666667
+                  ]
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-leftForearm.webp",
+                  "width": 56,
+                  "height": 72,
+                  "pivot": [
+                    5.833333333333333,
+                    3.3333333333333335
+                  ],
+                  "axis": [
+                    -2.5,
+                    6.333333333333333
+                  ]
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-leftHand.webp",
+                  "width": 43,
+                  "height": 43,
+                  "pivot": [
+                    3.3333333333333335,
+                    3.6666666666666665
+                  ]
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-rightUpperArm.webp",
+                  "width": 31,
+                  "height": 37,
+                  "pivot": [
+                    1.0,
+                    1.3333333333333333
+                  ],
+                  "axis": [
+                    2.0,
+                    2.1666666666666665
+                  ]
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-rightForearm.webp",
+                  "width": 35,
+                  "height": 42,
+                  "pivot": [
+                    2.5,
+                    2.6666666666666665
+                  ],
+                  "axis": [
+                    0.6666666666666666,
+                    2.6666666666666665
+                  ]
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-rightHand.webp",
+                  "width": 32,
+                  "height": 35,
+                  "pivot": [
+                    2.6666666666666665,
+                    3.0
+                  ]
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-head-happy.webp",
+                  "width": 420,
+                  "height": 354,
+                  "pivot": [
+                    35.666666666666664,
+                    56.333333333333336
+                  ],
+                  "sourceScale": 1.3028733597693363
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-head-sad.webp",
+                  "width": 420,
+                  "height": 350,
+                  "pivot": [
+                    35.666666666666664,
+                    55.666666666666664
+                  ],
+                  "sourceScale": 1.3028733597693363
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-06/down-right-main-head-hurt.webp",
+                  "width": 463,
+                  "height": 366,
+                  "pivot": [
+                    39.333333333333336,
+                    58.333333333333336
+                  ],
+                  "sourceScale": 1.3028733597693363
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    6.059886320899281,
+                    6.8088994052718315
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    2.9486343354923554,
+                    2.748737083745107
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "braid",
+                  "joint": "braidBase",
+                  "kind": "tail",
+                  "amplitude": 0.06
+                },
+                {
+                  "part": "leftWing",
+                  "joint": "leftWingBase",
+                  "kind": "wing",
+                  "amplitude": 0.15
+                }
+              ],
+              "order": [
+                "braid",
+                "leftWing",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.0,
+                  -26.333333333333332
+                ],
+                "spine": [
+                  -0.5,
+                  -16.666666666666668
+                ],
+                "braidBase": [
+                  25.333333333333332,
+                  -28.333333333333332
+                ],
+                "rightWingBase": [
+                  4.166666666666667,
+                  -22.833333333333332
+                ],
+                "leftShoulder": [
+                  -7.833333333333333,
+                  -25.666666666666668
+                ],
+                "leftElbow": [
+                  -10.666666666666666,
+                  -22.833333333333332
+                ],
+                "leftHand": [
+                  -11.333333333333334,
+                  -20.166666666666668
+                ],
+                "rightShoulder": [
+                  7.5,
+                  -23.833333333333332
+                ],
+                "rightElbow": [
+                  9.833333333333334,
+                  -18.5
+                ],
+                "rightHand": [
+                  12.166666666666666,
+                  -13.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-head.webp",
+                  "width": 414,
+                  "height": 379,
+                  "pivot": [
+                    31.833333333333332,
+                    58.333333333333336
+                  ]
+                },
+                "braid": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-braid.webp",
+                  "width": 38,
+                  "height": 51,
+                  "pivot": [
+                    3.5,
+                    -0.16666666666666666
+                  ]
+                },
+                "rightWing": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-rightWing.webp",
+                  "width": 124,
+                  "height": 66,
+                  "pivot": [
+                    2.0,
+                    2.6666666666666665
+                  ],
+                  "donor": {
+                    "master": "masters/role-06-complete-wings-r1.png",
+                    "viewIndex": 1
+                  },
+                  "reconstructedFrom": "masters/role-06-complete-wings-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-body.webp",
+                  "width": 116,
+                  "height": 127,
+                  "pivot": [
+                    9.5,
+                    10.166666666666666
+                  ],
+                  "reconstructedFrom": "masters/role-06-clean-torso-r2.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-leftUpperArm.webp",
+                  "width": 42,
+                  "height": 35,
+                  "pivot": [
+                    5.0,
+                    0.5
+                  ],
+                  "axis": [
+                    -2.8333333333333335,
+                    2.8333333333333335
+                  ]
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-leftForearm.webp",
+                  "width": 34,
+                  "height": 42,
+                  "pivot": [
+                    3.0,
+                    2.5
+                  ],
+                  "axis": [
+                    -0.6666666666666666,
+                    2.6666666666666665
+                  ]
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-leftHand.webp",
+                  "width": 34,
+                  "height": 32,
+                  "pivot": [
+                    2.5,
+                    3.0
+                  ]
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-rightUpperArm.webp",
+                  "width": 57,
+                  "height": 56,
+                  "pivot": [
+                    2.6666666666666665,
+                    1.5
+                  ],
+                  "axis": [
+                    2.3333333333333335,
+                    5.333333333333333
+                  ]
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-rightForearm.webp",
+                  "width": 54,
+                  "height": 69,
+                  "pivot": [
+                    3.5,
+                    3.5
+                  ],
+                  "axis": [
+                    2.3333333333333335,
+                    5.5
+                  ]
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-rightHand.webp",
+                  "width": 42,
+                  "height": 43,
+                  "pivot": [
+                    3.8333333333333335,
+                    3.8333333333333335
+                  ]
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-head-happy.webp",
+                  "width": 434,
+                  "height": 362,
+                  "pivot": [
+                    33.5,
+                    55.5
+                  ],
+                  "sourceScale": 1.310542886978626
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-head-sad.webp",
+                  "width": 432,
+                  "height": 363,
+                  "pivot": [
+                    33.333333333333336,
+                    55.666666666666664
+                  ],
+                  "sourceScale": 1.310542886978626
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-06/down-left-main-head-hurt.webp",
+                  "width": 469,
+                  "height": 371,
+                  "pivot": [
+                    36.5,
+                    57.0
+                  ],
+                  "sourceScale": 1.310542886978626
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.006938426723769,
+                    2.748737083745107
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    5.82141639885766,
+                    5.97448277631164
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "braid",
+                  "joint": "braidBase",
+                  "kind": "tail",
+                  "amplitude": 0.06
+                },
+                {
+                  "part": "rightWing",
+                  "joint": "rightWingBase",
+                  "kind": "wing",
+                  "amplitude": 0.15
+                }
+              ],
+              "order": [
+                "braid",
+                "rightWing",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.16666666666666666,
+                  -26.666666666666668
+                ],
+                "spine": [
+                  0.16666666666666666,
+                  -16.166666666666668
+                ],
+                "braidBase": [
+                  5.5,
+                  -26.5
+                ],
+                "leftWingBase": [
+                  -6.666666666666667,
+                  -23.0
+                ],
+                "rightWingBase": [
+                  6.0,
+                  -23.0
+                ],
+                "leftShoulder": [
+                  -10.0,
+                  -24.666666666666668
+                ],
+                "leftElbow": [
+                  -13.5,
+                  -21.333333333333332
+                ],
+                "leftHand": [
+                  -15.833333333333334,
+                  -18.333333333333332
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-head.webp",
+                  "width": 408,
+                  "height": 356,
+                  "pivot": [
+                    32.666666666666664,
+                    58.666666666666664
+                  ]
+                },
+                "braid": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-braid.webp",
+                  "width": 83,
+                  "height": 115,
+                  "pivot": [
+                    5.333333333333333,
+                    2.0
+                  ]
+                },
+                "leftWing": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-leftWing.webp",
+                  "width": 58,
+                  "height": 80,
+                  "pivot": [
+                    8.666666666666666,
+                    3.1666666666666665
+                  ],
+                  "donor": {
+                    "master": "masters/role-06-complete-wings-r1.png",
+                    "viewIndex": 2
+                  },
+                  "reconstructedFrom": "masters/role-06-complete-wings-r1.png"
+                },
+                "rightWing": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-rightWing.webp",
+                  "width": 118,
+                  "height": 72,
+                  "pivot": [
+                    2.0,
+                    2.8333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-06-complete-wings-r1.png",
+                    "viewIndex": 6
+                  },
+                  "reconstructedFrom": "masters/role-06-complete-wings-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-body.webp",
+                  "width": 132,
+                  "height": 124,
+                  "pivot": [
+                    11.333333333333334,
+                    10.333333333333334
+                  ],
+                  "reconstructedFrom": "masters/role-06-clean-torso-r2.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-leftUpperArm.webp",
+                  "width": 59,
+                  "height": 59,
+                  "pivot": [
+                    6.5,
+                    3.5
+                  ],
+                  "axis": [
+                    -3.5,
+                    3.3333333333333335
+                  ]
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-leftForearm.webp",
+                  "width": 52,
+                  "height": 51,
+                  "pivot": [
+                    5.333333333333333,
+                    3.1666666666666665
+                  ],
+                  "axis": [
+                    -2.3333333333333335,
+                    3.0
+                  ]
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-leftHand.webp",
+                  "width": 39,
+                  "height": 36,
+                  "pivot": [
+                    3.0,
+                    3.3333333333333335
+                  ]
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-head-happy.webp",
+                  "width": 408,
+                  "height": 356,
+                  "pivot": [
+                    32.666666666666664,
+                    58.666666666666664
+                  ]
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-head-sad.webp",
+                  "width": 408,
+                  "height": 356,
+                  "pivot": [
+                    32.666666666666664,
+                    58.666666666666664
+                  ]
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-06/up-left-main-head-hurt.webp",
+                  "width": 445,
+                  "height": 354,
+                  "pivot": [
+                    35.833333333333336,
+                    58.333333333333336
+                  ],
+                  "sourceScale": 1.254194375090035
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.833333333333333,
+                    3.8005847503304597
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "braid",
+                  "joint": "braidBase",
+                  "kind": "tail",
+                  "amplitude": 0.06
+                },
+                {
+                  "part": "leftWing",
+                  "joint": "leftWingBase",
+                  "kind": "wing",
+                  "amplitude": 0.15
+                },
+                {
+                  "part": "rightWing",
+                  "joint": "rightWingBase",
+                  "kind": "wing",
+                  "amplitude": 0.15
+                }
+              ],
+              "order": [
+                "leftWing",
+                "rightWing",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "head",
+                "head-expression",
+                "braid"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -0.16666666666666666,
+                  -25.333333333333332
+                ],
+                "spine": [
+                  1.1666666666666667,
+                  -15.833333333333334
+                ],
+                "braidBase": [
+                  -22.666666666666668,
+                  -28.833333333333332
+                ],
+                "leftWingBase": [
+                  -5.333333333333333,
+                  -24.0
+                ],
+                "leftShoulder": [
+                  1.5,
+                  -24.0
+                ],
+                "leftElbow": [
+                  4.0,
+                  -18.5
+                ],
+                "leftHand": [
+                  5.833333333333333,
+                  -12.666666666666666
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-head.webp",
+                  "width": 414,
+                  "height": 386,
+                  "pivot": [
+                    39.0,
+                    60.5
+                  ]
+                },
+                "braid": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-braid.webp",
+                  "width": 86,
+                  "height": 80,
+                  "pivot": [
+                    6.666666666666667,
+                    1.8333333333333333
+                  ]
+                },
+                "leftWing": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-leftWing.webp",
+                  "width": 92,
+                  "height": 72,
+                  "pivot": [
+                    13.833333333333334,
+                    2.8333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-06-complete-wings-r1.png",
+                    "viewIndex": 7
+                  },
+                  "reconstructedFrom": "masters/role-06-complete-wings-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-body.webp",
+                  "width": 137,
+                  "height": 121,
+                  "pivot": [
+                    12.833333333333334,
+                    9.666666666666666
+                  ],
+                  "reconstructedFrom": "masters/role-06-clean-torso-r2.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-leftUpperArm.webp",
+                  "width": 52,
+                  "height": 52,
+                  "pivot": [
+                    2.5,
+                    0.6666666666666666
+                  ],
+                  "axis": [
+                    2.5,
+                    5.5
+                  ]
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-leftForearm.webp",
+                  "width": 54,
+                  "height": 69,
+                  "pivot": [
+                    3.5,
+                    3.5
+                  ],
+                  "axis": [
+                    1.8333333333333333,
+                    5.833333333333333
+                  ]
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-leftHand.webp",
+                  "width": 47,
+                  "height": 45,
+                  "pivot": [
+                    3.8333333333333335,
+                    3.8333333333333335
+                  ]
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-head-happy.webp",
+                  "width": 435,
+                  "height": 367,
+                  "pivot": [
+                    40.666666666666664,
+                    57.333333333333336
+                  ],
+                  "sourceScale": 1.3262244081487753
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-head-sad.webp",
+                  "width": 434,
+                  "height": 378,
+                  "pivot": [
+                    40.666666666666664,
+                    59.166666666666664
+                  ],
+                  "sourceScale": 1.3262244081487753
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-06/up-right-main-head-hurt.webp",
+                  "width": 439,
+                  "height": 365,
+                  "pivot": [
+                    41.0,
+                    57.0
+                  ],
+                  "sourceScale": 1.3262244081487753
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    6.041522986797286,
+                    6.114645442614713
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "braid",
+                  "joint": "braidBase",
+                  "kind": "tail",
+                  "amplitude": 0.06
+                },
+                {
+                  "part": "leftWing",
+                  "joint": "leftWingBase",
+                  "kind": "wing",
+                  "amplitude": 0.15
+                }
+              ],
+              "order": [
+                "braid",
+                "leftWing",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-head.webp",
+      "pixelSize": [
+        404,
+        368
+      ],
+      "pixelDensity": 6,
+      "sha256": "cc5a96a23bea76c15bb0eb67e7d712797ba0db70c73ded6f751cb777d8c79d4d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-braid.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-braid.webp",
+      "pixelSize": [
+        57,
+        70
+      ],
+      "pixelDensity": 6,
+      "sha256": "260c9f017b1ac7185cb109cc41f640030337602c96082bffa334f995f8b20759"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-leftWing.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-leftWing.webp",
+      "pixelSize": [
+        110,
+        66
+      ],
+      "pixelDensity": 6,
+      "sha256": "095f1074548f40dbbcfd3e7ea16ad325c888987cd20acc232026d31fa3a954fc"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-body.webp",
+      "pixelSize": [
+        131,
+        125
+      ],
+      "pixelDensity": 6,
+      "sha256": "a830fed4d3cda87da77f1191c3ce7002632123aaaf3093eb1c6332065ead9c00"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        61,
+        62
+      ],
+      "pixelDensity": 6,
+      "sha256": "b1039aad40ba075ddd5a9fc536b15d983588332b2c0a5dd23f3113672bb17a7c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-leftForearm.webp",
+      "pixelSize": [
+        56,
+        72
+      ],
+      "pixelDensity": 6,
+      "sha256": "f98c245900a1815c4181cbfb8d62cf1b925c55fa933be0d68fa6319aec207dec"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-leftHand.webp",
+      "pixelSize": [
+        43,
+        43
+      ],
+      "pixelDensity": 6,
+      "sha256": "c54fce11230bb00e81cac20bce792de5c7173e74f0766aa779f6207cee43f2df"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        31,
+        37
+      ],
+      "pixelDensity": 6,
+      "sha256": "aa247351f10668080f7f4ce6a8ebfb637491fa9790bef87cd3949c4c27f471b9"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-rightForearm.webp",
+      "pixelSize": [
+        35,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "6c69aee05e2c3f5ba0d49c8de0464542a3f798d9916a97b5bfbf43b65d6c59e6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-rightHand.webp",
+      "pixelSize": [
+        32,
+        35
+      ],
+      "pixelDensity": 6,
+      "sha256": "5c927090a471a5091a6b25df37240caeb1da413b0451b14fa4fc738d2a048efc"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-head-happy.webp",
+      "pixelSize": [
+        420,
+        354
+      ],
+      "pixelDensity": 6,
+      "sha256": "6207656c1842ff5921c0d507dc401403e38a4a7cf4da609eb3c978b6e8f5a12b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-head-sad.webp",
+      "pixelSize": [
+        420,
+        350
+      ],
+      "pixelDensity": 6,
+      "sha256": "630c53842ffe9bc13eb8adbc3443c7f266d24e224a023280e2fa3806a13a0f80"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-06/down-right-main-head-hurt.webp",
+      "pixelSize": [
+        463,
+        366
+      ],
+      "pixelDensity": 6,
+      "sha256": "50b51283c6f09e3eb45ba514b52415c235a61a560a46f49b5701eae66ec8184b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-head.webp",
+      "pixelSize": [
+        414,
+        379
+      ],
+      "pixelDensity": 6,
+      "sha256": "c338c49c2d5f085db40ccdf7fe3cba3f135d8e2136d2cfb83391c9d3651ef62d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-braid.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-braid.webp",
+      "pixelSize": [
+        38,
+        51
+      ],
+      "pixelDensity": 6,
+      "sha256": "65a3f0326555b5a96bc4822de4c5008a621028821bd5eeffe1087d2c3edf2a3d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-rightWing.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-rightWing.webp",
+      "pixelSize": [
+        124,
+        66
+      ],
+      "pixelDensity": 6,
+      "sha256": "d96eb0f08b4a82fa3a32a14ff2c5c148dc2d2cbf9cb2b98c5860aae89c0273d2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-body.webp",
+      "pixelSize": [
+        116,
+        127
+      ],
+      "pixelDensity": 6,
+      "sha256": "3cc769ccc66bb9cf4bc3d881369459f5b324e9985433ad610a19ab4ea6f622eb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        42,
+        35
+      ],
+      "pixelDensity": 6,
+      "sha256": "002499cf905b84bbbfcfbb583b926805d9c63164ad3193d6287fa88f55de71b5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-leftForearm.webp",
+      "pixelSize": [
+        34,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "75ddacbfa79857f9c4427b2dcfc22f9abef528c0d1d1b1438b81a287fb148616"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-leftHand.webp",
+      "pixelSize": [
+        34,
+        32
+      ],
+      "pixelDensity": 6,
+      "sha256": "4f053eec7f5129b0871d0d670d4cd239c55824dac499a9ac1f891354d782aa63"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        57,
+        56
+      ],
+      "pixelDensity": 6,
+      "sha256": "b2133df1e59e6814eb46e661fe965343c5badf02a95df6321a837df364b6743c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-rightForearm.webp",
+      "pixelSize": [
+        54,
+        69
+      ],
+      "pixelDensity": 6,
+      "sha256": "789cafa76a2010f94350f7b470acefa370f78328cdda0d6fed01a08dcef80ce1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-rightHand.webp",
+      "pixelSize": [
+        42,
+        43
+      ],
+      "pixelDensity": 6,
+      "sha256": "0983ec1c8781e52bf71e99a6b99cebc520356d8b6b1ec6f33c713f3365ca72e7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-head-happy.webp",
+      "pixelSize": [
+        434,
+        362
+      ],
+      "pixelDensity": 6,
+      "sha256": "76b70c783a3dd262b86dee6b12e2413ef9a3c930e40b5e55158c73e47d0eec8c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-head-sad.webp",
+      "pixelSize": [
+        432,
+        363
+      ],
+      "pixelDensity": 6,
+      "sha256": "38cbdbe1d912be3098a3574991c6e8366c2e8975271dd3e66ef34ae3d2c60368"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/down-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-06/down-left-main-head-hurt.webp",
+      "pixelSize": [
+        469,
+        371
+      ],
+      "pixelDensity": 6,
+      "sha256": "c70a58f05e50f0a1c74e4a36bbe4e09a742a6bbe7e6da6692e04d6d0baadfd85"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-head.webp",
+      "pixelSize": [
+        408,
+        356
+      ],
+      "pixelDensity": 6,
+      "sha256": "5390b14951f998c458cff78be0a78016ff5ebfeecc046be6a140d9d52e33cfd7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-braid.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-braid.webp",
+      "pixelSize": [
+        83,
+        115
+      ],
+      "pixelDensity": 6,
+      "sha256": "554725be8a74153623c45069a498cdc8fa9d74c8fc17715edfd5f5020cb637a4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-leftWing.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-leftWing.webp",
+      "pixelSize": [
+        58,
+        80
+      ],
+      "pixelDensity": 6,
+      "sha256": "8f153ba3c253486b88267ef8ff1fe834cc5dc964970d2e5fe5e25355bb77937a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-rightWing.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-rightWing.webp",
+      "pixelSize": [
+        118,
+        72
+      ],
+      "pixelDensity": 6,
+      "sha256": "1af7179978afb726233723be64fd0be22f8fd972eb49b6c8e91890bededab2b4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-body.webp",
+      "pixelSize": [
+        132,
+        124
+      ],
+      "pixelDensity": 6,
+      "sha256": "c81bd64f59b1772a775bb0036bf1988234b07883caafadaf9f0c50dd69e71664"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        59,
+        59
+      ],
+      "pixelDensity": 6,
+      "sha256": "38a9a02b2923ba8d1203a709f4107cccbb3d3b3ec429eafd6e8b534a8f5f6155"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-leftForearm.webp",
+      "pixelSize": [
+        52,
+        51
+      ],
+      "pixelDensity": 6,
+      "sha256": "6b9dfe44ae6ba3ae7049a612469783a794207b6d63e3463379bf8de93ef359c0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-leftHand.webp",
+      "pixelSize": [
+        39,
+        36
+      ],
+      "pixelDensity": 6,
+      "sha256": "9fd1260ee063f121ef5b0930268c7743f9cffc1e7c577bdff32c521b7d88bb22"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-head-happy.webp",
+      "pixelSize": [
+        408,
+        356
+      ],
+      "pixelDensity": 6,
+      "sha256": "5390b14951f998c458cff78be0a78016ff5ebfeecc046be6a140d9d52e33cfd7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-head-sad.webp",
+      "pixelSize": [
+        408,
+        356
+      ],
+      "pixelDensity": 6,
+      "sha256": "5390b14951f998c458cff78be0a78016ff5ebfeecc046be6a140d9d52e33cfd7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-06/up-left-main-head-hurt.webp",
+      "pixelSize": [
+        445,
+        354
+      ],
+      "pixelDensity": 6,
+      "sha256": "68f47f585862bb6ab2328052619b0d519b7ceb379898ad3fa57ef17d20eeb4ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-head.webp",
+      "pixelSize": [
+        414,
+        386
+      ],
+      "pixelDensity": 6,
+      "sha256": "21b0688c4a381c33834ec35967bd49290dcf186ef7dd62e97513b84d23cc9b73"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-braid.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-braid.webp",
+      "pixelSize": [
+        86,
+        80
+      ],
+      "pixelDensity": 6,
+      "sha256": "db562a578ec3f5f2b846c43f9e3b77bd9b0a7f6ff2466fec843de2c24950aa5d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-leftWing.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-leftWing.webp",
+      "pixelSize": [
+        92,
+        72
+      ],
+      "pixelDensity": 6,
+      "sha256": "c34d3eca845f8629ffeeed5412731e9119793c802b652bdb083775b9695ae51e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-body.webp",
+      "pixelSize": [
+        137,
+        121
+      ],
+      "pixelDensity": 6,
+      "sha256": "f9e3d3d35377f9af509fc7d87d30108e8710d45dc43fd9957c6e08415c37de12"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        52,
+        52
+      ],
+      "pixelDensity": 6,
+      "sha256": "cc402d46eee332a11855f15e46201d0b9138fa4955e690fcfeb39c0f803466ae"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-leftForearm.webp",
+      "pixelSize": [
+        54,
+        69
+      ],
+      "pixelDensity": 6,
+      "sha256": "2c43f787894807f693b8124995bba09885b74458610bbea7672b9f883c539e15"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-leftHand.webp",
+      "pixelSize": [
+        47,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "ada2af33525f39e62a523a574874bb3c833b6d53f4080c5011238f6849e9c872"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-head-happy.webp",
+      "pixelSize": [
+        435,
+        367
+      ],
+      "pixelDensity": 6,
+      "sha256": "6d3f7d42f753c78a038e2d1a6c9c309b8d96e570f2f208720616bd456ba9c52d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-head-sad.webp",
+      "pixelSize": [
+        434,
+        378
+      ],
+      "pixelDensity": 6,
+      "sha256": "d8b206659d66a5bfd9a5f9916e96b8f591f7f314803c1e7ee8fd1cd396e6f032"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/up-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-06/up-right-main-head-hurt.webp",
+      "pixelSize": [
+        439,
+        365
+      ],
+      "pixelDensity": 6,
+      "sha256": "f4c1c7fb221489d3b722e189fe42fbbff802f2d5272b95cb37db729e63785751"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/face.webp",
+      "source": "hd-characters/characters-25/role-06/face.webp",
+      "pixelSize": [
+        200,
+        172
+      ],
+      "pixelDensity": 4,
+      "sha256": "47b87fab8665d6d3fe30dc4c4424795b2d33d2deee358ecf87ff46f89408cfd1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/head.webp",
+      "source": "hd-characters/characters-25/role-06/head.webp",
+      "pixelSize": [
+        400,
+        344
+      ],
+      "pixelDensity": 2,
+      "sha256": "8ac37faef53e24c9889ae0eacea65d15f7fc69e80ab2b5a5090c843a8aa731bd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/champion.webp",
+      "source": "hd-characters/characters-25/role-06/champion.webp",
+      "pixelSize": [
+        852,
+        812
+      ],
+      "pixelDensity": 1,
+      "sha256": "29b18803d88ede4cd0129423c9635ce4ddc96afd799e85394f444e1d4c48ae00"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/thumbnail.webp",
+      "source": "hd-characters/characters-25/role-06/thumbnail.webp",
+      "pixelSize": [
+        404,
+        474
+      ],
+      "pixelDensity": 6,
+      "sha256": "d0106ca43f31f23686f3b4f7d7b727ce3c4f833b78dccee8b417de6524932261"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/fly-1.webp",
+      "source": "hd-characters/characters-25/role-06/fly-1.webp",
+      "pixelSize": [
+        384,
+        576
+      ],
+      "pixelDensity": 3,
+      "sha256": "1c8443c62edf19daabc989853b645bcef671ba70ea623683c2d744a56630fd3e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/fly-2.webp",
+      "source": "hd-characters/characters-25/role-06/fly-2.webp",
+      "pixelSize": [
+        459,
+        579
+      ],
+      "pixelDensity": 3,
+      "sha256": "8a1a0dde8ab9fbb48372d3667cd34cccfdb0c8296ddaccadd93c4a3d8b55a064"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/fly-3.webp",
+      "source": "hd-characters/characters-25/role-06/fly-3.webp",
+      "pixelSize": [
+        393,
+        600
+      ],
+      "pixelDensity": 3,
+      "sha256": "3e2fa80b1a7b5c0e370fe2a6a96df9e429705c333f03e5c252a43991ceb7ee06"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/fly-4.webp",
+      "source": "hd-characters/characters-25/role-06/fly-4.webp",
+      "pixelSize": [
+        501,
+        585
+      ],
+      "pixelDensity": 3,
+      "sha256": "13ec02a2d7a49871ca1a327f44d79c928cc036ef934dfc021a15ce8538d33321"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-idle-1.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-idle-1.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4c7d407b8cef6b5354b5f424d6108f7925ba3e67b1d459518d2a892e642ee3f2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-idle-2.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-idle-2.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4f03f00af605723cb11368fe70070e6d2ced76a8ed67ca13dc8d882ba14a3aa6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-idle-3.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-idle-3.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4e1f5b3b7d6c99177c87a7bc4805723300ca3c91146eb882fe8e00b9bd19f6ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-0.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-0.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4f03f00af605723cb11368fe70070e6d2ced76a8ed67ca13dc8d882ba14a3aa6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-1.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-1.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "6d5821de8611cda92590712328a6449ab45f0a8eca052ad61b43530dbf5e57d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-2.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-2.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "42f7f10d4c19e656b00ca19a76e7d146dfe4f26afb3458633f457d7f7de84897"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-3.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-3.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f519c1e9193c478ff976644ef269523c4e94ed64c234cf285dd616f43537edf0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-4.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-4.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "5db6d511d8c83a63769eb47ec035a37fec5733bfc8b5ae3bdbbc734aac31fd0a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-5.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-5.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "29e742b4441ce522feb4ebdc83fb5a0ccb7031740ca21ed4adda75c968ad051a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-6.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-6.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f56e66604875a5e459ee80400c34314cb532536d4f8fb3fe096bbafd3ff5f07e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-7.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-7.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d0d183c0094d8bebed5c0be07ababccf0b5905fb1718ded2dbde86b6a9795b00"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-8.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-8.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "78b7a7a0f3b2405d7051cf3a30840914138cd8a64dcd578cb119a84121e2a480"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-9.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-9.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "54b0303efdb145c4c13ced6152db842a6e481d9815997829230c993fb0c73051"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-10.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-10.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "dda474e7ffd9f3b273e836d7e5f9ef6ed56f6ad88e1d08ffff438b0a4122463c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-11.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-11.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "b075a7fd83873ce9e6b26a449d04dd5692284134d5eed0eac88bf418d7677851"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-12.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-12.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "602ba59e28907bc8eec0976f7aa00bc4faf52e8efbe6244ffd460dd99d03dc68"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-13.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-13.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "b075a7fd83873ce9e6b26a449d04dd5692284134d5eed0eac88bf418d7677851"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-14.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-14.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "dda474e7ffd9f3b273e836d7e5f9ef6ed56f6ad88e1d08ffff438b0a4122463c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-15.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-15.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "54b0303efdb145c4c13ced6152db842a6e481d9815997829230c993fb0c73051"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-16.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-16.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "78b7a7a0f3b2405d7051cf3a30840914138cd8a64dcd578cb119a84121e2a480"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-17.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-17.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d0d183c0094d8bebed5c0be07ababccf0b5905fb1718ded2dbde86b6a9795b00"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-18.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-18.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f56e66604875a5e459ee80400c34314cb532536d4f8fb3fe096bbafd3ff5f07e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-19.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-19.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "29e742b4441ce522feb4ebdc83fb5a0ccb7031740ca21ed4adda75c968ad051a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-20.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-20.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "5db6d511d8c83a63769eb47ec035a37fec5733bfc8b5ae3bdbbc734aac31fd0a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-21.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-21.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f519c1e9193c478ff976644ef269523c4e94ed64c234cf285dd616f43537edf0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-22.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-22.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "42f7f10d4c19e656b00ca19a76e7d146dfe4f26afb3458633f457d7f7de84897"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-23.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-23.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "6d5821de8611cda92590712328a6449ab45f0a8eca052ad61b43530dbf5e57d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-24.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-24.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4f03f00af605723cb11368fe70070e6d2ced76a8ed67ca13dc8d882ba14a3aa6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-25.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-25.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "e8bf86d7bb3b22debc1bf9ca2eb45fa6b07585f9ebb2ea7490d349cf136d1225"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-26.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-26.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "e5408d3ad4a33d39172dd5501494ff3d512d9b4d85fa1e479020db2b01553627"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-27.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-27.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "a010e01169d1598d38710e40badaa67c7c804810591e870a809532a0ecea303a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-28.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-28.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "ee2d5b858b12ad77972a30d93831b83639950efcb4b7929c7b73ed54b3f8035c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-29.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-29.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "171bc5acb358ec17227260318be2ea2fd09016ddeaf4bd70bf426f84f1227b2c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-30.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-30.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "faf32f4337abd475d027bbeb78aa385c3dc0fcc109547cef144091e58a5ae18d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-31.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-31.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "a4acd52ad52965c7755d88255ea3629117ea426615977e2bf17a62bc849fa30e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-32.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-32.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "5a9be8338152da5687a6fe27126aeae5a26d3231bf687da8334044eaabfc4c1f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-33.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-33.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "1b6baae103ad60b88010ac65a2a8deee49bf993829a6e1614a82f0d59a1cc638"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-34.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-34.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "0216bf3e55ba079dd17dd66212de58b7c0b789f841401eef7eba654c67bb1a01"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-35.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-35.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "7f128e3bb1dd56b43fe87291f8af63676b13913f6d8dad9af8ddc12af097be8e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-36.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-36.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "e276578a0107ecf62a3b53c7390ec0c09a15d035dc2e72a2e7e610b6574a5551"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-37.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-37.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "7f128e3bb1dd56b43fe87291f8af63676b13913f6d8dad9af8ddc12af097be8e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-38.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-38.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "0216bf3e55ba079dd17dd66212de58b7c0b789f841401eef7eba654c67bb1a01"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-39.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-39.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "1b6baae103ad60b88010ac65a2a8deee49bf993829a6e1614a82f0d59a1cc638"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-40.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-40.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "5a9be8338152da5687a6fe27126aeae5a26d3231bf687da8334044eaabfc4c1f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-41.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-41.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "a4acd52ad52965c7755d88255ea3629117ea426615977e2bf17a62bc849fa30e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-42.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-42.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "faf32f4337abd475d027bbeb78aa385c3dc0fcc109547cef144091e58a5ae18d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-43.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-43.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "171bc5acb358ec17227260318be2ea2fd09016ddeaf4bd70bf426f84f1227b2c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-44.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-44.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "ee2d5b858b12ad77972a30d93831b83639950efcb4b7929c7b73ed54b3f8035c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-45.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-45.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "a010e01169d1598d38710e40badaa67c7c804810591e870a809532a0ecea303a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-46.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-46.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "e5408d3ad4a33d39172dd5501494ff3d512d9b4d85fa1e479020db2b01553627"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-left-47.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-left-47.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "e8bf86d7bb3b22debc1bf9ca2eb45fa6b07585f9ebb2ea7490d349cf136d1225"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-0.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-0.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4e1f5b3b7d6c99177c87a7bc4805723300ca3c91146eb882fe8e00b9bd19f6ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-1.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-1.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "9899107bf6ba41600c2a2e953193f0a17a141578ecf2b3d5cee0909f3fecc9ce"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-2.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-2.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f775d4df2c8bceb982f7b51606ec43832bd5a69ec581df489dc95822c43047e3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-3.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-3.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "252d4b46107ae16fdc0b7776f8ea2159624fad2eb7c9d0d0c038360c4a862f8c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-4.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-4.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "fd1c3b774d9a479a4705b6fc29c2c38a5b770515a292f21b66b8cad1af698902"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-5.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-5.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d0f0feefe50360fe849b57f58904c47e2dd568c65d7fab8925d3bb9ecc506b93"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-6.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-6.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "2165d66acff62e8bc4b7937b9ac738dd2f487e5ff99743aee1d3d774121ee47c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-7.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-7.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "ba9a128573d7d80d5c2dd2c9613cb66e76723b07f4e9fb8d1b5f800cb8b17a2a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-8.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-8.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4f21aa5e3482d9d47599489bcf923dc2eb7d3efc6e66f6067d9b46258b13b456"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-9.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-9.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "5bae22a12ade65f66cf6aa6ac7acb40da3405f9a13c9be3479a8b39f5c2fb29b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-10.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-10.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "21321e271d08a922bf9b1c56b69219238c7e581112f461acd0f4670555807681"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-11.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-11.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "7c7141e9d4774190762c6bc546b4722a34f83b5d2b5fa0291ce485a6e8f21fa3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-12.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-12.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "8682d9b667e06aa27d08f694d962133fc4fbb924344578453d8e2ee00f578f38"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-13.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-13.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "7c7141e9d4774190762c6bc546b4722a34f83b5d2b5fa0291ce485a6e8f21fa3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-14.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-14.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "21321e271d08a922bf9b1c56b69219238c7e581112f461acd0f4670555807681"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-15.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-15.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "5bae22a12ade65f66cf6aa6ac7acb40da3405f9a13c9be3479a8b39f5c2fb29b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-16.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-16.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4f21aa5e3482d9d47599489bcf923dc2eb7d3efc6e66f6067d9b46258b13b456"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-17.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-17.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "ba9a128573d7d80d5c2dd2c9613cb66e76723b07f4e9fb8d1b5f800cb8b17a2a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-18.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-18.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "2165d66acff62e8bc4b7937b9ac738dd2f487e5ff99743aee1d3d774121ee47c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-19.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-19.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d0f0feefe50360fe849b57f58904c47e2dd568c65d7fab8925d3bb9ecc506b93"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-20.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-20.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "fd1c3b774d9a479a4705b6fc29c2c38a5b770515a292f21b66b8cad1af698902"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-21.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-21.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "252d4b46107ae16fdc0b7776f8ea2159624fad2eb7c9d0d0c038360c4a862f8c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-22.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-22.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f775d4df2c8bceb982f7b51606ec43832bd5a69ec581df489dc95822c43047e3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-23.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-23.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "9899107bf6ba41600c2a2e953193f0a17a141578ecf2b3d5cee0909f3fecc9ce"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-24.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-24.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4e1f5b3b7d6c99177c87a7bc4805723300ca3c91146eb882fe8e00b9bd19f6ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-25.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-25.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "6c7f2f20d5a3e33fb1d8599c34a4cacef206c8af57e8d222d7b636dd320bdd1e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-26.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-26.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "9303814ca593f93f3f969fa6d0d7a4f487a0d5a6eb43a4a1473171061eea8c26"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-27.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-27.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "b0086da70d1788d6e83f40121753f5dd466ca8bf22765170af4246e3ad0799d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-28.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-28.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4bec6a4929afc8f9abbc100be25eff6a17c00ba99a5b2d7fb099fe2548dd529d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-29.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-29.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "1f21f86688cbe5344bff63473baa2fd0a691044b6932f429c65f19c4adc3330e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-30.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-30.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "1c46f3192bfe40b50fe77783ab2499a80b6b12ac5597623749e6402b5161c4eb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-31.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-31.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f554db696bd9255315bc25a844f8fa2e2711f15e2f9d3b0ba3a710c5739975b8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-32.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-32.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d839b7dc423534d6714933a02b7ce94ceb15eff71cc3b1bcbe0cf4a80df536a2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-33.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-33.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4a7f8bcf525b358c348d947bf9c19afbc98c9c198f26433e9bea1ed6e986bf39"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-34.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-34.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d175101fd45aff2bd6ab5ce60cd342acfb2732d7da8a47b8fda808fcc2fd005e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-35.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-35.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "bcdf1183383832bb34e4d8392565d94f9c2e1222126e5e7d959bf1774233567d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-36.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-36.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "bbc44b28f92106d3b90c1cabcce9c5f32eb0e0d51c8d92416a5cafdfb84a376d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-37.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-37.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "bcdf1183383832bb34e4d8392565d94f9c2e1222126e5e7d959bf1774233567d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-38.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-38.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d175101fd45aff2bd6ab5ce60cd342acfb2732d7da8a47b8fda808fcc2fd005e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-39.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-39.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4a7f8bcf525b358c348d947bf9c19afbc98c9c198f26433e9bea1ed6e986bf39"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-40.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-40.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "d839b7dc423534d6714933a02b7ce94ceb15eff71cc3b1bcbe0cf4a80df536a2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-41.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-41.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "f554db696bd9255315bc25a844f8fa2e2711f15e2f9d3b0ba3a710c5739975b8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-42.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-42.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "1c46f3192bfe40b50fe77783ab2499a80b6b12ac5597623749e6402b5161c4eb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-43.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-43.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "1f21f86688cbe5344bff63473baa2fd0a691044b6932f429c65f19c4adc3330e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-44.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-44.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "4bec6a4929afc8f9abbc100be25eff6a17c00ba99a5b2d7fb099fe2548dd529d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-45.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-45.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "b0086da70d1788d6e83f40121753f5dd466ca8bf22765170af4246e3ad0799d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-46.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-46.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "9303814ca593f93f3f969fa6d0d7a4f487a0d5a6eb43a4a1473171061eea8c26"
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/carnival-right-47.webp",
+      "source": "hd-characters/characters-25/role-06/carnival-right-47.webp",
+      "pixelSize": [
+        560,
+        560
+      ],
+      "pixelDensity": 4,
+      "sha256": "6c7f2f20d5a3e33fb1d8599c34a4cacef206c8af57e8d222d7b636dd320bdd1e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-2.webp",
+      "source": "hd-characters/characters-25/role-02/god-2.webp",
+      "pixelSize": [
+        147,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "a74a411fe59e20b71e378be3c58fe86c6d9f6175d4401e09b161adaacf1221fe"
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-3.webp",
+      "source": "hd-characters/characters-25/role-02/god-3.webp",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "2ac7a03b1bf70abfe8a522f7d8099e61d0bf0b51ff586b4febad55558d89d286"
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-4.webp",
+      "source": "hd-characters/characters-25/role-02/god-4.webp",
+      "pixelSize": [
+        138,
+        144
+      ],
+      "pixelDensity": 3,
+      "sha256": "2ef353cd129ad9acd28f35df3a8994e3208b4fb4d4c9fd7620fa20e3b724ccc2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-5.webp",
+      "source": "hd-characters/characters-25/role-02/god-5.webp",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "0909e9391012645352d78e9a4db37c5af26247bfb6019f102b47007dd6f5cb98"
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-10.webp",
+      "source": "hd-characters/characters-25/role-02/god-10.webp",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "79cb3671a39b254747603c63ae9408c51334e0bd8084c12106056656207d0b69"
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-11.webp",
+      "source": "hd-characters/characters-25/role-02/god-11.webp",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "c96b99f2247b01e90e73e20f477dd7c83f74dc97727320eb315f1e3b08ec522c"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    11,
+    6
+  ],
+  "assets": [
+    {
+      "url": "hd-characters/characters-25/role-06/face.webp",
+      "source": "assets/activities/face-6/1.png",
+      "pixelSize": [
+        200,
+        172
+      ],
+      "pixelDensity": 4,
+      "sha256": "47b87fab8665d6d3fe30dc4c4424795b2d33d2deee358ecf87ff46f89408cfd1",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/head.webp",
+      "source": "assets/activities/head-6/1.png",
+      "pixelSize": [
+        400,
+        344
+      ],
+      "pixelDensity": 2,
+      "sha256": "8ac37faef53e24c9889ae0eacea65d15f7fc69e80ab2b5a5090c843a8aa731bd",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-06/champion.webp",
+      "source": "assets/monthly/champions/6.png",
+      "pixelSize": [
+        852,
+        812
+      ],
+      "pixelDensity": 1,
+      "sha256": "29b18803d88ede4cd0129423c9635ce4ddc96afd799e85394f444e1d4c48ae00",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-2.webp",
+      "source": "assets/characters/6/reactions/gods/2.png",
+      "pixelSize": [
+        147,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "a74a411fe59e20b71e378be3c58fe86c6d9f6175d4401e09b161adaacf1221fe",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-3.webp",
+      "source": "assets/characters/6/reactions/gods/3.png",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "2ac7a03b1bf70abfe8a522f7d8099e61d0bf0b51ff586b4febad55558d89d286",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-4.webp",
+      "source": "assets/characters/6/reactions/gods/4.png",
+      "pixelSize": [
+        138,
+        144
+      ],
+      "pixelDensity": 3,
+      "sha256": "2ef353cd129ad9acd28f35df3a8994e3208b4fb4d4c9fd7620fa20e3b724ccc2",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-5.webp",
+      "source": "assets/characters/6/reactions/gods/5.png",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "0909e9391012645352d78e9a4db37c5af26247bfb6019f102b47007dd6f5cb98",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-10.webp",
+      "source": "assets/characters/6/reactions/gods/10.png",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "79cb3671a39b254747603c63ae9408c51334e0bd8084c12106056656207d0b69",
+      "enabled": true
+    },
+    {
+      "url": "hd-characters/characters-25/role-02/god-11.webp",
+      "source": "assets/characters/6/reactions/gods/11.png",
+      "pixelSize": [
+        135,
+        171
+      ],
+      "pixelDensity": 3,
+      "sha256": "c96b99f2247b01e90e73e20f477dd7c83f74dc97727320eb315f1e3b08ec522c",
+      "enabled": true
+    }
+  ],
+  "activityClips": [
+    {
+      "id": "face-6",
+      "sourceSymbol": 2042,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 6,
+      "boundsTwips": [
+        -433,
+        567,
+        -483,
+        377
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/face.webp",
+          "width": 50,
+          "height": 43,
+          "offsetX": -21.65,
+          "offsetY": -24.15
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "head-6",
+      "sourceSymbol": 1615,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -1273,
+        2727,
+        -1360,
+        2080
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/head.webp",
+          "width": 200,
+          "height": 172,
+          "offsetX": -63.65,
+          "offsetY": -68.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "fly-6-1",
+      "sourceSymbol": 982,
+      "sourcePicFrame": 51,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -600,
+        1960,
+        -3780,
+        60
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/fly-1.webp",
+          "width": 128,
+          "height": 192,
+          "offsetX": -30.0,
+          "offsetY": -189.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "fly-6-2",
+      "sourceSymbol": 982,
+      "sourcePicFrame": 52,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -340,
+        2720,
+        -3740,
+        120
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/fly-2.webp",
+          "width": 153,
+          "height": 193,
+          "offsetX": -17.0,
+          "offsetY": -187.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "fly-6-3",
+      "sourceSymbol": 982,
+      "sourcePicFrame": 53,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -380,
+        2240,
+        -3600,
+        400
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/fly-3.webp",
+          "width": 131,
+          "height": 200,
+          "offsetX": -19.0,
+          "offsetY": -180.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "fly-6-4",
+      "sourceSymbol": 982,
+      "sourcePicFrame": 54,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -1460,
+        1880,
+        -3640,
+        260
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/fly-4.webp",
+          "width": 167,
+          "height": 195,
+          "offsetX": -73.0,
+          "offsetY": -182.0
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "carnival-boy-6",
+      "sourceSymbol": 3412,
+      "sourcePicFrame": null,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -832,
+        848,
+        -2000,
+        -260
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-idle-1.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 2,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-idle-2.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 3,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-idle-3.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        }
+      ],
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "id": "carnival-walk-6-left",
+      "sourceSymbol": 3412,
+      "sourcePicFrame": 2,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -552,
+        848,
+        -2000,
+        -300
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-0.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 2,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-1.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 3,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-2.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 4,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-3.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 5,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-4.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 6,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-5.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 7,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-6.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 8,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-7.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 9,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-8.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 10,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-9.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 11,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-10.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 12,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-11.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 13,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-12.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 14,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-13.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 15,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-14.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 16,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-15.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 17,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-16.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 18,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-17.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 19,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-18.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 20,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-19.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 21,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-20.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 22,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-21.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 23,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-22.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 24,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-23.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 25,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-24.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 26,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-25.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 27,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-26.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 28,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-27.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 29,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-28.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 30,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-29.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 31,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-30.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 32,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-31.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 33,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-32.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 34,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-33.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 35,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-34.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 36,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-35.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 37,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-36.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 38,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-37.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 39,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-38.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 40,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-39.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 41,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-40.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 42,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-41.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 43,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-42.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 44,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-43.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 45,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-44.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 46,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-45.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 47,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-46.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 48,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-left-47.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        }
+      ],
+      "fps": 120,
+      "loop": false
+    },
+    {
+      "id": "carnival-walk-6-right",
+      "sourceSymbol": 3412,
+      "sourcePicFrame": 3,
+      "nativeFirstFrame": 1,
+      "boundsTwips": [
+        -832,
+        568,
+        -2000,
+        -300
+      ],
+      "frames": [
+        {
+          "sourceFrame": 1,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-0.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 2,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-1.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 3,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-2.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 4,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-3.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 5,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-4.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 6,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-5.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 7,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-6.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 8,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-7.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 9,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-8.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 10,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-9.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 11,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-10.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 12,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-11.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 13,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-12.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 14,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-13.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 15,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-14.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 16,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-15.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 17,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-16.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 18,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-17.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 19,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-18.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 20,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-19.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 21,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-20.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 22,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-21.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 23,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-22.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 24,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-23.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 25,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-24.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 26,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-25.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 27,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-26.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 28,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-27.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 29,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-28.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 30,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-29.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 31,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-30.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 32,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-31.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 33,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-32.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 34,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-33.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 35,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-34.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 36,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-35.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 37,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-36.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 38,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-37.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 39,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-38.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 40,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-39.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 41,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-40.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 42,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-41.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 43,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-42.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 44,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-43.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 45,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-44.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 46,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-45.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 47,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-46.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        },
+        {
+          "sourceFrame": 48,
+          "fields": [],
+          "url": "hd-characters/characters-25/role-06/carnival-right-47.webp",
+          "width": 140,
+          "height": 140,
+          "offsetX": -70,
+          "offsetY": -125
+        }
+      ],
+      "fps": 120,
+      "loop": false
+    }
+  ],
+  "thumbnailUrls": {
+    "6": "hd-characters/characters-25/role-06/thumbnail.webp"
+  },
+  "derivation": {
+    "identity": 6,
+    "nativeInventoryCount": 1155,
+    "carnivalNativeFps": 30,
+    "carnivalArtworkFps": 120,
+    "carnivalWorldStride": 32,
+    "method": "Canonical articulated rigs, complete same-identity heads and hidden surfaces, flight master, accepted shared possession badges. Native physics/RNG/clocks preserved."
+  }
+}

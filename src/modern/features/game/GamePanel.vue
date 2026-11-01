@@ -6,6 +6,7 @@ import { getPropertySummary } from './property'
 import { stockMarketValue } from './stock-trading'
 import type { GameState } from './types'
 import type { ReferenceTab } from './GameReferencePanel.vue'
+import{profileAssetUrl,type AssetProfile}from'../assets/profiles'
 
 const props = withDefaults(defineProps<{
   game: GameState
@@ -13,6 +14,7 @@ const props = withDefaults(defineProps<{
   paused: boolean
   speed: number
   history: string[]
+  assetProfile?:AssetProfile
 }>(), { open: false })
 const emit = defineEmits<{
   speed: [value: number]
@@ -92,7 +94,7 @@ function restriction(playerId: number): string {
     </div>
     <ol class="players" data-testid="player-list">
       <li v-for="(player, index) in game.players" :key="player.id" :class="{ active: index === game.activePlayerIndex }">
-        <span class="token"><img :src="`${assetBase}assets/activities/face-${player.characterId}/1.png`" alt=""></span>
+        <span class="token"><img :src="`${assetBase}${profileAssetUrl(`assets/activities/face-${player.characterId}/1.png`,assetProfile??'original')}`" alt=""></span>
         <span><strong>{{ player.name }}</strong><small>{{ player.controller === 'human' ? '人类' : player.controller==='autoplay'?'托管':'AI' }} · {{ player.position.column }},{{ player.position.row }}</small><small>现金 {{ player.cash }} · 存款 {{ player.deposit }} · 奖券 {{ game.tickets[player.id] }}</small><small>信用 {{ game.credit[player.id]?.available }} / 已用 {{ game.credit[player.id]?.used }} · 贷款 {{ game.finance.loans[player.id] ?? 0 }}</small><small>股票市值 {{ stockMarketValue(game.finance, player.id) }}</small><small>{{ restriction(player.id) }}</small><small>地 {{ getPropertySummary(game.properties, player.id).landCount }} · 建筑 {{ getPropertySummary(game.properties, player.id).buildingCount }}</small></span>
       </li>
     </ol>
