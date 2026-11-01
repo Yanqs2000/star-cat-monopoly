@@ -57,6 +57,27 @@ def split_views(image,columns,rows):
   pose=pose.crop(bbox);pose.info['masterRect']=[bbox[0],bbox[1],pose.width,pose.height];views.append(pose)
  return views
 
+def isolated_views(image,columns,rows):
+ views=split_views(image,columns,rows)
+ for i,part in enumerate(views):
+  alpha=np.asarray(part.getchannel('A'));count,labels,stats,_=cv2.connectedComponentsWithStats((alpha>128).astype(np.uint8))
+  primary=1+int(np.argmax(stats[1:,cv2.CC_STAT_AREA]))
+  keep=cv2.dilate((labels==primary).astype(np.uint8),np.ones((5,5),np.uint8))
+  part.putalpha(Image.fromarray(alpha*keep));views[i]=part.crop(part.getbbox())
+ return views
+
+def split_expression_views(image,row_bounds=None,cell_rects=None):
+ if row_bounds is None and cell_rects is None:return split_views(image,4,3)
+ # An authored gutter separates heads whose faint glass alpha fringe touches
+ # the next row. Connected-component assignment would merge two whole heads.
+ views=[]
+ rects=cell_rects or [(round(col*image.width/4),y0,round((col+1)*image.width/4),y1)for y0,y1 in zip(row_bounds,row_bounds[1:])for col in range(4)]
+ for rect in rects:
+  cell=clean_pose(image.crop(rect));bbox=cell.getbbox()
+  if bbox is None:raise ValueError('empty authored expression cell')
+  views.append(cell.crop(bbox))
+ return views
+
 def register_part(image,pivot,density,url,axis=None):
  bbox=image.getchannel('A').getbbox()
  if bbox is None:raise ValueError(f'empty layer:{url}')
@@ -85,17 +106,23 @@ def stop_at_joint(mask,a,b,padding=7):
 def masked(image,mask):
  result=image.copy();result.putalpha(ImageChops.multiply(image.getchannel('A'),mask));return result
 
+def neutral_cloth_mask(image,min_y=0):
+ rgba=np.array(image).astype(int);rgb=rgba[:,:,:3]
+ selected=(rgb.max(2)-rgb.min(2)<=28)&(rgb.min(2)>=20)&(rgba[:,:,3]>0)
+ selected[:min_y]=False
+ return Image.fromarray(np.where(selected,255,0).astype(np.uint8))
+
 def neck_base(image):
  alpha=np.asarray(image.getchannel('A'));ys,xs=np.where(alpha>128)
  bottom=int(ys.max());near=(ys>=bottom-8)
  return float(np.median(xs[near])),bottom
 
-def complete_edges(pose,layers,forbidden=None):
+def complete_edges(pose,layers,forbidden=None,min_alpha=0):
  # Recover source pixels just outside a hand-authored mask by extending the
  # nearest existing piece. No RGB is invented and no source image is changed.
  alpha=np.asarray(pose.getchannel('A'));union=np.zeros(alpha.shape,bool)
  for mask,_,_ in layers.values():union|=np.asarray(mask)>0
- ys,xs=np.where((alpha>0)&~union)
+ ys,xs=np.where((alpha>min_alpha)&~union)
  if not len(xs):return
  names=list(layers);distances=[]
  for name in names:
@@ -115,7 +142,10 @@ def build_role(author):
  master=Image.open(REVIEW/author['neutralMaster']).convert('RGBA')
  views=split_views(master,*author['layout'])
  torso_views=split_views(Image.open(REVIEW/author['cleanTorsoMaster']),4,1)if author.get('cleanTorsoMaster')else None
- expressions=split_views(Image.open(REVIEW/author['expressionMaster']),4,3)if author.get('expressionMaster')else None
+ foot_views=split_views(Image.open(REVIEW/author['footMaster']),4,2)if author.get('footMaster')else None
+ appendage_views=isolated_views(Image.open(REVIEW/author['appendageMaster']),4,2)if author.get('appendageMaster')else None
+ leg_views=isolated_views(Image.open(REVIEW/author['legMaster']),4,2)if author.get('legMaster')else None
+ expressions=split_expression_views(Image.open(REVIEW/author['expressionMaster']),author.get('expressionRowBounds'),author.get('expressionCellRects'))if author.get('expressionMaster')else None
  source=json.loads((REVIEW/'source-index.json').read_text())
  native=next(r for r in source['roles']if r['id']==cid)
  rig={k:author[k]for k in ['id','name','anatomy','density','mapAnchor','stridePx','motionScale']}
@@ -131,12 +161,19 @@ def build_role(author):
    headmask=polygon(master.size,description['headPolygon'])
    protected=Image.new('L',master.size)
    for points in description.get('protectedPolygons',[]):protected=ImageChops.lighter(protected,polygon(master.size,points))
-   headmask=ImageChops.subtract(headmask,protected);masks['head']=headmask;layers['head']=(headmask,joints['neck'],None)
-   extras=Image.new('L',master.size)
+   head_exclusions=protected
+   if 'headClothExclusionBelow'in author:head_exclusions=ImageChops.lighter(protected,neutral_cloth_mask(pose,author['headClothExclusionBelow']))
+   headmask=ImageChops.subtract(headmask,head_exclusions);masks['head']=headmask;layers['head']=(headmask,joints['neck'],None)
+   extras=Image.new('L',master.size);extra_exclusions={};extra_transfers=[]
    for extra in description['extras']:
     mask=polygon(master.size,extra['polygon']);mask=ImageChops.subtract(mask,headmask)
+    if extra.get('excludeCloth',False):
+     exclusion=neutral_cloth_mask(pose);removed=ImageChops.darker(mask,exclusion)
+     extra_transfers.append((extra['clothOwner'],removed));mask=ImageChops.subtract(mask,exclusion);extra_exclusions[extra['name']]=exclusion
     extras=ImageChops.lighter(extras,mask);layers[extra['name']]=(mask,extra['pivot'],None)
-    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind']})
+    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**({'amplitude':extra['amplitude']}if 'amplitude'in extra else{})})
+   for owner,removed in extra_transfers:
+    mask,pivot,axis=layers[owner];layers[owner]=(ImageChops.lighter(mask,removed),pivot,axis);extras=ImageChops.lighter(extras,removed)
    body=ImageChops.lighter(polygon(master.size,description['bodyPolygon']),protected)
    body=ImageChops.subtract(body,ImageChops.lighter(headmask,extras));layers['body']=(body,joints['spine'],None)
    body_exclusions=Image.new('L',master.size)
@@ -165,12 +202,12 @@ def build_role(author):
       mask=Image.new('L',master.size);ImageDraw.Draw(mask).rectangle(limb['footBox'],fill=255)
      else:mask=capsule(master.size,end,end,limb['palmRadius'])
      layers[tip]=(ImageChops.subtract(mask,exclusions),end,None)
-     if family=='arms':layers[tip]=(ImageChops.subtract(layers[tip][0],body),end,None)
+     if family=='arms'and not author.get('handsMayOverlapBody',False):layers[tip]=(ImageChops.subtract(layers[tip][0],body),end,None)
      if limb.get('sourcePolygon'):layers[tip]=(ImageChops.darker(layers[tip][0],polygon(master.size,limb['sourcePolygon'])),end,None)
      if limb.get('footPolygon'):layers[tip]=(ImageChops.darker(layers[tip][0],polygon(master.size,limb['footPolygon'])),end,None)
      bend=1 if (end[0]-root[0])*(middle[1]-root[1])-(end[1]-root[1])*(middle[0]-root[0])>0 else -1
      actor[family].append({'name':name,'root':keys[0],'middle':keys[1],'end':keys[2],'upper':upper,'lower':lower,'tip':tip,'phase':limb.get('phase',0),'bend':bend,'lengths':[math.dist(root,middle)/density,math.dist(middle,end)/density],'hiddenParts':limb.get('occludedSegments',[])})
-   complete_edges(pose,layers,{'body':body_exclusions,'head':protected})
+   complete_edges(pose,layers,{'body':body_exclusions,'head':head_exclusions,**extra_exclusions},author.get('edgeAlphaThreshold',0))
    # Source boot surfaces have one owner. The near boot occludes the far
    # boot in the canonical view; edge recovery must not put that occluder
    # into the far shoe or a rotating calf/thigh.
@@ -219,11 +256,32 @@ def build_role(author):
     pivot=[(source['ankle'][0]-bbox[0])*donor['scale'],(source['ankle'][1]-bbox[1])*donor['scale']]
     image=image.resize((round(image.width*donor['scale']),round(image.height*donor['scale'])),Image.Resampling.LANCZOS)
     donors[leg['name']+'Foot']=(image,pivot,donor)
+   if foot_views:
+    for leg in description['legs']:
+     image=foot_views[leg['footAtlasIndex']];x0,y0,x1,y1=leg['footBox']
+     image=image.resize((x1-x0,y1-y0),Image.Resampling.LANCZOS)
+     pivot=[leg['ankle'][0]-x0,leg['ankle'][1]-y0]
+     donors[leg['name']+'Foot']=(image,pivot,{'master':author['footMaster'],'viewIndex':leg['footAtlasIndex']})
+   if leg_views:
+    for leg in description['legs']:
+     source=leg_views[leg['legAtlasIndex']]
+     for suffix,a,b,start,end in [('Thigh',leg['hip'],leg['knee'],0,.58),('Shin',leg['knee'],leg['ankle'],.42,1)]:
+      length=math.dist(a,b);width=leg.get('clothWidth',24)
+      image=source.crop((0,round(source.height*start),source.width,round(source.height*end)))
+      image=image.resize((width,math.ceil(length)+6),Image.Resampling.LANCZOS)
+      donors[leg['name']+suffix]=(image,[width/2,3],{'master':author['legMaster'],'viewIndex':leg['legAtlasIndex'],'axis':[0,length]})
+   if appendage_views:
+    for extra in description['extras']:
+     if 'atlasIndex'not in extra:continue
+     image=appendage_views[extra['atlasIndex']];x0,y0,x1,y1=extra['replacementBox']
+     image=image.resize((x1-x0,y1-y0),Image.Resampling.LANCZOS)
+     pivot=[extra['pivot'][0]-x0,extra['pivot'][1]-y0]
+     donors[extra['name']]=(image,pivot,{'master':author['appendageMaster'],'viewIndex':extra['atlasIndex']})
    for name,(mask,pivot,axis)in layers.items():
     masks[name]=mask;combined_mask=ImageChops.lighter(combined_mask,mask)
     image=masked(pose,mask);url=f'{prefix}/{facing}-{actor["id"]}-{name}.webp'
     if name=='body'and torso_views:
-     torso=torso_views[entry.get('torsoViewIndex',index)];torso=torso.crop((0,round(torso.height*.16),torso.width,torso.height))
+     torso=torso_views[entry.get('torsoViewIndex',index)];torso=torso.crop((0,round(torso.height*author.get('cleanTorsoCropTopFraction',.16)),torso.width,torso.height))
      x0,y0,x1,y1=description['cleanBodyBounds'];torso=torso.resize((x1-x0,y1-y0),Image.Resampling.LANCZOS)
      canvas=Image.new('RGBA',master.size);canvas.alpha_composite(torso,(x0,y0))
      # Preserve the original black shoulder strap as a separate visible
@@ -233,10 +291,11 @@ def build_role(author):
       for a,b in zip(path,path[1:]):known=ImageChops.lighter(known,capsule(master.size,a,b,10))
      rgba=np.array(pose);dark=(rgba[:,:,:3].max(2)<125)&(np.asarray(known)>0)
      strap=pose.copy();strap.putalpha(Image.fromarray(np.where(dark,rgba[:,:,3],0).astype(np.uint8)));canvas.alpha_composite(strap);image=canvas
-    if name in donors:image,pivot,_=donors[name]
+    if name in donors:image,pivot,donor=donors[name];axis=donor.get('axis',axis)
     packed,info=register_part(image,pivot,density,url,axis);packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
     if name in donors:info['donor']=donors[name][2]
     if name=='body'and torso_views:info['reconstructedFrom']=author['cleanTorsoMaster']
+    if name in donors and 'master'in donors[name][2]:info['reconstructedFrom']=donors[name][2]['master']
     actor['parts'][name]=info;runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    headmask=layers['head'][0]
    canonical=masked(pose,headmask);headbox=canonical.getbbox();neck=joints['neck']
@@ -252,6 +311,10 @@ def build_role(author):
     image=image.resize((round(image.width*factor),round(image.height*factor)),Image.Resampling.LANCZOS)
     canvas=Image.new('RGBA',master.size)
     at=(round(neck[0]-base[0]*factor),round(headbox[3]-neck_row*factor))
+    if author.get('expressionAnchorMode')=='canonical-bounds':
+     # A bob's lowest alpha belongs to a side lock, not its neck. Preserve the
+     # canonical neck's offset within the whole head instead of following it.
+     at=(round((headbox[0]+headbox[2]-image.width)/2),round(headbox[3]-image.height))
     canvas.alpha_composite(image,at)
     if expression!='hurt'and facing=='up-left':canvas=canonical.copy()
     name='head-'+expression;url=f'{prefix}/{facing}-{actor["id"]}-{name}.webp'
@@ -261,22 +324,23 @@ def build_role(author):
     runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    actor['joints']={name:[(p[0]-origin[0])/density,(p[1]-origin[1])/density]for name,p in joints.items()}
    arm_order=lambda front:[part for spec,limb in zip(description['arms'],actor['arms'])if spec.get('front',False)==front for part in [limb['upper'],limb['lower'],limb['tip']]if part in actor['parts']]
-   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed']+arm_order(False)+['body']+arm_order(True)+['head','head-expression']+[e['part']for e in actor['appendages']if e['kind']=='fixed']
+   front_extras={e['name']for e in description['extras']if e.get('front',False)}
+   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+['head','head-expression']+[e['part']for e in actor['appendages']if e['kind']=='fixed'or e['part']in front_extras]
    actors.append(actor)
   original_alpha=np.asarray(pose.getchannel('A'));retained=np.asarray(combined_mask)>0
   missing=int(np.count_nonzero((original_alpha>128)&~retained));total=int(np.count_nonzero(original_alpha>128))
   diagnostic=pose.copy();diagnostic.putalpha(Image.fromarray(np.where(retained,0,original_alpha).astype(np.uint8)));diagnostic.save(REVIEW/f'{stem}-{facing}-unassigned.png')
   coverage.append({'facing':facing,'assignedFraction':1-missing/max(1,total),'missingPixels':missing})
   rig['facings'][facing]={'actors':actors,'shadow':{'x':0,'y':0,'width':37,'height':12}}
- result={'version':1,'status':'candidate-awaiting-user-review','activeIds':[cid],'deferredIds':[i for i in range(2,13)if i!=cid],'characters':[rig],'runtimeImages':runtime,'coverage':coverage,'generationAllowedIds':[2]}
+ result={'version':1,'status':'candidate-awaiting-user-review','activeIds':[cid],'deferredIds':[i for i in range(2,13)if i!=cid],'characters':[rig],'runtimeImages':runtime,'coverage':coverage,'generationAllowedIds':author.get('generationAllowedIds',[2])}
  (ROOT/'src/modern/data'/author.get('dataFile','characters-25.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
  (REVIEW/f'{stem}-rig.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
  return result
 
 if __name__=='__main__':
  import argparse
- parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2]);parser.add_argument('--author');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,11,6]);parser.add_argument('--author');args=parser.parse_args()
  author=json.loads((REVIEW/(args.author or f'role-{args.role:02d}-authoring.json')).read_text())
- if author['id']!=args.role:raise ValueError('only the selected A-Niu identity is enabled')
+ if author['id']!=args.role:raise ValueError('authoring identity must match the selected role')
  result=build_role(author)
  print(json.dumps({'activeIds':result['activeIds'],'coverage':result['coverage'],'textures':len(result['runtimeImages'])},ensure_ascii=False))

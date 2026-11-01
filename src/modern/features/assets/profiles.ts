@@ -5,7 +5,7 @@ import continuous from '../../data/continuous-non-character.json'
 import npc22 from '../../data/npc-22.json'
 import npc23 from '../../data/npc-23.json'
 import juanmao24 from '../../data/juanmao-24.json'
-import characters25 from '../../data/characters-25.json'
+import characters25 from '../characters/characters-25-materials'
 
 export type AssetProfile = 'original' | 'hd'
 

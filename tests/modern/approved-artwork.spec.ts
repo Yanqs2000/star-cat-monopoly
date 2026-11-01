@@ -5,7 +5,7 @@ import { parseWorldAssets } from '../../src/modern/features/map/world-assets'
 import { parseActivityAssets } from '../../src/modern/features/game/activity-assets'
 import { profileAssetUrl, profileTextureResolution } from '../../src/modern/features/assets/profiles'
 import { approvedWorldAssets, approvedActivityAssets, carnivalPresentationFrame } from '../../src/modern/features/assets/approved-artwork'
-import characters25 from '../../src/modern/data/characters-25.json'
+import characters25 from '../../src/modern/features/characters/characters-25-materials'
 const npcIds=[2,3,4,5,9,10,11,12,13,14,15]
 const newWorldIds=new Set(npcIds.map(id=>'npc-'+id))
 const newActivityIds=new Set([...npcIds.map(id=>'mini-npc-'+id),...[9,12,13,14,15,23].map(id=>'trait-'+id),...characters25.activityClips.map(c=>c.id)])
