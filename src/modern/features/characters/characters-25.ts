@@ -32,7 +32,7 @@ export class Character25Player{
   this.characterId=rig.id
   if(contactMotion&&[2,5,11].includes(rig.id)&&rig.anatomy==='biped'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
   if(contactMotion&&rig.id===3&&rig.anatomy==='paired'&&this.definitions().length===4)this.contacts=new Character25PairContacts(this.definitions(),rig.stridePx)
-  if(contactMotion&&rig.id===4&&rig.anatomy==='crab'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
+  if(contactMotion&&(rig.id===4&&rig.anatomy==='crab'||rig.id===8&&rig.anatomy==='scorpion')&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
   if(mapPlacement)this.view.position.set(...rig.mapAnchor)
   this.view.addChild(this.shadow,this.prop);this.update(0)
  }

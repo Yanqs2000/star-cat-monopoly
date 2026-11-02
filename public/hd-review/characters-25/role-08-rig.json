@@ -1,0 +1,2725 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    8
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 8,
+      "name": "大尾",
+      "anatomy": "scorpion",
+      "density": 6,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 18,
+      "motionScale": 0.5,
+      "sourceSwfSha256": "3d25d19b558af55c36b38cfc6e31f75b2920a1a0453e3ac6e1627f3d06cf9da7",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.0,
+                  -16.333333333333332
+                ],
+                "spine": [
+                  0.0,
+                  -16.333333333333332
+                ],
+                "leftClawRoot": [
+                  -23.166666666666668,
+                  -20.0
+                ],
+                "rightClawRoot": [
+                  24.166666666666668,
+                  -23.666666666666668
+                ],
+                "tailRoot0": [
+                  -28.333333333333332,
+                  -45.0
+                ],
+                "tailRoot1": [
+                  -28.166666666666668,
+                  -54.666666666666664
+                ],
+                "tailRoot2": [
+                  -25.833333333333332,
+                  -64.33333333333333
+                ],
+                "leftHip": [
+                  -10.5,
+                  -12.166666666666666
+                ],
+                "leftKnee": [
+                  -10.5,
+                  -9.833333333333334
+                ],
+                "leftFoot": [
+                  -9.666666666666666,
+                  -5.833333333333333
+                ],
+                "rightHip": [
+                  12.0,
+                  -15.0
+                ],
+                "rightKnee": [
+                  12.666666666666666,
+                  -12.5
+                ],
+                "rightFoot": [
+                  13.333333333333334,
+                  -10.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-head.webp",
+                  "width": 422,
+                  "height": 325,
+                  "pivot": [
+                    37.666666666666664,
+                    46.666666666666664
+                  ],
+                  "reconstructedFrom": "masters/role-08-shell-atlas-r2.png"
+                },
+                "leftClaw": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-leftClaw.webp",
+                  "width": 123,
+                  "height": 119,
+                  "pivot": [
+                    15.784999999999998,
+                    3.1542857142857135
+                  ],
+                  "axis": [
+                    -6.5,
+                    12.833333333333334
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -39.0,
+                      77.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightClaw": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-rightClaw.webp",
+                  "width": 100,
+                  "height": 106,
+                  "pivot": [
+                    3.833333333333334,
+                    2.8187579214195195
+                  ],
+                  "axis": [
+                    6.666666666666667,
+                    6.166666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      40.0,
+                      37.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail0": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-tail0.webp",
+                  "width": 60,
+                  "height": 58,
+                  "pivot": [
+                    5.000000000000001,
+                    4.8275862068965525
+                  ],
+                  "axis": [
+                    0.16666666666666666,
+                    -9.666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      1.0,
+                      -58.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail1": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-tail1.webp",
+                  "width": 84,
+                  "height": 82,
+                  "pivot": [
+                    7.0,
+                    6.758620689655172
+                  ],
+                  "axis": [
+                    2.3333333333333335,
+                    -9.666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      14.0,
+                      -57.99999999999999
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail2": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-tail2.webp",
+                  "width": 58,
+                  "height": 45,
+                  "pivot": [
+                    4.833333333333333,
+                    3.735723771580345
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.6666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      -10.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-body.webp",
+                  "width": 40,
+                  "height": 39,
+                  "pivot": [
+                    3.3333333333333335,
+                    3.218390804597701
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-leftThigh.webp",
+                  "width": 23,
+                  "height": 20,
+                  "pivot": [
+                    1.866666666666667,
+                    0.8290574712643687
+                  ],
+                  "axis": [
+                    0.0,
+                    2.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      14.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-leftShin.webp",
+                  "width": 39,
+                  "height": 35,
+                  "pivot": [
+                    3.2687068459016704,
+                    1.451756695697019
+                  ],
+                  "axis": [
+                    0.0,
+                    4.0858835573770875
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      24.515301344262525
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-leftFoot.webp",
+                  "width": 92,
+                  "height": 79,
+                  "pivot": [
+                    7.666666666666667,
+                    8.153794871794872
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-rightThigh.webp",
+                  "width": 25,
+                  "height": 22,
+                  "pivot": [
+                    2.0698899595013365,
+                    0.9193166440819738
+                  ],
+                  "axis": [
+                    0.0,
+                    2.5873624493766707
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      15.524174696260024
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-rightShin.webp",
+                  "width": 25,
+                  "height": 22,
+                  "pivot": [
+                    2.0698899595013365,
+                    0.9193166440819738
+                  ],
+                  "axis": [
+                    0.0,
+                    2.5873624493766707
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      15.524174696260024
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-rightFoot.webp",
+                  "width": 97,
+                  "height": 84,
+                  "pivot": [
+                    8.083333333333334,
+                    8.596935897435896
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-head-happy.webp",
+                  "width": 420,
+                  "height": 325,
+                  "pivot": [
+                    37.5,
+                    46.833333333333336
+                  ],
+                  "sourceScale": 1.4248500330760137
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-head-sad.webp",
+                  "width": 422,
+                  "height": 330,
+                  "pivot": [
+                    37.666666666666664,
+                    47.666666666666664
+                  ],
+                  "sourceScale": 1.4248500330760137
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-08/down-right-main-head-hurt.webp",
+                  "width": 422,
+                  "height": 325,
+                  "pivot": [
+                    37.666666666666664,
+                    46.833333333333336
+                  ],
+                  "sourceScale": 1.4248500330760137
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": 1,
+                  "lengths": [
+                    2.3333333333333335,
+                    4.0858835573770875
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    2.5873624493766707,
+                    2.5873624493766707
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "leftClaw",
+                  "joint": "leftClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.65,
+                  "readyProp": false
+                },
+                {
+                  "part": "rightClaw",
+                  "joint": "rightClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.65,
+                  "readyProp": true
+                },
+                {
+                  "part": "tail0",
+                  "joint": "tailRoot0",
+                  "kind": "tail",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail1",
+                  "joint": "tailRoot1",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.12,
+                  "parentPart": "tail0",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail2",
+                  "joint": "tailRoot2",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.24,
+                  "parentPart": "tail1",
+                  "hurtRotation": 0
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "tail0",
+                "tail1",
+                "tail2",
+                "body",
+                "leftClaw",
+                "rightClaw",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -1.3333333333333333,
+                  -17.0
+                ],
+                "spine": [
+                  -1.3333333333333333,
+                  -17.0
+                ],
+                "leftClawRoot": [
+                  -20.166666666666668,
+                  -22.333333333333332
+                ],
+                "rightClawRoot": [
+                  10.833333333333334,
+                  -16.5
+                ],
+                "tailRoot0": [
+                  26.5,
+                  -43.0
+                ],
+                "tailRoot1": [
+                  27.833333333333332,
+                  -52.833333333333336
+                ],
+                "tailRoot2": [
+                  27.0,
+                  -62.5
+                ],
+                "leftHip": [
+                  -16.5,
+                  -17.333333333333332
+                ],
+                "leftKnee": [
+                  -17.333333333333332,
+                  -14.833333333333334
+                ],
+                "leftFoot": [
+                  -17.666666666666668,
+                  -12.666666666666666
+                ],
+                "rightHip": [
+                  -0.5,
+                  -12.666666666666666
+                ],
+                "rightKnee": [
+                  -0.16666666666666666,
+                  -9.5
+                ],
+                "rightFoot": [
+                  0.0,
+                  -5.5
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-head.webp",
+                  "width": 378,
+                  "height": 313,
+                  "pivot": [
+                    30.0,
+                    45.833333333333336
+                  ],
+                  "reconstructedFrom": "masters/role-08-shell-atlas-r2.png"
+                },
+                "leftClaw": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-leftClaw.webp",
+                  "width": 68,
+                  "height": 66,
+                  "pivot": [
+                    8.726666666666667,
+                    1.7438327526132402
+                  ],
+                  "axis": [
+                    -3.5,
+                    5.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -21.0,
+                      30.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightClaw": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-rightClaw.webp",
+                  "width": 110,
+                  "height": 117,
+                  "pivot": [
+                    4.216666666666668,
+                    3.1006337135614714
+                  ],
+                  "axis": [
+                    6.166666666666667,
+                    10.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      37.0,
+                      60.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail0": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-tail0.webp",
+                  "width": 60,
+                  "height": 58,
+                  "pivot": [
+                    5.000000000000001,
+                    4.8275862068965525
+                  ],
+                  "axis": [
+                    1.3333333333333333,
+                    -9.833333333333334
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      8.0,
+                      -59.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail1": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-tail1.webp",
+                  "width": 84,
+                  "height": 82,
+                  "pivot": [
+                    7.0,
+                    6.758620689655172
+                  ],
+                  "axis": [
+                    -0.8333333333333334,
+                    -9.666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -5.0,
+                      -57.99999999999999
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail2": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-tail2.webp",
+                  "width": 58,
+                  "height": 46,
+                  "pivot": [
+                    4.833333333333333,
+                    3.7893333333333334
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.6666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      -10.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-body.webp",
+                  "width": 40,
+                  "height": 39,
+                  "pivot": [
+                    3.3333333333333335,
+                    3.218390804597701
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-leftThigh.webp",
+                  "width": 25,
+                  "height": 22,
+                  "pivot": [
+                    2.1081851067789197,
+                    0.9363249715625005
+                  ],
+                  "axis": [
+                    0.0,
+                    2.6352313834736494
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      15.811388300841896
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-leftShin.webp",
+                  "width": 21,
+                  "height": 19,
+                  "pivot": [
+                    1.7537261917287876,
+                    0.778896322395407
+                  ],
+                  "axis": [
+                    0.0,
+                    2.1921577396609844
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      13.152946437965905
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-leftFoot.webp",
+                  "width": 96,
+                  "height": 87,
+                  "pivot": [
+                    8.0,
+                    9.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-rightThigh.webp",
+                  "width": 31,
+                  "height": 27,
+                  "pivot": [
+                    2.547329756605707,
+                    1.1313657677614322
+                  ],
+                  "axis": [
+                    0.0,
+                    3.1841621957571333
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      19.1049731745428
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-rightShin.webp",
+                  "width": 39,
+                  "height": 34,
+                  "pivot": [
+                    3.2027765731904836,
+                    1.4224745607825333
+                  ],
+                  "axis": [
+                    0.0,
+                    4.0034707164881045
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      24.020824298928627
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-rightFoot.webp",
+                  "width": 92,
+                  "height": 84,
+                  "pivot": [
+                    7.666666666666667,
+                    8.625
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-head-happy.webp",
+                  "width": 376,
+                  "height": 314,
+                  "pivot": [
+                    29.833333333333332,
+                    46.166666666666664
+                  ],
+                  "sourceScale": 1.3812306062407171
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-head-sad.webp",
+                  "width": 378,
+                  "height": 319,
+                  "pivot": [
+                    30.0,
+                    47.0
+                  ],
+                  "sourceScale": 1.3812306062407171
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-08/down-left-main-head-hurt.webp",
+                  "width": 381,
+                  "height": 319,
+                  "pivot": [
+                    30.166666666666668,
+                    47.0
+                  ],
+                  "sourceScale": 1.3812306062407171
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": 1,
+                  "lengths": [
+                    2.6352313834736494,
+                    2.1921577396609844
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    3.1841621957571333,
+                    4.0034707164881045
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "leftClaw",
+                  "joint": "leftClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.65,
+                  "readyProp": false
+                },
+                {
+                  "part": "rightClaw",
+                  "joint": "rightClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.65,
+                  "readyProp": true
+                },
+                {
+                  "part": "tail0",
+                  "joint": "tailRoot0",
+                  "kind": "tail",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail1",
+                  "joint": "tailRoot1",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.12,
+                  "parentPart": "tail0",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail2",
+                  "joint": "tailRoot2",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.24,
+                  "parentPart": "tail1",
+                  "hurtRotation": 0
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "tail0",
+                "tail1",
+                "tail2",
+                "body",
+                "leftClaw",
+                "rightClaw",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.0,
+                  -12.0
+                ],
+                "spine": [
+                  0.0,
+                  -12.0
+                ],
+                "leftClawRoot": [
+                  -16.666666666666668,
+                  -15.333333333333334
+                ],
+                "rightClawRoot": [
+                  18.5,
+                  -15.166666666666666
+                ],
+                "tailRoot0": [
+                  12.166666666666666,
+                  -8.333333333333334
+                ],
+                "tailRoot1": [
+                  18.666666666666668,
+                  -6.166666666666667
+                ],
+                "tailRoot2": [
+                  25.333333333333332,
+                  -9.0
+                ],
+                "tailRoot3": [
+                  29.666666666666668,
+                  -14.333333333333334
+                ],
+                "tailRoot4": [
+                  32.666666666666664,
+                  -23.0
+                ],
+                "tailRoot5": [
+                  34.5,
+                  -32.833333333333336
+                ],
+                "leftHip": [
+                  -6.833333333333333,
+                  -11.0
+                ],
+                "leftKnee": [
+                  -6.833333333333333,
+                  -8.166666666666666
+                ],
+                "leftFoot": [
+                  -7.0,
+                  -4.666666666666667
+                ],
+                "rightHip": [
+                  11.833333333333334,
+                  -11.0
+                ],
+                "rightKnee": [
+                  12.5,
+                  -8.5
+                ],
+                "rightFoot": [
+                  12.166666666666666,
+                  -5.666666666666667
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-head.webp",
+                  "width": 361,
+                  "height": 303,
+                  "pivot": [
+                    29.666666666666668,
+                    44.666666666666664
+                  ],
+                  "reconstructedFrom": "masters/role-08-shell-atlas-r2.png"
+                },
+                "leftClaw": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-leftClaw.webp",
+                  "width": 100,
+                  "height": 97,
+                  "pivot": [
+                    12.833333333333336,
+                    2.5644599303135887
+                  ],
+                  "axis": [
+                    -5.166666666666667,
+                    6.833333333333333
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -31.0,
+                      41.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightClaw": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-rightClaw.webp",
+                  "width": 68,
+                  "height": 72,
+                  "pivot": [
+                    2.606666666666667,
+                    1.9167553865652733
+                  ],
+                  "axis": [
+                    3.8333333333333335,
+                    3.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      23.0,
+                      20.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail0": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-tail0.webp",
+                  "width": 58,
+                  "height": 56,
+                  "pivot": [
+                    4.833333333333333,
+                    4.666666666666667
+                  ],
+                  "axis": [
+                    6.5,
+                    2.1666666666666665
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      39.0,
+                      13.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail1": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-tail1.webp",
+                  "width": 62,
+                  "height": 60,
+                  "pivot": [
+                    5.166666666666667,
+                    4.988505747126437
+                  ],
+                  "axis": [
+                    6.666666666666667,
+                    -2.8333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      40.0,
+                      -17.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail2": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-tail2.webp",
+                  "width": 66,
+                  "height": 64,
+                  "pivot": [
+                    5.5,
+                    5.310344827586207
+                  ],
+                  "axis": [
+                    4.333333333333333,
+                    -5.333333333333333
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      26.0,
+                      -32.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail3": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-tail3.webp",
+                  "width": 68,
+                  "height": 66,
+                  "pivot": [
+                    5.666666666666667,
+                    5.471264367816091
+                  ],
+                  "axis": [
+                    3.0,
+                    -8.666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      18.0,
+                      -52.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail4": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-tail4.webp",
+                  "width": 86,
+                  "height": 83,
+                  "pivot": [
+                    7.166666666666667,
+                    6.919540229885057
+                  ],
+                  "axis": [
+                    1.8333333333333333,
+                    -9.833333333333332
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      11.0,
+                      -58.99999999999999
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail5": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-tail5.webp",
+                  "width": 62,
+                  "height": 49,
+                  "pivot": [
+                    5.166666666666667,
+                    4.050666666666666
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.6666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      -10.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-body.webp",
+                  "width": 40,
+                  "height": 39,
+                  "pivot": [
+                    3.3333333333333335,
+                    3.218390804597701
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-leftThigh.webp",
+                  "width": 27,
+                  "height": 24,
+                  "pivot": [
+                    2.266666666666667,
+                    1.006712643678162
+                  ],
+                  "axis": [
+                    0.0,
+                    2.8333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      17.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-leftShin.webp",
+                  "width": 34,
+                  "height": 30,
+                  "pivot": [
+                    2.8031728055504854,
+                    1.2449953701893202
+                  ],
+                  "axis": [
+                    0.0,
+                    3.5039660069381067
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      21.02379604162864
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-leftFoot.webp",
+                  "width": 83,
+                  "height": 65,
+                  "pivot": [
+                    6.916666666666665,
+                    6.667373380447583
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-rightThigh.webp",
+                  "width": 25,
+                  "height": 22,
+                  "pivot": [
+                    2.0698899595013365,
+                    0.9193166440819738
+                  ],
+                  "axis": [
+                    0.0,
+                    2.5873624493766707
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      15.524174696260024
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-rightShin.webp",
+                  "width": 28,
+                  "height": 24,
+                  "pivot": [
+                    2.2822990358164925,
+                    1.0136555717695326
+                  ],
+                  "axis": [
+                    0.0,
+                    2.852873794770615
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      17.11724276862369
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-rightFoot.webp",
+                  "width": 74,
+                  "height": 58,
+                  "pivot": [
+                    6.166666666666668,
+                    5.944405182567727
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-head-happy.webp",
+                  "width": 361,
+                  "height": 303,
+                  "pivot": [
+                    29.666666666666668,
+                    44.666666666666664
+                  ]
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-head-sad.webp",
+                  "width": 361,
+                  "height": 303,
+                  "pivot": [
+                    29.666666666666668,
+                    44.666666666666664
+                  ]
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-08/up-left-main-head-hurt.webp",
+                  "width": 365,
+                  "height": 306,
+                  "pivot": [
+                    30.0,
+                    45.333333333333336
+                  ],
+                  "sourceScale": 1.366143954292264
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    2.8333333333333335,
+                    3.5039660069381067
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    2.5873624493766707,
+                    2.852873794770615
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "leftClaw",
+                  "joint": "leftClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.65,
+                  "readyProp": false
+                },
+                {
+                  "part": "rightClaw",
+                  "joint": "rightClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.65,
+                  "readyProp": true
+                },
+                {
+                  "part": "tail0",
+                  "joint": "tailRoot0",
+                  "kind": "tail",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "hurtRotation": 0.85
+                },
+                {
+                  "part": "tail1",
+                  "joint": "tailRoot1",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.12,
+                  "parentPart": "tail0",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail2",
+                  "joint": "tailRoot2",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.24,
+                  "parentPart": "tail1",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail3",
+                  "joint": "tailRoot3",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.36,
+                  "parentPart": "tail2",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail4",
+                  "joint": "tailRoot4",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.48,
+                  "parentPart": "tail3",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail5",
+                  "joint": "tailRoot5",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.6,
+                  "parentPart": "tail4",
+                  "hurtRotation": 0
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "body",
+                "leftClaw",
+                "rightClaw",
+                "head",
+                "head-expression",
+                "tail0",
+                "tail1",
+                "tail2",
+                "tail3",
+                "tail4",
+                "tail5"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -1.1666666666666667,
+                  -12.833333333333334
+                ],
+                "spine": [
+                  -1.1666666666666667,
+                  -12.833333333333334
+                ],
+                "leftClawRoot": [
+                  -25.0,
+                  -16.666666666666668
+                ],
+                "rightClawRoot": [
+                  12.166666666666666,
+                  -12.5
+                ],
+                "tailRoot0": [
+                  -16.0,
+                  -9.833333333333334
+                ],
+                "tailRoot1": [
+                  -22.833333333333332,
+                  -10.5
+                ],
+                "tailRoot2": [
+                  -29.333333333333332,
+                  -14.166666666666666
+                ],
+                "tailRoot3": [
+                  -33.666666666666664,
+                  -19.5
+                ],
+                "tailRoot4": [
+                  -35.333333333333336,
+                  -29.666666666666668
+                ],
+                "tailRoot5": [
+                  -34.5,
+                  -39.5
+                ],
+                "leftHip": [
+                  -14.833333333333334,
+                  -11.0
+                ],
+                "leftKnee": [
+                  -15.666666666666666,
+                  -8.5
+                ],
+                "leftFoot": [
+                  -15.833333333333334,
+                  -6.166666666666667
+                ],
+                "rightHip": [
+                  5.0,
+                  -11.166666666666666
+                ],
+                "rightKnee": [
+                  5.166666666666667,
+                  -8.5
+                ],
+                "rightFoot": [
+                  5.166666666666667,
+                  -4.5
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-head.webp",
+                  "width": 348,
+                  "height": 292,
+                  "pivot": [
+                    29.333333333333332,
+                    44.0
+                  ],
+                  "reconstructedFrom": "masters/role-08-shell-atlas-r2.png"
+                },
+                "leftClaw": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-leftClaw.webp",
+                  "width": 78,
+                  "height": 75,
+                  "pivot": [
+                    10.01,
+                    2.000278745644599
+                  ],
+                  "axis": [
+                    -3.3333333333333335,
+                    3.8333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -20.0,
+                      23.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightClaw": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-rightClaw.webp",
+                  "width": 110,
+                  "height": 117,
+                  "pivot": [
+                    4.216666666666668,
+                    3.1006337135614714
+                  ],
+                  "axis": [
+                    5.5,
+                    7.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      33.0,
+                      45.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail0": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-tail0.webp",
+                  "width": 58,
+                  "height": 56,
+                  "pivot": [
+                    4.833333333333333,
+                    4.666666666666667
+                  ],
+                  "axis": [
+                    -6.833333333333333,
+                    -0.6666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -41.0,
+                      -4.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail1": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-tail1.webp",
+                  "width": 62,
+                  "height": 60,
+                  "pivot": [
+                    5.166666666666667,
+                    4.988505747126437
+                  ],
+                  "axis": [
+                    -6.5,
+                    -3.6666666666666665
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -39.0,
+                      -22.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail2": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-tail2.webp",
+                  "width": 66,
+                  "height": 64,
+                  "pivot": [
+                    5.5,
+                    5.310344827586207
+                  ],
+                  "axis": [
+                    -4.333333333333333,
+                    -5.333333333333333
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -26.0,
+                      -32.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail3": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-tail3.webp",
+                  "width": 68,
+                  "height": 66,
+                  "pivot": [
+                    5.666666666666667,
+                    5.471264367816091
+                  ],
+                  "axis": [
+                    -1.6666666666666667,
+                    -10.166666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      -10.0,
+                      -61.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail4": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-tail4.webp",
+                  "width": 86,
+                  "height": 83,
+                  "pivot": [
+                    7.166666666666667,
+                    6.919540229885057
+                  ],
+                  "axis": [
+                    0.8333333333333334,
+                    -9.833333333333332
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      5.0,
+                      -58.99999999999999
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "tail5": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-tail5.webp",
+                  "width": 62,
+                  "height": 48,
+                  "pivot": [
+                    5.166666666666667,
+                    3.9933598937583006
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.6666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      -10.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-body.webp",
+                  "width": 40,
+                  "height": 39,
+                  "pivot": [
+                    3.3333333333333335,
+                    3.218390804597701
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-leftThigh.webp",
+                  "width": 25,
+                  "height": 22,
+                  "pivot": [
+                    2.1081851067789197,
+                    0.9363249715625005
+                  ],
+                  "axis": [
+                    0.0,
+                    2.6352313834736494
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      15.811388300841896
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-leftShin.webp",
+                  "width": 23,
+                  "height": 20,
+                  "pivot": [
+                    1.8714225130157598,
+                    0.8311697230221727
+                  ],
+                  "axis": [
+                    0.0,
+                    2.3392781412696997
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      14.035668847618199
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-leftFoot.webp",
+                  "width": 78,
+                  "height": 65,
+                  "pivot": [
+                    6.5,
+                    6.726766917293232
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-rightThigh.webp",
+                  "width": 26,
+                  "height": 23,
+                  "pivot": [
+                    2.1374959389175197,
+                    0.9493430239054371
+                  ],
+                  "axis": [
+                    0.0,
+                    2.6718699236469
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      16.0312195418814
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-rightShin.webp",
+                  "width": 39,
+                  "height": 34,
+                  "pivot": [
+                    3.2000000000000006,
+                    1.4212413793103462
+                  ],
+                  "axis": [
+                    0.0,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png",
+                    "axis": [
+                      0.0,
+                      24.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-rightFoot.webp",
+                  "width": 94,
+                  "height": 79,
+                  "pivot": [
+                    7.833333333333333,
+                    8.106616541353382
+                  ],
+                  "donor": {
+                    "master": "masters/role-08-parts-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-08-parts-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-head-happy.webp",
+                  "width": 347,
+                  "height": 292,
+                  "pivot": [
+                    29.166666666666668,
+                    44.166666666666664
+                  ],
+                  "sourceScale": 1.300571275611728
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-head-sad.webp",
+                  "width": 349,
+                  "height": 294,
+                  "pivot": [
+                    29.5,
+                    44.5
+                  ],
+                  "sourceScale": 1.300571275611728
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-08/up-right-main-head-hurt.webp",
+                  "width": 347,
+                  "height": 294,
+                  "pivot": [
+                    29.166666666666668,
+                    44.5
+                  ],
+                  "sourceScale": 1.300571275611728
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": 1,
+                  "lengths": [
+                    2.6352313834736494,
+                    2.3392781412696997
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    2.6718699236469,
+                    4.0
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "leftClaw",
+                  "joint": "leftClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.65,
+                  "readyProp": false
+                },
+                {
+                  "part": "rightClaw",
+                  "joint": "rightClawRoot",
+                  "kind": "flipper",
+                  "amplitude": 0.045,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.65,
+                  "readyProp": true
+                },
+                {
+                  "part": "tail0",
+                  "joint": "tailRoot0",
+                  "kind": "tail",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "hurtRotation": -0.85
+                },
+                {
+                  "part": "tail1",
+                  "joint": "tailRoot1",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.12,
+                  "parentPart": "tail0",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail2",
+                  "joint": "tailRoot2",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.24,
+                  "parentPart": "tail1",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail3",
+                  "joint": "tailRoot3",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.36,
+                  "parentPart": "tail2",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail4",
+                  "joint": "tailRoot4",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.48,
+                  "parentPart": "tail3",
+                  "hurtRotation": 0
+                },
+                {
+                  "part": "tail5",
+                  "joint": "tailRoot5",
+                  "kind": "tail",
+                  "amplitude": 0.035,
+                  "phase": 0.6,
+                  "parentPart": "tail4",
+                  "hurtRotation": 0
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "body",
+                "leftClaw",
+                "rightClaw",
+                "head",
+                "head-expression",
+                "tail0",
+                "tail1",
+                "tail2",
+                "tail3",
+                "tail4",
+                "tail5"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-head.webp",
+      "pixelSize": [
+        422,
+        325
+      ],
+      "pixelDensity": 6,
+      "sha256": "026b948dac5ac02e97cf411275f0a4e32d09a8cb26382d38f1fdf794d9010f8b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-leftClaw.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-leftClaw.webp",
+      "pixelSize": [
+        123,
+        119
+      ],
+      "pixelDensity": 6,
+      "sha256": "2c9432fed908311fe1f458c33d71e47e22cac9649e309385da21c3c471c1ca07"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-rightClaw.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-rightClaw.webp",
+      "pixelSize": [
+        100,
+        106
+      ],
+      "pixelDensity": 6,
+      "sha256": "8e22c00d535b14112b8453e03646aa2b1cb837c2d3e5478fb24196e722717002"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-tail0.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-tail0.webp",
+      "pixelSize": [
+        60,
+        58
+      ],
+      "pixelDensity": 6,
+      "sha256": "7cffd4a7039d07dbe9e174792c90c7c0091a1013f217b6cec17746eeaad57335"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-tail1.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-tail1.webp",
+      "pixelSize": [
+        84,
+        82
+      ],
+      "pixelDensity": 6,
+      "sha256": "8b92cd81c8a8f85b86d6aaa95611e50340e00ffbad7d6d72ecb33db2f8f60665"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-tail2.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-tail2.webp",
+      "pixelSize": [
+        58,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "f186defa23eba1e0ef37487b5deb7284ba514c800128f7625d235c7e0953582b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-body.webp",
+      "pixelSize": [
+        40,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "d27d5f25f470e6238c96880d0d9d19e9bda0d71ecc04ae3c41bfd77b78385c54"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-leftThigh.webp",
+      "pixelSize": [
+        23,
+        20
+      ],
+      "pixelDensity": 6,
+      "sha256": "d1aaeafc4db62b4a380ab0e8680ffc06df2ab9f0a79168a4382a575aad9ae914"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-leftShin.webp",
+      "pixelSize": [
+        39,
+        35
+      ],
+      "pixelDensity": 6,
+      "sha256": "480050ad923ee1930a6ee7c86365c302d53cc684f5bdb0a0e1f5723fea6be1c5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-leftFoot.webp",
+      "pixelSize": [
+        92,
+        79
+      ],
+      "pixelDensity": 6,
+      "sha256": "b6b6c37da812064495e6903d7a2c6b887fc3b108c2cc1a4283501e2fd90b8484"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-rightThigh.webp",
+      "pixelSize": [
+        25,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "109eb7c8c756108af51204f66cb909bb8c1fdc2b9d894e01b5565525f1b662dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-rightShin.webp",
+      "pixelSize": [
+        25,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "109eb7c8c756108af51204f66cb909bb8c1fdc2b9d894e01b5565525f1b662dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-rightFoot.webp",
+      "pixelSize": [
+        97,
+        84
+      ],
+      "pixelDensity": 6,
+      "sha256": "09ffcfa61ee8932d5b3392782e443b8192e99dbe023d69f8f7acc0e65f449029"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-head-happy.webp",
+      "pixelSize": [
+        420,
+        325
+      ],
+      "pixelDensity": 6,
+      "sha256": "acdd6ec780147c7f6346c9474fbb0507436937504909cee326fe8dbdf1c0b23a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-head-sad.webp",
+      "pixelSize": [
+        422,
+        330
+      ],
+      "pixelDensity": 6,
+      "sha256": "d9a8d75cc86024c1730d37c0487bd57a469bd725b9ebff91b9e9bc4732537d1a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-08/down-right-main-head-hurt.webp",
+      "pixelSize": [
+        422,
+        325
+      ],
+      "pixelDensity": 6,
+      "sha256": "d0073bca642394b1859507bae5804cee4d6bb9b1bf2f31ac6ec2bb857e167250"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-head.webp",
+      "pixelSize": [
+        378,
+        313
+      ],
+      "pixelDensity": 6,
+      "sha256": "0a1a8d9ac4cb8493d01cf429978e8d1be88483897d47a12fc4ba7b4c8f8498cd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-leftClaw.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-leftClaw.webp",
+      "pixelSize": [
+        68,
+        66
+      ],
+      "pixelDensity": 6,
+      "sha256": "aff3cb071739b262843c46d7d451b7c8466c4503ed1952fb9eabab82bd07cbdd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-rightClaw.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-rightClaw.webp",
+      "pixelSize": [
+        110,
+        117
+      ],
+      "pixelDensity": 6,
+      "sha256": "fda6a0f13c181900de5604b472a642fa78fea692ecda7f952732bb0ae0d94082"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-tail0.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-tail0.webp",
+      "pixelSize": [
+        60,
+        58
+      ],
+      "pixelDensity": 6,
+      "sha256": "7cffd4a7039d07dbe9e174792c90c7c0091a1013f217b6cec17746eeaad57335"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-tail1.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-tail1.webp",
+      "pixelSize": [
+        84,
+        82
+      ],
+      "pixelDensity": 6,
+      "sha256": "8b92cd81c8a8f85b86d6aaa95611e50340e00ffbad7d6d72ecb33db2f8f60665"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-tail2.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-tail2.webp",
+      "pixelSize": [
+        58,
+        46
+      ],
+      "pixelDensity": 6,
+      "sha256": "828fa09acad765c89c9d3cde895bc7535d2f50ae02e42d65f6f276e286cb7b60"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-body.webp",
+      "pixelSize": [
+        40,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "d27d5f25f470e6238c96880d0d9d19e9bda0d71ecc04ae3c41bfd77b78385c54"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-leftThigh.webp",
+      "pixelSize": [
+        25,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "109eb7c8c756108af51204f66cb909bb8c1fdc2b9d894e01b5565525f1b662dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-leftShin.webp",
+      "pixelSize": [
+        21,
+        19
+      ],
+      "pixelDensity": 6,
+      "sha256": "d5da01882cf46ad5a49da5240d8f6263b6091a72a9b6215a25ef0a14087ac201"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-leftFoot.webp",
+      "pixelSize": [
+        96,
+        87
+      ],
+      "pixelDensity": 6,
+      "sha256": "ecdf813daa522213c707f7fab4ae9a9cdd4ebb797250c816b92f49cc58bd3ff6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-rightThigh.webp",
+      "pixelSize": [
+        31,
+        27
+      ],
+      "pixelDensity": 6,
+      "sha256": "0fc91201de88a90f47a1fc4e1c09e6a3da27a9a48023cce15a7bcdee2a327bca"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-rightShin.webp",
+      "pixelSize": [
+        39,
+        34
+      ],
+      "pixelDensity": 6,
+      "sha256": "2711eb18c0fa831170f435584b7a70557d571b2ef6f1716089da535d6e992d6d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-rightFoot.webp",
+      "pixelSize": [
+        92,
+        84
+      ],
+      "pixelDensity": 6,
+      "sha256": "73df9ef3644162362a655858e6d5ffb2e58f130b1f563e60c672f2eabc218d0d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-head-happy.webp",
+      "pixelSize": [
+        376,
+        314
+      ],
+      "pixelDensity": 6,
+      "sha256": "70077d241aa0a949977b5a123580c4eafdcae1a21daaa52be0f672c720d8253c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-head-sad.webp",
+      "pixelSize": [
+        378,
+        319
+      ],
+      "pixelDensity": 6,
+      "sha256": "42b8f0810f9caa0d9620494c637c06d8fdf0f4f33620f147be51191ebe3ce8ba"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/down-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-08/down-left-main-head-hurt.webp",
+      "pixelSize": [
+        381,
+        319
+      ],
+      "pixelDensity": 6,
+      "sha256": "f8856940be484b12d823272cb575195a3f4dbeae8b001ff374de6390cd24b1d9"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-head.webp",
+      "pixelSize": [
+        361,
+        303
+      ],
+      "pixelDensity": 6,
+      "sha256": "a0af214df0ccedae0e983926749fb90159d5b30303d9ee3fe0e7aefbcc36daa2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-leftClaw.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-leftClaw.webp",
+      "pixelSize": [
+        100,
+        97
+      ],
+      "pixelDensity": 6,
+      "sha256": "6f6c5a2a654adfeebf71531e962d08bfaa54731cbfb191fa25306970f1188065"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-rightClaw.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-rightClaw.webp",
+      "pixelSize": [
+        68,
+        72
+      ],
+      "pixelDensity": 6,
+      "sha256": "fe38abdcf7541fd2db6f8809dc7419e92121f382978d12ca3846ce20100fa33b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-tail0.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-tail0.webp",
+      "pixelSize": [
+        58,
+        56
+      ],
+      "pixelDensity": 6,
+      "sha256": "abcaa02f9401f72322e3a473c12381c8c6daae698b4846856a2685c15ee25aa6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-tail1.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-tail1.webp",
+      "pixelSize": [
+        62,
+        60
+      ],
+      "pixelDensity": 6,
+      "sha256": "e158de4d24e24a728e287a5e331e688957e165c761a6f2dd537d7fe4e8d63c51"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-tail2.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-tail2.webp",
+      "pixelSize": [
+        66,
+        64
+      ],
+      "pixelDensity": 6,
+      "sha256": "8367ef5c5eca2978d547816e4689be468956ecac8f43642372a1c2feaeaa3545"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-tail3.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-tail3.webp",
+      "pixelSize": [
+        68,
+        66
+      ],
+      "pixelDensity": 6,
+      "sha256": "7065975e3ec57701b99af934ad9e94db29aeb8b1ee85e40f878c32980f50699b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-tail4.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-tail4.webp",
+      "pixelSize": [
+        86,
+        83
+      ],
+      "pixelDensity": 6,
+      "sha256": "bf4412538d1e10789da7c2a01ee734a96c2f1b31c6f2393bbac9c633b5000c96"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-tail5.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-tail5.webp",
+      "pixelSize": [
+        62,
+        49
+      ],
+      "pixelDensity": 6,
+      "sha256": "a5cb91d64d884a5b386b959b10082dd4b7e808ab7cffcfbede9d8f92d3409f2c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-body.webp",
+      "pixelSize": [
+        40,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "d27d5f25f470e6238c96880d0d9d19e9bda0d71ecc04ae3c41bfd77b78385c54"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-leftThigh.webp",
+      "pixelSize": [
+        27,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "7901aa1bb7e416d7f1ec99708cab19c56195bc028973ae5954d59cf0b811a984"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-leftShin.webp",
+      "pixelSize": [
+        34,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "3fd9c43f61d20010ce4c3016d377ddf083f9b26d789b233e25bee347fa45b7a6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-leftFoot.webp",
+      "pixelSize": [
+        83,
+        65
+      ],
+      "pixelDensity": 6,
+      "sha256": "493f84b6fe9175789469704901d826053ccc425e2810f332eba855d17a786b42"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-rightThigh.webp",
+      "pixelSize": [
+        25,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "109eb7c8c756108af51204f66cb909bb8c1fdc2b9d894e01b5565525f1b662dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-rightShin.webp",
+      "pixelSize": [
+        28,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "ceb67aa6a79c991ba29f99eb855ab7e91bc42a34c23ebe00c6967348197c844d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-rightFoot.webp",
+      "pixelSize": [
+        74,
+        58
+      ],
+      "pixelDensity": 6,
+      "sha256": "b4307b6739409b61b2d21b4363603c73351fc312af5776ee097ba14eb5663706"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-head-happy.webp",
+      "pixelSize": [
+        361,
+        303
+      ],
+      "pixelDensity": 6,
+      "sha256": "a0af214df0ccedae0e983926749fb90159d5b30303d9ee3fe0e7aefbcc36daa2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-head-sad.webp",
+      "pixelSize": [
+        361,
+        303
+      ],
+      "pixelDensity": 6,
+      "sha256": "a0af214df0ccedae0e983926749fb90159d5b30303d9ee3fe0e7aefbcc36daa2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-08/up-left-main-head-hurt.webp",
+      "pixelSize": [
+        365,
+        306
+      ],
+      "pixelDensity": 6,
+      "sha256": "ae21f11b638f5691b5af4edae2963ddc247ebf51073cdbb95939834143982114"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-head.webp",
+      "pixelSize": [
+        348,
+        292
+      ],
+      "pixelDensity": 6,
+      "sha256": "8cde557a31f612f200b9392412f2fdff786cc39b3c13258eb1b5be602530d599"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-leftClaw.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-leftClaw.webp",
+      "pixelSize": [
+        78,
+        75
+      ],
+      "pixelDensity": 6,
+      "sha256": "65c6f504700d26ee9822419453cd8a720cd901ce3f94da8251dad17e231cdcc7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-rightClaw.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-rightClaw.webp",
+      "pixelSize": [
+        110,
+        117
+      ],
+      "pixelDensity": 6,
+      "sha256": "fda6a0f13c181900de5604b472a642fa78fea692ecda7f952732bb0ae0d94082"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-tail0.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-tail0.webp",
+      "pixelSize": [
+        58,
+        56
+      ],
+      "pixelDensity": 6,
+      "sha256": "abcaa02f9401f72322e3a473c12381c8c6daae698b4846856a2685c15ee25aa6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-tail1.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-tail1.webp",
+      "pixelSize": [
+        62,
+        60
+      ],
+      "pixelDensity": 6,
+      "sha256": "e158de4d24e24a728e287a5e331e688957e165c761a6f2dd537d7fe4e8d63c51"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-tail2.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-tail2.webp",
+      "pixelSize": [
+        66,
+        64
+      ],
+      "pixelDensity": 6,
+      "sha256": "8367ef5c5eca2978d547816e4689be468956ecac8f43642372a1c2feaeaa3545"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-tail3.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-tail3.webp",
+      "pixelSize": [
+        68,
+        66
+      ],
+      "pixelDensity": 6,
+      "sha256": "7065975e3ec57701b99af934ad9e94db29aeb8b1ee85e40f878c32980f50699b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-tail4.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-tail4.webp",
+      "pixelSize": [
+        86,
+        83
+      ],
+      "pixelDensity": 6,
+      "sha256": "bf4412538d1e10789da7c2a01ee734a96c2f1b31c6f2393bbac9c633b5000c96"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-tail5.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-tail5.webp",
+      "pixelSize": [
+        62,
+        48
+      ],
+      "pixelDensity": 6,
+      "sha256": "de5724ca204cade3a99d8e4c9b331f3c20f1b5e82c1d1fb95bfeff6f417d9db6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-body.webp",
+      "pixelSize": [
+        40,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "d27d5f25f470e6238c96880d0d9d19e9bda0d71ecc04ae3c41bfd77b78385c54"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-leftThigh.webp",
+      "pixelSize": [
+        25,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "109eb7c8c756108af51204f66cb909bb8c1fdc2b9d894e01b5565525f1b662dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-leftShin.webp",
+      "pixelSize": [
+        23,
+        20
+      ],
+      "pixelDensity": 6,
+      "sha256": "d1aaeafc4db62b4a380ab0e8680ffc06df2ab9f0a79168a4382a575aad9ae914"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-leftFoot.webp",
+      "pixelSize": [
+        78,
+        65
+      ],
+      "pixelDensity": 6,
+      "sha256": "6a30c08aaf47eba4cbc9ef01fabf347c119ad5dfadaca216f989786e97ddfabd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-rightThigh.webp",
+      "pixelSize": [
+        26,
+        23
+      ],
+      "pixelDensity": 6,
+      "sha256": "140eca9b37a7849e6844ae88c6b216343e93419a34b325e6b64c1b428e6ee89d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-rightShin.webp",
+      "pixelSize": [
+        39,
+        34
+      ],
+      "pixelDensity": 6,
+      "sha256": "2711eb18c0fa831170f435584b7a70557d571b2ef6f1716089da535d6e992d6d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-rightFoot.webp",
+      "pixelSize": [
+        94,
+        79
+      ],
+      "pixelDensity": 6,
+      "sha256": "fe136c97f24fbd2e803d2b9970fb4e75889ca9e2a733a5abffe391687bb682fa"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-head-happy.webp",
+      "pixelSize": [
+        347,
+        292
+      ],
+      "pixelDensity": 6,
+      "sha256": "7a547f974f6150fd42427b7ee3b43c7102c4e4891b560af54bf0be7a30f89cc1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-head-sad.webp",
+      "pixelSize": [
+        349,
+        294
+      ],
+      "pixelDensity": 6,
+      "sha256": "23c40a0e2b7c072379f9d3238a1b435b91c93517f3a11319fd1fddf83c53c840"
+    },
+    {
+      "url": "hd-characters/characters-25/role-08/up-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-08/up-right-main-head-hurt.webp",
+      "pixelSize": [
+        347,
+        294
+      ],
+      "pixelDensity": 6,
+      "sha256": "da065ddf834257e34afdd72557315a0b0ae8170b49126436d65c2066d7b83465"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    5,
+    8,
+    9
+  ]
+}

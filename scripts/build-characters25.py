@@ -192,7 +192,7 @@ def build_role(author):
      exclusion=neutral_cloth_mask(pose);removed=ImageChops.darker(mask,exclusion)
      extra_transfers.append((extra['clothOwner'],removed));mask=ImageChops.subtract(mask,exclusion);extra_exclusions[extra['name']]=exclusion
     extras=ImageChops.lighter(extras,mask);layers[extra['name']]=(mask,extra['pivot'],extra.get('axis'))
-    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**{k:extra[k]for k in['amplitude','phase','poseHand','maxAngle','readyProp','restAngle']if k in extra}})
+    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**{k:extra[k]for k in['amplitude','phase','poseHand','maxAngle','readyProp','restAngle','parentPart','hurtRotation']if k in extra}})
    for owner,removed in extra_transfers:
     mask,pivot,axis=layers[owner];layers[owner]=(ImageChops.lighter(mask,removed),pivot,axis);extras=ImageChops.lighter(extras,removed)
    body=ImageChops.lighter(polygon(master.size,description['bodyPolygon']),protected)

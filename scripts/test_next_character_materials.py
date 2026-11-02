@@ -31,13 +31,13 @@ class NextCharacterMaterials(unittest.TestCase):
    self.assertAlmostEqual(len(clip['frames'])/clip.get('fps',30),len(source['frames'])/source.get('fps',30))
    if clip['id'].startswith('carnival-walk'):
     self.assertEqual(clip['fps'],120);self.assertEqual(len(clip['frames']),len(source['frames'])*4)
-    if cid in [3,4,5,7,6,10,12]:self.assertEqual(len({f['url']for f in clip['frames']}),len(source['frames'])*4,'one full native movement cycle must not repeat a truncated cycle')
+    if cid in [3,4,5,7,8,6,10,12]:self.assertEqual(len({f['url']for f in clip['frames']}),len(source['frames'])*4,'one full native movement cycle must not repeat a truncated cycle')
   self.assertIn(str(cid),d['thumbnailUrls'])
   for entry in d['runtimeImages']:
    p=ROOT/'public/modern'/entry['url'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),entry['sha256'])
    with Image.open(p)as im:self.assertEqual(list(im.size),entry['pixelSize'])
   # Physical raster bounds, including ALL intermediate walking frames.
-  samples={5:64,3:64,4:72,7:64,6:48,10:56,12:64,11:16}[cid]
+  samples={8:64,5:64,3:64,4:72,7:64,6:48,10:56,12:64,11:16}[cid]
   for name in ['thumbnail','champion',*[f'carnival-{side}-{i}'for side in ['left','right']for i in range(samples)]]:
    p=ROOT/f'public/modern/hd-characters/characters-25/role-{cid:02d}/{name}.webp'
    # The packed thumbnail is intentionally trimmed; its source raster must
@@ -56,5 +56,6 @@ class NextCharacterMaterials(unittest.TestCase):
  def test_jiajia_complete_native_routes_and_unclipped_artwork(self):self.verify_character(4,'jiajia')
  def test_shuaige_complete_native_routes_and_unclipped_artwork(self):self.verify_character(7,'shuaige')
  def test_dapai_complete_native_routes_and_unclipped_artwork(self):self.verify_character(5,'dapai')
+ def test_dawei_complete_native_routes_and_unclipped_artwork(self):self.verify_character(8,'dawei')
 
 if __name__=='__main__':unittest.main()

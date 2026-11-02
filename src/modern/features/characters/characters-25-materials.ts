@@ -7,14 +7,15 @@ import jjmm from '../../data/jjmm-complete.json'
 import jiajia from '../../data/jiajia-complete.json'
 import shuaige from '../../data/shuaige-complete.json'
 import dapai from '../../data/dapai-complete.json'
+import dawei from '../../data/dawei-complete.json'
 
 // Keep each identity independently reproducible. Rebuilding one pack cannot
 // overwrite another accepted character's rig, portraits or activity clips.
 export default {
- activeIds:[...aniu.activeIds,...guaika.activeIds,...weiwei.activeIds,...ajie.activeIds,...nini.activeIds,...jjmm.activeIds,...jiajia.activeIds,...shuaige.activeIds,...dapai.activeIds],
- characters:[...aniu.characters,...guaika.characters,...weiwei.characters,...ajie.characters,...nini.characters,...jjmm.characters,...jiajia.characters,...shuaige.characters,...dapai.characters],
- runtimeImages:[...new Map([...aniu.runtimeImages,...guaika.runtimeImages,...weiwei.runtimeImages,...ajie.runtimeImages,...nini.runtimeImages,...jjmm.runtimeImages,...jiajia.runtimeImages,...shuaige.runtimeImages,...dapai.runtimeImages].map(p=>[p.url,p])).values()],
- assets:[...aniu.assets,...guaika.assets,...weiwei.assets,...ajie.assets,...nini.assets,...jjmm.assets,...jiajia.assets,...shuaige.assets,...dapai.assets],
- activityClips:[...aniu.activityClips,...guaika.activityClips,...weiwei.activityClips,...ajie.activityClips,...nini.activityClips,...jjmm.activityClips,...jiajia.activityClips,...shuaige.activityClips,...dapai.activityClips],
- thumbnailUrls:{...aniu.thumbnailUrls,...guaika.thumbnailUrls,...weiwei.thumbnailUrls,...ajie.thumbnailUrls,...nini.thumbnailUrls,...jjmm.thumbnailUrls,...jiajia.thumbnailUrls,...shuaige.thumbnailUrls,...dapai.thumbnailUrls},
+ activeIds:[...aniu.activeIds,...guaika.activeIds,...weiwei.activeIds,...ajie.activeIds,...nini.activeIds,...jjmm.activeIds,...jiajia.activeIds,...shuaige.activeIds,...dapai.activeIds,...dawei.activeIds],
+ characters:[...aniu.characters,...guaika.characters,...weiwei.characters,...ajie.characters,...nini.characters,...jjmm.characters,...jiajia.characters,...shuaige.characters,...dapai.characters,...dawei.characters],
+ runtimeImages:[...new Map([...aniu.runtimeImages,...guaika.runtimeImages,...weiwei.runtimeImages,...ajie.runtimeImages,...nini.runtimeImages,...jjmm.runtimeImages,...jiajia.runtimeImages,...shuaige.runtimeImages,...dapai.runtimeImages,...dawei.runtimeImages].map(p=>[p.url,p])).values()],
+ assets:[...aniu.assets,...guaika.assets,...weiwei.assets,...ajie.assets,...nini.assets,...jjmm.assets,...jiajia.assets,...shuaige.assets,...dapai.assets,...dawei.assets],
+ activityClips:[...aniu.activityClips,...guaika.activityClips,...weiwei.activityClips,...ajie.activityClips,...nini.activityClips,...jjmm.activityClips,...jiajia.activityClips,...shuaige.activityClips,...dapai.activityClips,...dawei.activityClips],
+ thumbnailUrls:{...aniu.thumbnailUrls,...guaika.thumbnailUrls,...weiwei.thumbnailUrls,...ajie.thumbnailUrls,...nini.thumbnailUrls,...jjmm.thumbnailUrls,...jiajia.thumbnailUrls,...shuaige.thumbnailUrls,...dapai.thumbnailUrls,...dawei.thumbnailUrls},
 }

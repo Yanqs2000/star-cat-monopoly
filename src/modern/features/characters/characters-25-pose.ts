@@ -17,9 +17,9 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
   for(const key of['bodyY','bodyRotation','headRotation']as const)pose[key]=(action==='walk'?0:pose[key])+walk[key]*weight
   for(const key of['leftHand','rightHand']as const)pose[key]={x:(action==='walk'?0:pose[key].x)+walk[key].x*weight,y:(action==='walk'?0:pose[key].y)+walk[key].y*weight}
  }
- const upright=(rig.anatomy==='floating'||rig.anatomy==='crab')&&(action==='walk'||action==='neutral')
+ const upright=(rig.anatomy==='floating'||rig.anatomy==='crab'||rig.anatomy==='scorpion')&&(action==='walk'||action==='neutral')
  const bodyY=pose.bodyY*scale,rotation=upright?0:pose.bodyRotation*scale
- const headRotation=upright||rig.anatomy==='crab'?0:pose.headRotation*scale
+ const headRotation=upright||rig.anatomy==='crab'||rig.anatomy==='scorpion'?0:pose.headRotation*scale
  const direction=locomotion?.direction??{x:facing.includes('right')?56:-56,y:facing.startsWith('down')?40:-40}
  const gray=Math.round(255-pose.soot*223),tint=gray*0x010101,result:RenderPart25[]=[]
  for(const actor of rig.facings[facing].actors){
@@ -68,14 +68,15 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
   if(expressionAvailable)place(actor.head+'-expression',expressionPart,head,rotation+headRotation,1,expression==='hurt'?0xffffff:tint)
   else place(actor.head,actor.head,head,rotation+headRotation)
   for(const extra of actor.appendages){
-   const p=joints.get(extra.joint)??transformed(extra.joint)
+   const parent=extra.parentPart?states.get(extra.parentPart):undefined,axisEnd=parent?.part.axis
+   const p=parent&&axisEnd?{x:parent.tx+parent.a*axisEnd[0]+parent.c*axisEnd[1],y:parent.ty+parent.b*axisEnd[0]+parent.d*axisEnd[1]}:joints.get(extra.joint)??transformed(extra.joint)
    const weight=locomotion?.motionWeight??(action==='walk'?1:0)
    const beat=Math.sin(((locomotion?.distance??distance)/rig.stridePx+(extra.phase??0))*Math.PI*2)
    const floatingWing=rig.anatomy==='floating'&&extra.kind==='wing'
    const side=floatingWing?Math.sign(p.x-spine.x)||1:1
    const wave=extra.kind==='fixed'?0:beat*(extra.amplitude??.035)*weight*side
    const restAngle=extra.restAngle??0
-   let angle=extra.kind==='pan'?0:rotation+wave+restAngle
+   let angle=extra.kind==='pan'?0:(parent?Math.atan2(parent.b,parent.a):rotation)+wave+restAngle+(extra.hurtRotation??0)*pose.soot
    const axis=actor.parts[extra.part]!.axis
    if(extra.kind==='flipper'&&extra.poseHand&&axis){
     const x=axis[0]*Math.cos(restAngle)-axis[1]*Math.sin(restAngle),y=axis[0]*Math.sin(restAngle)+axis[1]*Math.cos(restAngle)
