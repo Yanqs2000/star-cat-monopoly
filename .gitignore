@@ -10,7 +10,12 @@ coverage
 *.log
 
 public/ruffle/
-public/modern/assets-hd/
+# Ship HD runtime textures and indexes; omit mirrored source metadata.
+public/modern/assets-hd/**/*.json
+!public/modern/assets-hd/hd-manifest.json
+!public/modern/assets-hd/hd-profile.json
+public/modern/assets-hd/.hd-build-in-progress
+public/modern/assets-hd/.hd-*.tmp
 playwright-report/
 test-results/
 __pycache__/

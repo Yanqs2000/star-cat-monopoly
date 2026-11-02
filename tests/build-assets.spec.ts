@@ -57,7 +57,7 @@ test('original production output excludes modern assets and review materials', a
   }
 })
 
-test('modern original-profile build works before the ignored HD cache is generated', async () => {
+test('modern original-profile build tolerates intentionally omitted HD runtime assets', async () => {
   const root = await mkdtemp(path.join(tmpdir(), 'star-cat-no-hd-cache-'))
   try {
     const publicDir = path.join(root, 'public/modern')
