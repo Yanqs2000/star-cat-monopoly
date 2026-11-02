@@ -1,0 +1,70 @@
+{
+  "status": "candidate-awaiting-user-review",
+  "technicalVerificationDate": "2026-11-02",
+  "humanAcceptanceDate": null,
+  "humanAcceptanceEvidence": null,
+  "characters": [
+    {
+      "id": 5,
+      "name": "大牌",
+      "nativeSources": 1185,
+      "runtimeImages": 217,
+      "review": "./?role=5&review=last-three-complete-r1",
+      "humanAccepted": false,
+      "candidatePacketSha256": "91b16f4a59df8e86069a932afec9e9e148c2b91c7ec1b524f6c631e1a8ca6e4d"
+    },
+    {
+      "id": 8,
+      "name": "大尾",
+      "nativeSources": 1076,
+      "runtimeImages": 215,
+      "review": "./?role=8&review=last-three-complete-r1",
+      "humanAccepted": false,
+      "candidatePacketSha256": "53449431613af1a4c086efa05f33643533cb771af2004022d619882177fadc2a"
+    },
+    {
+      "id": 9,
+      "name": "阿飞",
+      "nativeSources": 1112,
+      "runtimeImages": 245,
+      "review": "./?role=9&review=last-three-complete-r1",
+      "humanAccepted": false,
+      "candidatePacketSha256": "13202cb068980c917f88187fa623c2b431c12ba574a35c1b57290a709c9f6253"
+    }
+  ],
+  "validation": {
+    "unitFiles": 140,
+    "unitTests": 852,
+    "artworkChecks": 78,
+    "productionCases": 48,
+    "isolatedExportCases": 10,
+    "rebuildFilesByteIdentical": {
+      "5": 278,
+      "8": 274,
+      "9": 331
+    },
+    "reviewPageCases": 9,
+    "reviewPageWidths": [
+      390,
+      768,
+      1440
+    ],
+    "reviewPageDerivedImagesPerCharacter": 19,
+    "reviewPageErrors": 0,
+    "inheritedAssetsUnchanged": 2212,
+    "protectedWorkspaceFilesUnchanged": 32,
+    "preservedResearchFilesUnchanged": 75,
+    "realApiStartup": {
+      "sessionStatus": 200,
+      "slotsStatus": 200,
+      "characters25": [
+        5,
+        8,
+        9
+      ],
+      "errors": [],
+      "saveWrites": []
+    },
+    "codeReview": "pending"
+  }
+}

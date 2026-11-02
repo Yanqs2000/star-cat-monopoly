@@ -25,10 +25,10 @@
 
 - [x] 合并：accepted commit42fb2bc，main843测试/类型通过。保留32本地文件和75研究文件。
 - [x] 原作清单RED→GREEN：修改`scripts/audit-character-materials.py`和`test_character_material_inventory.py`；生成`role-05/08/09-material-sources.json`及`source-references/role-05/08/09-activities.png`，分别1185/1076/1112记录。`trait-*`由controller的NPC encounter分支选择npcId，并由已验收npc-23包替换，非同号玩家专属动作。
-- [ ] 大牌：新增`role-05-authoring.json`、`role-05-carnival-authoring.json`、`masters/role-05-*`及`src/modern/data/dapai-{map-rig,carnival,complete}.json`。测试`scripts/test_dapai_artwork.py`、`tests/modern/dapai-{grounding,material-routing}.spec.ts`；流水线`node scripts/build-next-character-artwork.mjs 5`。只在完整包存在且路由测试通过时加入registry。闭合脚掌供体先于动作导出，避免遮罩缺口。
-- [ ] 大尾：对应role08/dawei。先实审钳、螯和腿数，再在`characters-25-pose.ts`/`contacts.ts`按实际足数增加配置或控制器；世界支撑、起停/转向、钳/尾相位测试必须先失败再实现。不得改既有角色默认行为。
-- [ ] 阿飞：对应role09/afei。四马腿与双臂独立；四足接点须按马身前后腿组成配置，不能误用双人身份分组。`tests/modern/afei-grounding.spec.ts`回归单脚世界接触、换向及启停；其余同完整人物流程。
-- [ ] 生产验证：各自`create-*-fixtures.ts`生成合法原规则快照，`modern-*-artwork.spec.ts`跑全部真实界面入口。原RNG、速度、存档模型不改，真实API只读槽位与新局不写保存。
+- [x] 大牌：新增`role-05-authoring.json`、`role-05-carnival-authoring.json`、`masters/role-05-*`及`src/modern/data/dapai-{map-rig,carnival,complete}.json`。测试`scripts/test_dapai_artwork.py`、`tests/modern/dapai-{grounding,material-routing}.spec.ts`；流水线`node scripts/build-next-character-artwork.mjs 5`。只在完整包存在且路由测试通过时加入registry。闭合脚掌供体先于动作导出，避免遮罩缺口。
+- [x] 大尾：对应role08/dawei。先实审钳、螯和腿数，再在`characters-25-pose.ts`/`contacts.ts`按实际足数增加配置或控制器；世界支撑、起停/转向、钳/尾相位测试必须先失败再实现。不得改既有角色默认行为。
+- [x] 阿飞：对应role09/afei。四马腿与双臂独立；四足接点须按马身前后腿组成配置，不能误用双人身份分组。`tests/modern/afei-grounding.spec.ts`回归单脚世界接触、换向及启停；其余同完整人物流程。
+- [x] 生产验证：各自`create-*-fixtures.ts`生成合法原规则快照，`modern-*-artwork.spec.ts`跑全部真实界面入口。原RNG、速度、存档模型不改，真实API只读槽位与新局不写保存。
 - [ ] 验收页`public/hd-review/characters-25/last-three/`：对应现有审阅TS入口新增5/8/9，未完成者不显示为可验收。最终全量测试、素材边界与实际首尾PNG、无旧完整包导出、完整重建哈希、保护资产验证、独立审查及用户最终确认。
 
 ## 大牌原作检查
@@ -77,3 +77,7 @@ Consumes all three complete packets and per-character evidence. Produces accepte
 845项TS、40项Python、8项独立导出及16项生产场景通过；278文件重建一致，2212继承资产/包不变，真实API新局无写存档。素材形象仍待最终用户验收。细节见`docs/modernization/dapai-25-delivery.md`。
 
 大尾源图已先行只读核对：两只主要落地脚、双钳、分节尾、棕帽金带和黑墨镜；scorpion身份标签不代表可以增加原作没有的腿。下一任务按实际两足支撑、刚性帽/身体和独立分节尾处理。
+
+## 最后三位工程候选记录
+
+大牌769e27f、大尾23e5f17、阿飞beb6bcf分别完成。最终852项TS、78项Python、10项独立导出通过；三位各16项实机通过，真实API三位共同开局200且无存档写入。9组验收页(390/768/1440)完整显示每位19张派生图，暂停像素冻结、慢放与进度控制可用，页面无错误。当前待独立整批代码审查及用户视觉/自然动作最终确认。
