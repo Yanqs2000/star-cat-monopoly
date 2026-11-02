@@ -96,3 +96,22 @@ export class Character25Contacts{
  }
  snapshot():ContactSnapshot25[]{return this.definitions.map(d=>{const f=this.feet.get(d.key)!;return{key:d.key,x:f.ground.x,y:f.ground.y-f.lift,lift:f.lift,support:f.support,contactId:f.contactId}})}
 }
+
+/** Independent biped controllers sharing the paired characters' world root. */
+export class Character25PairContacts{
+ private pairs:{id:string;contacts:Character25Contacts}[]
+ constructor(private definitions:ContactDefinition25[],stride:number){
+  const ids=[...new Set(definitions.map(d=>d.key.split('/')[0]!))]
+  if(ids.length!==2)throw Error('双人接地控制需要两个独立角色')
+  this.pairs=ids.map(id=>({id,contacts:new Character25Contacts(this.forActor(id,definitions),stride)}))
+ }
+ private forActor(id:string,definitions:ContactDefinition25[]){return definitions.filter(d=>d.key.startsWith(id+'/'))}
+ get distance(){return this.pairs[0]!.contacts.distance}
+ reset(x:number,y:number,definitions=this.definitions){this.definitions=definitions;for(const p of this.pairs)p.contacts.reset(x,y,this.forActor(p.id,definitions))}
+ setRest(definitions:ContactDefinition25[]){this.definitions=definitions;for(const p of this.pairs)p.contacts.setRest(this.forActor(p.id,definitions))}
+ adjustStoppedRoot(x:number,y:number){for(const p of this.pairs)p.contacts.adjustStoppedRoot(x,y)}
+ setMoving(moving:boolean){for(const p of this.pairs)p.contacts.setMoving(moving)}
+ moveTo(x:number,y:number){for(const p of this.pairs)p.contacts.moveTo(x,y)}
+ advanceIdle(deltaMs:number){for(const p of this.pairs)p.contacts.advanceIdle(deltaMs)}
+ snapshot(){return this.pairs.flatMap(p=>p.contacts.snapshot())}
+}

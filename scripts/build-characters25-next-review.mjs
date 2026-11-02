@@ -5,3 +5,5 @@ await build({entryPoints:['src/modern/features/characters/characters-25-next-rev
 await writeFile(outfile,(await readFile(outfile,'utf8')).replace(/[\t ]+$/gm,''))
 await mkdir('public/hd-review/characters-25/ajie-nini',{recursive:true})
 await writeFile('public/hd-review/characters-25/ajie-nini/runtime.js',await readFile(outfile))
+await mkdir('public/hd-review/characters-25/trio',{recursive:true})
+await writeFile('public/hd-review/characters-25/trio/runtime.js',await readFile(outfile))

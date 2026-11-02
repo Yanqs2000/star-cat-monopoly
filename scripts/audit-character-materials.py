@@ -5,7 +5,7 @@ import json,hashlib,argparse
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[1]
 REVIEW=ROOT/'public/hd-review/characters-25'
-NAMES={11:'怪卡',6:'薇薇',10:'阿杰',12:'妮妮'}
+NAMES={3:'吉吉&米米',4:'佳佳',7:'帅戈',11:'怪卡',6:'薇薇',10:'阿杰',12:'妮妮'}
 
 def audit(cid):
  base=ROOT/f'public/modern/assets/characters/{cid}'
@@ -29,7 +29,7 @@ def audit(cid):
   for f in clip['frames']:add(f,'activity','play.swf',clipId=clip['id'],fps=clip.get('fps'),sourceSymbol=clip.get('sourceSymbol'))
  add({'url':f'assets/monthly/champions/{cid}.png'},'monthly','play.swf')
  counts=dict(Counter(f['group']for f in frames));counts['total']=len(frames)
- data={'roleId':cid,'name':NAMES[cid],'anatomy':'floating'if cid in[6,10,12]else'biped','counts':counts,'activityIds':sorted(ids),'swfs':{n:hashlib.sha256((ROOT/'public/original'/n).read_bytes()).hexdigest()for n in[f'star{cid}.swf','play.swf']},'frames':frames}
+ data={'roleId':cid,'name':NAMES[cid],'anatomy':{3:'paired',4:'crab',6:'floating',7:'floating',10:'floating',12:'floating'}.get(cid,'biped'),'counts':counts,'activityIds':sorted(ids),'swfs':{n:hashlib.sha256((ROOT/'public/original'/n).read_bytes()).hexdigest()for n in[f'star{cid}.swf','play.swf']},'frames':frames}
  (REVIEW/f'role-{cid:02d}-material-sources.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
  # Only a contact sheet for inspecting native activity identity and props.
  samples=[]
@@ -47,4 +47,4 @@ def audit(cid):
  print(json.dumps({'role':cid,**counts},ensure_ascii=False))
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--role',type=int,choices=[11,6,10,12],required=True);audit(p.parse_args().role)
+ p=argparse.ArgumentParser();p.add_argument('--role',type=int,choices=[3,4,7,11,6,10,12],required=True);audit(p.parse_args().role)

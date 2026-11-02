@@ -1,0 +1,102 @@
+{
+  "portals": [
+    {
+      "scenario": "portal-h1",
+      "heading": 1,
+      "destination": 2
+    },
+    {
+      "scenario": "portal-h2",
+      "heading": 2,
+      "destination": 3
+    },
+    {
+      "scenario": "portal-h3",
+      "heading": 3,
+      "destination": 1
+    },
+    {
+      "scenario": "portal-h4",
+      "heading": 4,
+      "destination": 1
+    }
+  ],
+  "walkTurns": [
+    {
+      "scenario": "walk-turn-1",
+      "directions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "path": [
+        157,
+        194,
+        202,
+        187,
+        216,
+        183
+      ]
+    },
+    {
+      "scenario": "walk-turn-2",
+      "directions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "path": [
+        178,
+        195,
+        177,
+        171,
+        205,
+        116
+      ]
+    },
+    {
+      "scenario": "walk-turn-3",
+      "directions": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "path": [
+        218,
+        134,
+        103,
+        101,
+        99,
+        219
+      ]
+    },
+    {
+      "scenario": "walk-turn-4",
+      "directions": [
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "path": [
+        218,
+        122,
+        123,
+        221,
+        157,
+        194
+      ]
+    }
+  ]
+}

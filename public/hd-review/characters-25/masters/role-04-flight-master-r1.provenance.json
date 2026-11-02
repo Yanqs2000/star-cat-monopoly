@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen.imagegen",
+  "status": "candidate-four-direction-flight",
+  "generatedSource": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-cd68b0c9-e93c-4e83-8c31-af71fa5f3fc1.png",
+  "sha256": "b5bea6fca0904b4176223cf0ef967b0c51584b3486da1130a2227b9477f4343b",
+  "inputs": [
+    "masters/role-04-neutral-r1.png",
+    "source-references/role-04-activities.png"
+  ],
+  "inputSha256": {
+    "masters/role-04-neutral-r1.png": "402cccfad033e99827add4cff945921dd4295f51334cd549a22916334cde473e",
+    "source-references/role-04-activities.png": "83a313122e31553610bcd2f77a8482a9b2a9e488d0d0a67177325504789a8d16"
+  },
+  "prompt": "role-04-flight-master-r1.prompt.txt",
+  "humanAccepted": false
+}

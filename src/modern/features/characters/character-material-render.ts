@@ -10,10 +10,11 @@ export async function createCharacterMaterialRenderer(mapIndex:MaterialRigIndex,
  const textures=new Map<string,Texture>()
  await Promise.all([...mapIndex.runtimeImages,...carnivalIndex.runtimeImages].map(async p=>textures.set(p.url,await Assets.load<Texture>('/modern/'+p.url))))
  const map=new Character25Player(mapIndex.characters[0]!,textures,false,false)
- const carnival=new Character25Player(carnivalIndex.characters[0]!,textures,false,false)
+ const carnivalRig=carnivalIndex.characters[0]!,frameStep=carnivalRig.artworkSamples?carnivalRig.stridePx/carnivalRig.artworkSamples:2
+ const carnival=new Character25Player(carnivalRig,textures,false,false)
  const championRig=structuredClone(mapIndex.characters[0]!.id===6?mapIndex.characters[0]!:carnivalIndex.characters[0]!)
- const source=mapIndex.characters[0]!.facings['down-right'].actors[0]!
  for(const actor of championRig.facings['down-right'].actors){
+  const source=mapIndex.characters[0]!.facings['down-right'].actors.find(a=>a.id===actor.id)!
   const happy=actor.parts['head-champion']??source.parts['head-happy']
   // Native Ajie opens its eyes for the monthly portrait; its map-happy head stays closed.
   if(happy&&mapIndex.characters[0]!.id!==10){const factor=actor.parts[actor.head]!.width/happy.width;actor.parts[actor.head]={...happy,width:happy.width*factor,height:happy.height*factor,pivot:[happy.pivot[0]*factor,happy.pivot[1]*factor]}}
@@ -28,7 +29,7 @@ export async function createCharacterMaterialRenderer(mapIndex:MaterialRigIndex,
  return{
   async carnival(pose:1|2|3,frame=0){
    carnival.clearWorldPosition();carnival.setPose(pose===1?'down-right':pose===2?'down-left':'up-right',pose!==1);carnival.setReaction(pose===1?'neutral':null)
-   if(pose!==1){carnival.setWorldPosition(0,0);for(let sample=1;sample<=frame;sample++)carnival.setWorldPosition((pose===2?-1:1)*sample*2,0)}
+   if(pose!==1){carnival.setWorldPosition(0,0,carnivalRig.artworkSamples?{x:pose===2?-1:1,y:0}:undefined);for(let sample=1;sample<=frame;sample++)carnival.setWorldPosition((pose===2?-1:1)*sample*frameStep,0)}
    carnival.update(0);return raster(carnival,new Rectangle(-70,-125,140,140))
   },
   async champion(){champion.setPose('down-right',false);champion.setReaction('neutral');champion.update(0);return raster(champion,new Rectangle(-70,-130,140,145))},

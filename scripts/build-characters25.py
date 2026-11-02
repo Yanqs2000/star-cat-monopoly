@@ -86,6 +86,17 @@ def register_part(image,pivot,density,url,axis=None):
  if axis is not None:info['axis']=[axis[0]/density,axis[1]/density]
  return image,info
 
+def reference_surface(spec,stop_at_end=False):
+ source=Image.open(REVIEW/spec['sourceMaster']).convert('RGBA');mask=polygon(source.size,spec['sourcePolygon'])
+ if stop_at_end:
+  root=spec['sourcePivot'];axis=spec['sourceAxis'];mask=stop_at_joint(mask,root,[root[0]+axis[0],root[1]+axis[1]])
+ image=masked(source,mask);box=image.getbbox();image=image.crop(box)
+ factor=spec.get('sourceScale',1);root=spec['sourcePivot'];pivot=[(root[0]-box[0])*factor,(root[1]-box[1])*factor]
+ image=image.resize((max(1,round(image.width*factor)),max(1,round(image.height*factor))),Image.Resampling.LANCZOS)
+ donor={'master':spec['sourceMaster']}
+ if 'sourceAxis'in spec:donor['axis']=[v*factor for v in spec['sourceAxis']]
+ return image,pivot,donor
+
 def polygon(size,points):
  mask=Image.new('L',size);ImageDraw.Draw(mask).polygon([tuple(p)for p in points],fill=255);return mask
 
@@ -150,14 +161,23 @@ def build_role(author):
  source=json.loads((REVIEW/'source-index.json').read_text())
  native=next(r for r in source['roles']if r['id']==cid)
  rig={k:author[k]for k in ['id','name','anatomy','density','mapAnchor','stridePx','motionScale']}
+ if 'artworkSamples'in author:rig['artworkSamples']=author['artworkSamples']
  rig['sourceSwfSha256']=native['sourceSwfSha256'];rig['facings']={};runtime=[];coverage=[]
  for index,facing in enumerate(FACINGS):
   entry=author['facings'][index];origin=entry['origin'];pose=Image.new('RGBA',master.size)
   source_view=views[entry.get('viewIndex',index)]
   rect=source_view.info['masterRect'];pose.alpha_composite(source_view,(rect[0],rect[1]))
-  actors=[];combined_mask=Image.new('L',master.size)
+  source_pose=pose;actors=[];combined_mask=Image.new('L',master.size)
   for description in entry['actors']:
+   pose=masked(source_pose,polygon(master.size,description['sourcePolygon']))if description.get('sourcePolygon')else source_pose
    actor={'id':description['id'],'joints':{},'parts':{},'head':'head','body':'body','legs':[],'arms':[],'appendages':[],'order':[]}
+   head_master=description.get('headMaster',author.get('headMaster'))
+   actor_heads=split_views(Image.open(REVIEW/head_master),*description.get('headLayout',[4,1]))if description.get('headMaster')else head_views
+   if description.get('expressionAtlasIndices') is not None:
+    atlas=split_views(Image.open(REVIEW/description['expressionMaster']),*description['expressionLayout'])
+    actor_expressions=[atlas[i]for i in description['expressionAtlasIndices']]
+   else:actor_expressions=split_expression_views(Image.open(REVIEW/description['expressionMaster']),description.get('expressionRowBounds'),description.get('expressionCellRects'))if description.get('expressionMaster')else expressions
+   neck_rows=description.get('expressionNeckRows',author.get('expressionNeckRows'))
    joints={**description['joints']};masks={};layers={}
    headmask=polygon(master.size,description['headPolygon'])
    protected=Image.new('L',master.size)
@@ -172,7 +192,7 @@ def build_role(author):
      exclusion=neutral_cloth_mask(pose);removed=ImageChops.darker(mask,exclusion)
      extra_transfers.append((extra['clothOwner'],removed));mask=ImageChops.subtract(mask,exclusion);extra_exclusions[extra['name']]=exclusion
     extras=ImageChops.lighter(extras,mask);layers[extra['name']]=(mask,extra['pivot'],extra.get('axis'))
-    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**{k:extra[k]for k in['amplitude','poseHand','maxAngle','readyProp','restAngle']if k in extra}})
+    joints[extra['followJoint']]=extra['pivot'];actor['appendages'].append({'part':extra['name'],'joint':extra['followJoint'],'kind':extra['kind'],**{k:extra[k]for k in['amplitude','phase','poseHand','maxAngle','readyProp','restAngle']if k in extra}})
    for owner,removed in extra_transfers:
     mask,pivot,axis=layers[owner];layers[owner]=(ImageChops.lighter(mask,removed),pivot,axis);extras=ImageChops.lighter(extras,removed)
    body=ImageChops.lighter(polygon(master.size,description['bodyPolygon']),protected)
@@ -280,18 +300,17 @@ def build_role(author):
      donors[extra['name']]=(image,pivot,{'master':author['appendageMaster'],'viewIndex':extra['atlasIndex']})
    for extra in description['extras']:
     if not extra.get('sourceMaster'):continue
-    source=Image.open(REVIEW/extra['sourceMaster']).convert('RGBA');image=masked(source,polygon(source.size,extra['sourcePolygon']));box=image.getbbox();image=image.crop(box)
-    factor=extra.get('sourceScale',1);root=extra['sourcePivot'];pivot=[(root[0]-box[0])*factor,(root[1]-box[1])*factor]
-    image=image.resize((max(1,round(image.width*factor)),max(1,round(image.height*factor))),Image.Resampling.LANCZOS)
-    donor={'master':extra['sourceMaster']}
-    if 'sourceAxis'in extra:donor['axis']=[v*factor for v in extra['sourceAxis']]
-    donors[extra['name']]=(image,pivot,donor)
+    donors[extra['name']]=reference_surface(extra)
+   for family,suffixes in [('legs',{'upper':'Thigh','lower':'Shin','tip':'Foot'}),('arms',{'upper':'UpperArm','lower':'Forearm','tip':'Hand'})]:
+    for limb in description[family]:
+     for segment,surface in limb.get('surfaceDonors',{}).items():donors[limb['name']+suffixes[segment]]=reference_surface(surface,segment in['upper','lower'])
+   if description.get('bodySource'):donors['body']=reference_surface(description['bodySource'])
    complete_head=None
    for name,(mask,pivot,axis)in layers.items():
     masks[name]=mask;combined_mask=ImageChops.lighter(combined_mask,mask)
     image=masked(pose,mask);url=f'{prefix}/{facing}-{actor["id"]}-{name}.webp'
-    if name=='head'and head_views:
-     source=head_views[entry.get('headAtlasIndex',index)];box=image.getbbox()
+    if name=='head'and actor_heads:
+     source=actor_heads[description.get('headAtlasIndex',entry.get('headAtlasIndex',index))];box=image.getbbox()
      factor=math.sqrt((box[2]-box[0])*(box[3]-box[1])/(source.width*source.height))
      source=source.resize((round(source.width*factor),round(source.height*factor)),Image.Resampling.LANCZOS)
      canvas=Image.new('RGBA',master.size);canvas.alpha_composite(source,(round((box[0]+box[2]-source.width)/2),box[3]-source.height));image=canvas
@@ -311,27 +330,33 @@ def build_role(author):
     packed,info=register_part(image,pivot,density,url,axis);packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
     if name in donors:info['donor']=donors[name][2]
     if name=='body'and torso_views:info['reconstructedFrom']=author['cleanTorsoMaster']
-    if name=='head'and head_views:info['reconstructedFrom']=author['headMaster']
+    if name=='head'and actor_heads:info['reconstructedFrom']=head_master
     if name in donors and 'master'in donors[name][2]:info['reconstructedFrom']=donors[name][2]['master']
     actor['parts'][name]=info;runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
+   for extra in description['extras']:
+    for expression,surface in extra.get('expressionSources',{}).items():
+     image,pivot,donor=reference_surface(surface);name=extra['name']+'-'+expression;url=f'{prefix}/{facing}-{actor["id"]}-{name}.webp'
+     packed,info=register_part(image,pivot,density,url);info['reconstructedFrom']=surface['sourceMaster'];packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
+     actor['parts'][name]=info;runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    headmask=layers['head'][0]
    canonical=complete_head if complete_head is not None else masked(pose,headmask);headbox=canonical.getbbox();neck=joints['neck']
-   if head_views and 'championHeadAtlasIndex'in entry:
-    image=head_views[entry['championHeadAtlasIndex']]
+   champion_index=description.get('championHeadAtlasIndex',entry.get('championHeadAtlasIndex'))
+   if actor_heads and champion_index is not None:
+    image=actor_heads[champion_index]
     factor=math.sqrt((headbox[2]-headbox[0])*(headbox[3]-headbox[1])/(image.width*image.height))
     image=image.resize((round(image.width*factor),round(image.height*factor)),Image.Resampling.LANCZOS)
     canvas=Image.new('RGBA',master.size);canvas.alpha_composite(image,(round((headbox[0]+headbox[2]-image.width)/2),headbox[3]-image.height))
     url=f'{prefix}/{facing}-{actor["id"]}-head-champion.webp';packed,info=register_part(canvas,neck,density,url)
-    info['reconstructedFrom']=author['headMaster'];actor['parts']['head-champion']=info;packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
+    info['reconstructedFrom']=head_master;actor['parts']['head-champion']=info;packed.save(ROOT/'public/modern'/url,lossless=True,method=6)
     runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
-   if expressions:
-    happy=expressions[index]
-    factor=math.sqrt((headbox[2]-headbox[0])/happy.width*(headbox[3]-headbox[1])/(author['expressionNeckRows'][0][index]+3))
-   for row,expression in enumerate(['happy','sad','hurt']if expressions else[]):
+   if actor_expressions:
+    happy=actor_expressions[index]
+    factor=math.sqrt((headbox[2]-headbox[0])/happy.width*(headbox[3]-headbox[1])/(neck_rows[0][index]+3))
+   for row,expression in enumerate(['happy','sad','hurt']if actor_expressions else[]):
     # Register expression sheets at their anatomical neck. All expressions in
     # a facing share one scale; extra burnt wisps do not shrink the face.
-    image=expressions[row*4+index];base=neck_base(image)
-    neck_row=author['expressionNeckRows'][row][index]
+    image=actor_expressions[row*4+index];base=neck_base(image)
+    neck_row=neck_rows[row][index]
     image=image.crop((0,0,image.width,neck_row+3))
     image=image.resize((round(image.width*factor),round(image.height*factor)),Image.Resampling.LANCZOS)
     canvas=Image.new('RGBA',master.size)
@@ -347,18 +372,20 @@ def build_role(author):
     if expression=='hurt'or facing!='up-left':info['sourceScale']=factor
     packed.save(ROOT/'public/modern'/url,lossless=True,method=6);actor['parts'][name]=info
     runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
-   actor['joints']={name:[(p[0]-origin[0])/density,(p[1]-origin[1])/density]for name,p in joints.items()}
+   actor_origin=description.get('origin',origin)
+   actor['joints']={name:[(p[0]-actor_origin[0])/density,(p[1]-actor_origin[1])/density]for name,p in joints.items()}
    arm_order=lambda front:[part for spec,limb in zip(description['arms'],actor['arms'])if spec.get('front',False)==front for part in [limb['upper'],limb['lower'],limb['tip']]if part in actor['parts']]
    front_extras={e['name']for e in description['extras']if e.get('front',False)or e.get('overHead',False)}
    over_head={e['name']for e in description['extras']if e.get('overHead',False)}
    front_flippers=[e['part']for e in actor['appendages']if e['kind']=='flipper'and e['part']in front_extras and e['part']not in over_head]
    actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+front_flippers+['head','head-expression']+[e['part']for e in actor['appendages']if e['kind']=='fixed'or(e['part']in front_extras and e['part']not in front_flippers)]
    actors.append(actor)
+  pose=source_pose
   original_alpha=np.asarray(pose.getchannel('A'));retained=np.asarray(combined_mask)>0
   missing=int(np.count_nonzero((original_alpha>128)&~retained));total=int(np.count_nonzero(original_alpha>128))
   diagnostic=pose.copy();diagnostic.putalpha(Image.fromarray(np.where(retained,0,original_alpha).astype(np.uint8)));diagnostic.save(REVIEW/f'{stem}-{facing}-unassigned.png')
   coverage.append({'facing':facing,'assignedFraction':1-missing/max(1,total),'missingPixels':missing})
-  rig['facings'][facing]={'actors':actors,'shadow':{'x':0,'y':0,'width':37,'height':12}}
+  rig['facings'][facing]={'actors':actors,**({'readyActorId':entry['readyActorId']}if 'readyActorId'in entry else{}),'shadow':{'x':0,'y':0,'width':37,'height':12}}
  result={'version':1,'status':'candidate-awaiting-user-review','activeIds':[cid],'deferredIds':[i for i in range(2,13)if i!=cid],'characters':[rig],'runtimeImages':runtime,'coverage':coverage,'generationAllowedIds':author.get('generationAllowedIds',[2])}
  (ROOT/'src/modern/data'/author.get('dataFile','characters-25.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
  (REVIEW/f'{stem}-rig.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
@@ -366,7 +393,7 @@ def build_role(author):
 
 if __name__=='__main__':
  import argparse
- parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,11,6,10,12]);parser.add_argument('--author');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,3,4,7,11,6,10,12]);parser.add_argument('--author');args=parser.parse_args()
  author=json.loads((REVIEW/(args.author or f'role-{args.role:02d}-authoring.json')).read_text())
  if author['id']!=args.role:raise ValueError('authoring identity must match the selected role')
  result=build_role(author)

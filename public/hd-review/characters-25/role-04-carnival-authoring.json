@@ -1,0 +1,4104 @@
+{
+  "id": 4,
+  "name": "佳佳",
+  "anatomy": "crab",
+  "neutralMaster": "masters/role-04-activity-master-r1.png",
+  "headMaster": "masters/role-04-activity-parts-r1.png",
+  "headLayout": [
+    4,
+    2
+  ],
+  "layout": [
+    4,
+    1
+  ],
+  "density": 7,
+  "stridePx": 18,
+  "artworkSamples": 72,
+  "motionScale": 0.5,
+  "mapAnchor": [
+    28,
+    20
+  ],
+  "dataFile": "jiajia-carnival.json",
+  "outputStem": "role-04-carnival",
+  "generationAllowedIds": [
+    3,
+    4,
+    7
+  ],
+  "edgeAlphaThreshold": 8,
+  "handsMayOverlapBody": true,
+  "facings": [
+    {
+      "origin": [
+        342,
+        630
+      ],
+      "viewIndex": 0,
+      "headAtlasIndex": 0,
+      "actors": [
+        {
+          "id": "main",
+          "headAtlasIndex": 0,
+          "joints": {
+            "neck": [
+              344.6875,
+              398.25
+            ],
+            "spine": [
+              344.6875,
+              398.25
+            ]
+          },
+          "headPolygon": [
+            [
+              181,
+              392
+            ],
+            [
+              194,
+              332
+            ],
+            [
+              231,
+              283
+            ],
+            [
+              283,
+              253
+            ],
+            [
+              345,
+              243
+            ],
+            [
+              409,
+              255
+            ],
+            [
+              460,
+              285
+            ],
+            [
+              490,
+              334
+            ],
+            [
+              502,
+              399
+            ],
+            [
+              489,
+              463
+            ],
+            [
+              458,
+              512
+            ],
+            [
+              411,
+              542
+            ],
+            [
+              349,
+              555
+            ],
+            [
+              285,
+              545
+            ],
+            [
+              232,
+              517
+            ],
+            [
+              196,
+              462
+            ]
+          ],
+          "protectedPolygons": [
+            [
+              [
+                341.6875,
+                395.25
+              ],
+              [
+                347.6875,
+                395.25
+              ],
+              [
+                347.6875,
+                401.25
+              ],
+              [
+                341.6875,
+                401.25
+              ]
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              341.6875,
+              395.25
+            ],
+            [
+              347.6875,
+              395.25
+            ],
+            [
+              347.6875,
+              401.25
+            ],
+            [
+              341.6875,
+              401.25
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                255,
+                527
+              ],
+              "knee": [
+                246,
+                548
+              ],
+              "ankle": [
+                224,
+                578
+              ],
+              "radius": 22,
+              "footBox": [
+                145,
+                539,
+                305,
+                638
+              ],
+              "footPolygon": [
+                [
+                  145,
+                  539
+                ],
+                [
+                  305,
+                  539
+                ],
+                [
+                  305,
+                  638
+                ],
+                [
+                  145,
+                  638
+                ]
+              ],
+              "phase": 0.0,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.12692320576275642
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.20666828059694012
+                }
+              },
+              "footAtlasIndex": 0
+            },
+            {
+              "name": "right",
+              "hip": [
+                426,
+                527
+              ],
+              "knee": [
+                436,
+                548
+              ],
+              "ankle": [
+                452,
+                578
+              ],
+              "radius": 22,
+              "footBox": [
+                373,
+                539,
+                529,
+                638
+              ],
+              "footPolygon": [
+                [
+                  373,
+                  539
+                ],
+                [
+                  529,
+                  539
+                ],
+                [
+                  529,
+                  638
+                ],
+                [
+                  373,
+                  638
+                ]
+              ],
+              "phase": 0.5,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.12921246564503647
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.18887944515271876
+                }
+              },
+              "footAtlasIndex": 4
+            }
+          ],
+          "arms": [],
+          "extras": [
+            {
+              "name": "eye0",
+              "polygon": [
+                [
+                  193,
+                  108
+                ],
+                [
+                  315,
+                  108
+                ],
+                [
+                  315,
+                  275
+                ],
+                [
+                  193,
+                  275
+                ]
+              ],
+              "pivot": [
+                273,
+                283
+              ],
+              "followJoint": "eye0",
+              "kind": "tail",
+              "amplitude": 0.01,
+              "phase": 0.0,
+              "overHead": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  193,
+                  108
+                ],
+                [
+                  315,
+                  108
+                ],
+                [
+                  315,
+                  233
+                ],
+                [
+                  287,
+                  233
+                ],
+                [
+                  290,
+                  270
+                ],
+                [
+                  259,
+                  270
+                ],
+                [
+                  247,
+                  235
+                ],
+                [
+                  193,
+                  235
+                ]
+              ],
+              "sourcePivot": [
+                273,
+                262
+              ]
+            },
+            {
+              "name": "eye1",
+              "polygon": [
+                [
+                  373,
+                  109
+                ],
+                [
+                  491,
+                  109
+                ],
+                [
+                  491,
+                  274
+                ],
+                [
+                  373,
+                  274
+                ]
+              ],
+              "pivot": [
+                414,
+                283
+              ],
+              "followJoint": "eye1",
+              "kind": "tail",
+              "amplitude": 0.01,
+              "phase": 0.5,
+              "overHead": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  373,
+                  109
+                ],
+                [
+                  491,
+                  109
+                ],
+                [
+                  491,
+                  233
+                ],
+                [
+                  441,
+                  233
+                ],
+                [
+                  430,
+                  271
+                ],
+                [
+                  397,
+                  271
+                ],
+                [
+                  405,
+                  234
+                ],
+                [
+                  373,
+                  234
+                ]
+              ],
+              "sourcePivot": [
+                414,
+                262
+              ]
+            },
+            {
+              "name": "claw0",
+              "polygon": [
+                [
+                  34,
+                  177
+                ],
+                [
+                  174,
+                  177
+                ],
+                [
+                  203,
+                  243
+                ],
+                [
+                  213,
+                  302
+                ],
+                [
+                  224,
+                  318
+                ],
+                [
+                  207,
+                  352
+                ],
+                [
+                  172,
+                  350
+                ],
+                [
+                  151,
+                  335
+                ],
+                [
+                  55,
+                  333
+                ],
+                [
+                  33,
+                  277
+                ]
+              ],
+              "pivot": [
+                198,
+                328
+              ],
+              "followJoint": "claw0",
+              "axis": [
+                -91,
+                -80
+              ],
+              "kind": "flipper",
+              "poseHand": "leftHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.0,
+              "front": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  34,
+                  177
+                ],
+                [
+                  174,
+                  177
+                ],
+                [
+                  203,
+                  243
+                ],
+                [
+                  213,
+                  302
+                ],
+                [
+                  224,
+                  318
+                ],
+                [
+                  207,
+                  352
+                ],
+                [
+                  172,
+                  350
+                ],
+                [
+                  151,
+                  335
+                ],
+                [
+                  55,
+                  333
+                ],
+                [
+                  33,
+                  277
+                ]
+              ],
+              "sourcePivot": [
+                198,
+                328
+              ],
+              "sourceAxis": [
+                -91,
+                -80
+              ],
+              "sourceScale": 1
+            },
+            {
+              "name": "claw1",
+              "polygon": [
+                [
+                  475,
+                  174
+                ],
+                [
+                  649,
+                  174
+                ],
+                [
+                  649,
+                  303
+                ],
+                [
+                  532,
+                  344
+                ],
+                [
+                  501,
+                  353
+                ],
+                [
+                  473,
+                  323
+                ]
+              ],
+              "pivot": [
+                488,
+                328
+              ],
+              "followJoint": "claw1",
+              "axis": [
+                89,
+                -80
+              ],
+              "kind": "flipper",
+              "poseHand": "rightHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.5,
+              "front": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  475,
+                  174
+                ],
+                [
+                  649,
+                  174
+                ],
+                [
+                  649,
+                  303
+                ],
+                [
+                  532,
+                  344
+                ],
+                [
+                  501,
+                  353
+                ],
+                [
+                  473,
+                  323
+                ]
+              ],
+              "sourcePivot": [
+                488,
+                328
+              ],
+              "sourceAxis": [
+                89,
+                -80
+              ],
+              "sourceScale": 1
+            },
+            {
+              "name": "sideLeg0",
+              "polygon": [
+                [
+                  106,
+                  375
+                ],
+                [
+                  197,
+                  375
+                ],
+                [
+                  197,
+                  441
+                ],
+                [
+                  106,
+                  441
+                ]
+              ],
+              "pivot": [
+                185,
+                395
+              ],
+              "followJoint": "sideLeg0",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg1",
+              "polygon": [
+                [
+                  128,
+                  430
+                ],
+                [
+                  209,
+                  430
+                ],
+                [
+                  209,
+                  504
+                ],
+                [
+                  128,
+                  504
+                ]
+              ],
+              "pivot": [
+                198,
+                449
+              ],
+              "followJoint": "sideLeg1",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg2",
+              "polygon": [
+                [
+                  158,
+                  479
+                ],
+                [
+                  232,
+                  479
+                ],
+                [
+                  232,
+                  550
+                ],
+                [
+                  158,
+                  550
+                ]
+              ],
+              "pivot": [
+                221,
+                496
+              ],
+              "followJoint": "sideLeg2",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg3",
+              "polygon": [
+                [
+                  488,
+                  375
+                ],
+                [
+                  571,
+                  375
+                ],
+                [
+                  571,
+                  442
+                ],
+                [
+                  488,
+                  442
+                ]
+              ],
+              "pivot": [
+                494,
+                395
+              ],
+              "followJoint": "sideLeg3",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": true,
+              "restAngle": -1.5909632737927009,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg4",
+              "polygon": [
+                [
+                  478,
+                  429
+                ],
+                [
+                  557,
+                  429
+                ],
+                [
+                  557,
+                  503
+                ],
+                [
+                  478,
+                  503
+                ]
+              ],
+              "pivot": [
+                484,
+                449
+              ],
+              "followJoint": "sideLeg4",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": -1.5909632737927009,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg5",
+              "polygon": [
+                [
+                  454,
+                  479
+                ],
+                [
+                  520,
+                  479
+                ],
+                [
+                  520,
+                  550
+                ],
+                [
+                  454,
+                  550
+                ]
+              ],
+              "pivot": [
+                469,
+                496
+              ],
+              "followJoint": "sideLeg5",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": true,
+              "restAngle": -1.5909632737927009,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "origin": [
+        888,
+        632
+      ],
+      "viewIndex": 1,
+      "headAtlasIndex": 1,
+      "actors": [
+        {
+          "id": "main",
+          "headAtlasIndex": 1,
+          "joints": {
+            "neck": [
+              897.8125,
+              399.8125
+            ],
+            "spine": [
+              897.8125,
+              399.8125
+            ]
+          },
+          "headPolygon": [
+            [
+              768,
+              375
+            ],
+            [
+              784,
+              319
+            ],
+            [
+              816,
+              272
+            ],
+            [
+              861,
+              244
+            ],
+            [
+              918,
+              241
+            ],
+            [
+              971,
+              266
+            ],
+            [
+              1008,
+              311
+            ],
+            [
+              1032,
+              369
+            ],
+            [
+              1041,
+              432
+            ],
+            [
+              1020,
+              490
+            ],
+            [
+              983,
+              532
+            ],
+            [
+              927,
+              555
+            ],
+            [
+              868,
+              552
+            ],
+            [
+              817,
+              525
+            ],
+            [
+              784,
+              483
+            ],
+            [
+              767,
+              431
+            ]
+          ],
+          "protectedPolygons": [
+            [
+              [
+                894.8125,
+                396.8125
+              ],
+              [
+                900.8125,
+                396.8125
+              ],
+              [
+                900.8125,
+                402.8125
+              ],
+              [
+                894.8125,
+                402.8125
+              ]
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              894.8125,
+              396.8125
+            ],
+            [
+              900.8125,
+              396.8125
+            ],
+            [
+              900.8125,
+              402.8125
+            ],
+            [
+              894.8125,
+              402.8125
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                938,
+                533
+              ],
+              "knee": [
+                941,
+                549
+              ],
+              "ankle": [
+                946,
+                576
+              ],
+              "radius": 22,
+              "footBox": [
+                912,
+                541,
+                990,
+                621
+              ],
+              "footPolygon": [
+                [
+                  948,
+                  541
+                ],
+                [
+                  990,
+                  541
+                ],
+                [
+                  990,
+                  621
+                ],
+                [
+                  948,
+                  621
+                ]
+              ],
+              "phase": 0.0,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.09043337064505774
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.15254270880796159
+                }
+              },
+              "footAtlasIndex": 1
+            },
+            {
+              "name": "right",
+              "hip": [
+                882,
+                536
+              ],
+              "knee": [
+                880,
+                556
+              ],
+              "ankle": [
+                875,
+                582
+              ],
+              "radius": 22,
+              "footBox": [
+                786,
+                545,
+                960,
+                641
+              ],
+              "footPolygon": [
+                [
+                  786,
+                  545
+                ],
+                [
+                  948,
+                  545
+                ],
+                [
+                  948,
+                  641
+                ],
+                [
+                  786,
+                  641
+                ]
+              ],
+              "phase": 0.5,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.11165970183359698
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.1470837826044234
+                }
+              },
+              "footAtlasIndex": 5
+            }
+          ],
+          "arms": [],
+          "extras": [
+            {
+              "name": "eye0",
+              "polygon": [
+                [
+                  783,
+                  85
+                ],
+                [
+                  947,
+                  85
+                ],
+                [
+                  947,
+                  257
+                ],
+                [
+                  783,
+                  257
+                ]
+              ],
+              "pivot": [
+                874,
+                272
+              ],
+              "followJoint": "eye0",
+              "kind": "tail",
+              "amplitude": 0.01,
+              "phase": 0.0,
+              "overHead": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  783,
+                  85
+                ],
+                [
+                  947,
+                  85
+                ],
+                [
+                  947,
+                  215
+                ],
+                [
+                  914,
+                  215
+                ],
+                [
+                  914,
+                  248
+                ],
+                [
+                  849,
+                  248
+                ],
+                [
+                  849,
+                  218
+                ],
+                [
+                  783,
+                  218
+                ]
+              ],
+              "sourcePivot": [
+                874,
+                247
+              ]
+            },
+            {
+              "name": "claw0",
+              "polygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "pivot": [
+                916,
+                352
+              ],
+              "followJoint": "claw0",
+              "axis": [
+                -118,
+                -122
+              ],
+              "kind": "flipper",
+              "poseHand": "leftHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.0,
+              "front": false,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "sourcePivot": [
+                900,
+                366
+              ],
+              "sourceAxis": [
+                -118,
+                -122
+              ],
+              "sourceScale": 0.82
+            },
+            {
+              "name": "claw1",
+              "polygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "pivot": [
+                900,
+                366
+              ],
+              "followJoint": "claw1",
+              "axis": [
+                -118,
+                -122
+              ],
+              "kind": "flipper",
+              "poseHand": "rightHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.5,
+              "front": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "sourcePivot": [
+                900,
+                366
+              ],
+              "sourceAxis": [
+                -118,
+                -122
+              ],
+              "sourceScale": 1
+            },
+            {
+              "name": "sideLeg0",
+              "polygon": [
+                [
+                  847,
+                  419
+                ],
+                [
+                  948,
+                  419
+                ],
+                [
+                  948,
+                  486
+                ],
+                [
+                  847,
+                  486
+                ]
+              ],
+              "pivot": [
+                891,
+                434
+              ],
+              "followJoint": "sideLeg0",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg1",
+              "polygon": [
+                [
+                  851,
+                  475
+                ],
+                [
+                  952,
+                  475
+                ],
+                [
+                  952,
+                  550
+                ],
+                [
+                  851,
+                  550
+                ]
+              ],
+              "pivot": [
+                897,
+                490
+              ],
+              "followJoint": "sideLeg1",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg2",
+              "polygon": [
+                [
+                  854,
+                  538
+                ],
+                [
+                  873,
+                  538
+                ],
+                [
+                  873,
+                  550
+                ],
+                [
+                  854,
+                  550
+                ]
+              ],
+              "pivot": [
+                909,
+                536
+              ],
+              "followJoint": "sideLeg2",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg3",
+              "polygon": [
+                [
+                  855,
+                  420
+                ],
+                [
+                  868,
+                  420
+                ],
+                [
+                  868,
+                  432
+                ],
+                [
+                  855,
+                  432
+                ]
+              ],
+              "pivot": [
+                940,
+                410
+              ],
+              "followJoint": "sideLeg3",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": false,
+              "restAngle": 0,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg4",
+              "polygon": [
+                [
+                  866,
+                  480
+                ],
+                [
+                  881,
+                  480
+                ],
+                [
+                  881,
+                  496
+                ],
+                [
+                  866,
+                  496
+                ]
+              ],
+              "pivot": [
+                940,
+                450
+              ],
+              "followJoint": "sideLeg4",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": false,
+              "restAngle": 0,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg5",
+              "polygon": [
+                [
+                  875,
+                  535
+                ],
+                [
+                  889,
+                  535
+                ],
+                [
+                  889,
+                  548
+                ],
+                [
+                  875,
+                  548
+                ]
+              ],
+              "pivot": [
+                940,
+                490
+              ],
+              "followJoint": "sideLeg5",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": false,
+              "restAngle": 0,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "origin": [
+        888,
+        632
+      ],
+      "viewIndex": 1,
+      "headAtlasIndex": 1,
+      "actors": [
+        {
+          "id": "main",
+          "headAtlasIndex": 1,
+          "joints": {
+            "neck": [
+              897.8125,
+              399.8125
+            ],
+            "spine": [
+              897.8125,
+              399.8125
+            ]
+          },
+          "headPolygon": [
+            [
+              768,
+              375
+            ],
+            [
+              784,
+              319
+            ],
+            [
+              816,
+              272
+            ],
+            [
+              861,
+              244
+            ],
+            [
+              918,
+              241
+            ],
+            [
+              971,
+              266
+            ],
+            [
+              1008,
+              311
+            ],
+            [
+              1032,
+              369
+            ],
+            [
+              1041,
+              432
+            ],
+            [
+              1020,
+              490
+            ],
+            [
+              983,
+              532
+            ],
+            [
+              927,
+              555
+            ],
+            [
+              868,
+              552
+            ],
+            [
+              817,
+              525
+            ],
+            [
+              784,
+              483
+            ],
+            [
+              767,
+              431
+            ]
+          ],
+          "protectedPolygons": [
+            [
+              [
+                894.8125,
+                396.8125
+              ],
+              [
+                900.8125,
+                396.8125
+              ],
+              [
+                900.8125,
+                402.8125
+              ],
+              [
+                894.8125,
+                402.8125
+              ]
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              894.8125,
+              396.8125
+            ],
+            [
+              900.8125,
+              396.8125
+            ],
+            [
+              900.8125,
+              402.8125
+            ],
+            [
+              894.8125,
+              402.8125
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                938,
+                533
+              ],
+              "knee": [
+                941,
+                549
+              ],
+              "ankle": [
+                946,
+                576
+              ],
+              "radius": 22,
+              "footBox": [
+                912,
+                541,
+                990,
+                621
+              ],
+              "footPolygon": [
+                [
+                  948,
+                  541
+                ],
+                [
+                  990,
+                  541
+                ],
+                [
+                  990,
+                  621
+                ],
+                [
+                  948,
+                  621
+                ]
+              ],
+              "phase": 0.0,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.09043337064505774
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.15254270880796159
+                }
+              },
+              "footAtlasIndex": 1
+            },
+            {
+              "name": "right",
+              "hip": [
+                882,
+                536
+              ],
+              "knee": [
+                880,
+                556
+              ],
+              "ankle": [
+                875,
+                582
+              ],
+              "radius": 22,
+              "footBox": [
+                786,
+                545,
+                960,
+                641
+              ],
+              "footPolygon": [
+                [
+                  786,
+                  545
+                ],
+                [
+                  948,
+                  545
+                ],
+                [
+                  948,
+                  641
+                ],
+                [
+                  786,
+                  641
+                ]
+              ],
+              "phase": 0.5,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.11165970183359698
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.1470837826044234
+                }
+              },
+              "footAtlasIndex": 5
+            }
+          ],
+          "arms": [],
+          "extras": [
+            {
+              "name": "eye0",
+              "polygon": [
+                [
+                  783,
+                  85
+                ],
+                [
+                  947,
+                  85
+                ],
+                [
+                  947,
+                  257
+                ],
+                [
+                  783,
+                  257
+                ]
+              ],
+              "pivot": [
+                874,
+                272
+              ],
+              "followJoint": "eye0",
+              "kind": "tail",
+              "amplitude": 0.01,
+              "phase": 0.0,
+              "overHead": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  783,
+                  85
+                ],
+                [
+                  947,
+                  85
+                ],
+                [
+                  947,
+                  215
+                ],
+                [
+                  914,
+                  215
+                ],
+                [
+                  914,
+                  248
+                ],
+                [
+                  849,
+                  248
+                ],
+                [
+                  849,
+                  218
+                ],
+                [
+                  783,
+                  218
+                ]
+              ],
+              "sourcePivot": [
+                874,
+                247
+              ]
+            },
+            {
+              "name": "claw0",
+              "polygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "pivot": [
+                916,
+                352
+              ],
+              "followJoint": "claw0",
+              "axis": [
+                -118,
+                -122
+              ],
+              "kind": "flipper",
+              "poseHand": "leftHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.0,
+              "front": false,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "sourcePivot": [
+                900,
+                366
+              ],
+              "sourceAxis": [
+                -118,
+                -122
+              ],
+              "sourceScale": 0.82
+            },
+            {
+              "name": "claw1",
+              "polygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "pivot": [
+                900,
+                366
+              ],
+              "followJoint": "claw1",
+              "axis": [
+                -118,
+                -122
+              ],
+              "kind": "flipper",
+              "poseHand": "rightHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.5,
+              "front": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  687,
+                  180
+                ],
+                [
+                  833,
+                  180
+                ],
+                [
+                  861,
+                  249
+                ],
+                [
+                  856,
+                  302
+                ],
+                [
+                  922,
+                  330
+                ],
+                [
+                  944,
+                  359
+                ],
+                [
+                  931,
+                  399
+                ],
+                [
+                  873,
+                  403
+                ],
+                [
+                  824,
+                  353
+                ],
+                [
+                  710,
+                  338
+                ],
+                [
+                  685,
+                  289
+                ]
+              ],
+              "sourcePivot": [
+                900,
+                366
+              ],
+              "sourceAxis": [
+                -118,
+                -122
+              ],
+              "sourceScale": 1
+            },
+            {
+              "name": "sideLeg0",
+              "polygon": [
+                [
+                  847,
+                  419
+                ],
+                [
+                  948,
+                  419
+                ],
+                [
+                  948,
+                  486
+                ],
+                [
+                  847,
+                  486
+                ]
+              ],
+              "pivot": [
+                891,
+                434
+              ],
+              "followJoint": "sideLeg0",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg1",
+              "polygon": [
+                [
+                  851,
+                  475
+                ],
+                [
+                  952,
+                  475
+                ],
+                [
+                  952,
+                  550
+                ],
+                [
+                  851,
+                  550
+                ]
+              ],
+              "pivot": [
+                897,
+                490
+              ],
+              "followJoint": "sideLeg1",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg2",
+              "polygon": [
+                [
+                  854,
+                  538
+                ],
+                [
+                  873,
+                  538
+                ],
+                [
+                  873,
+                  550
+                ],
+                [
+                  854,
+                  550
+                ]
+              ],
+              "pivot": [
+                909,
+                536
+              ],
+              "followJoint": "sideLeg2",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg3",
+              "polygon": [
+                [
+                  855,
+                  420
+                ],
+                [
+                  868,
+                  420
+                ],
+                [
+                  868,
+                  432
+                ],
+                [
+                  855,
+                  432
+                ]
+              ],
+              "pivot": [
+                940,
+                410
+              ],
+              "followJoint": "sideLeg3",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": false,
+              "restAngle": 0,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg4",
+              "polygon": [
+                [
+                  866,
+                  480
+                ],
+                [
+                  881,
+                  480
+                ],
+                [
+                  881,
+                  496
+                ],
+                [
+                  866,
+                  496
+                ]
+              ],
+              "pivot": [
+                940,
+                450
+              ],
+              "followJoint": "sideLeg4",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": false,
+              "restAngle": 0,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg5",
+              "polygon": [
+                [
+                  875,
+                  535
+                ],
+                [
+                  889,
+                  535
+                ],
+                [
+                  889,
+                  548
+                ],
+                [
+                  875,
+                  548
+                ]
+              ],
+              "pivot": [
+                940,
+                490
+              ],
+              "followJoint": "sideLeg5",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": false,
+              "restAngle": 0,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "origin": [
+        1317,
+        632
+      ],
+      "viewIndex": 2,
+      "headAtlasIndex": 2,
+      "actors": [
+        {
+          "id": "main",
+          "headAtlasIndex": 2,
+          "joints": {
+            "neck": [
+              1299.875,
+              397.6875
+            ],
+            "spine": [
+              1299.875,
+              397.6875
+            ]
+          },
+          "headPolygon": [
+            [
+              1168,
+              386
+            ],
+            [
+              1180,
+              328
+            ],
+            [
+              1216,
+              282
+            ],
+            [
+              1268,
+              251
+            ],
+            [
+              1321,
+              240
+            ],
+            [
+              1371,
+              258
+            ],
+            [
+              1405,
+              300
+            ],
+            [
+              1432,
+              356
+            ],
+            [
+              1440,
+              415
+            ],
+            [
+              1420,
+              479
+            ],
+            [
+              1382,
+              526
+            ],
+            [
+              1332,
+              552
+            ],
+            [
+              1279,
+              551
+            ],
+            [
+              1226,
+              526
+            ],
+            [
+              1188,
+              479
+            ],
+            [
+              1170,
+              434
+            ]
+          ],
+          "protectedPolygons": [
+            [
+              [
+                1296.875,
+                394.6875
+              ],
+              [
+                1302.875,
+                394.6875
+              ],
+              [
+                1302.875,
+                400.6875
+              ],
+              [
+                1296.875,
+                400.6875
+              ]
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              1296.875,
+              394.6875
+            ],
+            [
+              1302.875,
+              394.6875
+            ],
+            [
+              1302.875,
+              400.6875
+            ],
+            [
+              1296.875,
+              400.6875
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                1259,
+                533
+              ],
+              "knee": [
+                1256,
+                549
+              ],
+              "ankle": [
+                1250,
+                576
+              ],
+              "radius": 22,
+              "footBox": [
+                1212,
+                541,
+                1294,
+                620
+              ],
+              "footPolygon": [
+                [
+                  1212,
+                  541
+                ],
+                [
+                  1265,
+                  541
+                ],
+                [
+                  1265,
+                  620
+                ],
+                [
+                  1212,
+                  620
+                ]
+              ],
+              "phase": 0.0,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.09043337064505774
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.1536513919106739
+                }
+              },
+              "footAtlasIndex": 3
+            },
+            {
+              "name": "right",
+              "hip": [
+                1318,
+                536
+              ],
+              "knee": [
+                1320,
+                556
+              ],
+              "ankle": [
+                1327,
+                582
+              ],
+              "radius": 22,
+              "footBox": [
+                1247,
+                544,
+                1416,
+                643
+              ],
+              "footPolygon": [
+                [
+                  1265,
+                  544
+                ],
+                [
+                  1416,
+                  544
+                ],
+                [
+                  1416,
+                  643
+                ],
+                [
+                  1265,
+                  643
+                ]
+              ],
+              "phase": 0.5,
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.11165970183359698
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-04-activity-parts-r1.png",
+                  "sourcePolygon": [
+                    [
+                      132,
+                      598
+                    ],
+                    [
+                      360,
+                      598
+                    ],
+                    [
+                      360,
+                      793
+                    ],
+                    [
+                      132,
+                      793
+                    ]
+                  ],
+                  "sourcePivot": [
+                    177.6,
+                    637.0
+                  ],
+                  "sourceAxis": [
+                    136.79999999999998,
+                    117.0
+                  ],
+                  "sourceScale": 0.14958043247463426
+                }
+              },
+              "footAtlasIndex": 7
+            }
+          ],
+          "arms": [],
+          "extras": [
+            {
+              "name": "eye0",
+              "polygon": [
+                [
+                  1264,
+                  85
+                ],
+                [
+                  1431,
+                  85
+                ],
+                [
+                  1431,
+                  256
+                ],
+                [
+                  1264,
+                  256
+                ]
+              ],
+              "pivot": [
+                1330,
+                272
+              ],
+              "followJoint": "eye0",
+              "kind": "tail",
+              "amplitude": 0.01,
+              "phase": 0.0,
+              "overHead": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  1264,
+                  85
+                ],
+                [
+                  1431,
+                  85
+                ],
+                [
+                  1431,
+                  217
+                ],
+                [
+                  1378,
+                  217
+                ],
+                [
+                  1378,
+                  248
+                ],
+                [
+                  1290,
+                  248
+                ],
+                [
+                  1290,
+                  216
+                ],
+                [
+                  1264,
+                  216
+                ]
+              ],
+              "sourcePivot": [
+                1330,
+                246
+              ]
+            },
+            {
+              "name": "claw0",
+              "polygon": [
+                [
+                  1262,
+                  329
+                ],
+                [
+                  1331,
+                  327
+                ],
+                [
+                  1355,
+                  312
+                ],
+                [
+                  1366,
+                  248
+                ],
+                [
+                  1384,
+                  180
+                ],
+                [
+                  1508,
+                  180
+                ],
+                [
+                  1533,
+                  256
+                ],
+                [
+                  1523,
+                  314
+                ],
+                [
+                  1457,
+                  345
+                ],
+                [
+                  1400,
+                  349
+                ],
+                [
+                  1362,
+                  396
+                ],
+                [
+                  1302,
+                  402
+                ],
+                [
+                  1263,
+                  383
+                ]
+              ],
+              "pivot": [
+                1294,
+                353
+              ],
+              "followJoint": "claw0",
+              "axis": [
+                118,
+                -122
+              ],
+              "kind": "flipper",
+              "poseHand": "leftHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.0,
+              "front": false,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  1262,
+                  329
+                ],
+                [
+                  1331,
+                  327
+                ],
+                [
+                  1355,
+                  312
+                ],
+                [
+                  1366,
+                  248
+                ],
+                [
+                  1384,
+                  180
+                ],
+                [
+                  1508,
+                  180
+                ],
+                [
+                  1533,
+                  256
+                ],
+                [
+                  1523,
+                  314
+                ],
+                [
+                  1457,
+                  345
+                ],
+                [
+                  1400,
+                  349
+                ],
+                [
+                  1362,
+                  396
+                ],
+                [
+                  1302,
+                  402
+                ],
+                [
+                  1263,
+                  383
+                ]
+              ],
+              "sourcePivot": [
+                1310,
+                367
+              ],
+              "sourceAxis": [
+                118,
+                -122
+              ],
+              "sourceScale": 0.82
+            },
+            {
+              "name": "claw1",
+              "polygon": [
+                [
+                  1262,
+                  329
+                ],
+                [
+                  1331,
+                  327
+                ],
+                [
+                  1355,
+                  312
+                ],
+                [
+                  1366,
+                  248
+                ],
+                [
+                  1384,
+                  180
+                ],
+                [
+                  1508,
+                  180
+                ],
+                [
+                  1533,
+                  256
+                ],
+                [
+                  1523,
+                  314
+                ],
+                [
+                  1457,
+                  345
+                ],
+                [
+                  1400,
+                  349
+                ],
+                [
+                  1362,
+                  396
+                ],
+                [
+                  1302,
+                  402
+                ],
+                [
+                  1263,
+                  383
+                ]
+              ],
+              "pivot": [
+                1310,
+                367
+              ],
+              "followJoint": "claw1",
+              "axis": [
+                118,
+                -122
+              ],
+              "kind": "flipper",
+              "poseHand": "rightHand",
+              "maxAngle": 0.45,
+              "amplitude": 0.025,
+              "phase": 0.5,
+              "front": true,
+              "sourceMaster": "masters/role-04-activity-master-r1.png",
+              "sourcePolygon": [
+                [
+                  1262,
+                  329
+                ],
+                [
+                  1331,
+                  327
+                ],
+                [
+                  1355,
+                  312
+                ],
+                [
+                  1366,
+                  248
+                ],
+                [
+                  1384,
+                  180
+                ],
+                [
+                  1508,
+                  180
+                ],
+                [
+                  1533,
+                  256
+                ],
+                [
+                  1523,
+                  314
+                ],
+                [
+                  1457,
+                  345
+                ],
+                [
+                  1400,
+                  349
+                ],
+                [
+                  1362,
+                  396
+                ],
+                [
+                  1302,
+                  402
+                ],
+                [
+                  1263,
+                  383
+                ]
+              ],
+              "sourcePivot": [
+                1310,
+                367
+              ],
+              "sourceAxis": [
+                118,
+                -122
+              ],
+              "sourceScale": 1
+            },
+            {
+              "name": "sideLeg0",
+              "polygon": [
+                [
+                  1249,
+                  415
+                ],
+                [
+                  1352,
+                  415
+                ],
+                [
+                  1352,
+                  486
+                ],
+                [
+                  1249,
+                  486
+                ]
+              ],
+              "pivot": [
+                1305,
+                434
+              ],
+              "followJoint": "sideLeg0",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg1",
+              "polygon": [
+                [
+                  1243,
+                  473
+                ],
+                [
+                  1352,
+                  473
+                ],
+                [
+                  1352,
+                  551
+                ],
+                [
+                  1243,
+                  551
+                ]
+              ],
+              "pivot": [
+                1299,
+                490
+              ],
+              "followJoint": "sideLeg1",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg2",
+              "polygon": [
+                [
+                  1349,
+                  534
+                ],
+                [
+                  1364,
+                  534
+                ],
+                [
+                  1364,
+                  550
+                ],
+                [
+                  1349,
+                  550
+                ]
+              ],
+              "pivot": [
+                1286,
+                536
+              ],
+              "followJoint": "sideLeg2",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": true,
+              "restAngle": 1.5978491122796439,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  132,
+                  598
+                ],
+                [
+                  360,
+                  598
+                ],
+                [
+                  360,
+                  793
+                ],
+                [
+                  132,
+                  793
+                ]
+              ],
+              "sourcePivot": [
+                177.6,
+                637.0
+              ],
+              "sourceAxis": [
+                136.79999999999998,
+                117.0
+              ],
+              "sourceScale": 0.23206171469549924
+            },
+            {
+              "name": "sideLeg3",
+              "polygon": [
+                [
+                  1344,
+                  418
+                ],
+                [
+                  1355,
+                  418
+                ],
+                [
+                  1355,
+                  434
+                ],
+                [
+                  1344,
+                  434
+                ]
+              ],
+              "pivot": [
+                1267,
+                410
+              ],
+              "followJoint": "sideLeg3",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": false,
+              "restAngle": -0.5,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg4",
+              "polygon": [
+                [
+                  1353,
+                  480
+                ],
+                [
+                  1366,
+                  480
+                ],
+                [
+                  1366,
+                  495
+                ],
+                [
+                  1353,
+                  495
+                ]
+              ],
+              "pivot": [
+                1267,
+                450
+              ],
+              "followJoint": "sideLeg4",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.0,
+              "front": false,
+              "restAngle": -0.5,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            },
+            {
+              "name": "sideLeg5",
+              "polygon": [
+                [
+                  1365,
+                  534
+                ],
+                [
+                  1378,
+                  534
+                ],
+                [
+                  1378,
+                  550
+                ],
+                [
+                  1365,
+                  550
+                ]
+              ],
+              "pivot": [
+                1267,
+                490
+              ],
+              "followJoint": "sideLeg5",
+              "kind": "tail",
+              "amplitude": 0.13,
+              "phase": 0.5,
+              "front": false,
+              "restAngle": -0.5,
+              "sourceMaster": "masters/role-04-activity-parts-r1.png",
+              "sourcePolygon": [
+                [
+                  977,
+                  599
+                ],
+                [
+                  1203,
+                  599
+                ],
+                [
+                  1203,
+                  795
+                ],
+                [
+                  977,
+                  795
+                ]
+              ],
+              "sourcePivot": [
+                1157.8,
+                638.2
+              ],
+              "sourceAxis": [
+                -135.6,
+                117.6
+              ],
+              "sourceScale": 0.23273106574603256
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footMaster": "masters/role-04-feet-atlas-r1.png"
+}

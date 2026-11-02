@@ -3,7 +3,7 @@ import type{Facing}from'./assets'
 import{character25DurationMs,type Character25Action}from'./characters-25-motion'
 import{sampleCharacter25Rig}from'./characters-25-pose'
 import type{Character25Rig,Part25}from'./characters-25-types'
-import{Character25Contacts,type ContactDefinition25}from'./characters-25-contacts'
+import{Character25Contacts,Character25PairContacts,type ContactDefinition25}from'./characters-25-contacts'
 
 /** Data-driven actors: paired children, footed creatures and floating bodies. */
 export class Character25Player{
@@ -18,7 +18,7 @@ export class Character25Player{
  private shadow=new Graphics()
  private prop=new Graphics()
  private locomotion:{position:{x:number;y:number};direction:{x:number;y:number};distance:number}|null=null
- private contacts:Character25Contacts|undefined
+ private contacts:Character25Contacts|Character25PairContacts|undefined
  private virtualRoot={x:0,y:0}
  private bodyDistance=0
  private floatingElapsed=0
@@ -31,6 +31,8 @@ export class Character25Player{
  constructor(private readonly rig:Character25Rig,private readonly textures:Map<string,Texture>,mapPlacement=false,private readonly contactMotion=true){
   this.characterId=rig.id
   if(contactMotion&&[2,11].includes(rig.id)&&rig.anatomy==='biped'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
+  if(contactMotion&&rig.id===3&&rig.anatomy==='paired'&&this.definitions().length===4)this.contacts=new Character25PairContacts(this.definitions(),rig.stridePx)
+  if(contactMotion&&rig.id===4&&rig.anatomy==='crab'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
   if(mapPlacement)this.view.position.set(...rig.mapAnchor)
   this.view.addChild(this.shadow,this.prop);this.update(0)
  }
@@ -61,9 +63,9 @@ export class Character25Player{
   this.locomotion=null;this.virtualRoot={x:0,y:0};this.bodyDistance=0;this.floatingElapsed=0;this.velocity=0;this.weight=0;this.blend={from:0,target:this.walking?1:0,elapsed:0}
   this.contacts?.reset(0,0,this.definitions());this.contacts?.setMoving(this.walking);this.update(0)
  }
- setWorldPosition(x:number,y:number):void{
+ setWorldPosition(x:number,y:number,initialDirection?:{x:number;y:number}):void{
   if(!Number.isFinite(x)||!Number.isFinite(y))return
-  if(!this.locomotion){this.locomotion={position:{x,y},direction:{x:this.facing.includes('right')?56:-56,y:this.facing.startsWith('down')?40:-40},distance:0};this.contacts?.reset(x,y,this.definitions());this.contacts?.setMoving(this.walking)}
+  if(!this.locomotion){this.locomotion={position:{x,y},direction:initialDirection?{...initialDirection}:{x:this.facing.includes('right')?56:-56,y:this.facing.startsWith('down')?40:-40},distance:0};this.contacts?.reset(x,y,this.definitions());this.contacts?.setMoving(this.walking)}
   else{
    const dx=x-this.locomotion.position.x,dy=y-this.locomotion.position.y,d=Math.hypot(dx,dy)
    if(this.moving&&this.reaction===null&&d>1e-6){this.locomotion.distance=d>80?0:this.locomotion.distance+d;this.locomotion.direction={x:dx/d,y:dy/d}}
@@ -130,10 +132,11 @@ export class Character25Player{
   }
   this.prop.clear()
   if(this.action==='ready'){
-   const actor=this.rig.facings[this.facing].actors[0]!,arm=actor.arms.find(a=>a.name.startsWith('right'))??(this.rig.id===6&&this.facing==='up-right'?actor.arms.find(a=>a.name.startsWith('left')):undefined)
-   const flipper=actor.appendages.find(p=>p.readyProp)
+   const facing=this.rig.facings[this.facing],actor=facing.readyActorId===null?undefined:facing.readyActorId?facing.actors.find(a=>a.id===facing.readyActorId):facing.actors[0]
+   const arm=actor?.arms.find(a=>a.name.startsWith('right'))??(this.rig.id===6&&this.facing==='up-right'?actor?.arms.find(a=>a.name.startsWith('left')):undefined)
+   const flipper=actor?.appendages.find(p=>p.readyProp)
    const part=arm?.lower??flipper?.part
-   const state=part?states.find(p=>p.key===actor.id+'/'+part):undefined
+   const state=part&&actor?states.find(p=>p.key===actor.id+'/'+part):undefined
    if(state){const axis=state.part.axis!,x=state.a*axis[0]+state.c*axis[1]+state.tx,y=state.b*axis[0]+state.d*axis[1]+state.ty
     this.prop.roundRect(x-5,y-7,10,10,1.5).fill(0xf7f8fa).stroke({width:.4,color:0x8a929c});this.prop.circle(x,y-2,1.8).fill(0xe63332)}
   }

@@ -1,0 +1,79 @@
+{
+  "status": "accepted",
+  "technicalVerificationDate": "2026-11-02",
+  "humanAcceptanceDate": "2026-11-02",
+  "humanAcceptanceEvidence": "用户回复：三位通过",
+  "characters": [
+    {
+      "id": 3,
+      "name": "吉吉米米",
+      "nativeSources": 1168,
+      "runtimeImages": 284,
+      "review": "./?role=3&review=trio-complete-r1",
+      "humanAccepted": true,
+      "acceptedPacketSha256": "f812808e6fd4f33f862e22f54366fb9a0e4dfbdd68fc7093dae5a670ff5754ee"
+    },
+    {
+      "id": 4,
+      "name": "佳佳",
+      "nativeSources": 1188,
+      "runtimeImages": 269,
+      "review": "./?role=4&review=trio-complete-r1",
+      "humanAccepted": true,
+      "acceptedPacketSha256": "0dcf44922c500de62310daf533a534b1f70267fd0ff17027b0528ed17d45f389"
+    },
+    {
+      "id": 7,
+      "name": "帅戈",
+      "nativeSources": 1152,
+      "runtimeImages": 197,
+      "review": "./?role=7&review=trio-complete-r1",
+      "humanAccepted": true,
+      "acceptedPacketSha256": "d1271bf6577e8ff0910fa362bb96abe2ae7cb4e4a316ca94edba09c40ca8d97d"
+    }
+  ],
+  "validation": {
+    "unitFiles": 134,
+    "unitTests": 843,
+    "artworkChecks": 32,
+    "productionCases": 48,
+    "isolatedExportCases": 7,
+    "rebuildFilesByteIdentical": {
+      "3": 404,
+      "4": 338,
+      "7": 238
+    },
+    "reviewPageDerivedImagesPerCharacter": 19,
+    "reviewPageErrors": 0,
+    "acceptedCharacterFilesUnchanged": 995,
+    "protectedWorkspaceFilesUnchanged": 32,
+    "realApiStartup": {
+      "characterIds": [
+        3,
+        4,
+        7,
+        1
+      ],
+      "sessionStatus": 200,
+      "slotsStatus": 200,
+      "saveWrites": 0,
+      "errors": 0
+    },
+    "independentReview": {
+      "agent": "review_trio_materials",
+      "blockingFindings": 0,
+      "unitTests": 11,
+      "artworkChecks": 32
+    }
+  },
+  "generator": "builtin image_gen; prompts and provenance in ../masters/",
+  "predecessorMerge": {
+    "characters": [
+      10,
+      12
+    ],
+    "branch": "main",
+    "commit": "b89031a0e5e51557cb24096f7dbbc6a31b2d4d4d"
+  },
+  "branch": "feat/jjmm-jiajia-shuaige-artwork"
+}

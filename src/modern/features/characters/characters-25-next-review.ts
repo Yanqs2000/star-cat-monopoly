@@ -5,8 +5,9 @@ import type {Character25Rig} from './characters-25-types'
 import type {Facing} from './assets'
 import {createCharacterMaterialRenderer,type MaterialRigIndex} from './character-material-render'
 
-const cid=Number(new URLSearchParams(location.search).get('role')??(location.pathname.includes('/ajie-nini/')?10:11))
-if(![11,6,10,12].includes(cid))throw Error('本页支持怪卡、薇薇、阿杰与妮妮')
+const cid=Number(new URLSearchParams(location.search).get('role')??(location.pathname.includes('/trio/')?3:location.pathname.includes('/ajie-nini/')?10:11))
+if(![3,4,7,11,6,10,12].includes(cid))throw Error('本页支持当前人物制作批次')
+const reviewScale=cid===3?2.5:3.2
 const variant=new URLSearchParams(location.search).get('variant')==='carnival'?'-carnival':''
 const index=await(await fetch(`../role-${String(cid).padStart(2,'0')}${variant}-rig.json`)).json()as {
  characters:Character25Rig[];runtimeImages:{url:string}[]
@@ -21,14 +22,14 @@ await Promise.all(index.runtimeImages.map(async p=>textures.set(p.url,await Asse
 const panels=facings.map((facing,i)=>{
  const world=new Container(),floor=new Graphics(),player=new Character25Player(rig,textures)
  const mask=new Graphics().rect(i*320,0,320,560).fill(0xffffff);app.stage.addChild(mask);world.mask=mask
- world.position.set(i*320+160,470);world.scale.set(3.2)
+ world.position.set(i*320+160,470);world.scale.set(reviewScale)
  for(let n=-40;n<=40;n++)floor.moveTo(n*7-140,-100).lineTo(n*7+140,100).moveTo(n*7-140,100).lineTo(n*7+140,-100)
  floor.stroke({width:.2,color:0x8299a5,alpha:.5});world.addChild(floor,player.view);app.stage.addChild(world)
  return{world,floor,player,facing}
 })
 const animatedMaterials:{image:HTMLImageElement;frames:{url:string}[];fps:number}[]=[]
 let materialElapsed=0
-if([11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
+if([3,4,7,11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
  const complete=await(await fetch(`../role-${String(cid).padStart(2,'0')}-complete.json`)).json()as {
   thumbnailUrls:Record<string,string>;assets:{source:string;url:string}[];activityClips:{id:string;fps?:number;frames:{url:string}[]}[]
  }
@@ -56,7 +57,7 @@ function advance(dt:number){
   p.player.update(dt)
   if(natural){
    const steps=elapsed/(16000/30),x=(p.facing.includes('right')?56:-56)*steps,y=(p.facing.startsWith('down')?40:-40)*steps
-   p.player.setWorldPosition(x,y);p.player.view.position.set(x,y);p.world.position.set(panels.indexOf(p)*320+160-x*3.2,470-y*3.2)
+   p.player.setWorldPosition(x,y);p.player.view.position.set(x,y);p.world.position.set(panels.indexOf(p)*320+160-x*reviewScale,470-y*reviewScale)
    p.floor.position.set(Math.round(x/7)*7,Math.round(y/5)*5)
   }
  }

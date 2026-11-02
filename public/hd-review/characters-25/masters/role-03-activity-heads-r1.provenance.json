@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen.imagegen",
+  "status": "candidate-needs-integration-review",
+  "generatedSource": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-2c0b118b-2c8b-4366-b375-c7a2ed8a11c7.png",
+  "sha256": "22dbe9deb31b2bd59d2bb15b6f4deb0a799d0e052f06101b65929c8dabf9cfe8",
+  "inputs": [
+    "masters/role-03-neutral-r2.png",
+    "source-references/role-03-activities.png"
+  ],
+  "inputSha256": {
+    "masters/role-03-neutral-r2.png": "2dd3b1abb32c5a6739fe08f9df2e6fe3ec5bc525f10211b11995b5e1d416d157",
+    "source-references/role-03-activities.png": "ad986f44819ec99206c0a19e96de0958df80dfbbe1dbc411302e68b4ca0b0236"
+  },
+  "prompt": "role-03-activity-heads-r1.prompt.txt",
+  "humanAccepted": false
+}

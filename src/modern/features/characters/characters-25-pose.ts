@@ -17,9 +17,9 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
   for(const key of['bodyY','bodyRotation','headRotation']as const)pose[key]=(action==='walk'?0:pose[key])+walk[key]*weight
   for(const key of['leftHand','rightHand']as const)pose[key]={x:(action==='walk'?0:pose[key].x)+walk[key].x*weight,y:(action==='walk'?0:pose[key].y)+walk[key].y*weight}
  }
- const upright=rig.anatomy==='floating'&&(action==='walk'||action==='neutral')
+ const upright=(rig.anatomy==='floating'||rig.anatomy==='crab')&&(action==='walk'||action==='neutral')
  const bodyY=pose.bodyY*scale,rotation=upright?0:pose.bodyRotation*scale
- const headRotation=upright?0:pose.headRotation*scale
+ const headRotation=upright||rig.anatomy==='crab'?0:pose.headRotation*scale
  const direction=locomotion?.direction??{x:facing.includes('right')?56:-56,y:facing.startsWith('down')?40:-40}
  const gray=Math.round(255-pose.soot*223),tint=gray*0x010101,result:RenderPart25[]=[]
  for(const actor of rig.facings[facing].actors){
@@ -70,7 +70,7 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
   for(const extra of actor.appendages){
    const p=joints.get(extra.joint)??transformed(extra.joint)
    const weight=locomotion?.motionWeight??(action==='walk'?1:0)
-   const beat=Math.sin((locomotion?.distance??distance)/rig.stridePx*Math.PI*2)
+   const beat=Math.sin(((locomotion?.distance??distance)/rig.stridePx+(extra.phase??0))*Math.PI*2)
    const floatingWing=rig.anatomy==='floating'&&extra.kind==='wing'
    const side=floatingWing?Math.sign(p.x-spine.x)||1:1
    const wave=extra.kind==='fixed'?0:beat*(extra.amplitude??.035)*weight*side
@@ -83,7 +83,9 @@ export function sampleCharacter25Rig(rig:Character25Rig,facing:Facing,action:Cha
     const wrapped=Math.atan2(Math.sin(turn),Math.cos(turn)),limit=extra.maxAngle??.9
     angle+=Math.max(-limit,Math.min(limit,wrapped))
    }
-   place(extra.part,extra.part,p,angle)
+   const expressionPart=extra.part+'-'+expression
+   const sourcePart=expression!=='neutral'&&actor.parts[expressionPart]?expressionPart:extra.part
+   place(extra.part,sourcePart,p,angle,1,sourcePart!==extra.part&&expression==='hurt'?0xffffff:tint)
    if(floatingWing){const state=states.get(extra.part)!,fold=1-.38*beat*beat*weight;state.a*=fold;state.b*=fold}
   }
   for(const name of actor.order){const state=states.get(name);if(state)result.push(state)}

@@ -1,0 +1,6394 @@
+{
+  "id": 3,
+  "name": "吉吉&米米",
+  "anatomy": "paired",
+  "neutralMaster": "masters/role-03-neutral-r2.png",
+  "layout": [
+    2,
+    2
+  ],
+  "density": 6,
+  "stridePx": 18,
+  "motionScale": 0.5,
+  "mapAnchor": [
+    28,
+    20
+  ],
+  "dataFile": "jjmm-map-rig.json",
+  "generationAllowedIds": [
+    3,
+    4,
+    7
+  ],
+  "expressionAnchorMode": "neck",
+  "edgeAlphaThreshold": 8,
+  "handsMayOverlapBody": true,
+  "facings": [
+    {
+      "origin": [
+        350,
+        514
+      ],
+      "actors": [
+        {
+          "id": "bandana",
+          "sourcePolygon": [
+            [
+              360,
+              0
+            ],
+            [
+              724,
+              0
+            ],
+            [
+              724,
+              543
+            ],
+            [
+              390,
+              543
+            ],
+            [
+              360,
+              470
+            ],
+            [
+              360,
+              367
+            ],
+            [
+              388,
+              344
+            ],
+            [
+              410,
+              302
+            ],
+            [
+              411,
+              235
+            ],
+            [
+              395,
+              180
+            ],
+            [
+              360,
+              140
+            ]
+          ],
+          "headMaster": "masters/role-03-bandana-heads-r4.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-bandana-heads-r4.png",
+          "expressionNeckRows": [
+            [
+              273,
+              277,
+              273,
+              272
+            ],
+            [
+              281,
+              282,
+              280,
+              278
+            ],
+            [
+              278,
+              278,
+              279,
+              278
+            ]
+          ],
+          "joints": {
+            "neck": [
+              497,
+              349
+            ],
+            "spine": [
+              497,
+              377
+            ]
+          },
+          "headPolygon": [
+            [
+              344,
+              55
+            ],
+            [
+              656,
+              55
+            ],
+            [
+              656,
+              336
+            ],
+            [
+              542,
+              354
+            ],
+            [
+              452,
+              354
+            ],
+            [
+              344,
+              336
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              422,
+              341
+            ],
+            [
+              572,
+              341
+            ],
+            [
+              572,
+              420
+            ],
+            [
+              422,
+              420
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                473,
+                405
+              ],
+              "knee": [
+                461,
+                424
+              ],
+              "ankle": [
+                461,
+                445
+              ],
+              "footBox": [
+                426,
+                422,
+                506,
+                480
+              ],
+              "footPolygon": [
+                [
+                  426,
+                  422
+                ],
+                [
+                  506,
+                  422
+                ],
+                [
+                  506,
+                  480
+                ],
+                [
+                  426,
+                  480
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  424,
+                  403
+                ],
+                [
+                  508,
+                  403
+                ],
+                [
+                  508,
+                  482
+                ],
+                [
+                  424,
+                  482
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1195,
+                      654
+                    ],
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1268,
+                      719
+                    ],
+                    [
+                      1166,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1240,
+                    665
+                  ],
+                  "sourceAxis": [
+                    -27,
+                    48
+                  ],
+                  "sourceScale": 0.4080463373026235
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1171,
+                      706
+                    ],
+                    [
+                      1268,
+                      706
+                    ],
+                    [
+                      1268,
+                      761
+                    ],
+                    [
+                      1154,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1213,
+                    713
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    42
+                  ],
+                  "sourceScale": 0.4472135954999579
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                530,
+                400
+              ],
+              "knee": [
+                542,
+                416
+              ],
+              "ankle": [
+                550,
+                434
+              ],
+              "footBox": [
+                501,
+                408,
+                596,
+                466
+              ],
+              "footPolygon": [
+                [
+                  501,
+                  408
+                ],
+                [
+                  596,
+                  408
+                ],
+                [
+                  596,
+                  466
+                ],
+                [
+                  501,
+                  466
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  499,
+                  398
+                ],
+                [
+                  598,
+                  398
+                ],
+                [
+                  598,
+                  468
+                ],
+                [
+                  499,
+                  468
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1382,
+                      654
+                    ],
+                    [
+                      1401,
+                      720
+                    ],
+                    [
+                      1301,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1340,
+                    665
+                  ],
+                  "sourceAxis": [
+                    17,
+                    48
+                  ],
+                  "sourceScale": 0.3927613438171697
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1302,
+                      706
+                    ],
+                    [
+                      1401,
+                      706
+                    ],
+                    [
+                      1409,
+                      761
+                    ],
+                    [
+                      1301,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1357,
+                    713
+                  ],
+                  "sourceAxis": [
+                    13,
+                    42
+                  ],
+                  "sourceScale": 0.44802261416577144
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                447,
+                345
+              ],
+              "elbow": [
+                432,
+                370
+              ],
+              "hand": [
+                438,
+                391
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  410,
+                  323
+                ],
+                [
+                  469,
+                  323
+                ],
+                [
+                  469,
+                  413
+                ],
+                [
+                  410,
+                  413
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1155,
+                      535
+                    ],
+                    [
+                      1200,
+                      540
+                    ],
+                    [
+                      1190,
+                      581
+                    ],
+                    [
+                      1168,
+                      620
+                    ],
+                    [
+                      1121,
+                      613
+                    ],
+                    [
+                      1104,
+                      589
+                    ],
+                    [
+                      1126,
+                      557
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1174,
+                    553
+                  ],
+                  "sourceAxis": [
+                    -28,
+                    41
+                  ],
+                  "sourceScale": 0.5872202195147035
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1126,
+                      578
+                    ],
+                    [
+                      1174,
+                      590
+                    ],
+                    [
+                      1177,
+                      634
+                    ],
+                    [
+                      1163,
+                      660
+                    ],
+                    [
+                      1130,
+                      672
+                    ],
+                    [
+                      1107,
+                      658
+                    ],
+                    [
+                      1098,
+                      632
+                    ],
+                    [
+                      1106,
+                      605
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1146,
+                    594
+                  ],
+                  "sourceAxis": [
+                    -13,
+                    43
+                  ],
+                  "sourceScale": 0.48618170079132034
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1109,
+                      608
+                    ],
+                    [
+                      1164,
+                      608
+                    ],
+                    [
+                      1178,
+                      636
+                    ],
+                    [
+                      1168,
+                      663
+                    ],
+                    [
+                      1134,
+                      674
+                    ],
+                    [
+                      1106,
+                      659
+                    ],
+                    [
+                      1097,
+                      636
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1133,
+                    637
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                544,
+                346
+              ],
+              "elbow": [
+                564,
+                365
+              ],
+              "hand": [
+                562,
+                382
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  529,
+                  323
+                ],
+                [
+                  586,
+                  323
+                ],
+                [
+                  586,
+                  404
+                ],
+                [
+                  529,
+                  404
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1369,
+                      532
+                    ],
+                    [
+                      1405,
+                      532
+                    ],
+                    [
+                      1439,
+                      567
+                    ],
+                    [
+                      1444,
+                      598
+                    ],
+                    [
+                      1392,
+                      609
+                    ],
+                    [
+                      1379,
+                      578
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1390,
+                    548
+                  ],
+                  "sourceAxis": [
+                    21,
+                    36
+                  ],
+                  "sourceScale": 0.6619000580271541
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1392,
+                      570
+                    ],
+                    [
+                      1438,
+                      574
+                    ],
+                    [
+                      1458,
+                      607
+                    ],
+                    [
+                      1457,
+                      637
+                    ],
+                    [
+                      1437,
+                      651
+                    ],
+                    [
+                      1409,
+                      649
+                    ],
+                    [
+                      1390,
+                      627
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1411,
+                    584
+                  ],
+                  "sourceAxis": [
+                    12,
+                    39
+                  ],
+                  "sourceScale": 0.419494905780721
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1394,
+                      594
+                    ],
+                    [
+                      1447,
+                      595
+                    ],
+                    [
+                      1460,
+                      622
+                    ],
+                    [
+                      1452,
+                      645
+                    ],
+                    [
+                      1424,
+                      655
+                    ],
+                    [
+                      1400,
+                      642
+                    ],
+                    [
+                      1386,
+                      618
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1423,
+                    623
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                1188,
+                531
+              ],
+              [
+                1369,
+                531
+              ],
+              [
+                1380,
+                638
+              ],
+              [
+                1343,
+                664
+              ],
+              [
+                1215,
+                664
+              ],
+              [
+                1175,
+                632
+              ],
+              [
+                1175,
+                549
+              ]
+            ],
+            "sourcePivot": [
+              1280.0,
+              595.4864864864865
+            ],
+            "sourceScale": 0.5692307692307692
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "id": "curl",
+          "sourcePolygon": [
+            [
+              0,
+              0
+            ],
+            [
+              360,
+              0
+            ],
+            [
+              360,
+              140
+            ],
+            [
+              395,
+              180
+            ],
+            [
+              411,
+              235
+            ],
+            [
+              410,
+              302
+            ],
+            [
+              388,
+              344
+            ],
+            [
+              360,
+              367
+            ],
+            [
+              360,
+              470
+            ],
+            [
+              390,
+              543
+            ],
+            [
+              0,
+              543
+            ]
+          ],
+          "headMaster": "masters/role-03-curl-heads-r3.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-curl-heads-r3.png",
+          "expressionNeckRows": [
+            [
+              272,
+              278,
+              274,
+              277
+            ],
+            [
+              271,
+              276,
+              277,
+              280
+            ],
+            [
+              275,
+              278,
+              284,
+              289
+            ]
+          ],
+          "joints": {
+            "neck": [
+              264,
+              373
+            ],
+            "spine": [
+              271,
+              406
+            ]
+          },
+          "headPolygon": [
+            [
+              80,
+              80
+            ],
+            [
+              416,
+              80
+            ],
+            [
+              416,
+              361
+            ],
+            [
+              309,
+              379
+            ],
+            [
+              219,
+              379
+            ],
+            [
+              80,
+              361
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              196,
+              365
+            ],
+            [
+              346,
+              365
+            ],
+            [
+              346,
+              445
+            ],
+            [
+              196,
+              445
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                241,
+                430
+              ],
+              "knee": [
+                233,
+                451
+              ],
+              "ankle": [
+                231,
+                470
+              ],
+              "footBox": [
+                193,
+                454,
+                276,
+                513
+              ],
+              "footPolygon": [
+                [
+                  193,
+                  454
+                ],
+                [
+                  276,
+                  454
+                ],
+                [
+                  276,
+                  513
+                ],
+                [
+                  193,
+                  513
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  191,
+                  428
+                ],
+                [
+                  278,
+                  428
+                ],
+                [
+                  278,
+                  515
+                ],
+                [
+                  191,
+                  515
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      448,
+                      640
+                    ],
+                    [
+                      548,
+                      640
+                    ],
+                    [
+                      528,
+                      707
+                    ],
+                    [
+                      510,
+                      715
+                    ],
+                    [
+                      434,
+                      715
+                    ]
+                  ],
+                  "sourcePivot": [
+                    500,
+                    650
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    51
+                  ],
+                  "sourceScale": 0.40744227133514627
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      430,
+                      694
+                    ],
+                    [
+                      517,
+                      694
+                    ],
+                    [
+                      514,
+                      746
+                    ],
+                    [
+                      503,
+                      755
+                    ],
+                    [
+                      413,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    479,
+                    701
+                  ],
+                  "sourceAxis": [
+                    -17,
+                    45
+                  ],
+                  "sourceScale": 0.3971593167786225
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                285,
+                428
+              ],
+              "knee": [
+                294,
+                441
+              ],
+              "ankle": [
+                306,
+                456
+              ],
+              "footBox": [
+                267,
+                437,
+                360,
+                495
+              ],
+              "footPolygon": [
+                [
+                  267,
+                  437
+                ],
+                [
+                  360,
+                  437
+                ],
+                [
+                  360,
+                  495
+                ],
+                [
+                  267,
+                  495
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  265,
+                  426
+                ],
+                [
+                  362,
+                  426
+                ],
+                [
+                  362,
+                  497
+                ],
+                [
+                  265,
+                  497
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      544,
+                      640
+                    ],
+                    [
+                      646,
+                      640
+                    ],
+                    [
+                      656,
+                      712
+                    ],
+                    [
+                      565,
+                      716
+                    ]
+                  ],
+                  "sourcePivot": [
+                    592,
+                    650
+                  ],
+                  "sourceAxis": [
+                    24,
+                    51
+                  ],
+                  "sourceScale": 0.2805184282816421
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      566,
+                      694
+                    ],
+                    [
+                      654,
+                      694
+                    ],
+                    [
+                      663,
+                      755
+                    ],
+                    [
+                      554,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    616,
+                    701
+                  ],
+                  "sourceAxis": [
+                    9,
+                    45
+                  ],
+                  "sourceScale": 0.4185853260849874
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                219,
+                376
+              ],
+              "elbow": [
+                202,
+                398
+              ],
+              "hand": [
+                202,
+                422
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  180,
+                  354
+                ],
+                [
+                  241,
+                  354
+                ],
+                [
+                  241,
+                  444
+                ],
+                [
+                  180,
+                  444
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      418,
+                      510
+                    ],
+                    [
+                      466,
+                      516
+                    ],
+                    [
+                      465,
+                      548
+                    ],
+                    [
+                      443,
+                      589
+                    ],
+                    [
+                      397,
+                      580
+                    ],
+                    [
+                      380,
+                      566
+                    ],
+                    [
+                      400,
+                      537
+                    ]
+                  ],
+                  "sourcePivot": [
+                    449,
+                    527
+                  ],
+                  "sourceAxis": [
+                    -31,
+                    38
+                  ],
+                  "sourceScale": 0.5669336128804866
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      396,
+                      551
+                    ],
+                    [
+                      445,
+                      568
+                    ],
+                    [
+                      441,
+                      609
+                    ],
+                    [
+                      419,
+                      638
+                    ],
+                    [
+                      389,
+                      647
+                    ],
+                    [
+                      365,
+                      632
+                    ],
+                    [
+                      355,
+                      607
+                    ],
+                    [
+                      365,
+                      580
+                    ]
+                  ],
+                  "sourcePivot": [
+                    418,
+                    565
+                  ],
+                  "sourceAxis": [
+                    -20,
+                    43
+                  ],
+                  "sourceScale": 0.5060768996587017
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      367,
+                      580
+                    ],
+                    [
+                      430,
+                      580
+                    ],
+                    [
+                      442,
+                      610
+                    ],
+                    [
+                      427,
+                      641
+                    ],
+                    [
+                      392,
+                      651
+                    ],
+                    [
+                      366,
+                      632
+                    ],
+                    [
+                      354,
+                      606
+                    ]
+                  ],
+                  "sourcePivot": [
+                    398,
+                    608
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                306,
+                371
+              ],
+              "elbow": [
+                340,
+                391
+              ],
+              "hand": [
+                337,
+                411
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  303,
+                  349
+                ],
+                [
+                  362,
+                  349
+                ],
+                [
+                  362,
+                  433
+                ],
+                [
+                  303,
+                  433
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      633,
+                      509
+                    ],
+                    [
+                      676,
+                      509
+                    ],
+                    [
+                      705,
+                      547
+                    ],
+                    [
+                      713,
+                      578
+                    ],
+                    [
+                      666,
+                      588
+                    ],
+                    [
+                      646,
+                      559
+                    ]
+                  ],
+                  "sourcePivot": [
+                    652,
+                    524
+                  ],
+                  "sourceAxis": [
+                    28,
+                    38
+                  ],
+                  "sourceScale": 0.8356938441063206
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      664,
+                      548
+                    ],
+                    [
+                      708,
+                      548
+                    ],
+                    [
+                      735,
+                      583
+                    ],
+                    [
+                      744,
+                      617
+                    ],
+                    [
+                      725,
+                      640
+                    ],
+                    [
+                      695,
+                      648
+                    ],
+                    [
+                      668,
+                      634
+                    ]
+                  ],
+                  "sourcePivot": [
+                    680,
+                    562
+                  ],
+                  "sourceAxis": [
+                    12,
+                    44
+                  ],
+                  "sourceScale": 0.4434350182209513
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      665,
+                      580
+                    ],
+                    [
+                      729,
+                      577
+                    ],
+                    [
+                      746,
+                      606
+                    ],
+                    [
+                      735,
+                      636
+                    ],
+                    [
+                      706,
+                      648
+                    ],
+                    [
+                      677,
+                      639
+                    ],
+                    [
+                      659,
+                      613
+                    ]
+                  ],
+                  "sourcePivot": [
+                    692,
+                    606
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                479,
+                497
+              ],
+              [
+                637,
+                497
+              ],
+              [
+                647,
+                615
+              ],
+              [
+                615,
+                641
+              ],
+              [
+                475,
+                641
+              ],
+              [
+                447,
+                613
+              ],
+              [
+                447,
+                541
+              ]
+            ],
+            "sourcePivot": [
+              563.44,
+              576.8
+            ],
+            "sourceScale": 0.5208333333333334
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "readyActorId": "bandana"
+    },
+    {
+      "origin": [
+        1080,
+        563
+      ],
+      "actors": [
+        {
+          "id": "curl",
+          "sourcePolygon": [
+            [
+              724,
+              0
+            ],
+            [
+              1130,
+              0
+            ],
+            [
+              1100,
+              173
+            ],
+            [
+              1056,
+              209
+            ],
+            [
+              1024,
+              250
+            ],
+            [
+              1017,
+              304
+            ],
+            [
+              1027,
+              360
+            ],
+            [
+              1040,
+              400
+            ],
+            [
+              1040,
+              575
+            ],
+            [
+              724,
+              575
+            ]
+          ],
+          "headMaster": "masters/role-03-curl-heads-r3.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-curl-heads-r3.png",
+          "expressionNeckRows": [
+            [
+              272,
+              278,
+              274,
+              277
+            ],
+            [
+              271,
+              276,
+              277,
+              280
+            ],
+            [
+              275,
+              278,
+              284,
+              289
+            ]
+          ],
+          "joints": {
+            "neck": [
+              963,
+              310
+            ],
+            "spine": [
+              961,
+              350
+            ]
+          },
+          "headPolygon": [
+            [
+              830,
+              35
+            ],
+            [
+              1123,
+              35
+            ],
+            [
+              1123,
+              300
+            ],
+            [
+              1008,
+              318
+            ],
+            [
+              918,
+              318
+            ],
+            [
+              830,
+              300
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              886,
+              302
+            ],
+            [
+              1036,
+              302
+            ],
+            [
+              1036,
+              400
+            ],
+            [
+              886,
+              400
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                929,
+                383
+              ],
+              "knee": [
+                921,
+                400
+              ],
+              "ankle": [
+                927,
+                417
+              ],
+              "footBox": [
+                882,
+                386,
+                970,
+                446
+              ],
+              "footPolygon": [
+                [
+                  882,
+                  386
+                ],
+                [
+                  970,
+                  386
+                ],
+                [
+                  970,
+                  446
+                ],
+                [
+                  882,
+                  446
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  880,
+                  381
+                ],
+                [
+                  972,
+                  381
+                ],
+                [
+                  972,
+                  448
+                ],
+                [
+                  880,
+                  448
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      448,
+                      640
+                    ],
+                    [
+                      548,
+                      640
+                    ],
+                    [
+                      528,
+                      707
+                    ],
+                    [
+                      510,
+                      715
+                    ],
+                    [
+                      434,
+                      715
+                    ]
+                  ],
+                  "sourcePivot": [
+                    500,
+                    650
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    51
+                  ],
+                  "sourceScale": 0.3406494937329852
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      430,
+                      694
+                    ],
+                    [
+                      517,
+                      694
+                    ],
+                    [
+                      514,
+                      746
+                    ],
+                    [
+                      503,
+                      755
+                    ],
+                    [
+                      413,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    479,
+                    701
+                  ],
+                  "sourceAxis": [
+                    -17,
+                    45
+                  ],
+                  "sourceScale": 0.3747658444979307
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                981,
+                385
+              ],
+              "knee": [
+                986,
+                410
+              ],
+              "ankle": [
+                989,
+                434
+              ],
+              "footBox": [
+                944,
+                409,
+                1033,
+                470
+              ],
+              "footPolygon": [
+                [
+                  944,
+                  409
+                ],
+                [
+                  1033,
+                  409
+                ],
+                [
+                  1033,
+                  470
+                ],
+                [
+                  944,
+                  470
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  942,
+                  383
+                ],
+                [
+                  1035,
+                  383
+                ],
+                [
+                  1035,
+                  472
+                ],
+                [
+                  942,
+                  472
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      544,
+                      640
+                    ],
+                    [
+                      646,
+                      640
+                    ],
+                    [
+                      656,
+                      712
+                    ],
+                    [
+                      565,
+                      716
+                    ]
+                  ],
+                  "sourcePivot": [
+                    592,
+                    650
+                  ],
+                  "sourceAxis": [
+                    24,
+                    51
+                  ],
+                  "sourceScale": 0.45232237439083994
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      566,
+                      694
+                    ],
+                    [
+                      654,
+                      694
+                    ],
+                    [
+                      663,
+                      755
+                    ],
+                    [
+                      554,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    616,
+                    701
+                  ],
+                  "sourceAxis": [
+                    9,
+                    45
+                  ],
+                  "sourceScale": 0.5270462766947299
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                911,
+                316
+              ],
+              "elbow": [
+                894,
+                338
+              ],
+              "hand": [
+                896,
+                360
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  872,
+                  290
+                ],
+                [
+                  929,
+                  290
+                ],
+                [
+                  929,
+                  382
+                ],
+                [
+                  872,
+                  382
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      418,
+                      510
+                    ],
+                    [
+                      466,
+                      516
+                    ],
+                    [
+                      465,
+                      548
+                    ],
+                    [
+                      443,
+                      589
+                    ],
+                    [
+                      397,
+                      580
+                    ],
+                    [
+                      380,
+                      566
+                    ],
+                    [
+                      400,
+                      537
+                    ]
+                  ],
+                  "sourcePivot": [
+                    449,
+                    527
+                  ],
+                  "sourceAxis": [
+                    -31,
+                    38
+                  ],
+                  "sourceScale": 0.5669336128804866
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      396,
+                      551
+                    ],
+                    [
+                      445,
+                      568
+                    ],
+                    [
+                      441,
+                      609
+                    ],
+                    [
+                      419,
+                      638
+                    ],
+                    [
+                      389,
+                      647
+                    ],
+                    [
+                      365,
+                      632
+                    ],
+                    [
+                      355,
+                      607
+                    ],
+                    [
+                      365,
+                      580
+                    ]
+                  ],
+                  "sourcePivot": [
+                    418,
+                    565
+                  ],
+                  "sourceAxis": [
+                    -20,
+                    43
+                  ],
+                  "sourceScale": 0.46581683826576775
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      367,
+                      580
+                    ],
+                    [
+                      430,
+                      580
+                    ],
+                    [
+                      442,
+                      610
+                    ],
+                    [
+                      427,
+                      641
+                    ],
+                    [
+                      392,
+                      651
+                    ],
+                    [
+                      366,
+                      632
+                    ],
+                    [
+                      354,
+                      606
+                    ]
+                  ],
+                  "sourcePivot": [
+                    398,
+                    608
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                996,
+                313
+              ],
+              "elbow": [
+                1002,
+                339
+              ],
+              "hand": [
+                1001,
+                374
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  974,
+                  291
+                ],
+                [
+                  1024,
+                  291
+                ],
+                [
+                  1024,
+                  396
+                ],
+                [
+                  974,
+                  396
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      633,
+                      509
+                    ],
+                    [
+                      676,
+                      509
+                    ],
+                    [
+                      705,
+                      547
+                    ],
+                    [
+                      713,
+                      578
+                    ],
+                    [
+                      666,
+                      588
+                    ],
+                    [
+                      646,
+                      559
+                    ]
+                  ],
+                  "sourcePivot": [
+                    652,
+                    524
+                  ],
+                  "sourceAxis": [
+                    28,
+                    38
+                  ],
+                  "sourceScale": 0.565304449201714
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      664,
+                      548
+                    ],
+                    [
+                      708,
+                      548
+                    ],
+                    [
+                      735,
+                      583
+                    ],
+                    [
+                      744,
+                      617
+                    ],
+                    [
+                      725,
+                      640
+                    ],
+                    [
+                      695,
+                      648
+                    ],
+                    [
+                      668,
+                      634
+                    ]
+                  ],
+                  "sourcePivot": [
+                    680,
+                    562
+                  ],
+                  "sourceAxis": [
+                    12,
+                    44
+                  ],
+                  "sourceScale": 0.7677389380011131
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      665,
+                      580
+                    ],
+                    [
+                      729,
+                      577
+                    ],
+                    [
+                      746,
+                      606
+                    ],
+                    [
+                      735,
+                      636
+                    ],
+                    [
+                      706,
+                      648
+                    ],
+                    [
+                      677,
+                      639
+                    ],
+                    [
+                      659,
+                      613
+                    ]
+                  ],
+                  "sourcePivot": [
+                    692,
+                    606
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                479,
+                497
+              ],
+              [
+                637,
+                497
+              ],
+              [
+                647,
+                615
+              ],
+              [
+                615,
+                641
+              ],
+              [
+                475,
+                641
+              ],
+              [
+                447,
+                613
+              ],
+              [
+                447,
+                541
+              ]
+            ],
+            "sourcePivot": [
+              546.9032258064516,
+              572.7741935483871
+            ],
+            "sourceScale": 0.6458333333333334
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "id": "bandana",
+          "sourcePolygon": [
+            [
+              1130,
+              0
+            ],
+            [
+              1448,
+              0
+            ],
+            [
+              1448,
+              575
+            ],
+            [
+              1040,
+              575
+            ],
+            [
+              1040,
+              400
+            ],
+            [
+              1027,
+              360
+            ],
+            [
+              1017,
+              304
+            ],
+            [
+              1024,
+              250
+            ],
+            [
+              1056,
+              209
+            ],
+            [
+              1100,
+              173
+            ]
+          ],
+          "headMaster": "masters/role-03-bandana-heads-r4.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-bandana-heads-r4.png",
+          "expressionNeckRows": [
+            [
+              273,
+              277,
+              273,
+              272
+            ],
+            [
+              281,
+              282,
+              280,
+              278
+            ],
+            [
+              278,
+              278,
+              279,
+              278
+            ]
+          ],
+          "joints": {
+            "neck": [
+              1155,
+              432
+            ],
+            "spine": [
+              1152,
+              468
+            ]
+          },
+          "headPolygon": [
+            [
+              1007,
+              143
+            ],
+            [
+              1343,
+              143
+            ],
+            [
+              1343,
+              425
+            ],
+            [
+              1200,
+              443
+            ],
+            [
+              1110,
+              443
+            ],
+            [
+              1007,
+              425
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              1077,
+              424
+            ],
+            [
+              1227,
+              424
+            ],
+            [
+              1227,
+              508
+            ],
+            [
+              1077,
+              508
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                1126,
+                489
+              ],
+              "knee": [
+                1115,
+                502
+              ],
+              "ankle": [
+                1106,
+                514
+              ],
+              "footBox": [
+                1060,
+                483,
+                1149,
+                539
+              ],
+              "footPolygon": [
+                [
+                  1060,
+                  483
+                ],
+                [
+                  1149,
+                  483
+                ],
+                [
+                  1149,
+                  539
+                ],
+                [
+                  1060,
+                  539
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  1058,
+                  481
+                ],
+                [
+                  1151,
+                  481
+                ],
+                [
+                  1151,
+                  541
+                ],
+                [
+                  1058,
+                  541
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1195,
+                      654
+                    ],
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1268,
+                      719
+                    ],
+                    [
+                      1166,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1240,
+                    665
+                  ],
+                  "sourceAxis": [
+                    -27,
+                    48
+                  ],
+                  "sourceScale": 0.30921659518299544
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1171,
+                      706
+                    ],
+                    [
+                      1268,
+                      706
+                    ],
+                    [
+                      1268,
+                      761
+                    ],
+                    [
+                      1154,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1213,
+                    713
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    42
+                  ],
+                  "sourceScale": 0.31943828249996997
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                1165,
+                493
+              ],
+              "knee": [
+                1172,
+                517
+              ],
+              "ankle": [
+                1167,
+                540
+              ],
+              "footBox": [
+                1123,
+                509,
+                1212,
+                565
+              ],
+              "footPolygon": [
+                [
+                  1123,
+                  509
+                ],
+                [
+                  1212,
+                  509
+                ],
+                [
+                  1212,
+                  565
+                ],
+                [
+                  1123,
+                  565
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  1121,
+                  491
+                ],
+                [
+                  1214,
+                  491
+                ],
+                [
+                  1214,
+                  567
+                ],
+                [
+                  1121,
+                  567
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1382,
+                      654
+                    ],
+                    [
+                      1401,
+                      720
+                    ],
+                    [
+                      1301,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1340,
+                    665
+                  ],
+                  "sourceAxis": [
+                    17,
+                    48
+                  ],
+                  "sourceScale": 0.49095167977146215
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1302,
+                      706
+                    ],
+                    [
+                      1401,
+                      706
+                    ],
+                    [
+                      1409,
+                      761
+                    ],
+                    [
+                      1301,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1357,
+                    713
+                  ],
+                  "sourceAxis": [
+                    13,
+                    42
+                  ],
+                  "sourceScale": 0.535351415546147
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                1108,
+                439
+              ],
+              "elbow": [
+                1101,
+                454
+              ],
+              "hand": [
+                1102,
+                465
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  1079,
+                  417
+                ],
+                [
+                  1130,
+                  417
+                ],
+                [
+                  1130,
+                  487
+                ],
+                [
+                  1079,
+                  487
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1155,
+                      535
+                    ],
+                    [
+                      1200,
+                      540
+                    ],
+                    [
+                      1190,
+                      581
+                    ],
+                    [
+                      1168,
+                      620
+                    ],
+                    [
+                      1121,
+                      613
+                    ],
+                    [
+                      1104,
+                      589
+                    ],
+                    [
+                      1126,
+                      557
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1174,
+                    553
+                  ],
+                  "sourceAxis": [
+                    -28,
+                    41
+                  ],
+                  "sourceScale": 0.3334009397295935
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1126,
+                      578
+                    ],
+                    [
+                      1174,
+                      590
+                    ],
+                    [
+                      1177,
+                      634
+                    ],
+                    [
+                      1163,
+                      660
+                    ],
+                    [
+                      1130,
+                      672
+                    ],
+                    [
+                      1107,
+                      658
+                    ],
+                    [
+                      1098,
+                      632
+                    ],
+                    [
+                      1106,
+                      605
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1146,
+                    594
+                  ],
+                  "sourceAxis": [
+                    -13,
+                    43
+                  ],
+                  "sourceScale": 0.24587780893698225
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1109,
+                      608
+                    ],
+                    [
+                      1164,
+                      608
+                    ],
+                    [
+                      1178,
+                      636
+                    ],
+                    [
+                      1168,
+                      663
+                    ],
+                    [
+                      1134,
+                      674
+                    ],
+                    [
+                      1106,
+                      659
+                    ],
+                    [
+                      1097,
+                      636
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1133,
+                    637
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                1193,
+                439
+              ],
+              "elbow": [
+                1202,
+                468
+              ],
+              "hand": [
+                1200,
+                487
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  1171,
+                  417
+                ],
+                [
+                  1224,
+                  417
+                ],
+                [
+                  1224,
+                  509
+                ],
+                [
+                  1171,
+                  509
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1369,
+                      532
+                    ],
+                    [
+                      1405,
+                      532
+                    ],
+                    [
+                      1439,
+                      567
+                    ],
+                    [
+                      1444,
+                      598
+                    ],
+                    [
+                      1392,
+                      609
+                    ],
+                    [
+                      1379,
+                      578
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1390,
+                    548
+                  ],
+                  "sourceAxis": [
+                    21,
+                    36
+                  ],
+                  "sourceScale": 0.7285603820426249
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1392,
+                      570
+                    ],
+                    [
+                      1438,
+                      574
+                    ],
+                    [
+                      1458,
+                      607
+                    ],
+                    [
+                      1457,
+                      637
+                    ],
+                    [
+                      1437,
+                      651
+                    ],
+                    [
+                      1409,
+                      649
+                    ],
+                    [
+                      1390,
+                      627
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1411,
+                    584
+                  ],
+                  "sourceAxis": [
+                    12,
+                    39
+                  ],
+                  "sourceScale": 0.4682085210877939
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1394,
+                      594
+                    ],
+                    [
+                      1447,
+                      595
+                    ],
+                    [
+                      1460,
+                      622
+                    ],
+                    [
+                      1452,
+                      645
+                    ],
+                    [
+                      1424,
+                      655
+                    ],
+                    [
+                      1400,
+                      642
+                    ],
+                    [
+                      1386,
+                      618
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1423,
+                    623
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [
+            {
+              "name": "ties",
+              "kind": "ribbon",
+              "followJoint": "tieRoot",
+              "pivot": [
+                1310,
+                403
+              ],
+              "polygon": [
+                [
+                  1297,
+                  389
+                ],
+                [
+                  1330,
+                  398
+                ],
+                [
+                  1352,
+                  439
+                ],
+                [
+                  1344,
+                  454
+                ],
+                [
+                  1328,
+                  454
+                ],
+                [
+                  1312,
+                  430
+                ],
+                [
+                  1308,
+                  453
+                ],
+                [
+                  1296,
+                  450
+                ],
+                [
+                  1296,
+                  422
+                ]
+              ],
+              "front": true,
+              "amplitude": 0.06
+            }
+          ],
+          "protectedPolygons": [
+            [
+              [
+                1297,
+                389
+              ],
+              [
+                1330,
+                398
+              ],
+              [
+                1352,
+                439
+              ],
+              [
+                1344,
+                454
+              ],
+              [
+                1328,
+                454
+              ],
+              [
+                1312,
+                430
+              ],
+              [
+                1308,
+                453
+              ],
+              [
+                1296,
+                450
+              ],
+              [
+                1296,
+                422
+              ]
+            ]
+          ],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                1188,
+                531
+              ],
+              [
+                1369,
+                531
+              ],
+              [
+                1380,
+                638
+              ],
+              [
+                1343,
+                664
+              ],
+              [
+                1215,
+                664
+              ],
+              [
+                1175,
+                632
+              ],
+              [
+                1175,
+                549
+              ]
+            ],
+            "sourcePivot": [
+              1275.0632911392406,
+              604.7594936708861
+            ],
+            "sourceScale": 0.6076923076923076
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "readyActorId": "bandana"
+    },
+    {
+      "origin": [
+        365,
+        1010
+      ],
+      "actors": [
+        {
+          "id": "bandana",
+          "sourcePolygon": [
+            [
+              0,
+              543
+            ],
+            [
+              370,
+              543
+            ],
+            [
+              370,
+              1086
+            ],
+            [
+              0,
+              1086
+            ]
+          ],
+          "headMaster": "masters/role-03-bandana-heads-r4.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-bandana-heads-r4.png",
+          "expressionNeckRows": [
+            [
+              273,
+              277,
+              273,
+              272
+            ],
+            [
+              281,
+              282,
+              280,
+              278
+            ],
+            [
+              278,
+              278,
+              279,
+              278
+            ]
+          ],
+          "joints": {
+            "neck": [
+              228,
+              861
+            ],
+            "spine": [
+              229,
+              904
+            ]
+          },
+          "headPolygon": [
+            [
+              65,
+              607
+            ],
+            [
+              376,
+              607
+            ],
+            [
+              376,
+              856
+            ],
+            [
+              273,
+              874
+            ],
+            [
+              183,
+              874
+            ],
+            [
+              65,
+              856
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              154,
+              853
+            ],
+            [
+              304,
+              853
+            ],
+            [
+              304,
+              954
+            ],
+            [
+              154,
+              954
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                205,
+                938
+              ],
+              "knee": [
+                185,
+                956
+              ],
+              "ankle": [
+                181,
+                978
+              ],
+              "footBox": [
+                135,
+                948,
+                230,
+                1011
+              ],
+              "footPolygon": [
+                [
+                  135,
+                  948
+                ],
+                [
+                  230,
+                  948
+                ],
+                [
+                  230,
+                  1011
+                ],
+                [
+                  135,
+                  1011
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  133,
+                  936
+                ],
+                [
+                  232,
+                  936
+                ],
+                [
+                  232,
+                  1013
+                ],
+                [
+                  133,
+                  1013
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1195,
+                      654
+                    ],
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1268,
+                      719
+                    ],
+                    [
+                      1166,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1240,
+                    665
+                  ],
+                  "sourceAxis": [
+                    -27,
+                    48
+                  ],
+                  "sourceScale": 0.4885770668791676
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1171,
+                      706
+                    ],
+                    [
+                      1268,
+                      706
+                    ],
+                    [
+                      1268,
+                      761
+                    ],
+                    [
+                      1154,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1213,
+                    713
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    42
+                  ],
+                  "sourceScale": 0.4761904761904762
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                257,
+                939
+              ],
+              "knee": [
+                277,
+                958
+              ],
+              "ankle": [
+                275,
+                981
+              ],
+              "footBox": [
+                229,
+                951,
+                327,
+                1014
+              ],
+              "footPolygon": [
+                [
+                  229,
+                  951
+                ],
+                [
+                  327,
+                  951
+                ],
+                [
+                  327,
+                  1014
+                ],
+                [
+                  229,
+                  1014
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  227,
+                  937
+                ],
+                [
+                  329,
+                  937
+                ],
+                [
+                  329,
+                  1016
+                ],
+                [
+                  227,
+                  1016
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1382,
+                      654
+                    ],
+                    [
+                      1401,
+                      720
+                    ],
+                    [
+                      1301,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1340,
+                    665
+                  ],
+                  "sourceAxis": [
+                    17,
+                    48
+                  ],
+                  "sourceScale": 0.541740207809448
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1302,
+                      706
+                    ],
+                    [
+                      1401,
+                      706
+                    ],
+                    [
+                      1409,
+                      761
+                    ],
+                    [
+                      1301,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1357,
+                    713
+                  ],
+                  "sourceAxis": [
+                    13,
+                    42
+                  ],
+                  "sourceScale": 0.5251068425266306
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                181,
+                864
+              ],
+              "elbow": [
+                160,
+                887
+              ],
+              "hand": [
+                157,
+                910
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  135,
+                  842
+                ],
+                [
+                  203,
+                  842
+                ],
+                [
+                  203,
+                  932
+                ],
+                [
+                  135,
+                  932
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1155,
+                      535
+                    ],
+                    [
+                      1200,
+                      540
+                    ],
+                    [
+                      1190,
+                      581
+                    ],
+                    [
+                      1168,
+                      620
+                    ],
+                    [
+                      1121,
+                      613
+                    ],
+                    [
+                      1104,
+                      589
+                    ],
+                    [
+                      1126,
+                      557
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1174,
+                    553
+                  ],
+                  "sourceAxis": [
+                    -28,
+                    41
+                  ],
+                  "sourceScale": 0.6273030589667538
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1126,
+                      578
+                    ],
+                    [
+                      1174,
+                      590
+                    ],
+                    [
+                      1177,
+                      634
+                    ],
+                    [
+                      1163,
+                      660
+                    ],
+                    [
+                      1130,
+                      672
+                    ],
+                    [
+                      1107,
+                      658
+                    ],
+                    [
+                      1098,
+                      632
+                    ],
+                    [
+                      1106,
+                      605
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1146,
+                    594
+                  ],
+                  "sourceAxis": [
+                    -13,
+                    43
+                  ],
+                  "sourceScale": 0.516333801574298
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1109,
+                      608
+                    ],
+                    [
+                      1164,
+                      608
+                    ],
+                    [
+                      1178,
+                      636
+                    ],
+                    [
+                      1168,
+                      663
+                    ],
+                    [
+                      1134,
+                      674
+                    ],
+                    [
+                      1106,
+                      659
+                    ],
+                    [
+                      1097,
+                      636
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1133,
+                    637
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                276,
+                865
+              ],
+              "elbow": [
+                301,
+                890
+              ],
+              "hand": [
+                304,
+                916
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  254,
+                  843
+                ],
+                [
+                  326,
+                  843
+                ],
+                [
+                  326,
+                  938
+                ],
+                [
+                  254,
+                  938
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1369,
+                      532
+                    ],
+                    [
+                      1405,
+                      532
+                    ],
+                    [
+                      1439,
+                      567
+                    ],
+                    [
+                      1444,
+                      598
+                    ],
+                    [
+                      1392,
+                      609
+                    ],
+                    [
+                      1379,
+                      578
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1390,
+                    548
+                  ],
+                  "sourceAxis": [
+                    21,
+                    36
+                  ],
+                  "sourceScale": 0.8483109975988127
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1392,
+                      570
+                    ],
+                    [
+                      1438,
+                      574
+                    ],
+                    [
+                      1458,
+                      607
+                    ],
+                    [
+                      1457,
+                      637
+                    ],
+                    [
+                      1437,
+                      651
+                    ],
+                    [
+                      1409,
+                      649
+                    ],
+                    [
+                      1390,
+                      627
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1411,
+                    584
+                  ],
+                  "sourceAxis": [
+                    12,
+                    39
+                  ],
+                  "sourceScale": 0.641413604011804
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1394,
+                      594
+                    ],
+                    [
+                      1447,
+                      595
+                    ],
+                    [
+                      1460,
+                      622
+                    ],
+                    [
+                      1452,
+                      645
+                    ],
+                    [
+                      1424,
+                      655
+                    ],
+                    [
+                      1400,
+                      642
+                    ],
+                    [
+                      1386,
+                      618
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1423,
+                    623
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [
+            {
+              "name": "ties",
+              "kind": "ribbon",
+              "followJoint": "tieRoot",
+              "pivot": [
+                227,
+                856
+              ],
+              "polygon": [
+                [
+                  214,
+                  849
+                ],
+                [
+                  241,
+                  849
+                ],
+                [
+                  252,
+                  872
+                ],
+                [
+                  271,
+                  901
+                ],
+                [
+                  264,
+                  915
+                ],
+                [
+                  251,
+                  911
+                ],
+                [
+                  229,
+                  878
+                ],
+                [
+                  207,
+                  910
+                ],
+                [
+                  191,
+                  916
+                ],
+                [
+                  182,
+                  905
+                ],
+                [
+                  195,
+                  872
+                ]
+              ],
+              "front": true,
+              "amplitude": 0.06
+            }
+          ],
+          "protectedPolygons": [
+            [
+              [
+                214,
+                849
+              ],
+              [
+                241,
+                849
+              ],
+              [
+                252,
+                872
+              ],
+              [
+                271,
+                901
+              ],
+              [
+                264,
+                915
+              ],
+              [
+                251,
+                911
+              ],
+              [
+                229,
+                878
+              ],
+              [
+                207,
+                910
+              ],
+              [
+                191,
+                916
+              ],
+              [
+                182,
+                905
+              ],
+              [
+                195,
+                872
+              ]
+            ]
+          ],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                1188,
+                531
+              ],
+              [
+                1369,
+                531
+              ],
+              [
+                1380,
+                638
+              ],
+              [
+                1343,
+                664
+              ],
+              [
+                1215,
+                664
+              ],
+              [
+                1175,
+                632
+              ],
+              [
+                1175,
+                549
+              ]
+            ],
+            "sourcePivot": [
+              1281.3541666666667,
+              601.7083333333334
+            ],
+            "sourceScale": 0.7384615384615385
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "id": "curl",
+          "sourcePolygon": [
+            [
+              370,
+              543
+            ],
+            [
+              724,
+              543
+            ],
+            [
+              724,
+              1086
+            ],
+            [
+              370,
+              1086
+            ]
+          ],
+          "headMaster": "masters/role-03-curl-heads-r3.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-curl-heads-r3.png",
+          "expressionNeckRows": [
+            [
+              272,
+              278,
+              274,
+              277
+            ],
+            [
+              271,
+              276,
+              277,
+              280
+            ],
+            [
+              275,
+              278,
+              284,
+              289
+            ]
+          ],
+          "joints": {
+            "neck": [
+              516,
+              857
+            ],
+            "spine": [
+              514,
+              904
+            ]
+          },
+          "headPolygon": [
+            [
+              347,
+              581
+            ],
+            [
+              687,
+              581
+            ],
+            [
+              687,
+              857
+            ],
+            [
+              561,
+              875
+            ],
+            [
+              471,
+              875
+            ],
+            [
+              347,
+              857
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              439,
+              849
+            ],
+            [
+              589,
+              849
+            ],
+            [
+              589,
+              955
+            ],
+            [
+              439,
+              955
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                485,
+                940
+              ],
+              "knee": [
+                470,
+                958
+              ],
+              "ankle": [
+                470,
+                981
+              ],
+              "footBox": [
+                422,
+                950,
+                514,
+                1011
+              ],
+              "footPolygon": [
+                [
+                  422,
+                  950
+                ],
+                [
+                  514,
+                  950
+                ],
+                [
+                  514,
+                  1011
+                ],
+                [
+                  422,
+                  1011
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  420,
+                  938
+                ],
+                [
+                  516,
+                  938
+                ],
+                [
+                  516,
+                  1013
+                ],
+                [
+                  420,
+                  1013
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      448,
+                      640
+                    ],
+                    [
+                      548,
+                      640
+                    ],
+                    [
+                      528,
+                      707
+                    ],
+                    [
+                      510,
+                      715
+                    ],
+                    [
+                      434,
+                      715
+                    ]
+                  ],
+                  "sourcePivot": [
+                    500,
+                    650
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    51
+                  ],
+                  "sourceScale": 0.4248215775841254
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      430,
+                      694
+                    ],
+                    [
+                      517,
+                      694
+                    ],
+                    [
+                      514,
+                      746
+                    ],
+                    [
+                      503,
+                      755
+                    ],
+                    [
+                      413,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    479,
+                    701
+                  ],
+                  "sourceAxis": [
+                    -17,
+                    45
+                  ],
+                  "sourceScale": 0.4781301812074865
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                548,
+                939
+              ],
+              "knee": [
+                558,
+                960
+              ],
+              "ankle": [
+                558,
+                981
+              ],
+              "footBox": [
+                514,
+                950,
+                608,
+                1011
+              ],
+              "footPolygon": [
+                [
+                  514,
+                  950
+                ],
+                [
+                  608,
+                  950
+                ],
+                [
+                  608,
+                  1011
+                ],
+                [
+                  514,
+                  1011
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  512,
+                  937
+                ],
+                [
+                  610,
+                  937
+                ],
+                [
+                  610,
+                  1013
+                ],
+                [
+                  512,
+                  1013
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      544,
+                      640
+                    ],
+                    [
+                      646,
+                      640
+                    ],
+                    [
+                      656,
+                      712
+                    ],
+                    [
+                      565,
+                      716
+                    ]
+                  ],
+                  "sourcePivot": [
+                    592,
+                    650
+                  ],
+                  "sourceAxis": [
+                    24,
+                    51
+                  ],
+                  "sourceScale": 0.41265776830507434
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      566,
+                      694
+                    ],
+                    [
+                      654,
+                      694
+                    ],
+                    [
+                      663,
+                      755
+                    ],
+                    [
+                      554,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    616,
+                    701
+                  ],
+                  "sourceAxis": [
+                    9,
+                    45
+                  ],
+                  "sourceScale": 0.4576043153224294
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                464,
+                864
+              ],
+              "elbow": [
+                439,
+                887
+              ],
+              "hand": [
+                438,
+                912
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  416,
+                  842
+                ],
+                [
+                  486,
+                  842
+                ],
+                [
+                  486,
+                  934
+                ],
+                [
+                  416,
+                  934
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      418,
+                      510
+                    ],
+                    [
+                      466,
+                      516
+                    ],
+                    [
+                      465,
+                      548
+                    ],
+                    [
+                      443,
+                      589
+                    ],
+                    [
+                      397,
+                      580
+                    ],
+                    [
+                      380,
+                      566
+                    ],
+                    [
+                      400,
+                      537
+                    ]
+                  ],
+                  "sourcePivot": [
+                    449,
+                    527
+                  ],
+                  "sourceAxis": [
+                    -31,
+                    38
+                  ],
+                  "sourceScale": 0.6927002813870368
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      396,
+                      551
+                    ],
+                    [
+                      445,
+                      568
+                    ],
+                    [
+                      441,
+                      609
+                    ],
+                    [
+                      419,
+                      638
+                    ],
+                    [
+                      389,
+                      647
+                    ],
+                    [
+                      365,
+                      632
+                    ],
+                    [
+                      355,
+                      607
+                    ],
+                    [
+                      365,
+                      580
+                    ]
+                  ],
+                  "sourcePivot": [
+                    418,
+                    565
+                  ],
+                  "sourceAxis": [
+                    -20,
+                    43
+                  ],
+                  "sourceScale": 0.5275849993367157
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      367,
+                      580
+                    ],
+                    [
+                      430,
+                      580
+                    ],
+                    [
+                      442,
+                      610
+                    ],
+                    [
+                      427,
+                      641
+                    ],
+                    [
+                      392,
+                      651
+                    ],
+                    [
+                      366,
+                      632
+                    ],
+                    [
+                      354,
+                      606
+                    ]
+                  ],
+                  "sourcePivot": [
+                    398,
+                    608
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                564,
+                862
+              ],
+              "elbow": [
+                583,
+                887
+              ],
+              "hand": [
+                589,
+                916
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  542,
+                  840
+                ],
+                [
+                  611,
+                  840
+                ],
+                [
+                  611,
+                  938
+                ],
+                [
+                  542,
+                  938
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      633,
+                      509
+                    ],
+                    [
+                      676,
+                      509
+                    ],
+                    [
+                      705,
+                      547
+                    ],
+                    [
+                      713,
+                      578
+                    ],
+                    [
+                      666,
+                      588
+                    ],
+                    [
+                      646,
+                      559
+                    ]
+                  ],
+                  "sourcePivot": [
+                    652,
+                    524
+                  ],
+                  "sourceAxis": [
+                    28,
+                    38
+                  ],
+                  "sourceScale": 0.6652438437398367
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      664,
+                      548
+                    ],
+                    [
+                      708,
+                      548
+                    ],
+                    [
+                      735,
+                      583
+                    ],
+                    [
+                      744,
+                      617
+                    ],
+                    [
+                      725,
+                      640
+                    ],
+                    [
+                      695,
+                      648
+                    ],
+                    [
+                      668,
+                      634
+                    ]
+                  ],
+                  "sourcePivot": [
+                    680,
+                    562
+                  ],
+                  "sourceAxis": [
+                    12,
+                    44
+                  ],
+                  "sourceScale": 0.6493339783074773
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      665,
+                      580
+                    ],
+                    [
+                      729,
+                      577
+                    ],
+                    [
+                      746,
+                      606
+                    ],
+                    [
+                      735,
+                      636
+                    ],
+                    [
+                      706,
+                      648
+                    ],
+                    [
+                      677,
+                      639
+                    ],
+                    [
+                      659,
+                      613
+                    ]
+                  ],
+                  "sourcePivot": [
+                    692,
+                    606
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                479,
+                497
+              ],
+              [
+                637,
+                497
+              ],
+              [
+                647,
+                615
+              ],
+              [
+                615,
+                641
+              ],
+              [
+                475,
+                641
+              ],
+              [
+                447,
+                613
+              ],
+              [
+                447,
+                541
+              ]
+            ],
+            "sourcePivot": [
+              547.1485148514852,
+              576.990099009901
+            ],
+            "sourceScale": 0.7013888888888888
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "readyActorId": null
+    },
+    {
+      "origin": [
+        1080,
+        1028
+      ],
+      "actors": [
+        {
+          "id": "bandana",
+          "sourcePolygon": [
+            [
+              724,
+              543
+            ],
+            [
+              1140,
+              543
+            ],
+            [
+              1140,
+              650
+            ],
+            [
+              1140,
+              662
+            ],
+            [
+              1098,
+              689
+            ],
+            [
+              1058,
+              728
+            ],
+            [
+              1030,
+              775
+            ],
+            [
+              1033,
+              816
+            ],
+            [
+              1059,
+              861
+            ],
+            [
+              1092,
+              886
+            ],
+            [
+              1092,
+              1086
+            ],
+            [
+              724,
+              1086
+            ]
+          ],
+          "headMaster": "masters/role-03-bandana-heads-r4.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-bandana-heads-r4.png",
+          "expressionNeckRows": [
+            [
+              273,
+              277,
+              273,
+              272
+            ],
+            [
+              281,
+              282,
+              280,
+              278
+            ],
+            [
+              278,
+              278,
+              279,
+              278
+            ]
+          ],
+          "joints": {
+            "neck": [
+              1006,
+              827
+            ],
+            "spine": [
+              1012,
+              875
+            ]
+          },
+          "headPolygon": [
+            [
+              822,
+              574
+            ],
+            [
+              1125,
+              574
+            ],
+            [
+              1125,
+              828
+            ],
+            [
+              1051,
+              846
+            ],
+            [
+              961,
+              846
+            ],
+            [
+              822,
+              828
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              937,
+              819
+            ],
+            [
+              1087,
+              819
+            ],
+            [
+              1087,
+              914
+            ],
+            [
+              937,
+              914
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                986,
+                899
+              ],
+              "knee": [
+                983,
+                923
+              ],
+              "ankle": [
+                986,
+                946
+              ],
+              "footBox": [
+                945,
+                922,
+                1022,
+                973
+              ],
+              "footPolygon": [
+                [
+                  945,
+                  922
+                ],
+                [
+                  1022,
+                  922
+                ],
+                [
+                  1022,
+                  973
+                ],
+                [
+                  945,
+                  973
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  943,
+                  897
+                ],
+                [
+                  1024,
+                  897
+                ],
+                [
+                  1024,
+                  975
+                ],
+                [
+                  943,
+                  975
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1195,
+                      654
+                    ],
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1268,
+                      719
+                    ],
+                    [
+                      1166,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1240,
+                    665
+                  ],
+                  "sourceAxis": [
+                    -27,
+                    48
+                  ],
+                  "sourceScale": 0.4391791642131167
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1171,
+                      706
+                    ],
+                    [
+                      1268,
+                      706
+                    ],
+                    [
+                      1268,
+                      761
+                    ],
+                    [
+                      1154,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1213,
+                    713
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    42
+                  ],
+                  "sourceScale": 0.4939543801862834
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                1034,
+                895
+              ],
+              "knee": [
+                1041,
+                922
+              ],
+              "ankle": [
+                1047,
+                949
+              ],
+              "footBox": [
+                994,
+                922,
+                1090,
+                978
+              ],
+              "footPolygon": [
+                [
+                  994,
+                  922
+                ],
+                [
+                  1090,
+                  922
+                ],
+                [
+                  1090,
+                  978
+                ],
+                [
+                  994,
+                  978
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  992,
+                  893
+                ],
+                [
+                  1092,
+                  893
+                ],
+                [
+                  1092,
+                  980
+                ],
+                [
+                  992,
+                  980
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1291,
+                      654
+                    ],
+                    [
+                      1382,
+                      654
+                    ],
+                    [
+                      1401,
+                      720
+                    ],
+                    [
+                      1301,
+                      720
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1340,
+                    665
+                  ],
+                  "sourceAxis": [
+                    17,
+                    48
+                  ],
+                  "sourceScale": 0.5477577615774141
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1302,
+                      706
+                    ],
+                    [
+                      1401,
+                      706
+                    ],
+                    [
+                      1409,
+                      761
+                    ],
+                    [
+                      1301,
+                      761
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1357,
+                    713
+                  ],
+                  "sourceAxis": [
+                    13,
+                    42
+                  ],
+                  "sourceScale": 0.629092909903821
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                970,
+                833
+              ],
+              "elbow": [
+                951,
+                855
+              ],
+              "hand": [
+                955,
+                879
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  929,
+                  811
+                ],
+                [
+                  992,
+                  811
+                ],
+                [
+                  992,
+                  901
+                ],
+                [
+                  929,
+                  901
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1155,
+                      535
+                    ],
+                    [
+                      1200,
+                      540
+                    ],
+                    [
+                      1190,
+                      581
+                    ],
+                    [
+                      1168,
+                      620
+                    ],
+                    [
+                      1121,
+                      613
+                    ],
+                    [
+                      1104,
+                      589
+                    ],
+                    [
+                      1126,
+                      557
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1174,
+                    553
+                  ],
+                  "sourceAxis": [
+                    -28,
+                    41
+                  ],
+                  "sourceScale": 0.5854905538443584
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1126,
+                      578
+                    ],
+                    [
+                      1174,
+                      590
+                    ],
+                    [
+                      1177,
+                      634
+                    ],
+                    [
+                      1163,
+                      660
+                    ],
+                    [
+                      1130,
+                      672
+                    ],
+                    [
+                      1107,
+                      658
+                    ],
+                    [
+                      1098,
+                      632
+                    ],
+                    [
+                      1106,
+                      605
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1146,
+                    594
+                  ],
+                  "sourceAxis": [
+                    -13,
+                    43
+                  ],
+                  "sourceScale": 0.5416269584693264
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1109,
+                      608
+                    ],
+                    [
+                      1164,
+                      608
+                    ],
+                    [
+                      1178,
+                      636
+                    ],
+                    [
+                      1168,
+                      663
+                    ],
+                    [
+                      1134,
+                      674
+                    ],
+                    [
+                      1106,
+                      659
+                    ],
+                    [
+                      1097,
+                      636
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1133,
+                    637
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                1034,
+                836
+              ],
+              "elbow": [
+                1050,
+                860
+              ],
+              "hand": [
+                1058,
+                883
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  1012,
+                  814
+                ],
+                [
+                  1080,
+                  814
+                ],
+                [
+                  1080,
+                  905
+                ],
+                [
+                  1012,
+                  905
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1369,
+                      532
+                    ],
+                    [
+                      1405,
+                      532
+                    ],
+                    [
+                      1439,
+                      567
+                    ],
+                    [
+                      1444,
+                      598
+                    ],
+                    [
+                      1392,
+                      609
+                    ],
+                    [
+                      1379,
+                      578
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1390,
+                    548
+                  ],
+                  "sourceAxis": [
+                    21,
+                    36
+                  ],
+                  "sourceScale": 0.6920886928562732
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1392,
+                      570
+                    ],
+                    [
+                      1438,
+                      574
+                    ],
+                    [
+                      1458,
+                      607
+                    ],
+                    [
+                      1457,
+                      637
+                    ],
+                    [
+                      1437,
+                      651
+                    ],
+                    [
+                      1409,
+                      649
+                    ],
+                    [
+                      1390,
+                      627
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1411,
+                    584
+                  ],
+                  "sourceAxis": [
+                    12,
+                    39
+                  ],
+                  "sourceScale": 0.5967882004163254
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      1394,
+                      594
+                    ],
+                    [
+                      1447,
+                      595
+                    ],
+                    [
+                      1460,
+                      622
+                    ],
+                    [
+                      1452,
+                      645
+                    ],
+                    [
+                      1424,
+                      655
+                    ],
+                    [
+                      1400,
+                      642
+                    ],
+                    [
+                      1386,
+                      618
+                    ]
+                  ],
+                  "sourcePivot": [
+                    1423,
+                    623
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [
+            {
+              "name": "ties",
+              "kind": "ribbon",
+              "followJoint": "tieRoot",
+              "pivot": [
+                915,
+                820
+              ],
+              "polygon": [
+                [
+                  902,
+                  815
+                ],
+                [
+                  929,
+                  815
+                ],
+                [
+                  930,
+                  854
+                ],
+                [
+                  925,
+                  879
+                ],
+                [
+                  914,
+                  891
+                ],
+                [
+                  900,
+                  885
+                ],
+                [
+                  901,
+                  855
+                ],
+                [
+                  884,
+                  878
+                ],
+                [
+                  871,
+                  879
+                ],
+                [
+                  865,
+                  865
+                ],
+                [
+                  884,
+                  834
+                ]
+              ],
+              "front": true,
+              "amplitude": 0.06
+            }
+          ],
+          "protectedPolygons": [
+            [
+              [
+                902,
+                815
+              ],
+              [
+                929,
+                815
+              ],
+              [
+                930,
+                854
+              ],
+              [
+                925,
+                879
+              ],
+              [
+                914,
+                891
+              ],
+              [
+                900,
+                885
+              ],
+              [
+                901,
+                855
+              ],
+              [
+                884,
+                878
+              ],
+              [
+                871,
+                879
+              ],
+              [
+                865,
+                865
+              ],
+              [
+                884,
+                834
+              ]
+            ]
+          ],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                1188,
+                531
+              ],
+              [
+                1369,
+                531
+              ],
+              [
+                1380,
+                638
+              ],
+              [
+                1343,
+                664
+              ],
+              [
+                1215,
+                664
+              ],
+              [
+                1175,
+                632
+              ],
+              [
+                1175,
+                549
+              ]
+            ],
+            "sourcePivot": [
+              1288.6666666666667,
+              613.4444444444445
+            ],
+            "sourceScale": 0.6923076923076923
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "id": "curl",
+          "sourcePolygon": [
+            [
+              1140,
+              543
+            ],
+            [
+              1448,
+              543
+            ],
+            [
+              1448,
+              1086
+            ],
+            [
+              1092,
+              1086
+            ],
+            [
+              1092,
+              886
+            ],
+            [
+              1059,
+              861
+            ],
+            [
+              1033,
+              816
+            ],
+            [
+              1030,
+              775
+            ],
+            [
+              1058,
+              728
+            ],
+            [
+              1098,
+              689
+            ],
+            [
+              1140,
+              662
+            ],
+            [
+              1140,
+              650
+            ]
+          ],
+          "headMaster": "masters/role-03-curl-heads-r3.png",
+          "headLayout": [
+            4,
+            4
+          ],
+          "expressionMaster": "masters/role-03-curl-heads-r3.png",
+          "expressionNeckRows": [
+            [
+              272,
+              278,
+              274,
+              277
+            ],
+            [
+              271,
+              276,
+              277,
+              280
+            ],
+            [
+              275,
+              278,
+              284,
+              289
+            ]
+          ],
+          "joints": {
+            "neck": [
+              1201,
+              880
+            ],
+            "spine": [
+              1199,
+              938
+            ]
+          },
+          "headPolygon": [
+            [
+              1004,
+              620
+            ],
+            [
+              1335,
+              620
+            ],
+            [
+              1335,
+              879
+            ],
+            [
+              1246,
+              897
+            ],
+            [
+              1156,
+              897
+            ],
+            [
+              1004,
+              879
+            ]
+          ],
+          "bodyPolygon": [
+            [
+              1124,
+              872
+            ],
+            [
+              1274,
+              872
+            ],
+            [
+              1274,
+              975
+            ],
+            [
+              1124,
+              975
+            ]
+          ],
+          "legs": [
+            {
+              "name": "left",
+              "hip": [
+                1172,
+                959
+              ],
+              "knee": [
+                1166,
+                980
+              ],
+              "ankle": [
+                1161,
+                999
+              ],
+              "footBox": [
+                1126,
+                979,
+                1211,
+                1022
+              ],
+              "footPolygon": [
+                [
+                  1126,
+                  979
+                ],
+                [
+                  1211,
+                  979
+                ],
+                [
+                  1211,
+                  1022
+                ],
+                [
+                  1126,
+                  1022
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.0,
+              "sourcePolygon": [
+                [
+                  1124,
+                  957
+                ],
+                [
+                  1213,
+                  957
+                ],
+                [
+                  1213,
+                  1024
+                ],
+                [
+                  1124,
+                  1024
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      448,
+                      640
+                    ],
+                    [
+                      548,
+                      640
+                    ],
+                    [
+                      528,
+                      707
+                    ],
+                    [
+                      510,
+                      715
+                    ],
+                    [
+                      434,
+                      715
+                    ]
+                  ],
+                  "sourcePivot": [
+                    500,
+                    650
+                  ],
+                  "sourceAxis": [
+                    -21,
+                    51
+                  ],
+                  "sourceScale": 0.39598577465334617
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      430,
+                      694
+                    ],
+                    [
+                      517,
+                      694
+                    ],
+                    [
+                      514,
+                      746
+                    ],
+                    [
+                      503,
+                      755
+                    ],
+                    [
+                      413,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    479,
+                    701
+                  ],
+                  "sourceAxis": [
+                    -17,
+                    45
+                  ],
+                  "sourceScale": 0.4084246777222394
+                }
+              }
+            },
+            {
+              "name": "right",
+              "hip": [
+                1223,
+                960
+              ],
+              "knee": [
+                1235,
+                992
+              ],
+              "ankle": [
+                1233,
+                1013
+              ],
+              "footBox": [
+                1185,
+                989,
+                1288,
+                1034
+              ],
+              "footPolygon": [
+                [
+                  1185,
+                  989
+                ],
+                [
+                  1288,
+                  989
+                ],
+                [
+                  1288,
+                  1034
+                ],
+                [
+                  1185,
+                  1034
+                ]
+              ],
+              "radius": 14,
+              "phase": 0.5,
+              "sourcePolygon": [
+                [
+                  1183,
+                  958
+                ],
+                [
+                  1290,
+                  958
+                ],
+                [
+                  1290,
+                  1036
+                ],
+                [
+                  1183,
+                  1036
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      544,
+                      640
+                    ],
+                    [
+                      646,
+                      640
+                    ],
+                    [
+                      656,
+                      712
+                    ],
+                    [
+                      565,
+                      716
+                    ]
+                  ],
+                  "sourcePivot": [
+                    592,
+                    650
+                  ],
+                  "sourceAxis": [
+                    24,
+                    51
+                  ],
+                  "sourceScale": 0.6063352455245993
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      566,
+                      694
+                    ],
+                    [
+                      654,
+                      694
+                    ],
+                    [
+                      663,
+                      755
+                    ],
+                    [
+                      554,
+                      755
+                    ]
+                  ],
+                  "sourcePivot": [
+                    616,
+                    701
+                  ],
+                  "sourceAxis": [
+                    9,
+                    45
+                  ],
+                  "sourceScale": 0.4596749336589695
+                }
+              }
+            }
+          ],
+          "arms": [
+            {
+              "name": "left",
+              "shoulder": [
+                1153,
+                889
+              ],
+              "elbow": [
+                1138,
+                912
+              ],
+              "hand": [
+                1146,
+                931
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  1116,
+                  867
+                ],
+                [
+                  1175,
+                  867
+                ],
+                [
+                  1175,
+                  953
+                ],
+                [
+                  1116,
+                  953
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      418,
+                      510
+                    ],
+                    [
+                      466,
+                      516
+                    ],
+                    [
+                      465,
+                      548
+                    ],
+                    [
+                      443,
+                      589
+                    ],
+                    [
+                      397,
+                      580
+                    ],
+                    [
+                      380,
+                      566
+                    ],
+                    [
+                      400,
+                      537
+                    ]
+                  ],
+                  "sourcePivot": [
+                    449,
+                    527
+                  ],
+                  "sourceAxis": [
+                    -31,
+                    38
+                  ],
+                  "sourceScale": 0.5599227745979918
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      396,
+                      551
+                    ],
+                    [
+                      445,
+                      568
+                    ],
+                    [
+                      441,
+                      609
+                    ],
+                    [
+                      419,
+                      638
+                    ],
+                    [
+                      389,
+                      647
+                    ],
+                    [
+                      365,
+                      632
+                    ],
+                    [
+                      355,
+                      607
+                    ],
+                    [
+                      365,
+                      580
+                    ]
+                  ],
+                  "sourcePivot": [
+                    418,
+                    565
+                  ],
+                  "sourceAxis": [
+                    -20,
+                    43
+                  ],
+                  "sourceScale": 0.43471010666207033
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      367,
+                      580
+                    ],
+                    [
+                      430,
+                      580
+                    ],
+                    [
+                      442,
+                      610
+                    ],
+                    [
+                      427,
+                      641
+                    ],
+                    [
+                      392,
+                      651
+                    ],
+                    [
+                      366,
+                      632
+                    ],
+                    [
+                      354,
+                      606
+                    ]
+                  ],
+                  "sourcePivot": [
+                    398,
+                    608
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            },
+            {
+              "name": "right",
+              "shoulder": [
+                1236,
+                888
+              ],
+              "elbow": [
+                1258,
+                913
+              ],
+              "hand": [
+                1259,
+                937
+              ],
+              "radius": 16,
+              "palmRadius": 19,
+              "front": true,
+              "sourcePolygon": [
+                [
+                  1214,
+                  866
+                ],
+                [
+                  1281,
+                  866
+                ],
+                [
+                  1281,
+                  959
+                ],
+                [
+                  1214,
+                  959
+                ]
+              ],
+              "surfaceDonors": {
+                "upper": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      633,
+                      509
+                    ],
+                    [
+                      676,
+                      509
+                    ],
+                    [
+                      705,
+                      547
+                    ],
+                    [
+                      713,
+                      578
+                    ],
+                    [
+                      666,
+                      588
+                    ],
+                    [
+                      646,
+                      559
+                    ]
+                  ],
+                  "sourcePivot": [
+                    652,
+                    524
+                  ],
+                  "sourceAxis": [
+                    28,
+                    38
+                  ],
+                  "sourceScale": 0.705518132176235
+                },
+                "lower": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      664,
+                      548
+                    ],
+                    [
+                      708,
+                      548
+                    ],
+                    [
+                      735,
+                      583
+                    ],
+                    [
+                      744,
+                      617
+                    ],
+                    [
+                      725,
+                      640
+                    ],
+                    [
+                      695,
+                      648
+                    ],
+                    [
+                      668,
+                      634
+                    ]
+                  ],
+                  "sourcePivot": [
+                    680,
+                    562
+                  ],
+                  "sourceAxis": [
+                    12,
+                    44
+                  ],
+                  "sourceScale": 0.5266914145435125
+                },
+                "tip": {
+                  "sourceMaster": "masters/role-03-joint-reference-r1.png",
+                  "sourcePolygon": [
+                    [
+                      665,
+                      580
+                    ],
+                    [
+                      729,
+                      577
+                    ],
+                    [
+                      746,
+                      606
+                    ],
+                    [
+                      735,
+                      636
+                    ],
+                    [
+                      706,
+                      648
+                    ],
+                    [
+                      677,
+                      639
+                    ],
+                    [
+                      659,
+                      613
+                    ]
+                  ],
+                  "sourcePivot": [
+                    692,
+                    606
+                  ],
+                  "sourceScale": 0.5
+                }
+              }
+            }
+          ],
+          "extras": [],
+          "bodySource": {
+            "sourceMaster": "masters/role-03-joint-reference-r1.png",
+            "sourcePolygon": [
+              [
+                479,
+                497
+              ],
+              [
+                637,
+                497
+              ],
+              [
+                647,
+                615
+              ],
+              [
+                615,
+                641
+              ],
+              [
+                475,
+                641
+              ],
+              [
+                447,
+                613
+              ],
+              [
+                447,
+                541
+              ]
+            ],
+            "sourcePivot": [
+              547.0612244897959,
+              595.5102040816327
+            ],
+            "sourceScale": 0.6805555555555556
+          },
+          "expressionLayout": [
+            4,
+            4
+          ],
+          "expressionAtlasIndices": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "readyActorId": "bandana"
+    }
+  ],
+  "portraitCanvas": [
+    640,
+    460
+  ],
+  "portraitLayers": [
+    {
+      "master": "masters/role-03-activity-heads-r1.png",
+      "layout": [
+        4,
+        2
+      ],
+      "index": 0,
+      "box": [
+        0,
+        0,
+        400,
+        400
+      ]
+    },
+    {
+      "master": "masters/role-03-activity-heads-r1.png",
+      "layout": [
+        4,
+        2
+      ],
+      "index": 4,
+      "box": [
+        230,
+        40,
+        630,
+        440
+      ]
+    }
+  ],
+  "championMaster": "masters/role-03-champion-master-r1.png",
+  "flightMaster": "masters/role-03-flight-master-r3.png"
+}

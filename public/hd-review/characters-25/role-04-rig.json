@@ -1,0 +1,3727 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    4
+  ],
+  "deferredIds": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 4,
+      "name": "佳佳",
+      "anatomy": "crab",
+      "density": 6,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 18,
+      "motionScale": 0.5,
+      "sourceSwfSha256": "bce4cd26f9768ce1eb649f74f0c5629536f2250209695c06cd7cb6bebfbdfe10",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -0.4555555555555581,
+                  -34.63333333333333
+                ],
+                "spine": [
+                  -0.4555555555555581,
+                  -34.63333333333333
+                ],
+                "eye0": [
+                  -8.0,
+                  -51.166666666666664
+                ],
+                "eye1": [
+                  8.833333333333334,
+                  -52.5
+                ],
+                "claw0": [
+                  -19.166666666666668,
+                  -35.5
+                ],
+                "claw1": [
+                  21.5,
+                  -43.833333333333336
+                ],
+                "sideLeg0": [
+                  -18.333333333333332,
+                  -22.666666666666668
+                ],
+                "sideLeg1": [
+                  -15.166666666666666,
+                  -18.166666666666668
+                ],
+                "sideLeg2": [
+                  -11.5,
+                  -14.666666666666666
+                ],
+                "sideLeg3": [
+                  20.666666666666668,
+                  -27.666666666666668
+                ],
+                "sideLeg4": [
+                  18.833333333333332,
+                  -23.333333333333332
+                ],
+                "sideLeg5": [
+                  17.166666666666668,
+                  -17.166666666666668
+                ],
+                "leftHip": [
+                  -10.666666666666666,
+                  -16.5
+                ],
+                "leftKnee": [
+                  -10.666666666666666,
+                  -12.5
+                ],
+                "leftFoot": [
+                  -10.833333333333334,
+                  -7.0
+                ],
+                "rightHip": [
+                  12.5,
+                  -18.833333333333332
+                ],
+                "rightKnee": [
+                  13.0,
+                  -15.5
+                ],
+                "rightFoot": [
+                  14.5,
+                  -11.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-head.webp",
+                  "width": 285,
+                  "height": 269,
+                  "pivot": [
+                    23.21111111111111,
+                    21.7
+                  ],
+                  "reconstructedFrom": "masters/role-04-carapace-atlas-r2.png"
+                },
+                "eye0": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye0.webp",
+                  "width": 103,
+                  "height": 129,
+                  "pivot": [
+                    11.64750957854406,
+                    20.96551724137931
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye1.webp",
+                  "width": 100,
+                  "height": 135,
+                  "pivot": [
+                    3.8068181818181817,
+                    21.952651515151516
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "claw0": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-claw0.webp",
+                  "width": 162,
+                  "height": 159,
+                  "pivot": [
+                    23.666666666666668,
+                    7.833333333333333
+                  ],
+                  "axis": [
+                    -15.833333333333334,
+                    7.666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      -95,
+                      46
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "claw1": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-claw1.webp",
+                  "width": 129,
+                  "height": 153,
+                  "pivot": [
+                    1.8333333333333333,
+                    5.833333333333333
+                  ],
+                  "axis": [
+                    8.666666666666666,
+                    9.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      52,
+                      57
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "sideLeg0": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg0.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg1": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg1.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg2": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg2.webp",
+                  "width": 46,
+                  "height": 39,
+                  "pivot": [
+                    1.5228531354269539,
+                    1.3024401816151583
+                  ],
+                  "axis": [
+                    4.568559406280862,
+                    3.9073205448454744
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      27.41135643768517,
+                      23.443923269072847
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg3": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg3.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg4": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg4.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg5": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg5.webp",
+                  "width": 46,
+                  "height": 40,
+                  "pivot": [
+                    6.055394843381848,
+                    1.3128953421491634
+                  ],
+                  "axis": [
+                    -4.541546132536387,
+                    3.9386860264474852
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -27.249276795218318,
+                      23.632116158684912
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-body.webp",
+                  "width": 7,
+                  "height": 7,
+                  "pivot": [
+                    0.544444444444442,
+                    0.5333333333333314
+                  ]
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-leftThigh.webp",
+                  "width": 31,
+                  "height": 26,
+                  "pivot": [
+                    1.01328267046635,
+                    0.8666233365830628
+                  ],
+                  "axis": [
+                    3.0398480113990503,
+                    2.599870009749188
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      18.239088068394302,
+                      15.599220058495128
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-leftShin.webp",
+                  "width": 42,
+                  "height": 36,
+                  "pivot": [
+                    1.3939032237596123,
+                    1.1921540729523001
+                  ],
+                  "axis": [
+                    4.181709671278837,
+                    3.5764622188569
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      25.09025802767302,
+                      21.4587733131414
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-leftFoot.webp",
+                  "width": 114,
+                  "height": 95,
+                  "pivot": [
+                    9.666666666666666,
+                    5.666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 0
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-rightThigh.webp",
+                  "width": 26,
+                  "height": 22,
+                  "pivot": [
+                    0.8538489084151193,
+                    0.730265513776089
+                  ],
+                  "axis": [
+                    2.5615467252453574,
+                    2.190796541328267
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      15.369280351472145,
+                      13.1447792479696
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-rightShin.webp",
+                  "width": 36,
+                  "height": 31,
+                  "pivot": [
+                    1.2016054320943113,
+                    1.0276888563964504
+                  ],
+                  "axis": [
+                    3.6048162962829338,
+                    3.0830665691893517
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      21.628897777697603,
+                      18.49839941513611
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-rightFoot.webp",
+                  "width": 123,
+                  "height": 86,
+                  "pivot": [
+                    9.0,
+                    6.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 4
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "eye0-happy": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye0-happy.webp",
+                  "width": 104,
+                  "height": 129,
+                  "pivot": [
+                    12.076628352490422,
+                    20.96551724137931
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-sad": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye0-sad.webp",
+                  "width": 103,
+                  "height": 126,
+                  "pivot": [
+                    11.831417624521073,
+                    20.47509578544061
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-hurt": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye0-hurt.webp",
+                  "width": 104,
+                  "height": 125,
+                  "pivot": [
+                    12.260536398467432,
+                    20.352490421455936
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-happy": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye1-happy.webp",
+                  "width": 100,
+                  "height": 132,
+                  "pivot": [
+                    3.679924242424242,
+                    21.5719696969697
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-sad": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye1-sad.webp",
+                  "width": 98,
+                  "height": 128,
+                  "pivot": [
+                    3.4895833333333335,
+                    20.81060606060606
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-hurt": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-eye1-hurt.webp",
+                  "width": 101,
+                  "height": 129,
+                  "pivot": [
+                    3.5530303030303028,
+                    21.06439393939394
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-head-happy.webp",
+                  "width": 286,
+                  "height": 268,
+                  "pivot": [
+                    23.21111111111111,
+                    21.53333333333333
+                  ],
+                  "sourceScale": 1.161515545015857
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-head-sad.webp",
+                  "width": 287,
+                  "height": 271,
+                  "pivot": [
+                    23.377777777777776,
+                    22.03333333333333
+                  ],
+                  "sourceScale": 1.161515545015857
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-04/down-right-main-head-hurt.webp",
+                  "width": 286,
+                  "height": 271,
+                  "pivot": [
+                    23.21111111111111,
+                    22.03333333333333
+                  ],
+                  "sourceScale": 1.161515545015857
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    4.0,
+                    5.502524673073059
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    3.370624736026114,
+                    4.743416490252569
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "eye0",
+                  "joint": "eye0",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.0
+                },
+                {
+                  "part": "eye1",
+                  "joint": "eye1",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.5
+                },
+                {
+                  "part": "claw0",
+                  "joint": "claw0",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.55,
+                  "readyProp": false
+                },
+                {
+                  "part": "claw1",
+                  "joint": "claw1",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.55,
+                  "readyProp": true
+                },
+                {
+                  "part": "sideLeg0",
+                  "joint": "sideLeg0",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg1",
+                  "joint": "sideLeg1",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg2",
+                  "joint": "sideLeg2",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.629047485480661
+                },
+                {
+                  "part": "sideLeg3",
+                  "joint": "sideLeg3",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg4",
+                  "joint": "sideLeg4",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg5",
+                  "joint": "sideLeg5",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.622161646993718
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "body",
+                "claw0",
+                "claw1",
+                "head",
+                "head-expression",
+                "eye0",
+                "eye1",
+                "sideLeg0",
+                "sideLeg1",
+                "sideLeg2",
+                "sideLeg3",
+                "sideLeg4",
+                "sideLeg5"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -1.7738095238095184,
+                  -34.73809523809524
+                ],
+                "spine": [
+                  -1.7738095238095184,
+                  -34.73809523809524
+                ],
+                "eye0": [
+                  -7.5,
+                  -52.333333333333336
+                ],
+                "eye1": [
+                  5.333333333333333,
+                  -49.333333333333336
+                ],
+                "claw0": [
+                  -16.0,
+                  -51.333333333333336
+                ],
+                "claw1": [
+                  11.5,
+                  -33.833333333333336
+                ],
+                "sideLeg0": [
+                  -18.333333333333332,
+                  -23.666666666666668
+                ],
+                "sideLeg1": [
+                  -16.833333333333332,
+                  -19.5
+                ],
+                "sideLeg2": [
+                  -15.666666666666666,
+                  -17.0
+                ],
+                "sideLeg3": [
+                  9.333333333333334,
+                  -21.666666666666668
+                ],
+                "sideLeg4": [
+                  7.166666666666667,
+                  -18.833333333333332
+                ],
+                "sideLeg5": [
+                  5.333333333333333,
+                  -15.5
+                ],
+                "leftHip": [
+                  -14.5,
+                  -22.833333333333332
+                ],
+                "leftKnee": [
+                  -15.0,
+                  -19.833333333333332
+                ],
+                "leftFoot": [
+                  -15.666666666666666,
+                  -15.5
+                ],
+                "rightHip": [
+                  3.1666666666666665,
+                  -15.666666666666666
+                ],
+                "rightKnee": [
+                  3.1666666666666665,
+                  -11.833333333333334
+                ],
+                "rightFoot": [
+                  2.1666666666666665,
+                  -6.166666666666667
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-head.webp",
+                  "width": 257,
+                  "height": 257,
+                  "pivot": [
+                    21.22619047619048,
+                    19.76190476190476
+                  ],
+                  "reconstructedFrom": "masters/role-04-carapace-atlas-r2.png"
+                },
+                "eye0": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye0.webp",
+                  "width": 104,
+                  "height": 140,
+                  "pivot": [
+                    13.18103448275862,
+                    22.767241379310345
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye1.webp",
+                  "width": 110,
+                  "height": 138,
+                  "pivot": [
+                    5.543352601156069,
+                    22.4373795761079
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "claw0": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-claw0.webp",
+                  "width": 104,
+                  "height": 136,
+                  "pivot": [
+                    12.5,
+                    8.333333333333334
+                  ],
+                  "axis": [
+                    -6.333333333333333,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      -38,
+                      24
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "claw1": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-claw1.webp",
+                  "width": 136,
+                  "height": 165,
+                  "pivot": [
+                    4.333333333333333,
+                    4.5
+                  ],
+                  "axis": [
+                    6.666666666666667,
+                    11.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      40,
+                      66
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "sideLeg0": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg0.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg1": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg1.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg2": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg2.webp",
+                  "width": 46,
+                  "height": 39,
+                  "pivot": [
+                    1.5228531354269539,
+                    1.3024401816151583
+                  ],
+                  "axis": [
+                    4.568559406280862,
+                    3.9073205448454744
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      27.41135643768517,
+                      23.443923269072847
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg3": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg3.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg4": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg4.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg5": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg5.webp",
+                  "width": 46,
+                  "height": 40,
+                  "pivot": [
+                    6.055394843381848,
+                    1.3128953421491634
+                  ],
+                  "axis": [
+                    -4.541546132536387,
+                    3.9386860264474852
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -27.249276795218318,
+                      23.632116158684912
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-body.webp",
+                  "width": 7,
+                  "height": 7,
+                  "pivot": [
+                    0.559523809523815,
+                    0.5952380952380926
+                  ]
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-leftThigh.webp",
+                  "width": 23,
+                  "height": 20,
+                  "pivot": [
+                    0.7704447325641541,
+                    0.6589329949561845
+                  ],
+                  "axis": [
+                    2.3113341976924624,
+                    1.9767989848685534
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      13.868005186154774,
+                      11.86079390921132
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-leftShin.webp",
+                  "width": 33,
+                  "height": 29,
+                  "pivot": [
+                    1.1106377242635799,
+                    0.9498875273306934
+                  ],
+                  "axis": [
+                    3.3319131727907396,
+                    2.8496625819920802
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      19.991479036744437,
+                      17.097975491952482
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-leftFoot.webp",
+                  "width": 120,
+                  "height": 73,
+                  "pivot": [
+                    10.666666666666666,
+                    5.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 1
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-rightThigh.webp",
+                  "width": 29,
+                  "height": 25,
+                  "pivot": [
+                    0.9710625591969188,
+                    0.8305140308921016
+                  ],
+                  "axis": [
+                    2.913187677590756,
+                    2.4915420926763048
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      17.479126065544538,
+                      14.949252556057829
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-rightShin.webp",
+                  "width": 44,
+                  "height": 38,
+                  "pivot": [
+                    1.4576642454142041,
+                    1.2466865256832012
+                  ],
+                  "axis": [
+                    4.372992736242613,
+                    3.7400595770496032
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      26.237956417455678,
+                      22.44035746229762
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-rightFoot.webp",
+                  "width": 112,
+                  "height": 98,
+                  "pivot": [
+                    9.0,
+                    7.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 5
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "eye0-happy": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye0-happy.webp",
+                  "width": 104,
+                  "height": 136,
+                  "pivot": [
+                    13.18103448275862,
+                    22.101532567049805
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-sad": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye0-sad.webp",
+                  "width": 101,
+                  "height": 132,
+                  "pivot": [
+                    13.047892720306514,
+                    21.435823754789272
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-hurt": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye0-hurt.webp",
+                  "width": 109,
+                  "height": 137,
+                  "pivot": [
+                    13.846743295019158,
+                    22.234674329501914
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-happy": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye1-happy.webp",
+                  "width": 111,
+                  "height": 135,
+                  "pivot": [
+                    5.411368015414258,
+                    22.041425818882463
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-sad": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye1-sad.webp",
+                  "width": 105,
+                  "height": 131,
+                  "pivot": [
+                    5.279383429672447,
+                    21.381502890173408
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-hurt": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-eye1-hurt.webp",
+                  "width": 112,
+                  "height": 135,
+                  "pivot": [
+                    5.279383429672447,
+                    22.041425818882463
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-head-happy.webp",
+                  "width": 255,
+                  "height": 259,
+                  "pivot": [
+                    21.059523809523814,
+                    20.09523809523809
+                  ],
+                  "sourceScale": 1.1198496275276046
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-head-sad.webp",
+                  "width": 256,
+                  "height": 259,
+                  "pivot": [
+                    21.22619047619048,
+                    20.09523809523809
+                  ],
+                  "sourceScale": 1.1198496275276046
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-04/down-left-main-head-hurt.webp",
+                  "width": 256,
+                  "height": 261,
+                  "pivot": [
+                    21.22619047619048,
+                    20.428571428571427
+                  ],
+                  "sourceScale": 1.1198496275276046
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": 1,
+                  "lengths": [
+                    3.0413812651491097,
+                    4.384315479321969
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    3.8333333333333335,
+                    5.754225500544023
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "eye0",
+                  "joint": "eye0",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.0
+                },
+                {
+                  "part": "eye1",
+                  "joint": "eye1",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.5
+                },
+                {
+                  "part": "claw0",
+                  "joint": "claw0",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.55,
+                  "readyProp": false
+                },
+                {
+                  "part": "claw1",
+                  "joint": "claw1",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.55,
+                  "readyProp": true
+                },
+                {
+                  "part": "sideLeg0",
+                  "joint": "sideLeg0",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg1",
+                  "joint": "sideLeg1",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg2",
+                  "joint": "sideLeg2",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.629047485480661
+                },
+                {
+                  "part": "sideLeg3",
+                  "joint": "sideLeg3",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg4",
+                  "joint": "sideLeg4",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg5",
+                  "joint": "sideLeg5",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.622161646993718
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "body",
+                "claw0",
+                "claw1",
+                "head",
+                "head-expression",
+                "eye0",
+                "eye1",
+                "sideLeg0",
+                "sideLeg1",
+                "sideLeg2",
+                "sideLeg3",
+                "sideLeg4",
+                "sideLeg5"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -2.444444444444457,
+                  -32.05555555555555
+                ],
+                "spine": [
+                  -2.444444444444457,
+                  -32.05555555555555
+                ],
+                "eye0": [
+                  -8.5,
+                  -47.833333333333336
+                ],
+                "eye1": [
+                  6.666666666666667,
+                  -49.833333333333336
+                ],
+                "claw0": [
+                  -21.333333333333332,
+                  -33.833333333333336
+                ],
+                "claw1": [
+                  20.166666666666668,
+                  -44.0
+                ],
+                "sideLeg0": [
+                  -18.666666666666668,
+                  -19.5
+                ],
+                "sideLeg1": [
+                  -15.333333333333334,
+                  -15.666666666666666
+                ],
+                "sideLeg2": [
+                  -12.5,
+                  -11.833333333333334
+                ],
+                "sideLeg3": [
+                  20.833333333333332,
+                  -25.333333333333332
+                ],
+                "sideLeg4": [
+                  18.166666666666668,
+                  -20.833333333333332
+                ],
+                "sideLeg5": [
+                  16.5,
+                  -15.166666666666666
+                ],
+                "leftHip": [
+                  -12.666666666666666,
+                  -13.5
+                ],
+                "leftKnee": [
+                  -12.666666666666666,
+                  -9.666666666666666
+                ],
+                "leftFoot": [
+                  -13.166666666666666,
+                  -5.333333333333333
+                ],
+                "rightHip": [
+                  9.5,
+                  -17.666666666666668
+                ],
+                "rightKnee": [
+                  10.333333333333334,
+                  -14.5
+                ],
+                "rightFoot": [
+                  12.0,
+                  -9.833333333333334
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-head.webp",
+                  "width": 282,
+                  "height": 278,
+                  "pivot": [
+                    22.388888888888875,
+                    22.777777777777782
+                  ],
+                  "reconstructedFrom": "masters/role-04-carapace-atlas-r2.png"
+                },
+                "eye0": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye0.webp",
+                  "width": 103,
+                  "height": 124,
+                  "pivot": [
+                    13.542424242424241,
+                    20.12727272727273
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye1.webp",
+                  "width": 105,
+                  "height": 134,
+                  "pivot": [
+                    4.460365853658537,
+                    21.76117886178862
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "claw0": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-claw0.webp",
+                  "width": 168,
+                  "height": 157,
+                  "pivot": [
+                    24.0,
+                    7.666666666666667
+                  ],
+                  "axis": [
+                    -14.0,
+                    6.333333333333333
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      -84,
+                      38
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "claw1": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-claw1.webp",
+                  "width": 97,
+                  "height": 128,
+                  "pivot": [
+                    2.3333333333333335,
+                    5.833333333333333
+                  ],
+                  "axis": [
+                    8.5,
+                    6.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      51,
+                      36
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "sideLeg0": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg0.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg1": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg1.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg2": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg2.webp",
+                  "width": 46,
+                  "height": 39,
+                  "pivot": [
+                    1.5228531354269539,
+                    1.3024401816151583
+                  ],
+                  "axis": [
+                    4.568559406280862,
+                    3.9073205448454744
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      27.41135643768517,
+                      23.443923269072847
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg3": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg3.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg4": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg4.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg5": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg5.webp",
+                  "width": 46,
+                  "height": 40,
+                  "pivot": [
+                    6.055394843381848,
+                    1.3128953421491634
+                  ],
+                  "axis": [
+                    -4.541546132536387,
+                    3.9386860264474852
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -27.249276795218318,
+                      23.632116158684912
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-body.webp",
+                  "width": 7,
+                  "height": 7,
+                  "pivot": [
+                    0.5555555555555429,
+                    0.6111111111111143
+                  ]
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-leftThigh.webp",
+                  "width": 29,
+                  "height": 25,
+                  "pivot": [
+                    0.9710625591969188,
+                    0.8305140308921016
+                  ],
+                  "axis": [
+                    2.913187677590756,
+                    2.4915420926763048
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      17.479126065544538,
+                      14.949252556057829
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-leftShin.webp",
+                  "width": 33,
+                  "height": 28,
+                  "pivot": [
+                    1.1050060588015622,
+                    0.9450709713434414
+                  ],
+                  "axis": [
+                    3.3150181764046867,
+                    2.835212914030324
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      19.89010905842812,
+                      17.011277484181946
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-leftFoot.webp",
+                  "width": 127,
+                  "height": 79,
+                  "pivot": [
+                    11.5,
+                    5.333333333333333
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 2
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-rightThigh.webp",
+                  "width": 25,
+                  "height": 21,
+                  "pivot": [
+                    0.8294935738767468,
+                    0.7094352934472177
+                  ],
+                  "axis": [
+                    2.4884807216302405,
+                    2.128305880341653
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      14.930884329781442,
+                      12.769835282049918
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-rightShin.webp",
+                  "width": 38,
+                  "height": 32,
+                  "pivot": [
+                    1.2552941533016033,
+                    1.0736068416395295
+                  ],
+                  "axis": [
+                    3.76588245990481,
+                    3.2208205249185884
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      22.59529475942886,
+                      19.32492314951153
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-rightFoot.webp",
+                  "width": 112,
+                  "height": 81,
+                  "pivot": [
+                    9.666666666666666,
+                    7.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 6
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "eye0-happy": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye0-happy.webp",
+                  "width": 103,
+                  "height": 122,
+                  "pivot": [
+                    13.666666666666666,
+                    19.754545454545454
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-sad": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye0-sad.webp",
+                  "width": 105,
+                  "height": 118,
+                  "pivot": [
+                    13.666666666666666,
+                    19.133333333333333
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-hurt": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye0-hurt.webp",
+                  "width": 104,
+                  "height": 124,
+                  "pivot": [
+                    14.039393939393939,
+                    20.251515151515154
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-happy": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye1-happy.webp",
+                  "width": 108,
+                  "height": 134,
+                  "pivot": [
+                    4.595528455284553,
+                    21.76117886178862
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-sad": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye1-sad.webp",
+                  "width": 109,
+                  "height": 131,
+                  "pivot": [
+                    3.6493902439024395,
+                    21.220528455284555
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-hurt": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-eye1-hurt.webp",
+                  "width": 110,
+                  "height": 131,
+                  "pivot": [
+                    4.460365853658537,
+                    21.355691056910572
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-head-happy.webp",
+                  "width": 282,
+                  "height": 278,
+                  "pivot": [
+                    22.388888888888875,
+                    22.777777777777782
+                  ]
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-head-sad.webp",
+                  "width": 282,
+                  "height": 278,
+                  "pivot": [
+                    22.388888888888875,
+                    22.777777777777782
+                  ]
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-04/up-left-main-head-hurt.webp",
+                  "width": 286,
+                  "height": 285,
+                  "pivot": [
+                    22.72222222222221,
+                    23.944444444444446
+                  ],
+                  "sourceScale": 1.2068769745335801
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    3.8333333333333335,
+                    4.362084109434133
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    3.2744804507314167,
+                    4.955356249106169
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "eye0",
+                  "joint": "eye0",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.0
+                },
+                {
+                  "part": "eye1",
+                  "joint": "eye1",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.5
+                },
+                {
+                  "part": "claw0",
+                  "joint": "claw0",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.55,
+                  "readyProp": false
+                },
+                {
+                  "part": "claw1",
+                  "joint": "claw1",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.55,
+                  "readyProp": true
+                },
+                {
+                  "part": "sideLeg0",
+                  "joint": "sideLeg0",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg1",
+                  "joint": "sideLeg1",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg2",
+                  "joint": "sideLeg2",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.629047485480661
+                },
+                {
+                  "part": "sideLeg3",
+                  "joint": "sideLeg3",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg4",
+                  "joint": "sideLeg4",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg5",
+                  "joint": "sideLeg5",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.622161646993718
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "body",
+                "claw0",
+                "claw1",
+                "head",
+                "head-expression",
+                "eye0",
+                "eye1",
+                "sideLeg0",
+                "sideLeg1",
+                "sideLeg2",
+                "sideLeg3",
+                "sideLeg4",
+                "sideLeg5"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -5.5666666666666815,
+                  -32.955555555555556
+                ],
+                "spine": [
+                  -5.5666666666666815,
+                  -32.955555555555556
+                ],
+                "eye0": [
+                  -9.5,
+                  -51.5
+                ],
+                "eye1": [
+                  -0.16666666666666666,
+                  -47.5
+                ],
+                "claw0": [
+                  -17.5,
+                  -51.833333333333336
+                ],
+                "claw1": [
+                  10.666666666666666,
+                  -32.833333333333336
+                ],
+                "sideLeg0": [
+                  -21.833333333333332,
+                  -30.666666666666668
+                ],
+                "sideLeg1": [
+                  -20.5,
+                  -25.666666666666668
+                ],
+                "sideLeg2": [
+                  -19.666666666666668,
+                  -18.5
+                ],
+                "sideLeg3": [
+                  8.666666666666666,
+                  -21.166666666666668
+                ],
+                "sideLeg4": [
+                  5.833333333333333,
+                  -17.833333333333332
+                ],
+                "sideLeg5": [
+                  4.333333333333333,
+                  -13.666666666666666
+                ],
+                "leftHip": [
+                  -14.166666666666666,
+                  -20.666666666666668
+                ],
+                "leftKnee": [
+                  -14.166666666666666,
+                  -17.666666666666668
+                ],
+                "leftFoot": [
+                  -14.166666666666666,
+                  -13.0
+                ],
+                "rightHip": [
+                  3.5,
+                  -12.5
+                ],
+                "rightKnee": [
+                  3.5,
+                  -9.333333333333334
+                ],
+                "rightFoot": [
+                  5.333333333333333,
+                  -4.333333333333333
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-head.webp",
+                  "width": 259,
+                  "height": 273,
+                  "pivot": [
+                    20.26666666666665,
+                    21.377777777777776
+                  ],
+                  "reconstructedFrom": "masters/role-04-carapace-atlas-r2.png"
+                },
+                "eye0": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye0.webp",
+                  "width": 109,
+                  "height": 131,
+                  "pivot": [
+                    14.209956709956709,
+                    21.244588744588743
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye1.webp",
+                  "width": 107,
+                  "height": 124,
+                  "pivot": [
+                    4.383647798742139,
+                    20.11320754716981
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-eyes-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "claw0": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-claw0.webp",
+                  "width": 97,
+                  "height": 141,
+                  "pivot": [
+                    8.666666666666666,
+                    8.5
+                  ],
+                  "axis": [
+                    -3.0,
+                    4.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      -18,
+                      27
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "claw1": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-claw1.webp",
+                  "width": 124,
+                  "height": 156,
+                  "pivot": [
+                    4.333333333333333,
+                    5.0
+                  ],
+                  "axis": [
+                    7.0,
+                    10.666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-neutral-r1.png",
+                    "axis": [
+                      42,
+                      64
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-neutral-r1.png"
+                },
+                "sideLeg0": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg0.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg1": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg1.webp",
+                  "width": 52,
+                  "height": 44,
+                  "pivot": [
+                    1.7144692545944367,
+                    1.4663223887978738
+                  ],
+                  "axis": [
+                    5.14340776378331,
+                    4.398967166393621
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      30.86044658269986,
+                      26.39380299836173
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg2": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg2.webp",
+                  "width": 46,
+                  "height": 39,
+                  "pivot": [
+                    1.5228531354269539,
+                    1.3024401816151583
+                  ],
+                  "axis": [
+                    4.568559406280862,
+                    3.9073205448454744
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      27.41135643768517,
+                      23.443923269072847
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg3": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg3.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg4": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg4.webp",
+                  "width": 51,
+                  "height": 45,
+                  "pivot": [
+                    6.817327319286889,
+                    1.4780930913498143
+                  ],
+                  "axis": [
+                    -5.112995489465168,
+                    4.4342792740494374
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -30.677972936791008,
+                      26.605675644296625
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "sideLeg5": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg5.webp",
+                  "width": 46,
+                  "height": 40,
+                  "pivot": [
+                    6.055394843381848,
+                    1.3128953421491634
+                  ],
+                  "axis": [
+                    -4.541546132536387,
+                    3.9386860264474852
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      -27.249276795218318,
+                      23.632116158684912
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-body.webp",
+                  "width": 7,
+                  "height": 7,
+                  "pivot": [
+                    0.5999999999999849,
+                    0.544444444444442
+                  ]
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-leftThigh.webp",
+                  "width": 23,
+                  "height": 20,
+                  "pivot": [
+                    0.7599620028497625,
+                    0.649967502437297
+                  ],
+                  "axis": [
+                    2.2798860085492874,
+                    1.949902507311891
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      13.679316051295725,
+                      11.699415043871346
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-leftShin.webp",
+                  "width": 36,
+                  "height": 30,
+                  "pivot": [
+                    1.182163115544075,
+                    1.0110605593469064
+                  ],
+                  "axis": [
+                    3.546489346632225,
+                    3.033181678040719
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      21.27893607979335,
+                      18.199090068244313
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-leftFoot.webp",
+                  "width": 103,
+                  "height": 74,
+                  "pivot": [
+                    9.5,
+                    6.166666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 3
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-rightThigh.webp",
+                  "width": 24,
+                  "height": 21,
+                  "pivot": [
+                    0.8021821141191937,
+                    0.6860768081282579
+                  ],
+                  "axis": [
+                    2.4065463423575815,
+                    2.0582304243847735
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      14.439278054145488,
+                      12.349382546308641
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-rightShin.webp",
+                  "width": 41,
+                  "height": 35,
+                  "pivot": [
+                    1.3490630412663531,
+                    1.153803916872539
+                  ],
+                  "axis": [
+                    4.047189123799059,
+                    3.4614117506176165
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-activity-parts-r1.png",
+                    "axis": [
+                      24.283134742794356,
+                      20.7684705037057
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-04-activity-parts-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-rightFoot.webp",
+                  "width": 129,
+                  "height": 78,
+                  "pivot": [
+                    10.5,
+                    6.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-04-feet-atlas-r1.png",
+                    "viewIndex": 7
+                  },
+                  "reconstructedFrom": "masters/role-04-feet-atlas-r1.png"
+                },
+                "eye0-happy": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye0-happy.webp",
+                  "width": 111,
+                  "height": 133,
+                  "pivot": [
+                    14.209956709956709,
+                    21.525974025974023
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-sad": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye0-sad.webp",
+                  "width": 111,
+                  "height": 130,
+                  "pivot": [
+                    14.35064935064935,
+                    21.1038961038961
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye0-hurt": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye0-hurt.webp",
+                  "width": 111,
+                  "height": 135,
+                  "pivot": [
+                    13.787878787878787,
+                    21.948051948051944
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-happy": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye1-happy.webp",
+                  "width": 108,
+                  "height": 125,
+                  "pivot": [
+                    4.254716981132076,
+                    20.371069182389938
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-sad": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye1-sad.webp",
+                  "width": 107,
+                  "height": 123,
+                  "pivot": [
+                    3.8679245283018866,
+                    19.98427672955975
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "eye1-hurt": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-eye1-hurt.webp",
+                  "width": 106,
+                  "height": 125,
+                  "pivot": [
+                    3.8679245283018866,
+                    20.371069182389938
+                  ],
+                  "reconstructedFrom": "masters/role-04-eyes-atlas-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-head-happy.webp",
+                  "width": 258,
+                  "height": 274,
+                  "pivot": [
+                    20.26666666666665,
+                    21.54444444444444
+                  ],
+                  "sourceScale": 1.2119569242302735
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-head-sad.webp",
+                  "width": 259,
+                  "height": 276,
+                  "pivot": [
+                    20.26666666666665,
+                    21.877777777777776
+                  ],
+                  "sourceScale": 1.2119569242302735
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-04/up-right-main-head-hurt.webp",
+                  "width": 261,
+                  "height": 281,
+                  "pivot": [
+                    20.43333333333332,
+                    22.71111111111111
+                  ],
+                  "sourceScale": 1.2119569242302735
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    3.0,
+                    4.666666666666667
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    3.1666666666666665,
+                    5.325515102890153
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [],
+              "appendages": [
+                {
+                  "part": "eye0",
+                  "joint": "eye0",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.0
+                },
+                {
+                  "part": "eye1",
+                  "joint": "eye1",
+                  "kind": "tail",
+                  "amplitude": 0.012,
+                  "phase": 0.5
+                },
+                {
+                  "part": "claw0",
+                  "joint": "claw0",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.0,
+                  "poseHand": "leftHand",
+                  "maxAngle": 0.55,
+                  "readyProp": false
+                },
+                {
+                  "part": "claw1",
+                  "joint": "claw1",
+                  "kind": "flipper",
+                  "amplitude": 0.025,
+                  "phase": 0.5,
+                  "poseHand": "rightHand",
+                  "maxAngle": 0.55,
+                  "readyProp": true
+                },
+                {
+                  "part": "sideLeg0",
+                  "joint": "sideLeg0",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg1",
+                  "joint": "sideLeg1",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": 1.5264576456465107
+                },
+                {
+                  "part": "sideLeg2",
+                  "joint": "sideLeg2",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": 1.629047485480661
+                },
+                {
+                  "part": "sideLeg3",
+                  "joint": "sideLeg3",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg4",
+                  "joint": "sideLeg4",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.0,
+                  "restAngle": -1.5195718071595674
+                },
+                {
+                  "part": "sideLeg5",
+                  "joint": "sideLeg5",
+                  "kind": "tail",
+                  "amplitude": 0.12,
+                  "phase": 0.5,
+                  "restAngle": -1.622161646993718
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "body",
+                "claw0",
+                "claw1",
+                "head",
+                "head-expression",
+                "eye0",
+                "eye1",
+                "sideLeg0",
+                "sideLeg1",
+                "sideLeg2",
+                "sideLeg3",
+                "sideLeg4",
+                "sideLeg5"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-head.webp",
+      "pixelSize": [
+        285,
+        269
+      ],
+      "pixelDensity": 6,
+      "sha256": "b9c0aae0205ec4e419d433a2ef7b3dd74eb121633595a13b9d7133727488c113"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye0.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye0.webp",
+      "pixelSize": [
+        103,
+        129
+      ],
+      "pixelDensity": 6,
+      "sha256": "2694da661eedb5715f6a9bb3c0e4865517c1ecbc2d21e3ed86dc8d7b4e8b5c3a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye1.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye1.webp",
+      "pixelSize": [
+        100,
+        135
+      ],
+      "pixelDensity": 6,
+      "sha256": "0cb330c98c17b714039ff737274c574e6a59f5f80388585cd0881e9918138d40"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-claw0.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-claw0.webp",
+      "pixelSize": [
+        162,
+        159
+      ],
+      "pixelDensity": 6,
+      "sha256": "9b891a287f4fc8055f96fdc9e833a74b7ff0b55b00903b38ec0751f9f015d4ca"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-claw1.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-claw1.webp",
+      "pixelSize": [
+        129,
+        153
+      ],
+      "pixelDensity": 6,
+      "sha256": "95b5624e571432e4cbcbf1d429cea207a200332ce806153302694e1cc288d028"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg0.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-sideLeg0.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg1.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-sideLeg1.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg2.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-sideLeg2.webp",
+      "pixelSize": [
+        46,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "eda9c99620afe9bd270191fd5b05466ec6f0ebc11a0426dc77c1a50de59a2212"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg3.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-sideLeg3.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg4.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-sideLeg4.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-sideLeg5.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-sideLeg5.webp",
+      "pixelSize": [
+        46,
+        40
+      ],
+      "pixelDensity": 6,
+      "sha256": "9a47f4d19e83c038c5c7cd430987857f73185fa166f6fd288e9e5f45d660c7f6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-body.webp",
+      "pixelSize": [
+        7,
+        7
+      ],
+      "pixelDensity": 6,
+      "sha256": "9ac113c6e715c4b8548ac194a7c544438b62070f07c660178b6082545ed18f14"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-leftThigh.webp",
+      "pixelSize": [
+        31,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "20d47a0fcdeafddc8276d1e89618c0a760908b2dd05e6db2624ee826b22ff527"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-leftShin.webp",
+      "pixelSize": [
+        42,
+        36
+      ],
+      "pixelDensity": 6,
+      "sha256": "3e782f7bf9675b2a03cb4b0abcdd3d443083206c71648deeacf6f078a7112a9b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-leftFoot.webp",
+      "pixelSize": [
+        114,
+        95
+      ],
+      "pixelDensity": 6,
+      "sha256": "de992c492128486a9f137b911ad12f7b43c29b1d1c99cf46ab981c1797d07e55"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-rightThigh.webp",
+      "pixelSize": [
+        26,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "dfa95cc3a35a6782cc092ccb5ff9d686ba83421f5f6d37c4b688fda988bfa28a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-rightShin.webp",
+      "pixelSize": [
+        36,
+        31
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e71d83230bd33afc206353d891b30f183550cf66d961a329e0067da8b141dce"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-rightFoot.webp",
+      "pixelSize": [
+        123,
+        86
+      ],
+      "pixelDensity": 6,
+      "sha256": "84c2cdbc94bfcbf45a1f8b74c4aca892b2ebfeb2bc240fa7dd9c5d8ada89ff7f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye0-happy.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye0-happy.webp",
+      "pixelSize": [
+        104,
+        129
+      ],
+      "pixelDensity": 6,
+      "sha256": "2ec998dc79f5dd2816284404dcebed3f5eb738981d45d49e7af840caa81587b1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye0-sad.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye0-sad.webp",
+      "pixelSize": [
+        103,
+        126
+      ],
+      "pixelDensity": 6,
+      "sha256": "77f9899bb160ea3e44edaa1e7f3568e8c57dd234544542ffef2682384257d4ac"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye0-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye0-hurt.webp",
+      "pixelSize": [
+        104,
+        125
+      ],
+      "pixelDensity": 6,
+      "sha256": "13fba014b0d8730bba41342920ce97a0d82c0f0e0660952b617c864cc40f2373"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye1-happy.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye1-happy.webp",
+      "pixelSize": [
+        100,
+        132
+      ],
+      "pixelDensity": 6,
+      "sha256": "b14ecd96ece4a58afd4cbfa35123ef8960a973e797380e78e367ce17bd650754"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye1-sad.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye1-sad.webp",
+      "pixelSize": [
+        98,
+        128
+      ],
+      "pixelDensity": 6,
+      "sha256": "98f06e61571dbbfd243ecc7e1931f18be31e7e5bed5a4d782b92d959fd458182"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-eye1-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-eye1-hurt.webp",
+      "pixelSize": [
+        101,
+        129
+      ],
+      "pixelDensity": 6,
+      "sha256": "83c7ce91930868699cf691bbe4b97483be59ea83a353081ad0c8dad817c8dac9"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-head-happy.webp",
+      "pixelSize": [
+        286,
+        268
+      ],
+      "pixelDensity": 6,
+      "sha256": "7891c3fdb65d0e9e48c20d53900c84d7893c42b70c23f9e532c59d58361e56a6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-head-sad.webp",
+      "pixelSize": [
+        287,
+        271
+      ],
+      "pixelDensity": 6,
+      "sha256": "7b8ac49a79cf5d0e6521da785e8588fea72cdc6c3f8d62912247b0ab6eeb534d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/down-right-main-head-hurt.webp",
+      "pixelSize": [
+        286,
+        271
+      ],
+      "pixelDensity": 6,
+      "sha256": "88f3ae3606da29cfe8c5909e71009470fb33ba28828481c6f6b8c5b0aaa0310b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-head.webp",
+      "pixelSize": [
+        257,
+        257
+      ],
+      "pixelDensity": 6,
+      "sha256": "818f4dcf60b4e9272b9c82ce41ffaffd64089daf0b1b08021a5f2d2828cf344c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye0.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye0.webp",
+      "pixelSize": [
+        104,
+        140
+      ],
+      "pixelDensity": 6,
+      "sha256": "1cc98bb3031e0ede903126d792a80309378456400ab6cf2e12b7bb076a0d4d5d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye1.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye1.webp",
+      "pixelSize": [
+        110,
+        138
+      ],
+      "pixelDensity": 6,
+      "sha256": "2bfcbfae44643c43bc1ca799612d6277d0905dd17b5428fbf106426429b8ff42"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-claw0.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-claw0.webp",
+      "pixelSize": [
+        104,
+        136
+      ],
+      "pixelDensity": 6,
+      "sha256": "598b2d799e0a12f4f657d083cda53434e7fe454598b01449aa51433c3c83e8e2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-claw1.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-claw1.webp",
+      "pixelSize": [
+        136,
+        165
+      ],
+      "pixelDensity": 6,
+      "sha256": "22c82ec76a2f7d400a23795075129dc190d2af45d799d19d4fa1abfeb98cd395"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg0.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-sideLeg0.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg1.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-sideLeg1.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg2.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-sideLeg2.webp",
+      "pixelSize": [
+        46,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "eda9c99620afe9bd270191fd5b05466ec6f0ebc11a0426dc77c1a50de59a2212"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg3.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-sideLeg3.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg4.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-sideLeg4.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-sideLeg5.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-sideLeg5.webp",
+      "pixelSize": [
+        46,
+        40
+      ],
+      "pixelDensity": 6,
+      "sha256": "9a47f4d19e83c038c5c7cd430987857f73185fa166f6fd288e9e5f45d660c7f6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-body.webp",
+      "pixelSize": [
+        7,
+        7
+      ],
+      "pixelDensity": 6,
+      "sha256": "a0a01dd4a4d98910e4ea65f30a0981a37e621859ac8c8fe42987d4f933ee2af8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-leftThigh.webp",
+      "pixelSize": [
+        23,
+        20
+      ],
+      "pixelDensity": 6,
+      "sha256": "a4a5b68ed5ea17955d1e98c075c87420dcc050bcd93557e75652ce2092f1348f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-leftShin.webp",
+      "pixelSize": [
+        33,
+        29
+      ],
+      "pixelDensity": 6,
+      "sha256": "85c0da714effabb2859ee1a9d92c616966873399f33008956b1e6c6b009d415a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-leftFoot.webp",
+      "pixelSize": [
+        120,
+        73
+      ],
+      "pixelDensity": 6,
+      "sha256": "340864f479609f20888264cb4278f527535aa19c507eadbed108f7f4110aa786"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-rightThigh.webp",
+      "pixelSize": [
+        29,
+        25
+      ],
+      "pixelDensity": 6,
+      "sha256": "891b24a0aa9d0efe6320752891306724b92a2e9a27e1c1ec1023a2498534e689"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-rightShin.webp",
+      "pixelSize": [
+        44,
+        38
+      ],
+      "pixelDensity": 6,
+      "sha256": "d4770d0091748bf3f25ba2b9eadf1f7cd6d4bc4da27c7c8d42c0f4f681abe4ab"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-rightFoot.webp",
+      "pixelSize": [
+        112,
+        98
+      ],
+      "pixelDensity": 6,
+      "sha256": "5f992be6e135ca0e86e96d16b1356b70a4b1c5361f278d8d621e53693c81a279"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye0-happy.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye0-happy.webp",
+      "pixelSize": [
+        104,
+        136
+      ],
+      "pixelDensity": 6,
+      "sha256": "9d044831b4196e7ca5689cda0fe35a5803b901bf9aecf53bde0c7988ec4a9ee5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye0-sad.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye0-sad.webp",
+      "pixelSize": [
+        101,
+        132
+      ],
+      "pixelDensity": 6,
+      "sha256": "170f7070abc288c9a3dd8436df742f52fd365945ccb62b6c7101c0db355b5329"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye0-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye0-hurt.webp",
+      "pixelSize": [
+        109,
+        137
+      ],
+      "pixelDensity": 6,
+      "sha256": "822a724bb43883de48c3ae67b4460a25cd9ca8dfdafbb2387e466ded0c7fb053"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye1-happy.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye1-happy.webp",
+      "pixelSize": [
+        111,
+        135
+      ],
+      "pixelDensity": 6,
+      "sha256": "a09b4bd8a3637606f96f8d68bdae491f48ee882be35373317882afb3fdae5ef1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye1-sad.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye1-sad.webp",
+      "pixelSize": [
+        105,
+        131
+      ],
+      "pixelDensity": 6,
+      "sha256": "51e9631b900184659865c459d5ba9b8e9bb528b4eefa32b8116f128976d33323"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-eye1-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-eye1-hurt.webp",
+      "pixelSize": [
+        112,
+        135
+      ],
+      "pixelDensity": 6,
+      "sha256": "cee8056b90f8ce42a78a8ac40c339fd26dd2bfc1f52f4123f99d98b5558b87b0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-head-happy.webp",
+      "pixelSize": [
+        255,
+        259
+      ],
+      "pixelDensity": 6,
+      "sha256": "3757098ca92fa383a76410829b3ae32e104330f6eae2cc1b044cc94bd55241ab"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-head-sad.webp",
+      "pixelSize": [
+        256,
+        259
+      ],
+      "pixelDensity": 6,
+      "sha256": "62826e30e246763a89fa2588a23662bf3aa95ea4726cef3e18911cb4944edbeb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/down-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/down-left-main-head-hurt.webp",
+      "pixelSize": [
+        256,
+        261
+      ],
+      "pixelDensity": 6,
+      "sha256": "6e30da0f1d6ae42ea9b03c7515f05b7d361ebea04f9d65c62962efde44c73584"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-head.webp",
+      "pixelSize": [
+        282,
+        278
+      ],
+      "pixelDensity": 6,
+      "sha256": "6a4fb709496a91639820394287bd27339f5a03d68b3c38b6874f760cee9c713b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye0.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye0.webp",
+      "pixelSize": [
+        103,
+        124
+      ],
+      "pixelDensity": 6,
+      "sha256": "4835e8b4c56e13545cc7c02e89b9d4199bd144fc20d1e64bdb0f80de9c769b02"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye1.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye1.webp",
+      "pixelSize": [
+        105,
+        134
+      ],
+      "pixelDensity": 6,
+      "sha256": "9ea59972d9dff5c1eabcaf85cb5501169f02be32742a853fe15041d0357e0e89"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-claw0.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-claw0.webp",
+      "pixelSize": [
+        168,
+        157
+      ],
+      "pixelDensity": 6,
+      "sha256": "afacf7f44de6df1b00dbde5fe5744829c8ff9d99a58a4d99633f0ee885337cf7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-claw1.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-claw1.webp",
+      "pixelSize": [
+        97,
+        128
+      ],
+      "pixelDensity": 6,
+      "sha256": "f624b9d45e19777044325032cf8cf4059c011744c8518d9c94713ee4a2a5792b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg0.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-sideLeg0.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg1.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-sideLeg1.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg2.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-sideLeg2.webp",
+      "pixelSize": [
+        46,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "eda9c99620afe9bd270191fd5b05466ec6f0ebc11a0426dc77c1a50de59a2212"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg3.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-sideLeg3.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg4.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-sideLeg4.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-sideLeg5.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-sideLeg5.webp",
+      "pixelSize": [
+        46,
+        40
+      ],
+      "pixelDensity": 6,
+      "sha256": "9a47f4d19e83c038c5c7cd430987857f73185fa166f6fd288e9e5f45d660c7f6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-body.webp",
+      "pixelSize": [
+        7,
+        7
+      ],
+      "pixelDensity": 6,
+      "sha256": "e88a60f48a746290a04c2a7da820f029231b69bad884aca8e044809c2a785c5e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-leftThigh.webp",
+      "pixelSize": [
+        29,
+        25
+      ],
+      "pixelDensity": 6,
+      "sha256": "891b24a0aa9d0efe6320752891306724b92a2e9a27e1c1ec1023a2498534e689"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-leftShin.webp",
+      "pixelSize": [
+        33,
+        28
+      ],
+      "pixelDensity": 6,
+      "sha256": "c971b7e1e9ef3bc06b886bbe3a5e1049f23a22672bd9e18d627986cbfbe0e44d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-leftFoot.webp",
+      "pixelSize": [
+        127,
+        79
+      ],
+      "pixelDensity": 6,
+      "sha256": "3d9e555888423a90340167a7be37ed65195cd22298643a73e1499a68b011252b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-rightThigh.webp",
+      "pixelSize": [
+        25,
+        21
+      ],
+      "pixelDensity": 6,
+      "sha256": "4f7ef8b6688c05bc61264c7f9f059ae63476b54e111d67a21e50f683196cb67c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-rightShin.webp",
+      "pixelSize": [
+        38,
+        32
+      ],
+      "pixelDensity": 6,
+      "sha256": "0ae95b6431de63cf29a69be0e6d450d083076154de2c1c112fd9feac14f6be2c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-rightFoot.webp",
+      "pixelSize": [
+        112,
+        81
+      ],
+      "pixelDensity": 6,
+      "sha256": "6681cbdade66016b4d6c9078850a109d9649514a803dceccfc1cfb4922c9037a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye0-happy.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye0-happy.webp",
+      "pixelSize": [
+        103,
+        122
+      ],
+      "pixelDensity": 6,
+      "sha256": "c93ad4481a07b050ab95755e75d95034a2ca925cff2045000323a91b490efaa3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye0-sad.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye0-sad.webp",
+      "pixelSize": [
+        105,
+        118
+      ],
+      "pixelDensity": 6,
+      "sha256": "3e4af1fd81130d526e466737ac3dc59b0ea45ab9033c999cee56694829344f76"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye0-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye0-hurt.webp",
+      "pixelSize": [
+        104,
+        124
+      ],
+      "pixelDensity": 6,
+      "sha256": "78cd968c0ccdb0bd039dfac2904cebfe907c89c6ad814bc9599b891e292373b0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye1-happy.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye1-happy.webp",
+      "pixelSize": [
+        108,
+        134
+      ],
+      "pixelDensity": 6,
+      "sha256": "652b2d3e8df2d0d1fe5df3e140e0f7bb035b5584f13eb5f0c107c36fa50c669f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye1-sad.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye1-sad.webp",
+      "pixelSize": [
+        109,
+        131
+      ],
+      "pixelDensity": 6,
+      "sha256": "98b153758f21a4943f5487062b672048fb120e37636622367700bf1cd9c0594a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-eye1-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-eye1-hurt.webp",
+      "pixelSize": [
+        110,
+        131
+      ],
+      "pixelDensity": 6,
+      "sha256": "dc3591293065f151be09b8a4ef9fe5123976eb323b4d955ce75e41430c30ba80"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-head-happy.webp",
+      "pixelSize": [
+        282,
+        278
+      ],
+      "pixelDensity": 6,
+      "sha256": "6a4fb709496a91639820394287bd27339f5a03d68b3c38b6874f760cee9c713b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-head-sad.webp",
+      "pixelSize": [
+        282,
+        278
+      ],
+      "pixelDensity": 6,
+      "sha256": "6a4fb709496a91639820394287bd27339f5a03d68b3c38b6874f760cee9c713b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/up-left-main-head-hurt.webp",
+      "pixelSize": [
+        286,
+        285
+      ],
+      "pixelDensity": 6,
+      "sha256": "2724fdc0cca9158023d2768b13c94bc2cf40a6268bce5d08d64b2db55481a4b6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-head.webp",
+      "pixelSize": [
+        259,
+        273
+      ],
+      "pixelDensity": 6,
+      "sha256": "8a52ac80588bda055002ed15f6c3b686ebda0d6f8055cf2494a02d17916152ae"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye0.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye0.webp",
+      "pixelSize": [
+        109,
+        131
+      ],
+      "pixelDensity": 6,
+      "sha256": "d703a6d88869a199e5a8a445b1d2db758f66964dd442a1b1adbb9120588c0195"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye1.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye1.webp",
+      "pixelSize": [
+        107,
+        124
+      ],
+      "pixelDensity": 6,
+      "sha256": "390ee66fa73a6c74c1b82fffc9c601aab64901504d2c490393134fa78d29adf6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-claw0.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-claw0.webp",
+      "pixelSize": [
+        97,
+        141
+      ],
+      "pixelDensity": 6,
+      "sha256": "9f00605d87ebb5553ff9df247b306fca603da81b779f30ea7941a0a66c4eccd4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-claw1.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-claw1.webp",
+      "pixelSize": [
+        124,
+        156
+      ],
+      "pixelDensity": 6,
+      "sha256": "b952637b399f34f0cca8928266cc58d7c11047f93675cc0628c1a8fe8046a2b3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg0.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-sideLeg0.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg1.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-sideLeg1.webp",
+      "pixelSize": [
+        52,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "776ab017351fba617aa39bc65cbb2df038e0e0d1fa430921c119e936815c6d8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg2.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-sideLeg2.webp",
+      "pixelSize": [
+        46,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "eda9c99620afe9bd270191fd5b05466ec6f0ebc11a0426dc77c1a50de59a2212"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg3.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-sideLeg3.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg4.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-sideLeg4.webp",
+      "pixelSize": [
+        51,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "4e7ab590f3c05a7402aaec2e5af6b03d921c6e038ed1ce11463cb2543cafb191"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-sideLeg5.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-sideLeg5.webp",
+      "pixelSize": [
+        46,
+        40
+      ],
+      "pixelDensity": 6,
+      "sha256": "9a47f4d19e83c038c5c7cd430987857f73185fa166f6fd288e9e5f45d660c7f6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-body.webp",
+      "pixelSize": [
+        7,
+        7
+      ],
+      "pixelDensity": 6,
+      "sha256": "316e79b3fab18a08dc3d88028d7badd8cb3ec39574d48a2e5ffc299f2d3659df"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-leftThigh.webp",
+      "pixelSize": [
+        23,
+        20
+      ],
+      "pixelDensity": 6,
+      "sha256": "a4a5b68ed5ea17955d1e98c075c87420dcc050bcd93557e75652ce2092f1348f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-leftShin.webp",
+      "pixelSize": [
+        36,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "139d89d37c831139e4dfdf181727e1fc46a1ef9eaa001d0fec9f14a7cc4f0283"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-leftFoot.webp",
+      "pixelSize": [
+        103,
+        74
+      ],
+      "pixelDensity": 6,
+      "sha256": "80aad04cf64770b9e6b75b41769fd701a123913231d054187b537361666efc58"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-rightThigh.webp",
+      "pixelSize": [
+        24,
+        21
+      ],
+      "pixelDensity": 6,
+      "sha256": "dea70c746f638d79369e420b6d3bab39f8f4705f6d243203ef0c923c0cabcb90"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-rightShin.webp",
+      "pixelSize": [
+        41,
+        35
+      ],
+      "pixelDensity": 6,
+      "sha256": "4ff272ca15a178fc30deb78595bf9a2c54b4395364c643e7b8f3ca41bb2fdb31"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-rightFoot.webp",
+      "pixelSize": [
+        129,
+        78
+      ],
+      "pixelDensity": 6,
+      "sha256": "7af2faa2c4dbb6193d9e0d0bf9bbaf74f6feeee9ba7d8f3c836860b226f65eb5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye0-happy.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye0-happy.webp",
+      "pixelSize": [
+        111,
+        133
+      ],
+      "pixelDensity": 6,
+      "sha256": "9231c69f09642b630901c375365f020cb4e014676efa77686b120a77dd3c54d9"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye0-sad.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye0-sad.webp",
+      "pixelSize": [
+        111,
+        130
+      ],
+      "pixelDensity": 6,
+      "sha256": "c29a3e234667146df2a2c584c82130dc1537a8ccbab8933f168fa755833ec048"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye0-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye0-hurt.webp",
+      "pixelSize": [
+        111,
+        135
+      ],
+      "pixelDensity": 6,
+      "sha256": "39cf042715019aedc83b6170c6f2fb4ccfc8d2855388810cbb2fe258ab4e9eb4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye1-happy.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye1-happy.webp",
+      "pixelSize": [
+        108,
+        125
+      ],
+      "pixelDensity": 6,
+      "sha256": "d3002d3de63e5c9ff0a87d68f68ac1feb627f088f313b7e0ecd65cc517363f3a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye1-sad.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye1-sad.webp",
+      "pixelSize": [
+        107,
+        123
+      ],
+      "pixelDensity": 6,
+      "sha256": "0273d2f54f21f9bbee5d72742b1141323ed9b9a58d5293f7b6f6be3084a099f6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-eye1-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-eye1-hurt.webp",
+      "pixelSize": [
+        106,
+        125
+      ],
+      "pixelDensity": 6,
+      "sha256": "becb8960e7c11594e1f7eb5881b1000d2c84898753d4dc2c7d453f5476289a3c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-head-happy.webp",
+      "pixelSize": [
+        258,
+        274
+      ],
+      "pixelDensity": 6,
+      "sha256": "26e27ffa2096f0212041208af6111021d1c8e04076804b584ceaec345932a90f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-head-sad.webp",
+      "pixelSize": [
+        259,
+        276
+      ],
+      "pixelDensity": 6,
+      "sha256": "152395e15636bc343b9e5089255e935678a4a5544471ed332d7f240cb410b4c6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-04/up-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-04/up-right-main-head-hurt.webp",
+      "pixelSize": [
+        261,
+        281
+      ],
+      "pixelDensity": 6,
+      "sha256": "dc2573a7d05208a9462d2f71fb07959cde7b309ec11b6d910d7755b29184f656"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    3,
+    4,
+    7
+  ]
+}

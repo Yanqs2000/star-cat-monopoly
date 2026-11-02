@@ -1,0 +1,17 @@
+{
+  "tool": "image_gen.imagegen",
+  "status": "superseded-alpha-verified-but-rear-direction-needs-correction",
+  "generatedSource": "/Users/yanqs/.codex/generated_images/01a180c6-e2c6-7461-8003-d99831b63455/exec-65768e91-885b-41e2-9acb-f0282a8bce7e.png",
+  "sha256": "f29a5be6419705b03ba959f454743036c1caf0d5b805c66702ee6589d10067d7",
+  "inputs": [
+    "masters/role-03-neutral-r2.png",
+    "source-references/role-03-activities.png"
+  ],
+  "inputSha256": {
+    "masters/role-03-neutral-r2.png": "2dd3b1abb32c5a6739fe08f9df2e6fe3ec5bc525f10211b11995b5e1d416d157",
+    "source-references/role-03-activities.png": "ad986f44819ec99206c0a19e96de0958df80dfbbe1dbc411302e68b4ca0b0236"
+  },
+  "prompt": "role-03-flight-master-r1.prompt.txt",
+  "humanAccepted": false,
+  "supersededBy": "role-03-flight-master-r2.png"
+}
