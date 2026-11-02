@@ -1,0 +1,563 @@
+{
+  "version": 1,
+  "identities": [
+    5,
+    8,
+    9
+  ],
+  "records": [
+    {
+      "id": 5,
+      "provenance": "masters/role-05-activity-heads-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-05-activity-master-r1.png",
+          "sha256": "3d0b4de9a5fb63d4f05bd51ea27e1224532a7fc3f8a367ef2285959de774aa9e"
+        },
+        {
+          "path": "source-references/role-05-activities.png",
+          "sha256": "b0c562a416f145cd771c6ee25bdc1edbdcd284d13ee7a2b41c473f2e7812c523"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-activity-heads-r1.png",
+        "sha256": "ab8acddde7613e25e7f98d8d80c4c4fc23faa0d5c6ea3d0bfff38c29310cbdb0"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-05-activity-heads-r1.prompt.txt",
+        "sha256": "843ca9e2ca3d0a4de83cb90a06d5d8f5cb0816d87eae13c1a827b54cfb3e7e2c"
+      }
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-activity-heads-separated-r1.provenance.json",
+      "method": "opaque-core-ownership and gutter atlas packing; original RGB and alpha retained within four-pixel silhouette fringe",
+      "inputs": [
+        {
+          "path": "masters/role-05-activity-heads-r1.png",
+          "sha256": "ab8acddde7613e25e7f98d8d80c4c4fc23faa0d5c6ea3d0bfff38c29310cbdb0"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-activity-heads-separated-r1.png",
+        "sha256": "a9cbc81d9574df272b2b31de195f767253e4cf7564ff54b45a8fdb60644d971b"
+      },
+      "humanAccepted": false
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-activity-master-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-05-neutral-r1.png",
+          "sha256": "52895a556bea127d5ed63d0c6aa9aacfc595c2d9ce4f83f376ae9fd490314e24"
+        },
+        {
+          "path": "source-references/role-05-activities.png",
+          "sha256": "b0c562a416f145cd771c6ee25bdc1edbdcd284d13ee7a2b41c473f2e7812c523"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-activity-master-r1.png",
+        "sha256": "3d0b4de9a5fb63d4f05bd51ea27e1224532a7fc3f8a367ef2285959de774aa9e"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-05-activity-master-r1.prompt.txt",
+        "sha256": "e25995d749f81ade1be1313104c58e4c408b0f4c66e78b10d44254fe4a94f5ae"
+      }
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-champion-extracted-r1.provenance.json",
+      "method": "whole-connected-component-atlas-extraction",
+      "inputs": [
+        {
+          "path": "masters/role-05-activity-master-r1.png",
+          "sha256": "3d0b4de9a5fb63d4f05bd51ea27e1224532a7fc3f8a367ef2285959de774aa9e"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-champion-extracted-r1.png",
+        "sha256": "22ac5be6b1ebdf71a40502f058cb8c653b72de09ae478ef049921e0e6f24fc82"
+      },
+      "humanAccepted": false
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-flight-master-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-05-neutral-r1.png",
+          "sha256": "52895a556bea127d5ed63d0c6aa9aacfc595c2d9ce4f83f376ae9fd490314e24"
+        },
+        {
+          "path": "source-references/role-05-activities.png",
+          "sha256": "b0c562a416f145cd771c6ee25bdc1edbdcd284d13ee7a2b41c473f2e7812c523"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-flight-master-r1.png",
+        "sha256": "3ac4ca757c17c0875aa4864bef2f855e0fb5d30d4e62f857c37027629697e667"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-05-flight-master-r1.prompt.txt",
+        "sha256": "9961da617bdf578c372ac6f53595ccdb0b345eb9739fa4139c3f713b77eee526"
+      }
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-head-atlas-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-05-neutral-r1.png",
+          "sha256": "52895a556bea127d5ed63d0c6aa9aacfc595c2d9ce4f83f376ae9fd490314e24"
+        },
+        {
+          "path": "source-references/role-05-source.png",
+          "sha256": "45cc82c1caab95cd5d5f73ebdb1f2eb0b956bc1980e9695eb61b7f21eb24a3ae"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-head-atlas-r1.png",
+        "sha256": "4acaff824c43b2d84ef3cff5dbe9a58b181403da60cb6d6547de771025971a58"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-05-head-atlas-r1.prompt.txt",
+        "sha256": "70fd74eb06659fd48a3425a447e11b4ab5109ee95f8aefff2fe6345c7f71f965"
+      }
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-neutral-r1.provenance.json",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/characters-25/source-references/role-05-source.png",
+          "sha256": "45cc82c1caab95cd5d5f73ebdb1f2eb0b956bc1980e9695eb61b7f21eb24a3ae"
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/character-24/juanmao-four-view-master-r1.png",
+          "sha256": "17b5448ca05080660b8e251db842c1e9130ec574fdb65788014b6e5899bce059"
+        }
+      ],
+      "output": {
+        "path": "masters/role-05-neutral-r1.png",
+        "sha256": "52895a556bea127d5ed63d0c6aa9aacfc595c2d9ce4f83f376ae9fd490314e24"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-05-neutral-r1.prompt.txt",
+        "sha256": "e753c0028f5d3bba0cfdea29e6e77ccf7bb8b25c585365d12e5c8ec7eef5c542"
+      }
+    },
+    {
+      "id": 5,
+      "provenance": "masters/role-05-parts-atlas-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-05-neutral-r1.png",
+          "sha256": "52895a556bea127d5ed63d0c6aa9aacfc595c2d9ce4f83f376ae9fd490314e24"
+        },
+        {
+          "path": "source-references/role-05-source.png",
+          "sha256": "45cc82c1caab95cd5d5f73ebdb1f2eb0b956bc1980e9695eb61b7f21eb24a3ae"
+        }
+      ],
+      "output": null,
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-05-parts-atlas-r1.prompt.txt",
+        "sha256": "9e39e0ff85de65ab172ca66dde318d67d7a580bd7d0439037fa1a03355480440"
+      },
+      "status": "generation-rejected-no-output",
+      "requestId": "31c363ec-d16c-4ecd-8926-3d788aab2e8d"
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-activity-master-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-neutral-r1.png",
+          "sha256": "d9fec1e3eb35160888ed913cf2ee44cb479061a6579c5eb95996eb9f275ef8b0"
+        },
+        {
+          "path": "source-references/role-08-activities.png",
+          "sha256": "b2d72155a5c01d1b692a6aff74e0ef14e7b4b7ec88d8572b09f669e579be8d2c"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-activity-master-r1.png",
+        "sha256": "bfc10266bfde7dbcb7f8ca719fc47aea063800eb3c5f9211e36e562c30f3b69e"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-activity-master-r1.prompt.txt",
+        "sha256": "8cc4515f1cdfda36944f6fa698261eb7a6fa84a306e54d663027d580f9a13300"
+      }
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-activity-shells-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-activity-master-r1.png",
+          "sha256": "bfc10266bfde7dbcb7f8ca719fc47aea063800eb3c5f9211e36e562c30f3b69e"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-activity-shells-r1.png",
+        "sha256": "a4a026450ad175993f8b3233035406a50015b67358f55cde31474e026be4fb90"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-activity-shells-r1.prompt.txt",
+        "sha256": "25187c00f7660c88c4dedbea993ec1f41f07a86389b3df2db45bf8f45a0a40a6"
+      }
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-champion-extracted-r1.provenance.json",
+      "method": "whole-connected-component-atlas-extraction",
+      "inputs": [
+        {
+          "path": "masters/role-08-activity-master-r1.png",
+          "sha256": "bfc10266bfde7dbcb7f8ca719fc47aea063800eb3c5f9211e36e562c30f3b69e"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-champion-extracted-r1.png",
+        "sha256": "a81e1dca12f6d00a08f97cccf3fe3824c1c8099d698cea33d42f64e72872eeae"
+      },
+      "humanAccepted": false
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-flight-master-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-neutral-r1.png",
+          "sha256": "d9fec1e3eb35160888ed913cf2ee44cb479061a6579c5eb95996eb9f275ef8b0"
+        },
+        {
+          "path": "source-references/role-08-activities.png",
+          "sha256": "b2d72155a5c01d1b692a6aff74e0ef14e7b4b7ec88d8572b09f669e579be8d2c"
+        }
+      ],
+      "output": null,
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-flight-master-r1.prompt.txt",
+        "sha256": "64a19a8c8cdceae6bcb8c672a5ae8aad20813b3f416a6594120a6854eaa8c8d6"
+      },
+      "status": "moderation_blocked",
+      "requestId": "272d1339-d278-488e-a3e2-9f31884b4df1"
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-flight-master-r2.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-neutral-r1.png",
+          "sha256": "d9fec1e3eb35160888ed913cf2ee44cb479061a6579c5eb95996eb9f275ef8b0"
+        },
+        {
+          "path": "source-references/role-08-activities.png",
+          "sha256": "b2d72155a5c01d1b692a6aff74e0ef14e7b4b7ec88d8572b09f669e579be8d2c"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-flight-master-r2.png",
+        "sha256": "a48f4ba12c9e4650c8bdbc46769a210f72ae7628ab298ec256eb9453b02021d9"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-flight-master-r2.prompt.txt",
+        "sha256": "64a19a8c8cdceae6bcb8c672a5ae8aad20813b3f416a6594120a6854eaa8c8d6"
+      }
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-neutral-r1.provenance.json",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/characters-25/source-references/role-08-source.png",
+          "sha256": "3aa71b24869fc9f9bd6aa158a3ad9b7b67537a524ad6ed2b772b8be042387815"
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/character-24/juanmao-four-view-master-r1.png",
+          "sha256": "17b5448ca05080660b8e251db842c1e9130ec574fdb65788014b6e5899bce059"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-neutral-r1.png",
+        "sha256": "d9fec1e3eb35160888ed913cf2ee44cb479061a6579c5eb95996eb9f275ef8b0"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-neutral-r1.prompt.txt",
+        "sha256": "3333b9322c892c4ad6dd3f69ba1f10fdeed484f8cf8629bc3bd4511e3a158d02"
+      }
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-parts-atlas-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-neutral-r1.png",
+          "sha256": "d9fec1e3eb35160888ed913cf2ee44cb479061a6579c5eb95996eb9f275ef8b0"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-parts-atlas-r1.png",
+        "sha256": "556c8673217bcec5b59248656c5a5e8748bf7b22bb331a3fef71a6bdc45c637f"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-parts-atlas-r1.prompt.txt",
+        "sha256": "686c079325b01429230c0e9635d04bd580c8e19c436c2317fc6bc68a3c8385a9"
+      }
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-shell-atlas-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-neutral-r1.png",
+          "sha256": "d9fec1e3eb35160888ed913cf2ee44cb479061a6579c5eb95996eb9f275ef8b0"
+        },
+        {
+          "path": "source-references/role-08-source.png",
+          "sha256": "3aa71b24869fc9f9bd6aa158a3ad9b7b67537a524ad6ed2b772b8be042387815"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-shell-atlas-r1.png",
+        "sha256": "188248d27748c91378dc9654e7be2c64d0cbcecb3518ffa017f735e586a3f232"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-shell-atlas-r1.prompt.txt",
+        "sha256": "bac1aaa4bc597c549f17bbbe9dcb0d749d152e967c33bffcbfaf7884cca3e564"
+      }
+    },
+    {
+      "id": 8,
+      "provenance": "masters/role-08-shell-atlas-r2.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-08-shell-atlas-r1.png",
+          "sha256": "188248d27748c91378dc9654e7be2c64d0cbcecb3518ffa017f735e586a3f232"
+        },
+        {
+          "path": "source-references/role-08-source.png",
+          "sha256": "3aa71b24869fc9f9bd6aa158a3ad9b7b67537a524ad6ed2b772b8be042387815"
+        }
+      ],
+      "output": {
+        "path": "masters/role-08-shell-atlas-r2.png",
+        "sha256": "dea92f7b47f26ec21a1f5c949c9522c8cc01d81078467e2c43b5ef91fa6eaff4"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-08-shell-atlas-r2.prompt.txt",
+        "sha256": "ad4d974569e211e5e2297c561ec573185af66d86296d0de499fc2bf4c9401f16"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-activity-heads-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-09-activity-master-r1.png",
+          "sha256": "b0e52624952b60abf1f8caa4398832e14fc235d6965253d4ca7ae661f27b1904"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-activity-heads-r1.png",
+        "sha256": "edf7fb3e2829937a9369e553d08be8953c1aba140b4bb1437e91176ef5e47dda"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-activity-heads-r1.prompt.txt",
+        "sha256": "a978008ee6753965e7dea151c0ca123b3c8a03448b95e36c77c0fdc7a722a5e0"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-activity-master-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-09-neutral-r1.png",
+          "sha256": "215f56dfb228de41567549e2cb344058cb965950f592fa521e856650bdd3637f"
+        },
+        {
+          "path": "source-references/role-09-activities.png",
+          "sha256": "4607cbe03b5314baad01cdd46a88036d90b2f0f1cee0d08496a75383158afa3d"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-activity-master-r1.png",
+        "sha256": "b0e52624952b60abf1f8caa4398832e14fc235d6965253d4ca7ae661f27b1904"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-activity-master-r1.prompt.txt",
+        "sha256": "8fba4fb8efecc0941e61113db8bae9fd9f0b05b609b2e7ed252701d1d8f16595"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-bow-atlas-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-09-neutral-r1.png",
+          "sha256": "215f56dfb228de41567549e2cb344058cb965950f592fa521e856650bdd3637f"
+        },
+        {
+          "path": "source-references/role-09-source.png",
+          "sha256": "74119410e3ec8513bc11b9282252623fedc6eb759130c0869b34b86178dd0e46"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-bow-atlas-r1.png",
+        "sha256": "8bc217268c79347e37bf9f62301f12be92bbad1895ca805a77067a049dda6b4f"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-bow-atlas-r1.prompt.txt",
+        "sha256": "3617eb4405268625cbe81ab76f82b7ba192bc27d0bc0488ab3fb1fb2f8ef4968"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-champion-extracted-r1.provenance.json",
+      "method": "whole-connected-component-atlas-extraction",
+      "inputs": [
+        {
+          "path": "masters/role-09-activity-master-r1.png",
+          "sha256": "b0e52624952b60abf1f8caa4398832e14fc235d6965253d4ca7ae661f27b1904"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-champion-extracted-r1.png",
+        "sha256": "5cd2e098492dcffc18e35279e0c2a2a8906764fef8c433b7d36a4c1c7daa9721"
+      },
+      "humanAccepted": false
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-flight-master-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-09-neutral-r1.png",
+          "sha256": "215f56dfb228de41567549e2cb344058cb965950f592fa521e856650bdd3637f"
+        },
+        {
+          "path": "source-references/role-09-activities.png",
+          "sha256": "4607cbe03b5314baad01cdd46a88036d90b2f0f1cee0d08496a75383158afa3d"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-flight-master-r1.png",
+        "sha256": "d6970720ccf8af6847d6e6663d658afb185ca31991f1c6d4d8f8d777a9f65005"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-flight-master-r1.prompt.txt",
+        "sha256": "638da5e4e277cd06d1193dae54d9a93c9381e017d555e59fe66373a23359bb18"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-head-atlas-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-09-neutral-r1.png",
+          "sha256": "215f56dfb228de41567549e2cb344058cb965950f592fa521e856650bdd3637f"
+        },
+        {
+          "path": "source-references/role-09-source.png",
+          "sha256": "74119410e3ec8513bc11b9282252623fedc6eb759130c0869b34b86178dd0e46"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-head-atlas-r1.png",
+        "sha256": "78f291baf3f6a25d47b72b10b65eae2fcb5f5311be0da54cd73327c6c4fae248"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-head-atlas-r1.prompt.txt",
+        "sha256": "d50601e2ca62d8c5128bf740cee9351480851d0ae4f48c6a879148879d1ea17f"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-neutral-r1.provenance.json",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/characters-25/source-references/role-09-source.png",
+          "sha256": "74119410e3ec8513bc11b9282252623fedc6eb759130c0869b34b86178dd0e46"
+        },
+        {
+          "path": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/character-24/juanmao-four-view-master-r1.png",
+          "sha256": "17b5448ca05080660b8e251db842c1e9130ec574fdb65788014b6e5899bce059"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-neutral-r1.png",
+        "sha256": "215f56dfb228de41567549e2cb344058cb965950f592fa521e856650bdd3637f"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-neutral-r1.prompt.txt",
+        "sha256": "50717b154f4f57518fb516ccdf3b5b53401f0310ef8cf1463d146a1e934ebd38"
+      }
+    },
+    {
+      "id": 9,
+      "provenance": "masters/role-09-pony-parts-r1.provenance.json",
+      "method": "image_gen.imagegen",
+      "inputs": [
+        {
+          "path": "masters/role-09-neutral-r1.png",
+          "sha256": "215f56dfb228de41567549e2cb344058cb965950f592fa521e856650bdd3637f"
+        }
+      ],
+      "output": {
+        "path": "masters/role-09-pony-parts-r1.png",
+        "sha256": "3ebcb00632427b11cb45afec46eaed5ff34c20ac7f136589ef81ccb40ff0e40e"
+      },
+      "humanAccepted": false,
+      "prompt": {
+        "path": "masters/role-09-pony-parts-r1.prompt.txt",
+        "sha256": "848fa497de92dbef8929479eb28e7a0ac1c315e83288f8b24f2c2da658ca4de7"
+      }
+    }
+  ],
+  "note": "Companion input/output SHA ledger; original neutral provenance records remain byte-identical. Candidate artwork awaits explicit user acceptance.",
+  "assetRoot": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/characters-25",
+  "generationMode": "built-in image_gen"
+}

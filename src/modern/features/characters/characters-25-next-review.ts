@@ -7,7 +7,7 @@ import {createCharacterMaterialRenderer,type MaterialRigIndex} from './character
 
 const cid=Number(new URLSearchParams(location.search).get('role')??(location.pathname.includes('/last-three/')?5:location.pathname.includes('/trio/')?3:location.pathname.includes('/ajie-nini/')?10:11))
 if(![3,4,5,7,8,9,11,6,10,12].includes(cid))throw Error('本页支持当前人物制作批次')
-const reviewScale=cid===3?2.5:3.2
+const reviewScale=cid===3||cid===8?2.5:3.2
 const variant=new URLSearchParams(location.search).get('variant')==='carnival'?'-carnival':''
 const index=await(await fetch(`../role-${String(cid).padStart(2,'0')}${variant}-rig.json`)).json()as {
  characters:Character25Rig[];runtimeImages:{url:string}[]
@@ -71,7 +71,7 @@ document.querySelector<HTMLInputElement>('#scrub')!.oninput=e=>{
  reset(action);paused=true;advance(Number((e.target as HTMLInputElement).value)*character25DurationMs(cid,action,'down-right')/1000)
 }
 let last=performance.now()
-function tick(now:number){const dt=Math.min(60,now-last)*rate;last=now;if(!paused){advance(dt);materialElapsed+=dt;for(const m of animatedMaterials){const url='/modern/'+m.frames[Math.floor(materialElapsed*m.fps/1000)%m.frames.length]!.url;if(m.image.getAttribute('src')!==url)m.image.src=url}if(action!=='walk'&&elapsed>character25DurationMs(cid,action,'down-right')+800)reset(action)}requestAnimationFrame(tick)}
+function tick(now:number){const dt=Math.min(60,Math.max(0,now-last))*rate;last=now;if(!paused){advance(dt);materialElapsed+=dt;for(const m of animatedMaterials){const url='/modern/'+m.frames[Math.floor(materialElapsed*m.fps/1000)%m.frames.length]!.url;if(m.image.getAttribute('src')!==url)m.image.src=url}if(action!=='walk'&&elapsed>character25DurationMs(cid,action,'down-right')+800)reset(action)}requestAnimationFrame(tick)}
 const api={ready:true,rig,
  async createMaterialRenderer(){
   const load=async(suffix:string)=>(await(await fetch(`../role-${String(cid).padStart(2,'0')}${suffix}-rig.json`)).json())as MaterialRigIndex

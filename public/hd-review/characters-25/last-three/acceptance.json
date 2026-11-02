@@ -65,6 +65,15 @@
       "errors": [],
       "saveWrites": []
     },
-    "codeReview": "pending"
+    "codeReview": {
+      "reviewedRange": "42fb2bc0..cdecafb2",
+      "critical": 0,
+      "importantFixed": 2,
+      "deferredMinor": 0,
+      "fixVerification": "Four deterministic browser regressions RED to GREEN; all14 exporter/review cases GREEN; responsive9 GREEN; full suite852 GREEN.",
+      "humanArtAcceptancePending": true
+    },
+    "reviewClockAndFramingCases": 4,
+    "reviewRegressionCases": 14
   }
 }

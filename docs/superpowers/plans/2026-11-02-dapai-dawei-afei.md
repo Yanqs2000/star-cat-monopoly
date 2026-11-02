@@ -9,7 +9,7 @@
 
 用户目标：先把已验收ID3/4/7合并主分支，再完成最后三位可选人物ID5大牌、ID8大尾、ID9阿飞全部素材。继续沿用已连续验收的人物制作方法：固定身份母版、同源完整分件、连续关节动作；逐位完成全部入口和实机验证，最后由用户确认形象与自然动作。本次明确授权覆盖旧计划“其他人物暂停”的历史状态。用户未要求推送远程。
 
-当前阶段：实现。先行合并已完成，main=`42fb2bc0c4ee6ce8e479eb245085f48b27f5bb45`；主分支843项单测和类型检查通过，32个用户本地文件未变。75个研究文件保留。制作分支`feat/dapai-dawei-afei-artwork`，沿用隔离工作副本，不删除工作区。
+当前阶段：最终验收（实现、工程验证与独立审查修复完成，等待用户视觉和自然动作确认）。先行合并已完成，main=`42fb2bc0c4ee6ce8e479eb245085f48b27f5bb45`；主分支843项单测和类型检查通过，32个用户本地文件未变。75个研究文件保留。制作分支`feat/dapai-dawei-afei-artwork`，沿用隔离工作副本，不删除工作区。
 
 1. 原作审计：为5/8/9补全walk/reactions/gods/activities/monthly逐帧清单、原SWF与PNG哈希、四向与活动接触表；额外检查是否存在专属活动/trait调用，不能仅凭共用九个活动ID断言完整。
 2. 大牌完整闭环：保留红鬃、圆耳、金色狮子座额饰、原面孔、短身体和红球尾；分别制作表情、闭合躯干/肩/腕/脚供体、地图四向七态、头像、四向飞行、游乐场与月结。自然移动两脚接地，尾巴独立；按原版核对飞行装备/闭眼约定。
@@ -40,30 +40,30 @@
 Files: audit-character-materials.py, test_character_material_inventory.py, role-05/08/09-material-sources.json and original activity contact sheets.
 Consumes: existing original manifests/SWFs/PNGs. Produces: role material source JSON and source references consumed by all later role packers.
 - [x] RED missing ID5 inventory; add names/anatomy/CLI IDs and audit5/8/9.
-- [ ] GREEN completion: `/opt/homebrew/bin/python3 -m unittest scripts/test_character_material_inventory.py`. Expected: 1 test OK; 1185/1076/1112 source records, no original files changed.
+- [x] GREEN completion: `/opt/homebrew/bin/python3 -m unittest scripts/test_character_material_inventory.py`. Expected: 1 test OK; 1185/1076/1112 source records, no original files changed.
 
 ### Task 2: Dapai complete identity
 
 Files: role-05 masters and map/carnival authoring; dapai data packets; shared pipeline selected-ID extension; dapai grounding/routing/artwork/production checks.
 Consumes: Task1 role05 native inventory, existing neutral mother and new same-identity donors. Produces: complete HD runtime pack and review role5, independently exportable without prior complete pack.
-- [ ] RED: grounding cloneID5 has no support contacts; role5 registry/complete pack absent.
-- [ ] Implement fixed identity, complete donor surfaces, bounded tail, two-foot support, map four facings/seven states and all nine activity routes; generation only from viewed same-identity references.
-- [ ] GREEN: relevant Vitest + Python checks, full project tests/build, original/HD production flows, exact source raster cycle, no-previous-pack exporter and repeat-file SHA. Expected: no errors, no larger wrap step, preserved accepted assets.
-- [ ] Record complete engineering candidate before starting Task3. Human final confirmation remains a final batch gate.
+- [x] RED: grounding cloneID5 has no support contacts; role5 registry/complete pack absent.
+- [x] Implement fixed identity, complete donor surfaces, bounded tail, two-foot support, map four facings/seven states and all nine activity routes; generation only from viewed same-identity references.
+- [x] GREEN: relevant Vitest + Python checks, full project tests/build, original/HD production flows, exact source raster cycle, no-previous-pack exporter and repeat-file SHA. Expected: no errors, no larger wrap step, preserved accepted assets.
+- [x] Record complete engineering candidate before starting Task3. Human final confirmation remains a final batch gate.
 
 ### Task 3: Dawei complete identity
 
 Consumes: Task1 role08 inventory and viewed original anatomy; preserves Task2 data/artwork. Produces role08/dawei complete pack and equivalent tests/review.
-- [ ] RED native anatomy-specific support/tail/claw continuity and missing runtime routing.
-- [ ] Implement only required scorpion configuration; exact leg count and placement from original views, closed occluded surfaces, all material families.
-- [ ] GREEN same complete material/production/loop/rebuild/protection contract as Task2.
+- [x] RED native anatomy-specific support/tail/claw continuity and missing runtime routing.
+- [x] Implement only required scorpion configuration; exact leg count and placement from original views, closed occluded surfaces, all material families.
+- [x] GREEN same complete material/production/loop/rebuild/protection contract as Task2.
 
 ### Task 4: Afei complete identity
 
 Consumes: Task1 role09 inventory and original four-legged centaur geometry; preserves completed roles. Produces role09/afei complete pack and equivalent tests/review.
-- [ ] RED four horse-foot support with two upper-body arms, phase pairs based on anatomy rather than paired children, plus absent complete routing.
-- [ ] Implement centaur layers and geometry, complete source reference/donor surfaces, all material families.
-- [ ] GREEN same full verification contract; no limb clipping, head drift, body tearing, foot skating or loop jump.
+- [x] RED four horse-foot support with two upper-body arms, phase pairs based on anatomy rather than paired children, plus absent complete routing.
+- [x] Implement centaur layers and geometry, complete source reference/donor surfaces, all material families.
+- [x] GREEN same full verification contract; no limb clipping, head drift, body tearing, foot skating or loop jump.
 
 ### Task 5: Final integration and human acceptance
 
