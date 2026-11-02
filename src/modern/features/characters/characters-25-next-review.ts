@@ -29,7 +29,7 @@ const panels=facings.map((facing,i)=>{
 })
 const animatedMaterials:{image:HTMLImageElement;frames:{url:string}[];fps:number}[]=[]
 let materialElapsed=0
-if([3,4,5,7,8,11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
+if([3,4,5,7,8,9,11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
  const complete=await(await fetch(`../role-${String(cid).padStart(2,'0')}-complete.json`)).json()as {
   thumbnailUrls:Record<string,string>;assets:{source:string;url:string}[];activityClips:{id:string;fps?:number;frames:{url:string}[]}[]
  }

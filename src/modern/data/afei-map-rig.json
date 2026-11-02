@@ -1,0 +1,5291 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    9
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 9,
+      "name": "阿飞",
+      "anatomy": "centaur",
+      "density": 6,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 24,
+      "motionScale": 0.5,
+      "sourceSwfSha256": "6ccbacbc4f9ae631028d1c2391dd1123451e8d977406e80864a20411e4a0b067",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  4.833333333333333,
+                  -27.0
+                ],
+                "spine": [
+                  0.16666666666666666,
+                  -16.833333333333332
+                ],
+                "tailRoot": [
+                  -12.833333333333334,
+                  -24.166666666666668
+                ],
+                "leftHand": [
+                  -8.833333333333334,
+                  -13.833333333333334
+                ],
+                "rightHindHip": [
+                  -8.0,
+                  -17.5
+                ],
+                "rightHindKnee": [
+                  -7.0,
+                  -13.666666666666666
+                ],
+                "rightHindFoot": [
+                  -6.666666666666667,
+                  -9.666666666666666
+                ],
+                "rightFrontHip": [
+                  8.5,
+                  -15.333333333333334
+                ],
+                "rightFrontKnee": [
+                  9.0,
+                  -11.333333333333334
+                ],
+                "rightFrontFoot": [
+                  9.333333333333334,
+                  -6.5
+                ],
+                "leftHindHip": [
+                  -12.166666666666666,
+                  -16.5
+                ],
+                "leftHindKnee": [
+                  -13.333333333333334,
+                  -12.166666666666666
+                ],
+                "leftHindFoot": [
+                  -13.666666666666666,
+                  -7.833333333333333
+                ],
+                "leftFrontHip": [
+                  0.3333333333333333,
+                  -13.833333333333334
+                ],
+                "leftFrontKnee": [
+                  -0.6666666666666666,
+                  -9.0
+                ],
+                "leftFrontFoot": [
+                  -0.8333333333333334,
+                  -3.1666666666666665
+                ],
+                "leftShoulder": [
+                  -3.1666666666666665,
+                  -24.666666666666668
+                ],
+                "leftElbow": [
+                  -6.166666666666667,
+                  -20.333333333333332
+                ],
+                "rightShoulder": [
+                  12.5,
+                  -24.666666666666668
+                ],
+                "rightElbow": [
+                  16.333333333333332,
+                  -20.333333333333332
+                ],
+                "rightHand": [
+                  18.5,
+                  -15.5
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-head.webp",
+                  "width": 376,
+                  "height": 354,
+                  "pivot": [
+                    38.5,
+                    54.833333333333336
+                  ],
+                  "reconstructedFrom": "masters/role-09-head-atlas-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-tail.webp",
+                  "width": 123,
+                  "height": 89,
+                  "pivot": [
+                    16.81,
+                    4.135511811023623
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-bow.webp",
+                  "width": 75,
+                  "height": 70,
+                  "pivot": [
+                    6.190321180555556,
+                    6.066666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-body.webp",
+                  "width": 167,
+                  "height": 114,
+                  "pivot": [
+                    14.0,
+                    12.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            294.9,
+                            219.68
+                          ],
+                          [
+                            293.81,
+                            227.85
+                          ],
+                          [
+                            290.58,
+                            235.89
+                          ],
+                          [
+                            285.24,
+                            243.64
+                          ],
+                          [
+                            277.9,
+                            250.99
+                          ],
+                          [
+                            268.68,
+                            257.8
+                          ],
+                          [
+                            257.73,
+                            263.96
+                          ],
+                          [
+                            245.25,
+                            269.36
+                          ],
+                          [
+                            231.45,
+                            273.91
+                          ],
+                          [
+                            216.56,
+                            277.53
+                          ],
+                          [
+                            200.84,
+                            280.17
+                          ],
+                          [
+                            184.56,
+                            281.76
+                          ],
+                          [
+                            168.0,
+                            282.3
+                          ],
+                          [
+                            151.44,
+                            281.76
+                          ],
+                          [
+                            135.16,
+                            280.17
+                          ],
+                          [
+                            119.44,
+                            277.53
+                          ],
+                          [
+                            104.55,
+                            273.91
+                          ],
+                          [
+                            90.75,
+                            269.36
+                          ],
+                          [
+                            78.27,
+                            263.96
+                          ],
+                          [
+                            67.32,
+                            257.8
+                          ],
+                          [
+                            58.1,
+                            250.99
+                          ],
+                          [
+                            50.76,
+                            243.64
+                          ],
+                          [
+                            45.42,
+                            235.89
+                          ],
+                          [
+                            42.19,
+                            227.85
+                          ],
+                          [
+                            41.1,
+                            219.68
+                          ],
+                          [
+                            42.19,
+                            211.51
+                          ],
+                          [
+                            45.42,
+                            203.47
+                          ],
+                          [
+                            50.76,
+                            195.72
+                          ],
+                          [
+                            58.1,
+                            188.37
+                          ],
+                          [
+                            67.32,
+                            181.56
+                          ],
+                          [
+                            78.27,
+                            175.4
+                          ],
+                          [
+                            90.75,
+                            170.0
+                          ],
+                          [
+                            104.55,
+                            165.45
+                          ],
+                          [
+                            119.44,
+                            161.83
+                          ],
+                          [
+                            135.16,
+                            159.19
+                          ],
+                          [
+                            151.44,
+                            157.6
+                          ],
+                          [
+                            168.0,
+                            157.06
+                          ],
+                          [
+                            184.56,
+                            157.6
+                          ],
+                          [
+                            200.84,
+                            159.19
+                          ],
+                          [
+                            216.56,
+                            161.83
+                          ],
+                          [
+                            231.45,
+                            165.45
+                          ],
+                          [
+                            245.25,
+                            170.0
+                          ],
+                          [
+                            257.73,
+                            175.4
+                          ],
+                          [
+                            268.68,
+                            181.56
+                          ],
+                          [
+                            277.9,
+                            188.37
+                          ],
+                          [
+                            285.24,
+                            195.72
+                          ],
+                          [
+                            290.58,
+                            203.47
+                          ],
+                          [
+                            293.81,
+                            211.51
+                          ]
+                        ],
+                        "sourcePivot": [
+                          168.0,
+                          219.68
+                        ],
+                        "sourceScale": 0.6579984239558708
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-neutral-r1.png",
+                        "sourcePolygon": [
+                          [
+                            282.0,
+                            561.0
+                          ],
+                          [
+                            281.68,
+                            565.83
+                          ],
+                          [
+                            280.74,
+                            570.58
+                          ],
+                          [
+                            279.18,
+                            575.16
+                          ],
+                          [
+                            277.04,
+                            579.5
+                          ],
+                          [
+                            274.35,
+                            583.52
+                          ],
+                          [
+                            271.16,
+                            587.16
+                          ],
+                          [
+                            267.52,
+                            590.35
+                          ],
+                          [
+                            263.5,
+                            593.04
+                          ],
+                          [
+                            259.16,
+                            595.18
+                          ],
+                          [
+                            254.58,
+                            596.74
+                          ],
+                          [
+                            249.83,
+                            597.68
+                          ],
+                          [
+                            245.0,
+                            598.0
+                          ],
+                          [
+                            240.17,
+                            597.68
+                          ],
+                          [
+                            235.42,
+                            596.74
+                          ],
+                          [
+                            230.84,
+                            595.18
+                          ],
+                          [
+                            226.5,
+                            593.04
+                          ],
+                          [
+                            222.48,
+                            590.35
+                          ],
+                          [
+                            218.84,
+                            587.16
+                          ],
+                          [
+                            215.65,
+                            583.52
+                          ],
+                          [
+                            212.96,
+                            579.5
+                          ],
+                          [
+                            210.82,
+                            575.16
+                          ],
+                          [
+                            209.26,
+                            570.58
+                          ],
+                          [
+                            208.32,
+                            565.83
+                          ],
+                          [
+                            208.0,
+                            561.0
+                          ],
+                          [
+                            208.32,
+                            556.17
+                          ],
+                          [
+                            209.26,
+                            551.42
+                          ],
+                          [
+                            210.82,
+                            546.84
+                          ],
+                          [
+                            212.96,
+                            542.5
+                          ],
+                          [
+                            215.65,
+                            538.48
+                          ],
+                          [
+                            218.84,
+                            534.84
+                          ],
+                          [
+                            222.48,
+                            531.65
+                          ],
+                          [
+                            226.5,
+                            528.96
+                          ],
+                          [
+                            230.84,
+                            526.82
+                          ],
+                          [
+                            235.42,
+                            525.26
+                          ],
+                          [
+                            240.17,
+                            524.32
+                          ],
+                          [
+                            245.0,
+                            524.0
+                          ],
+                          [
+                            249.83,
+                            524.32
+                          ],
+                          [
+                            254.58,
+                            525.26
+                          ],
+                          [
+                            259.16,
+                            526.82
+                          ],
+                          [
+                            263.5,
+                            528.96
+                          ],
+                          [
+                            267.52,
+                            531.65
+                          ],
+                          [
+                            271.16,
+                            534.84
+                          ],
+                          [
+                            274.35,
+                            538.48
+                          ],
+                          [
+                            277.04,
+                            542.5
+                          ],
+                          [
+                            279.18,
+                            546.84
+                          ],
+                          [
+                            280.74,
+                            551.42
+                          ],
+                          [
+                            281.68,
+                            556.17
+                          ]
+                        ],
+                        "sourcePivot": [
+                          224,
+                          596
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightHindThigh.webp",
+                  "width": 43,
+                  "height": 34,
+                  "pivot": [
+                    3.4943532713313004,
+                    1.2189604434876629
+                  ],
+                  "axis": [
+                    0.0,
+                    3.9616214413349042
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      23.769728648009426
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightHindShin.webp",
+                  "width": 39,
+                  "height": 34,
+                  "pivot": [
+                    3.2110918876779455,
+                    1.2350353414145945
+                  ],
+                  "axis": [
+                    0.0,
+                    4.013864859597432
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      24.08318915758459
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightHindFoot.webp",
+                  "width": 47,
+                  "height": 22,
+                  "pivot": [
+                    4.25,
+                    0.3243076923076947
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightFrontThigh.webp",
+                  "width": 43,
+                  "height": 35,
+                  "pivot": [
+                    3.5556623915573087,
+                    1.2403473458920844
+                  ],
+                  "axis": [
+                    0.0,
+                    4.031128874149275
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      24.186773244895647
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightFrontShin.webp",
+                  "width": 39,
+                  "height": 42,
+                  "pivot": [
+                    3.229875967499696,
+                    1.4907119849998598
+                  ],
+                  "axis": [
+                    0.0,
+                    4.844813951249544
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      29.068883707497267
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightFrontFoot.webp",
+                  "width": 50,
+                  "height": 24,
+                  "pivot": [
+                    4.5,
+                    0.3433846153846179
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftHindThigh.webp",
+                  "width": 43,
+                  "height": 39,
+                  "pivot": [
+                    3.4926408251400254,
+                    1.3808114890088472
+                  ],
+                  "axis": [
+                    0.0,
+                    4.487637339278753
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      26.92582403567252
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftHindShin.webp",
+                  "width": 39,
+                  "height": 37,
+                  "pivot": [
+                    3.2596012026013255,
+                    1.3372722882466974
+                  ],
+                  "axis": [
+                    0.0,
+                    4.346134936801766
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      26.076809620810597
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftHindFoot.webp",
+                  "width": 54,
+                  "height": 25,
+                  "pivot": [
+                    4.833333333333333,
+                    0.36882051282051553
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftFrontThigh.webp",
+                  "width": 43,
+                  "height": 42,
+                  "pivot": [
+                    3.4370040188033273,
+                    1.5186761943549587
+                  ],
+                  "axis": [
+                    0.0,
+                    4.935697631653616
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      29.614185789921695
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftFrontShin.webp",
+                  "width": 39,
+                  "height": 50,
+                  "pivot": [
+                    3.1831166181839268,
+                    1.7956042461550357
+                  ],
+                  "axis": [
+                    0.0,
+                    5.835713800003866
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      35.014282800023196
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftFrontFoot.webp",
+                  "width": 55,
+                  "height": 26,
+                  "pivot": [
+                    4.916666666666667,
+                    0.37517948717948996
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftUpperArm.webp",
+                  "width": 28,
+                  "height": 57,
+                  "pivot": [
+                    2.18626603665962,
+                    2.1081851067789192
+                  ],
+                  "axis": [
+                    0.0,
+                    5.270462766947298
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      31.62277660168379
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftForearm.webp",
+                  "width": 28,
+                  "height": 76,
+                  "pivot": [
+                    2.185787738644532,
+                    2.8102985211143987
+                  ],
+                  "axis": [
+                    0.0,
+                    7.025746302785997
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      42.15447781671598
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-leftHand.webp",
+                  "width": 36,
+                  "height": 30,
+                  "pivot": [
+                    3.1666666666666665,
+                    2.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightUpperArm.webp",
+                  "width": 28,
+                  "height": 62,
+                  "pivot": [
+                    2.159926839181662,
+                    2.3142073276946378
+                  ],
+                  "axis": [
+                    0.0,
+                    5.785518319236594
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      34.713109915419565
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightForearm.webp",
+                  "width": 28,
+                  "height": 57,
+                  "pivot": [
+                    2.1971701743110112,
+                    2.118699810942761
+                  ],
+                  "axis": [
+                    0.0,
+                    5.296749527356901
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      31.78049716414141
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-rightHand.webp",
+                  "width": 36,
+                  "height": 30,
+                  "pivot": [
+                    3.1666666666666665,
+                    2.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-head-happy.webp",
+                  "width": 383,
+                  "height": 346,
+                  "pivot": [
+                    39.0,
+                    53.666666666666664
+                  ],
+                  "sourceScale": 1.3995693777502893
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-head-sad.webp",
+                  "width": 379,
+                  "height": 347,
+                  "pivot": [
+                    38.666666666666664,
+                    53.833333333333336
+                  ],
+                  "sourceScale": 1.3995693777502893
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-09/down-right-main-head-hurt.webp",
+                  "width": 371,
+                  "height": 321,
+                  "pivot": [
+                    38.0,
+                    49.5
+                  ],
+                  "sourceScale": 1.3995693777502893
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    3.9616214413349042,
+                    4.013864859597432
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    4.031128874149275,
+                    4.844813951249544
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    4.487637339278753,
+                    4.346134936801766
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.935697631653616,
+                    5.835713800003866
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    5.270462766947299,
+                    7.025746302785997
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    5.785518319236594,
+                    5.296749527356901
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "leftHand",
+                  "kind": "fixed",
+                  "restAngle": -0.35
+                }
+              ],
+              "order": [
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "tail",
+                "body",
+                "bow",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -6.333333333333333,
+                  -27.666666666666668
+                ],
+                "spine": [
+                  0.8333333333333334,
+                  -18.0
+                ],
+                "tailRoot": [
+                  10.666666666666666,
+                  -23.833333333333332
+                ],
+                "leftHand": [
+                  -17.666666666666668,
+                  -20.0
+                ],
+                "leftHindHip": [
+                  5.833333333333333,
+                  -17.333333333333332
+                ],
+                "leftHindKnee": [
+                  5.833333333333333,
+                  -13.0
+                ],
+                "leftHindFoot": [
+                  6.333333333333333,
+                  -7.5
+                ],
+                "leftFrontHip": [
+                  -11.166666666666666,
+                  -16.666666666666668
+                ],
+                "leftFrontKnee": [
+                  -12.0,
+                  -12.5
+                ],
+                "leftFrontFoot": [
+                  -12.666666666666666,
+                  -8.0
+                ],
+                "rightHindHip": [
+                  10.0,
+                  -16.833333333333332
+                ],
+                "rightHindKnee": [
+                  10.166666666666666,
+                  -12.666666666666666
+                ],
+                "rightHindFoot": [
+                  9.666666666666666,
+                  -7.666666666666667
+                ],
+                "rightFrontHip": [
+                  -3.0,
+                  -14.0
+                ],
+                "rightFrontKnee": [
+                  -3.3333333333333335,
+                  -8.833333333333334
+                ],
+                "rightFrontFoot": [
+                  -3.3333333333333335,
+                  -3.3333333333333335
+                ],
+                "leftShoulder": [
+                  -13.333333333333334,
+                  -25.333333333333332
+                ],
+                "leftElbow": [
+                  -15.5,
+                  -22.833333333333332
+                ],
+                "rightShoulder": [
+                  -4.5,
+                  -25.333333333333332
+                ],
+                "rightElbow": [
+                  -1.6666666666666667,
+                  -19.833333333333332
+                ],
+                "rightHand": [
+                  -0.3333333333333333,
+                  -13.166666666666666
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-head.webp",
+                  "width": 400,
+                  "height": 355,
+                  "pivot": [
+                    22.5,
+                    57.5
+                  ],
+                  "reconstructedFrom": "masters/role-09-head-atlas-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-tail.webp",
+                  "width": 96,
+                  "height": 67,
+                  "pivot": [
+                    2.8799999999999994,
+                    3.1291603053435124
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-bow.webp",
+                  "width": 75,
+                  "height": 70,
+                  "pivot": [
+                    6.294822949350067,
+                    6.066666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-body.webp",
+                  "width": 179,
+                  "height": 112,
+                  "pivot": [
+                    15.333333333333334,
+                    11.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            672.11,
+                            210.08
+                          ],
+                          [
+                            671.05,
+                            218.66
+                          ],
+                          [
+                            667.9,
+                            227.09
+                          ],
+                          [
+                            662.7,
+                            235.23
+                          ],
+                          [
+                            655.55,
+                            242.94
+                          ],
+                          [
+                            646.57,
+                            250.09
+                          ],
+                          [
+                            635.91,
+                            256.55
+                          ],
+                          [
+                            623.75,
+                            262.22
+                          ],
+                          [
+                            610.31,
+                            267.0
+                          ],
+                          [
+                            595.8,
+                            270.8
+                          ],
+                          [
+                            580.49,
+                            273.56
+                          ],
+                          [
+                            564.63,
+                            275.24
+                          ],
+                          [
+                            548.5,
+                            275.8
+                          ],
+                          [
+                            532.37,
+                            275.24
+                          ],
+                          [
+                            516.51,
+                            273.56
+                          ],
+                          [
+                            501.2,
+                            270.8
+                          ],
+                          [
+                            486.7,
+                            267.0
+                          ],
+                          [
+                            473.25,
+                            262.22
+                          ],
+                          [
+                            461.09,
+                            256.55
+                          ],
+                          [
+                            450.43,
+                            250.09
+                          ],
+                          [
+                            441.45,
+                            242.94
+                          ],
+                          [
+                            434.3,
+                            235.23
+                          ],
+                          [
+                            429.1,
+                            227.09
+                          ],
+                          [
+                            425.95,
+                            218.66
+                          ],
+                          [
+                            424.89,
+                            210.08
+                          ],
+                          [
+                            425.95,
+                            201.5
+                          ],
+                          [
+                            429.1,
+                            193.07
+                          ],
+                          [
+                            434.3,
+                            184.93
+                          ],
+                          [
+                            441.45,
+                            177.22
+                          ],
+                          [
+                            450.43,
+                            170.07
+                          ],
+                          [
+                            461.09,
+                            163.61
+                          ],
+                          [
+                            473.25,
+                            157.94
+                          ],
+                          [
+                            486.69,
+                            153.16
+                          ],
+                          [
+                            501.2,
+                            149.36
+                          ],
+                          [
+                            516.51,
+                            146.6
+                          ],
+                          [
+                            532.37,
+                            144.92
+                          ],
+                          [
+                            548.5,
+                            144.36
+                          ],
+                          [
+                            564.63,
+                            144.92
+                          ],
+                          [
+                            580.49,
+                            146.6
+                          ],
+                          [
+                            595.8,
+                            149.36
+                          ],
+                          [
+                            610.31,
+                            153.16
+                          ],
+                          [
+                            623.75,
+                            157.94
+                          ],
+                          [
+                            635.91,
+                            163.61
+                          ],
+                          [
+                            646.57,
+                            170.07
+                          ],
+                          [
+                            655.55,
+                            177.22
+                          ],
+                          [
+                            662.7,
+                            184.93
+                          ],
+                          [
+                            667.9,
+                            193.07
+                          ],
+                          [
+                            671.05,
+                            201.5
+                          ]
+                        ],
+                        "sourcePivot": [
+                          548.5,
+                          210.07999999999998
+                        ],
+                        "sourceScale": 0.7038265512498989
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-neutral-r1.png",
+                        "sourcePolygon": [
+                          [
+                            632.0,
+                            554.0
+                          ],
+                          [
+                            631.72,
+                            558.44
+                          ],
+                          [
+                            630.88,
+                            562.8
+                          ],
+                          [
+                            629.49,
+                            567.01
+                          ],
+                          [
+                            627.58,
+                            571.0
+                          ],
+                          [
+                            625.18,
+                            574.7
+                          ],
+                          [
+                            622.33,
+                            578.04
+                          ],
+                          [
+                            619.09,
+                            580.97
+                          ],
+                          [
+                            615.5,
+                            583.44
+                          ],
+                          [
+                            611.63,
+                            585.41
+                          ],
+                          [
+                            607.54,
+                            586.84
+                          ],
+                          [
+                            603.31,
+                            587.71
+                          ],
+                          [
+                            599.0,
+                            588.0
+                          ],
+                          [
+                            594.69,
+                            587.71
+                          ],
+                          [
+                            590.46,
+                            586.84
+                          ],
+                          [
+                            586.37,
+                            585.41
+                          ],
+                          [
+                            582.5,
+                            583.44
+                          ],
+                          [
+                            578.91,
+                            580.97
+                          ],
+                          [
+                            575.67,
+                            578.04
+                          ],
+                          [
+                            572.82,
+                            574.7
+                          ],
+                          [
+                            570.42,
+                            571.0
+                          ],
+                          [
+                            568.51,
+                            567.01
+                          ],
+                          [
+                            567.12,
+                            562.8
+                          ],
+                          [
+                            566.28,
+                            558.44
+                          ],
+                          [
+                            566.0,
+                            554.0
+                          ],
+                          [
+                            566.28,
+                            549.56
+                          ],
+                          [
+                            567.12,
+                            545.2
+                          ],
+                          [
+                            568.51,
+                            540.99
+                          ],
+                          [
+                            570.42,
+                            537.0
+                          ],
+                          [
+                            572.82,
+                            533.3
+                          ],
+                          [
+                            575.67,
+                            529.96
+                          ],
+                          [
+                            578.91,
+                            527.03
+                          ],
+                          [
+                            582.5,
+                            524.56
+                          ],
+                          [
+                            586.37,
+                            522.59
+                          ],
+                          [
+                            590.46,
+                            521.16
+                          ],
+                          [
+                            594.69,
+                            520.29
+                          ],
+                          [
+                            599.0,
+                            520.0
+                          ],
+                          [
+                            603.31,
+                            520.29
+                          ],
+                          [
+                            607.54,
+                            521.16
+                          ],
+                          [
+                            611.63,
+                            522.59
+                          ],
+                          [
+                            615.5,
+                            524.56
+                          ],
+                          [
+                            619.09,
+                            527.03
+                          ],
+                          [
+                            622.33,
+                            529.96
+                          ],
+                          [
+                            625.18,
+                            533.3
+                          ],
+                          [
+                            627.58,
+                            537.0
+                          ],
+                          [
+                            629.49,
+                            540.99
+                          ],
+                          [
+                            630.88,
+                            545.2
+                          ],
+                          [
+                            631.72,
+                            549.56
+                          ]
+                        ],
+                        "sourcePivot": [
+                          658,
+                          586
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftHindThigh.webp",
+                  "width": 43,
+                  "height": 37,
+                  "pivot": [
+                    3.5833333333333335,
+                    1.3333333333333333
+                  ],
+                  "axis": [
+                    0.0,
+                    4.333333333333333
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      26.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftHindShin.webp",
+                  "width": 39,
+                  "height": 47,
+                  "pivot": [
+                    3.155817433482074,
+                    1.6992863103365015
+                  ],
+                  "axis": [
+                    0.0,
+                    5.522680508593631
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.13608305156178
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftHindFoot.webp",
+                  "width": 52,
+                  "height": 25,
+                  "pivot": [
+                    4.078083989501312,
+                    0.3897637795275574
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftFrontThigh.webp",
+                  "width": 43,
+                  "height": 36,
+                  "pivot": [
+                    3.5137474212257978,
+                    1.307440900921227
+                  ],
+                  "axis": [
+                    0.0,
+                    4.249182927993988
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      25.495097567963924
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftFrontShin.webp",
+                  "width": 39,
+                  "height": 39,
+                  "pivot": [
+                    3.2111397797543955,
+                    1.399727596303198
+                  ],
+                  "axis": [
+                    0.0,
+                    4.549114687985393
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      27.294688127912362
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftFrontFoot.webp",
+                  "width": 51,
+                  "height": 24,
+                  "pivot": [
+                    4.003937007874016,
+                    0.3826771653543291
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightHindThigh.webp",
+                  "width": 43,
+                  "height": 36,
+                  "pivot": [
+                    3.448268129086298,
+                    1.28307651314839
+                  ],
+                  "axis": [
+                    0.0,
+                    4.169998667732268
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      25.019992006393608
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightHindShin.webp",
+                  "width": 39,
+                  "height": 43,
+                  "pivot": [
+                    3.1736449329855443,
+                    1.5461347109416754
+                  ],
+                  "axis": [
+                    0.0,
+                    5.024937810560445
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.14962686336267
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightHindFoot.webp",
+                  "width": 50,
+                  "height": 23,
+                  "pivot": [
+                    3.855643044619422,
+                    0.36850393700787243
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightFrontThigh.webp",
+                  "width": 43,
+                  "height": 44,
+                  "pivot": [
+                    3.4250546481096915,
+                    1.5930486735393916
+                  ],
+                  "axis": [
+                    0.0,
+                    5.177408189003022
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.064449134018133
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightFrontShin.webp",
+                  "width": 39,
+                  "height": 47,
+                  "pivot": [
+                    3.142857142857143,
+                    1.6923076923076923
+                  ],
+                  "axis": [
+                    0.0,
+                    5.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightFrontFoot.webp",
+                  "width": 54,
+                  "height": 26,
+                  "pivot": [
+                    4.2263779527559056,
+                    0.40393700787401404
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftUpperArm.webp",
+                  "width": 28,
+                  "height": 36,
+                  "pivot": [
+                    2.179545610807129,
+                    1.3232955494186138
+                  ],
+                  "axis": [
+                    0.0,
+                    3.3082388735465345
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      19.849433241279208
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftForearm.webp",
+                  "width": 28,
+                  "height": 39,
+                  "pivot": [
+                    2.2193561764922793,
+                    1.4267289706021797
+                  ],
+                  "axis": [
+                    0.0,
+                    3.5668224265054493
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      21.400934559032695
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-leftHand.webp",
+                  "width": 31,
+                  "height": 26,
+                  "pivot": [
+                    2.6916666666666664,
+                    1.9833333333333334
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightUpperArm.webp",
+                  "width": 28,
+                  "height": 67,
+                  "pivot": [
+                    2.165416305881568,
+                    2.474761492436078
+                  ],
+                  "axis": [
+                    0.0,
+                    6.186903731090195
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      37.12142238654117
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightForearm.webp",
+                  "width": 28,
+                  "height": 73,
+                  "pivot": [
+                    2.1755816591329213,
+                    2.7194770739161513
+                  ],
+                  "axis": [
+                    0.0,
+                    6.798692684790379
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      40.792156108742276
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-rightHand.webp",
+                  "width": 36,
+                  "height": 30,
+                  "pivot": [
+                    3.1666666666666665,
+                    2.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-head-happy.webp",
+                  "width": 406,
+                  "height": 349,
+                  "pivot": [
+                    23.0,
+                    56.666666666666664
+                  ],
+                  "sourceScale": 1.4231615069764152
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-head-sad.webp",
+                  "width": 393,
+                  "height": 345,
+                  "pivot": [
+                    21.833333333333332,
+                    56.166666666666664
+                  ],
+                  "sourceScale": 1.4231615069764152
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-09/down-left-main-head-hurt.webp",
+                  "width": 433,
+                  "height": 322,
+                  "pivot": [
+                    25.166666666666668,
+                    52.166666666666664
+                  ],
+                  "sourceScale": 1.4231615069764152
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    4.333333333333333,
+                    5.522680508593631
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.249182927993988,
+                    4.549114687985393
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    4.169998667732268,
+                    5.024937810560445
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    5.177408189003022,
+                    5.5
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    3.3082388735465345,
+                    3.5668224265054493
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    6.186903731090195,
+                    6.798692684790379
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "leftHand",
+                  "kind": "fixed",
+                  "restAngle": 0
+                }
+              ],
+              "order": [
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "tail",
+                "body",
+                "bow",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "head",
+                "head-expression"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -2.1666666666666665,
+                  -29.5
+                ],
+                "spine": [
+                  0.6666666666666666,
+                  -19.0
+                ],
+                "tailRoot": [
+                  10.166666666666666,
+                  -22.666666666666668
+                ],
+                "leftHand": [
+                  -17.166666666666668,
+                  -17.666666666666668
+                ],
+                "rightFrontHip": [
+                  -7.666666666666667,
+                  -18.666666666666668
+                ],
+                "rightFrontKnee": [
+                  -8.666666666666666,
+                  -13.333333333333334
+                ],
+                "rightFrontFoot": [
+                  -9.166666666666666,
+                  -7.5
+                ],
+                "leftFrontHip": [
+                  0.0,
+                  -13.833333333333334
+                ],
+                "leftFrontKnee": [
+                  0.0,
+                  -8.666666666666666
+                ],
+                "leftFrontFoot": [
+                  0.0,
+                  -3.1666666666666665
+                ],
+                "rightHindHip": [
+                  7.0,
+                  -17.166666666666668
+                ],
+                "rightHindKnee": [
+                  6.666666666666667,
+                  -12.666666666666666
+                ],
+                "rightHindFoot": [
+                  6.666666666666667,
+                  -7.0
+                ],
+                "leftHindHip": [
+                  12.0,
+                  -14.5
+                ],
+                "leftHindKnee": [
+                  12.666666666666666,
+                  -9.666666666666666
+                ],
+                "leftHindFoot": [
+                  13.0,
+                  -4.666666666666667
+                ],
+                "leftShoulder": [
+                  -10.0,
+                  -27.0
+                ],
+                "leftElbow": [
+                  -13.666666666666666,
+                  -22.166666666666668
+                ],
+                "rightShoulder": [
+                  4.833333333333333,
+                  -28.5
+                ],
+                "rightElbow": [
+                  5.333333333333333,
+                  -26.333333333333332
+                ],
+                "rightHand": [
+                  4.666666666666667,
+                  -24.666666666666668
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-head.webp",
+                  "width": 368,
+                  "height": 338,
+                  "pivot": [
+                    30.833333333333332,
+                    53.666666666666664
+                  ],
+                  "reconstructedFrom": "masters/role-09-head-atlas-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-tail.webp",
+                  "width": 145,
+                  "height": 104,
+                  "pivot": [
+                    4.320000000000005,
+                    4.8186046511627865
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-bow.webp",
+                  "width": 75,
+                  "height": 70,
+                  "pivot": [
+                    6.236951983298538,
+                    6.066666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-body.webp",
+                  "width": 165,
+                  "height": 111,
+                  "pivot": [
+                    13.666666666666666,
+                    12.333333333333334
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            1050.39,
+                            220.32
+                          ],
+                          [
+                            1049.24,
+                            228.33
+                          ],
+                          [
+                            1045.79,
+                            236.21
+                          ],
+                          [
+                            1040.12,
+                            243.81
+                          ],
+                          [
+                            1032.32,
+                            251.01
+                          ],
+                          [
+                            1022.52,
+                            257.69
+                          ],
+                          [
+                            1010.88,
+                            263.72
+                          ],
+                          [
+                            997.62,
+                            269.02
+                          ],
+                          [
+                            982.95,
+                            273.48
+                          ],
+                          [
+                            967.12,
+                            277.03
+                          ],
+                          [
+                            950.41,
+                            279.61
+                          ],
+                          [
+                            933.11,
+                            281.17
+                          ],
+                          [
+                            915.5,
+                            281.7
+                          ],
+                          [
+                            897.89,
+                            281.17
+                          ],
+                          [
+                            880.59,
+                            279.61
+                          ],
+                          [
+                            863.88,
+                            277.03
+                          ],
+                          [
+                            848.06,
+                            273.48
+                          ],
+                          [
+                            833.38,
+                            269.02
+                          ],
+                          [
+                            820.12,
+                            263.72
+                          ],
+                          [
+                            808.48,
+                            257.69
+                          ],
+                          [
+                            798.68,
+                            251.01
+                          ],
+                          [
+                            790.88,
+                            243.81
+                          ],
+                          [
+                            785.21,
+                            236.21
+                          ],
+                          [
+                            781.76,
+                            228.33
+                          ],
+                          [
+                            780.61,
+                            220.32
+                          ],
+                          [
+                            781.76,
+                            212.31
+                          ],
+                          [
+                            785.21,
+                            204.43
+                          ],
+                          [
+                            790.88,
+                            196.83
+                          ],
+                          [
+                            798.68,
+                            189.63
+                          ],
+                          [
+                            808.48,
+                            182.95
+                          ],
+                          [
+                            820.12,
+                            176.92
+                          ],
+                          [
+                            833.38,
+                            171.62
+                          ],
+                          [
+                            848.05,
+                            167.16
+                          ],
+                          [
+                            863.88,
+                            163.61
+                          ],
+                          [
+                            880.59,
+                            161.03
+                          ],
+                          [
+                            897.89,
+                            159.47
+                          ],
+                          [
+                            915.5,
+                            158.94
+                          ],
+                          [
+                            933.11,
+                            159.47
+                          ],
+                          [
+                            950.41,
+                            161.03
+                          ],
+                          [
+                            967.12,
+                            163.61
+                          ],
+                          [
+                            982.95,
+                            167.16
+                          ],
+                          [
+                            997.62,
+                            171.62
+                          ],
+                          [
+                            1010.88,
+                            176.92
+                          ],
+                          [
+                            1022.52,
+                            182.95
+                          ],
+                          [
+                            1032.32,
+                            189.63
+                          ],
+                          [
+                            1040.12,
+                            196.83
+                          ],
+                          [
+                            1045.79,
+                            204.43
+                          ],
+                          [
+                            1049.24,
+                            212.31
+                          ]
+                        ],
+                        "sourcePivot": [
+                          915.5,
+                          220.32
+                        ],
+                        "sourceScale": 0.6079027355623101
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-neutral-r1.png",
+                        "sourcePolygon": [
+                          [
+                            1126.0,
+                            533.0
+                          ],
+                          [
+                            1125.69,
+                            536.65
+                          ],
+                          [
+                            1124.77,
+                            540.25
+                          ],
+                          [
+                            1123.26,
+                            543.72
+                          ],
+                          [
+                            1121.18,
+                            547.0
+                          ],
+                          [
+                            1118.56,
+                            550.05
+                          ],
+                          [
+                            1115.46,
+                            552.8
+                          ],
+                          [
+                            1111.92,
+                            555.21
+                          ],
+                          [
+                            1108.0,
+                            557.25
+                          ],
+                          [
+                            1103.78,
+                            558.87
+                          ],
+                          [
+                            1099.32,
+                            560.05
+                          ],
+                          [
+                            1094.7,
+                            560.76
+                          ],
+                          [
+                            1090.0,
+                            561.0
+                          ],
+                          [
+                            1085.3,
+                            560.76
+                          ],
+                          [
+                            1080.68,
+                            560.05
+                          ],
+                          [
+                            1076.22,
+                            558.87
+                          ],
+                          [
+                            1072.0,
+                            557.25
+                          ],
+                          [
+                            1068.08,
+                            555.21
+                          ],
+                          [
+                            1064.54,
+                            552.8
+                          ],
+                          [
+                            1061.44,
+                            550.05
+                          ],
+                          [
+                            1058.82,
+                            547.0
+                          ],
+                          [
+                            1056.74,
+                            543.72
+                          ],
+                          [
+                            1055.23,
+                            540.25
+                          ],
+                          [
+                            1054.31,
+                            536.65
+                          ],
+                          [
+                            1054.0,
+                            533.0
+                          ],
+                          [
+                            1054.31,
+                            529.35
+                          ],
+                          [
+                            1055.23,
+                            525.75
+                          ],
+                          [
+                            1056.74,
+                            522.28
+                          ],
+                          [
+                            1058.82,
+                            519.0
+                          ],
+                          [
+                            1061.44,
+                            515.95
+                          ],
+                          [
+                            1064.54,
+                            513.2
+                          ],
+                          [
+                            1068.08,
+                            510.79
+                          ],
+                          [
+                            1072.0,
+                            508.75
+                          ],
+                          [
+                            1076.22,
+                            507.13
+                          ],
+                          [
+                            1080.68,
+                            505.95
+                          ],
+                          [
+                            1085.3,
+                            505.24
+                          ],
+                          [
+                            1090.0,
+                            505.0
+                          ],
+                          [
+                            1094.7,
+                            505.24
+                          ],
+                          [
+                            1099.32,
+                            505.95
+                          ],
+                          [
+                            1103.78,
+                            507.13
+                          ],
+                          [
+                            1108.0,
+                            508.75
+                          ],
+                          [
+                            1111.92,
+                            510.79
+                          ],
+                          [
+                            1115.46,
+                            513.2
+                          ],
+                          [
+                            1118.56,
+                            515.95
+                          ],
+                          [
+                            1121.18,
+                            519.0
+                          ],
+                          [
+                            1123.26,
+                            522.28
+                          ],
+                          [
+                            1124.77,
+                            525.75
+                          ],
+                          [
+                            1125.69,
+                            529.35
+                          ]
+                        ],
+                        "sourcePivot": [
+                          1112,
+                          579
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightFrontThigh.webp",
+                  "width": 43,
+                  "height": 47,
+                  "pivot": [
+                    3.4187510897791804,
+                    1.6696226252409954
+                  ],
+                  "axis": [
+                    0.0,
+                    5.426273532033235
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      32.55764119219941
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightFrontShin.webp",
+                  "width": 39,
+                  "height": 50,
+                  "pivot": [
+                    3.1934851036818723,
+                    1.801453135410287
+                  ],
+                  "axis": [
+                    0.0,
+                    5.854722690083432
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      35.12833614050059
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightFrontFoot.webp",
+                  "width": 56,
+                  "height": 24,
+                  "pivot": [
+                    4.52734375,
+                    0.3740624999999973
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftFrontThigh.webp",
+                  "width": 43,
+                  "height": 44,
+                  "pivot": [
+                    3.417948717948718,
+                    1.5897435897435896
+                  ],
+                  "axis": [
+                    0.0,
+                    5.166666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftFrontShin.webp",
+                  "width": 39,
+                  "height": 47,
+                  "pivot": [
+                    3.142857142857143,
+                    1.6923076923076923
+                  ],
+                  "axis": [
+                    0.0,
+                    5.5
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftFrontFoot.webp",
+                  "width": 60,
+                  "height": 26,
+                  "pivot": [
+                    4.845052083333333,
+                    0.40031249999999713
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightHindThigh.webp",
+                  "width": 43,
+                  "height": 39,
+                  "pivot": [
+                    3.5118577009911185,
+                    1.3884088585313725
+                  ],
+                  "axis": [
+                    0.0,
+                    4.512328790226961
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      27.073972741361768
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightHindShin.webp",
+                  "width": 39,
+                  "height": 49,
+                  "pivot": [
+                    3.2380952380952386,
+                    1.7435897435897436
+                  ],
+                  "axis": [
+                    0.0,
+                    5.666666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      34.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightHindFoot.webp",
+                  "width": 55,
+                  "height": 24,
+                  "pivot": [
+                    4.447916666666667,
+                    0.36749999999999733
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftHindThigh.webp",
+                  "width": 43,
+                  "height": 42,
+                  "pivot": [
+                    3.58634239451334,
+                    1.5012596070055844
+                  ],
+                  "axis": [
+                    0.0,
+                    4.8790937227681495
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      29.274562336608895
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftHindShin.webp",
+                  "width": 39,
+                  "height": 43,
+                  "pivot": [
+                    3.1649045007100853,
+                    1.5418765516279904
+                  ],
+                  "axis": [
+                    0.0,
+                    5.011098792790969
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.066592756745816
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftHindFoot.webp",
+                  "width": 57,
+                  "height": 24,
+                  "pivot": [
+                    4.606770833333333,
+                    0.38062499999999727
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftUpperArm.webp",
+                  "width": 28,
+                  "height": 66,
+                  "pivot": [
+                    2.1918610419339197,
+                    2.42670329642684
+                  ],
+                  "axis": [
+                    0.0,
+                    6.066758241067099
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      36.40054944640259
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftForearm.webp",
+                  "width": 28,
+                  "height": 62,
+                  "pivot": [
+                    2.201718062260405,
+                    2.280350850198276
+                  ],
+                  "axis": [
+                    0.0,
+                    5.7008771254956905
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      34.20526275297414
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-leftHand.webp",
+                  "width": 36,
+                  "height": 30,
+                  "pivot": [
+                    3.1666666666666665,
+                    2.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightUpperArm.webp",
+                  "width": 28,
+                  "height": 24,
+                  "pivot": [
+                    2.2640399623971965,
+                    0.8894442709417557
+                  ],
+                  "axis": [
+                    0.0,
+                    2.223610677354389
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      13.341664064126334
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightForearm.webp",
+                  "width": 28,
+                  "height": 19,
+                  "pivot": [
+                    2.233846142218757,
+                    0.7180219742846005
+                  ],
+                  "axis": [
+                    0.0,
+                    1.7950549357115013
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      10.770329614269007
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-rightHand.webp",
+                  "width": 31,
+                  "height": 26,
+                  "pivot": [
+                    2.6916666666666664,
+                    1.9833333333333334
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-head-happy.webp",
+                  "width": 368,
+                  "height": 338,
+                  "pivot": [
+                    30.833333333333332,
+                    53.666666666666664
+                  ]
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-head-sad.webp",
+                  "width": 368,
+                  "height": 338,
+                  "pivot": [
+                    30.833333333333332,
+                    53.666666666666664
+                  ]
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-09/up-left-main-head-hurt.webp",
+                  "width": 342,
+                  "height": 312,
+                  "pivot": [
+                    28.666666666666668,
+                    49.5
+                  ],
+                  "sourceScale": 1.3303514370009766
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    5.426273532033235,
+                    5.854722690083432
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    5.166666666666667,
+                    5.5
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.512328790226961,
+                    5.666666666666667
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    4.8790937227681495,
+                    5.011098792790969
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    6.066758241067099,
+                    5.7008771254956905
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    2.223610677354389,
+                    1.7950549357115013
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "leftHand",
+                  "kind": "fixed",
+                  "restAngle": 0
+                }
+              ],
+              "order": [
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "body",
+                "bow",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "head",
+                "head-expression",
+                "tail"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  5.5,
+                  -31.5
+                ],
+                "spine": [
+                  -1.1666666666666667,
+                  -19.0
+                ],
+                "tailRoot": [
+                  -13.833333333333334,
+                  -24.0
+                ],
+                "rightHand": [
+                  17.0,
+                  -19.0
+                ],
+                "leftHindHip": [
+                  -10.0,
+                  -19.666666666666668
+                ],
+                "leftHindKnee": [
+                  -12.0,
+                  -13.666666666666666
+                ],
+                "leftHindFoot": [
+                  -13.166666666666666,
+                  -7.666666666666667
+                ],
+                "leftFrontHip": [
+                  5.333333333333333,
+                  -16.666666666666668
+                ],
+                "leftFrontKnee": [
+                  7.666666666666667,
+                  -12.333333333333334
+                ],
+                "leftFrontFoot": [
+                  9.666666666666666,
+                  -7.333333333333333
+                ],
+                "rightHindHip": [
+                  -5.5,
+                  -15.333333333333334
+                ],
+                "rightHindKnee": [
+                  -4.666666666666667,
+                  -10.166666666666666
+                ],
+                "rightHindFoot": [
+                  -3.6666666666666665,
+                  -3.1666666666666665
+                ],
+                "rightFrontHip": [
+                  11.0,
+                  -19.5
+                ],
+                "rightFrontKnee": [
+                  11.166666666666666,
+                  -14.666666666666666
+                ],
+                "rightFrontFoot": [
+                  11.333333333333334,
+                  -9.666666666666666
+                ],
+                "leftShoulder": [
+                  1.1666666666666667,
+                  -29.0
+                ],
+                "leftElbow": [
+                  -1.8333333333333333,
+                  -28.333333333333332
+                ],
+                "leftHand": [
+                  -4.166666666666667,
+                  -28.166666666666668
+                ],
+                "rightShoulder": [
+                  12.166666666666666,
+                  -29.333333333333332
+                ],
+                "rightElbow": [
+                  15.166666666666666,
+                  -24.5
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-head.webp",
+                  "width": 432,
+                  "height": 325,
+                  "pivot": [
+                    46.666666666666664,
+                    51.333333333333336
+                  ],
+                  "reconstructedFrom": "masters/role-09-head-atlas-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-tail.webp",
+                  "width": 142,
+                  "height": 97,
+                  "pivot": [
+                    19.269999999999992,
+                    4.514186046511623
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-bow.webp",
+                  "width": 75,
+                  "height": 70,
+                  "pivot": [
+                    6.197257383966245,
+                    6.066666666666667
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-body.webp",
+                  "width": 178,
+                  "height": 126,
+                  "pivot": [
+                    14.833333333333334,
+                    13.666666666666666
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            1408.84,
+                            217.68
+                          ],
+                          [
+                            1407.75,
+                            225.85
+                          ],
+                          [
+                            1404.48,
+                            233.89
+                          ],
+                          [
+                            1399.11,
+                            241.64
+                          ],
+                          [
+                            1391.71,
+                            248.99
+                          ],
+                          [
+                            1382.42,
+                            255.8
+                          ],
+                          [
+                            1371.4,
+                            261.96
+                          ],
+                          [
+                            1358.82,
+                            267.36
+                          ],
+                          [
+                            1344.92,
+                            271.91
+                          ],
+                          [
+                            1329.92,
+                            275.53
+                          ],
+                          [
+                            1314.09,
+                            278.17
+                          ],
+                          [
+                            1297.69,
+                            279.76
+                          ],
+                          [
+                            1281.0,
+                            280.3
+                          ],
+                          [
+                            1264.31,
+                            279.76
+                          ],
+                          [
+                            1247.91,
+                            278.17
+                          ],
+                          [
+                            1232.08,
+                            275.53
+                          ],
+                          [
+                            1217.08,
+                            271.91
+                          ],
+                          [
+                            1203.18,
+                            267.36
+                          ],
+                          [
+                            1190.6,
+                            261.96
+                          ],
+                          [
+                            1179.58,
+                            255.8
+                          ],
+                          [
+                            1170.29,
+                            248.99
+                          ],
+                          [
+                            1162.89,
+                            241.64
+                          ],
+                          [
+                            1157.52,
+                            233.89
+                          ],
+                          [
+                            1154.25,
+                            225.85
+                          ],
+                          [
+                            1153.16,
+                            217.68
+                          ],
+                          [
+                            1154.25,
+                            209.51
+                          ],
+                          [
+                            1157.52,
+                            201.47
+                          ],
+                          [
+                            1162.89,
+                            193.72
+                          ],
+                          [
+                            1170.29,
+                            186.37
+                          ],
+                          [
+                            1179.58,
+                            179.56
+                          ],
+                          [
+                            1190.6,
+                            173.4
+                          ],
+                          [
+                            1203.18,
+                            168.0
+                          ],
+                          [
+                            1217.08,
+                            163.45
+                          ],
+                          [
+                            1232.08,
+                            159.83
+                          ],
+                          [
+                            1247.91,
+                            157.19
+                          ],
+                          [
+                            1264.31,
+                            155.6
+                          ],
+                          [
+                            1281.0,
+                            155.06
+                          ],
+                          [
+                            1297.69,
+                            155.6
+                          ],
+                          [
+                            1314.09,
+                            157.19
+                          ],
+                          [
+                            1329.92,
+                            159.83
+                          ],
+                          [
+                            1344.92,
+                            163.45
+                          ],
+                          [
+                            1358.82,
+                            168.0
+                          ],
+                          [
+                            1371.4,
+                            173.4
+                          ],
+                          [
+                            1382.42,
+                            179.56
+                          ],
+                          [
+                            1391.71,
+                            186.37
+                          ],
+                          [
+                            1399.11,
+                            193.72
+                          ],
+                          [
+                            1404.48,
+                            201.47
+                          ],
+                          [
+                            1407.75,
+                            209.51
+                          ]
+                        ],
+                        "sourcePivot": [
+                          1281.0,
+                          217.68
+                        ],
+                        "sourceScale": 0.6961827284105132
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-neutral-r1.png",
+                        "sourcePolygon": [
+                          [
+                            1645.0,
+                            531.0
+                          ],
+                          [
+                            1644.71,
+                            535.05
+                          ],
+                          [
+                            1643.84,
+                            539.02
+                          ],
+                          [
+                            1642.41,
+                            542.86
+                          ],
+                          [
+                            1640.44,
+                            546.5
+                          ],
+                          [
+                            1637.97,
+                            549.87
+                          ],
+                          [
+                            1635.04,
+                            552.92
+                          ],
+                          [
+                            1631.7,
+                            555.59
+                          ],
+                          [
+                            1628.0,
+                            557.85
+                          ],
+                          [
+                            1624.01,
+                            559.64
+                          ],
+                          [
+                            1619.8,
+                            560.94
+                          ],
+                          [
+                            1615.44,
+                            561.73
+                          ],
+                          [
+                            1611.0,
+                            562.0
+                          ],
+                          [
+                            1606.56,
+                            561.73
+                          ],
+                          [
+                            1602.2,
+                            560.94
+                          ],
+                          [
+                            1597.99,
+                            559.64
+                          ],
+                          [
+                            1594.0,
+                            557.85
+                          ],
+                          [
+                            1590.3,
+                            555.59
+                          ],
+                          [
+                            1586.96,
+                            552.92
+                          ],
+                          [
+                            1584.03,
+                            549.87
+                          ],
+                          [
+                            1581.56,
+                            546.5
+                          ],
+                          [
+                            1579.59,
+                            542.86
+                          ],
+                          [
+                            1578.16,
+                            539.02
+                          ],
+                          [
+                            1577.29,
+                            535.05
+                          ],
+                          [
+                            1577.0,
+                            531.0
+                          ],
+                          [
+                            1577.29,
+                            526.95
+                          ],
+                          [
+                            1578.16,
+                            522.98
+                          ],
+                          [
+                            1579.59,
+                            519.14
+                          ],
+                          [
+                            1581.56,
+                            515.5
+                          ],
+                          [
+                            1584.03,
+                            512.13
+                          ],
+                          [
+                            1586.96,
+                            509.08
+                          ],
+                          [
+                            1590.3,
+                            506.41
+                          ],
+                          [
+                            1594.0,
+                            504.15
+                          ],
+                          [
+                            1597.99,
+                            502.36
+                          ],
+                          [
+                            1602.2,
+                            501.06
+                          ],
+                          [
+                            1606.56,
+                            500.27
+                          ],
+                          [
+                            1611.0,
+                            500.0
+                          ],
+                          [
+                            1615.44,
+                            500.27
+                          ],
+                          [
+                            1619.8,
+                            501.06
+                          ],
+                          [
+                            1624.01,
+                            502.36
+                          ],
+                          [
+                            1628.0,
+                            504.15
+                          ],
+                          [
+                            1631.7,
+                            506.41
+                          ],
+                          [
+                            1635.04,
+                            509.08
+                          ],
+                          [
+                            1637.97,
+                            512.13
+                          ],
+                          [
+                            1640.44,
+                            515.5
+                          ],
+                          [
+                            1642.41,
+                            519.14
+                          ],
+                          [
+                            1643.84,
+                            522.98
+                          ],
+                          [
+                            1644.71,
+                            526.95
+                          ]
+                        ],
+                        "sourcePivot": [
+                          1568,
+                          582
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftHindThigh.webp",
+                  "width": 43,
+                  "height": 54,
+                  "pivot": [
+                    3.4866138304420597,
+                    1.9460170216420796
+                  ],
+                  "axis": [
+                    0.0,
+                    6.324555320336759
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      37.94733192202055
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftHindShin.webp",
+                  "width": 39,
+                  "height": 52,
+                  "pivot": [
+                    3.1890644905899563,
+                    1.8807303406043332
+                  ],
+                  "axis": [
+                    0.0,
+                    6.112373606964083
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      36.6742416417845
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftHindFoot.webp",
+                  "width": 55,
+                  "height": 24,
+                  "pivot": [
+                    4.916666666666667,
+                    0.3590656565656518
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftFrontThigh.webp",
+                  "width": 43,
+                  "height": 42,
+                  "pivot": [
+                    3.4271923972471594,
+                    1.5143408266906053
+                  ],
+                  "axis": [
+                    0.0,
+                    4.9216076867444665
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      29.5296461204668
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftFrontShin.webp",
+                  "width": 39,
+                  "height": 46,
+                  "pivot": [
+                    3.231098884280702,
+                    1.6569737868106165
+                  ],
+                  "axis": [
+                    0.0,
+                    5.385164807134504
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      32.31098884280702
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftFrontFoot.webp",
+                  "width": 54,
+                  "height": 24,
+                  "pivot": [
+                    4.833333333333333,
+                    0.3529797979797933
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightHindThigh.webp",
+                  "width": 43,
+                  "height": 45,
+                  "pivot": [
+                    3.462121508351928,
+                    1.6102890736520596
+                  ],
+                  "axis": [
+                    0.0,
+                    5.233439489369194
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.400636936215164
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightHindShin.webp",
+                  "width": 39,
+                  "height": 61,
+                  "pivot": [
+                    3.1426968052735447,
+                    2.1757131728816845
+                  ],
+                  "axis": [
+                    0.0,
+                    7.0710678118654755
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      42.42640687119285
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightHindFoot.webp",
+                  "width": 54,
+                  "height": 24,
+                  "pivot": [
+                    4.833333333333333,
+                    0.3529797979797933
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightFrontThigh.webp",
+                  "width": 43,
+                  "height": 42,
+                  "pivot": [
+                    3.5548181169659085,
+                    1.4880633977996827
+                  ],
+                  "axis": [
+                    0.0,
+                    4.8362060428489695
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      29.017236257093817
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightFrontShin.webp",
+                  "width": 39,
+                  "height": 43,
+                  "pivot": [
+                    3.1596486357481335,
+                    1.5393160020311418
+                  ],
+                  "axis": [
+                    0.0,
+                    5.002777006601211
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.01666203960727
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightFrontFoot.webp",
+                  "width": 53,
+                  "height": 23,
+                  "pivot": [
+                    4.75,
+                    0.3468939393939348
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftUpperArm.webp",
+                  "width": 28,
+                  "height": 33,
+                  "pivot": [
+                    2.1512270400350073,
+                    1.2292725943057183
+                  ],
+                  "axis": [
+                    0.0,
+                    3.073181485764296
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      18.439088914585774
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftForearm.webp",
+                  "width": 28,
+                  "height": 25,
+                  "pivot": [
+                    2.183326265185053,
+                    0.9357112565078799
+                  ],
+                  "axis": [
+                    0.0,
+                    2.3392781412696997
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      14.035668847618199
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-leftHand.webp",
+                  "width": 31,
+                  "height": 26,
+                  "pivot": [
+                    2.6916666666666664,
+                    1.9833333333333334
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightUpperArm.webp",
+                  "width": 28,
+                  "height": 61,
+                  "pivot": [
+                    2.1970084995150727,
+                    2.275473088783468
+                  ],
+                  "axis": [
+                    0.0,
+                    5.688682721958671
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      34.132096331752024
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightForearm.webp",
+                  "width": 28,
+                  "height": 63,
+                  "pivot": [
+                    2.1644033762930244,
+                    2.319003617456812
+                  ],
+                  "axis": [
+                    0.0,
+                    5.797509043642029
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      34.785054261852174
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-rightHand.webp",
+                  "width": 36,
+                  "height": 30,
+                  "pivot": [
+                    3.1666666666666665,
+                    2.3333333333333335
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "head-happy": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-head-happy.webp",
+                  "width": 430,
+                  "height": 327,
+                  "pivot": [
+                    46.5,
+                    51.666666666666664
+                  ],
+                  "sourceScale": 1.360612297013668
+                },
+                "head-sad": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-head-sad.webp",
+                  "width": 437,
+                  "height": 319,
+                  "pivot": [
+                    47.0,
+                    50.5
+                  ],
+                  "sourceScale": 1.360612297013668
+                },
+                "head-hurt": {
+                  "url": "hd-characters/characters-25/role-09/up-right-main-head-hurt.webp",
+                  "width": 423,
+                  "height": 305,
+                  "pivot": [
+                    46.0,
+                    48.333333333333336
+                  ],
+                  "sourceScale": 1.360612297013668
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    6.324555320336759,
+                    6.112373606964083
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    4.9216076867444665,
+                    5.385164807134504
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    5.233439489369194,
+                    7.0710678118654755
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    4.8362060428489695,
+                    5.002777006601211
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    3.073181485764296,
+                    2.3392781412696997
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    5.688682721958671,
+                    5.797509043642029
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "rightHand",
+                  "kind": "fixed",
+                  "restAngle": 0.25
+                }
+              ],
+              "order": [
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "body",
+                "bow",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "head",
+                "head-expression",
+                "tail"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-head.webp",
+      "pixelSize": [
+        376,
+        354
+      ],
+      "pixelDensity": 6,
+      "sha256": "ae72a2708ef3e721507f9af8d9a4629a3887c923f24f340ec0a6ede7813ac5fe"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-tail.webp",
+      "pixelSize": [
+        123,
+        89
+      ],
+      "pixelDensity": 6,
+      "sha256": "43da54017a68366975adc12d77b7fb2ab0b3790c7a995b694d48e771b372eda6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-bow.webp",
+      "pixelSize": [
+        75,
+        70
+      ],
+      "pixelDensity": 6,
+      "sha256": "eedefc59ec6341fb482ffa263769fc5de32c7cd5864c513554cb1606ef6e7dff"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-body.webp",
+      "pixelSize": [
+        167,
+        114
+      ],
+      "pixelDensity": 6,
+      "sha256": "df9957fc1bc11d29b982a7d1b3bb1f79325c0b0a8ff58ae871d7b3f4b28f8aef"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightHindThigh.webp",
+      "pixelSize": [
+        43,
+        34
+      ],
+      "pixelDensity": 6,
+      "sha256": "a08ee4054c0786c19ed4635df6578b222114b85e74e3566ea7dbf1a47b2e2ff8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightHindShin.webp",
+      "pixelSize": [
+        39,
+        34
+      ],
+      "pixelDensity": 6,
+      "sha256": "150b27be974607e6a546ba8fbefc718e062b370f3ff37498c76ddc74a96ed15e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightHindFoot.webp",
+      "pixelSize": [
+        47,
+        22
+      ],
+      "pixelDensity": 6,
+      "sha256": "433cde284e60a5c0b78d708c53ee1918e73136422d4cbf46be86c3dd59e00047"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightFrontThigh.webp",
+      "pixelSize": [
+        43,
+        35
+      ],
+      "pixelDensity": 6,
+      "sha256": "79584337a7402f82fb02b2da2b86f93998ee2e1dd2cd918ae90828fedee93a47"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightFrontShin.webp",
+      "pixelSize": [
+        39,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "bf0a12475303ab703476dec5de148464b613310ced52207ef6eb0abcb12738ec"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightFrontFoot.webp",
+      "pixelSize": [
+        50,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "7d6f3f5fc73f9e08817f10c7dd9a37ac6eba04d3df0578b15777f0c77823bd54"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftHindThigh.webp",
+      "pixelSize": [
+        43,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "d0c8901c8b58b43fe6ae55307a91d6e45f9d692a7e1df6abc3db277d39ae6a64"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftHindShin.webp",
+      "pixelSize": [
+        39,
+        37
+      ],
+      "pixelDensity": 6,
+      "sha256": "3266d060247a94bf63eae6c94cf3df7be3cd19157ca02630c99b1a2b3c062bea"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftHindFoot.webp",
+      "pixelSize": [
+        54,
+        25
+      ],
+      "pixelDensity": 6,
+      "sha256": "c9e74e0d485a26115b9222879db31e393466ac2a42f64626c3421cceed5c160b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftFrontThigh.webp",
+      "pixelSize": [
+        43,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "34f9f72d4137778382c0e5e824137c505bd7edcc446b958691fbf9d4aaa410ba"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftFrontShin.webp",
+      "pixelSize": [
+        39,
+        50
+      ],
+      "pixelDensity": 6,
+      "sha256": "f8daab506374fb732872ce0824dced36bde313ae433183eb43c8b083d17d9e4e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftFrontFoot.webp",
+      "pixelSize": [
+        55,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "4c58d9f12e6f00d0273262f03c09867f888545b021582156f0ae821313ac94ee"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        28,
+        57
+      ],
+      "pixelDensity": 6,
+      "sha256": "d131bfe4759ef6b2d547b14b0d477455d04147722696f78ea28db92a01a95026"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftForearm.webp",
+      "pixelSize": [
+        28,
+        76
+      ],
+      "pixelDensity": 6,
+      "sha256": "41931713004d800e465c332e680b36be59e08a2f2caac5d590a093097355f11d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-leftHand.webp",
+      "pixelSize": [
+        36,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "deefd8e1fe97473aea026af1274f93e7cf48306d0f17859133ade430ad791c72"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        28,
+        62
+      ],
+      "pixelDensity": 6,
+      "sha256": "fbebcf29d8cbf7866a7f0f73528802fff51f577c421df5b65d8ea06f6d5c730a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightForearm.webp",
+      "pixelSize": [
+        28,
+        57
+      ],
+      "pixelDensity": 6,
+      "sha256": "d131bfe4759ef6b2d547b14b0d477455d04147722696f78ea28db92a01a95026"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-rightHand.webp",
+      "pixelSize": [
+        36,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "deefd8e1fe97473aea026af1274f93e7cf48306d0f17859133ade430ad791c72"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-head-happy.webp",
+      "pixelSize": [
+        383,
+        346
+      ],
+      "pixelDensity": 6,
+      "sha256": "1486299210a54ba9fb3a68433f34efaa894882ff461f8fc6e02203c338f8c3a6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-head-sad.webp",
+      "pixelSize": [
+        379,
+        347
+      ],
+      "pixelDensity": 6,
+      "sha256": "0995433efb8d2127cfffd0aa44d2411cfd5d86a8793c0ea3ca31a241e285dfc5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-09/down-right-main-head-hurt.webp",
+      "pixelSize": [
+        371,
+        321
+      ],
+      "pixelDensity": 6,
+      "sha256": "0a7a1847137910bcef0a8b4d656a6ee7eeb4c458fb1a8f2a43aaef5ac3894c67"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-head.webp",
+      "pixelSize": [
+        400,
+        355
+      ],
+      "pixelDensity": 6,
+      "sha256": "f89baef1aa65a6cecfd1066a70d81095f2c169363e5234834379dd2bca499970"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-tail.webp",
+      "pixelSize": [
+        96,
+        67
+      ],
+      "pixelDensity": 6,
+      "sha256": "bc02dcc023e32766ba97fabb90e3d29e8844bf0fee03719d24e33eb171151429"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-bow.webp",
+      "pixelSize": [
+        75,
+        70
+      ],
+      "pixelDensity": 6,
+      "sha256": "4a6e91b49d6a7be8df320608f779039452780632e96bf6d1c29f82287b8d6df7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-body.webp",
+      "pixelSize": [
+        179,
+        112
+      ],
+      "pixelDensity": 6,
+      "sha256": "5d891d05b97f379c6d8650f2f2d356f13f6e903fbafb4fb485bd0c08387e28ff"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftHindThigh.webp",
+      "pixelSize": [
+        43,
+        37
+      ],
+      "pixelDensity": 6,
+      "sha256": "f23c1321bba089bdb3f79f33c00cee3fab69bf6d78ec91ba8a7cadcc293ec182"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftHindShin.webp",
+      "pixelSize": [
+        39,
+        47
+      ],
+      "pixelDensity": 6,
+      "sha256": "b4e72967f1434a7bf45ceec29d2c21cde3f07b38b68ed1a5a11ef764ce62c99c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftHindFoot.webp",
+      "pixelSize": [
+        52,
+        25
+      ],
+      "pixelDensity": 6,
+      "sha256": "af09babed0897037974fccdb5bf12782f77071f3fc762ea27975113eb9ba7536"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftFrontThigh.webp",
+      "pixelSize": [
+        43,
+        36
+      ],
+      "pixelDensity": 6,
+      "sha256": "1c3dbc3730acdca3d8c21c725f941cd659b8039453d8f89f29b0d81fca08ed07"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftFrontShin.webp",
+      "pixelSize": [
+        39,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "a958be8517f01fc14fd8db47a68d9e4744daf9a6055359468454b3a5cb3554e6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftFrontFoot.webp",
+      "pixelSize": [
+        51,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "e5884a129322de66ad6d47926479b7ca15f5b0946c8404285356bdd45ca0dd4e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightHindThigh.webp",
+      "pixelSize": [
+        43,
+        36
+      ],
+      "pixelDensity": 6,
+      "sha256": "1c3dbc3730acdca3d8c21c725f941cd659b8039453d8f89f29b0d81fca08ed07"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightHindShin.webp",
+      "pixelSize": [
+        39,
+        43
+      ],
+      "pixelDensity": 6,
+      "sha256": "71f15dbd3e703a5543932fbd49429b0ae68317d5f92ef7c157af094ffe533e75"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightHindFoot.webp",
+      "pixelSize": [
+        50,
+        23
+      ],
+      "pixelDensity": 6,
+      "sha256": "16cd7e1d19d83fda412a4552181f51da238557ec5fcc0519b3250be25ee9df01"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightFrontThigh.webp",
+      "pixelSize": [
+        43,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "6d4b0ad6779c6f34270ecbd9e7e2d9c0912974cd4287fc912782768af250ddc1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightFrontShin.webp",
+      "pixelSize": [
+        39,
+        47
+      ],
+      "pixelDensity": 6,
+      "sha256": "b4e72967f1434a7bf45ceec29d2c21cde3f07b38b68ed1a5a11ef764ce62c99c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightFrontFoot.webp",
+      "pixelSize": [
+        54,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "6edd392cb5cf8ffc0a5c643fe0690331af392792350b2c4cd69fa3809ac225b9"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        28,
+        36
+      ],
+      "pixelDensity": 6,
+      "sha256": "bb8fdc689432009268a005573544833ae3780a58fe1a3f21c6d41540a8bdb2e7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftForearm.webp",
+      "pixelSize": [
+        28,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "e0e065c0bf33ddcc23ab9a03086102cefe62c9984ece282f68adc552666a9022"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-leftHand.webp",
+      "pixelSize": [
+        31,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "999c3f23178d7164705d560c3dac1eae9d5f0fb308a8443224309ade12235d0b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        28,
+        67
+      ],
+      "pixelDensity": 6,
+      "sha256": "ffa84dc437c2ea312f85ede4b8d169ff4736381bbd405aca01aaf258de779a20"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightForearm.webp",
+      "pixelSize": [
+        28,
+        73
+      ],
+      "pixelDensity": 6,
+      "sha256": "1fc729743870cb2a9f7862155f42e8482ebe0b0393cc7cfe0a6bd691257b34b7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-rightHand.webp",
+      "pixelSize": [
+        36,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "deefd8e1fe97473aea026af1274f93e7cf48306d0f17859133ade430ad791c72"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-head-happy.webp",
+      "pixelSize": [
+        406,
+        349
+      ],
+      "pixelDensity": 6,
+      "sha256": "f0bfa580ba5568ed1f5448d4d142e887ad1ed29ca2d308c094ed6828d81e8be8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-head-sad.webp",
+      "pixelSize": [
+        393,
+        345
+      ],
+      "pixelDensity": 6,
+      "sha256": "d4b18c94708e2c78c0d84f10ca055285a2da8e19a1ed9bf7df03704f5157582c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/down-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-09/down-left-main-head-hurt.webp",
+      "pixelSize": [
+        433,
+        322
+      ],
+      "pixelDensity": 6,
+      "sha256": "ac75656739824c6d971110ed06193fb78b19f9b0eb1994adcd3e7ddc48b9ed41"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-head.webp",
+      "pixelSize": [
+        368,
+        338
+      ],
+      "pixelDensity": 6,
+      "sha256": "38b23e203534d611601d288b3eba5c4314b7e5f2b79f6262a1f4a17ae3c283e7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-tail.webp",
+      "pixelSize": [
+        145,
+        104
+      ],
+      "pixelDensity": 6,
+      "sha256": "d0f9be7d79ed4a118a7531f558e0498946950c4666cd41e588b0b3f2fd7055f4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-bow.webp",
+      "pixelSize": [
+        75,
+        70
+      ],
+      "pixelDensity": 6,
+      "sha256": "9fd9dcc63d6656ab64050bd8fed9f6f69b6d60185c51181b1a6a4fdbab67ba3c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-body.webp",
+      "pixelSize": [
+        165,
+        111
+      ],
+      "pixelDensity": 6,
+      "sha256": "213e406898410cb3bab7c56de8209b4edb47102930e298c8018e4f07ea0e0d4a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightFrontThigh.webp",
+      "pixelSize": [
+        43,
+        47
+      ],
+      "pixelDensity": 6,
+      "sha256": "c447457f5efec9e1f5ec004327c4c521dd40551804729487c7d584488759b91a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightFrontShin.webp",
+      "pixelSize": [
+        39,
+        50
+      ],
+      "pixelDensity": 6,
+      "sha256": "f8daab506374fb732872ce0824dced36bde313ae433183eb43c8b083d17d9e4e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightFrontFoot.webp",
+      "pixelSize": [
+        56,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "c4f72013fdf7b5fa62eff19b615dd93453ef548b021c9cbee7ef79621603065a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftFrontThigh.webp",
+      "pixelSize": [
+        43,
+        44
+      ],
+      "pixelDensity": 6,
+      "sha256": "6d4b0ad6779c6f34270ecbd9e7e2d9c0912974cd4287fc912782768af250ddc1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftFrontShin.webp",
+      "pixelSize": [
+        39,
+        47
+      ],
+      "pixelDensity": 6,
+      "sha256": "b4e72967f1434a7bf45ceec29d2c21cde3f07b38b68ed1a5a11ef764ce62c99c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftFrontFoot.webp",
+      "pixelSize": [
+        60,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "82c3ef597148929c538d40deb9a5372593823a03c3f8d5cbd5eaff2d3b0c97e7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightHindThigh.webp",
+      "pixelSize": [
+        43,
+        39
+      ],
+      "pixelDensity": 6,
+      "sha256": "d0c8901c8b58b43fe6ae55307a91d6e45f9d692a7e1df6abc3db277d39ae6a64"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightHindShin.webp",
+      "pixelSize": [
+        39,
+        49
+      ],
+      "pixelDensity": 6,
+      "sha256": "623c4b91d1df9cb2606b33839e7ae98340052c19f76f38152cf6b637aaad8c6d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightHindFoot.webp",
+      "pixelSize": [
+        55,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "14c1b2236c1c08ad59edb42e7124859261e3176367968b1970e5bbc61e3eece7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftHindThigh.webp",
+      "pixelSize": [
+        43,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "46119e4969c882740de4197bfe1499ff45b6cea0d691e39631cc5b60df744d3a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftHindShin.webp",
+      "pixelSize": [
+        39,
+        43
+      ],
+      "pixelDensity": 6,
+      "sha256": "71f15dbd3e703a5543932fbd49429b0ae68317d5f92ef7c157af094ffe533e75"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftHindFoot.webp",
+      "pixelSize": [
+        57,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "740199fc7dfee1a16fca00cb574b35288cbca7ab52bb32396b362020bc9c5a94"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        28,
+        66
+      ],
+      "pixelDensity": 6,
+      "sha256": "8771b0bc0077d89814fa53507efecaa46369bcfbeea44978725cc29216aa1b2c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftForearm.webp",
+      "pixelSize": [
+        28,
+        62
+      ],
+      "pixelDensity": 6,
+      "sha256": "080e17088731ba94b6598c9bd1db72b65a6df27cf35264a9e3eacb6b95d6fb49"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-leftHand.webp",
+      "pixelSize": [
+        36,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "deefd8e1fe97473aea026af1274f93e7cf48306d0f17859133ade430ad791c72"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        28,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "57aa3d78d8af4f9843c90da83aadf5d59c4bacda2b28b1ee56d876c35c328f93"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightForearm.webp",
+      "pixelSize": [
+        28,
+        19
+      ],
+      "pixelDensity": 6,
+      "sha256": "a7d933dbe1395de72bfdd2a24b05a8699a4526e40e090133e4bd900af30f5c89"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-rightHand.webp",
+      "pixelSize": [
+        31,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "999c3f23178d7164705d560c3dac1eae9d5f0fb308a8443224309ade12235d0b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-head-happy.webp",
+      "pixelSize": [
+        368,
+        338
+      ],
+      "pixelDensity": 6,
+      "sha256": "38b23e203534d611601d288b3eba5c4314b7e5f2b79f6262a1f4a17ae3c283e7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-head-sad.webp",
+      "pixelSize": [
+        368,
+        338
+      ],
+      "pixelDensity": 6,
+      "sha256": "38b23e203534d611601d288b3eba5c4314b7e5f2b79f6262a1f4a17ae3c283e7"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-left-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-09/up-left-main-head-hurt.webp",
+      "pixelSize": [
+        342,
+        312
+      ],
+      "pixelDensity": 6,
+      "sha256": "3f1d6878ebf6983a363ab9a2f0ff5373d05344c96222084877c15d7d6f5ffde0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-head.webp",
+      "pixelSize": [
+        432,
+        325
+      ],
+      "pixelDensity": 6,
+      "sha256": "8c80f67ba3f9dfb157b37fd757efa7d0a005307aea93e4e52dadd1b82535c422"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-tail.webp",
+      "pixelSize": [
+        142,
+        97
+      ],
+      "pixelDensity": 6,
+      "sha256": "07f18dc9fae3a75e293eec0aaaba171ceac5c95194f36cff72af798385ee15dc"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-bow.webp",
+      "pixelSize": [
+        75,
+        70
+      ],
+      "pixelDensity": 6,
+      "sha256": "4019e0b32cd7d4012ed4316642a51cef4d946020ac78d6b4455d059245f3f2fd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-body.webp",
+      "pixelSize": [
+        178,
+        126
+      ],
+      "pixelDensity": 6,
+      "sha256": "2554b93e2ce4be0b64194597c7ecbdabb884c07dc257f81b8be085118497637a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftHindThigh.webp",
+      "pixelSize": [
+        43,
+        54
+      ],
+      "pixelDensity": 6,
+      "sha256": "ae83619a336b930ead5cd73286857fe7b83c9fd27cd046359a06188903c0527e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftHindShin.webp",
+      "pixelSize": [
+        39,
+        52
+      ],
+      "pixelDensity": 6,
+      "sha256": "e773e437b6e861d7b6987b29a8cfee48d4bcd5853211f0183848da0f306e0333"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftHindFoot.webp",
+      "pixelSize": [
+        55,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "a1b772be77da7f1e0b2b54c26ea582982e66da33c733c725023bb506858a407c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftFrontThigh.webp",
+      "pixelSize": [
+        43,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "34f9f72d4137778382c0e5e824137c505bd7edcc446b958691fbf9d4aaa410ba"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftFrontShin.webp",
+      "pixelSize": [
+        39,
+        46
+      ],
+      "pixelDensity": 6,
+      "sha256": "0a9c061d6cc8dc30b93486cdfcfd5cf957e5dd3786e374c37d18974fc5883e2d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftFrontFoot.webp",
+      "pixelSize": [
+        54,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "ae8a1a68cac64f2693c5eeb4ea359284cb146c95f4f5597b11ff7a562b0a1d35"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightHindThigh.webp",
+      "pixelSize": [
+        43,
+        45
+      ],
+      "pixelDensity": 6,
+      "sha256": "91114c0cb5b764b24241a376617494fdd56524c3d82e495d31b5de4368538738"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightHindShin.webp",
+      "pixelSize": [
+        39,
+        61
+      ],
+      "pixelDensity": 6,
+      "sha256": "3a8516a9d95a497d59f333d175e57ae71be5610d84a7544f622c833f960f2ba4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightHindFoot.webp",
+      "pixelSize": [
+        54,
+        24
+      ],
+      "pixelDensity": 6,
+      "sha256": "ae8a1a68cac64f2693c5eeb4ea359284cb146c95f4f5597b11ff7a562b0a1d35"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightFrontThigh.webp",
+      "pixelSize": [
+        43,
+        42
+      ],
+      "pixelDensity": 6,
+      "sha256": "46119e4969c882740de4197bfe1499ff45b6cea0d691e39631cc5b60df744d3a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightFrontShin.webp",
+      "pixelSize": [
+        39,
+        43
+      ],
+      "pixelDensity": 6,
+      "sha256": "71f15dbd3e703a5543932fbd49429b0ae68317d5f92ef7c157af094ffe533e75"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightFrontFoot.webp",
+      "pixelSize": [
+        53,
+        23
+      ],
+      "pixelDensity": 6,
+      "sha256": "4ba60384e96202a873c0c30d9571e5b3db7f4bc314d4243ae8324bbc8668f997"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        28,
+        33
+      ],
+      "pixelDensity": 6,
+      "sha256": "025a2fe2cf8cb2311306b742b06c228a2257271f25f1064ce1747d57c7aa97fb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftForearm.webp",
+      "pixelSize": [
+        28,
+        25
+      ],
+      "pixelDensity": 6,
+      "sha256": "d2889341193fda950309f91a7db8a00ba29af3257351940f6909e2cfe445faf2"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-leftHand.webp",
+      "pixelSize": [
+        31,
+        26
+      ],
+      "pixelDensity": 6,
+      "sha256": "999c3f23178d7164705d560c3dac1eae9d5f0fb308a8443224309ade12235d0b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        28,
+        61
+      ],
+      "pixelDensity": 6,
+      "sha256": "2306b13cb92f1867f0b5f03ffa95e7ff74e6fc438d18405b2e772da8c4889d6c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightForearm.webp",
+      "pixelSize": [
+        28,
+        63
+      ],
+      "pixelDensity": 6,
+      "sha256": "b7c183d61d5ae51165a879c5eeb791195400c2bfab55446a837c6b8753a8882b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-rightHand.webp",
+      "pixelSize": [
+        36,
+        30
+      ],
+      "pixelDensity": 6,
+      "sha256": "deefd8e1fe97473aea026af1274f93e7cf48306d0f17859133ade430ad791c72"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-head-happy.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-head-happy.webp",
+      "pixelSize": [
+        430,
+        327
+      ],
+      "pixelDensity": 6,
+      "sha256": "108112b17b9fb0bd87a4636b26d09edfba6e24017f7858fa0fd5cfaf2d4f52c8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-head-sad.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-head-sad.webp",
+      "pixelSize": [
+        437,
+        319
+      ],
+      "pixelDensity": 6,
+      "sha256": "986ca6ff0bf1a083d8bdbe90f909756fb4fa7b045f6affe30a929a6196103f50"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09/up-right-main-head-hurt.webp",
+      "source": "hd-characters/characters-25/role-09/up-right-main-head-hurt.webp",
+      "pixelSize": [
+        423,
+        305
+      ],
+      "pixelDensity": 6,
+      "sha256": "d94866c044fcaaf3b478942314277e4f531075065a8c994ffbb4f6dc872637de"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    5,
+    8,
+    9
+  ]
+}

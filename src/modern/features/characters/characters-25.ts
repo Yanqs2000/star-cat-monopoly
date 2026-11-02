@@ -3,7 +3,7 @@ import type{Facing}from'./assets'
 import{character25DurationMs,type Character25Action}from'./characters-25-motion'
 import{sampleCharacter25Rig}from'./characters-25-pose'
 import type{Character25Rig,Part25}from'./characters-25-types'
-import{Character25Contacts,Character25PairContacts,type ContactDefinition25}from'./characters-25-contacts'
+import{Character25Contacts,Character25PairContacts,Character25CentaurContacts,type ContactDefinition25}from'./characters-25-contacts'
 
 /** Data-driven actors: paired children, footed creatures and floating bodies. */
 export class Character25Player{
@@ -18,7 +18,7 @@ export class Character25Player{
  private shadow=new Graphics()
  private prop=new Graphics()
  private locomotion:{position:{x:number;y:number};direction:{x:number;y:number};distance:number}|null=null
- private contacts:Character25Contacts|Character25PairContacts|undefined
+ private contacts:Character25Contacts|Character25PairContacts|Character25CentaurContacts|undefined
  private virtualRoot={x:0,y:0}
  private bodyDistance=0
  private floatingElapsed=0
@@ -33,6 +33,7 @@ export class Character25Player{
   if(contactMotion&&[2,5,11].includes(rig.id)&&rig.anatomy==='biped'&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
   if(contactMotion&&rig.id===3&&rig.anatomy==='paired'&&this.definitions().length===4)this.contacts=new Character25PairContacts(this.definitions(),rig.stridePx)
   if(contactMotion&&(rig.id===4&&rig.anatomy==='crab'||rig.id===8&&rig.anatomy==='scorpion')&&this.definitions().length===2)this.contacts=new Character25Contacts(this.definitions(),rig.stridePx)
+  if(contactMotion&&rig.id===9&&rig.anatomy==='centaur'&&this.definitions().length===4)this.contacts=new Character25CentaurContacts(this.definitions(),rig.stridePx)
   if(mapPlacement)this.view.position.set(...rig.mapAnchor)
   this.view.addChild(this.shadow,this.prop);this.update(0)
  }

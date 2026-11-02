@@ -115,3 +115,21 @@ export class Character25PairContacts{
  advanceIdle(deltaMs:number){for(const p of this.pairs)p.contacts.advanceIdle(deltaMs)}
  snapshot(){return this.pairs.flatMap(p=>p.contacts.snapshot())}
 }
+
+/** The centaur's left/right fore-hind pairs share one body and alternate diagonals. */
+export class Character25CentaurContacts{
+ private sides:{name:string;contacts:Character25Contacts}[]
+ constructor(private definitions:ContactDefinition25[],stride:number){
+  if(definitions.length!==4)throw Error('半人马接地控制需要四只马蹄')
+  this.sides=['left','right'].map(name=>({name,contacts:new Character25Contacts(this.forSide(name,definitions),stride)}))
+ }
+ private forSide(name:string,definitions:ContactDefinition25[]){return definitions.filter(d=>d.key.includes('/'+name))}
+ get distance(){return this.sides[0]!.contacts.distance}
+ reset(x:number,y:number,definitions=this.definitions){this.definitions=definitions;for(const s of this.sides)s.contacts.reset(x,y,this.forSide(s.name,definitions))}
+ setRest(definitions:ContactDefinition25[]){this.definitions=definitions;for(const s of this.sides)s.contacts.setRest(this.forSide(s.name,definitions))}
+ adjustStoppedRoot(x:number,y:number){for(const s of this.sides)s.contacts.adjustStoppedRoot(x,y)}
+ setMoving(moving:boolean){for(const s of this.sides)s.contacts.setMoving(moving)}
+ moveTo(x:number,y:number){for(const s of this.sides)s.contacts.moveTo(x,y)}
+ advanceIdle(deltaMs:number){for(const s of this.sides)s.contacts.advanceIdle(deltaMs)}
+ snapshot(){return this.sides.flatMap(s=>s.contacts.snapshot())}
+}

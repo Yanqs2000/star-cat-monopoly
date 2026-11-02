@@ -1,0 +1,5070 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    9
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 9,
+      "name": "阿飞",
+      "anatomy": "centaur",
+      "density": 7,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 24,
+      "motionScale": 0.5,
+      "artworkSamples": 64,
+      "sourceSwfSha256": "6ccbacbc4f9ae631028d1c2391dd1123451e8d977406e80864a20411e4a0b067",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -0.2857142857142857,
+                  -29.285714285714285
+                ],
+                "spine": [
+                  -0.42857142857142855,
+                  -16.285714285714285
+                ],
+                "tailRoot": [
+                  -10.285714285714286,
+                  -22.285714285714285
+                ],
+                "leftHand": [
+                  -20.714285714285715,
+                  -30.857142857142858
+                ],
+                "rightHindHip": [
+                  1.5714285714285714,
+                  -13.428571428571429
+                ],
+                "rightHindKnee": [
+                  2.0,
+                  -10.428571428571429
+                ],
+                "rightHindFoot": [
+                  2.142857142857143,
+                  -7.0
+                ],
+                "leftHindHip": [
+                  -3.4285714285714284,
+                  -13.714285714285714
+                ],
+                "leftHindKnee": [
+                  -3.857142857142857,
+                  -10.571428571428571
+                ],
+                "leftHindFoot": [
+                  -4.0,
+                  -7.0
+                ],
+                "rightFrontHip": [
+                  6.428571428571429,
+                  -12.857142857142858
+                ],
+                "rightFrontKnee": [
+                  7.428571428571429,
+                  -8.571428571428571
+                ],
+                "rightFrontFoot": [
+                  7.571428571428571,
+                  -3.0
+                ],
+                "leftFrontHip": [
+                  -7.285714285714286,
+                  -13.0
+                ],
+                "leftFrontKnee": [
+                  -8.142857142857142,
+                  -8.428571428571429
+                ],
+                "leftFrontFoot": [
+                  -8.428571428571429,
+                  -3.0
+                ],
+                "leftShoulder": [
+                  -8.142857142857142,
+                  -26.571428571428573
+                ],
+                "leftElbow": [
+                  -15.142857142857142,
+                  -28.571428571428573
+                ],
+                "rightShoulder": [
+                  7.285714285714286,
+                  -26.428571428571427
+                ],
+                "rightElbow": [
+                  13.285714285714286,
+                  -28.285714285714285
+                ],
+                "rightHand": [
+                  18.714285714285715,
+                  -31.142857142857142
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-head.webp",
+                  "width": 414,
+                  "height": 362,
+                  "pivot": [
+                    29.857142857142858,
+                    50.285714285714285
+                  ],
+                  "reconstructedFrom": "masters/role-09-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-tail.webp",
+                  "width": 99,
+                  "height": 72,
+                  "pivot": [
+                    11.597142857142854,
+                    2.8530708661417323
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-bow.webp",
+                  "width": 80,
+                  "height": 85,
+                  "pivot": [
+                    5.6876026272578,
+                    6.314285714285715
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-body.webp",
+                  "width": 185,
+                  "height": 139,
+                  "pivot": [
+                    13.285714285714286,
+                    13.285714285714286
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            294.9,
+                            219.68
+                          ],
+                          [
+                            293.81,
+                            227.85
+                          ],
+                          [
+                            290.58,
+                            235.89
+                          ],
+                          [
+                            285.24,
+                            243.64
+                          ],
+                          [
+                            277.9,
+                            250.99
+                          ],
+                          [
+                            268.68,
+                            257.8
+                          ],
+                          [
+                            257.73,
+                            263.96
+                          ],
+                          [
+                            245.25,
+                            269.36
+                          ],
+                          [
+                            231.45,
+                            273.91
+                          ],
+                          [
+                            216.56,
+                            277.53
+                          ],
+                          [
+                            200.84,
+                            280.17
+                          ],
+                          [
+                            184.56,
+                            281.76
+                          ],
+                          [
+                            168.0,
+                            282.3
+                          ],
+                          [
+                            151.44,
+                            281.76
+                          ],
+                          [
+                            135.16,
+                            280.17
+                          ],
+                          [
+                            119.44,
+                            277.53
+                          ],
+                          [
+                            104.55,
+                            273.91
+                          ],
+                          [
+                            90.75,
+                            269.36
+                          ],
+                          [
+                            78.27,
+                            263.96
+                          ],
+                          [
+                            67.32,
+                            257.8
+                          ],
+                          [
+                            58.1,
+                            250.99
+                          ],
+                          [
+                            50.76,
+                            243.64
+                          ],
+                          [
+                            45.42,
+                            235.89
+                          ],
+                          [
+                            42.19,
+                            227.85
+                          ],
+                          [
+                            41.1,
+                            219.68
+                          ],
+                          [
+                            42.19,
+                            211.51
+                          ],
+                          [
+                            45.42,
+                            203.47
+                          ],
+                          [
+                            50.76,
+                            195.72
+                          ],
+                          [
+                            58.1,
+                            188.37
+                          ],
+                          [
+                            67.32,
+                            181.56
+                          ],
+                          [
+                            78.27,
+                            175.4
+                          ],
+                          [
+                            90.75,
+                            170.0
+                          ],
+                          [
+                            104.55,
+                            165.45
+                          ],
+                          [
+                            119.44,
+                            161.83
+                          ],
+                          [
+                            135.16,
+                            159.19
+                          ],
+                          [
+                            151.44,
+                            157.6
+                          ],
+                          [
+                            168.0,
+                            157.06
+                          ],
+                          [
+                            184.56,
+                            157.6
+                          ],
+                          [
+                            200.84,
+                            159.19
+                          ],
+                          [
+                            216.56,
+                            161.83
+                          ],
+                          [
+                            231.45,
+                            165.45
+                          ],
+                          [
+                            245.25,
+                            170.0
+                          ],
+                          [
+                            257.73,
+                            175.4
+                          ],
+                          [
+                            268.68,
+                            181.56
+                          ],
+                          [
+                            277.9,
+                            188.37
+                          ],
+                          [
+                            285.24,
+                            195.72
+                          ],
+                          [
+                            290.58,
+                            203.47
+                          ],
+                          [
+                            293.81,
+                            211.51
+                          ]
+                        ],
+                        "sourcePivot": [
+                          168.0,
+                          219.68
+                        ],
+                        "sourceScale": 0.7289204097714737
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-activity-master-r1.png",
+                        "sourcePolygon": [
+                          [
+                            309.0,
+                            472.0
+                          ],
+                          [
+                            308.54,
+                            477.87
+                          ],
+                          [
+                            307.16,
+                            483.65
+                          ],
+                          [
+                            304.89,
+                            489.22
+                          ],
+                          [
+                            301.77,
+                            494.5
+                          ],
+                          [
+                            297.84,
+                            499.39
+                          ],
+                          [
+                            293.18,
+                            503.82
+                          ],
+                          [
+                            287.87,
+                            507.7
+                          ],
+                          [
+                            282.0,
+                            510.97
+                          ],
+                          [
+                            275.66,
+                            513.57
+                          ],
+                          [
+                            268.98,
+                            515.47
+                          ],
+                          [
+                            262.05,
+                            516.62
+                          ],
+                          [
+                            255.0,
+                            517.0
+                          ],
+                          [
+                            247.95,
+                            516.62
+                          ],
+                          [
+                            241.02,
+                            515.47
+                          ],
+                          [
+                            234.34,
+                            513.57
+                          ],
+                          [
+                            228.0,
+                            510.97
+                          ],
+                          [
+                            222.13,
+                            507.7
+                          ],
+                          [
+                            216.82,
+                            503.82
+                          ],
+                          [
+                            212.16,
+                            499.39
+                          ],
+                          [
+                            208.23,
+                            494.5
+                          ],
+                          [
+                            205.11,
+                            489.22
+                          ],
+                          [
+                            202.84,
+                            483.65
+                          ],
+                          [
+                            201.46,
+                            477.87
+                          ],
+                          [
+                            201.0,
+                            472.0
+                          ],
+                          [
+                            201.46,
+                            466.13
+                          ],
+                          [
+                            202.84,
+                            460.35
+                          ],
+                          [
+                            205.11,
+                            454.78
+                          ],
+                          [
+                            208.23,
+                            449.5
+                          ],
+                          [
+                            212.16,
+                            444.61
+                          ],
+                          [
+                            216.82,
+                            440.18
+                          ],
+                          [
+                            222.13,
+                            436.3
+                          ],
+                          [
+                            228.0,
+                            433.03
+                          ],
+                          [
+                            234.34,
+                            430.43
+                          ],
+                          [
+                            241.02,
+                            428.53
+                          ],
+                          [
+                            247.95,
+                            427.38
+                          ],
+                          [
+                            255.0,
+                            427.0
+                          ],
+                          [
+                            262.05,
+                            427.38
+                          ],
+                          [
+                            268.98,
+                            428.53
+                          ],
+                          [
+                            275.66,
+                            430.43
+                          ],
+                          [
+                            282.0,
+                            433.03
+                          ],
+                          [
+                            287.87,
+                            436.3
+                          ],
+                          [
+                            293.18,
+                            440.18
+                          ],
+                          [
+                            297.84,
+                            444.61
+                          ],
+                          [
+                            301.77,
+                            449.5
+                          ],
+                          [
+                            304.89,
+                            454.78
+                          ],
+                          [
+                            307.16,
+                            460.35
+                          ],
+                          [
+                            308.54,
+                            466.13
+                          ]
+                        ],
+                        "sourcePivot": [
+                          256,
+                          520
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindThigh.webp",
+                  "width": 46,
+                  "height": 30,
+                  "pivot": [
+                    3.299433163271126,
+                    0.9324485026635791
+                  ],
+                  "axis": [
+                    0.0,
+                    3.0304576336566322
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      21.213203435596427
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindShin.webp",
+                  "width": 43,
+                  "height": 34,
+                  "pivot": [
+                    3.026799838399797,
+                    1.0558604087441155
+                  ],
+                  "axis": [
+                    0.0,
+                    3.431546328418375
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      24.020824298928627
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindFoot.webp",
+                  "width": 49,
+                  "height": 23,
+                  "pivot": [
+                    3.7857142857142856,
+                    0.288879120879123
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindThigh.webp",
+                  "width": 46,
+                  "height": 32,
+                  "pivot": [
+                    3.2067998502795225,
+                    0.9759825631285503
+                  ],
+                  "axis": [
+                    0.0,
+                    3.1719433301677884
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      22.20360331117452
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindShin.webp",
+                  "width": 43,
+                  "height": 36,
+                  "pivot": [
+                    2.9556583963596843,
+                    1.0997798684129059
+                  ],
+                  "axis": [
+                    0.0,
+                    3.574284572341944
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      25.019992006393608
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindFoot.webp",
+                  "width": 46,
+                  "height": 21,
+                  "pivot": [
+                    3.5,
+                    0.26707692307692504
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontThigh.webp",
+                  "width": 46,
+                  "height": 44,
+                  "pivot": [
+                    3.278354668985405,
+                    1.3541030154504934
+                  ],
+                  "axis": [
+                    0.0,
+                    4.400834800214104
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.805843601498726
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontShin.webp",
+                  "width": 43,
+                  "height": 56,
+                  "pivot": [
+                    2.949540556429503,
+                    1.7148491607148273
+                  ],
+                  "axis": [
+                    0.0,
+                    5.573259772323189
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      39.01281840626232
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontFoot.webp",
+                  "width": 68,
+                  "height": 32,
+                  "pivot": [
+                    5.214285714285714,
+                    0.3978901098901128
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontThigh.webp",
+                  "width": 46,
+                  "height": 47,
+                  "pivot": [
+                    3.1348016637177873,
+                    1.4311051073494245
+                  ],
+                  "axis": [
+                    0.0,
+                    4.65109159888563
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      32.55764119219941
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontShin.webp",
+                  "width": 43,
+                  "height": 54,
+                  "pivot": [
+                    2.9968161039887886,
+                    1.672641546412347
+                  ],
+                  "axis": [
+                    0.0,
+                    5.436085025840128
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      38.05259518088089
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontFoot.webp",
+                  "width": 68,
+                  "height": 32,
+                  "pivot": [
+                    5.214285714285714,
+                    0.3978901098901128
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftUpperArm.webp",
+                  "width": 32,
+                  "height": 92,
+                  "pivot": [
+                    2.1671024786695496,
+                    2.9120439557122073
+                  ],
+                  "axis": [
+                    0.0,
+                    7.280109889280518
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      50.96076922496363
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftForearm.webp",
+                  "width": 32,
+                  "height": 76,
+                  "pivot": [
+                    2.14117982561097,
+                    2.4088273038123416
+                  ],
+                  "axis": [
+                    0.0,
+                    6.022068259530855
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      42.15447781671598
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightUpperArm.webp",
+                  "width": 32,
+                  "height": 79,
+                  "pivot": [
+                    2.172831919639782,
+                    2.512336907083498
+                  ],
+                  "axis": [
+                    0.0,
+                    6.280842267708745
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      43.965895873961216
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightForearm.webp",
+                  "width": 32,
+                  "height": 77,
+                  "pivot": [
+                    2.122221274794392,
+                    2.4538183489810157
+                  ],
+                  "axis": [
+                    0.0,
+                    6.134545872452539
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      42.94182110716777
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                },
+                "head-champion": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-right-main-head-champion.webp",
+                  "width": 404,
+                  "height": 371,
+                  "pivot": [
+                    29.142857142857142,
+                    51.57142857142857
+                  ],
+                  "reconstructedFrom": "masters/role-09-activity-heads-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    3.0304576336566322,
+                    3.431546328418375
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    3.1719433301677884,
+                    3.574284572341944
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    4.400834800214104,
+                    5.573259772323189
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.65109159888563,
+                    5.436085025840128
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    7.280109889280518,
+                    6.022068259530855
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    6.280842267708745,
+                    6.13454587245254
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.06,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "leftHand",
+                  "kind": "fixed"
+                }
+              ],
+              "order": [
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "tail",
+                "body",
+                "bow",
+                "head",
+                "head-expression",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -3.7142857142857144,
+                  -29.428571428571427
+                ],
+                "spine": [
+                  1.4285714285714286,
+                  -16.714285714285715
+                ],
+                "tailRoot": [
+                  13.571428571428571,
+                  -23.142857142857142
+                ],
+                "leftHand": [
+                  -31.0,
+                  -32.285714285714285
+                ],
+                "leftHindHip": [
+                  6.571428571428571,
+                  -15.714285714285714
+                ],
+                "leftHindKnee": [
+                  6.285714285714286,
+                  -12.285714285714286
+                ],
+                "leftHindFoot": [
+                  5.285714285714286,
+                  -8.571428571428571
+                ],
+                "leftFrontHip": [
+                  -12.285714285714286,
+                  -15.285714285714286
+                ],
+                "leftFrontKnee": [
+                  -14.0,
+                  -11.142857142857142
+                ],
+                "leftFrontFoot": [
+                  -15.571428571428571,
+                  -6.571428571428571
+                ],
+                "rightHindHip": [
+                  12.285714285714286,
+                  -15.428571428571429
+                ],
+                "rightHindKnee": [
+                  13.142857142857142,
+                  -10.714285714285714
+                ],
+                "rightHindFoot": [
+                  13.857142857142858,
+                  -6.285714285714286
+                ],
+                "rightFrontHip": [
+                  -2.4285714285714284,
+                  -13.0
+                ],
+                "rightFrontKnee": [
+                  -3.0,
+                  -8.714285714285714
+                ],
+                "rightFrontFoot": [
+                  -3.142857142857143,
+                  -3.2857142857142856
+                ],
+                "leftShoulder": [
+                  -11.0,
+                  -27.285714285714285
+                ],
+                "leftElbow": [
+                  -22.285714285714285,
+                  -30.285714285714285
+                ],
+                "rightShoulder": [
+                  0.7142857142857143,
+                  -26.714285714285715
+                ],
+                "rightElbow": [
+                  -6.428571428571429,
+                  -26.428571428571427
+                ],
+                "rightHand": [
+                  -13.714285714285714,
+                  -26.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-head.webp",
+                  "width": 437,
+                  "height": 370,
+                  "pivot": [
+                    27.714285714285715,
+                    51.57142857142857
+                  ],
+                  "reconstructedFrom": "masters/role-09-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-tail.webp",
+                  "width": 127,
+                  "height": 89,
+                  "pivot": [
+                    3.265714285714285,
+                    3.5482442748091607
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-bow.webp",
+                  "width": 80,
+                  "height": 85,
+                  "pivot": [
+                    5.740584893751314,
+                    6.314285714285715
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-body.webp",
+                  "width": 211,
+                  "height": 150,
+                  "pivot": [
+                    15.428571428571429,
+                    13.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            672.11,
+                            210.08
+                          ],
+                          [
+                            671.05,
+                            218.66
+                          ],
+                          [
+                            667.9,
+                            227.09
+                          ],
+                          [
+                            662.7,
+                            235.23
+                          ],
+                          [
+                            655.55,
+                            242.94
+                          ],
+                          [
+                            646.57,
+                            250.09
+                          ],
+                          [
+                            635.91,
+                            256.55
+                          ],
+                          [
+                            623.75,
+                            262.22
+                          ],
+                          [
+                            610.31,
+                            267.0
+                          ],
+                          [
+                            595.8,
+                            270.8
+                          ],
+                          [
+                            580.49,
+                            273.56
+                          ],
+                          [
+                            564.63,
+                            275.24
+                          ],
+                          [
+                            548.5,
+                            275.8
+                          ],
+                          [
+                            532.37,
+                            275.24
+                          ],
+                          [
+                            516.51,
+                            273.56
+                          ],
+                          [
+                            501.2,
+                            270.8
+                          ],
+                          [
+                            486.7,
+                            267.0
+                          ],
+                          [
+                            473.25,
+                            262.22
+                          ],
+                          [
+                            461.09,
+                            256.55
+                          ],
+                          [
+                            450.43,
+                            250.09
+                          ],
+                          [
+                            441.45,
+                            242.94
+                          ],
+                          [
+                            434.3,
+                            235.23
+                          ],
+                          [
+                            429.1,
+                            227.09
+                          ],
+                          [
+                            425.95,
+                            218.66
+                          ],
+                          [
+                            424.89,
+                            210.08
+                          ],
+                          [
+                            425.95,
+                            201.5
+                          ],
+                          [
+                            429.1,
+                            193.07
+                          ],
+                          [
+                            434.3,
+                            184.93
+                          ],
+                          [
+                            441.45,
+                            177.22
+                          ],
+                          [
+                            450.43,
+                            170.07
+                          ],
+                          [
+                            461.09,
+                            163.61
+                          ],
+                          [
+                            473.25,
+                            157.94
+                          ],
+                          [
+                            486.69,
+                            153.16
+                          ],
+                          [
+                            501.2,
+                            149.36
+                          ],
+                          [
+                            516.51,
+                            146.6
+                          ],
+                          [
+                            532.37,
+                            144.92
+                          ],
+                          [
+                            548.5,
+                            144.36
+                          ],
+                          [
+                            564.63,
+                            144.92
+                          ],
+                          [
+                            580.49,
+                            146.6
+                          ],
+                          [
+                            595.8,
+                            149.36
+                          ],
+                          [
+                            610.31,
+                            153.16
+                          ],
+                          [
+                            623.75,
+                            157.94
+                          ],
+                          [
+                            635.91,
+                            163.61
+                          ],
+                          [
+                            646.57,
+                            170.07
+                          ],
+                          [
+                            655.55,
+                            177.22
+                          ],
+                          [
+                            662.7,
+                            184.93
+                          ],
+                          [
+                            667.9,
+                            193.07
+                          ],
+                          [
+                            671.05,
+                            201.5
+                          ]
+                        ],
+                        "sourcePivot": [
+                          548.5,
+                          210.07999999999998
+                        ],
+                        "sourceScale": 0.8292209368174096
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-activity-master-r1.png",
+                        "sourcePolygon": [
+                          [
+                            794.0,
+                            472.0
+                          ],
+                          [
+                            793.52,
+                            477.87
+                          ],
+                          [
+                            792.09,
+                            483.65
+                          ],
+                          [
+                            789.74,
+                            489.22
+                          ],
+                          [
+                            786.5,
+                            494.5
+                          ],
+                          [
+                            782.43,
+                            499.39
+                          ],
+                          [
+                            777.6,
+                            503.82
+                          ],
+                          [
+                            772.09,
+                            507.7
+                          ],
+                          [
+                            766.0,
+                            510.97
+                          ],
+                          [
+                            759.43,
+                            513.57
+                          ],
+                          [
+                            752.49,
+                            515.47
+                          ],
+                          [
+                            745.31,
+                            516.62
+                          ],
+                          [
+                            738.0,
+                            517.0
+                          ],
+                          [
+                            730.69,
+                            516.62
+                          ],
+                          [
+                            723.51,
+                            515.47
+                          ],
+                          [
+                            716.57,
+                            513.57
+                          ],
+                          [
+                            710.0,
+                            510.97
+                          ],
+                          [
+                            703.91,
+                            507.7
+                          ],
+                          [
+                            698.4,
+                            503.82
+                          ],
+                          [
+                            693.57,
+                            499.39
+                          ],
+                          [
+                            689.5,
+                            494.5
+                          ],
+                          [
+                            686.26,
+                            489.22
+                          ],
+                          [
+                            683.91,
+                            483.65
+                          ],
+                          [
+                            682.48,
+                            477.87
+                          ],
+                          [
+                            682.0,
+                            472.0
+                          ],
+                          [
+                            682.48,
+                            466.13
+                          ],
+                          [
+                            683.91,
+                            460.35
+                          ],
+                          [
+                            686.26,
+                            454.78
+                          ],
+                          [
+                            689.5,
+                            449.5
+                          ],
+                          [
+                            693.57,
+                            444.61
+                          ],
+                          [
+                            698.4,
+                            440.18
+                          ],
+                          [
+                            703.91,
+                            436.3
+                          ],
+                          [
+                            710.0,
+                            433.03
+                          ],
+                          [
+                            716.57,
+                            430.43
+                          ],
+                          [
+                            723.51,
+                            428.53
+                          ],
+                          [
+                            730.69,
+                            427.38
+                          ],
+                          [
+                            738.0,
+                            427.0
+                          ],
+                          [
+                            745.31,
+                            427.38
+                          ],
+                          [
+                            752.49,
+                            428.53
+                          ],
+                          [
+                            759.43,
+                            430.43
+                          ],
+                          [
+                            766.0,
+                            433.03
+                          ],
+                          [
+                            772.09,
+                            436.3
+                          ],
+                          [
+                            777.6,
+                            440.18
+                          ],
+                          [
+                            782.43,
+                            444.61
+                          ],
+                          [
+                            786.5,
+                            449.5
+                          ],
+                          [
+                            789.74,
+                            454.78
+                          ],
+                          [
+                            792.09,
+                            460.35
+                          ],
+                          [
+                            793.52,
+                            466.13
+                          ]
+                        ],
+                        "sourcePivot": [
+                          790,
+                          523
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindThigh.webp",
+                  "width": 46,
+                  "height": 34,
+                  "pivot": [
+                    3.2463786117183626,
+                    1.0586017212125094
+                  ],
+                  "axis": [
+                    0.0,
+                    3.440455593940656
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      24.08318915758459
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindShin.webp",
+                  "width": 43,
+                  "height": 39,
+                  "pivot": [
+                    2.9936921358343076,
+                    1.183552704864726
+                  ],
+                  "axis": [
+                    0.0,
+                    3.84654629081036
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      26.92582403567252
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindFoot.webp",
+                  "width": 60,
+                  "height": 28,
+                  "pivot": [
+                    4.003937007874016,
+                    0.3826771653543291
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontThigh.webp",
+                  "width": 46,
+                  "height": 45,
+                  "pivot": [
+                    3.1729596572213623,
+                    1.3795476770527664
+                  ],
+                  "axis": [
+                    0.0,
+                    4.48352995042149
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.38470965295043
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontShin.webp",
+                  "width": 43,
+                  "height": 48,
+                  "pivot": [
+                    3.0455834456289317,
+                    1.4873779618187808
+                  ],
+                  "axis": [
+                    0.0,
+                    4.8339783759110375
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.83784863137726
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontFoot.webp",
+                  "width": 69,
+                  "height": 32,
+                  "pivot": [
+                    4.575928008998875,
+                    0.437345331833519
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindThigh.webp",
+                  "width": 46,
+                  "height": 48,
+                  "pivot": [
+                    3.229485932966729,
+                    1.474330534615246
+                  ],
+                  "axis": [
+                    0.0,
+                    4.791574237499549
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.54101966249684
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindShin.webp",
+                  "width": 43,
+                  "height": 45,
+                  "pivot": [
+                    2.9675327214445097,
+                    1.380247777416051
+                  ],
+                  "axis": [
+                    0.0,
+                    4.485805276602166
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.400636936215164
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindFoot.webp",
+                  "width": 69,
+                  "height": 32,
+                  "pivot": [
+                    4.575928008998875,
+                    0.437345331833519
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontThigh.webp",
+                  "width": 46,
+                  "height": 43,
+                  "pivot": [
+                    3.2208504972557153,
+                    1.330351292344752
+                  ],
+                  "axis": [
+                    0.0,
+                    4.323641700120445
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.265491900843113
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontShin.webp",
+                  "width": 43,
+                  "height": 54,
+                  "pivot": [
+                    2.99371005778818,
+                    1.6709079392306119
+                  ],
+                  "axis": [
+                    0.0,
+                    5.430450802499489
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      38.01315561749642
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontFoot.webp",
+                  "width": 71,
+                  "height": 34,
+                  "pivot": [
+                    4.766591676040494,
+                    0.4555680539932489
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftUpperArm.webp",
+                  "width": 32,
+                  "height": 147,
+                  "pivot": [
+                    2.1662874042764253,
+                    4.671057215471042
+                  ],
+                  "axis": [
+                    0.0,
+                    11.677643038677603
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      81.74350127074322
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftForearm.webp",
+                  "width": 32,
+                  "height": 113,
+                  "pivot": [
+                    2.1592993091372645,
+                    3.576339480758594
+                  ],
+                  "axis": [
+                    0.0,
+                    8.940848701896485
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      62.585940913275394
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightUpperArm.webp",
+                  "width": 32,
+                  "height": 90,
+                  "pivot": [
+                    2.1279461639989248,
+                    2.8594276578735554
+                  ],
+                  "axis": [
+                    0.0,
+                    7.148569144683888
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      50.039984012787215
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightForearm.webp",
+                  "width": 32,
+                  "height": 92,
+                  "pivot": [
+                    2.172519722430478,
+                    2.9193233770159543
+                  ],
+                  "axis": [
+                    0.0,
+                    7.298308442539886
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      51.088159097779204
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    3.440455593940656,
+                    3.84654629081036
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.48352995042149,
+                    4.8339783759110375
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    4.791574237499549,
+                    4.485805276602166
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    4.323641700120445,
+                    5.430450802499489
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    11.677643038677603,
+                    8.940848701896487
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    7.148569144683888,
+                    7.298308442539886
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.06,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "leftHand",
+                  "kind": "fixed"
+                }
+              ],
+              "order": [
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "body",
+                "bow",
+                "head",
+                "head-expression",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "tail"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -3.7142857142857144,
+                  -29.428571428571427
+                ],
+                "spine": [
+                  1.4285714285714286,
+                  -16.714285714285715
+                ],
+                "tailRoot": [
+                  13.571428571428571,
+                  -23.142857142857142
+                ],
+                "leftHand": [
+                  -31.0,
+                  -32.285714285714285
+                ],
+                "leftHindHip": [
+                  6.571428571428571,
+                  -15.714285714285714
+                ],
+                "leftHindKnee": [
+                  6.285714285714286,
+                  -12.285714285714286
+                ],
+                "leftHindFoot": [
+                  5.285714285714286,
+                  -8.571428571428571
+                ],
+                "leftFrontHip": [
+                  -12.285714285714286,
+                  -15.285714285714286
+                ],
+                "leftFrontKnee": [
+                  -14.0,
+                  -11.142857142857142
+                ],
+                "leftFrontFoot": [
+                  -15.571428571428571,
+                  -6.571428571428571
+                ],
+                "rightHindHip": [
+                  12.285714285714286,
+                  -15.428571428571429
+                ],
+                "rightHindKnee": [
+                  13.142857142857142,
+                  -10.714285714285714
+                ],
+                "rightHindFoot": [
+                  13.857142857142858,
+                  -6.285714285714286
+                ],
+                "rightFrontHip": [
+                  -2.4285714285714284,
+                  -13.0
+                ],
+                "rightFrontKnee": [
+                  -3.0,
+                  -8.714285714285714
+                ],
+                "rightFrontFoot": [
+                  -3.142857142857143,
+                  -3.2857142857142856
+                ],
+                "leftShoulder": [
+                  -11.0,
+                  -27.285714285714285
+                ],
+                "leftElbow": [
+                  -22.285714285714285,
+                  -30.285714285714285
+                ],
+                "rightShoulder": [
+                  0.7142857142857143,
+                  -26.714285714285715
+                ],
+                "rightElbow": [
+                  -6.428571428571429,
+                  -26.428571428571427
+                ],
+                "rightHand": [
+                  -13.714285714285714,
+                  -26.0
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-head.webp",
+                  "width": 437,
+                  "height": 370,
+                  "pivot": [
+                    27.714285714285715,
+                    51.57142857142857
+                  ],
+                  "reconstructedFrom": "masters/role-09-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-tail.webp",
+                  "width": 127,
+                  "height": 89,
+                  "pivot": [
+                    3.265714285714285,
+                    3.5482442748091607
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-bow.webp",
+                  "width": 80,
+                  "height": 85,
+                  "pivot": [
+                    5.740584893751314,
+                    6.314285714285715
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-body.webp",
+                  "width": 211,
+                  "height": 150,
+                  "pivot": [
+                    15.428571428571429,
+                    13.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            672.11,
+                            210.08
+                          ],
+                          [
+                            671.05,
+                            218.66
+                          ],
+                          [
+                            667.9,
+                            227.09
+                          ],
+                          [
+                            662.7,
+                            235.23
+                          ],
+                          [
+                            655.55,
+                            242.94
+                          ],
+                          [
+                            646.57,
+                            250.09
+                          ],
+                          [
+                            635.91,
+                            256.55
+                          ],
+                          [
+                            623.75,
+                            262.22
+                          ],
+                          [
+                            610.31,
+                            267.0
+                          ],
+                          [
+                            595.8,
+                            270.8
+                          ],
+                          [
+                            580.49,
+                            273.56
+                          ],
+                          [
+                            564.63,
+                            275.24
+                          ],
+                          [
+                            548.5,
+                            275.8
+                          ],
+                          [
+                            532.37,
+                            275.24
+                          ],
+                          [
+                            516.51,
+                            273.56
+                          ],
+                          [
+                            501.2,
+                            270.8
+                          ],
+                          [
+                            486.7,
+                            267.0
+                          ],
+                          [
+                            473.25,
+                            262.22
+                          ],
+                          [
+                            461.09,
+                            256.55
+                          ],
+                          [
+                            450.43,
+                            250.09
+                          ],
+                          [
+                            441.45,
+                            242.94
+                          ],
+                          [
+                            434.3,
+                            235.23
+                          ],
+                          [
+                            429.1,
+                            227.09
+                          ],
+                          [
+                            425.95,
+                            218.66
+                          ],
+                          [
+                            424.89,
+                            210.08
+                          ],
+                          [
+                            425.95,
+                            201.5
+                          ],
+                          [
+                            429.1,
+                            193.07
+                          ],
+                          [
+                            434.3,
+                            184.93
+                          ],
+                          [
+                            441.45,
+                            177.22
+                          ],
+                          [
+                            450.43,
+                            170.07
+                          ],
+                          [
+                            461.09,
+                            163.61
+                          ],
+                          [
+                            473.25,
+                            157.94
+                          ],
+                          [
+                            486.69,
+                            153.16
+                          ],
+                          [
+                            501.2,
+                            149.36
+                          ],
+                          [
+                            516.51,
+                            146.6
+                          ],
+                          [
+                            532.37,
+                            144.92
+                          ],
+                          [
+                            548.5,
+                            144.36
+                          ],
+                          [
+                            564.63,
+                            144.92
+                          ],
+                          [
+                            580.49,
+                            146.6
+                          ],
+                          [
+                            595.8,
+                            149.36
+                          ],
+                          [
+                            610.31,
+                            153.16
+                          ],
+                          [
+                            623.75,
+                            157.94
+                          ],
+                          [
+                            635.91,
+                            163.61
+                          ],
+                          [
+                            646.57,
+                            170.07
+                          ],
+                          [
+                            655.55,
+                            177.22
+                          ],
+                          [
+                            662.7,
+                            184.93
+                          ],
+                          [
+                            667.9,
+                            193.07
+                          ],
+                          [
+                            671.05,
+                            201.5
+                          ]
+                        ],
+                        "sourcePivot": [
+                          548.5,
+                          210.07999999999998
+                        ],
+                        "sourceScale": 0.8292209368174096
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-activity-master-r1.png",
+                        "sourcePolygon": [
+                          [
+                            794.0,
+                            472.0
+                          ],
+                          [
+                            793.52,
+                            477.87
+                          ],
+                          [
+                            792.09,
+                            483.65
+                          ],
+                          [
+                            789.74,
+                            489.22
+                          ],
+                          [
+                            786.5,
+                            494.5
+                          ],
+                          [
+                            782.43,
+                            499.39
+                          ],
+                          [
+                            777.6,
+                            503.82
+                          ],
+                          [
+                            772.09,
+                            507.7
+                          ],
+                          [
+                            766.0,
+                            510.97
+                          ],
+                          [
+                            759.43,
+                            513.57
+                          ],
+                          [
+                            752.49,
+                            515.47
+                          ],
+                          [
+                            745.31,
+                            516.62
+                          ],
+                          [
+                            738.0,
+                            517.0
+                          ],
+                          [
+                            730.69,
+                            516.62
+                          ],
+                          [
+                            723.51,
+                            515.47
+                          ],
+                          [
+                            716.57,
+                            513.57
+                          ],
+                          [
+                            710.0,
+                            510.97
+                          ],
+                          [
+                            703.91,
+                            507.7
+                          ],
+                          [
+                            698.4,
+                            503.82
+                          ],
+                          [
+                            693.57,
+                            499.39
+                          ],
+                          [
+                            689.5,
+                            494.5
+                          ],
+                          [
+                            686.26,
+                            489.22
+                          ],
+                          [
+                            683.91,
+                            483.65
+                          ],
+                          [
+                            682.48,
+                            477.87
+                          ],
+                          [
+                            682.0,
+                            472.0
+                          ],
+                          [
+                            682.48,
+                            466.13
+                          ],
+                          [
+                            683.91,
+                            460.35
+                          ],
+                          [
+                            686.26,
+                            454.78
+                          ],
+                          [
+                            689.5,
+                            449.5
+                          ],
+                          [
+                            693.57,
+                            444.61
+                          ],
+                          [
+                            698.4,
+                            440.18
+                          ],
+                          [
+                            703.91,
+                            436.3
+                          ],
+                          [
+                            710.0,
+                            433.03
+                          ],
+                          [
+                            716.57,
+                            430.43
+                          ],
+                          [
+                            723.51,
+                            428.53
+                          ],
+                          [
+                            730.69,
+                            427.38
+                          ],
+                          [
+                            738.0,
+                            427.0
+                          ],
+                          [
+                            745.31,
+                            427.38
+                          ],
+                          [
+                            752.49,
+                            428.53
+                          ],
+                          [
+                            759.43,
+                            430.43
+                          ],
+                          [
+                            766.0,
+                            433.03
+                          ],
+                          [
+                            772.09,
+                            436.3
+                          ],
+                          [
+                            777.6,
+                            440.18
+                          ],
+                          [
+                            782.43,
+                            444.61
+                          ],
+                          [
+                            786.5,
+                            449.5
+                          ],
+                          [
+                            789.74,
+                            454.78
+                          ],
+                          [
+                            792.09,
+                            460.35
+                          ],
+                          [
+                            793.52,
+                            466.13
+                          ]
+                        ],
+                        "sourcePivot": [
+                          790,
+                          523
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindThigh.webp",
+                  "width": 46,
+                  "height": 34,
+                  "pivot": [
+                    3.2463786117183626,
+                    1.0586017212125094
+                  ],
+                  "axis": [
+                    0.0,
+                    3.440455593940656
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      24.08318915758459
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindShin.webp",
+                  "width": 43,
+                  "height": 39,
+                  "pivot": [
+                    2.9936921358343076,
+                    1.183552704864726
+                  ],
+                  "axis": [
+                    0.0,
+                    3.84654629081036
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      26.92582403567252
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindFoot.webp",
+                  "width": 60,
+                  "height": 28,
+                  "pivot": [
+                    4.003937007874016,
+                    0.3826771653543291
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontThigh.webp",
+                  "width": 46,
+                  "height": 45,
+                  "pivot": [
+                    3.1729596572213623,
+                    1.3795476770527664
+                  ],
+                  "axis": [
+                    0.0,
+                    4.48352995042149
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.38470965295043
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontShin.webp",
+                  "width": 43,
+                  "height": 48,
+                  "pivot": [
+                    3.0455834456289317,
+                    1.4873779618187808
+                  ],
+                  "axis": [
+                    0.0,
+                    4.8339783759110375
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.83784863137726
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontFoot.webp",
+                  "width": 69,
+                  "height": 32,
+                  "pivot": [
+                    4.575928008998875,
+                    0.437345331833519
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindThigh.webp",
+                  "width": 46,
+                  "height": 48,
+                  "pivot": [
+                    3.229485932966729,
+                    1.474330534615246
+                  ],
+                  "axis": [
+                    0.0,
+                    4.791574237499549
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      33.54101966249684
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindShin.webp",
+                  "width": 43,
+                  "height": 45,
+                  "pivot": [
+                    2.9675327214445097,
+                    1.380247777416051
+                  ],
+                  "axis": [
+                    0.0,
+                    4.485805276602166
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      31.400636936215164
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindFoot.webp",
+                  "width": 69,
+                  "height": 32,
+                  "pivot": [
+                    4.575928008998875,
+                    0.437345331833519
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontThigh.webp",
+                  "width": 46,
+                  "height": 43,
+                  "pivot": [
+                    3.2208504972557153,
+                    1.330351292344752
+                  ],
+                  "axis": [
+                    0.0,
+                    4.323641700120445
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.265491900843113
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontShin.webp",
+                  "width": 43,
+                  "height": 54,
+                  "pivot": [
+                    2.99371005778818,
+                    1.6709079392306119
+                  ],
+                  "axis": [
+                    0.0,
+                    5.430450802499489
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      38.01315561749642
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontFoot.webp",
+                  "width": 71,
+                  "height": 34,
+                  "pivot": [
+                    4.766591676040494,
+                    0.4555680539932489
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftUpperArm.webp",
+                  "width": 32,
+                  "height": 147,
+                  "pivot": [
+                    2.1662874042764253,
+                    4.671057215471042
+                  ],
+                  "axis": [
+                    0.0,
+                    11.677643038677603
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      81.74350127074322
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftForearm.webp",
+                  "width": 32,
+                  "height": 113,
+                  "pivot": [
+                    2.1592993091372645,
+                    3.576339480758594
+                  ],
+                  "axis": [
+                    0.0,
+                    8.940848701896485
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      62.585940913275394
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightUpperArm.webp",
+                  "width": 32,
+                  "height": 90,
+                  "pivot": [
+                    2.1279461639989248,
+                    2.8594276578735554
+                  ],
+                  "axis": [
+                    0.0,
+                    7.148569144683888
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      50.039984012787215
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightForearm.webp",
+                  "width": 32,
+                  "height": 92,
+                  "pivot": [
+                    2.172519722430478,
+                    2.9193233770159543
+                  ],
+                  "axis": [
+                    0.0,
+                    7.298308442539886
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      51.088159097779204
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    3.440455593940656,
+                    3.84654629081036
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    4.48352995042149,
+                    4.8339783759110375
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    4.791574237499549,
+                    4.485805276602166
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    4.323641700120445,
+                    5.430450802499489
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    11.677643038677603,
+                    8.940848701896487
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    7.148569144683888,
+                    7.298308442539886
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.06,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "leftHand",
+                  "kind": "fixed"
+                }
+              ],
+              "order": [
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "body",
+                "bow",
+                "head",
+                "head-expression",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "tail"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  2.142857142857143,
+                  -29.142857142857142
+                ],
+                "spine": [
+                  -1.7142857142857142,
+                  -16.428571428571427
+                ],
+                "tailRoot": [
+                  -18.571428571428573,
+                  -22.714285714285715
+                ],
+                "rightHand": [
+                  24.571428571428573,
+                  -33.285714285714285
+                ],
+                "rightHindHip": [
+                  -7.571428571428571,
+                  -16.0
+                ],
+                "rightHindKnee": [
+                  -7.0,
+                  -12.142857142857142
+                ],
+                "rightHindFoot": [
+                  -6.428571428571429,
+                  -8.428571428571429
+                ],
+                "rightFrontHip": [
+                  8.0,
+                  -14.714285714285714
+                ],
+                "rightFrontKnee": [
+                  10.142857142857142,
+                  -10.285714285714286
+                ],
+                "rightFrontFoot": [
+                  12.428571428571429,
+                  -6.0
+                ],
+                "leftHindHip": [
+                  -17.285714285714285,
+                  -15.285714285714286
+                ],
+                "leftHindKnee": [
+                  -17.857142857142858,
+                  -11.0
+                ],
+                "leftHindFoot": [
+                  -19.428571428571427,
+                  -6.285714285714286
+                ],
+                "leftFrontHip": [
+                  -1.0,
+                  -13.285714285714286
+                ],
+                "leftFrontKnee": [
+                  -1.0,
+                  -8.714285714285714
+                ],
+                "leftFrontFoot": [
+                  -1.0,
+                  -3.5714285714285716
+                ],
+                "leftShoulder": [
+                  -5.428571428571429,
+                  -26.714285714285715
+                ],
+                "leftElbow": [
+                  0.7142857142857143,
+                  -26.285714285714285
+                ],
+                "leftHand": [
+                  8.857142857142858,
+                  -26.142857142857142
+                ],
+                "rightShoulder": [
+                  9.714285714285714,
+                  -27.714285714285715
+                ],
+                "rightElbow": [
+                  17.571428571428573,
+                  -30.571428571428573
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-head.webp",
+                  "width": 436,
+                  "height": 369,
+                  "pivot": [
+                    37.57142857142857,
+                    51.57142857142857
+                  ],
+                  "reconstructedFrom": "masters/role-09-activity-heads-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-tail.webp",
+                  "width": 141,
+                  "height": 97,
+                  "pivot": [
+                    16.399999999999995,
+                    3.8418604651162744
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "bow": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-bow.webp",
+                  "width": 80,
+                  "height": 85,
+                  "pivot": [
+                    5.6876026272578,
+                    6.314285714285715
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-bow-atlas-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-bow-atlas-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-body.webp",
+                  "width": 205,
+                  "height": 145,
+                  "pivot": [
+                    14.714285714285714,
+                    13.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "sources": [
+                      {
+                        "sourceMaster": "masters/role-09-pony-parts-r1.png",
+                        "sourcePolygon": [
+                          [
+                            1408.84,
+                            217.68
+                          ],
+                          [
+                            1407.75,
+                            225.85
+                          ],
+                          [
+                            1404.48,
+                            233.89
+                          ],
+                          [
+                            1399.11,
+                            241.64
+                          ],
+                          [
+                            1391.71,
+                            248.99
+                          ],
+                          [
+                            1382.42,
+                            255.8
+                          ],
+                          [
+                            1371.4,
+                            261.96
+                          ],
+                          [
+                            1358.82,
+                            267.36
+                          ],
+                          [
+                            1344.92,
+                            271.91
+                          ],
+                          [
+                            1329.92,
+                            275.53
+                          ],
+                          [
+                            1314.09,
+                            278.17
+                          ],
+                          [
+                            1297.69,
+                            279.76
+                          ],
+                          [
+                            1281.0,
+                            280.3
+                          ],
+                          [
+                            1264.31,
+                            279.76
+                          ],
+                          [
+                            1247.91,
+                            278.17
+                          ],
+                          [
+                            1232.08,
+                            275.53
+                          ],
+                          [
+                            1217.08,
+                            271.91
+                          ],
+                          [
+                            1203.18,
+                            267.36
+                          ],
+                          [
+                            1190.6,
+                            261.96
+                          ],
+                          [
+                            1179.58,
+                            255.8
+                          ],
+                          [
+                            1170.29,
+                            248.99
+                          ],
+                          [
+                            1162.89,
+                            241.64
+                          ],
+                          [
+                            1157.52,
+                            233.89
+                          ],
+                          [
+                            1154.25,
+                            225.85
+                          ],
+                          [
+                            1153.16,
+                            217.68
+                          ],
+                          [
+                            1154.25,
+                            209.51
+                          ],
+                          [
+                            1157.52,
+                            201.47
+                          ],
+                          [
+                            1162.89,
+                            193.72
+                          ],
+                          [
+                            1170.29,
+                            186.37
+                          ],
+                          [
+                            1179.58,
+                            179.56
+                          ],
+                          [
+                            1190.6,
+                            173.4
+                          ],
+                          [
+                            1203.18,
+                            168.0
+                          ],
+                          [
+                            1217.08,
+                            163.45
+                          ],
+                          [
+                            1232.08,
+                            159.83
+                          ],
+                          [
+                            1247.91,
+                            157.19
+                          ],
+                          [
+                            1264.31,
+                            155.6
+                          ],
+                          [
+                            1281.0,
+                            155.06
+                          ],
+                          [
+                            1297.69,
+                            155.6
+                          ],
+                          [
+                            1314.09,
+                            157.19
+                          ],
+                          [
+                            1329.92,
+                            159.83
+                          ],
+                          [
+                            1344.92,
+                            163.45
+                          ],
+                          [
+                            1358.82,
+                            168.0
+                          ],
+                          [
+                            1371.4,
+                            173.4
+                          ],
+                          [
+                            1382.42,
+                            179.56
+                          ],
+                          [
+                            1391.71,
+                            186.37
+                          ],
+                          [
+                            1399.11,
+                            193.72
+                          ],
+                          [
+                            1404.48,
+                            201.47
+                          ],
+                          [
+                            1407.75,
+                            209.51
+                          ]
+                        ],
+                        "sourcePivot": [
+                          1281.0,
+                          217.68
+                        ],
+                        "sourceScale": 0.8017834793491866
+                      },
+                      {
+                        "sourceMaster": "masters/role-09-activity-master-r1.png",
+                        "sourcePolygon": [
+                          [
+                            1462.0,
+                            480.0
+                          ],
+                          [
+                            1461.52,
+                            485.87
+                          ],
+                          [
+                            1460.09,
+                            491.65
+                          ],
+                          [
+                            1457.74,
+                            497.22
+                          ],
+                          [
+                            1454.5,
+                            502.5
+                          ],
+                          [
+                            1450.43,
+                            507.39
+                          ],
+                          [
+                            1445.6,
+                            511.82
+                          ],
+                          [
+                            1440.09,
+                            515.7
+                          ],
+                          [
+                            1434.0,
+                            518.97
+                          ],
+                          [
+                            1427.43,
+                            521.57
+                          ],
+                          [
+                            1420.49,
+                            523.47
+                          ],
+                          [
+                            1413.31,
+                            524.62
+                          ],
+                          [
+                            1406.0,
+                            525.0
+                          ],
+                          [
+                            1398.69,
+                            524.62
+                          ],
+                          [
+                            1391.51,
+                            523.47
+                          ],
+                          [
+                            1384.57,
+                            521.57
+                          ],
+                          [
+                            1378.0,
+                            518.97
+                          ],
+                          [
+                            1371.91,
+                            515.7
+                          ],
+                          [
+                            1366.4,
+                            511.82
+                          ],
+                          [
+                            1361.57,
+                            507.39
+                          ],
+                          [
+                            1357.5,
+                            502.5
+                          ],
+                          [
+                            1354.26,
+                            497.22
+                          ],
+                          [
+                            1351.91,
+                            491.65
+                          ],
+                          [
+                            1350.48,
+                            485.87
+                          ],
+                          [
+                            1350.0,
+                            480.0
+                          ],
+                          [
+                            1350.48,
+                            474.13
+                          ],
+                          [
+                            1351.91,
+                            468.35
+                          ],
+                          [
+                            1354.26,
+                            462.78
+                          ],
+                          [
+                            1357.5,
+                            457.5
+                          ],
+                          [
+                            1361.57,
+                            452.61
+                          ],
+                          [
+                            1366.4,
+                            448.18
+                          ],
+                          [
+                            1371.91,
+                            444.3
+                          ],
+                          [
+                            1378.0,
+                            441.03
+                          ],
+                          [
+                            1384.57,
+                            438.43
+                          ],
+                          [
+                            1391.51,
+                            436.53
+                          ],
+                          [
+                            1398.69,
+                            435.38
+                          ],
+                          [
+                            1406.0,
+                            435.0
+                          ],
+                          [
+                            1413.31,
+                            435.38
+                          ],
+                          [
+                            1420.49,
+                            436.53
+                          ],
+                          [
+                            1427.43,
+                            438.43
+                          ],
+                          [
+                            1434.0,
+                            441.03
+                          ],
+                          [
+                            1440.09,
+                            444.3
+                          ],
+                          [
+                            1445.6,
+                            448.18
+                          ],
+                          [
+                            1450.43,
+                            452.61
+                          ],
+                          [
+                            1454.5,
+                            457.5
+                          ],
+                          [
+                            1457.74,
+                            462.78
+                          ],
+                          [
+                            1460.09,
+                            468.35
+                          ],
+                          [
+                            1461.52,
+                            474.13
+                          ]
+                        ],
+                        "sourcePivot": [
+                          1377,
+                          529
+                        ]
+                      }
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindThigh.webp",
+                  "width": 46,
+                  "height": 39,
+                  "pivot": [
+                    3.246427030081367,
+                    1.1997665111170268
+                  ],
+                  "axis": [
+                    0.0,
+                    3.8992411611303375
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      27.294688127912362
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindShin.webp",
+                  "width": 43,
+                  "height": 38,
+                  "pivot": [
+                    2.9247663701747064,
+                    1.156302983557442
+                  ],
+                  "axis": [
+                    0.0,
+                    3.7579846965616874
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      26.30589287593181
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindFoot.webp",
+                  "width": 65,
+                  "height": 29,
+                  "pivot": [
+                    5.0,
+                    0.3651515151515103
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontThigh.webp",
+                  "width": 46,
+                  "height": 49,
+                  "pivot": [
+                    3.165163102718234,
+                    1.513773657821764
+                  ],
+                  "axis": [
+                    0.0,
+                    4.919764387920732
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      34.438350715445125
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontShin.webp",
+                  "width": 43,
+                  "height": 49,
+                  "pivot": [
+                    3.0601779173207744,
+                    1.4945054945054945
+                  ],
+                  "axis": [
+                    0.0,
+                    4.857142857142857
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      34.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "rightFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontFoot.webp",
+                  "width": 72,
+                  "height": 32,
+                  "pivot": [
+                    5.571428571428571,
+                    0.4068831168831116
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindThigh.webp",
+                  "width": 46,
+                  "height": 43,
+                  "pivot": [
+                    3.2208504972557153,
+                    1.330351292344752
+                  ],
+                  "axis": [
+                    0.0,
+                    4.323641700120445
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      30.265491900843113
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindShin.webp",
+                  "width": 43,
+                  "height": 50,
+                  "pivot": [
+                    2.9885261403789083,
+                    1.5290133741473484
+                  ],
+                  "axis": [
+                    0.0,
+                    4.969293465978882
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      34.785054261852174
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftHindFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindFoot.webp",
+                  "width": 71,
+                  "height": 32,
+                  "pivot": [
+                    5.5,
+                    0.4016666666666614
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontThigh": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontThigh.webp",
+                  "width": 46,
+                  "height": 46,
+                  "pivot": [
+                    3.235164835164835,
+                    1.4065934065934067
+                  ],
+                  "axis": [
+                    0.0,
+                    4.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      32.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontShin": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontShin.webp",
+                  "width": 43,
+                  "height": 52,
+                  "pivot": [
+                    2.95843287147635,
+                    1.5824175824175823
+                  ],
+                  "axis": [
+                    0.0,
+                    5.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png",
+                    "axis": [
+                      0.0,
+                      36.0
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftFrontFoot": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontFoot.webp",
+                  "width": 72,
+                  "height": 32,
+                  "pivot": [
+                    5.571428571428571,
+                    0.4068831168831116
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-pony-parts-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-pony-parts-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftUpperArm.webp",
+                  "width": 32,
+                  "height": 78,
+                  "pivot": [
+                    2.1302621961145136,
+                    2.463115664257406
+                  ],
+                  "axis": [
+                    0.0,
+                    6.157789160643516
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      43.10452412450461
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftForearm.webp",
+                  "width": 32,
+                  "height": 103,
+                  "pivot": [
+                    2.1717627144745486,
+                    3.2576440717118227
+                  ],
+                  "axis": [
+                    0.0,
+                    8.144110179279556
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      57.0087712549569
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightUpperArm.webp",
+                  "width": 32,
+                  "height": 105,
+                  "pivot": [
+                    2.140287983674446,
+                    3.3441999744913216
+                  ],
+                  "axis": [
+                    0.0,
+                    8.360499936228305
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      58.52349955359813
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightForearm.webp",
+                  "width": 32,
+                  "height": 95,
+                  "pivot": [
+                    2.135557419637177,
+                    3.0031276213647797
+                  ],
+                  "axis": [
+                    0.0,
+                    7.50781905341195
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-neutral-r1.png",
+                    "axis": [
+                      0.0,
+                      52.55473337388365
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-09-neutral-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHand.webp",
+                  "width": 49,
+                  "height": 55,
+                  "pivot": [
+                    3.857142857142857,
+                    4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-09-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-09-activity-master-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "rightHind",
+                  "root": "rightHindHip",
+                  "middle": "rightHindKnee",
+                  "end": "rightHindFoot",
+                  "upper": "rightHindThigh",
+                  "lower": "rightHindShin",
+                  "tip": "rightHindFoot",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    3.8992411611303375,
+                    3.7579846965616874
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "rightFront",
+                  "root": "rightFrontHip",
+                  "middle": "rightFrontKnee",
+                  "end": "rightFrontFoot",
+                  "upper": "rightFrontThigh",
+                  "lower": "rightFrontShin",
+                  "tip": "rightFrontFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    4.919764387920732,
+                    4.857142857142857
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftHind",
+                  "root": "leftHindHip",
+                  "middle": "leftHindKnee",
+                  "end": "leftHindFoot",
+                  "upper": "leftHindThigh",
+                  "lower": "leftHindShin",
+                  "tip": "leftHindFoot",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    4.323641700120445,
+                    4.969293465978882
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "leftFront",
+                  "root": "leftFrontHip",
+                  "middle": "leftFrontKnee",
+                  "end": "leftFrontFoot",
+                  "upper": "leftFrontThigh",
+                  "lower": "leftFrontShin",
+                  "tip": "leftFrontFoot",
+                  "phase": 0,
+                  "bend": -1,
+                  "lengths": [
+                    4.571428571428571,
+                    5.142857142857143
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    6.1577891606435164,
+                    8.144110179279556
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0,
+                  "bend": 1,
+                  "lengths": [
+                    8.360499936228305,
+                    7.50781905341195
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.06,
+                  "phase": 0.5
+                },
+                {
+                  "part": "bow",
+                  "joint": "rightHand",
+                  "kind": "fixed"
+                }
+              ],
+              "order": [
+                "rightHindThigh",
+                "rightHindShin",
+                "rightHindFoot",
+                "rightFrontThigh",
+                "rightFrontShin",
+                "rightFrontFoot",
+                "leftHindThigh",
+                "leftHindShin",
+                "leftHindFoot",
+                "leftFrontThigh",
+                "leftFrontShin",
+                "leftFrontFoot",
+                "body",
+                "bow",
+                "head",
+                "head-expression",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand",
+                "tail"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-head.webp",
+      "pixelSize": [
+        414,
+        362
+      ],
+      "pixelDensity": 7,
+      "sha256": "00a104224093cde076ca1be514d3518b8a6496a9128b1cde2b18c568250ea750"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-tail.webp",
+      "pixelSize": [
+        99,
+        72
+      ],
+      "pixelDensity": 7,
+      "sha256": "022e8af5106956eed10471525bdf294ca2f1da7d34483e937af4c03ecae4933b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-bow.webp",
+      "pixelSize": [
+        80,
+        85
+      ],
+      "pixelDensity": 7,
+      "sha256": "21479df6618966d72f0c2722143488b6509197d27f0ccbcfb56686a27b7a892a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-body.webp",
+      "pixelSize": [
+        185,
+        139
+      ],
+      "pixelDensity": 7,
+      "sha256": "484a638187a5de7a7ed928c34ebbb26bc3848479afa946ea4ebcfbfdb635a87f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindThigh.webp",
+      "pixelSize": [
+        46,
+        30
+      ],
+      "pixelDensity": 7,
+      "sha256": "aca5d7875aa5b9369c4daf464e43b06208532f0dd12b7bb15fdaf93bec38c292"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindShin.webp",
+      "pixelSize": [
+        43,
+        34
+      ],
+      "pixelDensity": 7,
+      "sha256": "a08ee4054c0786c19ed4635df6578b222114b85e74e3566ea7dbf1a47b2e2ff8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHindFoot.webp",
+      "pixelSize": [
+        49,
+        23
+      ],
+      "pixelDensity": 7,
+      "sha256": "609bdd41bbf796e178306587a4d843194f37ed37ea90c801952d716439f04ede"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindThigh.webp",
+      "pixelSize": [
+        46,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "80bb7a4f73ca615a1764af9e65cce5a13e307e103db670236184032607ba8a13"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindShin.webp",
+      "pixelSize": [
+        43,
+        36
+      ],
+      "pixelDensity": 7,
+      "sha256": "1c3dbc3730acdca3d8c21c725f941cd659b8039453d8f89f29b0d81fca08ed07"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHindFoot.webp",
+      "pixelSize": [
+        46,
+        21
+      ],
+      "pixelDensity": 7,
+      "sha256": "3071a1f6081a28555519d158898be4c56d3b774a053046bad13c6a890fce2ea1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontThigh.webp",
+      "pixelSize": [
+        46,
+        44
+      ],
+      "pixelDensity": 7,
+      "sha256": "5e7f6b32d86f30584d72a8ed34b91a5d73058c1dc4ec8f36bb7e68facee9c678"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontShin.webp",
+      "pixelSize": [
+        43,
+        56
+      ],
+      "pixelDensity": 7,
+      "sha256": "6593f69d2f4526ce3648f46e4bd41b9530961489320127c5beecb32dd8e997dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightFrontFoot.webp",
+      "pixelSize": [
+        68,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "b9f640cf0e5b69009817ee9dca7e8e932f18623dad613db5c54bcfcf7ee9e1a3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontThigh.webp",
+      "pixelSize": [
+        46,
+        47
+      ],
+      "pixelDensity": 7,
+      "sha256": "28c04365b5cf2e0edf6dd926e61278b41e4f21274b7c59d2da670da73cfb1681"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontShin.webp",
+      "pixelSize": [
+        43,
+        54
+      ],
+      "pixelDensity": 7,
+      "sha256": "ae83619a336b930ead5cd73286857fe7b83c9fd27cd046359a06188903c0527e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftFrontFoot.webp",
+      "pixelSize": [
+        68,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "b9f640cf0e5b69009817ee9dca7e8e932f18623dad613db5c54bcfcf7ee9e1a3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        32,
+        92
+      ],
+      "pixelDensity": 7,
+      "sha256": "32e81731650496d4dee4c12e9accb52f86e88eab28418a7e7bbaa9b864e52406"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftForearm.webp",
+      "pixelSize": [
+        32,
+        76
+      ],
+      "pixelDensity": 7,
+      "sha256": "1dc9b78ffa40bd42b0cb5054659b1d5faa266d9ee3fd38d78e2f2e7d04859231"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-leftHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        32,
+        79
+      ],
+      "pixelDensity": 7,
+      "sha256": "8620fe83fa7370fd69e46ff08f8f61aa9ac1f6e22ee5a85f3b96e99f5bbd4bb6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightForearm.webp",
+      "pixelSize": [
+        32,
+        77
+      ],
+      "pixelDensity": 7,
+      "sha256": "42c26d08e1821ef0609d21dac627b7ec70466d64895b65024a98650ba53729de"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-rightHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-right-main-head-champion.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-right-main-head-champion.webp",
+      "pixelSize": [
+        404,
+        371
+      ],
+      "pixelDensity": 7,
+      "sha256": "148c7889da7ac4a525024990730825c1a673aacc558fe06a6dde0f00917ed173"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-head.webp",
+      "pixelSize": [
+        437,
+        370
+      ],
+      "pixelDensity": 7,
+      "sha256": "ee1424cde6439feabb1a931aa47d0f799da02655dc399528c9bb4fae31fdffa4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-tail.webp",
+      "pixelSize": [
+        127,
+        89
+      ],
+      "pixelDensity": 7,
+      "sha256": "e198237eed7a7a41f7497c6eb9a704d4f2b3bac6c2d154120c3e5cc38e8c9a68"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-bow.webp",
+      "pixelSize": [
+        80,
+        85
+      ],
+      "pixelDensity": 7,
+      "sha256": "148b49baf88d8f9761a84a8ec055cdf9480310b584f58eab62cd5629191e591d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-body.webp",
+      "pixelSize": [
+        211,
+        150
+      ],
+      "pixelDensity": 7,
+      "sha256": "e728d79a7b7867e3c1e13e8489efdf3ab47d46ce9d43ba56a50671b0b99da0ec"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindThigh.webp",
+      "pixelSize": [
+        46,
+        34
+      ],
+      "pixelDensity": 7,
+      "sha256": "6cf9ec4b7b44115bf64c8eeefde0534a37a4610f960e8d4002f1befe309654d3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindShin.webp",
+      "pixelSize": [
+        43,
+        39
+      ],
+      "pixelDensity": 7,
+      "sha256": "d0c8901c8b58b43fe6ae55307a91d6e45f9d692a7e1df6abc3db277d39ae6a64"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHindFoot.webp",
+      "pixelSize": [
+        60,
+        28
+      ],
+      "pixelDensity": 7,
+      "sha256": "34b6d5a73300a9dc98b63f090462a7980954734c6b76c228eb893754138e3ad8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontThigh.webp",
+      "pixelSize": [
+        46,
+        45
+      ],
+      "pixelDensity": 7,
+      "sha256": "9f9b067476fe08bce61451bfaf8f9a277fe8218f6f080c99d5a625ec6018d92f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontShin.webp",
+      "pixelSize": [
+        43,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "d63c0f6c35abf395965898d4f49e70abf0e33dbf6c43a91f8038dfa487490155"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftFrontFoot.webp",
+      "pixelSize": [
+        69,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "091489a048ca2aead8dfa4297b5f0c697806376f7b1458fd8bbc13e29439944a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindThigh.webp",
+      "pixelSize": [
+        46,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "71131abcd6fe51b37215174db2f97e3016a90e0b2680e549e8557ca5b5644d50"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindShin.webp",
+      "pixelSize": [
+        43,
+        45
+      ],
+      "pixelDensity": 7,
+      "sha256": "91114c0cb5b764b24241a376617494fdd56524c3d82e495d31b5de4368538738"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHindFoot.webp",
+      "pixelSize": [
+        69,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "091489a048ca2aead8dfa4297b5f0c697806376f7b1458fd8bbc13e29439944a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontThigh.webp",
+      "pixelSize": [
+        46,
+        43
+      ],
+      "pixelDensity": 7,
+      "sha256": "99d698f1adf9f131ce14024171c994031ff2cd754882449236ac6cf9c911269b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontShin.webp",
+      "pixelSize": [
+        43,
+        54
+      ],
+      "pixelDensity": 7,
+      "sha256": "ae83619a336b930ead5cd73286857fe7b83c9fd27cd046359a06188903c0527e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightFrontFoot.webp",
+      "pixelSize": [
+        71,
+        34
+      ],
+      "pixelDensity": 7,
+      "sha256": "7283517f1f77920641444085932e32cd640f946e056cc3ad1dfc884322d6511b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        32,
+        147
+      ],
+      "pixelDensity": 7,
+      "sha256": "684a16badcce94200b8cf30f0e3065bc3e96a8bdb14d3fd092ff78cd599d9e6a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftForearm.webp",
+      "pixelSize": [
+        32,
+        113
+      ],
+      "pixelDensity": 7,
+      "sha256": "38f1e54bc6c26ff7cddb7d5d1c06131e55ed4cc24585fe95d0b7d0df09bfce1e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-leftHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        32,
+        90
+      ],
+      "pixelDensity": 7,
+      "sha256": "0fca9c755ad181649b491c19413fd758c6655cdede40c0d31b45e4953a7e704b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightForearm.webp",
+      "pixelSize": [
+        32,
+        92
+      ],
+      "pixelDensity": 7,
+      "sha256": "32e81731650496d4dee4c12e9accb52f86e88eab28418a7e7bbaa9b864e52406"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/down-left-main-rightHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-head.webp",
+      "pixelSize": [
+        437,
+        370
+      ],
+      "pixelDensity": 7,
+      "sha256": "ee1424cde6439feabb1a931aa47d0f799da02655dc399528c9bb4fae31fdffa4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-tail.webp",
+      "pixelSize": [
+        127,
+        89
+      ],
+      "pixelDensity": 7,
+      "sha256": "e198237eed7a7a41f7497c6eb9a704d4f2b3bac6c2d154120c3e5cc38e8c9a68"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-bow.webp",
+      "pixelSize": [
+        80,
+        85
+      ],
+      "pixelDensity": 7,
+      "sha256": "148b49baf88d8f9761a84a8ec055cdf9480310b584f58eab62cd5629191e591d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-body.webp",
+      "pixelSize": [
+        211,
+        150
+      ],
+      "pixelDensity": 7,
+      "sha256": "e728d79a7b7867e3c1e13e8489efdf3ab47d46ce9d43ba56a50671b0b99da0ec"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindThigh.webp",
+      "pixelSize": [
+        46,
+        34
+      ],
+      "pixelDensity": 7,
+      "sha256": "6cf9ec4b7b44115bf64c8eeefde0534a37a4610f960e8d4002f1befe309654d3"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindShin.webp",
+      "pixelSize": [
+        43,
+        39
+      ],
+      "pixelDensity": 7,
+      "sha256": "d0c8901c8b58b43fe6ae55307a91d6e45f9d692a7e1df6abc3db277d39ae6a64"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHindFoot.webp",
+      "pixelSize": [
+        60,
+        28
+      ],
+      "pixelDensity": 7,
+      "sha256": "34b6d5a73300a9dc98b63f090462a7980954734c6b76c228eb893754138e3ad8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontThigh.webp",
+      "pixelSize": [
+        46,
+        45
+      ],
+      "pixelDensity": 7,
+      "sha256": "9f9b067476fe08bce61451bfaf8f9a277fe8218f6f080c99d5a625ec6018d92f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontShin.webp",
+      "pixelSize": [
+        43,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "d63c0f6c35abf395965898d4f49e70abf0e33dbf6c43a91f8038dfa487490155"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftFrontFoot.webp",
+      "pixelSize": [
+        69,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "091489a048ca2aead8dfa4297b5f0c697806376f7b1458fd8bbc13e29439944a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindThigh.webp",
+      "pixelSize": [
+        46,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "71131abcd6fe51b37215174db2f97e3016a90e0b2680e549e8557ca5b5644d50"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindShin.webp",
+      "pixelSize": [
+        43,
+        45
+      ],
+      "pixelDensity": 7,
+      "sha256": "91114c0cb5b764b24241a376617494fdd56524c3d82e495d31b5de4368538738"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHindFoot.webp",
+      "pixelSize": [
+        69,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "091489a048ca2aead8dfa4297b5f0c697806376f7b1458fd8bbc13e29439944a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontThigh.webp",
+      "pixelSize": [
+        46,
+        43
+      ],
+      "pixelDensity": 7,
+      "sha256": "99d698f1adf9f131ce14024171c994031ff2cd754882449236ac6cf9c911269b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontShin.webp",
+      "pixelSize": [
+        43,
+        54
+      ],
+      "pixelDensity": 7,
+      "sha256": "ae83619a336b930ead5cd73286857fe7b83c9fd27cd046359a06188903c0527e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightFrontFoot.webp",
+      "pixelSize": [
+        71,
+        34
+      ],
+      "pixelDensity": 7,
+      "sha256": "7283517f1f77920641444085932e32cd640f946e056cc3ad1dfc884322d6511b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        32,
+        147
+      ],
+      "pixelDensity": 7,
+      "sha256": "684a16badcce94200b8cf30f0e3065bc3e96a8bdb14d3fd092ff78cd599d9e6a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftForearm.webp",
+      "pixelSize": [
+        32,
+        113
+      ],
+      "pixelDensity": 7,
+      "sha256": "38f1e54bc6c26ff7cddb7d5d1c06131e55ed4cc24585fe95d0b7d0df09bfce1e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-leftHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        32,
+        90
+      ],
+      "pixelDensity": 7,
+      "sha256": "0fca9c755ad181649b491c19413fd758c6655cdede40c0d31b45e4953a7e704b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightForearm.webp",
+      "pixelSize": [
+        32,
+        92
+      ],
+      "pixelDensity": 7,
+      "sha256": "32e81731650496d4dee4c12e9accb52f86e88eab28418a7e7bbaa9b864e52406"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-left-main-rightHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-head.webp",
+      "pixelSize": [
+        436,
+        369
+      ],
+      "pixelDensity": 7,
+      "sha256": "3adb42e14732e0b620fc81ed9427fd880f2d771a720f157dfe607580a69554d4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-tail.webp",
+      "pixelSize": [
+        141,
+        97
+      ],
+      "pixelDensity": 7,
+      "sha256": "b0b3e55dfc5cb4323aba337a51583b7d95db0fc9caf485e57002576a121ceea8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-bow.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-bow.webp",
+      "pixelSize": [
+        80,
+        85
+      ],
+      "pixelDensity": 7,
+      "sha256": "21479df6618966d72f0c2722143488b6509197d27f0ccbcfb56686a27b7a892a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-body.webp",
+      "pixelSize": [
+        205,
+        145
+      ],
+      "pixelDensity": 7,
+      "sha256": "6bba4f1c7b1594ef9c8417292a5770fae18479cdbfeddcffa357b79438a89922"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindThigh.webp",
+      "pixelSize": [
+        46,
+        39
+      ],
+      "pixelDensity": 7,
+      "sha256": "c0fd1398a39d6a3af578df6204c39b7e60acc5ab299e65ed0f79b67a60beab46"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindShin.webp",
+      "pixelSize": [
+        43,
+        38
+      ],
+      "pixelDensity": 7,
+      "sha256": "33076e9fb610dfcbdf7de16ebdf5d9ff1a32422e8c8ccb0273b273cb68ff51d0"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHindFoot.webp",
+      "pixelSize": [
+        65,
+        29
+      ],
+      "pixelDensity": 7,
+      "sha256": "d4965487c8f610eacf5fd5ff4cc3e7b42c5658f4341291d4e709e2a245065b7a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontThigh.webp",
+      "pixelSize": [
+        46,
+        49
+      ],
+      "pixelDensity": 7,
+      "sha256": "b70d97a85eaf26b1275eaff6820a25948b3e2b92a242745c70f50ef8a0a119e5"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontShin.webp",
+      "pixelSize": [
+        43,
+        49
+      ],
+      "pixelDensity": 7,
+      "sha256": "ce62d2d5f1a2e37e7037e1b79a075832a2121d1831a1d8368042fcb8e26cdefd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightFrontFoot.webp",
+      "pixelSize": [
+        72,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "060baf558263fa93dc2311625d3e66cc014abe9dd09307c7779c50c76b6d9604"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindThigh.webp",
+      "pixelSize": [
+        46,
+        43
+      ],
+      "pixelDensity": 7,
+      "sha256": "99d698f1adf9f131ce14024171c994031ff2cd754882449236ac6cf9c911269b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindShin.webp",
+      "pixelSize": [
+        43,
+        50
+      ],
+      "pixelDensity": 7,
+      "sha256": "087a3259fe42cecd42c19243eaebe955b0f63024a826eef50cc49d5867d0c80b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHindFoot.webp",
+      "pixelSize": [
+        71,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "26bb42ddf72ba3bf41e2f77ccda6aa5fc74a4730b44e03c86a00065eab5e76dd"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontThigh.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontThigh.webp",
+      "pixelSize": [
+        46,
+        46
+      ],
+      "pixelDensity": 7,
+      "sha256": "530b05a427c4d9f3d7d62690c78c8cddfd28b14bd9a83ba0b7cd635b3652dd58"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontShin.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontShin.webp",
+      "pixelSize": [
+        43,
+        52
+      ],
+      "pixelDensity": 7,
+      "sha256": "d47bb31f787bd5cc12ece0f12064d593d38419d9d45d8039433d3e671432894b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontFoot.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftFrontFoot.webp",
+      "pixelSize": [
+        72,
+        32
+      ],
+      "pixelDensity": 7,
+      "sha256": "060baf558263fa93dc2311625d3e66cc014abe9dd09307c7779c50c76b6d9604"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        32,
+        78
+      ],
+      "pixelDensity": 7,
+      "sha256": "fad566fc4d09fca5d7ced553f77a91f91af51b920ad9c839ca833880b22dd251"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftForearm.webp",
+      "pixelSize": [
+        32,
+        103
+      ],
+      "pixelDensity": 7,
+      "sha256": "687695fd3772f2f2ad6a553cc8d9cc524f821c70a4701970a6e57b182ad2ba92"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-leftHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        32,
+        105
+      ],
+      "pixelDensity": 7,
+      "sha256": "4086b96de8ea2fbebeb3b22a316e014c426297c5739364bfefd960b23a545f01"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightForearm.webp",
+      "pixelSize": [
+        32,
+        95
+      ],
+      "pixelDensity": 7,
+      "sha256": "95a2f299e6661e877ee85ce03c0e7a66ad3a78a9dfca1407e1df05b080f88618"
+    },
+    {
+      "url": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-09-carnival/up-right-main-rightHand.webp",
+      "pixelSize": [
+        49,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "5910ff312b4f7c34124adf8fa6b38d540f5d436b1694d2a3fde251270bcdba8a"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    5,
+    8,
+    9
+  ]
+}

@@ -95,7 +95,19 @@ def reference_surface(spec,stop_at_end=False):
  image=image.resize((max(1,round(image.width*factor)),max(1,round(image.height*factor))),Image.Resampling.LANCZOS)
  donor={'master':spec['sourceMaster']}
  if 'sourceAxis'in spec:donor['axis']=[v*factor for v in spec['sourceAxis']]
+ if 'sourceWidth'in spec:
+  horizontal=spec['sourceWidth']/image.width;image=image.resize((spec['sourceWidth'],image.height),Image.Resampling.LANCZOS);pivot[0]*=horizontal
+  if 'axis'in donor:donor['axis'][0]*=horizontal
  return image,pivot,donor
+
+def reference_surfaces(specs):
+ # Assemble complete source surfaces around one anatomical body pivot.
+ layers=[(*reference_surface(spec),spec.get('at',[0,0]))for spec in specs]
+ left=math.floor(min(at[0]-pivot[0]for image,pivot,donor,at in layers));top=math.floor(min(at[1]-pivot[1]for image,pivot,donor,at in layers))
+ right=math.ceil(max(at[0]-pivot[0]+image.width for image,pivot,donor,at in layers));bottom=math.ceil(max(at[1]-pivot[1]+image.height for image,pivot,donor,at in layers))
+ image=Image.new('RGBA',(right-left,bottom-top))
+ for source,pivot,donor,at in layers:image.alpha_composite(source,(round(at[0]-pivot[0]-left),round(at[1]-pivot[1]-top)))
+ return image,[-left,-top],{'master':specs[0]['sourceMaster'],'sources':specs}
 
 def polygon(size,points):
  mask=Image.new('L',size);ImageDraw.Draw(mask).polygon([tuple(p)for p in points],fill=255);return mask
@@ -304,7 +316,8 @@ def build_role(author):
    for family,suffixes in [('legs',{'upper':'Thigh','lower':'Shin','tip':'Foot'}),('arms',{'upper':'UpperArm','lower':'Forearm','tip':'Hand'})]:
     for limb in description[family]:
      for segment,surface in limb.get('surfaceDonors',{}).items():donors[limb['name']+suffixes[segment]]=reference_surface(surface,segment in['upper','lower'])
-   if description.get('bodySource'):donors['body']=reference_surface(description['bodySource'])
+   if description.get('bodySources'):donors['body']=reference_surfaces(description['bodySources'])
+   elif description.get('bodySource'):donors['body']=reference_surface(description['bodySource'])
    complete_head=None
    for name,(mask,pivot,axis)in layers.items():
     masks[name]=mask;combined_mask=ImageChops.lighter(combined_mask,mask)
@@ -377,8 +390,9 @@ def build_role(author):
    arm_order=lambda front,over_head_arm=False:[part for spec,limb in zip(description['arms'],actor['arms'])if spec.get('overHead',False)==over_head_arm and(over_head_arm or spec.get('front',False)==front)for part in [limb['upper'],limb['lower'],limb['tip']]if part in actor['parts']]
    front_extras={e['name']for e in description['extras']if e.get('front',False)or e.get('overHead',False)}
    over_head={e['name']for e in description['extras']if e.get('overHead',False)}
+   under_hand={e['name']for e in description['extras']if e.get('underHand',False)}
    front_flippers=[e['part']for e in actor['appendages']if e['kind']=='flipper'and e['part']in front_extras and e['part']not in over_head]
-   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+front_flippers+['head','head-expression']+arm_order(False,True)+[e['part']for e in actor['appendages']if e['kind']=='fixed'or(e['part']in front_extras and e['part']not in front_flippers)]
+   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras and e['part']not in under_hand]+arm_order(False)+['body']+[e['part']for e in actor['appendages']if e['part']in under_hand]+arm_order(True)+front_flippers+['head','head-expression']+arm_order(False,True)+[e['part']for e in actor['appendages']if(e['kind']=='fixed'or(e['part']in front_extras and e['part']not in front_flippers))and e['part']not in under_hand]
    actors.append(actor)
   pose=source_pose
   original_alpha=np.asarray(pose.getchannel('A'));retained=np.asarray(combined_mask)>0
