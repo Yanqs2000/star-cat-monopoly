@@ -71,3 +71,9 @@ Consumes all three complete packets and per-character evidence. Produces accepte
 - [ ] Full regression, exact prior-HD asset hashes, original routing, actual three-character new game with real API/no save writes, desktop review controls and responsive review layout.
 - [ ] One fresh-context whole-branch code review; TDD any important findings, preserve user-approved appearance.
 - [ ] User final art/natural-motion acceptance under their AGENTS.md, then complete goal. Do not self-approve appearance or silently merge the new final trio before that gate.
+
+## 大牌工程闭环完成记录
+
+845项TS、40项Python、8项独立导出及16项生产场景通过；278文件重建一致，2212继承资产/包不变，真实API新局无写存档。素材形象仍待最终用户验收。细节见`docs/modernization/dapai-25-delivery.md`。
+
+大尾源图已先行只读核对：两只主要落地脚、双钳、分节尾、棕帽金带和黑墨镜；scorpion身份标签不代表可以增加原作没有的腿。下一任务按实际两足支撑、刚性帽/身体和独立分节尾处理。

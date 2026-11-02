@@ -5,8 +5,8 @@ import type {Character25Rig} from './characters-25-types'
 import type {Facing} from './assets'
 import {createCharacterMaterialRenderer,type MaterialRigIndex} from './character-material-render'
 
-const cid=Number(new URLSearchParams(location.search).get('role')??(location.pathname.includes('/trio/')?3:location.pathname.includes('/ajie-nini/')?10:11))
-if(![3,4,7,11,6,10,12].includes(cid))throw Error('本页支持当前人物制作批次')
+const cid=Number(new URLSearchParams(location.search).get('role')??(location.pathname.includes('/last-three/')?5:location.pathname.includes('/trio/')?3:location.pathname.includes('/ajie-nini/')?10:11))
+if(![3,4,5,7,8,9,11,6,10,12].includes(cid))throw Error('本页支持当前人物制作批次')
 const reviewScale=cid===3?2.5:3.2
 const variant=new URLSearchParams(location.search).get('variant')==='carnival'?'-carnival':''
 const index=await(await fetch(`../role-${String(cid).padStart(2,'0')}${variant}-rig.json`)).json()as {
@@ -29,7 +29,7 @@ const panels=facings.map((facing,i)=>{
 })
 const animatedMaterials:{image:HTMLImageElement;frames:{url:string}[];fps:number}[]=[]
 let materialElapsed=0
-if([3,4,7,11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
+if([3,4,5,7,11,6,10,12].includes(cid)&&!new URLSearchParams(location.search).has('export')){
  const complete=await(await fetch(`../role-${String(cid).padStart(2,'0')}-complete.json`)).json()as {
   thumbnailUrls:Record<string,string>;assets:{source:string;url:string}[];activityClips:{id:string;fps?:number;frames:{url:string}[]}[]
  }

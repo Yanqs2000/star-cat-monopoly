@@ -1,0 +1,2406 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-user-review",
+  "activeIds": [
+    5
+  ],
+  "deferredIds": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "characters": [
+    {
+      "id": 5,
+      "name": "大牌",
+      "anatomy": "biped",
+      "density": 7,
+      "mapAnchor": [
+        28,
+        20
+      ],
+      "stridePx": 18,
+      "motionScale": 0.5,
+      "artworkSamples": 64,
+      "sourceSwfSha256": "e45e5f8f4c7cfd1a7cf896ec5ff645444f7831a18ed4739b167af0aae6667686",
+      "facings": {
+        "down-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.0,
+                  -23.428571428571427
+                ],
+                "spine": [
+                  0.0,
+                  -17.285714285714285
+                ],
+                "tailRoot": [
+                  10.857142857142858,
+                  -17.0
+                ],
+                "leftHip": [
+                  -6.857142857142857,
+                  -12.857142857142858
+                ],
+                "leftKnee": [
+                  -7.857142857142857,
+                  -10.428571428571429
+                ],
+                "leftFoot": [
+                  -9.428571428571429,
+                  -7.0
+                ],
+                "rightHip": [
+                  6.142857142857143,
+                  -12.857142857142858
+                ],
+                "rightKnee": [
+                  7.571428571428571,
+                  -10.285714285714286
+                ],
+                "rightFoot": [
+                  10.285714285714286,
+                  -7.0
+                ],
+                "leftShoulder": [
+                  -8.428571428571429,
+                  -21.428571428571427
+                ],
+                "leftElbow": [
+                  -15.285714285714286,
+                  -26.0
+                ],
+                "leftHand": [
+                  -20.714285714285715,
+                  -32.42857142857143
+                ],
+                "rightShoulder": [
+                  8.714285714285714,
+                  -21.428571428571427
+                ],
+                "rightElbow": [
+                  15.571428571428571,
+                  -25.857142857142858
+                ],
+                "rightHand": [
+                  20.571428571428573,
+                  -32.42857142857143
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-head.webp",
+                  "width": 501,
+                  "height": 446,
+                  "pivot": [
+                    35.57142857142857,
+                    60.57142857142857
+                  ],
+                  "reconstructedFrom": "masters/role-05-activity-heads-separated-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-tail.webp",
+                  "width": 107,
+                  "height": 106,
+                  "pivot": [
+                    0.2857142857142857,
+                    7.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-body.webp",
+                  "width": 159,
+                  "height": 103,
+                  "pivot": [
+                    11.428571428571429,
+                    8.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftThigh.webp",
+                  "width": 40,
+                  "height": 46,
+                  "pivot": [
+                    3.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -1.0,
+                    2.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -7,
+                      17
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftShin.webp",
+                  "width": 44,
+                  "height": 53,
+                  "pivot": [
+                    3.857142857142857,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -1.5714285714285714,
+                    3.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -11,
+                      24
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftFoot.webp",
+                  "width": 121,
+                  "height": 80,
+                  "pivot": [
+                    9.428571428571429,
+                    4.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightThigh.webp",
+                  "width": 43,
+                  "height": 48,
+                  "pivot": [
+                    2.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    1.4285714285714286,
+                    2.5714285714285716
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      10,
+                      18
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightShin.webp",
+                  "width": 51,
+                  "height": 54,
+                  "pivot": [
+                    2.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    2.7142857142857144,
+                    3.2857142857142856
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      19,
+                      23
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightFoot.webp",
+                  "width": 121,
+                  "height": 80,
+                  "pivot": [
+                    8.285714285714286,
+                    4.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftUpperArm.webp",
+                  "width": 83,
+                  "height": 76,
+                  "pivot": [
+                    8.571428571428571,
+                    7.571428571428571
+                  ],
+                  "axis": [
+                    -6.857142857142857,
+                    -4.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -48,
+                      -32
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftForearm.webp",
+                  "width": 87,
+                  "height": 85,
+                  "pivot": [
+                    8.714285714285714,
+                    9.428571428571429
+                  ],
+                  "axis": [
+                    -5.428571428571429,
+                    -6.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -38,
+                      -45
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftHand.webp",
+                  "width": 68,
+                  "height": 69,
+                  "pivot": [
+                    5.0,
+                    5.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightUpperArm.webp",
+                  "width": 81,
+                  "height": 75,
+                  "pivot": [
+                    3.142857142857143,
+                    7.428571428571429
+                  ],
+                  "axis": [
+                    6.857142857142857,
+                    -4.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      48,
+                      -31
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightForearm.webp",
+                  "width": 84,
+                  "height": 83,
+                  "pivot": [
+                    3.5714285714285716,
+                    9.428571428571429
+                  ],
+                  "axis": [
+                    5.0,
+                    -6.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      35,
+                      -46
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightHand.webp",
+                  "width": 71,
+                  "height": 69,
+                  "pivot": [
+                    5.0,
+                    5.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "head-champion": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-right-main-head-champion.webp",
+                  "width": 506,
+                  "height": 442,
+                  "pivot": [
+                    35.857142857142854,
+                    60.0
+                  ],
+                  "reconstructedFrom": "masters/role-05-activity-heads-separated-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    2.626396615835748,
+                    3.771536794984024
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    2.9416086117105715,
+                    4.2618382543360855
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    8.241260058203403,
+                    8.41403104150127
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    8.162882644092374,
+                    8.257340580924815
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "tail",
+                "body",
+                "head",
+                "head-expression",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "down-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -2.5714285714285716,
+                  -21.0
+                ],
+                "spine": [
+                  -1.0,
+                  -15.571428571428571
+                ],
+                "tailRoot": [
+                  12.285714285714286,
+                  -16.0
+                ],
+                "leftHip": [
+                  -4.714285714285714,
+                  -12.142857142857142
+                ],
+                "leftKnee": [
+                  -6.571428571428571,
+                  -9.714285714285714
+                ],
+                "leftFoot": [
+                  -8.571428571428571,
+                  -7.428571428571429
+                ],
+                "rightHip": [
+                  2.4285714285714284,
+                  -11.714285714285714
+                ],
+                "rightKnee": [
+                  2.2857142857142856,
+                  -9.285714285714286
+                ],
+                "rightFoot": [
+                  2.2857142857142856,
+                  -6.714285714285714
+                ],
+                "leftShoulder": [
+                  1.4285714285714286,
+                  -17.571428571428573
+                ],
+                "leftElbow": [
+                  -9.857142857142858,
+                  -24.285714285714285
+                ],
+                "leftHand": [
+                  -21.142857142857142,
+                  -29.571428571428573
+                ],
+                "rightShoulder": [
+                  -5.714285714285714,
+                  -19.0
+                ],
+                "rightElbow": [
+                  -13.571428571428571,
+                  -23.428571428571427
+                ],
+                "rightHand": [
+                  -20.714285714285715,
+                  -27.142857142857142
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-head.webp",
+                  "width": 464,
+                  "height": 491,
+                  "pivot": [
+                    23.142857142857142,
+                    64.14285714285714
+                  ],
+                  "reconstructedFrom": "masters/role-05-activity-heads-separated-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-tail.webp",
+                  "width": 107,
+                  "height": 106,
+                  "pivot": [
+                    0.2857142857142857,
+                    7.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-body.webp",
+                  "width": 134,
+                  "height": 96,
+                  "pivot": [
+                    9.428571428571429,
+                    7.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftThigh.webp",
+                  "width": 46,
+                  "height": 48,
+                  "pivot": [
+                    4.142857142857143,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -1.8571428571428572,
+                    2.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -13,
+                      17
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftShin.webp",
+                  "width": 46,
+                  "height": 48,
+                  "pivot": [
+                    4.142857142857143,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -2.0,
+                    2.2857142857142856
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -14,
+                      16
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftFoot.webp",
+                  "width": 105,
+                  "height": 69,
+                  "pivot": [
+                    7.232857142857142,
+                    4.031428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightThigh.webp",
+                  "width": 34,
+                  "height": 41,
+                  "pivot": [
+                    2.4285714285714284,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -0.14285714285714285,
+                    2.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -1,
+                      17
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightShin.webp",
+                  "width": 33,
+                  "height": 42,
+                  "pivot": [
+                    2.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    0.0,
+                    2.5714285714285716
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      0,
+                      18
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightFoot.webp",
+                  "width": 127,
+                  "height": 83,
+                  "pivot": [
+                    8.714285714285714,
+                    4.857142857142857
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftUpperArm.webp",
+                  "width": 118,
+                  "height": 82,
+                  "pivot": [
+                    13.571428571428571,
+                    8.428571428571429
+                  ],
+                  "axis": [
+                    -11.285714285714286,
+                    -6.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -79,
+                      -47
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftForearm.webp",
+                  "width": 121,
+                  "height": 88,
+                  "pivot": [
+                    13.571428571428571,
+                    8.857142857142858
+                  ],
+                  "axis": [
+                    -11.285714285714286,
+                    -5.285714285714286
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -79,
+                      -37
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftHand.webp",
+                  "width": 78,
+                  "height": 58,
+                  "pivot": [
+                    5.0,
+                    3.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightUpperArm.webp",
+                  "width": 94,
+                  "height": 76,
+                  "pivot": [
+                    10.142857142857142,
+                    7.571428571428571
+                  ],
+                  "axis": [
+                    -7.857142857142857,
+                    -4.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -55,
+                      -31
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightForearm.webp",
+                  "width": 93,
+                  "height": 76,
+                  "pivot": [
+                    9.571428571428571,
+                    7.142857142857143
+                  ],
+                  "axis": [
+                    -7.142857142857143,
+                    -3.7142857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -50,
+                      -26
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightHand.webp",
+                  "width": 80,
+                  "height": 55,
+                  "pivot": [
+                    5.428571428571429,
+                    4.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    3.0572763655760995,
+                    3.0371845179241856
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    2.432769480846629,
+                    2.5714285714285716
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0.0,
+                  "bend": 1,
+                  "lengths": [
+                    13.13198307917874,
+                    12.46218770717965
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    9.019253781522627,
+                    8.050858744917354
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "tail",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "head",
+                "head-expression",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-left": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  -2.5714285714285716,
+                  -21.0
+                ],
+                "spine": [
+                  -1.0,
+                  -15.571428571428571
+                ],
+                "tailRoot": [
+                  12.285714285714286,
+                  -16.0
+                ],
+                "leftHip": [
+                  -4.714285714285714,
+                  -12.142857142857142
+                ],
+                "leftKnee": [
+                  -6.571428571428571,
+                  -9.714285714285714
+                ],
+                "leftFoot": [
+                  -8.571428571428571,
+                  -7.428571428571429
+                ],
+                "rightHip": [
+                  2.4285714285714284,
+                  -11.714285714285714
+                ],
+                "rightKnee": [
+                  2.2857142857142856,
+                  -9.285714285714286
+                ],
+                "rightFoot": [
+                  2.2857142857142856,
+                  -6.714285714285714
+                ],
+                "leftShoulder": [
+                  1.4285714285714286,
+                  -17.571428571428573
+                ],
+                "leftElbow": [
+                  -9.857142857142858,
+                  -24.285714285714285
+                ],
+                "leftHand": [
+                  -21.142857142857142,
+                  -29.571428571428573
+                ],
+                "rightShoulder": [
+                  -5.714285714285714,
+                  -19.0
+                ],
+                "rightElbow": [
+                  -13.571428571428571,
+                  -23.428571428571427
+                ],
+                "rightHand": [
+                  -20.714285714285715,
+                  -27.142857142857142
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-head.webp",
+                  "width": 464,
+                  "height": 491,
+                  "pivot": [
+                    23.142857142857142,
+                    64.14285714285714
+                  ],
+                  "reconstructedFrom": "masters/role-05-activity-heads-separated-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-tail.webp",
+                  "width": 107,
+                  "height": 106,
+                  "pivot": [
+                    0.2857142857142857,
+                    7.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-body.webp",
+                  "width": 134,
+                  "height": 96,
+                  "pivot": [
+                    9.428571428571429,
+                    7.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftThigh.webp",
+                  "width": 46,
+                  "height": 48,
+                  "pivot": [
+                    4.142857142857143,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -1.8571428571428572,
+                    2.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -13,
+                      17
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftShin.webp",
+                  "width": 46,
+                  "height": 48,
+                  "pivot": [
+                    4.142857142857143,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -2.0,
+                    2.2857142857142856
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -14,
+                      16
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftFoot.webp",
+                  "width": 105,
+                  "height": 69,
+                  "pivot": [
+                    7.232857142857142,
+                    4.031428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightThigh.webp",
+                  "width": 34,
+                  "height": 41,
+                  "pivot": [
+                    2.4285714285714284,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -0.14285714285714285,
+                    2.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -1,
+                      17
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightShin.webp",
+                  "width": 33,
+                  "height": 42,
+                  "pivot": [
+                    2.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    0.0,
+                    2.5714285714285716
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      0,
+                      18
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightFoot.webp",
+                  "width": 127,
+                  "height": 83,
+                  "pivot": [
+                    8.714285714285714,
+                    4.857142857142857
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftUpperArm.webp",
+                  "width": 118,
+                  "height": 82,
+                  "pivot": [
+                    13.571428571428571,
+                    8.428571428571429
+                  ],
+                  "axis": [
+                    -11.285714285714286,
+                    -6.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -79,
+                      -47
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftForearm.webp",
+                  "width": 121,
+                  "height": 88,
+                  "pivot": [
+                    13.571428571428571,
+                    8.857142857142858
+                  ],
+                  "axis": [
+                    -11.285714285714286,
+                    -5.285714285714286
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -79,
+                      -37
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftHand.webp",
+                  "width": 78,
+                  "height": 58,
+                  "pivot": [
+                    5.0,
+                    3.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightUpperArm.webp",
+                  "width": 94,
+                  "height": 76,
+                  "pivot": [
+                    10.142857142857142,
+                    7.571428571428571
+                  ],
+                  "axis": [
+                    -7.857142857142857,
+                    -4.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -55,
+                      -31
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightForearm.webp",
+                  "width": 93,
+                  "height": 76,
+                  "pivot": [
+                    9.571428571428571,
+                    7.142857142857143
+                  ],
+                  "axis": [
+                    -7.142857142857143,
+                    -3.7142857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -50,
+                      -26
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightHand.webp",
+                  "width": 80,
+                  "height": 55,
+                  "pivot": [
+                    5.428571428571429,
+                    4.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    3.0572763655760995,
+                    3.0371845179241856
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    2.432769480846629,
+                    2.5714285714285716
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0.0,
+                  "bend": 1,
+                  "lengths": [
+                    13.13198307917874,
+                    12.46218770717965
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    9.019253781522627,
+                    8.050858744917354
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "tail",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "head",
+                "head-expression",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        },
+        "up-right": {
+          "actors": [
+            {
+              "id": "main",
+              "joints": {
+                "neck": [
+                  0.0,
+                  -21.142857142857142
+                ],
+                "spine": [
+                  -1.2857142857142858,
+                  -15.571428571428571
+                ],
+                "tailRoot": [
+                  -13.142857142857142,
+                  -16.714285714285715
+                ],
+                "leftHip": [
+                  -3.2857142857142856,
+                  -11.857142857142858
+                ],
+                "leftKnee": [
+                  -4.0,
+                  -9.571428571428571
+                ],
+                "leftFoot": [
+                  -5.285714285714286,
+                  -6.857142857142857
+                ],
+                "rightHip": [
+                  3.7142857142857144,
+                  -12.142857142857142
+                ],
+                "rightKnee": [
+                  6.0,
+                  -9.714285714285714
+                ],
+                "rightFoot": [
+                  8.142857142857142,
+                  -7.571428571428571
+                ],
+                "leftShoulder": [
+                  -7.428571428571429,
+                  -17.714285714285715
+                ],
+                "leftElbow": [
+                  4.0,
+                  -24.428571428571427
+                ],
+                "leftHand": [
+                  15.0,
+                  -30.0
+                ],
+                "rightShoulder": [
+                  -0.5714285714285714,
+                  -19.142857142857142
+                ],
+                "rightElbow": [
+                  7.857142857142857,
+                  -23.571428571428573
+                ],
+                "rightHand": [
+                  15.571428571428571,
+                  -27.571428571428573
+                ]
+              },
+              "parts": {
+                "head": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-head.webp",
+                  "width": 448,
+                  "height": 474,
+                  "pivot": [
+                    41.285714285714285,
+                    63.142857142857146
+                  ],
+                  "reconstructedFrom": "masters/role-05-activity-heads-separated-r1.png"
+                },
+                "tail": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-tail.webp",
+                  "width": 107,
+                  "height": 106,
+                  "pivot": [
+                    16.0,
+                    7.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "body": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-body.webp",
+                  "width": 127,
+                  "height": 92,
+                  "pivot": [
+                    8.571428571428571,
+                    7.285714285714286
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftThigh.webp",
+                  "width": 38,
+                  "height": 44,
+                  "pivot": [
+                    3.0,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -0.7142857142857143,
+                    2.2857142857142856
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -5,
+                      16
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftShin.webp",
+                  "width": 42,
+                  "height": 48,
+                  "pivot": [
+                    3.5714285714285716,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    -1.2857142857142858,
+                    2.7142857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      -9,
+                      19
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftFoot.webp",
+                  "width": 131,
+                  "height": 84,
+                  "pivot": [
+                    8.857142857142858,
+                    5.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightThigh": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightThigh.webp",
+                  "width": 48,
+                  "height": 49,
+                  "pivot": [
+                    2.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    2.2857142857142856,
+                    2.4285714285714284
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      16,
+                      17
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightShin": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightShin.webp",
+                  "width": 47,
+                  "height": 47,
+                  "pivot": [
+                    2.2857142857142856,
+                    2.2857142857142856
+                  ],
+                  "axis": [
+                    2.142857142857143,
+                    2.142857142857143
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      15,
+                      15
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightFoot": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightFoot.webp",
+                  "width": 109,
+                  "height": 70,
+                  "pivot": [
+                    7.351428571428571,
+                    4.268571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftUpperArm.webp",
+                  "width": 107,
+                  "height": 81,
+                  "pivot": [
+                    1.4285714285714286,
+                    8.285714285714286
+                  ],
+                  "axis": [
+                    11.428571428571429,
+                    -6.714285714285714
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      80,
+                      -47
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftForearm.webp",
+                  "width": 117,
+                  "height": 90,
+                  "pivot": [
+                    3.142857142857143,
+                    9.142857142857142
+                  ],
+                  "axis": [
+                    11.0,
+                    -5.571428571428571
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      77,
+                      -39
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "leftHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftHand.webp",
+                  "width": 91,
+                  "height": 58,
+                  "pivot": [
+                    5.142857142857143,
+                    2.7142857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightUpperArm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightUpperArm.webp",
+                  "width": 98,
+                  "height": 71,
+                  "pivot": [
+                    3.142857142857143,
+                    6.857142857142857
+                  ],
+                  "axis": [
+                    8.428571428571429,
+                    -4.428571428571429
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      59,
+                      -31
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightForearm": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightForearm.webp",
+                  "width": 97,
+                  "height": 78,
+                  "pivot": [
+                    3.5714285714285716,
+                    7.428571428571429
+                  ],
+                  "axis": [
+                    7.714285714285714,
+                    -4.0
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png",
+                    "axis": [
+                      54,
+                      -28
+                    ]
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                },
+                "rightHand": {
+                  "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightHand.webp",
+                  "width": 87,
+                  "height": 56,
+                  "pivot": [
+                    5.142857142857143,
+                    3.7142857142857144
+                  ],
+                  "donor": {
+                    "master": "masters/role-05-activity-master-r1.png"
+                  },
+                  "reconstructedFrom": "masters/role-05-activity-master-r1.png"
+                }
+              },
+              "head": "head",
+              "body": "body",
+              "legs": [
+                {
+                  "name": "left",
+                  "root": "leftHip",
+                  "middle": "leftKnee",
+                  "end": "leftFoot",
+                  "upper": "leftThigh",
+                  "lower": "leftShin",
+                  "tip": "leftFoot",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    2.3947220877486015,
+                    3.003399434518377
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightHip",
+                  "middle": "rightKnee",
+                  "end": "rightFoot",
+                  "upper": "rightThigh",
+                  "lower": "rightShin",
+                  "tip": "rightFoot",
+                  "phase": 0.5,
+                  "bend": 1,
+                  "lengths": [
+                    3.3350335799796436,
+                    3.0304576336566322
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "arms": [
+                {
+                  "name": "left",
+                  "root": "leftShoulder",
+                  "middle": "leftElbow",
+                  "end": "leftHand",
+                  "upper": "leftUpperArm",
+                  "lower": "leftForearm",
+                  "tip": "leftHand",
+                  "phase": 0.0,
+                  "bend": -1,
+                  "lengths": [
+                    13.25495671630128,
+                    12.330483215451478
+                  ],
+                  "hiddenParts": []
+                },
+                {
+                  "name": "right",
+                  "root": "rightShoulder",
+                  "middle": "rightElbow",
+                  "end": "rightHand",
+                  "upper": "rightUpperArm",
+                  "lower": "rightForearm",
+                  "tip": "rightHand",
+                  "phase": 0.5,
+                  "bend": -1,
+                  "lengths": [
+                    9.521190115972361,
+                    8.689660757568886
+                  ],
+                  "hiddenParts": []
+                }
+              ],
+              "appendages": [
+                {
+                  "part": "tail",
+                  "joint": "tailRoot",
+                  "kind": "tail",
+                  "amplitude": 0.07,
+                  "phase": 0.5
+                }
+              ],
+              "order": [
+                "leftThigh",
+                "leftShin",
+                "leftFoot",
+                "rightThigh",
+                "rightShin",
+                "rightFoot",
+                "tail",
+                "body",
+                "leftUpperArm",
+                "leftForearm",
+                "leftHand",
+                "head",
+                "head-expression",
+                "rightUpperArm",
+                "rightForearm",
+                "rightHand"
+              ]
+            }
+          ],
+          "shadow": {
+            "x": 0,
+            "y": 0,
+            "width": 37,
+            "height": 12
+          }
+        }
+      }
+    }
+  ],
+  "runtimeImages": [
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-head.webp",
+      "pixelSize": [
+        501,
+        446
+      ],
+      "pixelDensity": 7,
+      "sha256": "e2b984a7c5c860247da00a03f6d1c8c8e97cd1bafbb30500c4f04eeeb91f95e4"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-tail.webp",
+      "pixelSize": [
+        107,
+        106
+      ],
+      "pixelDensity": 7,
+      "sha256": "7b4a77ac3056e431c2cd9f78b366ef2866afc8220b0f528a467c7fe2a76386d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-body.webp",
+      "pixelSize": [
+        159,
+        103
+      ],
+      "pixelDensity": 7,
+      "sha256": "0ca8f3c32e9050014b41958002cc2ee9e23978612e166da157919d9112963733"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-leftThigh.webp",
+      "pixelSize": [
+        40,
+        46
+      ],
+      "pixelDensity": 7,
+      "sha256": "782e37cfb0e19b2cd48e48f80f817c7e3e55f273cfc6a9d78a0ab3159f50140b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-leftShin.webp",
+      "pixelSize": [
+        44,
+        53
+      ],
+      "pixelDensity": 7,
+      "sha256": "942fed6d711f06e37c0674a5d2165e9d4f49b001300b24b011a999b550ce32fc"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-leftFoot.webp",
+      "pixelSize": [
+        121,
+        80
+      ],
+      "pixelDensity": 7,
+      "sha256": "a956570cc27d765b6fa4087652e02bdceac8d924bd7afa713e6707da7d0ba74a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-rightThigh.webp",
+      "pixelSize": [
+        43,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "0168aa95ce404aa320426218e5d866c02f12f5214d0fd983574a8821a8eebbca"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-rightShin.webp",
+      "pixelSize": [
+        51,
+        54
+      ],
+      "pixelDensity": 7,
+      "sha256": "c308ed5916aad01f317765fba269fb27b2c69bc3cf0c24b791a989faa1275d0e"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-rightFoot.webp",
+      "pixelSize": [
+        121,
+        80
+      ],
+      "pixelDensity": 7,
+      "sha256": "4bebc7e9253cf976d326be6569097b3935836255f06d8d9dc289a0d635036d5f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        83,
+        76
+      ],
+      "pixelDensity": 7,
+      "sha256": "6aca2b41210da1794ccb63814bcdbb02b89fe31ae4f7d797d01a2524c63ebfc6"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-leftForearm.webp",
+      "pixelSize": [
+        87,
+        85
+      ],
+      "pixelDensity": 7,
+      "sha256": "ce63ed8cc0ee56dd4106532872ae102dabe33d3f7d41566b98f1c0b11ca41a57"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-leftHand.webp",
+      "pixelSize": [
+        68,
+        69
+      ],
+      "pixelDensity": 7,
+      "sha256": "7d4ffbaf38835c63bb6536d178355e8ac62a5e2404bd371e52f4f82aee959d08"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        81,
+        75
+      ],
+      "pixelDensity": 7,
+      "sha256": "3ef448bcb86fe13998a4257fdc0e0710a56a9e697ec701db44b0df629951d183"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-rightForearm.webp",
+      "pixelSize": [
+        84,
+        83
+      ],
+      "pixelDensity": 7,
+      "sha256": "fa9542edfb88c3d42e090e95ae27dd8b1fb930adf66b57aff63be95d43ae9465"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-rightHand.webp",
+      "pixelSize": [
+        71,
+        69
+      ],
+      "pixelDensity": 7,
+      "sha256": "64b31dc6a9c779caab52582b8c24f2c92771959af07f65c15ec34955c51a7302"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-right-main-head-champion.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-right-main-head-champion.webp",
+      "pixelSize": [
+        506,
+        442
+      ],
+      "pixelDensity": 7,
+      "sha256": "1dc979a46fa1892dae8150c4d7654e70797ee2e253e4586eed3ffe95e8cc2320"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-head.webp",
+      "pixelSize": [
+        464,
+        491
+      ],
+      "pixelDensity": 7,
+      "sha256": "85bc5693ee39e5daad6527bc6fbcb09ede626b1ef08d34f2af0639744638dd06"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-tail.webp",
+      "pixelSize": [
+        107,
+        106
+      ],
+      "pixelDensity": 7,
+      "sha256": "7b4a77ac3056e431c2cd9f78b366ef2866afc8220b0f528a467c7fe2a76386d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-body.webp",
+      "pixelSize": [
+        134,
+        96
+      ],
+      "pixelDensity": 7,
+      "sha256": "0bd9873dd1a67c185fdfc5fe7134bc31529664ef2babceea3c25306037dceb02"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-leftThigh.webp",
+      "pixelSize": [
+        46,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "e4c688709efead5aa8e1c87b24288a4e261f658ac22de2e05af4148c1adee75d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-leftShin.webp",
+      "pixelSize": [
+        46,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "b31bdf9e5ce499eb0f8bedb78a5c42062f0bb30487855cd2f009de4aa2098f4b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-leftFoot.webp",
+      "pixelSize": [
+        105,
+        69
+      ],
+      "pixelDensity": 7,
+      "sha256": "32354be7442bc696f03b1bae923f968c19b30febe496ef9094bd56c01c5a8492"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-rightThigh.webp",
+      "pixelSize": [
+        34,
+        41
+      ],
+      "pixelDensity": 7,
+      "sha256": "6ad06f8c53ee89601a50d205694451e29608566253fc4c4be3daaa4c2aef9ebb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-rightShin.webp",
+      "pixelSize": [
+        33,
+        42
+      ],
+      "pixelDensity": 7,
+      "sha256": "b400255a34dd76c8c152bee703acbeafff0a5f75c9371b03278976e90972ac44"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-rightFoot.webp",
+      "pixelSize": [
+        127,
+        83
+      ],
+      "pixelDensity": 7,
+      "sha256": "3aec15ff6bd85e4d879d13de35f420a37fd9019e1cda38191620022965939c38"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        118,
+        82
+      ],
+      "pixelDensity": 7,
+      "sha256": "a85b5a222008cf8ba7c1c022e6de1bb18ff81481a98e66d782bdd366811e7d05"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-leftForearm.webp",
+      "pixelSize": [
+        121,
+        88
+      ],
+      "pixelDensity": 7,
+      "sha256": "0188cfff8eb9c372a72e9f46d38f1e7643118b1de3221bacf934408a82e9cd78"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-leftHand.webp",
+      "pixelSize": [
+        78,
+        58
+      ],
+      "pixelDensity": 7,
+      "sha256": "471a15354fdda2277340bd196d79695bc3eb7eb03760f9fd40ebb36a1d57cf63"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        94,
+        76
+      ],
+      "pixelDensity": 7,
+      "sha256": "ddf4e6fddeaa0747c68e88d9ceeab0f1ee5efff1ab6c821a0e1a600a559c1578"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-rightForearm.webp",
+      "pixelSize": [
+        93,
+        76
+      ],
+      "pixelDensity": 7,
+      "sha256": "1b8662275cb84b85d4c2cdcade829b2a75bee2aa53ed6b2ded0e9e57b6962e1f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/down-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/down-left-main-rightHand.webp",
+      "pixelSize": [
+        80,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "a5c5546e1506ba56b86736506185a47d0c0b08928e5fdf46f79825d9176d25f8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-head.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-head.webp",
+      "pixelSize": [
+        464,
+        491
+      ],
+      "pixelDensity": 7,
+      "sha256": "85bc5693ee39e5daad6527bc6fbcb09ede626b1ef08d34f2af0639744638dd06"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-tail.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-tail.webp",
+      "pixelSize": [
+        107,
+        106
+      ],
+      "pixelDensity": 7,
+      "sha256": "7b4a77ac3056e431c2cd9f78b366ef2866afc8220b0f528a467c7fe2a76386d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-body.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-body.webp",
+      "pixelSize": [
+        134,
+        96
+      ],
+      "pixelDensity": 7,
+      "sha256": "0bd9873dd1a67c185fdfc5fe7134bc31529664ef2babceea3c25306037dceb02"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-leftThigh.webp",
+      "pixelSize": [
+        46,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "e4c688709efead5aa8e1c87b24288a4e261f658ac22de2e05af4148c1adee75d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-leftShin.webp",
+      "pixelSize": [
+        46,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "b31bdf9e5ce499eb0f8bedb78a5c42062f0bb30487855cd2f009de4aa2098f4b"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-leftFoot.webp",
+      "pixelSize": [
+        105,
+        69
+      ],
+      "pixelDensity": 7,
+      "sha256": "32354be7442bc696f03b1bae923f968c19b30febe496ef9094bd56c01c5a8492"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-rightThigh.webp",
+      "pixelSize": [
+        34,
+        41
+      ],
+      "pixelDensity": 7,
+      "sha256": "6ad06f8c53ee89601a50d205694451e29608566253fc4c4be3daaa4c2aef9ebb"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-rightShin.webp",
+      "pixelSize": [
+        33,
+        42
+      ],
+      "pixelDensity": 7,
+      "sha256": "b400255a34dd76c8c152bee703acbeafff0a5f75c9371b03278976e90972ac44"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-rightFoot.webp",
+      "pixelSize": [
+        127,
+        83
+      ],
+      "pixelDensity": 7,
+      "sha256": "3aec15ff6bd85e4d879d13de35f420a37fd9019e1cda38191620022965939c38"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-leftUpperArm.webp",
+      "pixelSize": [
+        118,
+        82
+      ],
+      "pixelDensity": 7,
+      "sha256": "a85b5a222008cf8ba7c1c022e6de1bb18ff81481a98e66d782bdd366811e7d05"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-leftForearm.webp",
+      "pixelSize": [
+        121,
+        88
+      ],
+      "pixelDensity": 7,
+      "sha256": "0188cfff8eb9c372a72e9f46d38f1e7643118b1de3221bacf934408a82e9cd78"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-leftHand.webp",
+      "pixelSize": [
+        78,
+        58
+      ],
+      "pixelDensity": 7,
+      "sha256": "471a15354fdda2277340bd196d79695bc3eb7eb03760f9fd40ebb36a1d57cf63"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-rightUpperArm.webp",
+      "pixelSize": [
+        94,
+        76
+      ],
+      "pixelDensity": 7,
+      "sha256": "ddf4e6fddeaa0747c68e88d9ceeab0f1ee5efff1ab6c821a0e1a600a559c1578"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-rightForearm.webp",
+      "pixelSize": [
+        93,
+        76
+      ],
+      "pixelDensity": 7,
+      "sha256": "1b8662275cb84b85d4c2cdcade829b2a75bee2aa53ed6b2ded0e9e57b6962e1f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-left-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-left-main-rightHand.webp",
+      "pixelSize": [
+        80,
+        55
+      ],
+      "pixelDensity": 7,
+      "sha256": "a5c5546e1506ba56b86736506185a47d0c0b08928e5fdf46f79825d9176d25f8"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-head.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-head.webp",
+      "pixelSize": [
+        448,
+        474
+      ],
+      "pixelDensity": 7,
+      "sha256": "154173e14716c3c48380282aaff936b10717956b17aa5deeb04d75723bcce948"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-tail.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-tail.webp",
+      "pixelSize": [
+        107,
+        106
+      ],
+      "pixelDensity": 7,
+      "sha256": "7b4a77ac3056e431c2cd9f78b366ef2866afc8220b0f528a467c7fe2a76386d1"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-body.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-body.webp",
+      "pixelSize": [
+        127,
+        92
+      ],
+      "pixelDensity": 7,
+      "sha256": "80eb12656f695d3cee9b8d56e55a6d34c5f3b70ebb2da0b4d8ee17954bc7f85d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-leftThigh.webp",
+      "pixelSize": [
+        38,
+        44
+      ],
+      "pixelDensity": 7,
+      "sha256": "428f89c35e68df0df98d612e998f414ff13ca37050b9d727a55e693f53c5b618"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-leftShin.webp",
+      "pixelSize": [
+        42,
+        48
+      ],
+      "pixelDensity": 7,
+      "sha256": "223c570b5213c835986a95fffbe3611f617aad4270ee05fe1007214582ba925d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-leftFoot.webp",
+      "pixelSize": [
+        131,
+        84
+      ],
+      "pixelDensity": 7,
+      "sha256": "41fa0d63980962b61977ad556533f0a32178ccd469603e4294fcd77eb87cd75f"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightThigh.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-rightThigh.webp",
+      "pixelSize": [
+        48,
+        49
+      ],
+      "pixelDensity": 7,
+      "sha256": "c79db05a756cf79c18bfae01e81ba4b119f05d2236e7ad7dacc9b950706a6e2c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightShin.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-rightShin.webp",
+      "pixelSize": [
+        47,
+        47
+      ],
+      "pixelDensity": 7,
+      "sha256": "f1ad4d5b256022d27c06f48b772fd6d531351083b2e2a6d5e9ff6ca45e080a66"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightFoot.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-rightFoot.webp",
+      "pixelSize": [
+        109,
+        70
+      ],
+      "pixelDensity": 7,
+      "sha256": "38e3a63c4e3bab7ec3428f5609c9e2dd17f0997c56d86fdd0a2253678c0b0c36"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-leftUpperArm.webp",
+      "pixelSize": [
+        107,
+        81
+      ],
+      "pixelDensity": 7,
+      "sha256": "d33c64434390988440f2e967fa93ce76f7b77d4e9ffd2a6ad9b30d5db6aa8d24"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-leftForearm.webp",
+      "pixelSize": [
+        117,
+        90
+      ],
+      "pixelDensity": 7,
+      "sha256": "2cc714f1db3491e4a144749c6e0e6f0e0b083f694091ad4429a7c098f044f32c"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-leftHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-leftHand.webp",
+      "pixelSize": [
+        91,
+        58
+      ],
+      "pixelDensity": 7,
+      "sha256": "b72c14acbcc5ac2f180a8561e34e6ee39f8b9b1d1d52c383cb957f727539a10a"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightUpperArm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-rightUpperArm.webp",
+      "pixelSize": [
+        98,
+        71
+      ],
+      "pixelDensity": 7,
+      "sha256": "eb53801e2e3737f18f5c12cb82e9a85904473fa6b6f14e13e258b0c51b8a113d"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightForearm.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-rightForearm.webp",
+      "pixelSize": [
+        97,
+        78
+      ],
+      "pixelDensity": 7,
+      "sha256": "b9f2dc6f9fbfccf42cad5759257af1a4e49f42ecc19272334708b25591f81530"
+    },
+    {
+      "url": "hd-characters/characters-25/role-05-carnival/up-right-main-rightHand.webp",
+      "source": "hd-characters/characters-25/role-05-carnival/up-right-main-rightHand.webp",
+      "pixelSize": [
+        87,
+        56
+      ],
+      "pixelDensity": 7,
+      "sha256": "926947360e38fdc194c49864455d5b6b84ad85c6a0e07ee08d4540af0b826dd4"
+    }
+  ],
+  "coverage": [
+    {
+      "facing": "down-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "down-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-left",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    },
+    {
+      "facing": "up-right",
+      "assignedFraction": 1.0,
+      "missingPixels": 0
+    }
+  ],
+  "generationAllowedIds": [
+    5,
+    8,
+    9
+  ]
+}

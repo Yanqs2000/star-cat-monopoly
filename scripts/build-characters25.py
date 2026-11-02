@@ -374,11 +374,11 @@ def build_role(author):
     runtime.append({'url':url,'source':url,'pixelSize':list(packed.size),'pixelDensity':density,'sha256':hashlib.sha256((ROOT/'public/modern'/url).read_bytes()).hexdigest()})
    actor_origin=description.get('origin',origin)
    actor['joints']={name:[(p[0]-actor_origin[0])/density,(p[1]-actor_origin[1])/density]for name,p in joints.items()}
-   arm_order=lambda front:[part for spec,limb in zip(description['arms'],actor['arms'])if spec.get('front',False)==front for part in [limb['upper'],limb['lower'],limb['tip']]if part in actor['parts']]
+   arm_order=lambda front,over_head_arm=False:[part for spec,limb in zip(description['arms'],actor['arms'])if spec.get('overHead',False)==over_head_arm and(over_head_arm or spec.get('front',False)==front)for part in [limb['upper'],limb['lower'],limb['tip']]if part in actor['parts']]
    front_extras={e['name']for e in description['extras']if e.get('front',False)or e.get('overHead',False)}
    over_head={e['name']for e in description['extras']if e.get('overHead',False)}
    front_flippers=[e['part']for e in actor['appendages']if e['kind']=='flipper'and e['part']in front_extras and e['part']not in over_head]
-   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+front_flippers+['head','head-expression']+[e['part']for e in actor['appendages']if e['kind']=='fixed'or(e['part']in front_extras and e['part']not in front_flippers)]
+   actor['order']=[part for limb in actor['legs']for part in [limb['upper'],limb['lower'],limb['tip']]]+[e['part']for e in actor['appendages']if e['kind']!='fixed'and e['part']not in front_extras]+arm_order(False)+['body']+arm_order(True)+front_flippers+['head','head-expression']+arm_order(False,True)+[e['part']for e in actor['appendages']if e['kind']=='fixed'or(e['part']in front_extras and e['part']not in front_flippers)]
    actors.append(actor)
   pose=source_pose
   original_alpha=np.asarray(pose.getchannel('A'));retained=np.asarray(combined_mask)>0
@@ -393,7 +393,7 @@ def build_role(author):
 
 if __name__=='__main__':
  import argparse
- parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,3,4,7,11,6,10,12]);parser.add_argument('--author');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--role',type=int,required=True,choices=[2,3,4,5,7,8,9,11,6,10,12]);parser.add_argument('--author');args=parser.parse_args()
  author=json.loads((REVIEW/(args.author or f'role-{args.role:02d}-authoring.json')).read_text())
  if author['id']!=args.role:raise ValueError('authoring identity must match the selected role')
  result=build_role(author)

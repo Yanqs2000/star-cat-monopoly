@@ -6,9 +6,9 @@ ROOT=Path(__file__).resolve().parents[1]
 REVIEW=ROOT/'public/hd-review/characters-25'
 
 def build(cid):
- stem={3:'jjmm',4:'jiajia',7:'shuaige',11:'guaika',6:'weiwei',10:'ajie',12:'nini'}[cid];role=f'role-{cid:02d}'
+ stem={5:'dapai',8:'dawei',9:'afei',3:'jjmm',4:'jiajia',7:'shuaige',11:'guaika',6:'weiwei',10:'ajie',12:'nini'}[cid];role=f'role-{cid:02d}'
  out=ROOT/f'public/modern/hd-characters/characters-25/{role}'
- batch='jjmm-jiajia-shuaige'if cid in[3,4,7]else'ajie-nini'if cid in[10,12]else'guaika-weiwei'
+ batch='dapai-dawei-afei'if cid in[5,8,9]else'jjmm-jiajia-shuaige'if cid in[3,4,7]else'ajie-nini'if cid in[10,12]else'guaika-weiwei'
  rasters=Path(f'/tmp/starcat-{batch}/role-{cid}/material-renders')
  author=json.loads((REVIEW/f'{role}-authoring.json').read_text())
  spec=importlib.util.spec_from_file_location('layers',ROOT/'scripts/build-characters25.py');layers=importlib.util.module_from_spec(spec);spec.loader.exec_module(layers)
@@ -65,9 +65,9 @@ def build(cid):
   metadata[entry['url']]=next(i for i in accepted['runtimeImages']if i['url']==entry['url'])
  data['runtimeImages']+=list(metadata.values())
  inventory=json.loads((REVIEW/f'{role}-material-sources.json').read_text())
- data['derivation']=dict(identity=cid,nativeInventoryCount=inventory['counts']['total'],carnivalNativeFps=30,carnivalArtworkFps=120,carnivalWorldStride=carnival['characters'][0]['stridePx']if cid in[3,4,7,10,12]else 32,method='Canonical articulated rigs, complete same-identity heads and hidden surfaces, flight master, accepted shared possession badges. Native physics/RNG/clocks preserved.')
+ data['derivation']=dict(identity=cid,nativeInventoryCount=inventory['counts']['total'],carnivalNativeFps=30,carnivalArtworkFps=120,carnivalWorldStride=carnival['characters'][0]['stridePx']if cid in[3,4,5,7,8,9,10,12]else 32,method='Canonical articulated rigs, complete same-identity heads and hidden surfaces, flight master, accepted shared possession badges. Native physics/RNG/clocks preserved.')
  for path in [ROOT/f'src/modern/data/{stem}-complete.json',REVIEW/f'{role}-complete.json']:path.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(dict(role=cid,staticRoutes=len(data['assets']),activityClips=len(data['activityClips']),runtimeImages=len(data['runtimeImages']))))
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--role',type=int,choices=[3,4,7,11,6,10,12],required=True);build(p.parse_args().role)
+ p=argparse.ArgumentParser();p.add_argument('--role',type=int,choices=[3,4,5,7,8,9,11,6,10,12],required=True);build(p.parse_args().role)

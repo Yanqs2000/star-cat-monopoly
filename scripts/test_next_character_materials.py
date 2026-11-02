@@ -31,19 +31,19 @@ class NextCharacterMaterials(unittest.TestCase):
    self.assertAlmostEqual(len(clip['frames'])/clip.get('fps',30),len(source['frames'])/source.get('fps',30))
    if clip['id'].startswith('carnival-walk'):
     self.assertEqual(clip['fps'],120);self.assertEqual(len(clip['frames']),len(source['frames'])*4)
-    if cid in [3,4,7,6,10,12]:self.assertEqual(len({f['url']for f in clip['frames']}),len(source['frames'])*4,'one full native movement cycle must not repeat a truncated cycle')
+    if cid in [3,4,5,7,6,10,12]:self.assertEqual(len({f['url']for f in clip['frames']}),len(source['frames'])*4,'one full native movement cycle must not repeat a truncated cycle')
   self.assertIn(str(cid),d['thumbnailUrls'])
   for entry in d['runtimeImages']:
    p=ROOT/'public/modern'/entry['url'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),entry['sha256'])
    with Image.open(p)as im:self.assertEqual(list(im.size),entry['pixelSize'])
   # Physical raster bounds, including ALL intermediate walking frames.
-  samples={3:64,4:72,7:64,6:48,10:56,12:64,11:16}[cid]
+  samples={5:64,3:64,4:72,7:64,6:48,10:56,12:64,11:16}[cid]
   for name in ['thumbnail','champion',*[f'carnival-{side}-{i}'for side in ['left','right']for i in range(samples)]]:
    p=ROOT/f'public/modern/hd-characters/characters-25/role-{cid:02d}/{name}.webp'
    # The packed thumbnail is intentionally trimmed; its source raster must
    # contain the whole character before that lossless bounding-box crop.
    if name=='thumbnail':
-    batch='jjmm-jiajia-shuaige'if cid in[3,4,7]else'ajie-nini'if cid in[10,12]else'guaika-weiwei'
+    batch='dapai-dawei-afei'if cid in[5,8,9]else'jjmm-jiajia-shuaige'if cid in[3,4,7]else'ajie-nini'if cid in[10,12]else'guaika-weiwei'
     p=Path(f'/tmp/starcat-{batch}/role-{cid}/material-renders/thumbnail.png')
    with Image.open(p)as im:
     box=im.getbbox();self.assertIsNotNone(box);self.assertGreater(box[0],0);self.assertGreater(box[1],0);self.assertLess(box[2],im.width);self.assertLess(box[3],im.height)
@@ -55,5 +55,6 @@ class NextCharacterMaterials(unittest.TestCase):
  def test_jjmm_complete_native_routes_and_unclipped_artwork(self):self.verify_character(3,'jjmm')
  def test_jiajia_complete_native_routes_and_unclipped_artwork(self):self.verify_character(4,'jiajia')
  def test_shuaige_complete_native_routes_and_unclipped_artwork(self):self.verify_character(7,'shuaige')
+ def test_dapai_complete_native_routes_and_unclipped_artwork(self):self.verify_character(5,'dapai')
 
 if __name__=='__main__':unittest.main()

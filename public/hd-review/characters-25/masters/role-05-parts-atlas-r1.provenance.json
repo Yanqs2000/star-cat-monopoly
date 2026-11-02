@@ -1,0 +1,13 @@
+{
+  "tool": "image_gen.imagegen",
+  "status": "generation-rejected-no-output",
+  "requestId": "31c363ec-d16c-4ecd-8926-3d788aab2e8d",
+  "reason": "moderation_blocked at output stage",
+  "prompt": "role-05-parts-atlas-r1.prompt.txt",
+  "inputs": [
+    "masters/role-05-neutral-r1.png",
+    "source-references/role-05-source.png"
+  ],
+  "retry": false,
+  "humanAccepted": false
+}

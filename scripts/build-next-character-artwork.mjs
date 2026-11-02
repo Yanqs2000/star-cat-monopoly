@@ -1,5 +1,5 @@
 import {spawn} from 'node:child_process'
-const role=Number(process.argv[2]);if(![3,4,7,11,6,10,12].includes(role))throw Error('Unsupported character role')
+const role=Number(process.argv[2]);if(![3,4,5,7,8,9,11,6,10,12].includes(role))throw Error('Unsupported character role')
 const python=process.env.PYTHON??'/opt/homebrew/bin/python3',id=String(role).padStart(2,'0')
 const commands=[
  [python,['scripts/build-characters25.py','--role',String(role)]],

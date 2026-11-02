@@ -7,3 +7,6 @@ await mkdir('public/hd-review/characters-25/ajie-nini',{recursive:true})
 await writeFile('public/hd-review/characters-25/ajie-nini/runtime.js',await readFile(outfile))
 await mkdir('public/hd-review/characters-25/trio',{recursive:true})
 await writeFile('public/hd-review/characters-25/trio/runtime.js',await readFile(outfile))
+
+await mkdir('public/hd-review/characters-25/last-three',{recursive:true})
+await writeFile('public/hd-review/characters-25/last-three/runtime.js',await readFile(outfile))
