@@ -6,12 +6,12 @@ ROOT=Path(__file__).resolve().parents[1]
 class InventoryTest(unittest.TestCase):
  def test_complete_native_inventories_match_every_character_png_and_activity(self):
   activities=json.loads((ROOT/'public/modern/assets/activities/manifest.json').read_text())
-  for cid in [11,6,10,12,3,4,7]:
+  for cid in [11,6,10,12,3,4,7,5,8,9]:
    path=ROOT/f'public/hd-review/characters-25/role-{cid:02d}-material-sources.json'
    self.assertTrue(path.exists(),f'role{cid}: full native inventory required')
    data=json.loads(path.read_text());frames=data['frames'];urls=[f['url']for f in frames]
    self.assertEqual(data['roleId'],cid)
-   self.assertEqual(data['anatomy'],{3:'paired',4:'crab',6:'floating',7:'floating',10:'floating',12:'floating'}.get(cid,'biped'))
+   self.assertEqual(data['anatomy'],{3:'paired',4:'crab',6:'floating',7:'floating',10:'floating',12:'floating',8:'scorpion',9:'centaur'}.get(cid,'biped'))
    self.assertEqual(len(urls),len(set(urls)))
    actual={str(p.relative_to(ROOT/'public/modern'))for p in (ROOT/f'public/modern/assets/characters/{cid}').rglob('*.png')}
    self.assertEqual({u for u in urls if u.startswith(f'assets/characters/{cid}/')},actual)
