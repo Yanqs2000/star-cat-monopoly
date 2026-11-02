@@ -1,35 +1,38 @@
 {
-  "status": "candidate-awaiting-user-review",
+  "status": "accepted",
   "technicalVerificationDate": "2026-11-02",
-  "humanAcceptanceDate": null,
-  "humanAcceptanceEvidence": null,
+  "humanAcceptanceDate": "2026-11-02",
+  "humanAcceptanceEvidence": "用户对大牌、大尾、阿飞最终形象与自然动作验收回复：三位通过。问题 call_13f03538632a4baaa51ea342217196b8。",
   "characters": [
     {
       "id": 5,
       "name": "大牌",
       "nativeSources": 1185,
       "runtimeImages": 217,
-      "review": "./?role=5&review=last-three-complete-r1",
-      "humanAccepted": false,
-      "candidatePacketSha256": "91b16f4a59df8e86069a932afec9e9e148c2b91c7ec1b524f6c631e1a8ca6e4d"
+      "review": "./?role=5&review=last-three-final-r2",
+      "humanAccepted": true,
+      "candidatePacketSha256": "91b16f4a59df8e86069a932afec9e9e148c2b91c7ec1b524f6c631e1a8ca6e4d",
+      "acceptedPacketSha256": "91b16f4a59df8e86069a932afec9e9e148c2b91c7ec1b524f6c631e1a8ca6e4d"
     },
     {
       "id": 8,
       "name": "大尾",
       "nativeSources": 1076,
       "runtimeImages": 215,
-      "review": "./?role=8&review=last-three-complete-r1",
-      "humanAccepted": false,
-      "candidatePacketSha256": "53449431613af1a4c086efa05f33643533cb771af2004022d619882177fadc2a"
+      "review": "./?role=8&review=last-three-final-r2",
+      "humanAccepted": true,
+      "candidatePacketSha256": "53449431613af1a4c086efa05f33643533cb771af2004022d619882177fadc2a",
+      "acceptedPacketSha256": "53449431613af1a4c086efa05f33643533cb771af2004022d619882177fadc2a"
     },
     {
       "id": 9,
       "name": "阿飞",
       "nativeSources": 1112,
       "runtimeImages": 245,
-      "review": "./?role=9&review=last-three-complete-r1",
-      "humanAccepted": false,
-      "candidatePacketSha256": "13202cb068980c917f88187fa623c2b431c12ba574a35c1b57290a709c9f6253"
+      "review": "./?role=9&review=last-three-final-r2",
+      "humanAccepted": true,
+      "candidatePacketSha256": "13202cb068980c917f88187fa623c2b431c12ba574a35c1b57290a709c9f6253",
+      "acceptedPacketSha256": "13202cb068980c917f88187fa623c2b431c12ba574a35c1b57290a709c9f6253"
     }
   ],
   "validation": {
@@ -71,7 +74,7 @@
       "importantFixed": 2,
       "deferredMinor": 0,
       "fixVerification": "Four deterministic browser regressions RED to GREEN; all14 exporter/review cases GREEN; responsive9 GREEN; full suite852 GREEN.",
-      "humanArtAcceptancePending": true
+      "humanArtAcceptancePending": false
     },
     "reviewClockAndFramingCases": 4,
     "reviewRegressionCases": 14

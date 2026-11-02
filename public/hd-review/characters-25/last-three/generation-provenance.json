@@ -557,7 +557,12 @@
       }
     }
   ],
-  "note": "Companion input/output SHA ledger; original neutral provenance records remain byte-identical. Candidate artwork awaits explicit user acceptance.",
+  "note": "Final runtime packets for roles5/8/9 accepted by the user on2026-11-02. Raw source records retain their generation-time state; original neutral provenance remains byte-identical.",
   "assetRoot": "/Users/yanqs/Documents/GitHub/vibe_coding/chat/star-cat-monopoly/.worktrees/non-character-18-21/public/hd-review/characters-25",
-  "generationMode": "built-in image_gen"
+  "generationMode": "built-in image_gen",
+  "runtimePacketAcceptance": {
+    "5": "91b16f4a59df8e86069a932afec9e9e148c2b91c7ec1b524f6c631e1a8ca6e4d",
+    "8": "53449431613af1a4c086efa05f33643533cb771af2004022d619882177fadc2a",
+    "9": "13202cb068980c917f88187fa623c2b431c12ba574a35c1b57290a709c9f6253"
+  }
 }

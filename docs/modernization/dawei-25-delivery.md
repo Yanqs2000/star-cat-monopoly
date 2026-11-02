@@ -1,10 +1,10 @@
-# 大尾完整人物素材候选
+# 大尾完整人物素材（已验收）
 
 大尾（ID8）沿用原作双主落地脚、双钳、蓝紫色圆身、棕帽金带、黑墨镜和分节尾巴；按原四方向和七种状态接入。人物整体保持原有轮廓，墨镜内不添加眼睛。尾巴各节继承上一节端点，接缝连续；受伤时后向尾巴保留弧形向下收拢。
 
 范围：地图动作、选择/加载缩略图、操作栏头像、小地图、月冠军/钱包/排名/结算、六种附身、四向护目镜乘云、游乐场三姿态及左右移动。游乐场保留原16帧/30Hz时长，导出64个120Hz采样；游戏根位移、规则、随机数与存档结构未改。
 
-检查入口：http://127.0.0.1:64867/hd-review/characters-25/last-three/?role=8&review=dawei-complete-r1 。支持自然移动、四向七态、暂停和慢放，并列出全部派生素材。页面为工程候选，最终形象与自然动作仍待用户验收。
+检查入口：http://127.0.0.1:64867/hd-review/characters-25/last-three/?role=8&review=dawei-complete-r1 。支持自然移动、四向七态、暂停和慢放，并列出全部派生素材。人物形象和自然动作已于2026-11-02通过用户最终验收。
 
 验证证据保存在 `/tmp/starcat-last-three-20261102/dawei-*`，代码回归为 `tests/modern/dawei-*`，素材检查为 `scripts/test_dawei_artwork.py`，实机流程为 `tests/e2e/modern-dawei-artwork.spec.ts`。完整包位于 `src/modern/data/dawei-complete.json`，独立重建命令 `node scripts/build-next-character-artwork.mjs 8`。
 

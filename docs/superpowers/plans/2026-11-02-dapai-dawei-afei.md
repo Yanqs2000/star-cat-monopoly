@@ -9,7 +9,7 @@
 
 用户目标：先把已验收ID3/4/7合并主分支，再完成最后三位可选人物ID5大牌、ID8大尾、ID9阿飞全部素材。继续沿用已连续验收的人物制作方法：固定身份母版、同源完整分件、连续关节动作；逐位完成全部入口和实机验证，最后由用户确认形象与自然动作。本次明确授权覆盖旧计划“其他人物暂停”的历史状态。用户未要求推送远程。
 
-当前阶段：最终验收（实现、工程验证与独立审查修复完成，等待用户视觉和自然动作确认）。先行合并已完成，main=`42fb2bc0c4ee6ce8e479eb245085f48b27f5bb45`；主分支843项单测和类型检查通过，32个用户本地文件未变。75个研究文件保留。制作分支`feat/dapai-dawei-afei-artwork`，沿用隔离工作副本，不删除工作区。
+当前阶段：完成（实现、工程验证、独立审查修复及用户最终验收均完成）。先行合并已完成，main=`42fb2bc0c4ee6ce8e479eb245085f48b27f5bb45`；主分支843项单测和类型检查通过，32个用户本地文件未变。75个研究文件保留。制作分支`feat/dapai-dawei-afei-artwork`，沿用隔离工作副本，不删除工作区。
 
 1. 原作审计：为5/8/9补全walk/reactions/gods/activities/monthly逐帧清单、原SWF与PNG哈希、四向与活动接触表；额外检查是否存在专属活动/trait调用，不能仅凭共用九个活动ID断言完整。
 2. 大牌完整闭环：保留红鬃、圆耳、金色狮子座额饰、原面孔、短身体和红球尾；分别制作表情、闭合躯干/肩/腕/脚供体、地图四向七态、头像、四向飞行、游乐场与月结。自然移动两脚接地，尾巴独立；按原版核对飞行装备/闭眼约定。
@@ -29,7 +29,7 @@
 - [x] 大尾：对应role08/dawei。先实审钳、螯和腿数，再在`characters-25-pose.ts`/`contacts.ts`按实际足数增加配置或控制器；世界支撑、起停/转向、钳/尾相位测试必须先失败再实现。不得改既有角色默认行为。
 - [x] 阿飞：对应role09/afei。四马腿与双臂独立；四足接点须按马身前后腿组成配置，不能误用双人身份分组。`tests/modern/afei-grounding.spec.ts`回归单脚世界接触、换向及启停；其余同完整人物流程。
 - [x] 生产验证：各自`create-*-fixtures.ts`生成合法原规则快照，`modern-*-artwork.spec.ts`跑全部真实界面入口。原RNG、速度、存档模型不改，真实API只读槽位与新局不写保存。
-- [ ] 验收页`public/hd-review/characters-25/last-three/`：对应现有审阅TS入口新增5/8/9，未完成者不显示为可验收。最终全量测试、素材边界与实际首尾PNG、无旧完整包导出、完整重建哈希、保护资产验证、独立审查及用户最终确认。
+- [x] 验收页`public/hd-review/characters-25/last-three/`：对应现有审阅TS入口新增5/8/9，未完成者不显示为可验收。最终全量测试、素材边界与实际首尾PNG、无旧完整包导出、完整重建哈希、保护资产验证、独立审查及用户最终确认。
 
 ## 大牌原作检查
 
@@ -68,16 +68,16 @@ Consumes: Task1 role09 inventory and original four-legged centaur geometry; pres
 ### Task 5: Final integration and human acceptance
 
 Consumes all three complete packets and per-character evidence. Produces accepted last-three review/acceptance record after explicit user response.
-- [ ] Full regression, exact prior-HD asset hashes, original routing, actual three-character new game with real API/no save writes, desktop review controls and responsive review layout.
-- [ ] One fresh-context whole-branch code review; TDD any important findings, preserve user-approved appearance.
-- [ ] User final art/natural-motion acceptance under their AGENTS.md, then complete goal. Do not self-approve appearance or silently merge the new final trio before that gate.
+- [x] Full regression, exact prior-HD asset hashes, original routing, actual three-character new game with real API/no save writes, desktop review controls and responsive review layout.
+- [x] One fresh-context whole-branch code review; TDD any important findings, preserve user-approved appearance.
+- [x] User final art/natural-motion acceptance under their AGENTS.md, then complete goal. Do not self-approve appearance or silently merge the new final trio before that gate.
 
 ## 大牌工程闭环完成记录
 
-845项TS、40项Python、8项独立导出及16项生产场景通过；278文件重建一致，2212继承资产/包不变，真实API新局无写存档。素材形象仍待最终用户验收。细节见`docs/modernization/dapai-25-delivery.md`。
+845项TS、40项Python、8项独立导出及16项生产场景通过；278文件重建一致，2212继承资产/包不变，真实API新局无写存档。素材形象与自然动作已通过2026-11-02最终用户验收。细节见`docs/modernization/dapai-25-delivery.md`。
 
 大尾源图已先行只读核对：两只主要落地脚、双钳、分节尾、棕帽金带和黑墨镜；scorpion身份标签不代表可以增加原作没有的腿。下一任务按实际两足支撑、刚性帽/身体和独立分节尾处理。
 
 ## 最后三位工程候选记录
 
-大牌769e27f、大尾23e5f17、阿飞beb6bcf分别完成。最终852项TS、78项Python、10项独立导出通过；三位各16项实机通过，真实API三位共同开局200且无存档写入。9组验收页(390/768/1440)完整显示每位19张派生图，暂停像素冻结、慢放与进度控制可用，页面无错误。当前待独立整批代码审查及用户视觉/自然动作最终确认。
+大牌769e27f、大尾23e5f17、阿飞beb6bcf分别完成。最终852项TS、78项Python、10项独立导出通过；三位各16项实机通过，真实API三位共同开局200且无存档写入。9组验收页(390/768/1440)完整显示每位19张派生图，暂停像素冻结、慢放与进度控制可用，页面无错误。独立审查问题已修复，2026-11-02用户回复“三位通过”，最终验收完成。
