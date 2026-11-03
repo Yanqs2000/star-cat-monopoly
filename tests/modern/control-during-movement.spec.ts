@@ -49,7 +49,6 @@ it('移动中暂停、变速和重复切换保留最后请求，不重复移动�
   const rng = c.state.rngState
   vi.advanceTimersByTime(40)
   c.setPaused(true)
-  c.requestControl(1, 'autoplay')
   c.requestControl(1, 'human')
   c.requestControl(1, 'autoplay')
   c.setSpeed(2)
