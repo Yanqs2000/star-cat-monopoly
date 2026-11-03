@@ -61,6 +61,8 @@ jobs:
       - name: Build game and native installer
         run: |
           npm run desktop:build
+          # Signing the bundled assets needs more descriptors than the runner default.
+          ulimit -n 65536
           npm run desktop:package -- ${{ matrix.flags }}
       - name: Install, restart, overwrite and preserve saved game
         run: |
