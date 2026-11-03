@@ -831,7 +831,8 @@ export function createGameController(initialState: GameState, options: GameContr
       durationMs: stepDurationMs,
     })
     schedule(() => {
-      current = arrived
+      // Control requests may change while this movement animation is in flight.
+      current = { ...arrived, pendingControl: current.pendingControl }
       options.onTransition?.(null)
       notify()
       processArrivedStep()
