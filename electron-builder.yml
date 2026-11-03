@@ -23,6 +23,7 @@ mac:
   target: dmg
   icon: desktop/icons/icon.icns
   identity: '-'
+  sign: scripts/sign-desktop-mac.cjs
   hardenedRuntime: false
   notarize: false
   minimumSystemVersion: '13.0'
