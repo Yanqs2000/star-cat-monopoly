@@ -45,10 +45,10 @@
 
 **Interfaces:** `npm run desktop:build` 创建 `desktop/dist/main.cjs` 和 `dist-modern`；`npm run desktop:package -- --<platform> --<arch>` 产出版本/架构明确的包；smoke 脚本接收实际可执行文件路径与仓库外 evidence/userData 目录；校验脚本接收 app/resources 路径。
 
-- [ ] 用临时打包目录验证仅白名单文件进入包、高清 profile/manifest/纹理必须齐全、源码/配置/测试 DB 被排除，先 RED 再最小实现。
-- [ ] 生成平台图标；配置 app/resources、只读内容与数据库分离；实际制作本机 DMG 并挂载启动。
-- [ ] 用 Electron Playwright 运行真实包，验证默认高清、开局掷骰、手动保存、关闭/重启恢复、数据库数据/RNG 与资源请求、进程结束；截图/JSON 放仓库外。失败先定位根因，不跳过。
-- [ ] 全量测试、类型、Schema、网页原入口构建回归；提交安装包与验收脚本阶段。
+- [x] 用临时打包目录验证仅白名单文件进入包、高清 profile/manifest/纹理必须齐全、源码/配置/测试 DB 被排除，先 RED 再最小实现。
+- [x] 生成平台图标；配置 app/resources、只读内容与数据库分离；实际制作本机 DMG 并挂载启动。
+- [x] 用 Electron Playwright 运行真实包，验证默认高清、开局掷骰、手动保存、关闭/重启恢复、数据库数据/RNG 与资源请求、进程结束；截图/JSON 放仓库外。失败先定位根因，不跳过。
+- [x] 全量测试、类型、Schema、网页原入口构建回归；提交安装包与验收脚本阶段。
 
 ## Task 3: Actions、草稿与独立审查
 
