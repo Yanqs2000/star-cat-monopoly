@@ -51,7 +51,7 @@ export function parseSnapshot(value:unknown):SaveSnapshot {
   const status=g.world.statuses[p.id]!;integer(status.days);integer(status.godDays)
   requireValue(status.godId===null||worldRules.godIds.includes(status.godId),'神灵引用')
   const cards=g.inventories[p.id]!;requireValue(cards.length<=24&&cards.every(id=>cardIds.has(id)),'卡牌或手牌容量')
-  integer(g.tickets[p.id]!);integer(g.finance.loans[p.id]!)
+  integer(g.tickets[p.id]!,-Number.MAX_SAFE_INTEGER);integer(g.finance.loans[p.id]!)
   const credit=g.credit[p.id]!;integer(credit.used);integer(credit.available);integer(credit.score)
   if(g.forcedDice[p.id]!==null)integer(g.forcedDice[p.id]!,1,6)
   if(g.eliminatedPlayerIds.includes(p.id))requireValue(p.cash===0&&p.deposit===0&&cards.length===0&&g.tickets[p.id]===0&&g.finance.loans[p.id]===0&&credit.used===0&&credit.available===0&&credit.score===0,'淘汰者资产未清算')
