@@ -30,14 +30,3 @@ mac:
   artifactName: StarCatMonopoly-${version}-mac-${arch}.${ext}
 dmg:
   sign: false
-win:
-  target: nsis
-  icon: desktop/icons/icon.ico
-  artifactName: StarCatMonopoly-${version}-win-${arch}-setup.${ext}
-nsis:
-  oneClick: false
-  perMachine: false
-  allowElevation: false
-  allowToChangeInstallationDirectory: true
-  deleteAppDataOnUninstall: false
-  createDesktopShortcut: true

@@ -4,7 +4,7 @@
 
 ## 桌面安装包（测试版）
 
-在 [GitHub Releases](https://github.com/Yanqs2000/star-cat-monopoly/releases) 下载对应平台的安装包：Mac M 系列选 `mac-arm64.dmg`、Mac Intel 选 `mac-x64.dmg`、Windows 64 位选 `win-x64-setup.exe`。安装后双击运行，默认高清，不需要额外安装 Node.js 或执行命令。
+在 [GitHub Releases](https://github.com/Yanqs2000/star-cat-monopoly/releases) 下载 Mac M 系列的 `mac-arm64.dmg` 安装包（本次仅提供 Apple Silicon 版本）。安装后双击运行，默认高清，不需要额外安装 Node.js 或执行命令。
 
 首版尚未完成开发者签名/Apple 公证，可能出现系统来源验证提示；请阅读 [0.2.0-beta.1 安装、系统要求与存档说明](docs/releases/0.2.0-beta.1.md)。未公开的 Release 草稿仅供维护者验收。
 
@@ -28,7 +28,7 @@ npm run server:modern
 
 ## 开发调试（可选）
 
-桌面开发与打包使用 Node.js 24.22.1。先执行 `npm ci`、`npm run desktop:prepare`，再运行 `npm run desktop:build`。在目标系统原生执行 `npm run desktop:package -- --mac --arm64`、`--mac --x64` 或 `--win --x64`；每个平台使用对应 CPU 架构的 Node/Electron，不在 Mac 上生成并声称验证 Windows 安装包。图标已提供，只有需要重新转换时才在 Mac 执行 `node scripts/prepare-desktop-icons.mjs`。
+桌面开发与打包使用 Node.js 24.22.1。先执行 `npm ci`、`npm run desktop:prepare`，再运行 `npm run desktop:build`。在 Apple Silicon Mac 原生执行 `npm run desktop:package -- --mac --arm64`；本次不提供 Intel Mac 或 Windows 安装包。图标已提供，只有需要重新转换时才在 Mac 执行 `node scripts/prepare-desktop-icons.mjs`。
 
 需要修改代码并实时预览时，先停止上面的服务，再在项目目录打开两个终端，分别运行：
 

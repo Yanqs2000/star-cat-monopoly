@@ -30,6 +30,6 @@ for (const item of verified.assets) {
   if (!remote || remote.state !== 'uploaded' || remote.size !== item.size || remote.digest !== 'sha256:' + item.sha256) throw new Error('Uploaded asset verification failed: ' + item.name)
 }
 if (!release.assets.some(asset => asset.name === 'SHA256SUMS.txt' && asset.state === 'uploaded')) throw new Error('Missing uploaded checksums')
-await writeFile(notesFile, notes + '\n三个平台包均已完成原生安装、高清启动、存读档/重启及覆盖安装验证。草稿待用户最终验收，尚未公开发布。\n')
+await writeFile(notesFile, notes + '\nApple Silicon DMG 已完成原生安装、高清启动、存读档/重启及覆盖安装验证。草稿待用户最终验收，尚未公开发布。\n')
 gh(['release', 'edit', tag, '--draft', '--prerelease', '--notes-file', notesFile])
 console.log(JSON.stringify({ url: release.html_url, tag, draft: true, source, assets: verified.assets.map(({ name, size, sha256 }) => ({ name, size, sha256 })) }, null, 2))

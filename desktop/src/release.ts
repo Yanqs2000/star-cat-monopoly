@@ -17,8 +17,6 @@ export async function prepareReleaseAssets(directory: string, version: string, s
   await walk(directory)
   const targets = [
     { suffix: 'mac-arm64.dmg', platform: 'darwin', arch: 'arm64' },
-    { suffix: 'mac-x64.dmg', platform: 'darwin', arch: 'x64' },
-    { suffix: 'win-x64-setup.exe', platform: 'win32', arch: 'x64' },
   ]
   const selected = []
   const textureCounts = new Set(), textureBytes = new Set()

@@ -1,4 +1,4 @@
-name: Desktop installers
+name: Mac DMG
 on:
   pull_request:
     branches: [main]
@@ -21,6 +21,7 @@ concurrency:
 env:
   STAR_CAT_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
   CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+  CSC_FOR_PULL_REQUEST: 'true'
 jobs:
   build:
     name: ${{ matrix.id }} native installer
@@ -32,19 +33,11 @@ jobs:
           - id: mac-arm64
             os: macos-15
             flags: --mac --arm64
-          - id: mac-x64
-            os: macos-15-intel
-            flags: --mac --x64
-          - id: win-x64
-            os: windows-2025
-            flags: --win --x64
     runs-on: ${{ matrix.os }}
     defaults:
       run:
         shell: bash
     steps:
-      - if: runner.os == 'Windows'
-        run: git config --global core.longpaths true
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ env.STAR_CAT_SOURCE_COMMIT }}
