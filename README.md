@@ -2,6 +2,12 @@
 
 基于《星猫大富翁》的浏览器游戏复刻与改造项目，使用 Vue 3、TypeScript、PixiJS 和 Ruffle。包含原版兼容入口和现代版，支持玩家与 AI 对局、高清地图与人物、卡牌与股票、事件小游戏和本机存读档。
 
+## 桌面安装包（测试版）
+
+在 [GitHub Releases](https://github.com/Yanqs2000/star-cat-monopoly/releases) 下载对应平台的安装包：Mac M 系列选 `mac-arm64.dmg`、Mac Intel 选 `mac-x64.dmg`、Windows 64 位选 `win-x64-setup.exe`。安装后双击运行，默认高清，不需要额外安装 Node.js 或执行命令。
+
+首版尚未完成开发者签名/Apple 公证，可能出现系统来源验证提示；请阅读 [0.2.0-beta.1 安装、系统要求与存档说明](docs/releases/0.2.0-beta.1.md)。未公开的 Release 草稿仅供维护者验收。
+
 ## 下载并启动高清版
 
 需要 **Node.js 24.x（至少 24.19.0）**、npm 和现代浏览器。
@@ -21,6 +27,8 @@ npm run server:modern
 保持终端运行，按 `Ctrl+C` 停止服务。存档保存在本机 `.data/saves.sqlite`。
 
 ## 开发调试（可选）
+
+桌面开发与打包使用 Node.js 24.22.1。先执行 `npm ci`、`npm run desktop:prepare`，再运行 `npm run desktop:build`。在目标系统原生执行 `npm run desktop:package -- --mac --arm64`、`--mac --x64` 或 `--win --x64`；每个平台使用对应 CPU 架构的 Node/Electron，不在 Mac 上生成并声称验证 Windows 安装包。图标已提供，只有需要重新转换时才在 Mac 执行 `node scripts/prepare-desktop-icons.mjs`。
 
 需要修改代码并实时预览时，先停止上面的服务，再在项目目录打开两个终端，分别运行：
 
