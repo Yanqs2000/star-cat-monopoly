@@ -1,0 +1,33 @@
+appId: com.yanqs.starcatmonopoly
+productName: 星猫大富翁
+executableName: StarCatMonopoly
+electronVersion: 45.2.1
+electronDist: node_modules/electron/dist
+beforePack: scripts/before-desktop-pack.cjs
+directories:
+  app: desktop
+  output: release
+files:
+  - dist/**/*
+  - package.json
+extraResources:
+  - from: dist-modern
+    to: game
+    filter:
+      - '**/*'
+      - '!**/.DS_Store'
+asar: true
+npmRebuild: false
+publish: null
+mac:
+  target: dmg
+  icon: desktop/icons/icon.icns
+  identity: '-'
+  sign: scripts/sign-desktop-mac.cjs
+  hardenedRuntime: false
+  notarize: false
+  minimumSystemVersion: '13.0'
+  category: public.app-category.board-games
+  artifactName: StarCatMonopoly-${version}-mac-${arch}.${ext}
+dmg:
+  sign: false

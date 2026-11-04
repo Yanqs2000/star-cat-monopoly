@@ -1,0 +1,131 @@
+name: Mac DMG
+on:
+  pull_request:
+    branches: [main]
+    paths: ['desktop/**', 'src/**', 'server/**', 'public/modern/**', 'scripts/**', 'tests/**', 'package*.json', 'tsconfig.json', 'vite.config.ts', 'electron-builder.yml', '.gitattributes', '.github/workflows/desktop-release.yml']
+  push:
+    branches: [main]
+    paths: ['desktop/**', 'src/**', 'server/**', 'public/modern/**', 'scripts/**', 'tests/**', 'package*.json', 'tsconfig.json', 'vite.config.ts', 'electron-builder.yml', '.gitattributes', '.github/workflows/desktop-release.yml']
+  workflow_dispatch:
+    inputs:
+      create_draft:
+        description: Create or update the verified release draft
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: desktop-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+env:
+  STAR_CAT_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+  CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+  CSC_FOR_PULL_REQUEST: 'true'
+jobs:
+  build:
+    name: ${{ matrix.id }} native installer
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: mac-arm64
+            os: macos-15
+            flags: --mac --arm64
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.STAR_CAT_SOURCE_COMMIT }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.22.1
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            desktop/package-lock.json
+      - name: Install locked dependencies and Electron
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run desktop:prepare
+      - name: Regression and type checks
+        run: |
+          npm test
+          npm run typecheck
+          npm run check:saves
+      - name: Build game and native installer
+        run: |
+          npm run desktop:build
+          npm run desktop:package -- ${{ matrix.flags }}
+      - name: Install, restart, overwrite and preserve saved game
+        run: |
+          node --input-type=module - <<'JS'
+          import { readdir } from 'node:fs/promises';
+          import { spawnSync } from 'node:child_process';
+          const installers = (await readdir('release')).filter(name => /\.(dmg|exe)$/.test(name) && name.startsWith('StarCatMonopoly-'));
+          if (installers.length !== 1) throw new Error('Expected one native installer');
+          const result = spawnSync(process.execPath, ['scripts/test-desktop-installer.mjs', 'release/' + installers[0], 'evidence/${{ matrix.id }}'], { stdio: 'inherit' });
+          if (result.error) throw result.error;
+          process.exit(result.status ?? 1);
+          JS
+          node scripts/stage-desktop-artifacts.mjs evidence/${{ matrix.id }} ci-artifacts
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: desktop-package-${{ matrix.id }}
+          path: ci-artifacts/
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: desktop-evidence-${{ matrix.id }}
+          path: |
+            evidence/${{ matrix.id }}/report.json
+            evidence/${{ matrix.id }}/installer.json
+            evidence/${{ matrix.id }}/overwrite-report.json
+            evidence/${{ matrix.id }}/installed-*.png
+          retention-days: 1
+          if-no-files-found: error
+      - if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: desktop-failure-${{ matrix.id }}
+          path: |
+            evidence/**/failure.png
+            evidence/**/failure.txt
+          retention-days: 1
+          if-no-files-found: ignore
+  draft:
+    name: Verified Release draft
+    needs: build
+    if: (github.event_name == 'workflow_dispatch' && inputs.create_draft) || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'feat/desktop-release')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.STAR_CAT_SOURCE_COMMIT }}
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            desktop
+            scripts
+            docs/releases
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.22.1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: desktop-package-*
+          path: artifacts
+      - name: Verify all native reports and upload only a draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: node scripts/publish-desktop-draft.mjs artifacts

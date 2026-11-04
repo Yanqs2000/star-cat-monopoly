@@ -1,4 +1,4 @@
-import { mkdtemp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+import { mkdtemp, mkdir, readFile, readdir, realpath, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { build } from 'vite'
@@ -6,7 +6,7 @@ import { expect, test } from 'vitest'
 import { createViteConfig } from '../vite.config'
 
 test('modern production output keeps runtime assets and excludes artwork working files', async () => {
-  const root = await mkdtemp(path.join(tmpdir(), 'star-cat-build-'))
+  const root = await realpath(await mkdtemp(path.join(tmpdir(), 'star-cat-build-')))
   try {
     const publicDir = path.join(root, 'public/modern')
     for (const file of ['assets/character.png', 'assets-hd/character.webp', 'hd-map/map.webp',
@@ -33,7 +33,7 @@ test('modern production output keeps runtime assets and excludes artwork working
 })
 
 test('original production output excludes modern assets and review materials', async () => {
-  const root = await mkdtemp(path.join(tmpdir(), 'star-cat-original-build-'))
+  const root = await realpath(await mkdtemp(path.join(tmpdir(), 'star-cat-original-build-')))
   try {
     const publicDir = path.join(root, 'public')
     for (const file of ['original/play.swf', 'hd-assets/play.swf', 'ruffle/ruffle.js',
@@ -58,7 +58,7 @@ test('original production output excludes modern assets and review materials', a
 })
 
 test('modern original-profile build tolerates intentionally omitted HD runtime assets', async () => {
-  const root = await mkdtemp(path.join(tmpdir(), 'star-cat-no-hd-cache-'))
+  const root = await realpath(await mkdtemp(path.join(tmpdir(), 'star-cat-no-hd-cache-')))
   try {
     const publicDir = path.join(root, 'public/modern')
     for (const directory of ['assets', 'hd-map', 'hd-static', 'hd-characters']) {
