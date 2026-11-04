@@ -7,7 +7,7 @@ import { createPackage } from '@electron/asar'
 import { verifyDesktopPackage } from '../../desktop/src/distribution'
 
 const dirs: string[] = []
-const version = '0.2.0-beta.1'
+const version = '1.0.0'
 const digest = (data: string | Buffer) => createHash('sha256').update(data).digest('hex')
 function put(root: string, name: string, value: string | Buffer) { const file = path.join(root, name); mkdirSync(path.dirname(file), { recursive: true }); writeFileSync(file, value) }
 async function fixture(options: { appExtra?: string; gameExtra?: string; texturePath?: string } = {}) {

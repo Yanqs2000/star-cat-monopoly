@@ -3,7 +3,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, truncateSy
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { prepareReleaseAssets } from '../../desktop/src/release'
-const dirs: string[] = [], version = '0.2.0-beta.1', sha = 'a'.repeat(40)
+const dirs: string[] = [], version = '1.0.0', sha = 'a'.repeat(40)
 function fixture() {
   const root = mkdtempSync(path.join(tmpdir(), 'starcat-release-')); dirs.push(root)
   for (const [id, platform, arch, suffix] of [['mac-arm64', 'darwin', 'arm64', 'mac-arm64.dmg']]) {

@@ -2,11 +2,11 @@
 
 基于《星猫大富翁》的浏览器游戏复刻与改造项目，使用 Vue 3、TypeScript、PixiJS 和 Ruffle。包含原版兼容入口和现代版，支持玩家与 AI 对局、高清地图与人物、卡牌与股票、事件小游戏和本机存读档。
 
-## 桌面安装包（测试版）
+## 桌面安装包
 
 在 [GitHub Releases](https://github.com/Yanqs2000/star-cat-monopoly/releases) 下载 Mac M 系列的 `mac-arm64.dmg` 安装包（本次仅提供 Apple Silicon 版本）。安装后双击运行，默认高清，不需要额外安装 Node.js 或执行命令。
 
-首版尚未完成开发者签名/Apple 公证，可能出现系统来源验证提示；请阅读 [0.2.0-beta.1 安装、系统要求与存档说明](docs/releases/0.2.0-beta.1.md)。未公开的 Release 草稿仅供维护者验收。
+首版尚未完成开发者签名/Apple 公证，可能出现系统来源验证提示；请阅读 [1.0.0 安装、系统要求与存档说明](docs/releases/1.0.0.md)。
 
 ## 下载并启动高清版
 
