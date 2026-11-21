@@ -282,8 +282,14 @@ class CharacterPatchedSwfDigest(unittest.TestCase):
             class CharacterBuildComplete(Exception):
                 pass
 
+            character_reports = []
+
             def stop_after_character(path):
                 if Path(path) == original / 'play.swf':
+                    frame = sys._getframe()
+                    while frame.f_code is not BUILDER.main.__code__:
+                        frame = frame.f_back
+                    character_reports.extend(frame.f_locals['char_reports'])
                     raise CharacterBuildComplete
                 return real_digest(path)
 
@@ -306,6 +312,8 @@ class CharacterPatchedSwfDigest(unittest.TestCase):
                 call for call in digest_mock.call_args_list if Path(call.args[0]) == patched
             ]
             expected_hash = hashlib.sha256(patched_bytes).hexdigest()
+            self.assertEqual(len(character_reports), 1)
+            self.assertEqual(character_reports[0]['workSwfHash'], expected_hash)
             self.assertEqual(sum(entry.get('action') == 'walk' for entry in entries), 4)
             self.assertEqual(sum(entry.get('action') in actions for entry in entries), 20)
             self.assertEqual(sum('godId' in entry for entry in entries), 6)
