@@ -1,9 +1,9 @@
 {
   "name": "star-cat-monopoly",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "星猫大富翁原版兼容运行 · Vue + TypeScript + Ruffle",
+  "description": "星猫大富翁高清桌面版与浏览器复刻项目",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -30,7 +30,12 @@
     "check:modern-art": "python3 scripts/report-modern-art-coverage.py --check",
     "verify:modern-map-assets": "${PYTHON:-python3} scripts/verify_hd_map_assets.py && ${PYTHON:-python3} scripts/verify_full_hd_map_assets.py",
     "test:modern-map-assets": "${PYTHON:-python3} -m unittest discover -s scripts -p \"test_hd_map_*.py\"",
-    "verify:modern-static-assets": "${PYTHON:-python3} scripts/verify_static_hd_assets.py"
+    "verify:modern-static-assets": "${PYTHON:-python3} scripts/verify_static_hd_assets.py",
+    "desktop:prepare": "npm ci --prefix desktop --omit=dev --ignore-scripts && node node_modules/electron/install.js",
+    "desktop:build": "npm run build:modern && node scripts/build-desktop.mjs",
+    "desktop:dev": "npm run desktop:build && electron desktop",
+    "desktop:package": "electron-builder --config electron-builder.yml --publish never",
+    "desktop:smoke": "node scripts/desktop-smoke.mjs"
   },
   "dependencies": {
     "@fastify/cookie": "11.1.2",
@@ -46,13 +51,17 @@
     "@types/node": "^26.5.0",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/test-utils": "^2.5.0",
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0",
+    "esbuild": "0.28.2",
     "jsdom": "^30.0.1",
     "ts-json-schema-generator": "2.9.0",
     "tsx": "4.23.15",
     "typescript": "~5.9.3",
     "vite": "^8.2.2",
     "vitest": "^5.0.0",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.11",
+    "@electron/asar": "3.4.1"
   },
   "engines": {
     "node": ">=24.19.0 <25"
