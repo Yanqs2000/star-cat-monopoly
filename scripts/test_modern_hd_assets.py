@@ -196,10 +196,13 @@ class CharacterPatchedSwfDigest(unittest.TestCase):
 
             original_bytes = b'original-star-2'
             original_hash = hashlib.sha256(original_bytes).hexdigest()
+            play_bytes = b'original-play'
+            play_hash = hashlib.sha256(play_bytes).hexdigest()
             (original / 'star2.swf').write_bytes(original_bytes)
+            (original / 'play.swf').write_bytes(play_bytes)
             write_json(original / 'manifest.json', {'files': [
                 *[{'name': f'star{cid}.swf', 'sha256': original_hash} for cid in range(1, 13)],
-                {'name': 'play.swf', 'sha256': original_hash},
+                {'name': 'play.swf', 'sha256': play_hash},
             ]})
             Image.new('RGBA', (1, 1), (10, 20, 30, 255)).save(hd_source / 'aniu.png')
 
@@ -245,6 +248,40 @@ class CharacterPatchedSwfDigest(unittest.TestCase):
                 'clips': original_reaction_clips,
                 'godOverlays': original_god_overlays,
             })
+            write_json(source / 'companies/manifest.json', {'companies': []})
+            write_json(source / 'properties/manifest.json', {
+                'sourceSha256': play_hash, 'sellSigns': [], 'houses': [],
+            })
+            write_json(source / 'world/manifest.json', {
+                'sourceSha256': play_hash, 'clips': [], 'neutralHouses': [],
+            })
+            write_json(source / 'interactions/manifest.json', {
+                'sourceSha256': play_hash, 'cards': [], 'luck': [],
+            })
+            activity_frames = [
+                {'url': f'assets/activities/frames/{index}.png', 'width': 1, 'height': 1,
+                 'offsetX': 0, 'offsetY': 0, 'sourceFrame': index}
+                for index in range(1538)
+            ]
+            write_json(source / 'activities/manifest.json', {
+                'sourceSha256': play_hash,
+                'clips': [{'id': 'activity', 'sourceSymbol': 1, 'fps': 10, 'loop': False,
+                           'frames': activity_frames}],
+            })
+            Image.new('RGB', (2700, 2552), (1, 2, 3)).save(source / 'map.png')
+            map_render = root / 'map-render.png'
+            Image.new('RGBA', (1, 1), (1, 2, 3, 255)).save(map_render)
+            placeholder_paths = [
+                *[source / 'characters/2/walk' / facing / '1.png' for facing in facings],
+                *[source / 'characters/2/reactions' / action / facing / '1.png'
+                  for action in actions for facing in facings],
+                *[source / 'characters/2/reactions/gods' / f'{god_id}.png' for god_id in god_ids],
+                *[source / 'characters/2/reactions/cheer' / facing / '1.png' for facing in facings],
+                *[source / frame['url'].removeprefix('assets/') for frame in activity_frames],
+            ]
+            for path in placeholder_paths:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'')
 
             def export_frame(path):
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -266,60 +303,70 @@ class CharacterPatchedSwfDigest(unittest.TestCase):
                     for god_id in god_ids:
                         export_frame(output / 'gods' / f'{god_id}.png')
                     return json.dumps({'clips': clips, 'godOverlays': god_overlays})
+                if 'ExportCompanyAssets' in args:
+                    return json.dumps({'pixelDensity': 2, 'companySymbols': [
+                        186, 180, 213, 183, 189, 192, 204, 198, 195, 201, 207, 210,
+                    ]})
+                if 'ExportPropertyAssets' in args:
+                    return json.dumps({})
+                if 'ExportWorldAssets' in args:
+                    return json.dumps({'clips': []})
+                if 'ExportActivityAssets' in args:
+                    output = Path(args[args.index('ExportActivityAssets') + 2])
+                    if not (output / 'frames').is_dir():
+                        for frame in activity_frames:
+                            export_frame(output / frame['url'].removeprefix('assets/activities/'))
+                    return json.dumps({'clips': [{'id': 'activity'}]})
                 return ''
 
             patched_bytes = b'patched-star-2'
 
             def patch_swf(swf, patched, assets):
                 patched.write_bytes(patched_bytes)
-                return {}
+                return {'shapeIds': [], 'bitmapIds': []}
+
+            def normalize_world(raw, staging, metadata, density):
+                staging.mkdir(parents=True, exist_ok=True)
 
             patcher = SimpleNamespace(patch_swf=patch_swf)
+            world_module = SimpleNamespace(normalize_exports=normalize_world)
             loader = SimpleNamespace(exec_module=lambda module: None)
             fake_spec = SimpleNamespace(loader=loader)
+            world_spec = SimpleNamespace(loader=loader, name='modern_hd_world_export')
             real_digest = BUILDER.digest
-
-            class CharacterBuildComplete(Exception):
-                pass
-
-            character_reports = []
-
-            def stop_after_character(path):
-                if Path(path) == original / 'play.swf':
-                    frame = sys._getframe()
-                    while frame.f_code is not BUILDER.main.__code__:
-                        frame = frame.f_back
-                    character_reports.extend(frame.f_locals['char_reports'])
-                    raise CharacterBuildComplete
-                return real_digest(path)
-
             patched = cache / 'swf/star2-hd.swf'
             with mock.patch.multiple(BUILDER, ROOT=root, SOURCE=source, DEST=dest, CACHE=cache,
                                      ORIGINAL=original, HD_SOURCE=hd_source, FFDEC=ffdec,
-                                     JAVA='java', CHARS=[(2, 'aniu', 'aniu.png')]), \
+                                     JAVA='java', CHARS=[(2, 'aniu', 'aniu.png')],
+                                     BUILDING_CANDIDATES=[]), \
                     mock.patch.dict(BUILDER.ENTRIES, clear=True), \
-                    mock.patch.object(BUILDER, 'mirror_sources', return_value=[]), \
+                    mock.patch.object(BUILDER, 'mirror_sources',
+                                      return_value=[(map_render, dest / 'map.webp', 'map')]), \
                     mock.patch.object(BUILDER, 'run', side_effect=fake_run), \
                     mock.patch.object(BUILDER, 'jdk', side_effect=lambda name: name), \
-                    mock.patch.object(BUILDER.importlib.util, 'spec_from_file_location', return_value=fake_spec), \
-                    mock.patch.object(BUILDER.importlib.util, 'module_from_spec', return_value=patcher), \
-                    mock.patch.object(BUILDER, 'digest', side_effect=stop_after_character) as digest_mock:
-                with self.assertRaises(CharacterBuildComplete):
-                    BUILDER.main()
-                entries = list(BUILDER.ENTRIES.values())
+                    mock.patch.object(BUILDER.importlib.util, 'spec_from_file_location',
+                                      side_effect=[fake_spec, world_spec]), \
+                    mock.patch.object(BUILDER.importlib.util, 'module_from_spec',
+                                      side_effect=[patcher, world_module]), \
+                    mock.patch.object(BUILDER, 'digest', side_effect=real_digest) as digest_mock:
+                BUILDER.main()
+            sys.modules.pop('modern_hd_world_export', None)
+            manifest = json.loads((dest / 'hd-manifest.json').read_text())
 
             patched_digest_calls = [
                 call for call in digest_mock.call_args_list if Path(call.args[0]) == patched
             ]
             expected_hash = hashlib.sha256(patched_bytes).hexdigest()
+            character_reports = manifest['characters']
+            character_entries = [entry for entry in manifest['files'] if entry.get('characterId') == 2]
             self.assertEqual(len(character_reports), 1)
             self.assertEqual(character_reports[0]['workSwfHash'], expected_hash)
-            self.assertEqual(sum(entry.get('action') == 'walk' for entry in entries), 4)
-            self.assertEqual(sum(entry.get('action') in actions for entry in entries), 20)
-            self.assertEqual(sum('godId' in entry for entry in entries), 6)
-            self.assertEqual(sum(entry.get('action') == 'cheer' for entry in entries), 4)
+            self.assertEqual(sum(entry.get('action') == 'walk' for entry in character_entries), 4)
+            self.assertEqual(sum(entry.get('action') in actions for entry in character_entries), 20)
+            self.assertEqual(sum('godId' in entry for entry in character_entries), 6)
+            self.assertEqual(sum(entry.get('action') == 'cheer' for entry in character_entries), 4)
             self.assertEqual(
-                {entry['renderSwfSha256'] for entry in entries},
+                {entry['renderSwfSha256'] for entry in character_entries},
                 {expected_hash},
             )
             self.assertEqual(len(patched_digest_calls), 1)
