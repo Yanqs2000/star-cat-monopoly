@@ -102,6 +102,10 @@ def is_timeline_frame(rel):
     parts=rel.parts
     return parts[0]=='walk' or (len(parts)>2 and parts[0]=='characters' and parts[2] in {'walk','reactions'})
 def main():
+    try:
+        import numpy  # noqa: F401
+    except Exception as error:
+        raise SystemExit(f'NumPy dependency unavailable: {error}') from error
     need(features.check('webp'),'Pillow WebP support is required')
     need(JAVA!='','Set FFDEC_JAVA to a JDK')
     need((FFDEC/'lib/ffdec_lib.jar').is_file(),'Pinned JPEXS 26.2.1 library missing')
