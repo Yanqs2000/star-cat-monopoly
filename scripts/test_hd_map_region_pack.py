@@ -10,6 +10,38 @@ from build_hd_map_region_sample import _preserve_original_sky, pack_map_region
 from PIL import Image, ImageDraw
 
 
+def _pack_sky_region(original_map):
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        region = root / 'region'; region.mkdir()
+        references = root / 'references'; references.mkdir()
+        original_map_path = root / 'map.png'
+        original_map.save(original_map_path)
+        tiles = []
+        for row in range(2):
+            for col in range(2):
+                name = f'r{row}c{col}'
+                tile_path = region / f'{name}.png'
+                Image.new('RGBA', (1152, 1152), (110, 120, 130, 255)).save(tile_path)
+                reference_path = references / f'{name}.png'
+                reference_path.write_bytes(b'context')
+                tiles.append({'tile': name, 'sourcePath': f'region/{name}.png',
+                              'logicalPosition': [640 + col * 256, 420 + row * 256],
+                              'logicalSize': [256, 256], 'sourceSha256': hashlib.sha256(tile_path.read_bytes()).hexdigest(),
+                              'inputReference': f'references/{name}.png',
+                              'generationResultPixels': [1152, 1152]})
+        manifest = {'version': 1, 'status': 'unreviewed', 'sourceMap': 'map.png',
+                    'sourceMapSha256': hashlib.sha256(original_map_path.read_bytes()).hexdigest(),
+                    'gameWorldOffset': [-184, -313], 'mapRect': [640, 420, 512, 512],
+                    'logicalSize': [512, 512], 'tileGrid': [2, 2], 'paddingUsedForReference': 16,
+                    'tiles': tiles}
+        manifest_path = region / 'masters.json'; manifest_path.write_text(json.dumps(manifest))
+        output = root / 'stitched.png'
+        pack_map_region(manifest_path, root, output)
+        with Image.open(output) as image:
+            return image.copy()
+
+
 class MapRegionPackTests(unittest.TestCase):
     def test_does_not_paint_generated_sky_over_original_non_sky_geometry(self):
         original = Image.new('RGBA', (512, 512), (40, 155, 50, 255))
@@ -129,44 +161,28 @@ class MapRegionPackTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'map tile input reference hash changed'):
                 pack_map_region(manifest_path, root, root / 'stitched.png')
 
+    def test_red_dominant_connected_region_keeps_alpha_while_blue_sky_is_removed(self):
+        original_map = Image.new('RGBA', (1152, 932), (40, 155, 50, 255))
+        draw = ImageDraw.Draw(original_map)
+        draw.rectangle((640, 420, 895, 599), fill=(190, 60, 160, 255))
+        draw.rectangle((896, 420, 1151, 599), fill=(100, 60, 160, 255))
+        with _pack_sky_region(original_map) as image:
+            alpha = image.getchannel('A')
+            self.assertEqual(alpha.getpixel((500, 100)), 255)
+            self.assertEqual(alpha.getpixel((1500, 100)), 0)
+            self.assertEqual(alpha.getpixel((500, 1200)), 255)
+
     def test_preserves_original_sky_by_transparenting_generated_sky_pixels(self):
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            region = root / 'region'; region.mkdir()
-            references = root / 'references'; references.mkdir()
-            original_map = Image.new('RGBA', (1152, 932), (40, 155, 50, 255))
-            for y in range(420, 600):
-                for x in range(640, 1152):
-                    original_map.putpixel((x, y), (90, 200, 255, 255))
-            original_map_path = root / 'map.png'
-            original_map.save(original_map_path)
-            tiles = []
-            for row in range(2):
-                for col in range(2):
-                    name = f'r{row}c{col}'
-                    tile_path = region / f'{name}.png'
-                    Image.new('RGBA', (1152, 1152), (110, 120, 130, 255)).save(tile_path)
-                    reference_path = references / f'{name}.png'
-                    reference_path.write_bytes(b'context')
-                    tiles.append({'tile': name, 'sourcePath': f'region/{name}.png',
-                                  'logicalPosition': [640 + col * 256, 420 + row * 256],
-                                  'logicalSize': [256, 256], 'sourceSha256': hashlib.sha256(tile_path.read_bytes()).hexdigest(),
-                                  'inputReference': f'references/{name}.png',
-                                  'generationResultPixels': [1152, 1152]})
-            manifest = {'version': 1, 'status': 'unreviewed', 'sourceMap': 'map.png',
-                        'sourceMapSha256': hashlib.sha256(original_map_path.read_bytes()).hexdigest(),
-                        'gameWorldOffset': [-184, -313], 'mapRect': [640, 420, 512, 512],
-                        'logicalSize': [512, 512], 'tileGrid': [2, 2], 'paddingUsedForReference': 16,
-                        'tiles': tiles}
-            manifest_path = region / 'masters.json'; manifest_path.write_text(json.dumps(manifest))
-            output = root / 'stitched.png'
-            pack_map_region(manifest_path, root, output)
-            with Image.open(output) as image:
-                alpha = image.getchannel('A')
-                self.assertEqual(alpha.getpixel((500, 100)), 0)
-                self.assertEqual(alpha.getpixel((500, 1200)), 255)
-                edge = [alpha.getpixel((x, y)) for x in range(480, 520) for y in range(710, 730)]
-                self.assertTrue(any(0 < value < 255 for value in edge))
+        original_map = Image.new('RGBA', (1152, 932), (40, 155, 50, 255))
+        for y in range(420, 600):
+            for x in range(640, 1152):
+                original_map.putpixel((x, y), (90, 200, 255, 255))
+        with _pack_sky_region(original_map) as image:
+            alpha = image.getchannel('A')
+            self.assertEqual(alpha.getpixel((500, 100)), 0)
+            self.assertEqual(alpha.getpixel((500, 1200)), 255)
+            edge = [alpha.getpixel((x, y)) for x in range(480, 520) for y in range(710, 730)]
+            self.assertTrue(any(0 < value < 255 for value in edge))
 
 
 if __name__ == '__main__':

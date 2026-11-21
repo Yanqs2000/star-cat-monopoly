@@ -85,7 +85,7 @@ def _feather_outer_edges(image: Image.Image, density: float, logical_padding: in
 def _connected_sky_mask(image: Image.Image) -> np.ndarray:
     source = np.asarray(image.convert('RGB'))
     red, green, blue = source[:, :, 0], source[:, :, 1], source[:, :, 2]
-    sky_blue = (blue >= 160) & (green >= 60) & (red <= 190) & ((blue - red) >= 45)
+    sky_blue = (blue >= 160) & (green >= 60) & (red <= 190) & ((blue.astype(np.int16) - red) >= 45)
     cloud = (red >= 220) & (green >= 220) & (blue >= 220)
     traversable = sky_blue | cloud
     starts = [(0, x) for x in range(source.shape[1]) if sky_blue[0, x]]

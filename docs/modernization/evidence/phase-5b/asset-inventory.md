@@ -33,11 +33,12 @@ PNG 转 WebP 使用 q98、alpha quality 100。对每张输出同时保存生成�
 高清图集是被 `.gitignore` 忽略的可复现构建产物，没有加入 Git。准备 JPEXS 26.2.1、JDK 及 `scripts/requirements-modern-hd.txt` 中锁定的 Pillow/NumPy 后，可这样重建：
 
 ```sh
+export PYTHON=/path/to/python3
+
 FFDEC_ROOT=/path/to/ffdec-26.2.1/full \
 FFDEC_JAVA=/path/to/jdk/bin/java \
-PYTHON=/path/to/python3 npm run assets:modern-hd
+npm run assets:modern-hd
 
-PYTHON=/path/to/python3 npm run verify:modern-hd-assets
 npm run build:modern:hd
 ```
 

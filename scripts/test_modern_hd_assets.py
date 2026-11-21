@@ -1,9 +1,15 @@
+from contextlib import contextmanager
 from importlib.util import module_from_spec, spec_from_file_location
+import builtins
 import hashlib
+import json
 import sys
 import tempfile
 from pathlib import Path
+from types import SimpleNamespace
 import unittest
+from unittest import mock
+from unittest.mock import patch
 
 from PIL import Image
 
@@ -77,6 +83,293 @@ class ProfilePixelDimensions(unittest.TestCase):
                 self.assertEqual(result.getpixel((6, 4)), (10, 30, 90, 255))
                 self.assertEqual(result.getpixel((7, 5))[3], 0)
             self.assertEqual(padding, {'nativeRenderSize': [7, 5], 'fitPaddingPx': [1, 1]})
+
+
+class ModernHdDependencyPreflight(unittest.TestCase):
+    @contextmanager
+    def _builder_sandbox(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root / 'source'
+            source.mkdir()
+            for index in range(1001):
+                (source / f'{index}.png').touch()
+
+            ffdec = root / 'ffdec'
+            (ffdec / 'lib').mkdir(parents=True)
+            (ffdec / 'lib/ffdec_lib.jar').touch()
+            dest = root / 'dest'
+            cache = root / 'cache'
+
+            with (
+                patch.multiple(
+                    BUILDER,
+                    ROOT=root,
+                    SOURCE=source,
+                    DEST=dest,
+                    CACHE=cache,
+                    FFDEC=ffdec,
+                    JAVA='java',
+                ),
+                patch.object(BUILDER, 'convert', side_effect=SystemExit('mirror conversion started')) as convert,
+            ):
+                yield dest, cache, convert
+
+    def test_unavailable_numpy_preserves_owned_output_and_cache_before_mirror_conversion(self):
+        with self._builder_sandbox() as (dest, cache, convert):
+            (dest / 'nested').mkdir(parents=True)
+            (dest / 'hd-manifest.json').write_bytes(b'owned manifest\n')
+            (dest / 'nested/previous.webp').write_bytes(b'last good output\x00\xff')
+            (cache / 'nested').mkdir(parents=True)
+            (cache / 'nested/previous.bin').write_bytes(b'last good cache\x00\xff')
+
+            def file_bytes(directory):
+                if not directory.exists():
+                    return None
+                return {
+                    path.relative_to(directory).as_posix(): path.read_bytes()
+                    for path in directory.rglob('*') if path.is_file()
+                }
+
+            original_dest = file_bytes(dest)
+            original_cache = file_bytes(cache)
+            real_import = builtins.__import__
+
+            def import_without_numpy(name, *args, **kwargs):
+                if name == 'numpy':
+                    raise ImportError('NumPy blocked by regression test')
+                return real_import(name, *args, **kwargs)
+
+            message = ''
+            with patch('builtins.__import__', side_effect=import_without_numpy):
+                try:
+                    BUILDER.main()
+                except SystemExit as error:
+                    message = str(error)
+
+            actual = {
+                'clear NumPy error': 'NumPy' in message and 'unavailable' in message,
+                'conversion calls': convert.call_count,
+                'destination': file_bytes(dest),
+                'cache': file_bytes(cache),
+            }
+            self.assertEqual(actual, {
+                'clear NumPy error': True,
+                'conversion calls': 0,
+                'destination': original_dest,
+                'cache': original_cache,
+            })
+
+    def test_available_numpy_enters_existing_mirror_generation(self):
+        with self._builder_sandbox() as (dest, cache, convert):
+            dest.mkdir()
+            (dest / 'hd-manifest.json').write_bytes(b'owned manifest\n')
+            (dest / 'previous.webp').write_bytes(b'last good output\x00\xff')
+            cache.mkdir()
+            (cache / 'previous.bin').write_bytes(b'last good cache\x00\xff')
+
+            with self.assertRaisesRegex(SystemExit, '^mirror conversion started$'):
+                BUILDER.main()
+
+            self.assertEqual(convert.call_count, 1001)
+            self.assertFalse((dest / 'previous.webp').exists())
+            self.assertFalse((cache / 'previous.bin').exists())
+class CharacterPatchedSwfDigest(unittest.TestCase):
+    def test_main_computes_one_digest_for_all_character_uses(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root / 'public/modern/assets'
+            dest = root / 'public/modern/assets-hd'
+            cache = root / 'cache'
+            original = root / 'public/original'
+            hd_source = root / 'public/hd-assets'
+            ffdec = root / 'ffdec'
+            source.mkdir(parents=True)
+            original.mkdir(parents=True)
+            hd_source.mkdir(parents=True)
+            (ffdec / 'lib').mkdir(parents=True)
+            (ffdec / 'lib/ffdec_lib.jar').write_bytes(b'')
+
+            def write_json(path, value):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(value))
+
+            original_bytes = b'original-star-2'
+            original_hash = hashlib.sha256(original_bytes).hexdigest()
+            play_bytes = b'original-play'
+            play_hash = hashlib.sha256(play_bytes).hexdigest()
+            (original / 'star2.swf').write_bytes(original_bytes)
+            (original / 'play.swf').write_bytes(play_bytes)
+            write_json(original / 'manifest.json', {'files': [
+                *[{'name': f'star{cid}.swf', 'sha256': original_hash} for cid in range(1, 13)],
+                {'name': 'play.swf', 'sha256': play_hash},
+            ]})
+            Image.new('RGBA', (1, 1), (10, 20, 30, 255)).save(hd_source / 'aniu.png')
+
+            facings = ('down', 'left', 'right', 'up')
+            actions = ('happy', 'sad', 'angry', 'surprise', 'laugh')
+            god_ids = (2, 3, 4, 5, 10, 11)
+            bounds = [0, 20, 0, 20]
+            walk_clips = [
+                {'facing': facing, 'sourceBoundsTwips': bounds, 'frameCount': 1}
+                for facing in facings
+            ]
+            original_walk_clips = [
+                {'facing': facing, 'sourceSpriteId': 100 + index, 'sourceBoundsTwips': bounds,
+                 'frames': [{'durationMs': 33, 'offsetX': index, 'offsetY': -index}]}
+                for index, facing in enumerate(facings)
+            ]
+            reaction_clips = [
+                {'name': action, 'facing': facing, 'renderBoundsTwips': bounds, 'frames': 1}
+                for action in actions for facing in facings
+            ]
+            cheer_clips = [
+                {'name': 'cheer', 'facing': facing, 'renderBoundsTwips': bounds, 'frames': 1}
+                for facing in facings
+            ]
+            original_reaction_clips = [
+                {'name': action, 'facing': facing, 'fps': 10, 'loop': False,
+                 'frames': [{'width': 1, 'height': 1, 'offsetX': 0, 'offsetY': 0}]}
+                for action in (*actions, 'cheer') for facing in facings
+            ]
+            god_overlays = [
+                {'godId': god_id, 'renderBoundsTwips': bounds}
+                for god_id in god_ids
+            ]
+            original_god_overlays = [
+                {'godId': god_id, 'width': 1, 'height': 1, 'offsetX': 0, 'offsetY': 0}
+                for god_id in god_ids
+            ]
+            write_json(source / 'characters/index.json', {'characters': [
+                {'id': 2, 'manifestUrl': 'assets/characters/2/walk/manifest.json'},
+            ]})
+            write_json(source / 'characters/2/walk/manifest.json', {'clips': original_walk_clips})
+            write_json(source / 'characters/2/reactions/manifest.json', {
+                'clips': original_reaction_clips,
+                'godOverlays': original_god_overlays,
+            })
+            write_json(source / 'companies/manifest.json', {'companies': []})
+            write_json(source / 'properties/manifest.json', {
+                'sourceSha256': play_hash, 'sellSigns': [], 'houses': [],
+            })
+            write_json(source / 'world/manifest.json', {
+                'sourceSha256': play_hash, 'clips': [], 'neutralHouses': [],
+            })
+            write_json(source / 'interactions/manifest.json', {
+                'sourceSha256': play_hash, 'cards': [], 'luck': [],
+            })
+            activity_frames = [
+                {'url': f'assets/activities/frames/{index}.png', 'width': 1, 'height': 1,
+                 'offsetX': 0, 'offsetY': 0, 'sourceFrame': index}
+                for index in range(1538)
+            ]
+            write_json(source / 'activities/manifest.json', {
+                'sourceSha256': play_hash,
+                'clips': [{'id': 'activity', 'sourceSymbol': 1, 'fps': 10, 'loop': False,
+                           'frames': activity_frames}],
+            })
+            Image.new('RGB', (2700, 2552), (1, 2, 3)).save(source / 'map.png')
+            map_render = root / 'map-render.png'
+            Image.new('RGBA', (1, 1), (1, 2, 3, 255)).save(map_render)
+            placeholder_paths = [
+                *[source / 'characters/2/walk' / facing / '1.png' for facing in facings],
+                *[source / 'characters/2/reactions' / action / facing / '1.png'
+                  for action in actions for facing in facings],
+                *[source / 'characters/2/reactions/gods' / f'{god_id}.png' for god_id in god_ids],
+                *[source / 'characters/2/reactions/cheer' / facing / '1.png' for facing in facings],
+                *[source / frame['url'].removeprefix('assets/') for frame in activity_frames],
+            ]
+            for path in placeholder_paths:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'')
+
+            def export_frame(path):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                Image.new('RGBA', (2, 2), (40, 50, 60, 255)).save(path)
+
+            def fake_run(args, log):
+                if 'ExportModernWalkAssets' in args:
+                    output = Path(args[args.index('ExportModernWalkAssets') + 2])
+                    for clip in walk_clips:
+                        export_frame(output / clip['facing'] / '1.png')
+                    return json.dumps({'pixelDensity': 2, 'clips': walk_clips})
+                if 'ExportReactionAssets' in args:
+                    output = Path(args[args.index('ExportReactionAssets') + 2])
+                    clips = cheer_clips if args[-1] == 'cheer' else reaction_clips
+                    for clip in clips:
+                        export_frame(output / clip['name'] / clip['facing'] / '1.png')
+                    if args[-1] == 'cheer':
+                        return json.dumps({'clips': clips})
+                    for god_id in god_ids:
+                        export_frame(output / 'gods' / f'{god_id}.png')
+                    return json.dumps({'clips': clips, 'godOverlays': god_overlays})
+                if 'ExportCompanyAssets' in args:
+                    return json.dumps({'pixelDensity': 2, 'companySymbols': [
+                        186, 180, 213, 183, 189, 192, 204, 198, 195, 201, 207, 210,
+                    ]})
+                if 'ExportPropertyAssets' in args:
+                    return json.dumps({})
+                if 'ExportWorldAssets' in args:
+                    return json.dumps({'clips': []})
+                if 'ExportActivityAssets' in args:
+                    output = Path(args[args.index('ExportActivityAssets') + 2])
+                    if not (output / 'frames').is_dir():
+                        for frame in activity_frames:
+                            export_frame(output / frame['url'].removeprefix('assets/activities/'))
+                    return json.dumps({'clips': [{'id': 'activity'}]})
+                return ''
+
+            patched_bytes = b'patched-star-2'
+
+            def patch_swf(swf, patched, assets):
+                patched.write_bytes(patched_bytes)
+                return {'shapeIds': [], 'bitmapIds': []}
+
+            def normalize_world(raw, staging, metadata, density):
+                staging.mkdir(parents=True, exist_ok=True)
+
+            patcher = SimpleNamespace(patch_swf=patch_swf)
+            world_module = SimpleNamespace(normalize_exports=normalize_world)
+            loader = SimpleNamespace(exec_module=lambda module: None)
+            fake_spec = SimpleNamespace(loader=loader)
+            world_spec = SimpleNamespace(loader=loader, name='modern_hd_world_export')
+            real_digest = BUILDER.digest
+            patched = cache / 'swf/star2-hd.swf'
+            with mock.patch.multiple(BUILDER, ROOT=root, SOURCE=source, DEST=dest, CACHE=cache,
+                                     ORIGINAL=original, HD_SOURCE=hd_source, FFDEC=ffdec,
+                                     JAVA='java', CHARS=[(2, 'aniu', 'aniu.png')],
+                                     BUILDING_CANDIDATES=[]), \
+                    mock.patch.dict(BUILDER.ENTRIES, clear=True), \
+                    mock.patch.object(BUILDER, 'mirror_sources',
+                                      return_value=[(map_render, dest / 'map.webp', 'map')]), \
+                    mock.patch.object(BUILDER, 'run', side_effect=fake_run), \
+                    mock.patch.object(BUILDER, 'jdk', side_effect=lambda name: name), \
+                    mock.patch.object(BUILDER.importlib.util, 'spec_from_file_location',
+                                      side_effect=[fake_spec, world_spec]), \
+                    mock.patch.object(BUILDER.importlib.util, 'module_from_spec',
+                                      side_effect=[patcher, world_module]), \
+                    mock.patch.object(BUILDER, 'digest', side_effect=real_digest) as digest_mock:
+                BUILDER.main()
+            sys.modules.pop('modern_hd_world_export', None)
+            manifest = json.loads((dest / 'hd-manifest.json').read_text())
+
+            patched_digest_calls = [
+                call for call in digest_mock.call_args_list if Path(call.args[0]) == patched
+            ]
+            expected_hash = hashlib.sha256(patched_bytes).hexdigest()
+            character_reports = manifest['characters']
+            character_entries = [entry for entry in manifest['files'] if entry.get('characterId') == 2]
+            self.assertEqual(len(character_reports), 1)
+            self.assertEqual(character_reports[0]['workSwfHash'], expected_hash)
+            self.assertEqual(sum(entry.get('action') == 'walk' for entry in character_entries), 4)
+            self.assertEqual(sum(entry.get('action') in actions for entry in character_entries), 20)
+            self.assertEqual(sum('godId' in entry for entry in character_entries), 6)
+            self.assertEqual(sum(entry.get('action') == 'cheer' for entry in character_entries), 4)
+            self.assertEqual(
+                {entry['renderSwfSha256'] for entry in character_entries},
+                {expected_hash},
+            )
+            self.assertEqual(len(patched_digest_calls), 1)
 
 
 if __name__ == '__main__':

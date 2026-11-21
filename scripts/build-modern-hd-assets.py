@@ -102,6 +102,10 @@ def is_timeline_frame(rel):
     parts=rel.parts
     return parts[0]=='walk' or (len(parts)>2 and parts[0]=='characters' and parts[2] in {'walk','reactions'})
 def main():
+    try:
+        import numpy  # noqa: F401
+    except Exception as error:
+        raise SystemExit(f'NumPy dependency unavailable: {error}') from error
     need(features.check('webp'),'Pillow WebP support is required')
     need(JAVA!='','Set FFDEC_JAVA to a JDK')
     need((FFDEC/'lib/ffdec_lib.jar').is_file(),'Pinned JPEXS 26.2.1 library missing')
@@ -147,6 +151,7 @@ def main():
         patched=CACHE/'swf'/f'star{cid}-hd.swf';patched.parent.mkdir(parents=True,exist_ok=True)
         patch=patcher.patch_swf(swf,patched,[{'key':key,'tag':1,'swf':f'star{cid}.swf',
              'originalFile':f'{key}-original.jpg','type':'character'}])
+        patched_hash=digest(patched)
         walk_rel=Path('walk') if cid==1 else Path('characters')/str(cid)/'walk'
         walk_tmp=CACHE/'export'/str(cid)/'walk';walk_tmp.parent.mkdir(parents=True,exist_ok=True)
         walk=json.loads(run([jdk('java'),'-Xmx2g','-Djava.awt.headless=true','-classpath',cp,
@@ -166,7 +171,7 @@ def main():
                        'sourceSpriteId':source_clip['sourceSpriteId'],'sourceBoundsTwips':source_clip['sourceBoundsTwips'],
                        'fps':30,'durationMs':source_clip['frames'][n-1]['durationMs'],
                        'logicalAnchor':[source_clip['frames'][n-1]['offsetX'],source_clip['frames'][n-1]['offsetY']],
-                       'renderSwfSha256':digest(patched),'method':'original timeline + selected HD base art'})
+                       'renderSwfSha256':patched_hash,'method':'original timeline + selected HD base art'})
         reaction_tmp=CACHE/'export'/str(cid)/'reactions';reaction_tmp.mkdir(parents=True,exist_ok=True)
         reactions=json.loads(run([jdk('java'),'-Xmx2g','-Djava.awt.headless=true','-Dstarcat.pixelDensity=2',
              '-classpath',cp,'ExportReactionAssets',str(patched),str(reaction_tmp),
@@ -189,7 +194,7 @@ def main():
                        'logicalSize':[source_clip['frames'][n-1]['width'],source_clip['frames'][n-1]['height']],
                        'logicalAnchor':[source_clip['frames'][n-1]['offsetX'],source_clip['frames'][n-1]['offsetY']],
                        'fps':source_clip['fps'],'loop':source_clip['loop'],'durationMs':1000/source_clip['fps'],
-                       'renderSwfSha256':digest(patched),'method':'original timeline + selected HD base art'})
+                       'renderSwfSha256':patched_hash,'method':'original timeline + selected HD base art'})
         for overlay in reactions['godOverlays']:
             n=overlay['godId'];src=reaction_tmp/'gods'/f'{n}.png';x0,x1,y0,y1=overlay['renderBoundsTwips']
             size=(math.ceil((x1-x0)*2/20),math.ceil((y1-y0)*2/20))
@@ -199,7 +204,7 @@ def main():
             e.update({'source':f'public/original/star{cid}.swf','sourceSha256':hashes[f'star{cid}.swf'],
                       'characterId':cid,'godId':n,'logicalSize':[source_overlay['width'],source_overlay['height']],
                       'logicalAnchor':[source_overlay['offsetX'],source_overlay['offsetY']],
-                      'renderSwfSha256':digest(patched),
+                      'renderSwfSha256':patched_hash,
                       'method':'original timeline overlay + selected HD base art'})
         cheer_tmp=CACHE/'export'/str(cid)/'cheer';cheer_tmp.mkdir(parents=True,exist_ok=True)
         cheer=json.loads(run([jdk('java'),'-Xmx2g','-Djava.awt.headless=true','-Dstarcat.pixelDensity=2',
@@ -223,10 +228,10 @@ def main():
                        'logicalSize':[source_clip['frames'][n-1]['width'],source_clip['frames'][n-1]['height']],
                        'logicalAnchor':[source_clip['frames'][n-1]['offsetX'],source_clip['frames'][n-1]['offsetY']],
                        'fps':source_clip['fps'],'loop':source_clip['loop'],'durationMs':1000/source_clip['fps'],
-                       'renderSwfSha256':digest(patched),'method':'original timeline + selected HD base art'})
+                       'renderSwfSha256':patched_hash,'method':'original timeline + selected HD base art'})
         char_reports.append({'id':cid,'key':key,'sourceHash':hashes[f'star{cid}.swf'],
             'candidate':art.relative_to(ROOT).as_posix(),'candidateSha256':digest(art),
-            'workSwfHash':digest(patched),'walk':walk,'reactions':reactions,'cheer':cheer})
+            'workSwfHash':patched_hash,'walk':walk,'reactions':reactions,'cheer':cheer})
         print(f'HD character timeline: {cid}/12 {key}',flush=True)
     play_swf=ORIGINAL/'play.swf';play_hash=digest(play_swf)
     need(play_hash==next(x['sha256'] for x in original['files'] if x['name']=='play.swf'),
