@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from importlib.util import module_from_spec, spec_from_file_location
 import builtins
 import hashlib
@@ -85,7 +86,8 @@ class ProfilePixelDimensions(unittest.TestCase):
 
 
 class ModernHdDependencyPreflight(unittest.TestCase):
-    def test_unavailable_numpy_preserves_owned_output_and_cache_before_mirror_conversion(self):
+    @contextmanager
+    def _builder_sandbox(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             source = root / 'source'
@@ -93,17 +95,33 @@ class ModernHdDependencyPreflight(unittest.TestCase):
             for index in range(1001):
                 (source / f'{index}.png').touch()
 
-            dest = root / 'dest'
-            (dest / 'nested').mkdir(parents=True)
-            (dest / 'hd-manifest.json').write_bytes(b'owned manifest\n')
-            (dest / 'nested/previous.webp').write_bytes(b'last good output\x00\xff')
-            cache = root / 'cache'
-            (cache / 'nested').mkdir(parents=True)
-            (cache / 'nested/previous.bin').write_bytes(b'last good cache\x00\xff')
-
             ffdec = root / 'ffdec'
             (ffdec / 'lib').mkdir(parents=True)
             (ffdec / 'lib/ffdec_lib.jar').touch()
+            dest = root / 'dest'
+            cache = root / 'cache'
+
+            with (
+                patch.multiple(
+                    BUILDER,
+                    ROOT=root,
+                    SOURCE=source,
+                    DEST=dest,
+                    CACHE=cache,
+                    FFDEC=ffdec,
+                    JAVA='java',
+                ),
+                patch.object(BUILDER, 'convert', side_effect=SystemExit('mirror conversion started')) as convert,
+            ):
+                yield dest, cache, convert
+
+    def test_unavailable_numpy_preserves_owned_output_and_cache_before_mirror_conversion(self):
+        with self._builder_sandbox() as (dest, cache, convert):
+            (dest / 'nested').mkdir(parents=True)
+            (dest / 'hd-manifest.json').write_bytes(b'owned manifest\n')
+            (dest / 'nested/previous.webp').write_bytes(b'last good output\x00\xff')
+            (cache / 'nested').mkdir(parents=True)
+            (cache / 'nested/previous.bin').write_bytes(b'last good cache\x00\xff')
 
             def file_bytes(directory):
                 if not directory.exists():
@@ -123,19 +141,7 @@ class ModernHdDependencyPreflight(unittest.TestCase):
                 return real_import(name, *args, **kwargs)
 
             message = ''
-            with (
-                patch.multiple(
-                    BUILDER,
-                    ROOT=root,
-                    SOURCE=source,
-                    DEST=dest,
-                    CACHE=cache,
-                    FFDEC=ffdec,
-                    JAVA='java',
-                ),
-                patch('builtins.__import__', side_effect=import_without_numpy),
-                patch.object(BUILDER, 'convert', side_effect=SystemExit('mirror conversion started')) as convert,
-            ):
+            with patch('builtins.__import__', side_effect=import_without_numpy):
                 try:
                     BUILDER.main()
                 except SystemExit as error:
@@ -155,38 +161,15 @@ class ModernHdDependencyPreflight(unittest.TestCase):
             })
 
     def test_available_numpy_enters_existing_mirror_generation(self):
-        with tempfile.TemporaryDirectory() as folder:
-            root = Path(folder)
-            source = root / 'source'
-            source.mkdir()
-            for index in range(1001):
-                (source / f'{index}.png').touch()
-
-            dest = root / 'dest'
+        with self._builder_sandbox() as (dest, cache, convert):
             dest.mkdir()
             (dest / 'hd-manifest.json').write_bytes(b'owned manifest\n')
             (dest / 'previous.webp').write_bytes(b'last good output\x00\xff')
-            cache = root / 'cache'
             cache.mkdir()
             (cache / 'previous.bin').write_bytes(b'last good cache\x00\xff')
-            ffdec = root / 'ffdec'
-            (ffdec / 'lib').mkdir(parents=True)
-            (ffdec / 'lib/ffdec_lib.jar').touch()
 
-            with (
-                patch.multiple(
-                    BUILDER,
-                    ROOT=root,
-                    SOURCE=source,
-                    DEST=dest,
-                    CACHE=cache,
-                    FFDEC=ffdec,
-                    JAVA='java',
-                ),
-                patch.object(BUILDER, 'convert', side_effect=SystemExit('mirror conversion started')) as convert,
-            ):
-                with self.assertRaisesRegex(SystemExit, '^mirror conversion started$'):
-                    BUILDER.main()
+            with self.assertRaisesRegex(SystemExit, '^mirror conversion started$'):
+                BUILDER.main()
 
             self.assertEqual(convert.call_count, 1001)
             self.assertFalse((dest / 'previous.webp').exists())
