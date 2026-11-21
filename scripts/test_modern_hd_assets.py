@@ -1,10 +1,13 @@
 from importlib.util import module_from_spec, spec_from_file_location
 import builtins
 import hashlib
+import json
 import sys
 import tempfile
 from pathlib import Path
+from types import SimpleNamespace
 import unittest
+from unittest import mock
 from unittest.mock import patch
 
 from PIL import Image
@@ -188,6 +191,147 @@ class ModernHdDependencyPreflight(unittest.TestCase):
             self.assertEqual(convert.call_count, 1001)
             self.assertFalse((dest / 'previous.webp').exists())
             self.assertFalse((cache / 'previous.bin').exists())
+class CharacterPatchedSwfDigest(unittest.TestCase):
+    def test_main_computes_one_digest_for_all_character_uses(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root / 'public/modern/assets'
+            dest = root / 'public/modern/assets-hd'
+            cache = root / 'cache'
+            original = root / 'public/original'
+            hd_source = root / 'public/hd-assets'
+            ffdec = root / 'ffdec'
+            source.mkdir(parents=True)
+            original.mkdir(parents=True)
+            hd_source.mkdir(parents=True)
+            (ffdec / 'lib').mkdir(parents=True)
+            (ffdec / 'lib/ffdec_lib.jar').write_bytes(b'')
+
+            def write_json(path, value):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(value))
+
+            original_bytes = b'original-star-2'
+            original_hash = hashlib.sha256(original_bytes).hexdigest()
+            (original / 'star2.swf').write_bytes(original_bytes)
+            write_json(original / 'manifest.json', {'files': [
+                *[{'name': f'star{cid}.swf', 'sha256': original_hash} for cid in range(1, 13)],
+                {'name': 'play.swf', 'sha256': original_hash},
+            ]})
+            Image.new('RGBA', (1, 1), (10, 20, 30, 255)).save(hd_source / 'aniu.png')
+
+            facings = ('down', 'left', 'right', 'up')
+            actions = ('happy', 'sad', 'angry', 'surprise', 'laugh')
+            god_ids = (2, 3, 4, 5, 10, 11)
+            bounds = [0, 20, 0, 20]
+            walk_clips = [
+                {'facing': facing, 'sourceBoundsTwips': bounds, 'frameCount': 1}
+                for facing in facings
+            ]
+            original_walk_clips = [
+                {'facing': facing, 'sourceSpriteId': 100 + index, 'sourceBoundsTwips': bounds,
+                 'frames': [{'durationMs': 33, 'offsetX': index, 'offsetY': -index}]}
+                for index, facing in enumerate(facings)
+            ]
+            reaction_clips = [
+                {'name': action, 'facing': facing, 'renderBoundsTwips': bounds, 'frames': 1}
+                for action in actions for facing in facings
+            ]
+            cheer_clips = [
+                {'name': 'cheer', 'facing': facing, 'renderBoundsTwips': bounds, 'frames': 1}
+                for facing in facings
+            ]
+            original_reaction_clips = [
+                {'name': action, 'facing': facing, 'fps': 10, 'loop': False,
+                 'frames': [{'width': 1, 'height': 1, 'offsetX': 0, 'offsetY': 0}]}
+                for action in (*actions, 'cheer') for facing in facings
+            ]
+            god_overlays = [
+                {'godId': god_id, 'renderBoundsTwips': bounds}
+                for god_id in god_ids
+            ]
+            original_god_overlays = [
+                {'godId': god_id, 'width': 1, 'height': 1, 'offsetX': 0, 'offsetY': 0}
+                for god_id in god_ids
+            ]
+            write_json(source / 'characters/index.json', {'characters': [
+                {'id': 2, 'manifestUrl': 'assets/characters/2/walk/manifest.json'},
+            ]})
+            write_json(source / 'characters/2/walk/manifest.json', {'clips': original_walk_clips})
+            write_json(source / 'characters/2/reactions/manifest.json', {
+                'clips': original_reaction_clips,
+                'godOverlays': original_god_overlays,
+            })
+
+            def export_frame(path):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                Image.new('RGBA', (2, 2), (40, 50, 60, 255)).save(path)
+
+            def fake_run(args, log):
+                if 'ExportModernWalkAssets' in args:
+                    output = Path(args[args.index('ExportModernWalkAssets') + 2])
+                    for clip in walk_clips:
+                        export_frame(output / clip['facing'] / '1.png')
+                    return json.dumps({'pixelDensity': 2, 'clips': walk_clips})
+                if 'ExportReactionAssets' in args:
+                    output = Path(args[args.index('ExportReactionAssets') + 2])
+                    clips = cheer_clips if args[-1] == 'cheer' else reaction_clips
+                    for clip in clips:
+                        export_frame(output / clip['name'] / clip['facing'] / '1.png')
+                    if args[-1] == 'cheer':
+                        return json.dumps({'clips': clips})
+                    for god_id in god_ids:
+                        export_frame(output / 'gods' / f'{god_id}.png')
+                    return json.dumps({'clips': clips, 'godOverlays': god_overlays})
+                return ''
+
+            patched_bytes = b'patched-star-2'
+
+            def patch_swf(swf, patched, assets):
+                patched.write_bytes(patched_bytes)
+                return {}
+
+            patcher = SimpleNamespace(patch_swf=patch_swf)
+            loader = SimpleNamespace(exec_module=lambda module: None)
+            fake_spec = SimpleNamespace(loader=loader)
+            real_digest = BUILDER.digest
+
+            class CharacterBuildComplete(Exception):
+                pass
+
+            def stop_after_character(path):
+                if Path(path) == original / 'play.swf':
+                    raise CharacterBuildComplete
+                return real_digest(path)
+
+            patched = cache / 'swf/star2-hd.swf'
+            with mock.patch.multiple(BUILDER, ROOT=root, SOURCE=source, DEST=dest, CACHE=cache,
+                                     ORIGINAL=original, HD_SOURCE=hd_source, FFDEC=ffdec,
+                                     JAVA='java', CHARS=[(2, 'aniu', 'aniu.png')]), \
+                    mock.patch.dict(BUILDER.ENTRIES, clear=True), \
+                    mock.patch.object(BUILDER, 'mirror_sources', return_value=[]), \
+                    mock.patch.object(BUILDER, 'run', side_effect=fake_run), \
+                    mock.patch.object(BUILDER, 'jdk', side_effect=lambda name: name), \
+                    mock.patch.object(BUILDER.importlib.util, 'spec_from_file_location', return_value=fake_spec), \
+                    mock.patch.object(BUILDER.importlib.util, 'module_from_spec', return_value=patcher), \
+                    mock.patch.object(BUILDER, 'digest', side_effect=stop_after_character) as digest_mock:
+                with self.assertRaises(CharacterBuildComplete):
+                    BUILDER.main()
+                entries = list(BUILDER.ENTRIES.values())
+
+            patched_digest_calls = [
+                call for call in digest_mock.call_args_list if Path(call.args[0]) == patched
+            ]
+            expected_hash = hashlib.sha256(patched_bytes).hexdigest()
+            self.assertEqual(sum(entry.get('action') == 'walk' for entry in entries), 4)
+            self.assertEqual(sum(entry.get('action') in actions for entry in entries), 20)
+            self.assertEqual(sum('godId' in entry for entry in entries), 6)
+            self.assertEqual(sum(entry.get('action') == 'cheer' for entry in entries), 4)
+            self.assertEqual(
+                {entry['renderSwfSha256'] for entry in entries},
+                {expected_hash},
+            )
+            self.assertEqual(len(patched_digest_calls), 1)
 
 
 if __name__ == '__main__':
